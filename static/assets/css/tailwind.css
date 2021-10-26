@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.text-blue-title {
+  color: #353f5f;
+}
+
+.text-2xs {
+  font-size: 0.464rem;
+}
+
+@layer base {
+  h1 {
+    @apply text-4xl font-bold;
+  }
+  h2 {
+    @apply text-2xl font-medium;
+  }
+  h3 {
+    @apply text-lg font-medium;
+  }
+  h4 {
+    @apply text-base font-medium;
+  }
+}
