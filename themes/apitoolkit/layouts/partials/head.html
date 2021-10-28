@@ -4,19 +4,26 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     {{ if hugo.IsProduction }}
-    <link rel="stylesheet" type="" href="/assets/css/tailwind.min.css" />
-    {{else}}
     <link rel="stylesheet" type="" href="/assets/css/tailwind.prod.min.css" />
+    {{else}}
+    <link rel="stylesheet" type="" href="/assets/css/tailwind.min.css" />
     {{end}}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
     <style>
       body {
+        width:100%;
+        font-size: 16px;
         font-family: "Poppins", sans-serif;
       }
+@media (min-width:500px){
+  body{
+    font-size: 16px;
+    }
+}
     </style>
   </head>

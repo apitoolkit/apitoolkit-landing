@@ -12,15 +12,24 @@
 
 @layer base {
   h1 {
-    @apply text-4xl font-bold;
+    @apply text-2xl md:text-4xl font-bold;
   }
   h2 {
-    @apply text-2xl font-medium;
+    @apply text-xl md:text-2xl font-medium;
   }
   h3 {
     @apply text-lg font-medium;
   }
   h4 {
     @apply text-base font-medium;
+  }
+}
+
+@layer components {
+    .our_container {
+      @apply md:max-w-4xl inline-block text-left px-4;
+    }
+    .feature_img {
+  @apply w-32 sm:w-64 col-span-2;
   }
 }
