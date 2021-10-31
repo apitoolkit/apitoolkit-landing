@@ -17,7 +17,7 @@
     </div>
 
     <section>
-      <div class="flex flex-col sm:flex-row items-center py-16 sm:py-56">
+      <div class="flex flex-col sm:flex-row items-center pt-16 sm:pt-24">
         <div class="sm:pr-20">
           <h1 class="text-blue-title tracking-tighter">
             Automatic API
@@ -90,7 +90,59 @@
         />
       </div>
     </section>
+    <section class="pt-8 sm:pt-36 ">
+      <!-- integrations -->
+      <div class="flex flex-row gap-2 md:gap-10 flex-wrap">
+        <span class="flex-grow ">Plug & Play<br />integrations</span>
+        <img class="h-10" src="/assets/img/integrations/cloudflare.png" />
+        <img class="h-10" src="/assets/img/integrations/nginx.png" />
+        <img class="h-10" src="/assets/img/integrations/caddy.png" />
+        <img class="h-10" src="/assets/img/integrations/go.png" />
+        <img class="h-10" src="/assets/img/integrations/php.svg" />
+        <span class="flex-grow text-right">&<br />more</span>
+      </div>
+    </section>
+    <section class="mt-28 mb-48">
+      <!-- Founders note -->
+      <div class="px-8 py-10 bg-gray-300 black filter drop-shadow-xl text-sm rounded-sm" style="box-shadow: 0px 0px 18px -1px #7286C0; background: #E3E6ED;">
+        <h3 class="">Founders Note</h3>
+        <h4>Or Why we are solving API observability</h4>
+        <div class="pt-3 space-y-4 leading-6">
+          <p>
+            A few years ago, I was a new hire at a food delivery company, and my
+            role was the migration of a legacy service from PHP to Golang. I
+            implemented the fields listed in the swagger docs, but because no
+            one trusts swagger docs, I took some sample requests and compared
+            the responses from the legacy service to the response of my new
+            service. Everything matched. After weeks of implementation, I
+            deployed, swapped the ingress to the new service and then proceeded
+            to run tests to be sure everything worked as expected, and
+            everything indeed worked as expected.But immediately I looked at our
+            order monitoring charts, I knew I had messed up. Within 10mins, 20k
+            orders lost. I was terrified. What happened?
+          </p>
+          <p>
+            Apparently in a few of the countries we ran in, a particular
+            undocumented json response field was expected by the apps and I had
+            no idea since these countries were not part of the samples I
+            manually tested. We rolled back and fixed the issue, but at this
+            point, I was even more pissed that there was no tool which could
+            have prevented this problem.
+          </p>
+          <p>
+            Years later, this is that tool. Please reach out and let’s have a
+            conversation about any similar stories you might have experienced.
+            Thanks for being part of this journey.
+          </p>
+          <p class="text-sm  text-right ">
+            Anthony (<a href="https://twitter.com/tonialaribe" class="text-blue-800">@tonialaribe</a>) and Smile(<a href="https://twitter.com/SmileEgbai" class="text-blue-800">@smilecs</a>) (co-founders of
+            APIToolkit)
+          </p>
+        </div>
+      </div>
+    </section>
     <section class="space-y-48">
+ <h3 class="text-3xl">What do you get?</h3>
       <!-- features -->
       <div
         class="flex flex-col sm:flex-row sm:items-center gap-8 sm:space-x-24"
@@ -246,17 +298,30 @@
               >APIToolkit is still in closed beta. But you can join the waitlist
               below</small
             >
-            <div>
-              <input
-                class="border border-blue-500 rounded-md px-4 py-2 text-xs w-full sm:w-96"
-                placeholder="Email address. eg abc@example.com"
-              />
-              <button
-                class="rounded-md bg-blue-900 border-blue-900 text-xs text-white inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0"
-              >
-                Join Waitlist
-              </button>
-            </div>
+            <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+            <form
+              action="https://app.convertkit.com/forms/2724709/subscriptions"
+              class="seva-form formkit-form"
+              method="post"
+              data-sv-form="2724709"
+              data-uid="15d365ef1d"
+              data-format="inline"
+              data-version="5"
+              data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"Success! Now check your email to confirm your subscription.","redirect_url":""},"analytics":{"google":null,"facebook":null,"segment":null,"pinterest":null,"sparkloop":null,"googletagmanager":null},"modal":{"trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"powered_by":{"show":true,"url":"https://convertkit.com?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic"},"recaptcha":{"enabled":false},"return_visitor":{"action":"show","custom_content":""},"slide_in":{"display_in":"bottom_right","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"sticky_bar":{"display_in":"top","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15}},"version":"5"}'
+            >
+              <div>
+                <input
+                  class="border border-blue-500 rounded-md px-4 py-2 text-xs w-full sm:w-96"
+                  name="email_address"
+                  placeholder="Email address. eg abc@example.com"
+                />
+                <button
+                  class="rounded-md bg-blue-900 border-blue-900 text-xs text-white inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0"
+                >
+                  Join Waitlist
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </div>

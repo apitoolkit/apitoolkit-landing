@@ -23,6 +23,9 @@
   h4 {
     @apply text-base font-medium;
   }
+  img {
+    @apply max-w-full;
+  }
 }
 
 @layer components {
