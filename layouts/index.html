@@ -7,12 +7,12 @@
         <button type="button" class="bg-gray-200 px-3 py-2 rounded-full">
           Sign in
         </button>
-        <button
-          type="button"
+        <a
+          href="#waitlist-form-1"
           class="bg-black text-white px-3 py-2 rounded-full"
         >
           Join waitlist
-        </button>
+        </a>
       </div>
     </div>
 
@@ -38,14 +38,14 @@
               being returned or when the field type has changed, and gives you
               tools to document and collaborate on your APIs.
             </p>
-            <div class="text-center py-4">
+            <div class="text-center py-4 sm:hidden ">
               <img
                 src="/assets/img/ill_man_measuring.svg"
                 alt="Man measuring a graph"
-                class="sm:hidden w-24 inline-block"
+                class="w-24 inline-block"
               />
             </div>
-            <div class="space-y-2 text-sm">
+            <div class="space-y-2 text-sm sm:pt-8" id="waitlist-form-1">
               <small class="text-blue-900"
                 >APIToolkit is still in closed beta. But you can join the
                 waitlist below</small
@@ -69,7 +69,7 @@
                     placeholder="Email address. eg abc@example.com"
                   />
                   <button
-                    class="rounded-md bg-blue-900 border-blue-900 text-xs text-white inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0"
+                    class="rounded-md bg-blue-900 hover:bg-blue-800 border-blue-900 text-xs text-white inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0"
                   >
                     Join Waitlist
                   </button>
@@ -94,7 +94,10 @@
       <!-- integrations -->
       <div class="flex flex-row gap-2 md:gap-10 flex-wrap text-xs sm:text-base">
         <span class="flex-grow">Plug & Play<br />integrations</span>
-        <img class="h-7 sm:h-10" src="/assets/img/integrations/cloudflare.png" />
+        <img
+          class="h-7 sm:h-10"
+          src="/assets/img/integrations/cloudflare.png"
+        />
         <img class="h-7 sm:h-10" src="/assets/img/integrations/nginx.png" />
         <img class="h-7 sm:h-10" src="/assets/img/integrations/caddy.png" />
         <img class="h-7 sm:h-10" src="/assets/img/integrations/go.png" />
@@ -133,7 +136,8 @@
             have prevented this problem.
           </p>
           <p>
-            Years later, this is that tool. Do you have similar war stories? We would love to hear them, so don't hesitate to leave a message.
+            Years later, this is that tool. Do you have similar war stories? We
+            would love to hear them, so don't hesitate to leave a message.
             Thanks for being part of this journey.
           </p>
           <p class="text-sm text-right">
@@ -278,11 +282,16 @@
         observability.
       </p>
       <div class="flex flex-row items-center">
-        <a class="inline-block"
+        <a
+          class="inline-block"
+          href="https://discord.gg/dEB6EjQnKB"
+          target="_blank"
           ><img class="w-32" src="/assets/img/jointhediscord.png"
         /></a>
         <span class="inline-block px-3">Or</span>
-        <a class="inline-block rounded bg-gray-200 text-black px-8 py-2"
+        <a
+          class="inline-block rounded bg-gray-200 text-black px-8 py-2"
+          href="https://calendly.com/tonyalaribe/30min"
           >Let's find a time slot for a Chat</a
         >
       </div>
@@ -325,7 +334,7 @@
                   placeholder="Email address. eg abc@example.com"
                 />
                 <button
-                  class="rounded-md bg-blue-900 border-blue-900 text-xs text-white inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0"
+                  class="rounded-md bg-blue-900 hover:bg-blue-800 border-blue-900 text-xs text-white inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0"
                 >
                   Join Waitlist
                 </button>
@@ -344,7 +353,11 @@
   <section class="flex flex-row justify-center pt-20">
     <div class="our_container w-full">
       <img src="/assets/img/logo_black.svg" alt="APIToolkit logo" />
-      <p class="py-4 text-sm text-black">Copyright APIToolkit.io (<a href="mailto:hello@apitoolkit.io">hello@apitoolkit.io</a>)</p>
+      <p class="py-4 text-sm text-black">
+        Copyright APIToolkit.io (<a href="mailto:hello@apitoolkit.io"
+          >hello@apitoolkit.io</a
+        >)
+      </p>
     </div>
   </section>
 </section>
