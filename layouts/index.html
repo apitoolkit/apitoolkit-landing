@@ -4,7 +4,7 @@
     <div class="flex flex-row justify-between pt-8">
       <img src="/assets/img/logo_black.svg" alt="APItoolkit logo" />
       <div class="text-xs">
-        <button type="button" class="bg-gray-200 px-3 py-2 rounded-full">
+        <button type="button" class="hidden bg-gray-200 px-3 py-2 rounded-full">
           Sign in
         </button>
         <a
@@ -15,6 +15,16 @@
         </a>
       </div>
     </div>
+
+    <style>
+      .formkit-alert {
+        font-weight: bold;
+        font-size: large;
+        margin: 2rem;
+        line-height: 2rem;
+        color: #353f5f;
+      }
+    </style>
 
     <section>
       <div class="flex flex-col sm:flex-row items-center pt-16 sm:pt-24">
@@ -28,7 +38,7 @@
           <div class="pt-8 space-y-5">
             <p>
               Broken API contracts such as a JSON field which is no longer sent
-              or recieved, can be costly to your customers.
+              or recieved, can be costly to your business and your customer experience.
             </p>
             <p>
               <strong class="font-medium"
@@ -38,7 +48,7 @@
               being returned or when the field type has changed, and gives you
               tools to document and collaborate on your APIs.
             </p>
-            <div class="text-center py-4 sm:hidden ">
+            <div class="text-center py-4 sm:hidden">
               <img
                 src="/assets/img/ill_man_measuring.svg"
                 alt="Man measuring a graph"
@@ -71,7 +81,7 @@
                   <button
                     class="rounded-md bg-blue-900 hover:bg-blue-800 border-blue-900 text-xs text-white inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0"
                   >
-                    Join Waitlist
+                  Get Early Access
                   </button>
                 </form>
               </div>
@@ -100,7 +110,7 @@
         />
         <img class="h-7 sm:h-10" src="/assets/img/integrations/nginx.png" />
         <img class="h-7 sm:h-10" src="/assets/img/integrations/caddy.png" />
-        <img class="h-7 sm:h-10" src="/assets/img/integrations/go.png" />
+        <img class="h-7 sm:h-10" src="/assets/img/integrations/go.svg" />
         <img class="h-7 sm:h-10" src="/assets/img/integrations/php.svg" />
         <span class="flex-grow text-right">&<br />more</span>
       </div>
@@ -115,30 +125,29 @@
         <h4>Or Why we are solving API observability</h4>
         <div class="pt-3 space-y-4 leading-6">
           <p>
-            A few years ago, I was a new hire at a food delivery company, and my
-            role was the migration of a legacy service from PHP to Golang. I
-            implemented the fields listed in the swagger docs, but because no
-            one trusts swagger docs, I took some sample requests and compared
-            the responses from the legacy service to the response of my new
-            service. Everything matched. After weeks of implementation, I
-            deployed, swapped the ingress to the new service and then proceeded
-            to run tests to be sure everything worked as expected, and
-            everything indeed worked as expected.But immediately I looked at our
-            order monitoring charts, I knew I had messed up. Within 10mins, 20k
-            orders lost. I was terrified. What happened?
+            A few years ago, I was a new hire at a food delivery company,
+            migrating a legacy service from PHP to Golang. We implemented the
+            fields listed in the swagger docs, and compared the responses from
+            the legacy service to the responses of the new service, fixing
+            differences until everything matched. After weeks of implementation
+            and testing, we rolled out the new service after running tests to
+            make sure everything worked as expected. But immediately we looked
+            at our order monitoring charts, we knew we had messed up. Within
+            10mins, 20k orders lost. I was terrified. What happened?
           </p>
           <p>
-            Apparently in a few of the countries we ran in, a particular
-            undocumented json response field was expected by the apps and I had
-            no idea since these countries were not part of the samples I
-            manually tested. We rolled back and fixed the issue, but at this
-            point, I was even more pissed that there was no tool which could
-            have prevented this problem.
+            Apparently in a couple countries we ran in, a particular field which
+            was expected by the apps was no longer being sent, prevent placing
+            of orders. We had no idea since this field was not in the inherited
+            documentation, and was only applicable in a couple countries which
+            were not part of the samples we manually tested. We rolled back and
+            fixed the issue, but I was sad that there was no tool which could
+            have detected this issue faster.
           </p>
           <p>
-            Years later, this is that tool. Do you have similar war stories? We
-            would love to hear them, so don't hesitate to leave a message.
-            Thanks for being part of this journey.
+            Years later, this is that tool, and we would love to listen to
+            similar stories you've experienced, and help make such stories a
+            thing of the past.
           </p>
           <p class="text-sm text-right">
             Anthony (<a
@@ -180,7 +189,7 @@
         class="flex flex-col-reverse sm:flex-row sm:items-center gap-8 sm:space-x-24"
       >
         <div class="space-y-3">
-          <h3 class="text-xl">Get notified when your API changes</h3>
+          <h3 class="text-xl">Get notified when your API contract is broken</h3>
           <p>
             Since APIToolkit has an always up to date model of your API, you can
             get notifications and alerts immediately something changes. Eg an
@@ -205,7 +214,7 @@
           <h3 class="text-xl">Refactor and Migrate Safely</h3>
           <p>
             Migrate legacy with confidence. Don’t crash your apps because of
-            fields which no one remembered to migrate.
+            fields which no one remembered to migrate, or which someone changed by mistake.
           </p>
         </div>
       </div>
@@ -214,12 +223,11 @@
         class="flex flex-col-reverse sm:flex-row gap-8 sm:items-center sm:space-x-24"
       >
         <div class="space-y-3">
-          <h3 class="text-xl">Always up to date API docs</h3>
+          <h3 class="text-xl">Generate swagger docs from production traffic</h3>
           <p>
             No more out of date Swagger files. You can upload your swagger to
             APIToolkit, & Download the autogenerated swagger based off your
-            actual production traffic. Even generate the docs in different
-            formats including Open API and RAML.
+            actual production traffic.
           </p>
         </div>
         <img
