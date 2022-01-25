@@ -5,6 +5,7 @@ css:
 	npx tailwindcss -i static/assets/css/tailwind.css \
 		-c tailwind.config.js \
 		-o static/assets/css/tailwind.min.css  --watch
+
 css-prod:
 	NODE_ENV=production npx tailwindcss -i static/assets/css/tailwind.css \
 	-c tailwind.config.js -o static/assets/css/tailwind.prod.min.css --minify
