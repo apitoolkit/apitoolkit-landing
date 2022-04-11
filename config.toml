@@ -1,10 +1,14 @@
 baseurl = "/"
-title = "My blog"
+title = "APIToolkit.io: Automatic API Contract Monitoring & Documentation"
 theme = "apitoolkit"
 languageCode = 'en-us'
+enableEmoji = true
+enableGitInfo = true
+enableRobotsTXT = true
+canonifyURLs = true
 
 [Params]
-mainSections = ["post"]
+mainSections = ["blog"]
 intro = true
 headline = "APIToolkit"
 description = "Automatic API Monitoring and Documentation"
@@ -14,6 +18,12 @@ email = "hello@apitoolkit.io"
 opengraph = true
 shareTwitter = true
 dateFormat = "Mon, Jan 2, 2006"
+og_image = "/images/og.png"
+
+[blog]
+showSummary = true
 
 [Permalinks]
 post = "/:filename/"
+
+[sitemap]

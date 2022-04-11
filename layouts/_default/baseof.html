@@ -1,11 +1,44 @@
 <!DOCTYPE html>
-<html>
-    {{- partial "head.html" . -}}
-    <body>
-        {{- partial "header.html" . -}}
-        <div id="content">
-        {{- block "main" . }}{{- end }}
+<html prefix="og: http://ogp.me/ns#" lang="{{ .Language }}">
+  {{- partial "head.html" . -}}
+  <body class="relative">
+    {{- partial "header.html" . -}}
+    <section class="text-center z-10">
+      <nav class="our_container w-full">
+        <div class="flex flex-row justify-between pt-8">
+          <a href="/"
+            ><img src="/assets/img/logo_black.svg" alt="APItoolkit logo"
+          /></a>
+          <div class="text-xs">
+            <button
+              type="button"
+              class="hidden bg-gray-200 px-3 py-2 rounded-full"
+            >
+              Sign in
+            </button>
+            <a href="/blog/" class="pr-5">blog</a>
+            <a
+              href="#waitlist-form-1"
+              class="bg-black text-white px-3 py-2 rounded-full"
+            >
+              Join waitlist
+            </a>
+          </div>
         </div>
-        {{- partial "footer.html" . -}}
-    </body>
+      </nav>
+    </section>
+
+    <section id="content">{{- block "main" . }}{{- end }}</section>
+    <section class="flex flex-row justify-center pt-20">
+      <div class="our_container w-full">
+        <img src="/assets/img/logo_black.svg" alt="APIToolkit logo" />
+        <p class="py-4 text-sm text-black">
+          Copyright APIToolkit.io (<a href="mailto:hello@apitoolkit.io"
+            >hello@apitoolkit.io</a
+          >)
+        </p>
+      </div>
+    </section>
+    {{- partial "footer.html" . -}}
+  </body>
 </html>
