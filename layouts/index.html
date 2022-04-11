@@ -1,5 +1,5 @@
 {{define "main"}}
-<section class="text-center text-gray-700 leading-relaxed">
+<section class="text-center text-gray-800 leading-relaxed">
   <section class="our_container">
     <div class="flex flex-row justify-between pt-8">
       <img src="/assets/img/logo_black.svg" alt="APItoolkit logo" />
@@ -28,25 +28,22 @@
 
     <section>
       <div class="flex flex-col sm:flex-row items-center pt-16 sm:pt-24">
-        <div class="sm:pr-20">
-          <h1 class="text-blue-title tracking-tighter">
-            Automatic API
-            <span class="hidden sm:inline-block">Documentation</span
-            ><span class="inline-block sm:hidden">Docs</span><br />&
-            Observability
+        <div class="">
+          <h1 class="text-blue-title tracking-tight">
+            Automatic API Contract Monitoring<br />
+            <span class="hidden sm:inline-block">& Documentation</span
+            ><span class="inline-block sm:hidden">& Docs</span>
           </h1>
-          <div class="pt-8 space-y-5">
+          <div class="pt-8 space-y-5 sm:pr-20">
             <p>
-              Broken API contracts such as a JSON field which is no longer sent
-              or recieved, can be costly to your business and your customer experience.
+              Build and maintain your APIs with confidence using our automated
+              api contract monitoring, documentation and analytics.
             </p>
             <p>
               <strong class="font-medium"
-                >APIToolkit spots broken apis before your customers.</strong
+                >APIToolkit spots broken apis, changed fields, etc before your
+                customers.</strong
               >
-              It monitors your API and let’s you know when a field is no longer
-              being returned or when the field type has changed, and gives you
-              tools to document and collaborate on your APIs.
             </p>
             <div class="text-center py-4 sm:hidden">
               <img
@@ -81,7 +78,7 @@
                   <button
                     class="rounded-md bg-blue-900 hover:bg-blue-800 border-blue-900 text-xs text-white inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0"
                   >
-                  Get Early Access
+                    Get Early Access
                   </button>
                 </form>
               </div>
@@ -118,12 +115,12 @@
     <section class="mt-28 mb-48">
       <!-- Founders note -->
       <div
-        class="px-8 py-10 bg-gray-100 text-blue-title filter drop-shadow-xl text-sm rounded-sm"
-        style="box-shadow: 0px 0px 18px -1px #7286c0;"
+        class="px-16 py-14 bg-gray-100 text-blue-title filter drop-shadow-xl text-sm rounded-sm"
+        style="box-shadow: 0px 0px 18px -1px #7286c0"
       >
         <h3 class="">Founders Note</h3>
         <h4>Or Why we are solving API observability</h4>
-        <div class="pt-3 space-y-4 leading-7 text-base">
+        <div class="pt-3 space-y-4 leading-6 text-sm">
           <p>
             A few years ago, I was a new hire at a food delivery company,
             migrating a legacy service from PHP to Golang. We implemented the
@@ -158,120 +155,80 @@
               href="https://twitter.com/SmileEgbai"
               class="text-blue-800"
               >@smilecs</a
-            >) (co-founders of APIToolkit)
+            >)
           </p>
         </div>
       </div>
     </section>
-    <section class="space-y-32">
-      <h3 class="text-3xl">What do you get?</h3>
-      <!-- features -->
-      <div
-        class="flex flex-col sm:flex-row sm:items-center gap-8 sm:space-x-24"
-      >
-        <img
-          src="/assets/img/ill_man_putting_puzzles.svg"
-          alt="man fixing puzzle pieces"
-          class="feature_img"
-        />
-        <div class="space-y-3 col-span-3 flex flex-col justify-center">
-          <h3 class="text-xl">Always up to date API docs</h3>
-          <p>
-            APIToolkit automatically listens to requests coming in and outside
-            your services, and builds an understanding of what your API looks
-            like. It uses this information to generate always up to date API
-            documentation.
-          </p>
+    <section class="my-24">
+      <h3 class="text-3xl mb-20">Features?</h3>
+      <section class="grid grid-cols-2 gap-14 text-sm">
+        <!-- features -->
+        <div class="space-y-4">
+          <img
+            src="/assets/img/ill_man_putting_puzzles.svg"
+            alt="man fixing puzzle pieces"
+            class="h-32"
+          />
+          <div class="space-y-3">
+            <h3 class="text-xl">🚀 Always up to date API docs</h3>
+            <p>
+              View your live API shapes, fields, etc and Generate swagger Docs
+              at anytime via your live taffic.
+            </p>
+          </div>
         </div>
-      </div>
-      <!--..-->
-      <div
-        class="flex flex-col-reverse sm:flex-row sm:items-center gap-8 sm:space-x-24"
-      >
-        <div class="space-y-3">
-          <h3 class="text-xl">Get notified when your API contract is broken</h3>
-          <p>
-            Since APIToolkit has an always up to date model of your API, you can
-            get notifications and alerts immediately something changes. Eg an
-            important field is no more, or a new field has been added, or it’s
-            format changed from a US date format to an EU date format
-          </p>
+        <!--..-->
+        <div class="space-y-4">
+          <img
+            src="/assets/img/ill_man_looks_at_growth.svg"
+            alt="man fixing puzzle pieces"
+            class="h-32"
+          />
+          <div class="space-y-3">
+            <h3 class="text-xl">📈 Live API Contract monitoring & alerts</h3>
+            <p>
+              Keep up with any changes to your API. New fields, new endpoints,
+              empty fields, change in field types, etc.
+            </p>
+          </div>
         </div>
-        <img
-          src="/assets/img/ill_man_looks_at_growth.svg"
-          alt="man fixing puzzle pieces"
-          class="feature_img"
-        />
-      </div>
-      <!--..-->
-      <div class="flex flex-col sm:flex-row gap-8 sm:items-center smspace-x-24">
-        <img
-          src="/assets/img/ill_couple_and_rocket.svg"
-          alt="man fixing puzzle pieces"
-          class="feature_img"
-        />
-        <div class="space-y-3">
-          <h3 class="text-xl">Refactor and Migrate Safely</h3>
-          <p>
-            Migrate legacy with confidence. Don’t crash your apps because of
-            fields which no one remembered to migrate, or which someone changed by mistake.
-          </p>
+        <!--..-->
+        <div class="space-y-4">
+          <img
+            src="/assets/img/ill_couple_and_rocket.svg"
+            alt="man fixing puzzle pieces"
+            class="h-32"
+          />
+          <div class="space-y-3">
+            <h3 class="text-xl">⛑ Refactor and Migrate Safely</h3>
+            <p>
+              Catch any bug and changes due to refactorings or migrations,
+              faster than your customers.
+            </p>
+          </div>
         </div>
-      </div>
-      <!--..-->
-      <div
-        class="flex flex-col-reverse sm:flex-row gap-8 sm:items-center sm:space-x-24"
-      >
-        <div class="space-y-3">
-          <h3 class="text-xl">Generate swagger docs from production traffic</h3>
-          <p>
-            No more out of date Swagger files. You can upload your swagger to
-            APIToolkit, & Download the autogenerated swagger based off your
-            actual production traffic.
-          </p>
+        <!--..-->
+        <div class="space-y-4">
+          <img
+            src="/assets/img/ill_man_sit_laptop_stats.svg"
+            alt="man fixing puzzle pieces"
+            class="h-32"
+          />
+          <div class="space-y-3">
+            <h3 class="text-xl">📊 View your API analytics in one place</h3>
+            <p>
+              Response times, latency, etc. Run queries on your live api
+              requests and responses.
+            </p>
+          </div>
         </div>
-        <img
-          src="/assets/img/ill_laptop_and_charts.svg"
-          alt="man fixing puzzle pieces"
-          class="feature_img"
-        />
-      </div>
-      <!--..-->
-    </section>
-    <section class="py-56 space-y-6 sm:space-y-6">
-      <!-- Getting started -->
-      <h3 class="text-xl font-bold">Getting started with APIToolkit is easy</h3>
-      <p class="text-xl">
-        Getting automatic documentation and monitoring for your apis and API
-        fields is easier than you think.
-      </p>
-
-      <div class="flex flex-col sm:flex-row gap-14 sm:gap-4 py-4">
-        <div class="space-y-3 flex-1">
-          <span>Step 1</span>
-          <h4 class="font-bold">Signup for an account</h4>
-          <p>Start a free trial, then pricing starts at $20 per month</p>
-        </div>
-        <div class="space-y-3 flex-1">
-          <span>Step 2</span>
-          <h4 class="font-bold">Connect your application</h4>
-          <p>
-            Install a data collector middleware. Eg cloudflare middleware, via a
-            library/module in your language of choice.
-          </p>
-        </div>
-        <div class="space-y-3 flex-1">
-          <span>Step 3</span>
-          <h4 class="font-bold">Enjoy your docs and Metrics</h4>
-          <p>
-            View your metrics and autogenerated docs when traffic goes through
-            the middleware. Setup your alert/notifications channel of choice.
-          </p>
-        </div>
-      </div>
+        <!--..-->
+      </section>
     </section>
   </section>
-  <section class="bg-yellow-100">
+
+  <section class="bg-yellow-100 mt-32 text-black">
     <div class="our_container space-y-5 py-16 sm:py-36">
       <h3 class="font-bold text-lg">
         APIToolkit is built by real engineers to solve problems that have cost
@@ -298,7 +255,7 @@
         /></a>
         <span class="inline-block px-3">Or</span>
         <a
-          class="inline-block rounded bg-gray-100 hover:bg-gray-200 text-black px-8 py-2"
+          class="inline-block rounded bg-gray-100 hover:bg-gray-200 text-black px-8 py-2 shadow"
           href="https://calendly.com/tonyalaribe/30min"
           target="_blank"
           >Let's find a time slot for a Chat</a

@@ -1,4 +1,19 @@
-baseURL = 'http://example.org/'
+baseurl = "/"
+title = "My blog"
+theme = "apitoolkit"
 languageCode = 'en-us'
-title = 'My New Hugo Site'
-theme = 'apitoolkit'
+
+[Params]
+mainSections = ["post"]
+intro = true
+headline = "APIToolkit"
+description = "Automatic API Monitoring and Documentation"
+github = "https://github.com/apitoolkit"
+twitter = "https://twitter.com/ApiToolkit"
+email = "hello@apitoolkit.io"
+opengraph = true
+shareTwitter = true
+dateFormat = "Mon, Jan 2, 2006"
+
+[Permalinks]
+post = "/:filename/"
