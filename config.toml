@@ -1,4 +1,4 @@
-baseurl = "/"
+baseurl = "https://apitoolkit.io/"
 title = "APIToolkit.io: Automatic API Contract Monitoring & Documentation"
 theme = "apitoolkit"
 languageCode = 'en-us'
