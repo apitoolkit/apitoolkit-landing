@@ -54,10 +54,12 @@ QA teams are usually in charge of API testing. It’s normal to see them follow 
 
 API test cases are based on the following considerations
 
-*Failure to return a value*: This is an event in which there is no return value when an API is called.
+- **Failure to return a value**: This is an event in which there is no return value when an API is called.
 Trigger some other API/event/interrupt: Events and interrupt listeners should be tracked when an API output triggers some events.
-*Return value based on input condition*: This is pretty straightforward. Input is made and the results are authenticated.
-*Update data structure*: Changing data structures will have some effect on the system, which should be authenticated
+
+- **Return value based on input condition**: This is pretty straightforward. Input is made and the results are authenticated.
+
+- **Update data structure**: Changing data structures will have some effect on the system, which should be authenticated
 Modify certain resources: API calls that modify resources should be checked by accessing the corresponding resources
 
 ## Key Takeaways 
