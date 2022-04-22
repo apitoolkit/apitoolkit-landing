@@ -9,5 +9,8 @@
     <img  src="{{- $image.RelPermalink -}}" alt="{{- .PlainText | htmlUnescape -}}">
   {{ end }}
 {{else}}
-  <img  src="{{.Destination | safeURL}}" alt="{{ .Text }}">
+<figure>
+  <img  src="{{.Destination | safeURL}}" alt="{{ .PlainText | htmlUnescape }}">
+   <div>{{ .Title | htmlUnescape | safeHTML}}</div>
+</figure>
 {{end}}
