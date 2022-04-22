@@ -39,14 +39,14 @@ For more context, here’s a list of the types of bugs that can be detected by A
 ## API Testing Tools
 API testing can be done with a variety of automated tools.
 
-- Rapid API testing: Over 1 million developers and 10,000 APIs are available on Rapid API testing. It’s an API testing solution for managing complex API tests throughout the development process. You can run tests for any type of API (including REST, SOAP, and GraphQL).
-  ![](./image4.png)
-- SOAPUI test: Mainly used for REST, SOAP, and other mainstream API and IoT systems.
+- **Rapid API testing**: Over 1 million developers and 10,000 APIs are available on Rapid API testing. It’s an API testing solution for managing complex API tests throughout the development process. You can run tests for any type of API (including REST, SOAP, and GraphQL).
+  ![Rapid API Testing](./image4.png)
+- **SOAPUI test**: Mainly used for REST, SOAP, and other mainstream API and IoT systems.
   ![](./image2.png)
-- Postman testing: Commonly used for REST APIs
-  ![](./image5.png)
-- Parasoft testing: It’s a paid tool. It’s used for comprehensive API testing.
-  ![](./image1.png)
+- **Postman testing**: Commonly used for REST APIs
+  ![Postman testing](./image5.png)
+- **Parasoft testing**: It’s a paid tool. It’s used for comprehensive API testing.
+  ![Parasoft testing](./image1.png)
 
 
 ## What Are API Test Cases Based on?
