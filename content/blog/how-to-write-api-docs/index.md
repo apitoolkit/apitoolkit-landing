@@ -78,19 +78,9 @@ Review often: Frequent review of your docs will expose outdated areas. Schedule 
 
 Use analytics: Good API analytics will show what endpoints are used most frequently. This will inform your API doc review process, helping you focus your updates on the most used portions. APIToolkit provides detailed analytics and much more. It’s a one-stop solution for API observability and monitoring.
 
-### Final Thoughts ###h3
+### Final Thoughts 
 Documenting your APIs is just as important as building them. It’s essential to have frameworks and processes that make your API documentation seamless and scalable.
 
 You will have different audiences. Be sure to cater to all their varying needs when developing your API docs.
 
 APIToolkit gives you comprehensive analyses of your API docs to ensure you’re constantly up to date with the information you serve your community.
-
-
-
-
-
-
-
-
-
-
