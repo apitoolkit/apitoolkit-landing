@@ -29,10 +29,14 @@
 }
 
 @layer components {
-    .our_container {
-      @apply md:max-w-4xl inline-block text-left px-4;
-    }
-    .feature_img {
-  @apply w-32 sm:w-64 col-span-2;
+  .our_container {
+    @apply md:max-w-4xl inline-block text-left px-4;
+  }
+  .feature_img {
+    @apply w-32 sm:w-64 col-span-2;
   }
 }
+
+.ul-1 {@apply pl-3 pb-1 space-y-1; }
+.ul-2 {@apply pl-5 pb-1 space-y-1; }
+.ul-3 {@apply pl-7 pb-1 space-y-1; }
