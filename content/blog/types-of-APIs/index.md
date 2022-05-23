@@ -4,7 +4,7 @@ description: "APIs are amazing means of communication between software systems. 
 date: 2022-05-21T07:25:03+02:00
 ---
 
-![A dog wearing glasses and using an ipad](./image3.jpg)
+![A dog wearing glasses and using an ipad](./image1.jpg)
 
 APIs are amazing because they allow developers to exponentially enhance the way programs work by communicating with other software systems. But not all APIs are created equal.
 
