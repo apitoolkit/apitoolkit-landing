@@ -33,9 +33,7 @@ func main() {
   	apitoolkitClient, err := apitoolkit.NewClient(
       context.Background(), apitoolkit.Config{APIKey: "<APIKEY>"},
     )
-    if err != nil {
-          panic(err)
-    }
+    ...
 
   	router := gin.New()
 
