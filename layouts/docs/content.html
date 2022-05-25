@@ -3,7 +3,7 @@
     {{ partial "sidebar-tree.html" . }}
   </aside>
   <main class="grow p-5 lg:p-8">
-    <div class="td-content prose prose-xl prose-slate pt-5">
+    <div class="td-content prose md:prose-xl prose-slate pt-5">
       <h1>{{ .Title }}</h1>
       {{ with .Params.description }}<div class="lead">{{ . | markdownify }}</div>{{ end }}
       <header class="article-meta">
