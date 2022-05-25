@@ -1,17 +1,18 @@
 {{/* We cache this partial for bigger sites and set the active class client side. */}}
 {{ $sidebarCacheLimit := cond (isset .Site.Params.ui "sidebar_cache_limit") .Site.Params.ui.sidebar_cache_limit 2000 -}}
 {{ $shouldDelayActive := ge (len .Site.Pages) $sidebarCacheLimit -}}
-<div id="td-sidebar-menu" class="p-2 divide-y border-slate-100 {{ if $shouldDelayActive }} hidden{{ end }}">
-  <form class="py-5">
-      <div class="mt-1 relative flex items-center">
+<div id="td-sidebar-menu" class="p-2 divide-y border-slate-100 border-b-2 {{ if $shouldDelayActive }} hidden{{ end }}">
+  <form class="py-5 flex ">
+      <div class="inline-block md:block mt-1 relative flex grow items-center">
         <input placeholder="quick search" type="text" name="search" id="search" class="border border-slate-200 shadow-sm p-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full pr-12 sm:text-sm border-gray-300 rounded-md">
         <div class="absolute inset-y-0 right-0 flex py-1.5 pr-1.5">
           <kbd class="inline-flex items-center border border-gray-200 rounded px-2 text-sm font-sans font-medium text-gray-400"> ⌘K </kbd>
         </div>
       </div>
+      <a class="inline-block md:hidden  cursor-pointer p-2 px-3 hover:bg-blue-200" _="on click toggle .hidden on #td-section-nav">☰</a>
   </form>
   
-  <nav class="pt-5 collapse td-sidebar-nav{{ if .Site.Params.ui.sidebar_menu_foldable }} foldable-nav{{ end }}" id="td-section-nav">
+  <nav class="pt-5 hidden md:block collapse td-sidebar-nav{{ if .Site.Params.ui.sidebar_menu_foldable }} foldable-nav{{ end }}" id="td-section-nav">
     {{ if  (gt (len .Site.Home.Translations) 0) -}}
     <div class="nav-item dropdown block lg:hidden">
       {{/* partial "navbar-lang-selector.html" . */}}

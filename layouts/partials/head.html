@@ -56,8 +56,7 @@
   />
   {{ end }}
   <!-- SEO Date-->
-  <meta property="og:updated_time" content={{ .Lastmod.Format
-  "2006-01-02T15:04:05Z0700" | safeHTML }} />
+  <meta property="og:updated_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z0700" | safeHTML }}" />
   <link
     rel="sitemap"
     type="application/xml"
@@ -96,10 +95,9 @@
 
   <meta property="og:type" content="article" />
   <meta property="article:publisher" content="{{ .Site.Params.facebook }}" />
-  <meta property="og:article:published_time" content={{ .Date.Format
-  "2006-01-02T15:04:05Z0700" | safeHTML }} /> <meta
-  property="article:published_time" content={{ .Date.Format
-  "2006-01-02T15:04:05Z0700" | safeHTML }} /> {{ with.Params.author }}
+  <meta property="og:article:published_time" content={{ .Date.Format "2006-01-02T15:04:05Z0700" | safeHTML }} /> 
+  <meta property="article:published_time" content={{ .Date.Format "2006-01-02T15:04:05Z0700" | safeHTML }} /> 
+  {{ with.Params.author }}
   <meta property="og:article:author" content="{{humanize . }}" />
   <meta property="article:author" content="{{humanize . }}" />
   <meta name="author" content="{{humanize . }}" />
@@ -204,4 +202,5 @@
       }
     }
   </style>
+  <script src="https://unpkg.com/hyperscript.org@0.9.5"></script>
 </head>
