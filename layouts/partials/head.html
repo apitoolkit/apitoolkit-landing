@@ -1,4 +1,4 @@
-<head>
+<head itemscope>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -105,7 +105,7 @@
   <meta property="article:section" content="{{ index . 0 }}" />
   {{ end }}
 
-  <script defer type="application/ld+json">
+  <script type="application/ld+json">
     {
       "@context": "http://schema.org",
       "@type": "Article",
@@ -137,14 +137,14 @@
   <!-- SEO for non blog pages (website content) -->
   <meta property="og:type" content="website" />
   <meta name="author" content="{{ .Site.Params.author }}" />
-  <script defer type="application/ld+json">
+  <script type="application/ld+json">
     {
       "@context": "http://schema.org",
       "@type": "WebSite",
       "url": "{{ .Permalink }}",
       "sameAs": ["{{ .Site.Params.facebook }}", "{{ .Site.Params.github }}"],
       "name": "{{ .Title }}",
-      "logo": "https://www.example.com/images/brand/favicon.png"
+      "logo": "https://apitoolkit.io/favicon-32x32.png"
     }
   </script>
   {{ end }}
