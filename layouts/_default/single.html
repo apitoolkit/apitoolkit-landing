@@ -1,25 +1,20 @@
 {{ define "main" }}
 <main class="text-center">
-  <section class="our_container w-full">
-    <div class="relative py-16 bg-white overflow-hidden">
-      <div class="relative">
-        <div class="text-lg max-w-prose mx-auto">
-          <div>
-            <span
-              class="block text-base text-center text-indigo-600 font-semibold tracking-wide uppercase"
-              >{{ .Date.Format "Mon Jan 2, 2006" }}</span
-            >
-            <h1
-              class="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl"
-              >{{.Title}}</h1
-            >
-          </h1>
-        </div>
-        <article class="mt-6 prose prose-indigo prose-lg text-gray-500 mx-auto">
-          {{ .Content }}
-        </article>
-      </div>
+  <div class="our_container w-full relative py-16 overflow-hidden">
+    <div class="text-lg max-w-prose mx-auto text-center">
+      <span
+        class="block text-base  text-indigo-600 font-semibold tracking-wide uppercase"
+        >{{ .Date.Format "Mon Jan 2, 2006" }}</span
+      >
+      <h1
+        class="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl"
+      >
+        {{.Title}}
+      </h1>
     </div>
-  </section>
+    <article class="mt-6 prose prose-indigo prose-lg text-gray-500 mx-auto">
+      {{ .Content }}
+    </article>
+  </div>
 </main>
 {{ end }}

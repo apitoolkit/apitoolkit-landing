@@ -2,15 +2,15 @@
 {{if $image}}
   {{ if .Title }}
     <figure>
-      <img  src="{{- $image.RelPermalink -}}" alt="{{- .PlainText | htmlUnescape -}}">
+      <img  src="{{- $image.RelPermalink -}}" alt="{{- .PlainText | htmlUnescape -}}" />
       <figcaption>{{ .Title }}</figcaption>
     </figure>
   {{ else }}
-    <img  src="{{- $image.RelPermalink -}}" alt="{{- .PlainText | htmlUnescape -}}">
+    <img  src="{{- $image.RelPermalink -}}" alt="{{- .PlainText | htmlUnescape -}}" />
   {{ end }}
 {{else}}
 <figure>
-  <img  src="{{.Destination | safeURL}}" alt="{{ .PlainText | htmlUnescape }}">
+   <img  src="{{.Destination | safeURL}}" alt="{{ .PlainText | htmlUnescape }}" />
    <div>{{ .Title | htmlUnescape | safeHTML}}</div>
 </figure>
 {{end}}
