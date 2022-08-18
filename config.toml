@@ -26,4 +26,8 @@ showSummary = true
 [Permalinks]
 post = "/:filename/"
 
+[markup.goldmark.renderer]
+unsafehtml=true
+unsafe=true
+
 [sitemap]
