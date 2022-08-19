@@ -111,7 +111,7 @@ publishdate: 2022-03-24
 <section class="mt-20 text-center">
   <section class="md:max-w-5xl inline-block text-left text-center pt-32 pb-12 text-md">
     
-## Finally **Understand** and **Trust** your APIs
+## Finally **Trust**  and **Understand** your APIs
 
 All the tools you need to understand what's going on in your APIs, Investigate incidents and generate insights. 
 
