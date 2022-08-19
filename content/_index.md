@@ -103,8 +103,8 @@ publishdate: 2022-03-24
 
 <section class="flex items-center justify-center pt-24">
   <div class=" gradient1 p-5 md:max-w-3xl rounded-xl drop-shadow w-full">
-    <div  class="w-full" style="position: relative; padding-bottom: 65.77344701583435%; height: 0;"><iframe class="rounded-lg border-4 border-gray-200 " src="https://www.loom.com/embed/43f1406bb588469b97a3a3ed46768614?hide_title=true&hide_owner=true&hideEmbedTopBar=true" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
-    <div class="mt-2"><a href="" class="inline-block bg-blue-900 text-white px-3 py-1 text-xs rounded-lg" >Learn how APIToolkit works (Video)</a></div>
+    <div  class="w-full" style="position: relative; padding-bottom: 65.77344701583435%; height: 0;"><iframe class="rounded-lg border-4 border-gray-200 " src="https://www.loom.com/embed/24ea3ae9600544d68f1001af3f4feac2?hide_title=true&hide_owner=true&hideEmbedTopBar=true" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+    <div class="mt-2"><a href="https://www.loom.com/share/24ea3ae9600544d68f1001af3f4feac2" target="_blank" class="inline-block bg-blue-900 text-white px-3 py-1 text-xs rounded-lg" >Learn how APIToolkit works (Video)</a></div>
   </div>
 </section>
 
@@ -116,7 +116,7 @@ publishdate: 2022-03-24
 ## Finally **Trust**  and **Understand** your APIs
 
 <br/>
-Inovating is hard! Super hard! Everyday brings a new curveball. How can you secure what you can't see? How can you fix a problem you can't find?
+Inovating is hard! Super hard! Everyday brings a new curveball. How do you secure what you can't see? How do you fix a problem you can't find?
 The list of problems modern backend systems have to deal with are endless. And that's why we're here;
 
 All the tools you need to understand what's going on in your APIs, Investigate incidents and generate insights. 
