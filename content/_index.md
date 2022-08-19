@@ -109,16 +109,14 @@ publishdate: 2022-03-24
 </section>
 
 <section class="mt-20 text-center">
-  <section class="md:max-w-5xl text-left text-center pt-32 pb-12 text-md">
+  <section class="md:max-w-5xl text-left text-left">
+    <div class="md:max-w-5xl text-left text-center pt-32 pb-12 text-md">
     
 ## Finally **Trust**  and **Understand** your APIs
 
 All the tools you need to understand what's going on in your APIs, Investigate incidents and generate insights. 
 
-  </section>
-
-
-  <section class="md:max-w-5xl text-left text-left">
+  </div>
 
 {{% benefits_section %}}
 <div  class="home-feature-image-div">
