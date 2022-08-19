@@ -173,18 +173,34 @@ Our API Metrics detect and show you endpoint latency degradations, and our AI ca
 {{% benefits_section %}}
 <div  class="flex-1  home-feature-text-box">
 
-##### Documentation and Overview
+##### Mission Control for your APIs 
 ## BIRDS EYE VIEW OF YOUR ENTIRE API
 Get a live and in-depth view of your API. View your endpoints, fields, and even export your API as swagger if you like.
 The always up to date documentation is generated automatically from your live traffic.
 
-<a class="text-blue-900" href="">More about Automatic Documenter →</a>
+<a class="text-blue-900" href="">More about Mission Control for your APIs→</a>
 
 </div>
 <div class="home-feature-image-div">
   <img src="./endpoints_list.png"/>
 </div>
 
+{{% /benefits_section %}}
+
+{{% benefits_section %}}
+<div  class="home-feature-image-div">
+  <img src="./field_documentation.png"/>
+</div>
+<div  class="flex-1  home-feature-text-box">
+
+##### Documentation and Overview
+## ALWAYS UP TO DATE API DOCUMENTATION
+Documenting is very hard, but not anymore. Apitoolkit generates always up to date docs based on your live API traffic.
+You get a gentle nudge when new fields are added, so you can add any extra context our AI might have missed.
+
+<a class="text-blue-900" href="">More about our Automatic Documenter →</a>
+
+</div>
 {{% /benefits_section %}}
 
 {{% benefits_section %}}
