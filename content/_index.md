@@ -109,7 +109,7 @@ publishdate: 2022-03-24
 </section>
 
 <section class="mt-20 text-center">
-  <section class="md:max-w-5xl inline-block text-left text-center pt-32 pb-12 text-md">
+  <section class="md:max-w-5xl text-left text-center pt-32 pb-12 text-md">
     
 ## Finally **Trust**  and **Understand** your APIs
 
@@ -118,7 +118,7 @@ All the tools you need to understand what's going on in your APIs, Investigate i
   </section>
 
 
-  <section class="md:max-w-5xl inline-block text-left text-left">
+  <section class="md:max-w-5xl text-left text-left">
 
 {{% benefits_section %}}
 <div  class="home-feature-image-div">
@@ -197,11 +197,10 @@ When something goes wrong, notify the right person at the right time over slack,
 </div>
 {{% /benefits_section %}}
 
-{{< rawhtml >}}
   </section>
 </section>
 
-{{< container >}}
+{{% container %}}
   <section class="pt-20 sm:pt-36">
     <!-- integrations -->
     <div class="flex flex-row gap-2 md:gap-10 flex-wrap text-xs sm:text-base">
@@ -217,53 +216,58 @@ When something goes wrong, notify the right person at the right time over slack,
       <span class="flex-grow text-right">&<br />more</span>
     </div>
   </section>
-  <section class="mt-28 mb-48">
+  <section class="mt-48 mb-28">
     <!-- Founders note -->
-    <div
-      class="px-16 py-14 bg-gray-100 text-blue-title filter drop-shadow-xl text-sm rounded-sm"
-      style="box-shadow: 0px 0px 18px -1px #7286c0"
-    >
-      <h3 class="">Founders Note</h3>
-      <h4>Or Why we are solving API observability</h4>
-      <div class="pt-3 space-y-4 leading-5 text-xs columns-2 gap-4 ">
-        <p>
-          A few years ago, I was a new hire at a food delivery company,
-          migrating a legacy service from PHP to Golang. We implemented the
-          fields listed in the swagger docs, and compared the responses from
-          the legacy service to the responses of the new service, fixing
-          differences until everything matched. After weeks of implementation
-          and testing, we rolled out the new service after running tests to
-          make sure everything worked as expected. But immediately we looked
-          at our order monitoring charts, we knew we had messed up. Within
-          10mins, 20k orders lost. I was terrified. What happened?
-        </p>
-        <p>
-          Apparently in a couple countries we ran in, a particular field which
-          was expected by the apps was no longer being sent, prevent placing
-          of orders. We had no idea since this field was not in the inherited
-          documentation, and was only applicable in a couple countries which
-          were not part of the samples we manually tested. We rolled back and
-          fixed the issue, but I was sad that there was no tool which could
-          have detected this issue faster.
-        </p>
-        <p>
-          Years later, this is that tool, and we would love to listen to
-          similar stories you've experienced, and help make such stories a
-          thing of the past.
-        </p>
-        <p class="text-sm text-right">
-          Anthony (<a
-            href="https://twitter.com/tonialaribe"
-            class="text-blue-800"
-            >@tonialaribe</a
-          >) and Smile(<a
-            href="https://twitter.com/SmileEgbai"
-            class="text-blue-800"
-            >@smilecs</a
-          >)
-        </p>
-      </div>
-    </div>
+
+### Founders Note
+##### Or Why we are solving API observability
+
+
+  <br/>
+  <div
+    class="px-12 py-8 bg-gray-50 border border-gray-200 text-blue-title filter drop-shadow-xl text-sm rounded-sm monospace"
+  >
+    <div class="pt-2 space-y-4 leading-5 text-xs columns-2 gap-8 ">
+
+A few years ago, I was a new hire at a food delivery company,
+migrating a legacy service from PHP to Golang. We implemented the
+fields listed in the swagger docs, and compared the responses from
+the legacy service to the responses of the new service, fixing
+differences until everything matched. 
+
+After weeks of implementation and testing, 
+we rolled out the new service after running tests to
+make sure everything worked as expected. But immediately we looked
+at our order monitoring charts, we knew we had messed up. Within
+10mins, 20k orders lost. I was terrified. What happened?
+
+Apparently in a couple countries we ran in, a particular field which
+was expected by the apps was no longer being sent, prevent placing
+of orders. We had no idea since this field was not in the inherited
+documentation, and was only applicable in a couple countries which
+were not part of the samples we manually tested. 
+
+We rolled back and fixed the issue, 
+but I was sad that there was no tool which could
+have detected this issue faster.
+
+Years later, this is that tool, and we would love to listen to
+similar stories you've experienced, and help make such stories a
+thing of the past.
+
+  <p class="text-xs text-right">
+    Anthony (<a
+      href="https://twitter.com/tonialaribe"
+      class="text-blue-800"
+      >@tonialaribe</a
+    >) and Smile(<a
+      href="https://twitter.com/SmileEgbai"
+      class="text-blue-800"
+      >@smilecs</a
+    >)
+  </p>
+  </div>
+</div>
   </section>
   <section class="my-24 hidden">
     <h3 class="text-3xl mb-20">Features?</h3>
@@ -331,7 +335,7 @@ When something goes wrong, notify the right person at the right time over slack,
       <!--..-->
     </section>
   </section>
-{{< /container >}}
+{{% /container %}}
 
   <section class="bg-yellow-100 mt-32 text-black">
     {{< container >}}
@@ -370,7 +374,6 @@ When something goes wrong, notify the right person at the right time over slack,
     </div>
     {{</container>}}
   </section>
-{{< /rawhtml >}}
 
 {{< rawhtml >}}
 <section class="flex flex-row justify-center">
