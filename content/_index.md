@@ -109,10 +109,15 @@ publishdate: 2022-03-24
 </section>
 
 <section class="mt-20 text-center">
-  <section class="md:max-w-5xl text-left text-left">
-    <div class="md:max-w-5xl text-left text-center pt-32 pb-12 text-md">
+  <section class="md:max-w-5xl inline-block text-left text-left">
+    <div class="md:max-w-5xl text-left  pt-44 pb-32 text-md">
     
+###### WHY APITOOLKIT?
 ## Finally **Trust**  and **Understand** your APIs
+
+<br/>
+Inovating is hard! Super hard! Everyday brings a new curveball. How can you secure what you can't see? How can you fix a problem you can't find?
+The list of problems modern backend systems have to deal with are endless. And that's why we're here;
 
 All the tools you need to understand what's going on in your APIs, Investigate incidents and generate insights. 
 

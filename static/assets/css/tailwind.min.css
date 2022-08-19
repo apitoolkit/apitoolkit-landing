@@ -2476,6 +2476,14 @@ img {
   padding-top: 0.5rem;
 }
 
+.pt-44 {
+  padding-top: 11rem;
+}
+
+.pb-32 {
+  padding-bottom: 8rem;
+}
+
 .text-left {
   text-align: left;
 }
