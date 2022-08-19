@@ -45,7 +45,7 @@ publishdate: 2022-03-24
               class="w-24 inline-block"
             />
           </div>
-          <div class="space-y-2 text-sm sm:pt-8" id="waitlist-form-1">
+          <div class="space-y-2 text-sm sm:pt-4" id="waitlist-form-1">
             <small class="text-blue-900"
               >APIToolkit is still in closed beta. But you can join the
               waitlist below</small
@@ -102,14 +102,22 @@ publishdate: 2022-03-24
 {{</ rawhtml >}}
 
 <section class="flex items-center justify-center pt-24">
-  <div class=" gradient1 p-5 md:max-w-3xl rounded-xl drop-shadow">
-    <img src="./dashboard_full.png"  class="border-4 border-gray-200 rounded-lg"/>
-    <div><a href="" >Learn how APIToolkit works (Video)</a></div>
-<div style="position: relative; padding-bottom: 65.77344701583435%; height: 0;"><iframe src="https://www.loom.com/embed/43f1406bb588469b97a3a3ed46768614" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+  <div class=" gradient1 p-5 md:max-w-3xl rounded-xl drop-shadow w-full">
+    <div  class="w-full" style="position: relative; padding-bottom: 65.77344701583435%; height: 0;"><iframe class="rounded-lg border-4 border-gray-200 " src="https://www.loom.com/embed/43f1406bb588469b97a3a3ed46768614?hide_title=true&hide_owner=true&hideEmbedTopBar=true" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+    <div class="mt-2"><a href="" class="inline-block bg-blue-900 text-white px-3 py-1 text-xs rounded-lg" >Learn how APIToolkit works (Video)</a></div>
   </div>
 </section>
 
 <section class="mt-20 text-center">
+  <section class="md:max-w-5xl inline-block text-left text-center pt-32 pb-12 text-md">
+    
+## Finally **Understand** and **Trust** your APIs
+
+All the tools you need to understand what's going on in your APIs, Investigate incidents and generate insights. 
+
+  </section>
+
+
   <section class="md:max-w-5xl inline-block text-left text-left">
 
 {{% benefits_section %}}
@@ -217,7 +225,7 @@ When something goes wrong, notify the right person at the right time over slack,
     >
       <h3 class="">Founders Note</h3>
       <h4>Or Why we are solving API observability</h4>
-      <div class="pt-3 space-y-4 leading-6 text-sm">
+      <div class="pt-3 space-y-4 leading-5 text-xs columns-2 gap-4 ">
         <p>
           A few years ago, I was a new hire at a food delivery company,
           migrating a legacy service from PHP to Golang. We implemented the
