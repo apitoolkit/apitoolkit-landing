@@ -57,7 +57,7 @@ html, body {
     @apply py-3;
   }
   .home-feature-text-box {
-      @apply px-8 max-w-prose; 
+      @apply px-4 max-w-prose; 
    }
 
   .gradient1{
@@ -69,10 +69,10 @@ html, body {
 
   .bg-gradient-yellow{
       background: hsla(38, 81%, 52%, 1);
-      background: linear-gradient(90deg, hsla(38, 81%, 52%, 1) 0%, hsla(62, 76%, 64%, 1) 100%);
-      background: -moz-linear-gradient(90deg, hsla(38, 81%, 52%, 1) 0%, hsla(62, 76%, 64%, 1) 100%);
-      background: -webkit-linear-gradient(90deg, hsla(38, 81%, 52%, 1) 0%, hsla(62, 76%, 64%, 1) 100%);
-      filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#E89D1F", endColorstr="#E4E95D", GradientType=1 );
+
+      background: #0f0c29;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     }
 
     /* https://coolors.co/palette/dc562e-001d3d-003566-ffc300-ffd60a */
@@ -97,6 +97,14 @@ html, body {
     .bg-bisque-x {
       background-color: hsl(33deg 100% 88%);
     }
+
+    .pricing-card {
+      @apply border border-gray-100 ;
+    }
+    .pricing-card .flex-1 {
+      @apply divide-x divide-gray-200;
+    }
+    
 
 }
 

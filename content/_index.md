@@ -110,7 +110,7 @@ publishdate: 2022-03-24
 
 <section class="mt-20 text-center">
   <section class="md:max-w-5xl inline-block text-left text-left">
-    <div class="md:max-w-5xl text-left px-5  pt-44 pb-32 text-md">
+    <div class="md:max-w-4xl text-left px-5  pt-44 pb-32 text-md">
     
 ###### WHY APITOOLKIT?
 ## Finally **Trust**  and **Understand** your APIs
@@ -119,6 +119,8 @@ publishdate: 2022-03-24
 Inovating is hard! Super hard! Everyday brings a new curveball. How do you secure what you can't see? How do you fix a problem you can't find?
 The list of problems modern backend systems have to deal with are endless. And that's why we're here;
 
+<br/>
+<br/>
 All the tools you need to understand what's going on in your APIs, Investigate incidents and generate insights. 
 
   </div>
@@ -356,7 +358,7 @@ thing of the past.
   </section>
 {{% /container %}}
 
-  <section class="bg-gradient-yellow xbg-yellow-100 mt-32 text-black gradient-yellow">
+  <section class="bg-gradient-yellow xbg-yellow-100 mt-32 text-white gradient-yellow">
     {{% container %}}
 <div class="space-y-5 py-16 sm:py-36 max-w-prose sm:text-lg">
 
