@@ -66,6 +66,38 @@ html, body {
     /* background: linear-gradient(to right, #F45C43, #EB3349); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
     background: linear-gradient(to right, rgba(169,208,113,0.05), rgba(136,173,215,0.15));
     }
+
+  .bg-gradient-yellow{
+      background: hsla(38, 81%, 52%, 1);
+      background: linear-gradient(90deg, hsla(38, 81%, 52%, 1) 0%, hsla(62, 76%, 64%, 1) 100%);
+      background: -moz-linear-gradient(90deg, hsla(38, 81%, 52%, 1) 0%, hsla(62, 76%, 64%, 1) 100%);
+      background: -webkit-linear-gradient(90deg, hsla(38, 81%, 52%, 1) 0%, hsla(62, 76%, 64%, 1) 100%);
+      filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#E89D1F", endColorstr="#E4E95D", GradientType=1 );
+    }
+
+    /* https://coolors.co/palette/dc562e-001d3d-003566-ffc300-ffd60a */
+    .bg-yellow-x-dark {
+      background-color: hsla(46, 100%, 50%, 1);
+    }
+    .bg-yellow-x-light {
+      background-color: hsla(50, 100%, 52%, 1);
+    }
+    .text-blue-x-dark {
+      color:  hsla(211, 100%, 1%, 1);
+    }
+    .bg-blue-x-dark {
+      background-color: hsla(211, 100%, 1%, 1);
+    } 
+    .bg-blue-x-light {
+      background-color: hsla(209, 100%, 20%, 1);
+    }
+    .bg-orange-x-dark {
+      background-color: hsla(14, 71%, 52%, 1);
+    }
+    .bg-bisque-x {
+      background-color: hsl(33deg 100% 88%);
+    }
+
 }
 
 .ul-1 {@apply pl-3 pb-1 space-y-1; }

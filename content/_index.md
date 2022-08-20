@@ -110,7 +110,7 @@ publishdate: 2022-03-24
 
 <section class="mt-20 text-center">
   <section class="md:max-w-5xl inline-block text-left text-left">
-    <div class="md:max-w-5xl text-left  pt-44 pb-32 text-md">
+    <div class="md:max-w-5xl text-left px-5  pt-44 pb-32 text-md">
     
 ###### WHY APITOOLKIT?
 ## Finally **Trust**  and **Understand** your APIs
@@ -204,7 +204,7 @@ You get a gentle nudge when new fields are added, so you can add any extra conte
 {{% /benefits_section %}}
 
 {{% benefits_section %}}
-<div  class="">
+<div  class="p-5">
 
 ##### Alerting and incident management 
 ## ALERT THE RIGHT PERSON AT THE RIGHT TIME 
@@ -244,9 +244,9 @@ When something goes wrong, notify the right person at the right time over slack,
 
   <br/>
   <div
-    class="px-12 py-8 bg-gray-50 border border-gray-200 text-blue-title filter drop-shadow-xl text-sm rounded-sm monospace"
+    class="px-5 sm:px-12 py-8 bg-gray-50 border border-gray-200 text-blue-title filter drop-shadow-xl text-sm rounded-sm monospace"
   >
-    <div class="pt-2 space-y-4 leading-5 text-xs columns-2 gap-8 ">
+    <div class="pt-2 space-y-4 leading-5 text-xs sm:columns-2 gap-8 ">
 
 A few years ago, I was a new hire at a food delivery company,
 migrating a legacy service from PHP to Golang. We implemented the
@@ -356,42 +356,39 @@ thing of the past.
   </section>
 {{% /container %}}
 
-  <section class="bg-yellow-100 mt-32 text-black">
-    {{< container >}}
-    <div class="space-y-5 py-16 sm:py-36">
-      <h3 class="font-bold text-lg">
-        APIToolkit is built by real engineers to solve problems that have cost
-        their employers lots of money in the past.
-      </h3>
-      <p>
-        We’re engineers at our core, who are very close to the problems we are
-        solving. So, we encourage our users to be a part of this community
-        evolving solutions to solve API documentation and observability.
-      </p>
-      <p>
-        You can do this by joining our Discord channel to join others who are
-        part of our journey in evolving APIToolkit or book a slot to have an
-        open conversation with us. We’re always open to have a chat with
-        everyone and learn about their experiences around API documentation and
-        observability.
-      </p>
-      <div class="flex flex-row items-center">
-        <a
-          class="inline-block"
-          href="https://discord.gg/dEB6EjQnKB"
-          target="_blank"
-          ><img class="w-32" src="/assets/img/jointhediscord.png"
-        /></a>
-        <span class="inline-block px-3">Or</span>
-        <a
-          class="inline-block rounded bg-gray-100 hover:bg-gray-200 text-black px-8 py-2 shadow"
-          href="https://calendly.com/tonyalaribe/30min"
-          target="_blank"
-          >Let's find a time slot for a Chat</a
-        >
-      </div>
-    </div>
-    {{</container>}}
+  <section class="bg-gradient-yellow xbg-yellow-100 mt-32 text-black gradient-yellow">
+    {{% container %}}
+<div class="space-y-5 py-16 sm:py-36 max-w-prose sm:text-lg">
+
+  ## APIToolkit is built by real engineers to solve problems that have cost them a lot in the past.
+
+  We’re engineers at our core, who are very close to the problems we are
+  solving. So, we encourage our users to be a part of this community
+  evolving solutions to solve API documentation, management and observability.
+
+  You can do this by joining our Discord channel to join others who are
+  part of our journey in evolving APIToolkit or book a slot to have an
+  open conversation with us. We’re always open to have a chat with
+  everyone and learn about their experiences around API documentation and
+  observability.
+
+  <div class="flex flex-row items-center pt-8">
+    <a
+      class="inline-block drop-shadow-xl"
+      href="https://discord.gg/dEB6EjQnKB"
+      target="_blank"
+      ><img class="w-32" src="/assets/img/jointhediscord.png"
+    /></a>
+    <span class="inline-block px-3">Or</span>
+    <a
+      class="inline-block rounded bg-bisque-x text-blue-x-dark px-8 py-2 drop-shadow-xl hover:drop-shadow hover:shadow-md"
+      href="https://calendly.com/tonyalaribe/30min"
+      target="_blank"
+      >Let's have a Chat</a
+    >
+  </div>
+</div>
+    {{% /container%}}
   </section>
 
 {{< rawhtml >}}
