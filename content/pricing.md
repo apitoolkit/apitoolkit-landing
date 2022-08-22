@@ -7,7 +7,7 @@ layout: baseonly
 <section class="text-center pt-5">
 Trust your APIs, and only pay for what you use as you grow.
 
-<div class="flex flex-col sm:flex-row text-sm bg-white drop-shadow-xl pricing-card mt-8 divide-x border-2">
+<div class="flex flex-col sm:flex-row text-sm bg-white drop-shadow-xl pricing-card mt-8  divide-y  divide-x border-2">
 <div class="flex-1">
 
 ### Free
