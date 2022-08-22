@@ -29,16 +29,16 @@ Last *14 days Data Retained<br/>
 <div class="px-3 py-5">
 <input type="range" value="0" 
     for="startup-price"
-    min="1000000"
-    max="15000000"
+    min="500000"
+    max="5000000"
     steps="10000"
-    _="on change set price to parseFloat(Math.trunc((((my value)-1000000)/10000)+50)).toLocaleString('en-US') then 
+    _="on change set price to parseFloat(Math.trunc((((my value)-(my min))/10000)+50)).toLocaleString('en-US') then 
                  set #startup-price.innerHTML to `${price}` then 
                  set #startup-reqs.innerHTML to (parseFloat(my value).toLocaleString('en-US'))"
     class="price-range">
 </div>
 
-<strong id="startup-reqs">1,000,000</strong> Reqs / mo <small>included</small><br/>
+<strong id="startup-reqs">500,000</strong> Reqs / mo <small>included</small><br/>
 $1 per extra 10,000 reqs <br/>
 
 3 Team Member <br/>
@@ -55,17 +55,17 @@ Last *14 days Data Retained<br/>
 <div class="px-3 py-5">
   <input type="range" value="0" 
     for="growth-price"
-    min="10000000"
+    min="5000000"
     max="100000000"
     steps="15000"
-    _="on change set price to parseFloat(Math.trunc((((my value)-10000000)/15000)+250)).toLocaleString('en-US') then 
+    _="on change set price to parseFloat(Math.trunc((((my value)-(my min))/12000)+250)).toLocaleString('en-US') then 
                  set #growth-price.innerHTML to `${price}` then 
                  set #growth-reqs.innerHTML to (parseFloat(my value).toLocaleString('en-US'))"
     class="price-range ">
 </div>
 
-<strong id="growth-reqs">10,000,000</strong> Reqs / mo <small>included</small><br/>
-$1 per extra 15,000 reqs <br/>
+<strong id="growth-reqs">5,000,000</strong> Reqs / mo <small>included</small><br/>
+$1 per extra 12,000 reqs <br/>
 
 10 Team members <br/>
 Last *14 days Data Retained 
