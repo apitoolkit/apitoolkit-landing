@@ -116,7 +116,7 @@ publishdate: 2022-03-24
 ## Finally **Trust**  and **Understand** your APIs
 
 <br/>
-Inovating is hard! Super hard! Everyday brings a new curveball. How do you secure what you can't see? How do you fix a problem you can't find?
+Innovating is hard! Super hard! Everyday brings a new curveball. How do you secure what you can't see? How do you fix a problem you can't find?
 The list of problems modern backend systems have to deal with are endless. And that's why we're here;
 
 <br/>
