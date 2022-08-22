@@ -109,7 +109,7 @@ publishdate: 2022-03-24
 </section>
 
 <section class="mt-20 text-center">
-  <section class="md:max-w-5xl inline-block text-left text-left">
+  <section class="md:max-w-5xl inline-block text-left">
     <div class="md:max-w-4xl text-left px-5  pt-44 pb-32 text-md">
     
 ###### WHY APITOOLKIT?

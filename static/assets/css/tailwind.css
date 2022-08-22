@@ -39,6 +39,10 @@ html, body {
   .feature_img {
     @apply w-32 sm:w-64 col-span-2;
   }
+        
+  .blue-button{
+    @apply  drop-shadow  rounded-md bg-blue-900 hover:bg-blue-800 border-blue-900 text-xs text-white inline-block px-4 py-2 mt-2 sm:mt-0 no-underline;
+  }
 
   .home-feature-image-div {
     @apply flex flex-1 aspect-[4/3] prose prose-2xl;
@@ -102,9 +106,24 @@ html, body {
       @apply border border-gray-100 ;
     }
     .pricing-card .flex-1 {
-      @apply divide-x divide-gray-200;
+      @apply p-3 flex flex-col  place-content-around;
     }
-    
+    .pricing-card .flex-1 > h3 {
+      @apply text-3xl font-medium pb-3;
+    }
+    .pricing-card .flex-1 > h4 > strong {
+      @apply text-4xl font-medium;
+    }
+    .pricing-card h3, .pricing-card h4, .pricing-card strong  {
+      color: currentColor;
+    }
+    .pricing-card h4  {
+      @apply font-medium;
+    }
+    .pricing-card  .price-range {
+      @apply w-full h-1 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700;
+    }
+
 
 }
 
