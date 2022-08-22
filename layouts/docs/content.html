@@ -1,9 +1,9 @@
 <section class="flex flex-col md:flex-row divide-x divide-slate-200 border-y border-slate-200 mt-3">
-  <aside class="md:w-1/5 text-slate-800 text-lg">
+  <aside class="md:w-1/5 text-slate-800 text-md px-2">
     {{ partial "sidebar-tree.html" . }}
   </aside>
   <main class="grow p-5 lg:p-8">
-    <div class="td-content prose md:prose-xl prose-slate pt-5">
+    <div class="td-content prose sm:prose-md prose-slate pt-5">
       <h1>{{ .Title }}</h1>
       {{ with .Params.description }}<div class="lead">{{ . | markdownify }}</div>{{ end }}
       <header class="article-meta">
