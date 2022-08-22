@@ -165,7 +165,7 @@ Your API requests are logged for you on Apitoolkit, so you can query, explore an
 
 ##### Performance monitoring
 ## DETECT AND TRACK SLOW ENDPOINTS 
-Our API Metrics detect and show you endpoint latency degradations, and our AI can suggest when theres room for improment. Eg data that could be cached easily.
+Our API Metrics detect and show you endpoint latency degradations, and our AI can suggest when there's room for improvement. Eg data that could be cached easily.
 
 <a class="text-blue-900" href="">More about the performance metrics →</a>
 
@@ -211,7 +211,7 @@ You get a gentle nudge when new fields are added, so you can add any extra conte
 ##### Alerting and incident management 
 ## ALERT THE RIGHT PERSON AT THE RIGHT TIME 
 
-When something goes wrong, notify the right person at the right time over slack, pagerduty, opsgenie or anyother platform via our zapier integrations. 
+When something goes wrong, notify the right person at the right time over slack, pagerduty, opsgenie or any other platform via our zapier integrations. 
 
 <a class="text-blue-900" href="">Learn about our incident management integrations.</a>
 
