@@ -1,6 +1,6 @@
 ---
 title: Privacy Policy
-date: 2022-08-23
+date: 2022-08-21
 <!-- layout: baseonly -->
 ---
 <br/>
