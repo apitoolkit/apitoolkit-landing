@@ -62,6 +62,10 @@ We reserve the right, but are not obligated, to limit the sales of our products 
 
 We do not warrant that the quality of any products, services, information, or other material purchased or obtained by you will meet your expectations, or that any errors in the Service will be corrected.
 
+### SECTION 5.1 - REFUNDS
+
+Our refund policy lasts 30 days. If 30 days have gone by since your last payment, unfortunately we can’t offer you a refund or exchange.
+You can get a refund for any payment you made in the last month at any point in time, but that automatically downgrades your account to the free plan, and locks you out if you exceed the free plan limits.
 
 
 ### SECTION 6 - ACCURACY OF BILLING AND ACCOUNT INFORMATION
