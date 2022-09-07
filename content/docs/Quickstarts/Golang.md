@@ -10,6 +10,7 @@ menu:
 
 The API Toolkit golang client is an sdk used to integrate golang web services with APIToolkit. It monitors incoming traffic, gathers the requests and sends the request to the apitoolkit servers.
 
+
 ## Design decisions:
 - The SDK relies on google cloud pubsub over grpc behind the scenes, to ensure that your traffic is communicated to APIToolkit for processing in the most efficient ways.
 - Processing the live traffic in this way, allows :
