@@ -1,7 +1,11 @@
 ---
-# Title: Benefits of API Integration
-Date: 2022-09-04
-Publish date: 2022-09-02
+title: Benefits of API Interation
+date: 2022-09-02
+publishdate: 2022-09-04
+weight: 20
+menu:
+  main:
+    weight: 20
 ---
 There have been a lot of discussions lately about the critical role APIs play in enhancing any web based activity
 
