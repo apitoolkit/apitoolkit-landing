@@ -31,3 +31,4 @@ unsafehtml=true
 unsafe=true
 
 [sitemap]
+theme="apitoolkit" 

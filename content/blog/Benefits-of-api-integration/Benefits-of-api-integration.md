@@ -1,18 +1,13 @@
 ---
-title: Benefits of API Interation
-date: 2022-09-02
-publishdate: 2022-09-04
-weight: 20
-menu:
-  main:
-    weight: 20
+title: "Benefits of API Integration to Developers"
+date: 2022-09-09T10:48:25+01:00
 ---
+![benefit-of-api](api-example.jpg)
 There have been a lot of discussions lately about the critical role APIs play in enhancing any web based activity
 
 Although the developer's perspective has not received as much attention, APIs are also very helpful to almost every set of specialists. They allow developers to work with stakeholders to improve agency systems, creating more potential.
 
 APIs also known as Application Programming Interfaces have been around for a while and have established themselves as crucial technology in numerous industries. APIs enable various kinds of technology to communicate with each other more quickly and simply, from the IT industry to users in the government. Right now we can say that APIs are now more crucial than ever, with big data revealing a lot of information as new technologies emerge. This is a wonderful time to integrate your business with an API because of the advantages that APIs provide.
-![benefitsofapi](../R.png)
 
 ## Benefits of API use for developers 
 API integration can cut costs and time to market by up to 90%. Apart from cutting cost this integration has a lot of potential benefits for you. Here, we've outlined the main advantages of integrating APIs into your company.
