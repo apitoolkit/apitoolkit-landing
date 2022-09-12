@@ -1,14 +1,13 @@
 ---
 title: Golang 
-date: 2022-09-09
-publishdate: 2022-09-09
+date: 2022-03-23
+publishdate: 2022-03-24
 weight: 20
 menu:
   main:
     weight: 20
 ---
-
-To integrate golang web services with API Toolkit, an SDK called the golang client for API Toolkit is utilized. It keeps track of incoming traffic, aggregates the requests, and then delivers them to the apitoolkit servers.We'll concentrate on providing a step-by-step instruction for integrating an API toolkit into our Golang web service in this tutorial. 
+To integrate golang web services with API Toolkit, an SDK called the golang client for API Toolkit is utilized. It keeps track of incoming traffic, aggregates the requests, and then delivers them to the apitoolkit servers. We'll concentrate on providing a step-by-step instruction for integrating an API toolkit into our Golang web service in this tutorial.  
 
 ## Design decisions:
 - The SDK relies on google cloud pubsub over grpc behind the scenes, to ensure that your traffic is communicated to APIToolkit for processing in the most efficient ways.
@@ -17,11 +16,12 @@ To integrate golang web services with API Toolkit, an SDK called the golang clie
   2. Users to explore their API live, via the api log explorer.
 
 ## How to Integrate with Gin router:
-1. First things first: Before integrating, always ensure that your codes are functioning properly.
-2. Sign up / Sign in to the API dashboard
-3. Create a project, generate your API key, and include a brief description of your work. And to prevent losing your key after it has been generated, remember to make a copy of it. 
-4. Initialize the middleware with the APItoolkit API key like you see below:
-
+1. Sign up / Sign in to the API dashboard
+   ![Sign up / Sign in](../../Sign%20in.png)
+2. Create a project, generate your API key, and include a brief description of your work. And to prevent losing your key after it has been generated, remember to make a copy of it. 
+    ![API key generation](../../API%20keys%20generation.png)
+3. Initialize the middleware with the APItoolkit API key like you see below:
+   
 ``` go
 package main
 
@@ -47,6 +47,7 @@ func main() {
  	...
 }
 ```
-3. Deploy your application and enjoy exploring and managing your API via the APIToolkit dashboards and API log explorer
-
+4. Deploy your application and enjoy exploring and managing your API via the APIToolkit dashboards and API log explorer
+   
+![Endpoint-after-integration](../../Endpoint%20screenshot%20II.png)
 Now this is what your dashboard should look like after a successful integration
