@@ -7,6 +7,7 @@ menu:
   main:
     weight: 20
 ---
+
 API keys are unique identifiers that are used to authenticate user’s identity. The API key is a crucial component of integrating APIs into your programs. Your uniqueness and distinctiveness as a developer are determined by this factor.  
 
 How to Generate API keys in APIToolkit
@@ -22,3 +23,4 @@ And presto, your API keys are ready
 The keys must be copied to your clipboard in order to utilize the API and prevent loss. 
 [Generated-keys](../generating-api-keys.md)
 Voila! You can go ahead and integrate your API
+
