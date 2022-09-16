@@ -12,6 +12,7 @@ API keys are unique identifiers that are used to authenticate user’s identity.
 How to Generate API keys in APIToolkit
 Sign up / Sign in to the [API dashboard](https://app.apitoolkit.io)
 ![Sign up / Sign in](../signin.png)
+Go ahead to create a project 
 [Create a project](/docs/dashboard/creating-a-project/) 
 Then move on to create your API keys
 ![Create your API keys](../generated-keys.png)
