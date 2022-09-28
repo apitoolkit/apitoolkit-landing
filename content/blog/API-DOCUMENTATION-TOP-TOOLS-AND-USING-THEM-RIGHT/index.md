@@ -26,21 +26,38 @@ These pieces of documentation are so effective for the following reasons:
 - Make no assumptions about the reader's prior knowledge. Be direct yet detailed. 
 - Be well organized. Give information in a well-structured, consistent, and simple manner to enable users to read fluently. For users trying to learn something new or find a solution to a problem, this lowers friction. 
 
-## Basic Tools for API Documentation 
-Tools for API documentation are widely available. Our selection of the essentials is listed below 
+## Basic API Documentation Tools
+There are various API documentation tool that are widely available. Here is our selection of the essentials 
 
-- Postman: Postman's online API documentation tool can help you create and maintain machine-readable API documentation. Postman automatically pulls your sample requests, headers, code snippets, and more to populate your documentation with dynamic examples and machine-readable instructions. It also automatically updates your documentation when you make changes to your collection. What’s unique about Postman is its commenting feature. Using this functionality, you can provide comments and code reviews to share feedback and notify your teammates of any changes or errors in real-time. 
+- Postman
+![postman](./draft%20-%20API%20Documentation%20Tool.png)
+Postman's online API documentation tool can help you create and maintain machine-readable API documentation. Postman automatically pulls your sample requests, headers, code snippets, and more to populate your documentation with dynamic examples and machine-readable instructions. It also automatically updates your documentation when you make changes to your collection. What’s unique about Postman is its commenting feature. Using this functionality, you can provide comments and code reviews to share feedback and notify your teammates of any changes or errors in real-time. 
 
-- SwagerHub: This is ideal for teams and enterprises, SwaggerHub is an online API documentation tool designed to simplify and accelerate API documentation. Using the API editor, you can more easily achieve compliance with OpenAPI Specifications (OAS), previously known as Swagger. They offer features like smart error feedback and syntax auto-completion with an embedded API design rules that reinforce standards in real-time. Another feature is the real-time commenting and issue tracking making it great to comment as a developer.
+- Dropbox API Reference
+![Dropbox](./Dropbox-API.jpg)
+This dropbox API Reference ia an outstanding example of top-notch reference material. In contrast to the other competitors on this list, Dropbox asks you to select your preferred programming language before giving you documentation specifically for that language. 
+  
+- SwaggerHub
+![Swaggerhub](./Screenshot%20(52).png)
+This is ideal for teams and enterprises, SwaggerHub is an online API documentation tool designed to simplify and accelerate API documentation. Using the API editor, you can more easily achieve compliance with OpenAPI Specifications (OAS), previously known as Swagger. They offer features like smart error feedback and syntax auto-completion with an embedded API design rules that reinforce standards in real-time. Another feature is the real-time commenting and issue tracking making it great to comment as a developer.
 
-- Dropbox API Reference: This dropbox API Reference ia an outstanding example of top-notch reference material. In contrast to the other competitors on this list, Dropbox asks you to select your preferred programming language before giving you documentation specifically for that language. 
 
 The simplicity of Dropbox's strategy is why we like it. It provides you with particular implementation guidance for your selected language rather than inundating you with material that fills the entire page. The lesson is to consider different dev backgrounds. Quickstart instructions, endpoint definitions, code snippets, and sample replies are included in the authentication guide. It is optimized for new users and smaller enterprises with a more streamlined and uncomplicated document that allows you to create rich, interactive websites for the APIs.
 
-- GitHub API Documentation: The REST API documentation for GitHub is also highly lauded by developers. Github's documentation doesn't attempt to cram too much information onto a single page, similar to Dropbox. The straightforward menu in the developers top-right section includes connections to libraries, manuals, and reference materials. From there, developers are directed by well-organized articles that resemble blog posts. 
+- GitHub API Documentation
+![Github](./github.png)
+The REST API documentation for GitHub is also highly lauded by developers. Github's documentation doesn't attempt to cram too much information onto a single page, similar to Dropbox. The straightforward menu in the developers top-right section includes connections to libraries, manuals, and reference materials. From there, developers are directed by well-organized articles that resemble blog posts. 
 
 As you may have noticed, GitHub's API documentation features a small widget on each page that displays the current state of the API. It's a little detailed, but as we previously discussed, little adjustments like these can help. One look shows developers whether a problem with their implementation may or may not be caused by the server. The takeaway is to conserve developer time whenever possible. 
 
-- ReadMe: This is an interactive used by developers for good API documentation. With ReadMe you can auto-generate code samples, alter the material in the ReadMe editor, merge a recommended edit, respond to inquiries in the help forum, and more in this hub. 
+- ReadMe
+![Readme](./Readme.png)
+This is an interactive used by developers for good API documentation. With ReadMe you can auto-generate code samples, alter the material in the ReadMe editor, merge a recommended edit, respond to inquiries in the help forum, and more in this hub. 
 
-One of ReadMe's main benefits is that it tracks metrics like page visits, API calls, API errors, and queries to various endpoints among others so you can see how your API and API documentation are used over time. Your team can determine where to concentrate its efforts on improving by using these useful insights. 
+One of ReadMe's main benefits is that it tracks metrics like page visits, API calls, API errors, and queries to various endpoints among others so you can see how your API and API documentation are used over time. Your team can determine where to concentrate its efforts on improving by using these useful insights.
+
+-APIDOC
+![apidoc](./apidoc.jpg)
+This is an open-source REST API documentation that generates documentation from API descriptions in your source code automatically. Almost any programming language can be used with it (as long as it allows block documentation). Developers can see what has changed between versions since apiDoc enables you to assign a version number to an API. This makes it perfect for managing updates to your API in a transparent manner, or for API versioning.
+
+Any of the above tools  can assist you in producing interactive, user-friendly, and simple to maintain online API documentation. When assessing tools, be sure to consider both your must-haves and nice-to-haves in order to get the one that best suits your demands and budget.
