@@ -1,5 +1,5 @@
 ---
-title: "Writing API Documentation - Best Practices and Mistakes to Avoid"
+title: "API DOCUMENTATION VS API SPECIFICATION - WHAT IT MEANS FOR YOU"
 date: 2022-05-24T08:05:56+02:00
 
 ---
@@ -14,8 +14,6 @@ API documentation ought to include examples of each call, each parameter, and ea
 API specification is the provision of a detailed understanding of an API's behavior and relationships with other APIs . It describes how the API works and what outcomes are possible when using the API. The OpenAPI Specification is a nice illustration of an API specification. The most recent version of this standard (3.0.1) is available on GitHub.
 While an API specification describes how the API acts and what to anticipate from the API, the OpenAPI 3.0.1 paper is also acts as an  API documentation in some ways. And the GitHub repository's OpenAPI Specification paper does just that. Numerous API objects, values, and parameters are listed in the paper, along with information on how to call each object and what it can accomplish. We can also observe how the things are related to one another and how each object can be used.
 
-## All Related, But Different 
-API Documentation and API Specification differ from one another in terms of human and machine readability as well as purpose and objective. The major distinction between the both is that while Specification is primarily intended for human reading and a "bigger picture" understanding, Documentation is intended for more precise, direct examples and "in the grass" information.
-
-The API documentation tells developers and other API consumers how to use the API. After all, how can your API be successful if developers don’t know how to use it? An API specification provides a broad understanding of the functionality of the API and the expected results. And finally, the specification is largely about the design of the API or your design philosophy. API design and functionality are key factors when choosing to integrate an API with an application. API documentation and API specifications are all key to the success of an API.
+## Both Related, But Quite Different 
+API Documentation and API Specification differ from one another in terms of human and machine readability as well as purpose and objective. The major distinction between the both is that while Specification is primarily intended for human reading and a "bigger picture" understanding, it provides a broad understanding of the functionality of the API and the expected results, Documentation is intended for more precise, direct examples and "in the grass" information. The API documentation tells developers and other API consumers how to use the API. After all, how can your API be successful if developers don’t know how to use it? At the end of the day API documentations and API specifications are all key to the success of an API.
 
