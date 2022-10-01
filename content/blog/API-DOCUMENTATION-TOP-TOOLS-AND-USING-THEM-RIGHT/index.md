@@ -11,7 +11,6 @@ When done right, API documentation serves as the only reliable source of knowled
 When it comes to creating good API Documentation,it takes careful balancing and detailing to provide comprehensive technical information while still making it easy to understand. If you are finding it difficult it  is best to observe successful organizations to see how it is done so that third-party developers can easily access them, alot of well-known programs and APIs make their API documentation available online. 
 
 ## Advantages of Documentation 
- 
 Devoting the right amount of time and resources to producing high-quality API documentation, as an API company is very important and here are the reasons why:
 - Reduced Onboarding Time: With this both external and internal users can have quick access to the data/information they require to begin using and profiting from your API. 
 - Reduced Dependence on Support: Effective documentation frees up your API experts to focus on other tasks while assisting other users in solving their problems. It doesn't matter if your API is only utilized internally or by tens of thousands of users, this still holds. 
