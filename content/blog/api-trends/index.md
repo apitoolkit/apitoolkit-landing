@@ -5,6 +5,7 @@ date: 2022-06-05T01:33:53+02:00
 
 ![API Trends](./image1.jpg)
 
+
 What do developers do with APIs these days? Find out in this breakdown of the relevant trends in API use in 2022
 
 What is the future of APIs? Where are we headed in this burgeoning intersystem communications industry that has brought us closer and helped us work more efficiently than any innovation since the invention of the world wide web? 
