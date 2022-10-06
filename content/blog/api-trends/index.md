@@ -1,6 +1,6 @@
 ---
 title: "Must-Know API trends in 2022"
-date: 2022-06-05T01:33:53+02:00
+date: 2022-10-05T01:33:53+02:00
 ---
 
 ![API Trends](./image1.jpg)

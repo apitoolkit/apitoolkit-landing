@@ -1,6 +1,6 @@
 ---
 title: "API Observability and Monitoring: What’s the Difference?"
-date: 2022-06-17T09:35:51+02:00
+date: 2022-10-08T09:35:51+02:00
 description: "Learn the key aspects of API observability and API monitoring"
 ---
 
