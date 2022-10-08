@@ -6,14 +6,14 @@ description: "What does API Modeling entail, what is the process of API Modeling
 ![api-modeling](../modelling-photo.jpg)
 [Photos by Akasin Phonsawat on Istock](https://www.istockphoto.com/portfolio/Me?mediatype=photography)
 ## API Modeling
-API modeling is a breakdown of what an API design will look like in other to set up better communication procedures, before going ahead to design our API. API modeling helps us answer some very essential questions that seem to be the bedrock of the design in the long run. Questions like why my API exists and what problems it intends to solve the need to be answered to create a good design.
+API modeling is a breakdown of what an API design will look like in other to set up better communication procedures, before going ahead to design the API. API modeling helps designers answer some very essential questions that seem to be the bedrock of the design in the long run. Questions like why my API exists and what problems it intends to solve etc. these questions need to be answered to create a good design.
 
 ## The Process Involved in API Modeling
 1. Identify the audience for your API
 Determining who will use your API is the first step in API modeling. Participants, performers, or users are some other names for them. APIs, in contrast to user interfaces, may be utilized both directly by developers and covertly by end users. Understanding the needs of both sides is crucial. The diverse applications and gadgets that could use our API in various ways are another thing we need to consider. We might want to be a little more explicit when identifying active users accessing the API. Instead of just naming developers as participants, we could want to make a distinction between internal developers, operations engineers, and external developers. The same is true for differentiating end users, regular users, account administrators, and system administrators because they all utilize different techniques and expect different results when using your API.
 
 2. Determine the desired outcomes
-More than your expensive databases or the fine method your code was designed, your end customers are interested in the outcomes that your API makes attainable. Your users need answers to questions. Always remember that they want a problem solved. If your model can't solve the problem then it is an issue.
+More than your expensive database or the fine method your code was designed, your end users are interested in the outcomes that your API makes attainable. Your users need answers to questions. Always remember that they want a problem solved. If your model can't solve the problem then it is an issue.
 
 3. Sketch out the processes necessary to obtain these results.
 To obtain the desired outcomes a sketch of how these results will be obtained is necessary.  This sketch will fuel each stage. Decomposing results into discrete phases necessitates a deeper comprehension of how your API will address practical issues and solve problems. Make sure to include a subject matter expert ("SME") in your API modeling approach because this knowledge is typically reserved for SMEs.
