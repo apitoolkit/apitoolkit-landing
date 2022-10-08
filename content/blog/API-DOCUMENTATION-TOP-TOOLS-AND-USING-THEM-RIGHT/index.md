@@ -3,11 +3,11 @@ title: "Api Documentation - Top Tools and Using Them Right"
 date: 2022-10-07T08:05:56+02:00
 ---
 
-![api-doc-tool](../doc-tool.jpg)
+![api-doc-tool](./doc-tool.jpg)
 [Photos by Ekipaj on Istock](https://www.istockphoto.com/portfolio/ekipaj?mediatype=photography)
 If you are making a product which connects to the internet you will certainly need an API.  API documentation is technical content that explains the how-tos of an API and what a particular API can perform. It is a precise reference source that thoroughly explains the API procedures and can also serve as a manual and instructional tool that aids users in learning how to utilize it. 
 
-When done right, API documentation serves as the only reliable source of knowledge about how an API operates. It should include information on quickstarts, functions, arguments, classes, and more in a well-organized format that is simple to grasp for both developers and non-technical users. It frequently contains tutorials and examples that will aid the user in understanding how various components of the API interact. [Yo can also read the differecnce between API documentation and API specification](/blog/api-documentation-vs-api-specification/)
+When done right, API documentation serves as the only reliable source of knowledge about how an API operates. It should include information on quickstarts, functions, arguments, classes, and more in a well-organized format that is simple to grasp for both developers and non-technical users. It frequently contains tutorials and examples that will aid the user in understanding how various components of the API interact. [You can also read the differecnce between API documentation and API specification](/blog/api-documentation-vs-api-specification/)
 
 When it comes to creating good API Documentation, it takes careful balancing and detailing to provide comprehensive technical information while still making it easy to understand. If you are finding it difficult it is best to observe successful organizations to see how it is done so that third-party developers can easily access them, lot of well-known programs and APIs make their API documentation available online. 
 
