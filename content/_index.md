@@ -95,7 +95,7 @@ publishdate: 2022-03-24
                 />
                 <div class=" pt-3">
                   <button
-                    class=" drop-shadow  rounded-md hover:bg-amber-300 bg-yellow-300 text-black border border-amber-400 font-medium inline-block px-4 py-2 mt-2 sm:mt-0"
+                    class=" drop-shadow  rounded-md hover:bg-yellow-300 bg-amber-300 text-black border border-amber-400 font-medium inline-block px-4 py-2 mt-2 sm:mt-0"
                   >
                     Get Early Access for Free
                   </button>
