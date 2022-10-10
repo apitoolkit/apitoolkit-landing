@@ -376,7 +376,7 @@ thing of the past.
   </section>
 {{% /container %}}
 
-  <section class="bg-gradient-yellow xbg-yellow-100 mt-32 text-white gradient-yellow">
+  <section class="bg-gradient-yellow  mt-32 text-white gradient-yellow">
     {{% container %}}
 <div class="space-y-5 py-16 sm:py-36 max-w-prose sm:text-lg ">
 
