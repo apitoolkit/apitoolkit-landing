@@ -53,7 +53,7 @@ publishdate: 2022-03-24
               >
             Experience Fewer and shorter downtimes, Less support
             tickets, Faster Incident resolutions and always up to date
-            insight about your APIs
+            insights about your APIs
             </strong>
           </p>
           <!-- <img src="/assets/img/blob-landing-center.svg"/> -->
