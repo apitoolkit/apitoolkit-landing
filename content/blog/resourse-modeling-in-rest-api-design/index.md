@@ -1,5 +1,5 @@
 ---
-title: "Resource Modeling in Rest API Design: The Guidelines"
+title: "Resource Modeling in Rest API Design"
 date: 2022-10-05T08:05:56+02:00
 ---
 ![resource-modeling](../resource.jpg)
