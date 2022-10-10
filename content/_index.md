@@ -49,7 +49,7 @@ publishdate: 2022-03-24
           <!--   overview of your APIs -->
           <!-- </p> -->
           <p>
-          <strong class="font-medium"
+          <strong class="font-medium text-xl"
               >
             Experience Fewer and shorter downtimes, Less support
             tickets, Faster Incident resolutions and always up to date
@@ -136,7 +136,7 @@ publishdate: 2022-03-24
 
 <section class="mt-20 text-center">
   <section class="md:max-w-5xl inline-block text-left">
-    <div class="md:max-w-4xl text-left px-5  pt-44 pb-32 text-md">
+    <div class="md:max-w-4xl text-left px-5  pt-44 pb-32 text-lg">
     
 ###### WHY APITOOLKIT?
 ## Finally **Trust**  and **Understand** your APIs
