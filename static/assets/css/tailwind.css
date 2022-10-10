@@ -2,16 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
 html, body {
   font-size: 18px;
 }
 
 .text-blue-title {
-  color: #353f5f;
+   color: #353f5f;
+    /* @aply text-sky-700; */
 }
 
 .text-2xs {
   font-size: 0.464rem;
+}
 }
 
 @layer base {

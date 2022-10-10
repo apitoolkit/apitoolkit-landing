@@ -1,51 +1,43 @@
 <!DOCTYPE html>
 <html prefix="og: http://ogp.me/ns#" lang="{{ .Language }}">
-  {{- partial "head.html" . -}}
-  <body class="relative">
-    {{- partial "header.html" . -}}
-    <div class="text-center z-10">
-      <nav class="our_container w-full">
-        <div class="flex flex-row justify-between items-center pt-8">
-          <a href="/"
-            ><img src="/assets/img/logo_black.svg" alt="APItoolkit logo"
-          /></a>
-          <div class="text-xs space-x-1 sm:space-x-5 divide-x divide-gray-50">
-            <button
-              type="button"
-              class="hidden bg-gray-200 px-3 py-2 rounded-full"
-            >
-              Sign in
-            </button>
-            <a href="/blog/" class="">blog</a>
-            <a href="/pricing/" class="">pricing</a>
-            <a href="/docs/" class="">Docs</a>
-            <a
-              href="/#waitlist-form-1"
-              class="bg-black text-white px-3 py-2 rounded-full inline-block"
-            >
+{{- partial "head.html" . -}}
+
+<body class="relative">
+  {{- partial "header.html" . -}}
+  <div class="text-center z-10">
+    <nav class="our_container w-full">
+      <div class="flex flex-row justify-between items-center pt-8">
+        <a href="/"><img src="/assets/img/logo_black.svg" alt="APItoolkit logo" /></a>
+        <div class="text-xs space-x-1 sm:space-x-5 ">
+          <button type="button" class="hidden bg-gray-200 px-3 py-2 rounded-full">
+            Sign in
+          </button>
+          <a href="/blog/" class="">blog</a>
+          <a href="/pricing/" class="">pricing</a>
+          <a href="/docs/" class="">Docs</a>
+          <a href="/#waitlist-form-1"
+            class="border border-amber-400 hover:bg-amber-300 bg-yellow-300 text-black  px-3 py-2 rounded-full inline-block">
             <span class="hidden sm:inline">Join </span>waitlist
-            </a>
-          </div>
+          </a>
         </div>
-      </nav>
-    </div>
+      </div>
+    </nav>
+  </div>
 
-    <div id="content">{{- block "main" . }}{{- end }}</div>
+  <div id="content">{{- block "main" . }}{{- end }}</div>
 
-    {{- partial "footer.html" . -}}
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-FZERLHDJ7J"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+  {{- partial "footer.html" . -}}
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FZERLHDJ7J"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-      gtag("config", "G-FZERLHDJ7J");
-    </script>
-  </body>
+    gtag("config", "G-FZERLHDJ7J");
+  </script>
+</body>
+
 </html>
