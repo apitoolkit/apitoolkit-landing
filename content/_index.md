@@ -108,10 +108,10 @@ publishdate: 2022-03-24
                 </div>
               </form>
             </div>
-            <div class="space-x-6 text-xs">
-              <small>✓ Always free plan</small>
-              <small>✓ GDPR compliant</small>
-              <small>✓ Data processed in the EU</small>
+            <div class="space-x-5 text-xs">
+              <small class="inline-block">✓ Always free plan</small>
+              <small class="inline-block">✓ GDPR compliant</small>
+              <small class="inline-block">✓ Data processed in EU</small>
             </div>
           </div>
         </div>
