@@ -43,18 +43,26 @@ publishdate: 2022-03-24
         <!-- </h1> -->
         <h1 class="text-blue-title tracking-tight text-5xl" style="font-variation-settings: 'wght' 900;">Stay on top of your APIs!</h1>
         <div class="pt-8 space-y-5 sm:pr-20">
+          <!-- <p> -->
+          <!--   Build and maintain your APIs with Less downtimes, Fewer support -->
+          <!--   tickets, Faster time to resolution and an always up to date -->
+          <!--   overview of your APIs -->
+          <!-- </p> -->
           <p>
-            Build and maintain your APIs with Less downtimes, Fewer support
-            tickets, Faster time to resolution and an always up to date
-            overview of your APIs
+          <strong class="font-medium"
+              >
+            Experience Fewer and shorter downtimes, Less support
+            tickets, Faster Incident resolutions and always up to date
+            insight about your APIs
+            </strong>
           </p>
           <!-- <img src="/assets/img/blob-landing-center.svg"/> -->
-          <p>
-            <strong class="font-medium"
-              >APIToolkit spots broken or slow api endpoints,
-              missing/incorrect data, etc before your customers.</strong
-            >
-          </p>
+          <!-- <p> -->
+          <!--   <strong class="font-medium" -->
+          <!--     >APIToolkit spots broken or slow api endpoints, -->
+          <!--     missing/incorrect data, etc before your customers.</strong -->
+          <!--   > -->
+          <!-- </p> -->
           <div class="text-center py-4 sm:hidden">
             <img
               src="/assets/img/ill_man_measuring.svg"
@@ -101,9 +109,9 @@ publishdate: 2022-03-24
               </form>
             </div>
             <div class="space-x-6 text-xs">
-              <small>30 day free trial</small>
-              <small>GDPR compliant</small>
-              <small>Data processed in the EU</small>
+              <small>✓ Always free plan</small>
+              <small>✓ GDPR compliant</small>
+              <small>✓ Data processed in the EU</small>
             </div>
           </div>
         </div>
