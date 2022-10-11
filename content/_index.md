@@ -36,18 +36,8 @@ publishdate: 2022-03-24
   <section>
     <div class="flex flex-col sm:flex-row items-center pt-16 sm:pt-24 ">
       <div class="">
-        <!-- <h1 class="text-blue-title tracking-tight"> -->
-        <!--   Automatic API Contract Monitoring<br /> -->
-        <!--   <span class="hidden sm:inline-block">& Documentation</span -->
-        <!--   ><span class="inline-block sm:hidden">& Docs</span> -->
-        <!-- </h1> -->
         <h1 class="text-blue-title tracking-tight text-5xl" style="font-variation-settings: 'wght' 900;">Stay on top of your APIs!</h1>
         <div class="pt-8 space-y-5 sm:pr-20">
-          <!-- <p> -->
-          <!--   Build and maintain your APIs with Less downtimes, Fewer support -->
-          <!--   tickets, Faster time to resolution and an always up to date -->
-          <!--   overview of your APIs -->
-          <!-- </p> -->
           <p>
           <strong class="font-normal text-xl"
               >
