@@ -49,11 +49,9 @@ publishdate: 2022-03-24
           <!--   overview of your APIs -->
           <!-- </p> -->
           <p>
-          <strong class="font-medium text-xl"
+          <strong class="font-normal text-xl"
               >
-            Experience Fewer and shorter downtimes, Less support
-            tickets, Faster Incident resolutions and always up to date
-            insights about your APIs
+            Build and maintain your APIs with Less downtimes, Fewer support tickets, Faster time to resolution and always up to date insights into your APIs
             </strong>
           </p>
           <!-- <img src="/assets/img/blob-landing-center.svg"/> -->
