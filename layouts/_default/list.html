@@ -2,70 +2,47 @@
 <main class="text-center">
   <section class="our_container w-full">
     <div class="bg-white pt-16 pb-20 lg:pt-24 lg:pb-28">
-      <div
-        class="relative max-w-lg mx-auto divide-y-2 divide-gray-200 lg:max-w-7xl"
-      >
+      <div class="relative max-w-lg mx-auto divide-y-2 divide-gray-200 lg:max-w-7xl">
         <div>
-          <h2
-            class="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl"
-          >
-            Blog
+          <h2 class="text-3xl tracking-tight font-black text-gray-900 sm:text-4xl">
+            APIToolkit Blog!
           </h2>
-          <div
-            class="mt-3 sm:mt-4 lg:grid lg:grid-cols-2 lg:gap-5 lg:items-center"
-          >
-            <p class="text-xl text-gray-500">
+          <h5 class="pt-2 pb-5">Sharing knowlege about building & maintaining impeccable APIs.
+          </h5>
+        </div>
+        <div>
+          <div class="mt-6  md:grid md:grid-cols-3 md:gap-4">
+            <p class="pb-3 sm:text-lg text-gray-700 col-span-2">
               Get articles and updates in your inbox on what we learn while
               building APIToolkit.
             </p>
-            <form class="hidden mt-6 flex flex-col sm:flex-row lg:mt-0 lg:justify-end">
-              <div>
-                <label for="email-address" class="sr-only">Email address</label>
-                <input
-                  id="email-address"
-                  name="email-address"
-                  type="email"
-                  autocomplete="email"
-                  required
-                  class="appearance-none w-full px-4 py-2 border border-gray-300 text-base rounded-md text-gray-900 bg-white placeholder-gray-500 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 lg:max-w-xs"
-                  placeholder="Enter your email"
-                />
-              </div>
-              <div
-                class="mt-2 flex-shrink-0 w-full flex rounded-md shadow-sm sm:mt-0 sm:ml-3 sm:w-auto sm:inline-flex"
-              >
+            <form action="https://app.convertkit.com/forms/2724709/subscriptions" class="seva-form formkit-form"
+              method="post" data-sv-form="2724709" data-uid="15d365ef1d" data-format="inline" data-version="5"
+              data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"Success! Now check your email to confirm your subscription.","redirect_url":""},"analytics":{"google":null,"facebook":null,"segment":null,"pinterest":null,"sparkloop":null,"googletagmanager":null},"modal":{"trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"powered_by":{"show":true,"url":"https://convertkit.com?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic"},"recaptcha":{"enabled":false},"return_visitor":{"action":"show","custom_content":""},"slide_in":{"display_in":"bottom_right","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"sticky_bar":{"display_in":"top","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15}},"version":"5"}'>
+              <div class="flex flex-col sm:flex-row">
+                <input class="border border-blue-500 rounded-md px-4 py-2 text-xs sm:w-96" name="email_address"
+                  placeholder="Email address. eg abc@example.com" />
                 <button
-                  type="button"
-                  class="w-full bg-indigo-600 px-4 py-2 border border-transparent rounded-md flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:w-auto sm:inline-flex"
-                >
-                  Notify me
+                  class="rounded-md bg-blue-900 hover:bg-blue-800 border-blue-900 text-xs text-white inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0">
+                  Subscribe
                 </button>
               </div>
             </form>
+
           </div>
         </div>
-        <div
-          class="mt-6 pt-10 grid gap-16 lg:grid-cols-2 lg:gap-x-5 lg:gap-y-12"
-        >
+        <div class="mt-6 pt-10 grid gap-16 lg:grid-cols-2 lg:gap-x-5 lg:gap-y-12">
           {{ range .Pages }}
           <div>
-            <p class="text-sm text-gray-500">
-              <time datetime='{{.Date.Format "2006-01-02"}}'
-                >{{.Date.Format "2006-01-02"}}</time
-              >
-            </p>
+            <time class="text-sm text-gray-500" datetime='{{.Date.Format "2006-01-02"}}'>{{.Date.Format
+              "2006-01-02"}}</time>
             <a href="{{.Permalink}}" class="mt-2 block">
-              <p class="text-xl font-semibold text-gray-900">{{.Title}}</p>
-              <p class="mt-3 text-base text-gray-500">{{ .Summary }}</p>
+              <p class="text-xl font-bold text-gray-900">{{.Title}}</p>
+              <p class="mt-3 leading-relaxed">{{ .Summary }}</p>
             </a>
-            <div class="mt-3">
-              <a
-                href="{{.Permalink}}"
-                class="text-base font-semibold text-indigo-600 hover:text-indigo-500"
-              >
-                Read full article
-              </a>
-            </div>
+            <a href="{{.Permalink}}" class="mt-3 inline-block text-base font-bold text-blue-900 hover:text-indigo-900">
+              Read full article
+            </a>
           </div>
           {{ end }}
         </div>

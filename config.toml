@@ -6,6 +6,7 @@ enableEmoji = true
 enableGitInfo = true
 enableRobotsTXT = true
 canonifyURLs = true
+summarylength = 30
 
 [Params]
 mainSections = ["blog"]

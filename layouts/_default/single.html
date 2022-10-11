@@ -2,17 +2,14 @@
 <main class="text-center">
   <div class="our_container w-full relative py-16 overflow-hidden">
     <div class="text-lg max-w-prose mx-auto text-center">
-      <span
-        class="block text-base  text-indigo-600 font-semibold tracking-wide uppercase"
-        >{{ .Date.Format "Mon Jan 2, 2006" }}</span
-      >
-      <h1
-        class="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl"
-      >
+      <span class="block text-base  text-indigo-600 font-semibold tracking-wide uppercase">
+        {{ .Date.Format "Mon Jan 2, 2006" }}
+      </span>
+      <h1 class="mt-2 py-4 block text-2xl text-center leading-8 font-black tracking-tight text-gray-900 sm:text-3xl">
         {{.Title}}
       </h1>
     </div>
-    <article class="mt-6 prose prose-indigo prose-lg text-gray-500 mx-auto">
+    <article class="mt-6 prose prose-indigo prose-base text-gray-900 mx-auto">
       {{ .Content }}
     </article>
   </div>
