@@ -1,7 +1,9 @@
 ---
 title: "What is API Testing and Why Should You Do It?"
 date: 2022-04-22T12:55:31+02:00
-draft: false 
+author: irhose
+categories:
+  - Testing
 ---
 
 ![A phone and a laptop showing code](./image3.jpg "Photo by <a href='https://unsplash.com/@f12r?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Fahim Muntashir</a> on <a href='https://unsplash.com/s/photos/api?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Unsplash</a>")

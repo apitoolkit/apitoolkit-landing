@@ -1,7 +1,9 @@
 ---
 title: How to write API Docs; 6 API Documentation Best Practices
 date: 2022-05-04T20:00:09+02:00
-draft: false 
+author: irhose
+categories:
+  - API Documentation
 ---
 
 ![Laptop, notepad, two phones and other items on a wooden table](./image1.jpg)

@@ -1,6 +1,9 @@
 ---
 title: "The Developer’s Guide to Web Service APIs, Structures, and Protocols"
 date: 2022-05-22T07:43:27+02:00
+author: irhose
+categories:
+  - APIs
 ---
 
 ![interfaces](./image1.jpg)

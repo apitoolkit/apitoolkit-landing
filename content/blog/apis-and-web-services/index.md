@@ -1,7 +1,10 @@
 ---
 title: "Apis and Web Services"
 date: 2022-05-20T07:34:16+02:00
+author: irhose
 description: "What are the differences between APIs and Web services? When should you use either? Find out in this deep dive into these two critical concepts"
+categories:
+  - APIs
 ---
 
 ![Oriental battle](./image1.jpg)

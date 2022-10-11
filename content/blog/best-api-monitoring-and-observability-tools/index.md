@@ -1,8 +1,10 @@
 ---
 title: "Best API Monitoring and Observability Tools in 2022"
 date: 2022-05-02T18:36:58+02:00
-draft: false 
+author: irhose
 description: Find out what the best API observability tools are to keep your APIs functioning optimally
+categories:
+  - API Observability
 --- 
 
 ![two computer screens adjacent to each other displaying lines of code](./image6.jpg)

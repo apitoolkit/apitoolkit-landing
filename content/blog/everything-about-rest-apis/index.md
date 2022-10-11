@@ -1,6 +1,9 @@
 ---
 title: "What You Need to Know About REST APIs"
 date: 2022-06-04T01:21:39+02:00
+author: irhose
+categories:
+  - APIs
 ---
 
 ![sleeping cat](./image1.jpg)
