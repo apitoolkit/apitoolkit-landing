@@ -1,9 +1,9 @@
 ---
 title: "Writing API Documentation - Best Practices and Mistakes to Avoid"
-date: 2022-10-07T08:05:56+02:00
+date: 2022-10-07T12:55:31+02:00
 ---
-![best-practice](../best-practice.jpg)
-[Photos by Dilok Klaisatoporn on Istock](https://www.istockphoto.com/portfolio/DilokKlaisataporn?mediatype=photography)
+
+![Best practice](./best-practices.webp)
 
 An API is only as good as the API documentation because a good API can be rendered useless if users don't know how to use it, a documentation is often essential for success in the API economy [Read more on API documentation](/blog/api-documentation-top-tools-and-using-them-right/). Nevertheless, it can be quite difficult to develop and keep up with effective documentation that is simple to read, entertaining to engage with, and helps the user succeed. The adoption and maintainance of APIs are directly impacted by creating excellent documentation, which involves time and effort. By choosing the appropriate API Application Tool like [Apitoolkit](https://app.apitoolkit.io), you can manage the documentation of your APIs much easier.  We've outlined a few best practices to assist your team in producing outstanding API documentation that your end users will like. 
 
@@ -24,7 +24,7 @@ Developers can quickly call many resources thanks to code libraries. Developers 
 - Iteractive Console
 Encourage potential customers to check what they read in the API documentation using the API console right away. A console makes getting started quick and easy, with no risk to the consumer. Experimentation is powerful. The work required to build a console or sandbox environment for users to interact with your API is rather low, but it can greatly aid engineers in understanding the value of your API graphically. Many organizations, including Microsoft and GitHub, provide interactive consoles for experimenting with their API services.
 
-![mistakes-to-avoid](../mistakes-to-avoid.jpg)
+![mistakes-to-avoid](./mistakes-to-avoid.jpg)
 [Photos by Bankrs on Istock](https://www.istockphoto.com/portfolio/bankrx?mediatype=photography)
 ## Mistakes to AVOID
 While there are best practices there are also mistakes to avoid if you want to have only good API documentation and they include:
@@ -35,7 +35,7 @@ Keep in mind that you have very little control over who will use your API. Your 
 Your documentation doesn't have to look like that of your competitors, remember your APIs dont work alike, so its important to draw your attention back to your API and focus on how to make every client and prospect satisfiesd with what you have to offer in a unique and straitforward way. 
 
 ### Bad Documentation Structurings
-If its not organized then its a problem, every developer wants to have easy access to what they want in order to solve their problem as fast as they can. [You can take a look at a typical example of an organized documentation](https://app.apitoolkit.io) 
+If its not organized then its a problem, every developer wants to have easy access to what they want in order to solve their problem as fast as they can. [You can take a look at a typical example of an organized documentation](https://apitoolkit.io).  Remember that if you have a structure issue, you are driving developers away.
 
 
-Finally, a good API documentation is worthwhile even when it takes time. It is a potent tool for accelerating the development and maturity of your APIs. It lays the groundwork for an excellent developer experience when using APIs. The aforementioned advice should make it simpler for you to create quality documentation. Teams may automate the documentation process and work on creating an excellent overall experience while accessing APIs thanks to popular open source description formats like OpenAPI Specification.
+Finally, a good API documentation is worthwhile even if it takes time. It is a potent tool for accelerating the development and maturity of your APIs. It lays the groundwork for an excellent developer experience when using APIs. The aforementioned advice should make it simpler for you to create quality documentation. Teams may automate the documentation process and work on creating an excellent overall experience while accessing APIs thanks to popular open source description formats like OpenAPI Specification.
