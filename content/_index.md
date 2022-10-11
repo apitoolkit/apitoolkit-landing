@@ -72,7 +72,7 @@ publishdate: 2022-03-24
           </div>
           <div class="space-y-2 text-sm sm:pt-4" id="waitlist-form-1">
             <small class="text-blue-900"
-              >APIToolkit is still in closed beta. But you can join the
+              >APIToolkit is in closed beta. But you can join the
               waitlist below</small
             >
             <div>
