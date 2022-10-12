@@ -26,8 +26,10 @@ Encourage potential customers to check what they read in the API documentation u
 
 ![mistakes-to-avoid](./mistakes-to-avoid.jpg)
 [Photos by Bankrs on Istock](https://www.istockphoto.com/portfolio/bankrx?mediatype=photography)
+
 ## Mistakes to AVOID
 While there are best practices there are also mistakes to avoid if you want to have only good API documentation and they include:
+
 ### Avoid Using Jargon
 Keep in mind that you have very little control over who will use your API. Your API will be used by users with a range of skill levels, and these users will read your API documentation. You want your API and its documentation to be friendly and helpful to both expert and novice users. Writers may fall into the trap of using excessive language, which has several negative effects. The plain language will persuade people to invest in your API much more effectively than complex technical jargon. Secondly, you want your API to be helpful to as many programmers as you can, regardless of their degree of experience. If you must use technical lingo, offer a link in your API documentation to a [glossary  explanation](https://rapidapi.com/blog/api-glossary/), or instructional that explains the term in question.
 

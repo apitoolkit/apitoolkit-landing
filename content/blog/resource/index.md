@@ -2,14 +2,10 @@
 title: "Resource Modeling in Rest API Design"
 date: 2022-10-05T08:05:56+02:00
 ---
-<<<<<<< HEAD:content/blog/resource/index.md
 
 ![Resource-modeling](./api-modeling.jpg)
 
-=======
-![resource-modeling](./resource.jpg)
-[Photos by SinArtCreative on Istock](https://www.istockphoto.com/photos/information-resources)
->>>>>>> bbdd60beca3b5b4c9fe339420936d0c267e22053:content/blog/resourse-modeling-in-rest-api-design/index.md
+
 In Rest API any information that can be named can be a resource. Resources in Rest can either be a sigleton or a collection. Resource modeling is a concept for resource management that lets you see resource data visually. With this, you can effectively plan how your resources are distributed over the course of several projects. Additionally, you can build models to evaluate different situations, which is a crucial tool for scenario prediction.
 
 ## Guidlines to Designing Your Resource-Model
