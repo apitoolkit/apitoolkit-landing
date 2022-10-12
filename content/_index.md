@@ -1,7 +1,8 @@
 ---
-title: Automatic API Contract Monitoring & Documentation
+title: Stay on top of your APIs 
 date: 2022-03-23
 publishdate: 2022-03-24
+description: "Build and maintain your APIs with Less downtimes, Fewer support tickets, Faster time to resolution and always up to date insights into your APIs"
 ---
 {{< rawhtml >}}
     <style>
