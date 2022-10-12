@@ -1,6 +1,9 @@
 ---
 title: "Resource Modeling in Rest API Design"
 date: 2022-10-05T08:05:56+02:00
+author: jessica
+categories: 
+  - APIs
 ---
 
 ![Resource-modeling](./api-modeling.jpg)

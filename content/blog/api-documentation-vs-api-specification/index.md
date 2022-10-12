@@ -1,7 +1,9 @@
 ---
 title: "API Documentation vs API Specification - What it means for you"
 date: 2022-10-05T08:05:56+02:00
-
+author: jessica
+categories:
+  - API Documentation
 ---
 ![API documentation](./document.jpeg)
 

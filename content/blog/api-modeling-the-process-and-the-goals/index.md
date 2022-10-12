@@ -2,6 +2,9 @@
 title: "API Modeling - The Process And Goals"
 date: 2022-10-06T07:34:16+02:00
 description: "What does API Modeling entail, what is the process of API Modeling and what is the goal of API modeling?"
+categories: 
+  - APIs
+author: jessica
 ---
 ![API modeling](./api-modelling.jpg)
 
