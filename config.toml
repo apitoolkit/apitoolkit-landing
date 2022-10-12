@@ -21,6 +21,8 @@ shareTwitter = true
 dateFormat = "Mon, Jan 2, 2006"
 og_image = "/images/og.png"
 
+[taxonomies]
+
 [blog]
 showSummary = true
 

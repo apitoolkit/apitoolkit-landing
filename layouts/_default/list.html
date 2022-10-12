@@ -32,7 +32,7 @@
           </div>
         </div>
         <section class="mt-6 pt-10 ">
-          {{if ne .Title ""}}
+          {{if and (ne .Title "") (ne .Title "Blogs")}}
           <h3 class="font-black pb-3"> ❯ &nbsp; {{.Title }}</h3>
           {{end}}
           <div class="grid gap-16 md:grid-cols-2 md:gap-x-9 md:gap-y-12">
@@ -51,13 +51,15 @@
                   {{ end }}
                   {{ end }}
                   {{ end }}
-                  {{if .Params.categories }}
-                  {{ range .Params.categories }}
-                  <a href="/categories/{{. | urlize}}"
-                    class="inline-block  text-xs pt-4 text-blue-900 hover:scale-x-105 ">{{.}}
-                    &nbsp; ❯</a>
-                  {{end}}
-                  {{end}}
+                </a>
+                {{if .Params.categories }}
+                {{ range .Params.categories }}
+                <a href="/categories/{{. | urlize}}"
+                  class="inline-block  text-xs pt-4 text-blue-900 hover:scale-x-105 ">{{.}}
+                  &nbsp; ❯</a>
+                {{end}}
+                {{end}}
+                <a href="{{.Permalink}}" class="">
                   <h6 class="text-xl font-bold text-gray-900 pt-3">{{.Title}}</h6>
                   <p class="mt-3 leading-relaxed">{{ .Summary }}</p>
                 </a>

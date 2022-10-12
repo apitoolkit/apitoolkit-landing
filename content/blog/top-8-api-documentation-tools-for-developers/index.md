@@ -1,13 +1,17 @@
 ---
-title: "Api Documentation - Top Tools and Using Them Right"
+title: "Top 8 API Documentation Tool for Developers"
 date: 2022-10-07T08:05:56+02:00
+author: jessica
+categories: 
+  - API Documentation
+description: "We have compiled a list of best API documentation tools for developers. Find out what works best for you!"
 ---
 
 ![API doc tool](./tools.jpg)
 
 If you are going to make a product which connects to the internet you will certainly need an API. Just incase you do not know what an API is you can [take a look.](../what-is-api-testing/index.md) API documentation is technical content that explains the how-tos of an API and what a particular API can perform. It is a precise reference source that thoroughly explains the API procedures and can also serve as a manual and instructional tool that aids users in learning how to utilize it. 
 
-When done right, API documentation serves as the only reliable source of knowledge about how an API operates. It should include information on quickstarts, functions, arguments, classes, and more in a well-organized format that is simple to grasp for both developers and non-technical users. It frequently contains tutorials and examples that will aid the user in understanding how various components of the API interact. [See also API documentation and API specification](/blog/api-documentation-vs-api-specification/)
+When done right, API documentation serves as one of the most reliable sources of knowledge about how an API operates. It should include information on quickstarts, endpoints, parameters, and more in a well-organized format that is simple to grasp for both developers and non-technical users. It frequently contains tutorials and examples that will aid the user in understanding how various components of the API interact. [See also API documentation and API specification](/blog/api-documentation-vs-api-specification/)
 
 When it comes to creating good API Documentation, it takes careful balancing and detailing to provide comprehensive technical information while still making it easy to understand. If you are finding it difficult it is best to observe successful organizations to see how it is done so that third-party developers can easily access them, lot of well-known programs and APIs make their API documentation available online. 
 
@@ -24,11 +28,16 @@ Good documentation is effective for the following reasons:
 - Make no assumptions about the reader's prior knowledge. Be direct yet detailed. 
 - Be well organized. Give information in a well-structured, consistent, and simple manner to enable users to read fluently. For users trying to learn something new or find a solution to a problem, this lowers friction. 
 
-## Basic API Documentation Tools
+## The Best API Documentation Tools
 There are various widely available API documentation tools. These are a few:
+
+### [Apitoolkit](https://www.apitoolkit.io/)
+![Apttoolkit](./api.doc.png)
+If you feel that documenting is difficult and stressful then you need to try [Apitoolkit](https://app.apitoolkit.io) . APIoolkit is a middleware that constantly learns from your live production traffic, so it can detect issues and insights for you automatically. But the best part is that it generates an always up to date Swagger/OpenAPI documentation for you. We're biased, but we believe this is the best API documentation tool. No need to manually write a YAML file or run any commandline tools or annotate any codebase. An always up to date documentation makes this the best tool for API docuentation in my books.
 
 ### [Postman](https://www.postman.com/)
 ![Postman](./postman.png)
+
 Postman's online API documentation tool can assist you in creating and maintaining machine-readable API documentation. Postman automatically gathers your sample requests, headers, code snippets, and more to populate your documentation with dynamic examples and machine-readable instructions. When you make changes to your collection, it also immediately updates your documentation. Postman's distinctive feature is its commenting system. Using this feature, you may submit comments and code reviews to share feedback and notify your coworkers of any changes or issues in real time. 
 
 ### [Redocly](https://redocly.com/)
@@ -42,10 +51,6 @@ Dapperdox is appreciated for several reasons. It is that one documentation tool 
 ### [SwaggerHub](https://swagger.io/tools/swaggerhub/)
 ![Swaggerhub](./swaggerhub.png)
  SwaggerHub, formerly known as Swagger, is an online API documentation platform that aims to simplify and accelerate API documentation. Using this API editor, you can easily achieve an  OpenAPI Specification compliance and also get smart error feedback and syntax auto-completion. Another useful feature is real-time commenting and problem monitoring, which makes it simple for developers to leave comments..
-
-### [Apitoolkit](https://www.apitoolkit.io/)
-![Apttoolkit](./api.doc.png)
-If you feel that documenting is difficult and stressful then you need to try [Apitoolkit](https://app.apitoolkit.io) . Apitoolkit is an automatic documenter that generates up to date documentations based on your live traffic. You also get the chance to add and subtract from the generated text. Documenting with Apitoolkit is simple and fast and the user interface is commendable.
 
 ### [ReadMe](https://readme.com/)
 ![Readme](./Readme.png)
