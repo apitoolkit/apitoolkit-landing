@@ -2,6 +2,9 @@
 title: "Top 10 API Tools for Developers"
 date: 2022-06-20T21:22:37+02:00
 description: A list of top API tools for API developers
+author: irhose
+categories:
+  - APIs
 ---
 
 ![Man coding](image1.jpg)

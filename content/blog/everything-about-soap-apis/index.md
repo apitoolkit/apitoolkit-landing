@@ -1,6 +1,9 @@
 ---
 title: "Everything You Need to Know About SOAP API"
 date: 2022-06-03T00:35:25+02:00
+author: irhose
+categories:
+  - APIs
 ---
 
 ![Caramel bars](./image1.jpg)

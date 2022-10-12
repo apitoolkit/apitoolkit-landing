@@ -2,8 +2,10 @@
 title: Top 4 Reasons Why Your Team Should Use A Plug & Play API Monitoring Tool — APIToolkit.io
 seo_title: Why Developers Need a Plug-and-play API Monitoring Tool—APIToolkit
 date: 2022-05-07T16:02:02+02:00
-draft: false 
+author: irhose
 description: Every website experiences downtimes. Downtimes could cost thousands of dollars in losses. APIToolkit ensures you’re notified the moment an API breaks
+categoties:
+  - API observability
 ---
 
 ![a stock computer image](image1.jpg)

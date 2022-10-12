@@ -1,6 +1,9 @@
 ---
 title: "Benefits of API Integration to Developers"
 date: 2022-09-09T10:48:25+01:00
+author: jessica 
+categories: 
+  - APIs
 ---
 ![benefit-of-api](./api-example.jpg) 
 

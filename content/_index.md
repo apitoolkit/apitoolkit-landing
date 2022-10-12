@@ -12,32 +12,45 @@ publishdate: 2022-03-24
         line-height: 2rem;
         color: #353f5f;
       }
+    .fade-in-section, .home-feature-image-div {
+      opacity: 0;
+      transform: translateY(20vh);
+      visibility: hidden;
+      transition: opacity 0.6s ease-out, transform 1.2s ease-out;
+      will-change: opacity, visibility;
+    }
+    .fade-in-section.is-visible, .home-feature-image-div.is-visible {
+      opacity: 1;
+      transform: none;
+      visibility: visible;
+    }
     </style>
 {{< /rawhtml >}}
 
 {{< rawhtml >}}
 
+
+<!-- Blurred bg image generated from: https://fffuel.co/bbblurry/ -->
+<section  style="background: url('/assets/img/blob-landing-center4.svg') no-repeat left bottom local">
 {{< container >}}
   <section>
-    <div class="flex flex-col sm:flex-row items-center pt-16 sm:pt-24">
+    <div class="flex flex-col sm:flex-row items-center pt-16 sm:pt-24 ">
       <div class="">
-        <h1 class="text-blue-title tracking-tight">
-          Automatic API Contract Monitoring<br />
-          <span class="hidden sm:inline-block">& Documentation</span
-          ><span class="inline-block sm:hidden">& Docs</span>
-        </h1>
+        <h1 class="text-blue-title tracking-tight text-5xl" style="font-variation-settings: 'wght' 900;">Stay on top of your APIs!</h1>
         <div class="pt-8 space-y-5 sm:pr-20">
           <p>
-            Build and maintain your APIs with Less downtimes, Fewer support
-            tickets, Faster time to resolution and an always up to date
-            overview of your APIs
+          <strong class="font-normal text-xl"
+              >
+            Build and maintain your APIs with Less downtimes, Fewer support tickets, Faster time to resolution and always up to date insights into your APIs
+            </strong>
           </p>
-          <p>
-            <strong class="font-medium"
-              >APIToolkit spots broken or slow api endpoints,
-              missing/incorrect data, etc before your customers.</strong
-            >
-          </p>
+          <!-- <img src="/assets/img/blob-landing-center.svg"/> -->
+          <!-- <p> -->
+          <!--   <strong class="font-medium" -->
+          <!--     >APIToolkit spots broken or slow api endpoints, -->
+          <!--     missing/incorrect data, etc before your customers.</strong -->
+          <!--   > -->
+          <!-- </p> -->
           <div class="text-center py-4 sm:hidden">
             <img
               src="/assets/img/ill_man_measuring.svg"
@@ -47,7 +60,7 @@ publishdate: 2022-03-24
           </div>
           <div class="space-y-2 text-sm sm:pt-4" id="waitlist-form-1">
             <small class="text-blue-900"
-              >APIToolkit is still in closed beta. But you can join the
+              >APIToolkit is in closed beta. But you can join the
               waitlist below</small
             >
             <div>
@@ -70,7 +83,7 @@ publishdate: 2022-03-24
                 />
                 <div class=" pt-3">
                   <button
-                    class=" drop-shadow  rounded-md bg-blue-900 hover:bg-blue-800 border-blue-900 text-xs text-white inline-block px-4 py-2 mt-2 sm:mt-0"
+                    class=" drop-shadow  rounded-md hover:bg-yellow-300 bg-amber-300 text-black border border-amber-400 font-medium inline-block px-4 py-2 mt-2 sm:mt-0"
                   >
                     Get Early Access for Free
                   </button>
@@ -78,15 +91,15 @@ publishdate: 2022-03-24
                   <button
                     class="drop-shadow rounded-md border border-gray-200 bg-gray-100 hover:bg-gray-200  text-xs text-gray-900 inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0"
                   >
-                    Watch Intro Video
+                    Watch Intro Video &nbsp; ▶
                   </button>
                 </div>
               </form>
             </div>
-            <div class="space-x-6 text-xs">
-              <small>30 day free trial</small>
-              <small>GDPR compliant</small>
-              <small>Data processed in the EU</small>
+            <div class="space-x-5 text-xs">
+              <small class="inline-block">✓ Always free plan</small>
+              <small class="inline-block">✓ GDPR compliant</small>
+              <small class="inline-block">✓ Data processed in EU</small>
             </div>
           </div>
         </div>
@@ -107,10 +120,11 @@ publishdate: 2022-03-24
     <div class="mt-2"><a href="https://www.loom.com/share/24ea3ae9600544d68f1001af3f4feac2" target="_blank" class="inline-block bg-blue-900 text-white px-3 py-1 text-xs rounded-lg" >Learn how APIToolkit works (Video)</a></div>
   </div>
 </section>
+</section>
 
 <section class="mt-20 text-center">
   <section class="md:max-w-5xl inline-block text-left">
-    <div class="md:max-w-4xl text-left px-5  pt-44 pb-32 text-md">
+    <div class="md:max-w-4xl text-left px-5  pt-44 pb-32 text-lg">
     
 ###### WHY APITOOLKIT?
 ## Finally **Trust**  and **Understand** your APIs
@@ -206,7 +220,7 @@ You get a gentle nudge when new fields are added, so you can add any extra conte
 {{% /benefits_section %}}
 
 {{% benefits_section %}}
-<div  class="p-5">
+<div  class="p-5" style="background: url('/assets/img/blob-landing-center4.svg') no-repeat left bottom local">
 
 ##### Alerting and incident management 
 ## ALERT THE RIGHT PERSON AT THE RIGHT TIME 
@@ -246,7 +260,7 @@ When something goes wrong, notify the right person at the right time over slack,
 
   <br/>
   <div
-    class="px-5 sm:px-12 py-8 bg-gray-50 border border-gray-200 text-blue-title filter drop-shadow-xl text-sm rounded-sm monospace"
+    class="fade-in-section px-5 sm:px-12 py-8 bg-gray-50 border border-gray-200 text-blue-title filter drop-shadow-xl text-sm rounded-sm monospace"
   >
     <div class="pt-2 space-y-4 leading-5 text-xs sm:columns-2 gap-8 ">
 
@@ -358,9 +372,9 @@ thing of the past.
   </section>
 {{% /container %}}
 
-  <section class="bg-gradient-yellow xbg-yellow-100 mt-32 text-white gradient-yellow">
+  <section class="bg-gradient-yellow  mt-32 text-white gradient-yellow">
     {{% container %}}
-<div class="space-y-5 py-16 sm:py-36 max-w-prose sm:text-lg">
+<div class="space-y-5 py-16 sm:py-36 max-w-prose sm:text-lg ">
 
   ## APIToolkit is built by real engineers to solve problems that have cost them a lot in the past.
 
@@ -383,7 +397,7 @@ thing of the past.
     /></a>
     <span class="inline-block px-3">Or</span>
     <a
-      class="inline-block rounded bg-bisque-x text-blue-x-dark px-8 py-2 drop-shadow-xl hover:drop-shadow hover:shadow-md"
+      class="inline-block rounded bg-amber-300 hover:bg-yellow-300 text-black font-bold px-8 py-2 drop-shadow-xl hover:drop-shadow hover:shadow-md"
       href="https://calendly.com/tonyalaribe/30min"
       target="_blank"
       >Let's have a Chat</a
@@ -448,4 +462,20 @@ thing of the past.
   </div>
 </section>
 
+<script>
+const targets = document.querySelectorAll(".home-feature-image-div, .fade-in-section");
+for (var i = 0; i < targets.length; i++) {
+  const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add("is-visible");
+        }
+        if(!entry.isIntersecting){
+            entry.target.classList.remove("is-visible");
+        }
+      });
+    });
+  observer.observe(targets[i]);
+}
+</script>
 {{< /rawhtml >}}

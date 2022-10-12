@@ -1,6 +1,9 @@
 ---
 title: "What You Need to Know About REST APIs"
 date: 2022-06-04T01:21:39+02:00
+author: irhose
+categories:
+  - APIs
 ---
 
 ![sleeping cat](./image1.jpg)
@@ -30,17 +33,17 @@ As your service grows in complexity, you can easily make modifications. Also, yo
 
 The [framework for some APIs](https://apitoolkit.io/blog/web-service-apis-structures-and-protocols/), such as [SOAP](http://apitoolkit.io/blog/everything-about-soap-apis) and XML-RPC, is rigid. However, REST APIs can be developed using virtually any programming language and support a variety of data formats. All they need to do is adhere to the following six REST design principles - also known as architectural constraints:
 
-*Layered system architecture*. In REST APIs, the calls and responses go through different layers. As a rule of thumb, don’t assume that the client and server applications connect directly to each other. There may be a number of different intermediaries in the communication loop. REST APIs need to be designed so that neither the client nor the server can tell whether it communicates with the end application or an intermediary.
+**Layered system architecture**. In REST APIs, the calls and responses go through different layers. As a rule of thumb, don’t assume that the client and server applications connect directly to each other. There may be a number of different intermediaries in the communication loop. REST APIs need to be designed so that neither the client nor the server can tell whether it communicates with the end application or an intermediary.
 
-*Uniform interface*. All API requests for the same resource should look the same, no matter where the request comes from. The REST API should ensure that the same piece of data, such as the name or email address of a user, belongs to only one uniform resource identifier (URI). Resources shouldn’t be too large but should contain every piece of information that the client might need.
+**Uniform interface**. All API requests for the same resource should look the same, no matter where the request comes from. The REST API should ensure that the same piece of data, such as the name or email address of a user, belongs to only one uniform resource identifier (URI). Resources shouldn’t be too large but should contain every piece of information that the client might need.
 
-*Statelessness*. REST APIs are stateless, meaning that each request needs to include all the information necessary for processing it. In other words, REST APIs do not require any server-side sessions. Server applications aren’t allowed to store any data related to a client request.
+**Statelessness**. REST APIs are stateless, meaning that each request needs to include all the information necessary for processing it. In other words, REST APIs do not require any server-side sessions. Server applications aren’t allowed to store any data related to a client request.
 
-*Client-server decoupling*. In REST API design, client and server applications must be completely independent of each other. The only information the client application should know is the URI of the requested resource; it can't interact with the server application in any other way. Similarly, a server application shouldn't modify the client application other than passing it to the requested data via HTTP.
+**Client-server decoupling**. In REST API design, client and server applications must be completely independent of each other. The only information the client application should know is the URI of the requested resource; it can't interact with the server application in any other way. Similarly, a server application shouldn't modify the client application other than passing it to the requested data via HTTP.
 
-*Cacheability*. When possible, resources should be cacheable on the client or server side. Server responses also need to contain information about whether caching is allowed for the delivered resource. The goal is to improve performance on the client side, while increasing scalability on the server side.
+**Cacheability**. When possible, resources should be cacheable on the client or server side. Server responses also need to contain information about whether caching is allowed for the delivered resource. The goal is to improve performance on the client side, while increasing scalability on the server side.
 
-*Code on demand (optional)*. REST APIs usually send static resources, but in certain cases, responses can also contain executable code (such as Java applets). In these cases, the code should only run on-demand.
+**Code on demand (optional)**. REST APIs usually send static resources, but in certain cases, responses can also contain executable code (such as Java applets). In these cases, the code should only run on-demand.
 
 ## How do REST APIs Work?
 
@@ -54,13 +57,13 @@ JSON is popular because it’s readable by both humans and machines—and it is 
 
 ### Structure of a REST Request
 
-*The Endpoint*: This is a unique URL that represents an object or group of objects of data. Each API request has its own endpoint, which is what the HTTP client is directed at in order to interact with data resources.
+**The Endpoint**: This is a unique URL that represents an object or group of objects of data. Each API request has its own endpoint, which is what the HTTP client is directed at in order to interact with data resources.
 
-*The Method*: HTTP methods (which will be explained in further detail below) are an integral part of a RESTful API request. These methods – GET, POST, PUSH, PATCH, and DELETE – correspond to create, read, update, and delete resources.
+**The Method**: HTTP methods (which will be explained in further detail below) are an integral part of a RESTful API request. These methods – GET, POST, PUSH, PATCH, and DELETE – correspond to create, read, update, and delete resources.
 
-*The Headers*: REST headers contain information that represents metadata associated with every single REST API request. A REST header indicates the format of the request and response. This provides information about the status of the request.
+**The Headers**: REST headers contain information that represents metadata associated with every single REST API request. A REST header indicates the format of the request and response. This provides information about the status of the request.
 
-*The Data*: A REST API request also consists of data (also referred to as a “body”) that usually works with the POST, PUT, and PATCH HTTP commands and contains the information and representation of the resource that will be created.
+**The Data**: A REST API request also consists of data (also referred to as a “body”) that usually works with the POST, PUT, and PATCH HTTP commands and contains the information and representation of the resource that will be created.
 
 ## Conclusion
 Although flexibility is a big advantage of REST API design, that same flexibility makes it easy to design an API that’s broken or performs poorly. For this reason, professional developers have supportive communities where they share best practices for building with REST. 

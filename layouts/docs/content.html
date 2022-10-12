@@ -3,31 +3,31 @@
     {{ partial "sidebar-tree.html" . }}
   </aside>
   <main class="grow p-5 lg:p-8">
-    <div class="td-content prose sm:prose-md prose-slate pt-5">
+    <div class="td-content prose  prose-slate py-5">
       <h1>{{ .Title }}</h1>
       {{ with .Params.description }}<div class="lead">{{ . | markdownify }}</div>{{ end }}
       <header class="article-meta">
         {{ partial "taxonomy_terms_article_wrapper.html" . }}
         {{ if (and (not .Params.hide_readingtime) (.Site.Params.ui.readingtime.enable)) }}
-          {{ partial "reading-time.html" . }}
+        {{ partial "reading-time.html" . }}
         {{ end }}
       </header>
       {{ .Content }}
       {{ partial "section-index.html" . }}
       {{ if (and (not .Params.hide_feedback) (.Site.Params.ui.feedback.enable) (.Site.GoogleAnalytics)) }}
-        {{ partial "feedback.html" .Site.Params.ui.feedback }}
-        <br />
+      {{ partial "feedback.html" .Site.Params.ui.feedback }}
+      <br />
       {{ end }}
       {{ if (.Site.DisqusShortname) }}
-        <br />
-        {{/* partial "disqus-comment.html" . */}}
+      <br />
+      {{/* partial "disqus-comment.html" . */}}
       {{ end }}
       {{/* partial "page-meta-lastmod.html" . */}}
     </div>
   </main>
-  <aside class="w-1/6 hidden">
-  {{/* partial "page-meta-links.html" . */}}
-  {{/* partial "toc.html" . */}}
-  {{/* partial "taxonomy_terms_clouds.html" . */}}
+  <aside class="w-1/6 xhidden">
+    {{/* partial "page-meta-links.html" . */}}
+    {{/* partial "toc.html" . */}}
+    {{/* partial "taxonomy_terms_clouds.html" . */}}
   </aside>
 </section>

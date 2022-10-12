@@ -1,6 +1,9 @@
 ---
 title: "A Comprehensive API Management Strategy for Businesses"
 date: 2022-05-24T08:05:56+02:00
+author: irhose
+categories:
+  - APIs
 ---
 
 ![a chess pawn](./image1.jpg)
