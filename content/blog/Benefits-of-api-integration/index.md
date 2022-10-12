@@ -23,8 +23,6 @@ API integration has made businesses composable by allowing teams across the orga
 - Competitive  
 Banks have embraced open banking APIs and standards, while Netflix, Stripe, AWS, and UBER  have all been successful that’s why they have put APIs first because they know that having APIs allow them to be competitive. A good API allows your application and third parties, business partners, and customers to integrate a quick review sys with other system. As a company being able to provide these functionality quickly due to incredibly fast integration of files  is quite competitive to me and this can only be achieved with APIs. APIs also speedup the integration between services and they enable you deliver functionality quickly. 
 
- 
-
 - Reusability and Duplication  
 In the development world when you want to duplicate a file, you can either copy and paste, create shared libraries or create API functions. Creating API functions is much easy becasue you can call from any service just by updating one service/deployables when you need to modify logic as long as you are not making a break in change. APIs have become the building blocks which you can reuse in your architecture as a developer enabling quicker innovations and ability to change quickly.  
 

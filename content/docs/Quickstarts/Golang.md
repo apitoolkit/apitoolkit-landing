@@ -22,7 +22,6 @@ To integrate golang web services with API Toolkit, an SDK called the golang clie
 3. [Generate an API key for your project](/docs/dashboard/generating-api-keys), and include a brief description of your work. And to prevent losing your key after it has been generated, remember to make a copy of it. 
     ![API key generation](../api-keys-generation.png)
 3. Initialize the middleware with the APItoolkit API key you generated above. Integrating only takes 3 lines of Go code: 
-   
 ``` go
 package main
 
@@ -48,7 +47,7 @@ func main() {
  	...
 }
 ```
-4. Deploy your application or send test http requests to your service
-5. Check API log explorer or Endpoints pages on the APIToolkit dashboard to see if your test request was processed correctly 
+1. Deploy your application or send test http requests to your service
+2. Check API log explorer or Endpoints pages on the APIToolkit dashboard to see if your test request was processed correctly 
 ![Endpoint-after-integration](../endpoint-screenshot.png)
 6. Enjoy having our API comanage your backends and APIs with you.
