@@ -11,17 +11,21 @@
   <meta name="msapplication-TileColor" content="#da532c" />
   <meta name="theme-color" content="#ffffff" />
   <!-- SEO Title-->
-  <title itemprop="name">{{ .Title }} | {{ .Site.Title }}</title>
-  <meta property="og:title" content="{{ .Title }} | {{ .Site.Title }}" />
-  <meta name="twitter:title" content="{{ .Title }} | {{ .Site.Title }}" />
-  <meta itemprop="name" content="{{ .Title }} | {{ .Site.Title }}" />
-  <meta name="application-name" content="{{ .Title }} | {{ .Site.Title }}" />
+  <title itemprop="name">{{if ne .Title ""}}{{ .Title }} - APIToolkit {{else}} {{ .Site.Title }}{{end}}</title>
+  <meta property="og:title" content='{{if ne .Title ""}}{{ .Title }} - APIToolkit{{else}} {{ .Site.Title }}{{end}}' />
+  <meta name="twitter:title" content='{{if ne .Title ""}}{{ .Title }} - APIToolkit{{else}} {{ .Site.Title }}{{end}}' />
+  <meta itemprop="name" content="{{ .Site.Title }}" />
+  <meta name="application-name" content="{{ .Site.Title }}" />
   <meta property="og:site_name" content="{{ .Site.Params.sitename }}" />
   <!-- SEO Description -->
-  <meta name="description" content="{{ .Params.description }}" />
-  <meta itemprop="description" content="{{ .Params.description }}" />
-  <meta property="og:description" content="{{ .Params.description }}" />
-  <meta name="twitter:description" content="{{ .Params.description }}" />
+  <meta name="description"
+    content='{{if ne .Params.description ""}}{{ .Params.description }}{{else}} {{.Summary}} {{end}}' />
+  <meta itemprop="description"
+    content="{{if ne .Params.description ""}}{{ .Params.description }}{{else}} {{.Summary}} {{end}}" />
+  <meta property="og:description"
+    content="{{if ne .Params.description ""}}{{ .Params.description }}{{else}} {{.Summary}} {{end}}" />
+  <meta name="twitter:description"
+    content="{{if ne .Params.description ""}}{{ .Params.description }}{{else}} {{.Summary}} {{end}}" />
   <!-- SEO link tags-->
   <base href="{{ .Permalink }}" />
   <link rel="canonical" href="{{ .Permalink }}" />
@@ -35,11 +39,11 @@
   <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" title="{{ .Language.LanguageName }}" />
   {{ end }}
   <!-- SEO Image -->
-  {{ with .Params.image }}
-  <meta itemprop="image" content="{{ . | absURL }}" />
-  <meta property="og:image" content="{{ . | absURL }}" />
-  <meta name="twitter:image" content="{{ . | absURL }}" />
-  <meta name="twitter:image:src" content="{{ . | absURL }}" />
+  {{ if and (.Params.image) (ne .Params.image .Site.BaseURL) }}
+  <meta itemprop="image" content="{{ .Params.image | absURL}}" />
+  <meta property="og:image" content="{{ .Params.image | absURL }}" />
+  <meta name="twitter:image" content="{{ .Params.image | absURL }}" />
+  <meta name="twitter:image:src" content="{{ .Params.image | absURL}}" />
   {{ else }}
   <meta itemprop="image" content="{{ .Site.Params.ogimage | absURL }}" />
   <meta property="og:image" content="{{ .Site.Params.ogimage | absURL }}" />
