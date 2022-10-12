@@ -3,7 +3,7 @@
     {{ partial "sidebar-tree.html" . }}
   </aside>
   <main class="grow p-5 lg:p-8">
-    <div class="td-content prose sm:prose-md prose-slate py-5">
+    <div class="td-content prose  prose-slate py-5">
       <h1>{{ .Title }}</h1>
       {{ with .Params.description }}<div class="lead">{{ . | markdownify }}</div>{{ end }}
       <header class="article-meta">
@@ -25,7 +25,7 @@
       {{/* partial "page-meta-lastmod.html" . */}}
     </div>
   </main>
-  <aside class="w-1/6 hidden">
+  <aside class="w-1/6 xhidden">
     {{/* partial "page-meta-links.html" . */}}
     {{/* partial "toc.html" . */}}
     {{/* partial "taxonomy_terms_clouds.html" . */}}
