@@ -5,6 +5,7 @@ author: dmytro
 categories:
   - APIs
 ---
+<a href="screenshotone.png" class="block rounded-md border border-black"><img src="screenshotone.png" alt="ScreenshotOne" /></a>
 
 API market is booming. Every day you can see more and more APIs you can build your services upon. And many APIs have good open-source alternatives. You can host the alternative and have all control over it. But is it practical for you? Does it save time, money and energy? The most scarce resources we have. 
 
