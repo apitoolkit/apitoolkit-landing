@@ -2,6 +2,7 @@
 title: "API alternative to Puppeteer for taking screenshots"
 date: 2022-10-18T08:00:00+00:00
 author: dmytro
+image: screenshotone.png
 categories:
   - APIs
 ---
