@@ -40,11 +40,11 @@
   <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" title="{{ .Language.LanguageName }}" />
   {{ end }}
   <!-- SEO Image -->
-  {{ if and (.Params.image) (ne .Params.image .Site.BaseURL) }}
-  <meta itemprop="image" content="{{ .Params.image | absURL}}" />
-  <meta property="og:image" content="{{ .Params.image | absURL }}" />
-  <meta name="twitter:image" content="{{ .Params.image | absURL }}" />
-  <meta name="twitter:image:src" content="{{ .Params.image | absURL}}" />
+  {{ if and (.Params.feature_image) (ne .Params.feature_image .Site.BaseURL) }}
+  <meta itemprop="image" content="{{ .Params.feature_image }}" />
+  <meta property="og:image" content="{{ .Params.feature_image  }}" />
+  <meta name="twitter:image" content="{{ .Params.feature_image }}" />
+  <meta name="twitter:image:src" content="{{ .Params.feature_image }}" />
   {{ else }}
   <meta itemprop="image" content="{{ .Site.Params.ogimage | absURL }}" />
   <meta property="og:image" content="{{ .Site.Params.ogimage | absURL }}" />
