@@ -220,18 +220,18 @@ You get a gentle nudge when new fields are added, so you can add any extra conte
 </div>
 {{% /benefits_section %}}
 
-{{% benefits_section %}}
-<div  class="p-5" style="background: url('/assets/img/blob-landing-center4.svg') no-repeat left bottom local">
+
+<div  class="p-5 md:p-16 bg-amber-50/50 border border-amber-50 rounded-lg space-y-2">
 
 ##### Alerting and incident management 
 ## ALERT THE RIGHT PERSON AT THE RIGHT TIME 
 
 When something goes wrong, notify the right person at the right time over slack, pagerduty, opsgenie or any other platform via our zapier integrations. 
 
+
 <a class="text-blue-900" href="">Learn about our incident management integrations.</a>
 
 </div>
-{{% /benefits_section %}}
 
   </section>
 </section>
