@@ -38,7 +38,7 @@ The journey is a marathon and not a sprint, so while we have grander goals, we h
 
 ### 1. Derive Documentation from Production Traffic
 
-![Documentation screen](https://apitoolkit.io/blog/updates-october-2022/field_documentation.png "Documentation screen")
+![Documentation screen](https://apitoolkit.io/field_documentation.png "Documentation screen")
 
 When requests get to your servers, APItoolkit looks into these requests, checks their structure, and shape, checks the fields, their formats, etc, and uses this information to get an idea of what your API looks like. This information is what is used to generate API docs for you. And then this API Docs can then be downloaded as **Swagger**.
 
