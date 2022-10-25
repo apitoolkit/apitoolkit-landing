@@ -10,31 +10,32 @@ categories:
 
 It wouldn’t be an oversight if I say Notion is that one app that has it all. I mean every developer or creative will agree to the fact that notion is a really great tool. It is an all-in-one workspace for any company that always gets the work done. I mean notion does everything, from being a storage app for documents to a product map, and then API Documentation. You get the idea, it is a flexible tool with millions of ways it can be utilized. However, one of my favorite applications for Notion is open API documentation. Giving appropriate documentation on how to use a product, in my opinion, is a big bonus because it makes everything easier and less stressful for everyone especially developers. 
 
-## Quick guides on how to build API documentation using Notion are provided below.
+## Quick guide on how to build API documentation using Notion are provided below.
 The first step is to create a [Notion](https://www.notion.so/personal) account that’s if you don’t have one.
 ![Notion home page](notionhomepage.png)
 
-With notion, you have the choice of either creating a template from scratch or using an already-existing design that is appropriate for the type of information you want to publish.
+With notion, you have the choice of either creating a template from scratch or using an already-existing template that is suitable for the type of information you want to publish.
 ![Getting started](gettingstarted.png)
 
 ### Here I am working with an existing template
-You can select from this list of templates.
+You can choose from the list of templates given.
 ![Choose a template that works](type-of-template. png)
 
-I choose doc because I will be working with documentation and there are many alternative templates available to me here.
+I go with a doc because its a documentation and it hass different layouts like technical spec to choose from
 ![Choose a doc template](choosing-template.png)
 
-And you're all set to move forward with your top-notch, informative documentation, boom.
+Choosing a layout gives you a good documentation format to work with and with it you're all set to move forward with your top-notch, informative documentation.
 ![Ready to document](ready-to-document.png)
 
 ### Here I chose to go with a new template because I want it to be a bit different from the usual
-I am not the only one that sometimes wants something different, we all do and notion is also in the business of giving its users what they desire. To create a new template in Notion, you simply click on the doc option under templates, It taks you you to a screen that has New boldly written on the right side of the screen
+I am not the only one that sometimes wants something different, we all do and notion is also in the business of giving its users what they desire. 
+To create a new template in Notion, you simply click on the doc option under templates, It takes you you to a screen that has New boldly written on the right side of the screen. Now click new.
 ![Create a new template](new-template.png)
 
 The first process leads to a blog-like page that allows you to fill in info about your documentation 
 [Choose new template](choosing-a-new-template.png)
 
-And the type of doc format you choose to work with. this matters because it determines the type of layout your documentation will have.
+And the type of doc layout you choose to work with. This matters because it determines the type of layout your documentation will have and should also be decided based on the type of ddocumentation you want to write.
 ![Type of new template](type-of-new-template.png)
 
 And when you are done filling out the form, you can go ahead to start documenting every bit of that process to guide your users accurately.
