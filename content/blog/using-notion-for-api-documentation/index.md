@@ -8,7 +8,7 @@ categories:
 
 ![Notion logo](notionlogo.png)
 
-It wouldn’t be an oversight if I say [Notion](https://www.notion.so/) is that one app that has it all. I mean every developer or creative will agree to the fact that notion is a really great tool. It is an all-in-one workspace for any company that always gets the work done. I mean notion does everything, from being a storage app for documents to a product map, and then API Documentation. You get the idea, it is a flexible tool with millions of ways it can be utilized. However, one of my favorite applications for Notion is open API documentation. Giving appropriate documentation on how to use a product, in my opinion, is a big bonus because it makes everything easier and less stressful for everyone especially developers. 
+It wouldn’t be an oversight if I say [Notion](https://www.notion.so/) is that one app that has it all. I mean every developer or creative will agree to the fact that notion is a really great tool. It is an all-in-one workspace for any company that always gets the work done. Notion does everything, from being a storage app for documents to a product map, and then API Documentation. You get the idea, it is a flexible tool with millions of ways it can be utilized. However, one of my favorite applications for Notion is open API documentation. Giving appropriate documentation on how to use a product, in my opinion, is a big bonus because it makes everything easier and less stressful for everyone especially developers. 
 
 ## Quick guide on how to build API documentation using Notion are provided below.
 The first step is to create a [Notion](https://www.notion.so/personal) account that’s if you don’t have one.
