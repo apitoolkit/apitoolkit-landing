@@ -55,8 +55,5 @@ And the type of doc layout you choose to work with. This matters because it dete
 And when you are done filling out the form, you can go ahead to start documenting every bit of that process to guide your users accurately.
 ![New work ready](create-new-template.png)
 
-## Automation is fast and more effective
-An [API Documentation](../top-8-api-documentation-tools-for-developers) is an essential component of each API project. The documentation should accurately reflect each step of the process and should be easy to understand for new users; however, if it is written with no form of orderliness or in a hurry, it may end up being jumbled
-
-Notion is totally perfect as an app for maintaining a workflow environment but has a bit lapses as regards documenting. The important thing to note is that not all developers have enough time on their plate to go about the notion process so they will prefer automatic documentation tools like APIToolkit to automate theri documentation and keep it up to date. [Click ](../updates-october-2022) to learn more about APIToolkit.
+While access to information that helps us carry out our daily tasks successfully is crucial in today's tech culture and Notion is out with easy ways to get this documentation done. Lokout for the next post on API documentation with Notion.
 
