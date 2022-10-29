@@ -8,24 +8,14 @@ categories:
 
 ![Notion logo](notionlogo.png)
 
-Documentation is a vital part of any product because it aids in making clear directives, specifics, staff conversations, and other information that can be unclear to not just workers but users too.  A permanent record of successes is provided by good documentation, which may be useful in future talks with clients or with the company's directors and legal counsel. The ability to rapidly and effectively provide support, such as figuring out what a particular piece of software is (or was) supposed to perform, is another benefit of thorough documentation. These justifications for the significance of documentation.
+Documentation is a vital part of any product because it aids in making clear directives, specifics, staff conversations, and other information that can be unclear to not just workers but users too.  A permanent record of successes is provided by good documentation, which may be useful in future talks with clients or with the company's directors and legal counsel. The ability to rapidly and effectively provide support, such as figuring out what a particular piece of software is (or was) supposed to perform, is another benefit of thorough documentation. 
 
-It wouldn’t be an oversight if I say [Notion](https://www.notion.so/) is that one app that has it all. I mean every developer or creative will agree to the fact that notion is a really great tool. It is an all-in-one workspace for any company that always gets the work done. Notion does everything, from being a storage app for documents to a product map, and then API Documentation. You get the idea, it is a flexible tool with millions of ways it can be utilized. However, one of my favorite applications for Notion is open API documentation. Giving appropriate documentation on how to use a product, in my opinion, is a big bonus because it makes everything easier and less stressful for everyone especially developers.
+It wouldn’t be an oversight if I say [Notion](https://www.notion.so/) is that one app that has it all. I mean most developers and creatives will agree to the fact that notion is a really great tool. It is an all-in-one workspace for any company that always gets the work done. Notion does everything, from being a storage app for documents to a product map, and then API Documentation. You get the idea, it is a flexible tool with millions of ways it can be utilized. However, one of my favorite applications for Notion is open API documentation. Giving appropriate documentation on how to use a product, in my opinion, is a big bonus because it makes everything easier and less stressful for everyone especially developers.
  
 One benefit Notion has over other tools of similar nature is the typographic hierarchy and readability with a super clean and minimal interface. Majority of Notion documents appear and read great, despite having a small selection of aesthetic options. By allowing you to stack data of any type, Notion also makes it possible for you to create your taxonomy for your documents.
-A well-documented information is  essential especially  now that the society is driven by sophisticated technology. When we can't quickly access the information we require, and there is no support at all, or the information that is provided is insufficient, we become incredibly frustrated. Therefore, badly written documentation will cost more money for any company or product. Never consider your paperwork to be an expense, but rather a way to reduce costs! 
 
-### Successful User Experience
-When you have quality written content, the end-user experience will be more successful. Your customers will become dissatisfied if your product's user guide is inadequate or nonexistent, and your online assistance is ineffective. It wastes users' time, and your support is late to arrive or not available at all. Your software company's reputation suffers as a result.
-
-### Increase Sales
-The availability of user-friendly product information leads to increased sales. As a result, agreement on system functionality is obtained between IT workers and client business departments, completing the documentation for the system and its users.
-
-### Usability
-Free software product usability testing. Documenting a software program can help identify and correct functional and UX issues. All software system settings are essentially assessed for presentation and usability to provide comprehensive user documentation.
-
-## Quick guide on how to build documentation using Notion are provided below.
-Building a documentation with notion 
+## Quick guide on how to build documentation using Notion ae provided below.
+Building a documentation with notion is a very easy process and shouldn't involve so much.
 The first step is to create a [Notion](https://www.notion.so/personal) account that’s if you don’t have one.
 ![Notion home page](notionhomepage.png)
 
@@ -47,7 +37,7 @@ Choosing to create a personal template that is unique to you isn't unexpected b
 ![Create a new template](new-template.png)
 
 The first process leads to a completely empty blog-like page that allows you to fill in the information regarding your documentation and how you want it to looking spectacular and really amazing.
-[Choose new template](choosing-a-new-template.png)
+![Choose new template](choosing-a-new-template.png)
 
 Just like I said eailier the type of doc layout you choose to work with  though is up to shoulp entirely be based on the content you intend to share. This matters because it determines the type of layout your documentation will have and should also be decided based on the type of ddocumentation you want to write.
 ![Type of new template](type-of-new-template.png)
@@ -55,5 +45,5 @@ Just like I said eailier the type of doc layout you choose to work with  though 
 Uniqueness can never be overratedAnd when you are done filling out the form, you can go ahead to start documenting every bit of that process to guide your users accurately.
 ![New work ready](create-new-template.png)
 
-While access to information that helps us carry out our daily tasks successfully is crucial in today's tech culture and Notion is out with easy ways to get this documentation done. Lokout for the next post on API documentation with Notion.
+A well-documented information is  essential especially  now that the society is driven by sophisticated technology. When we can't quickly access the information we require, and there is no support at all, or the information that is provided is insufficient, we become incredibly frustrated. While access to information that helps us carry out our daily tasks successfully is crucial in today's tech culture, Notion is out there with easy ways to get this documentation done. Lokout for the next post on API documentation with Notion.
 
