@@ -8,13 +8,13 @@ categories:
 
 ![Notion logo](notionlogo.png)
 
-Documentation is a vital part of any product because it aids in making clear directives, specifics, staff conversations, and other information that can be unclear to not just workers but users too.  A permanent record of successes is provided by good documentation, which may be useful in future talks with clients or with the company's directors and legal counsel. The ability to rapidly and effectively provide support, such as figuring out what a particular piece of software is (or was) supposed to perform, is another benefit of thorough documentation. 
+Documentation is a vital part of any product because it aids in making clear directives, specifics, staff conversations, and other information that can be unclear to not just workers but users too.  A permanent record of successes is provided by good documentation, which may be useful in future talks with clients or with the company's directors and legal counsel. The ability to rapidly and effectively provide support, such as figuring out what a particular piece of software is (or was) supposed to perform, is a crucial benefit of thorough documentation. 
 
-It wouldn’t be an oversight if I say [Notion](https://www.notion.so/) is that one app that has it all. I mean most developers and creatives will agree to the fact that notion is a really great tool. It is an all-in-one workspace for any company that always gets the work done. Notion does everything, from being a storage app for documents to a product map, and then API Documentation. You get the idea, it is a flexible tool with millions of ways it can be utilized. However, one of my favorite applications for Notion is open API documentation. Giving appropriate documentation on how to use a product, in my opinion, is a big bonus because it makes everything easier and less stressful for everyone especially developers.
- 
-One benefit Notion has over other tools of similar nature is the typographic hierarchy and readability with a super clean and minimal interface. Majority of Notion documents appear and read great, despite having a small selection of aesthetic options. By allowing you to stack data of any type, Notion also makes it possible for you to create your taxonomy for your documents.
+An essential component of good documentation is an efficient tool, and [Notion](https://www.notion.so/) is that all in one workspace that has it all. I mean most developers and creatives will agree to the fact that notion is a really great tool. It does everything, from being a storage app for documents to a product map, and then documentation. It is a flexible tool with millions of ways it can be utilized. 
 
-## Quick guide on how to build documentation using Notion ae provided below.
+Giving appropriate documentation on how to use a product, in my opinion, is a big bonus because it makes everything easier and less stressful for everyone especially developers and one benefit Notion has over other tools of similar nature is the typographic hierarchy and readability with a super clean and minimal interface. Majority of Notion documents appear and read great, despite having a small selection of aesthetic options. By allowing you to stack data of any type, Notion also makes it possible for you to create your taxonomy for your documents.
+
+## Quick guide on how to build documentation using Notion is provided below.
 Building a documentation with notion is a very easy process and shouldn't involve so much.
 The first step is to create a [Notion](https://www.notion.so/personal) account that’s if you don’t have one.
 ![Notion home page](notionhomepage.png)
@@ -23,7 +23,7 @@ With notion, you have the choice of either creating a template from scratch or u
 ![Getting started](gettingstarted.png)
 
 ### Here I am working with an existing template
-Templates are essential in Notion since they streamline your approach and allow you to establish a unique platform for each team member. However, the first version of a template is rarely the final one. So, until you have a good template, get used to clicking on the button  to make a decision. To start you need to choose a suitable template that suits your content order
+Templates are essential in Notion since they streamline your approach and allow you to establish a unique platform for each team member. However, the first version of a template is rarely the final one. So, until you have a good template, get used to clicking on the button  to make a decision. To start you need to choose a suitable template that suits your content order.
 ![Choose a template that works](type-of-template.png)
 
 I'll use a doc because I'm writing a documentation, and docs have different styles to pick from, such as technical specs, architecture overviews, product specs, and so on. All of these may appear similar, but there is a variation in layout, and this is the primary focus.
