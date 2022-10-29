@@ -33,17 +33,17 @@ Choosing a layout provides you with a decent documentation format to work with, 
 ![Ready to document](ready-to-document.png)
 
 ### Here I chose to go with a new template because I want it to be a bit different from the usual one.
-Choosing to create a personal template that is unique to you isn't unexpected because sometimes we just want a different design, a different template, a different font and all of that and notion is fully aware of this and has gone ahead tobgive  users what they want and how they want it. To make a new template in Notion, simply click on the doc option under templates. This leads you to a page with "New" plainly printed on the right side of the screen on a light blue button. Now, select new.
+Choosing to create a personal template that is unique to you isn't unexpected because sometimes we just want a different design, a different template, a different font and all of that and notion is fully aware of this and has gone ahead tobgive  users what they want and how they want it. To create a new page in Notion, simply click on the doc option under templates. This leads you to a page with "New" plainly printed on the right side of the screen on a light blue button. Now, click new.
 ![Create a new template](new-template.png)
 
-The first process leads to a completely empty blog-like page that allows you to fill in the information regarding your documentation and how you want it to looking spectacular and really amazing.
+The first process leads to a completely empty blog-like page that allows you to fill in the information regarding your documentation and how you want it to look.
 ![Choose new template](choosing-a-new-template.png)
 
-Just like I said eailier the type of doc layout you choose to work with  though is up to shoulp entirely be based on the content you intend to share. This matters because it determines the type of layout your documentation will have and should also be decided based on the type of ddocumentation you want to write.
+Just like I said eailier the type of doc layout you choose to work with  though is up to should entirely be based on the content you intend to share. This matters because it determines the type of layout your documentation will have and should also be decided based on the type of ddocumentation you want to write.
 ![Type of new template](type-of-new-template.png)
 
-Uniqueness can never be overratedAnd when you are done filling out the form, you can go ahead to start documenting every bit of that process to guide your users accurately.
+When you are done filling out the form, you can go ahead to start documenting every bit of that process to guide your users accurately.
 ![New work ready](create-new-template.png)
 
-A well-documented information is  essential especially  now that the society is driven by sophisticated technology. When we can't quickly access the information we require, and there is no support at all, or the information that is provided is insufficient, we become incredibly frustrated. While access to information that helps us carry out our daily tasks successfully is crucial in today's tech culture, Notion is out there with easy ways to get this documentation done. Lokout for the next post on API documentation with Notion.
+A well-documented information is  essential especially  now that the society is driven by sophisticated technology. When we can't quickly access the information we require, and there is no support at all, or the information that is provided is insufficient, we become incredibly frustrated. While access to information that helps us carry out our daily tasks successfully is crucial in today's tech culture, Notion is out here with easy ways to get this documentation done. Lookout for the next post on API documentation with Notion.
 
