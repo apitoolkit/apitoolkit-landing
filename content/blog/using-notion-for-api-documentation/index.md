@@ -36,7 +36,7 @@ Choosing a layout provides you with a decent documentation format to work with, 
 Choosing to create a personal template that is unique to you isn't unexpected because sometimes we just want a different design, a different template, a different font and all of that and notion is fully aware of this and has gone ahead tobgive  users what they want and how they want it. To create a new page in Notion, simply click on the doc option under templates. This leads you to a page with "New" plainly printed on the right side of the screen on a light blue button. Now, click new.
 ![Create a new template](new-template.png)
 
-The first process leads to a completely empty blog-like page that allows you to fill in the information regarding your documentation and how you want it to look.
+The first proc\]ess leads to a completely empty blog-like page that allows you to fill in the information regarding your documentation and how you want it to look.
 ![Choose new template](choosing-a-new-template.png)
 
 Just like I said eailier the type of doc layout you choose to work with  though is up to should entirely be based on the content you intend to share. This matters because it determines the type of layout your documentation will have and should also be decided based on the type of ddocumentation you want to write.
