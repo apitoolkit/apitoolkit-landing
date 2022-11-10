@@ -5,7 +5,7 @@ author: irhose
 categories:
   - API Documentation
 ---
-
+![Documentation](../../../../../../C:/Hugo/apitoolkit-landing/content/blog/newsletter/monitoring-metrics.webp)
 The true value of any API is its ecosystem value
 
 Hy ……
