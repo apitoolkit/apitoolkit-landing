@@ -4,8 +4,9 @@ date: 2022-11-03T08:05:56+02:00
 author: jessica
 categories: 
   - API Documentation
----!
-![Documentation](../../../../../../C:/Hugo/apitoolkit-landing/content/blog/understanding-the-defference-between-apidoc-and-doc/documentation'.jpeg)
+---
+
+![Documentation](./documentation.jpeg)
 It is debatable whether there is any real difference between documentation and API documentation other than the addition of codes and further minute details. So, we decided to discuss the distinctions between API documentation and documentation today as well as their respective significance.
  
 ## What is API Documentation?
@@ -13,7 +14,7 @@ The success of your APIs depends on the quality of the documentation. APIs are c
  
 API documentation is the reference manual for an API, it instructs API users on how to use the API. API documentation is written to be read and understood by humans, typically developers. To guarantee developers have a positive experience with the API, it is essential to provide well-designed, thorough, and simple-to-follow documentation. And an excellent developer experience increases the likelihood that an API will be successful. If your API documentation is difficult for developers to understand, they will probably locate another API that has better documentation and is simpler to integrate. The time it takes to onboard new API customers is also reduced by good documentation. Developers won't need to email your business, phone your customer service line, or ask questions in forums if they already have all the knowledge, they need to use your API.
  
-The elements that make up excellent documentation include a quick start guide, tutorials, and interactive documentation that allows developers to test out API calls. To create and update API documentation, a variety of [documentation tools label](../C:/Hugo/apitoolkit-landing/content/blog/top-8-api-documentation-tools-for-developers)are available. A lot of these tools can generate API documentation automatically, both static and interactive, from an API definition file.
+The elements that make up excellent documentation include a quick start guide, tutorials, and interactive documentation that allows developers to test out API calls. To create and update API documentation, a variety of [documentation tools label](../C:/Hugo/apitoolkit-landing/content/blog/top-8-api-documentation-tools-for-developers) are available. A lot of these tools can generate API documentation automatically, both static and interactive, from an API definition file.
  
 API documentation ought to include examples of each call, each parameter, and each call's answers. Code examples for popular programming languages including Java, JavaScript, PHP, and Python should be provided. Every API request, product, and endpoint should be explained in the documentation, along with illustrative samples of error messages. It's also crucial that API documentation is regularly updated and actively maintained to keep the user posted with updates and recent trends.
  
