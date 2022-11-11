@@ -35,7 +35,7 @@ To reproduce the template, just [click the link](https://www.notion.so/API-Docum
 
 ### Creating an API Doc with a new template
 Here is a video I created on loom that shows how I created a template from scratch for my API Doc on Golang Integration
-[API Doc Video](5a3a5a93766c4270a0117f60d54aa8df.mp4)
+[Api doc video](./api-doc-video.mp4)
 
 Deployment 
 Using Notion's page publishing feature is the simplest approach to deploying these docs.
