@@ -25,7 +25,7 @@ We'll make use of a template from [Beestat](https://www.notion.so/API-Documentat
 **The Documentation:** This part contains the content that you want your readers to read. Here you find the code blocks, the images, the videos and all that makes your doc what it ought to be. There is no word limit, it can be anything, it all depends on you.
 
 ![Reference](./resource.png)
-**The Reference:** The reference is a list of resources located at the page's footer. You can add additional pages here, and then use the notio pagename to refer to them elsewhere in the documentation. This is incredibly practical because it allows for numerous references to the same page and provides a simple "back" button on those subpages.
+**The Reference:** The reference is a list of resources located at the page's footer. You can add additional pages here, and then use the notion page name to refer to them elsewhere in the documentation. This is incredibly practical because it allows for numerous references to the same page and provides a simple "back" button on those subpages.
 
 To reproduce the template, just [click the link](https://www.notion.so/API-Documentation-e4a7746e6a3f45dbb58ea6b45b8f9744). Select "duplicate" at the top-right corner of the page, and then sign up for a Notion account just in case you do not have one. Now you can simply go ahead to customize the content as you desire. 
 ![Beestat](./beestat-duplicate.png)
