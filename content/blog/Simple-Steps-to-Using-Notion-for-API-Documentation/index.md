@@ -13,7 +13,11 @@ We talked about using [Notion for documentation](../using-notion-for-API-documen
 The use of APIs by companies have increased significantly with the use of API documentation. With proper API documentation, users have a better experience with the functionality and instructions for using and integrating the project, coupled with updates on the API lifespan. This doesn’t entirely mean that you can’t use an API without documentation but the idea is to make things a lot easier for the user who might probably be a first time user and give access to the technical content of the API and integration rules to make work easier and convienient for them. There are lots of tools that can help simplify and manage this document and notion is one of those tools, Notion is an all-in-one workspace, it goes beyond just basic documentation to API documentation giving you access to code blocks, navigation bars, etc.
 
 ## Using Notion For API Doc
+<<<<<<< HEAD
 Creating an API Doc can be quite complex, especially at the point of finding a template that works. Today we will create an API doc with an existing template and also create one from scratch  which will cover the important components of APIs like endpoints, the fields that makes up the enpoints resourses and other parameters.
+=======
+Creating an API Doc can be quite complex, especially at the point of finding a template that works. Today we will create an API doc with an existing template and also create one from scratch  which will cover all thee important components of APIs like endpoints, the fields that makes up the enpoints resourses and other parameters. Sometimes the template dont include all of this parameters so we can decide to create one from scratch.
+>>>>>>> ecdb856f69382e806cc440b03ba48479a8724571
 
 ### Working with a Template
 We'll make use of a template from [Beestat](https://www.notion.so/API-Documentation-e4a7746e6a3f45dbb58ea6b45b8f9744). This template is a perfect choice for API documentation. It includes a navigation bar at the top page, a sub-page, lists, and code blocks to generate all of the product documentation in Notion. It is divided into three sections: the navigation section, the documentation section, and the reference section.
