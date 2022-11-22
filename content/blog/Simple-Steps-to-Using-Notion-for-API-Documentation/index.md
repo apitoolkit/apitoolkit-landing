@@ -16,12 +16,14 @@ The use of APIs by companies have increased significantly with the use of API do
 Creating an API Doc can be quite complex, especially at the point of finding a template that works. Today we will create an API doc with an existing template and also create one from scratch  which will cover all thee important components of APIs like endpoints, the fields that makes up the enpoints resourses and other parameters. Sometimes the template dont include all of this parameters so we can decide to create one from scratch.
 
 ### Creating an API Doc with a new template
-Apart from been easy to read and understand an API doc needs to include important component like  endpoints request and responses, references 
-Here is a video I created on loom that shows how I created a template from scratch for my API Doc on Golang Integration.  
+Apart from been easy to read and understand an API doc needs to include important component like  endpoints request and responses, references. Here is a video I created on loom that shows how I created a template from scratch for my API Doc on Golang Integration.  
 <video controls src="creating-an-api-doc-with-notion.mp4" ></video>
 
-This video teaches how to sample request and responses for every endpoint on the app
+This video teaches how to sample request and responses for every endpoint on the app. Request and Response are core components of APIs. Request is the action that occurs when a call is made through the server by adding a URL endpoint. Anytime a call is made to the server using an API, this counts as an API request. Operations like saves, signup, logins, and  queries, among others are examples of request. The very moment an endpoint is added to a URL or you even register on an app or website, you will be making an API request and the result thereafter is the Response.
 <video controls src="request-and-response" ></video>
+
+This video guides you through the reference/resource adding process. This covers for the information that is returned by the API. Its generally modelled as a collection with tags where resources are put together. There are different categories of resources though. 
+<video controls src="objectresource" ></video>
 
 ### Working with a Template
 We'll make use of a template from [Beestat](https://www.notion.so/API-Documentation-e4a7746e6a3f45dbb58ea6b45b8f9744). This template is a perfect choice for API documentation. It includes a navigation bar at the top page, a sub-page, lists, and code blocks to generate all of the product documentation in Notion. It is divided into three sections: the navigation section, the documentation section, and the reference section.
