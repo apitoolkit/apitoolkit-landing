@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang="en"><head itemscope>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="https://apitoolkit.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://apitoolkit.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://apitoolkit.io/favicon-16x16.png" />
+  <link rel="manifest" href="https://apitoolkit.io/site.webmanifest" />
+  <link rel="mask-icon" href="https://apitoolkit.io/safari-pinned-tab.svg" color="#5bbad5" />
+  <meta name="msapplication-TileColor" content="#da532c" />
+  <meta name="theme-color" content="#ffffff" />
+  
+  <title itemprop="name">Javascript/Nodejs - APIToolkit </title>
+  <meta property="og:title" content='Javascript/Nodejs - APIToolkit' />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content='Javascript/Nodejs - APIToolkit' />
+  <meta itemprop="name" content="APIToolkit.io: Stay on top of your APIs!" />
+  <meta name="application-name" content="APIToolkit.io: Stay on top of your APIs!" />
+  <meta property="og:site_name" content="" />
+  
+  <meta name="description"
+    content='' />
+  <meta itemprop="description"
+    content="" />
+  <meta property="og:description"
+    content="" />
+  <meta name="twitter:description"
+    content="" />
+  
+  <base href="https://apitoolkit.io/docs/quickstarts/javascript/" />
+  <link rel="canonical" href="https://apitoolkit.io/docs/quickstarts/javascript/" />
+  <meta name="url" content="https://apitoolkit.io/docs/quickstarts/javascript/" />
+  <meta name="twitter:url" content="https://apitoolkit.io/docs/quickstarts/javascript/" />
+  <meta property="og:url" content="https://apitoolkit.io/docs/quickstarts/javascript/" />
+  
+  <meta property="og:locale" content="en" />
+  <meta name="language" content="" />
+  
+  
+  
+  <meta itemprop="image" content="https://apitoolkit.io/og.png" />
+  <meta property="og:image" content="https://apitoolkit.io/og.png" />
+  <meta name="twitter:image" content="https://apitoolkit.io/og.png" />
+  <meta name="twitter:image:src" content="https://apitoolkit.io/og.png" />
+  
+  
+  <meta property="og:updated_time" content=" 2022-08-26T16:33:56&#43;0200" />
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://apitoolkit.io/sitemap.xml" />
+  
+  
+  
+  
+  
+  <meta property="og:type" content="website" />
+  <meta name="author" content="" />
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "url": "https:\/\/apitoolkit.io\/docs\/quickstarts\/javascript\/",
+      "sameAs": ["", "https:\/\/github.com\/apitoolkit"],
+      "name": "Javascript\/Nodejs",
+      "logo": "https://apitoolkit.io/favicon-32x32.png"
+    }
+  </script>
+  
+
+  
+  <meta name="robots" content="index,follow" />
+  <meta name="googlebot" content="index,follow" />
+
+  
+  <meta name="twitter:site" content="@ApiToolkit" />
+  <meta name="twitter:creator" content="@ApiToolkit" />
+  
+  
+
+  
+  <meta name="keywords" content="" />
+  <meta name="imagemode" content="force" />
+  <meta name="coverage" content="Worldwide" />
+  <meta name="distribution" content="Global" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="msapplication-tap-highlight" content="no" />
+  <meta name="apple-mobile-web-app-title" content="" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-touch-fullscreen" content="yes" />
+
+  
+  
+  <link rel="stylesheet" href="https://apitoolkit.io/assets/css/tailwind.prod.min.css" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+  
+  
+  
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@564&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      width: 100%;
+      font-size: 16px;
+      font-family: 'Inter', sans-serif;
+       
+      ;
+    }
+
+    .monospace {
+      font-family: 'Roboto Mono', monospace;
+    }
+
+    @media (min-width: 500px) {
+      body {
+        font-size: 16px;
+      }
+    }
+  </style>
+  <script src="https://unpkg.com/hyperscript.org@0.9.5"></script>
+  <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+</head>
+<body class="relative"><div class="text-center z-10">
+    <nav class="our_container w-full">
+      <div class="flex flex-row justify-between items-center pt-8">
+        <a href="https://apitoolkit.io/"><img src="https://apitoolkit.io/assets/img/logo_black.svg" alt="APItoolkit logo" /></a>
+        <div class="text-xs space-x-1 sm:space-x-5 ">
+          <button type="button" class="hidden bg-gray-200 px-3 py-2 rounded-full">
+            Sign in
+          </button>
+          <a href="https://apitoolkit.io/blog/" class="">blog</a>
+          <a href="https://apitoolkit.io/pricing/" class="">pricing</a>
+          <a href="https://apitoolkit.io/docs/" class="">Docs</a>
+          <a href="https://app.apitoolkit.io"
+            class="border border-amber-400 hover:bg-yellow-300 bg-amber-300 text-black  px-3 py-2 rounded-full inline-block">
+            Get Started
+          </a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div id="content">
+<section class="flex flex-col md:flex-row divide-x divide-slate-200 border-y border-slate-200 mt-3">
+  <aside class="md:w-1/5 text-slate-800 text-md px-2">
+    
+<div id="td-sidebar-menu" class="p-2 divide-y border-slate-100 border-b-2 ">
+  <form class="py-5 flex ">
+      <div class="md:block mt-1 relative flex grow items-center">
+        <input placeholder="quick search" type="text" name="search" id="search" class="border border-slate-200 shadow-sm p-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full pr-12 sm:text-sm rounded-md">
+        <div class="absolute inset-y-0 right-0 flex py-1.5 pr-1.5">
+          <kbd class="inline-flex items-center border border-gray-200 rounded px-2 text-sm font-sans font-medium text-gray-400"> ⌘K </kbd>
+        </div>
+      </div>
+      <a class="inline-block md:hidden  cursor-pointer p-2 px-3 hover:bg-blue-200" _="on click toggle .hidden on #td-section-nav">☰</a>
+  </form>
+  
+  <nav class="pt-5 hidden md:block collapse td-sidebar-nav" id="td-section-nav">
+    <ul class="ul-0 space-y-1">
+      <li class=" with-child text-slate-900x " id="m-docs-li">
+  <a href="https://apitoolkit.io/docs/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-docs"><span class="">Documentation</span></a>
+  <ul class="ul-1">
+    <li class=" text-slate-600 " id="m-docsintroduction-li">
+  <a href="https://apitoolkit.io/docs/introduction/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docsintroduction"><span class="">Introduction</span></a>
+</li><li class=" with-child text-slate-900x " id="m-docsquickstarts-li">
+  <a href="https://apitoolkit.io/docs/quickstarts/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-docsquickstarts"><span class="">Quickstarts</span></a>
+  <ul class="ul-2 foldable">
+    <li class=" text-slate-600  text-slate-900x " id="m-docsquickstartsjavascript-li">
+  <a href="https://apitoolkit.io/docs/quickstarts/javascript/" class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id="m-docsquickstartsjavascript"><span class=" font-semibold ">Javascript/Nodejs</span></a>
+</li><li class=" text-slate-600 " id="m-docsquickstartsphp-li">
+  <a href="https://apitoolkit.io/docs/quickstarts/php/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docsquickstartsphp"><span class="">PHP (Laravel)</span></a>
+</li><li class=" text-slate-600 " id="m-docsquickstartsgolang-li">
+  <a href="https://apitoolkit.io/docs/quickstarts/golang/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docsquickstartsgolang"><span class="">Golang</span></a>
+</li>
+  </ul>
+</li><li class=" with-child" id="m-docsdashboard-li">
+  <a href="https://apitoolkit.io/docs/dashboard/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-docsdashboard"><span class="">Dashboard</span></a>
+  <ul class="ul-2 foldable">
+    <li class=" text-slate-600 " id="m-docsdashboardcreating-a-project-li">
+  <a href="https://apitoolkit.io/docs/dashboard/creating-a-project/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docsdashboardcreating-a-project"><span class="">Creating A Project</span></a>
+</li><li class=" text-slate-600 " id="m-docsdashboardgenerating-api-keys-li">
+  <a href="https://apitoolkit.io/docs/dashboard/generating-api-keys/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docsdashboardgenerating-api-keys"><span class="">Generating API Keys</span></a>
+</li><li class=" with-child" id="m-docsdashboardlog-explorer-li">
+  <a href="https://apitoolkit.io/docs/dashboard/log-explorer/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-docsdashboardlog-explorer"><span class="">Log Explorer</span></a>
+  <ul class="ul-3 foldable">
+    <li class=" text-slate-600 " id="m-docsdashboardlog-explorerlog-query-language-li">
+  <a href="https://apitoolkit.io/docs/dashboard/log-explorer/log-query-language/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docsdashboardlog-explorerlog-query-language"><span class="">Log Query Language</span></a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+  </ul>
+</li>
+    </ul>
+  </nav>
+</div>
+
+
+
+
+
+  </aside>
+  <main class="grow p-5 lg:p-8">
+    <div class="td-content prose  prose-slate py-5">
+      <h1>Javascript/Nodejs</h1>
+      
+      <header class="article-meta">
+        
+
+  
+
+
+        
+      </header>
+      <p>The NODEJS SDK integration guide for APIToolkit. It monitors incoming traffic, gathers the requests and sends the request to the apitoolkit servers.</p>
+<h2 id="installation">Installation</h2>
+<p>Run the following command to install the package from your projects root:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">npm install apitoolkit-js
+
+</code></pre></div><h2 id="project-setup">Project setup</h2>
+<p>Intialize apitoolkit into your project is as simple as :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">apitoolkitClient</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">APIToolkit</span>.<span style="color:#a6e22e">initialize</span>(<span style="color:#e6db74">&#34;&lt;API-KEY&gt;&#34;</span>)
+
+</code></pre></div><p>where <API-KEY> is the apikey which can be generated from your  <a href="apitoolkit.io">apitoolkit.io</a> account.</p>
+<p>Next, you can use the apitoolkit middleware for your respective routing library.</p>
+<p>Eg, for express JS, your final code would look like:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">apitoolkitClient</span>.<span style="color:#a6e22e">expressMiddleware</span>);
+
+</code></pre></div><p>where app is your express js instance.</p>
+<p>Your final could might look something like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">express</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;express&#39;</span>)
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">app</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">express</span>()
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">port</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3000</span>
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">apitoolkitClient</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">APIToolkit</span>.<span style="color:#a6e22e">initialize</span>(<span style="color:#e6db74">&#34;&lt;API-KEY&gt;&#34;</span>)
+<span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">apitoolkitClient</span>.<span style="color:#a6e22e">expressMiddleware</span>.<span style="color:#a6e22e">bind</span>(<span style="color:#a6e22e">apitoolkitClient</span>));
+
+<span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;/&#39;</span>, (<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>) =&gt; {
+  <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">send</span>(<span style="color:#e6db74">&#39;Hello World!&#39;</span>)
+})
+
+<span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">listen</span>(<span style="color:#a6e22e">port</span>, () =&gt; {
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Example app listening on port </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">port</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
+})
+</code></pre></div>
+      <div class="section-index">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+      
+      
+      
+    </div>
+  </main>
+  <aside class="w-1/6 xhidden">
+    
+    
+    
+  </aside>
+</section>
+
+</div><footer class="border-t border-stone-100 bg-stone-50 text-center" aria-labelledby="footer-heading">
+  <section class="our_containerx inline-block max-w-5xl text-left">
+    <h2 id="footer-heading" class="sr-only">Footer</h2>
+    <div class="py-12 lg:py-16 px-4">
+      <div class="xl:grid xl:grid-cols-3 xl:gap-2">
+        <div class="grid grid-cols-2 xl:col-span-2">
+          <div class="md:grid md:gap-8">
+            <div class="">
+              <h3 class="text-base font-medium text-gray-900">Support</h3>
+              <ul role="list" class="mt-4 space-y-2 text-sm text-gray-600">
+                <li>
+                  <a href="https://apitoolkit.io/pricing/" class=" hover:text-gray-900"> Pricing </a>
+                </li>
+
+                <li>
+                  <a href="https://apitoolkit.io/docs/" class=" hover:text-gray-900"> Documentation </a>
+                </li>
+
+                <li>
+                  <a href="https://apitoolkit.io/docs/quickstarts/" class="hover:text-gray-900"> Guides </a>
+                </li>
+
+                <li>
+                  <a href="https://updown.io/6kqs" class=" hover:text-gray-900"> Status Page</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class=" md:gap-8">
+            <div>
+              <h3 class="text-base font-medium text-gray-900">Company</h3>
+              <ul role="list" class="mt-4 space-y-2 text-sm text-gray-600">
+                <li>
+                  <a href="https://apitoolkit.io/about/" class="  hover:text-gray-900"> About </a>
+                </li>
+
+                <li>
+                  <a href="https://apitoolkit.io/blog/" class=" hover:text-gray-900">Blog </a>
+                </li>
+
+                <li>
+                  <a href="https://apitoolkit.io/privacy-policy/" class=" hover:text-gray-900"> Privacy Policy </a>
+                </li>
+
+                <li>
+                  <a href="https://apitoolkit.io/terms-and-conditions/" class=" hover:text-gray-900">Terms and
+                    Conditions </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="mt-8 xl:mt-0">
+          <h3 class="text-base font-medium text-gray-900">Subscribe to our newsletter</h3>
+          <p class="mt-4 text-sm text-gray-500">Follow the APIToolkit journey with news and updates right to your inbox.
+          </p>
+
+          <form action="https://app.convertkit.com/forms/2724709/subscriptions" class="seva-form formkit-form"
+            method="post" data-sv-form="2724709" data-uid="15d365ef1d" data-format="inline" data-version="5"
+            data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"Success! Now check your email to confirm your subscription.","redirect_url":""},"analytics":{"google":null,"facebook":null,"segment":null,"pinterest":null,"sparkloop":null,"googletagmanager":null},"modal":{"trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"powered_by":{"show":true,"url":"https://convertkit.com?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic"},"recaptcha":{"enabled":false},"return_visitor":{"action":"show","custom_content":""},"slide_in":{"display_in":"bottom_right","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"sticky_bar":{"display_in":"top","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15}},"version":"5"}'>
+            <div class="flex flex-col sm:flex-row mt-4">
+              <input class="border border-blue-500 rounded-md px-4 py-2 text-xs sm:w-96" name="email_address"
+                placeholder="Email address. eg abc@example.com" />
+              <button
+                class="rounded-md bg-blue-900 hover:bg-blue-800 border-blue-900 text-xs text-white inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0">
+                Subscribe
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="our_containerx bg-stone-200 text-center">
+    <div class="inline-block w-full max-w-5xl text-left py-6 px-3">
+      <img src="https://apitoolkit.io/assets/img/logo_black.svg" alt="APIToolkit logo" />
+      <p class="py-4 text-xs text-black">
+        &copy; 2022 APIToolkit.io (<a href="mailto:hello@apitoolkit.io">hello@apitoolkit.io</a>) . All rights
+        reserved.
+      </p>
+      <div class="flex space-x-6 md:order-2">
+        <a href="https://twitter.com/apitoolkit" class="text-gray-400 hover:text-gray-500">
+          <span class="sr-only">Twitter</span>
+          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+          </svg>
+        </a>
+
+        <a href="https://github.com/apitoolkit" class="text-gray-400 hover:text-gray-500">
+          <span class="sr-only">GitHub</span>
+          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd"
+              d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+              clip-rule="evenodd" />
+          </svg>
+        </a>
+
+      </div>
+    </div>
+  </section>
+</footer>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FZERLHDJ7J"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-FZERLHDJ7J");
+  </script>
+</body>
+
+</html>

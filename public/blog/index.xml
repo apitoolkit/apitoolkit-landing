@@ -1,18 +1,214 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>APIToolkit.io: Automatic API Contract Monitoring &amp; Documentation</title>
+    <title>Blogs on APIToolkit.io: Stay on top of your APIs!</title>
     <link>https://apitoolkit.io/blog/</link>
-    <description>Recent content on APIToolkit.io: Automatic API Contract Monitoring &amp; Documentation</description>
+    <description>Recent content in Blogs on APIToolkit.io: Stay on top of your APIs!</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://apitoolkit.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Mon, 24 Oct 2022 08:05:56 +0200</lastBuildDate><atom:link href="https://apitoolkit.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>My First Post</title>
-      <link>https://apitoolkit.io/blog/my-first-post/</link>
-      <pubDate>Mon, 11 Apr 2022 07:44:05 +0200</pubDate>
+      <title>How to Use Notion for Documentation</title>
+      <link>https://apitoolkit.io/blog/using-notion-for-documentation/</link>
+      <pubDate>Mon, 24 Oct 2022 08:05:56 +0200</pubDate>
       
-      <guid>https://apitoolkit.io/blog/my-first-post/</guid>
-      <description>&lt;p&gt;Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet.&lt;/p&gt;</description>
+      <guid>https://apitoolkit.io/blog/using-notion-for-documentation/</guid>
+      <description>Documentation is a vital part of any product because it aids in making clear directives, specifics, staff conversations, and other information that can be unclear to not just workers but users too.</description>
+    </item>
+    
+    <item>
+      <title>Newsletter 10/22: Documentation matters?</title>
+      <link>https://apitoolkit.io/blog/updates-october-2022/</link>
+      <pubDate>Sat, 22 Oct 2022 07:25:03 +0200</pubDate>
+      
+      <guid>https://apitoolkit.io/blog/updates-october-2022/</guid>
+      <description>Most of us learn the value of documentation the hard way by finding it to be lacking just when we need it most. Both project developers and software users benefit from projects that have thorough documentation.</description>
+    </item>
+    
+    <item>
+      <title>API alternative to Puppeteer for taking screenshots</title>
+      <link>https://apitoolkit.io/blog/api-alternative-to-puppeteer-for-taking-screenshots/</link>
+      <pubDate>Tue, 18 Oct 2022 08:00:00 +0000</pubDate>
+      
+      <guid>https://apitoolkit.io/blog/api-alternative-to-puppeteer-for-taking-screenshots/</guid>
+      <description>API market is booming. Every day you can see more and more APIs you can build your services upon. And many APIs have good open-source alternatives. You can host the alternative and have all control over it.</description>
+    </item>
+    
+    <item>
+      <title>Writing API Documentation - Best Practices and Mistakes to Avoid</title>
+      <link>https://apitoolkit.io/blog/writing-api-documentation/</link>
+      <pubDate>Fri, 07 Oct 2022 12:55:31 +0200</pubDate>
+      
+      <guid>https://apitoolkit.io/blog/writing-api-documentation/</guid>
+      <description>Best practices. Photo from Pexels.com  An API is only as good as the API documentation because a good API can be rendered useless if users don&amp;rsquo;t know how to use it, a documentation is often essential for success in the API economy Read more on API documentation.</description>
+    </item>
+    
+    <item>
+      <title>Top 8 API Documentation Tool for Developers</title>
+      <link>https://apitoolkit.io/blog/top-8-api-documentation-tools-for-developers/</link>
+      <pubDate>Fri, 07 Oct 2022 08:05:56 +0200</pubDate>
+      
+      <guid>https://apitoolkit.io/blog/top-8-api-documentation-tools-for-developers/</guid>
+      <description>If you are going to make a product which connects to the internet you will certainly need an API. Just incase you do not know what an API is you can take a look.</description>
+    </item>
+    
+    <item>
+      <title>API Modeling - The Process And Goals</title>
+      <link>https://apitoolkit.io/blog/api-modeling-the-process-and-the-goals/</link>
+      <pubDate>Thu, 06 Oct 2022 07:34:16 +0200</pubDate>
+      
+      <guid>https://apitoolkit.io/blog/api-modeling-the-process-and-the-goals/</guid>
+      <description>API modeling is a breakdown of how an API design will look in order to establish better communication procedures before designing the API. API modeling assists designers in answering some critical questions that appear to be the core of the design in the long run.</description>
+    </item>
+    
+    <item>
+      <title>API Documentation vs API Specification - What it means for you</title>
+      <link>https://apitoolkit.io/blog/api-documentation-vs-api-specification/</link>
+      <pubDate>Wed, 05 Oct 2022 08:05:56 +0200</pubDate>
+      
+      <guid>https://apitoolkit.io/blog/api-documentation-vs-api-specification/</guid>
+      <description>What is API Documentation? API documentation serves as a user guide or manual, explaining how to utilize the API to its users. Developers are the primary audience for API documentation this doesn&amp;rsquo;t mean that non-techies can&amp;rsquo;t have access to this.</description>
+    </item>
+    
+    <item>
+      <title>Resource Modeling in Rest API Design</title>
+      <link>https://apitoolkit.io/blog/resource-modelling-in-rest-api-design/</link>
+      <pubDate>Wed, 05 Oct 2022 08:05:56 +0200</pubDate>
+      
+      <guid>https://apitoolkit.io/blog/resource-modelling-in-rest-api-design/</guid>
+      <description>In Rest API any information that can be named can be a resource. Resources in Rest can either be a sigleton or a collection. Resource modeling is a concept for resource management that lets you see resource data visually.</description>
+    </item>
+    
+    <item>
+      <title>Benefits of API Integration to Developers</title>
+      <link>https://apitoolkit.io/blog/benefits-of-api-integration/</link>
+      <pubDate>Fri, 09 Sep 2022 10:48:25 +0100</pubDate>
+      
+      <guid>https://apitoolkit.io/blog/benefits-of-api-integration/</guid>
+      <description>Recently, there have been numerous conversations regarding how important APIs are to improving web-based activity.
+Although the developer&amp;rsquo;s perspective has not received much attention, APIs are incredibly useful to every set of specialists.</description>
+    </item>
+    
+    <item>
+      <title>Top 10 API Tools for Developers</title>
+      <link>https://apitoolkit.io/blog/top-api-tools-for-developers/</link>
+      <pubDate>Mon, 20 Jun 2022 21:22:37 +0200</pubDate>
+      
+      <guid>https://apitoolkit.io/blog/top-api-tools-for-developers/</guid>
+      <description>The primary objective of tools developers use is to make life easier and enhance work processes. With APIs, the story is pretty much the same. Developers use a ton of tools to keep sane, manage APIs and churn out quality API products.</description>
+    </item>
+    
+    <item>
+      <title>API Observability and Monitoring: What’s the Difference?</title>
+      <link>https://apitoolkit.io/blog/api-observability-and-api-monitoring/</link>
+      <pubDate>Wed, 08 Jun 2022 09:35:51 +0200</pubDate>
+      
+      <guid>https://apitoolkit.io/blog/api-observability-and-api-monitoring/</guid>
+      <description>This is where we like to play—the not so clearly defined border of API observability and API monitoring. It’s why our tool was built. We wanted to help startup teams with the heavy-lifting.</description>
+    </item>
+    
+    <item>
+      <title>Must-Know API trends in 2022</title>
+      <link>https://apitoolkit.io/blog/api-trends/</link>
+      <pubDate>Sun, 05 Jun 2022 01:33:53 +0200</pubDate>
+      
+      <guid>https://apitoolkit.io/blog/api-trends/</guid>
+      <description>What do developers do with APIs these days? Find out in this breakdown of the relevant trends in API use in 2022
+What is the future of APIs?</description>
+    </item>
+    
+    <item>
+      <title>What You Need to Know About REST APIs</title>
+      <link>https://apitoolkit.io/blog/everything-about-rest-apis/</link>
+      <pubDate>Sat, 04 Jun 2022 01:21:39 +0200</pubDate>
+      
+      <guid>https://apitoolkit.io/blog/everything-about-rest-apis/</guid>
+      <description>A concise review of the basics of REST APIs
+Let&amp;rsquo;s say you work for a candy shop and you’re trying to build an application to show the variety of candy in stock and allow the workers to make updates.</description>
+    </item>
+    
+    <item>
+      <title>Everything You Need to Know About SOAP API</title>
+      <link>https://apitoolkit.io/blog/everything-about-soap-apis/</link>
+      <pubDate>Fri, 03 Jun 2022 00:35:25 +0200</pubDate>
+      
+      <guid>https://apitoolkit.io/blog/everything-about-soap-apis/</guid>
+      <description>A review of the principal points to note about SOAP API
+Among the many benefits of SOAP is that it helped introduce Web Service APIs to the world.</description>
+    </item>
+    
+    <item>
+      <title>A Comprehensive API Management Strategy for Businesses</title>
+      <link>https://apitoolkit.io/blog/the-ultimate-api-management-strategy/</link>
+      <pubDate>Tue, 24 May 2022 08:05:56 +0200</pubDate>
+      
+      <guid>https://apitoolkit.io/blog/the-ultimate-api-management-strategy/</guid>
+      <description>APIs are very significant tools for developers. Sadly, there are teams that just don’t know how to manage them. This leads to broken APIs, data losses, downtimes, etc.</description>
+    </item>
+    
+    <item>
+      <title>The Developer’s Guide to Web Service APIs, Structures, and Protocols</title>
+      <link>https://apitoolkit.io/blog/web-service-apis-structures-and-protocols/</link>
+      <pubDate>Sun, 22 May 2022 07:43:27 +0200</pubDate>
+      
+      <guid>https://apitoolkit.io/blog/web-service-apis-structures-and-protocols/</guid>
+      <description>Each time you log in to your favorite website using your Google account, the website communicates with Google via a web API.
+Before delving into what web service APIs are, perhaps I should define what an API is.</description>
+    </item>
+    
+    <item>
+      <title>What Are The Principal Types of Web-Based APIs?</title>
+      <link>https://apitoolkit.io/blog/types-of-apis/</link>
+      <pubDate>Sat, 21 May 2022 07:25:03 +0200</pubDate>
+      
+      <guid>https://apitoolkit.io/blog/types-of-apis/</guid>
+      <description>APIs are amazing because they allow developers to exponentially enhance the way programs work by communicating with other software systems. But not all APIs are created equal.</description>
+    </item>
+    
+    <item>
+      <title>Apis and Web Services</title>
+      <link>https://apitoolkit.io/blog/apis-and-web-services/</link>
+      <pubDate>Fri, 20 May 2022 07:34:16 +0200</pubDate>
+      
+      <guid>https://apitoolkit.io/blog/apis-and-web-services/</guid>
+      <description>Developers tend to be finicky about describing things they work with. There are developer debates as old as time itself (maybe not that old, but yunno…). For instance, is HTML a programming language?</description>
+    </item>
+    
+    <item>
+      <title>Top 4 Reasons Why Your Team Should Use A Plug &amp; Play API Monitoring Tool — APIToolkit.io</title>
+      <link>https://apitoolkit.io/blog/why-you-need-an-api-monitoring-tool/</link>
+      <pubDate>Sat, 07 May 2022 16:02:02 +0200</pubDate>
+      
+      <guid>https://apitoolkit.io/blog/why-you-need-an-api-monitoring-tool/</guid>
+      <description>Your website is a dynamic entity. A lot happens on a daily basis; hundreds or more API requests are sent regularly which makes monitoring the integrity of each call a demanding task.</description>
+    </item>
+    
+    <item>
+      <title>How to write API Docs; 6 API Documentation Best Practices</title>
+      <link>https://apitoolkit.io/blog/how-to-write-api-docs/</link>
+      <pubDate>Wed, 04 May 2022 20:00:09 +0200</pubDate>
+      
+      <guid>https://apitoolkit.io/blog/how-to-write-api-docs/</guid>
+      <description>As is the way with most programming concepts, documentation is vital. An API might as well be gibberish if the documentation isn’t laid out properly.
+Developing easy-to-understand API documentation can be quite challenging.</description>
+    </item>
+    
+    <item>
+      <title>Best API Monitoring and Observability Tools in 2022</title>
+      <link>https://apitoolkit.io/blog/best-api-monitoring-and-observability-tools/</link>
+      <pubDate>Mon, 02 May 2022 18:36:58 +0200</pubDate>
+      
+      <guid>https://apitoolkit.io/blog/best-api-monitoring-and-observability-tools/</guid>
+      <description>With API observability, out of sight shouldn’t mean out of mind. APIs work in the background using simple commands to move requests back and forth. Perhaps because they do a lot of background work, QA teams tend to neglect them.</description>
+    </item>
+    
+    <item>
+      <title>What is API Testing and Why Should You Do It?</title>
+      <link>https://apitoolkit.io/blog/what-is-api-testing/</link>
+      <pubDate>Fri, 22 Apr 2022 12:55:31 +0200</pubDate>
+      
+      <guid>https://apitoolkit.io/blog/what-is-api-testing/</guid>
+      <description>Photo by Fahim Muntashir on Unsplash  If you’re reading this, then I’m going to assume you already know what an API is. But, for the sake of those who may not know, I’ll touch on the fundamentals a bit.</description>
     </item>
     
   </channel>

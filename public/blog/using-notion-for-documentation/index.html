@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang="en"><head itemscope>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="https://apitoolkit.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://apitoolkit.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://apitoolkit.io/favicon-16x16.png" />
+  <link rel="manifest" href="https://apitoolkit.io/site.webmanifest" />
+  <link rel="mask-icon" href="https://apitoolkit.io/safari-pinned-tab.svg" color="#5bbad5" />
+  <meta name="msapplication-TileColor" content="#da532c" />
+  <meta name="theme-color" content="#ffffff" />
+  
+  <title itemprop="name">How to Use Notion for Documentation - APIToolkit </title>
+  <meta property="og:title" content='How to Use Notion for Documentation - APIToolkit' />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content='How to Use Notion for Documentation - APIToolkit' />
+  <meta itemprop="name" content="APIToolkit.io: Stay on top of your APIs!" />
+  <meta name="application-name" content="APIToolkit.io: Stay on top of your APIs!" />
+  <meta property="og:site_name" content="" />
+  
+  <meta name="description"
+    content='' />
+  <meta itemprop="description"
+    content="" />
+  <meta property="og:description"
+    content="" />
+  <meta name="twitter:description"
+    content="" />
+  
+  <base href="https://apitoolkit.io/blog/using-notion-for-documentation/" />
+  <link rel="canonical" href="https://apitoolkit.io/blog/using-notion-for-documentation/" />
+  <meta name="url" content="https://apitoolkit.io/blog/using-notion-for-documentation/" />
+  <meta name="twitter:url" content="https://apitoolkit.io/blog/using-notion-for-documentation/" />
+  <meta property="og:url" content="https://apitoolkit.io/blog/using-notion-for-documentation/" />
+  
+  <meta property="og:locale" content="en" />
+  <meta name="language" content="" />
+  
+  
+  
+  <meta itemprop="image" content="https://apitoolkit.io/og.png" />
+  <meta property="og:image" content="https://apitoolkit.io/og.png" />
+  <meta name="twitter:image" content="https://apitoolkit.io/og.png" />
+  <meta name="twitter:image:src" content="https://apitoolkit.io/og.png" />
+  
+  
+  <meta property="og:updated_time" content=" 2022-11-11T11:31:12&#43;0200" />
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://apitoolkit.io/sitemap.xml" />
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="article:publisher" content="" />
+  <meta property="og:article:published_time" content=2022-10-24T08:05:56&#43;0200 />
+  <meta property="article:published_time" content=2022-10-24T08:05:56&#43;0200 />
+  
+  <meta property="og:article:author" content="Jessica" />
+  <meta property="article:author" content="Jessica" />
+  <meta name="author" content="Jessica" />
+   
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Article",
+      "headline": "How to Use Notion for Documentation",
+      "author": {
+        "@type": "Person",
+        "name": "https:\/\/github.com\/apitoolkit"
+      },
+      "datePublished": "2022-10-24",
+      "description": "",
+      "wordCount":  864 ,
+      "mainEntityOfPage": "True",
+      "dateModified": "2022-11-11",
+      "image": {
+        "@type": "imageObject",
+        "url": ""
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "APIToolkit.io: Stay on top of your APIs!",
+        "logo": {
+          "@type": "imageObject",
+          "url": "https://www.example.com/images/brand/favicon.png"
+        }
+      }
+    }
+  </script>
+  
+
+  
+  <meta name="robots" content="index,follow" />
+  <meta name="googlebot" content="index,follow" />
+
+  
+  <meta name="twitter:site" content="@ApiToolkit" />
+  <meta name="twitter:creator" content="@ApiToolkit" />
+  
+  
+
+  
+  <meta name="keywords" content="" />
+  <meta name="imagemode" content="force" />
+  <meta name="coverage" content="Worldwide" />
+  <meta name="distribution" content="Global" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="msapplication-tap-highlight" content="no" />
+  <meta name="apple-mobile-web-app-title" content="" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-touch-fullscreen" content="yes" />
+
+  
+  
+  <link rel="stylesheet" href="https://apitoolkit.io/assets/css/tailwind.prod.min.css" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+  
+  
+  
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@564&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      width: 100%;
+      font-size: 16px;
+      font-family: 'Inter', sans-serif;
+       
+      ;
+    }
+
+    .monospace {
+      font-family: 'Roboto Mono', monospace;
+    }
+
+    @media (min-width: 500px) {
+      body {
+        font-size: 16px;
+      }
+    }
+  </style>
+  <script src="https://unpkg.com/hyperscript.org@0.9.5"></script>
+  <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+</head>
+<body class="relative"><div class="text-center z-10">
+    <nav class="our_container w-full">
+      <div class="flex flex-row justify-between items-center pt-8">
+        <a href="https://apitoolkit.io/"><img src="https://apitoolkit.io/assets/img/logo_black.svg" alt="APItoolkit logo" /></a>
+        <div class="text-xs space-x-1 sm:space-x-5 ">
+          <button type="button" class="hidden bg-gray-200 px-3 py-2 rounded-full">
+            Sign in
+          </button>
+          <a href="https://apitoolkit.io/blog/" class="">blog</a>
+          <a href="https://apitoolkit.io/pricing/" class="">pricing</a>
+          <a href="https://apitoolkit.io/docs/" class="">Docs</a>
+          <a href="https://app.apitoolkit.io"
+            class="border border-amber-400 hover:bg-yellow-300 bg-amber-300 text-black  px-3 py-2 rounded-full inline-block">
+            Get Started
+          </a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div id="content">
+<main class="text-center">
+  <div class="our_container w-full relative py-16 overflow-hidden">
+    <div class="text-lg max-w-prose mx-auto text-center">
+      <span class="block text-base  text-indigo-600 font-semibold tracking-wide uppercase">
+        Mon Oct 24, 2022
+      </span>
+      <h1 class="mt-2 py-4 block text-2xl text-center leading-8 font-black tracking-tight text-gray-900 sm:text-3xl">
+        How to Use Notion for Documentation
+      </h1>
+    </div>
+    <article class="mt-6 prose prose-indigo prose-base text-gray-900 mx-auto">
+      <p>
+  
+    <img  src="https://apitoolkit.io/blog/using-notion-for-documentation/notionlogo.png" alt="Notion logo" />
+  
+
+</p>
+<p>Documentation is a vital part of any product because it aids in making clear directives, specifics, staff conversations, and other information that can be unclear to not just workers but users too.  A permanent record of successes is provided by good documentation, which may be useful in future talks with clients or with the company&rsquo;s directors and legal counsel. The ability to rapidly and effectively provide support, such as figuring out what a particular piece of software is (or was) supposed to perform, is a crucial benefit of thorough documentation.</p>
+<p>An essential component of good documentation is an efficient tool, and <a href="https://www.notion.so/">Notion</a> is that all in one workspace that has it all. I mean most developers and creatives will agree to the fact that notion is a really great tool. It does everything, from being a storage app for documents to a product map, and then documentation. It is a flexible tool with millions of ways it can be utilized.</p>
+<p>Giving appropriate documentation on how to use a product, in my opinion, is a big bonus because it makes everything easier and less stressful for everyone especially developers and one benefit Notion has over other tools of similar nature is the typographic hierarchy and readability with a super clean and minimal interface. Majority of Notion documents appear and read great, despite having a small selection of aesthetic options. By allowing you to stack data of any type, Notion also makes it possible for you to create your taxonomy for your documents.</p>
+<h2 id="quick-guide-on-how-to-build-documentation-using-notion-is-provided-below">Quick guide on how to build documentation using Notion is provided below.</h2>
+<p>Building a documentation with notion is a very easy process and shouldn&rsquo;t involve so much.
+The first step is to create a <a href="https://www.notion.so/personal">Notion</a> account that’s if you don’t have one.
+
+  
+    <img  src="https://apitoolkit.io/blog/using-notion-for-documentation/notionhomepage.png" alt="Notion home page" />
+  
+
+</p>
+<p>With notion, you have the choice of either creating a template from scratch or using an already-existing template that is suitable for the type of information you want to publish.
+
+  
+    <img  src="https://apitoolkit.io/blog/using-notion-for-documentation/gettingstarted.png" alt="Getting started" />
+  
+
+</p>
+<h3 id="here-i-am-working-with-an-existing-template">Here I am working with an existing template</h3>
+<p>Templates are essential in Notion since they streamline your approach and allow you to establish a unique platform for each team member. However, the first version of a template is rarely the final one. So, until you have a good template, get used to clicking on the button  to make a decision. To start you need to choose a suitable template that suits your content order.
+
+  
+    <img  src="https://apitoolkit.io/blog/using-notion-for-documentation/type-of-template.png" alt="Choose a template that works" />
+  
+
+</p>
+<p>I&rsquo;ll use a doc because I&rsquo;m writing a documentation, and docs have different styles to pick from, such as technical specs, architecture overviews, product specs, and so on. All of these may appear similar, but there is a variation in layout, and this is the primary focus.
+
+  
+    <img  src="https://apitoolkit.io/blog/using-notion-for-documentation/choosing-template.png" alt="Choose a doc template" />
+  
+
+</p>
+<p>Choosing a layout provides you with a decent documentation format to work with, and with it you&rsquo;re ready to move forward with your high-quality, helpful documentation. These layouts decide how your material will appear and how each text will align with one another. A technical specification document will start with a summary, then move on to background, goals, potential solutions, and follow-up tasks, whereas a project specification will start with an overview, then progress to success criteria, user stories, and scope. The headings change  at some time, but the main thing is their subject emphasis, which means a lot to us depending on the type of layout we want to deploy.
+
+  
+    <img  src="https://apitoolkit.io/blog/using-notion-for-documentation/ready-to-document.png" alt="Ready to document" />
+  
+
+</p>
+<h3 id="here-i-chose-to-go-with-a-new-template-because-i-want-it-to-be-a-bit-different-from-the-usual-one">Here I chose to go with a new template because I want it to be a bit different from the usual one.</h3>
+<p>Choosing to create a personal template that is unique to you isn&rsquo;t unexpected because sometimes we just want a different design, a different template, a different font and all of that and notion is fully aware of this and has gone ahead tobgive  users what they want and how they want it. To create a new page in Notion, simply click on the doc option under templates. This leads you to a page with &ldquo;New&rdquo; plainly printed on the right side of the screen on a light blue button. Now, click new.
+
+  
+    <img  src="https://apitoolkit.io/blog/using-notion-for-documentation/new-template.png" alt="Create a new template" />
+  
+
+</p>
+<p>The first proc]ess leads to a completely empty blog-like page that allows you to fill in the information regarding your documentation and how you want it to look.
+
+  
+    <img  src="https://apitoolkit.io/blog/using-notion-for-documentation/choosing-a-new-template.png" alt="Choose new template" />
+  
+
+</p>
+<p>Just like I said eailier the type of doc layout you choose to work with  though is up to should entirely be based on the content you intend to share. This matters because it determines the type of layout your documentation will have and should also be decided based on the type of ddocumentation you want to write.
+
+  
+    <img  src="https://apitoolkit.io/blog/using-notion-for-documentation/type-of-new-template.png" alt="Type of new template" />
+  
+
+</p>
+<p>When you are done filling out the form, you can go ahead to start documenting every bit of that process to guide your users accurately.
+
+  
+    <img  src="https://apitoolkit.io/blog/using-notion-for-documentation/create-new-template.png" alt="New work ready" />
+  
+
+</p>
+<p>A well-documented information is  essential especially  now that the society is driven by sophisticated technology. When we can&rsquo;t quickly access the information we require, and there is no support at all, or the information that is provided is insufficient, we become incredibly frustrated. While access to information that helps us carry out our daily tasks successfully is crucial in today&rsquo;s tech culture, Notion is out here with easy ways to get this documentation done. Lookout for the next post on API documentation with Notion.</p>
+
+    </article>
+  </div>
+</main>
+</div><footer class="border-t border-stone-100 bg-stone-50 text-center" aria-labelledby="footer-heading">
+  <section class="our_containerx inline-block max-w-5xl text-left">
+    <h2 id="footer-heading" class="sr-only">Footer</h2>
+    <div class="py-12 lg:py-16 px-4">
+      <div class="xl:grid xl:grid-cols-3 xl:gap-2">
+        <div class="grid grid-cols-2 xl:col-span-2">
+          <div class="md:grid md:gap-8">
+            <div class="">
+              <h3 class="text-base font-medium text-gray-900">Support</h3>
+              <ul role="list" class="mt-4 space-y-2 text-sm text-gray-600">
+                <li>
+                  <a href="https://apitoolkit.io/pricing/" class=" hover:text-gray-900"> Pricing </a>
+                </li>
+
+                <li>
+                  <a href="https://apitoolkit.io/docs/" class=" hover:text-gray-900"> Documentation </a>
+                </li>
+
+                <li>
+                  <a href="https://apitoolkit.io/docs/quickstarts/" class="hover:text-gray-900"> Guides </a>
+                </li>
+
+                <li>
+                  <a href="https://updown.io/6kqs" class=" hover:text-gray-900"> Status Page</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class=" md:gap-8">
+            <div>
+              <h3 class="text-base font-medium text-gray-900">Company</h3>
+              <ul role="list" class="mt-4 space-y-2 text-sm text-gray-600">
+                <li>
+                  <a href="https://apitoolkit.io/about/" class="  hover:text-gray-900"> About </a>
+                </li>
+
+                <li>
+                  <a href="https://apitoolkit.io/blog/" class=" hover:text-gray-900">Blog </a>
+                </li>
+
+                <li>
+                  <a href="https://apitoolkit.io/privacy-policy/" class=" hover:text-gray-900"> Privacy Policy </a>
+                </li>
+
+                <li>
+                  <a href="https://apitoolkit.io/terms-and-conditions/" class=" hover:text-gray-900">Terms and
+                    Conditions </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="mt-8 xl:mt-0">
+          <h3 class="text-base font-medium text-gray-900">Subscribe to our newsletter</h3>
+          <p class="mt-4 text-sm text-gray-500">Follow the APIToolkit journey with news and updates right to your inbox.
+          </p>
+
+          <form action="https://app.convertkit.com/forms/2724709/subscriptions" class="seva-form formkit-form"
+            method="post" data-sv-form="2724709" data-uid="15d365ef1d" data-format="inline" data-version="5"
+            data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"Success! Now check your email to confirm your subscription.","redirect_url":""},"analytics":{"google":null,"facebook":null,"segment":null,"pinterest":null,"sparkloop":null,"googletagmanager":null},"modal":{"trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"powered_by":{"show":true,"url":"https://convertkit.com?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic"},"recaptcha":{"enabled":false},"return_visitor":{"action":"show","custom_content":""},"slide_in":{"display_in":"bottom_right","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"sticky_bar":{"display_in":"top","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15}},"version":"5"}'>
+            <div class="flex flex-col sm:flex-row mt-4">
+              <input class="border border-blue-500 rounded-md px-4 py-2 text-xs sm:w-96" name="email_address"
+                placeholder="Email address. eg abc@example.com" />
+              <button
+                class="rounded-md bg-blue-900 hover:bg-blue-800 border-blue-900 text-xs text-white inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0">
+                Subscribe
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="our_containerx bg-stone-200 text-center">
+    <div class="inline-block w-full max-w-5xl text-left py-6 px-3">
+      <img src="https://apitoolkit.io/assets/img/logo_black.svg" alt="APIToolkit logo" />
+      <p class="py-4 text-xs text-black">
+        &copy; 2022 APIToolkit.io (<a href="mailto:hello@apitoolkit.io">hello@apitoolkit.io</a>) . All rights
+        reserved.
+      </p>
+      <div class="flex space-x-6 md:order-2">
+        <a href="https://twitter.com/apitoolkit" class="text-gray-400 hover:text-gray-500">
+          <span class="sr-only">Twitter</span>
+          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+          </svg>
+        </a>
+
+        <a href="https://github.com/apitoolkit" class="text-gray-400 hover:text-gray-500">
+          <span class="sr-only">GitHub</span>
+          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd"
+              d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+              clip-rule="evenodd" />
+          </svg>
+        </a>
+
+      </div>
+    </div>
+  </section>
+</footer>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FZERLHDJ7J"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-FZERLHDJ7J");
+  </script>
+</body>
+
+</html>

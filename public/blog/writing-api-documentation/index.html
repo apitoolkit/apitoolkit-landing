@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang="en"><head itemscope>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="https://apitoolkit.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://apitoolkit.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://apitoolkit.io/favicon-16x16.png" />
+  <link rel="manifest" href="https://apitoolkit.io/site.webmanifest" />
+  <link rel="mask-icon" href="https://apitoolkit.io/safari-pinned-tab.svg" color="#5bbad5" />
+  <meta name="msapplication-TileColor" content="#da532c" />
+  <meta name="theme-color" content="#ffffff" />
+  
+  <title itemprop="name">Writing API Documentation - Best Practices and Mistakes to Avoid - APIToolkit </title>
+  <meta property="og:title" content='Writing API Documentation - Best Practices and Mistakes to Avoid - APIToolkit' />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content='Writing API Documentation - Best Practices and Mistakes to Avoid - APIToolkit' />
+  <meta itemprop="name" content="APIToolkit.io: Stay on top of your APIs!" />
+  <meta name="application-name" content="APIToolkit.io: Stay on top of your APIs!" />
+  <meta property="og:site_name" content="" />
+  
+  <meta name="description"
+    content='' />
+  <meta itemprop="description"
+    content="" />
+  <meta property="og:description"
+    content="" />
+  <meta name="twitter:description"
+    content="" />
+  
+  <base href="https://apitoolkit.io/blog/writing-api-documentation/" />
+  <link rel="canonical" href="https://apitoolkit.io/blog/writing-api-documentation/" />
+  <meta name="url" content="https://apitoolkit.io/blog/writing-api-documentation/" />
+  <meta name="twitter:url" content="https://apitoolkit.io/blog/writing-api-documentation/" />
+  <meta property="og:url" content="https://apitoolkit.io/blog/writing-api-documentation/" />
+  
+  <meta property="og:locale" content="en" />
+  <meta name="language" content="" />
+  
+  
+  
+  <meta itemprop="image" content="https://apitoolkit.io/og.png" />
+  <meta property="og:image" content="https://apitoolkit.io/og.png" />
+  <meta name="twitter:image" content="https://apitoolkit.io/og.png" />
+  <meta name="twitter:image:src" content="https://apitoolkit.io/og.png" />
+  
+  
+  <meta property="og:updated_time" content=" 2022-10-12T22:52:02&#43;0200" />
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://apitoolkit.io/sitemap.xml" />
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="article:publisher" content="" />
+  <meta property="og:article:published_time" content=2022-10-07T12:55:31&#43;0200 />
+  <meta property="article:published_time" content=2022-10-07T12:55:31&#43;0200 />
+  
+  <meta property="og:article:author" content="Jessica" />
+  <meta property="article:author" content="Jessica" />
+  <meta name="author" content="Jessica" />
+   
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Article",
+      "headline": "Writing API Documentation - Best Practices and Mistakes to Avoid",
+      "author": {
+        "@type": "Person",
+        "name": "https:\/\/github.com\/apitoolkit"
+      },
+      "datePublished": "2022-10-07",
+      "description": "",
+      "wordCount":  919 ,
+      "mainEntityOfPage": "True",
+      "dateModified": "2022-10-12",
+      "image": {
+        "@type": "imageObject",
+        "url": ""
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "APIToolkit.io: Stay on top of your APIs!",
+        "logo": {
+          "@type": "imageObject",
+          "url": "https://www.example.com/images/brand/favicon.png"
+        }
+      }
+    }
+  </script>
+  
+
+  
+  <meta name="robots" content="index,follow" />
+  <meta name="googlebot" content="index,follow" />
+
+  
+  <meta name="twitter:site" content="@ApiToolkit" />
+  <meta name="twitter:creator" content="@ApiToolkit" />
+  
+  
+
+  
+  <meta name="keywords" content="" />
+  <meta name="imagemode" content="force" />
+  <meta name="coverage" content="Worldwide" />
+  <meta name="distribution" content="Global" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="msapplication-tap-highlight" content="no" />
+  <meta name="apple-mobile-web-app-title" content="" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-touch-fullscreen" content="yes" />
+
+  
+  
+  <link rel="stylesheet" href="https://apitoolkit.io/assets/css/tailwind.prod.min.css" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+  
+  
+  
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@564&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      width: 100%;
+      font-size: 16px;
+      font-family: 'Inter', sans-serif;
+       
+      ;
+    }
+
+    .monospace {
+      font-family: 'Roboto Mono', monospace;
+    }
+
+    @media (min-width: 500px) {
+      body {
+        font-size: 16px;
+      }
+    }
+  </style>
+  <script src="https://unpkg.com/hyperscript.org@0.9.5"></script>
+  <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+</head>
+<body class="relative"><div class="text-center z-10">
+    <nav class="our_container w-full">
+      <div class="flex flex-row justify-between items-center pt-8">
+        <a href="https://apitoolkit.io/"><img src="https://apitoolkit.io/assets/img/logo_black.svg" alt="APItoolkit logo" /></a>
+        <div class="text-xs space-x-1 sm:space-x-5 ">
+          <button type="button" class="hidden bg-gray-200 px-3 py-2 rounded-full">
+            Sign in
+          </button>
+          <a href="https://apitoolkit.io/blog/" class="">blog</a>
+          <a href="https://apitoolkit.io/pricing/" class="">pricing</a>
+          <a href="https://apitoolkit.io/docs/" class="">Docs</a>
+          <a href="https://app.apitoolkit.io"
+            class="border border-amber-400 hover:bg-yellow-300 bg-amber-300 text-black  px-3 py-2 rounded-full inline-block">
+            Get Started
+          </a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div id="content">
+<main class="text-center">
+  <div class="our_container w-full relative py-16 overflow-hidden">
+    <div class="text-lg max-w-prose mx-auto text-center">
+      <span class="block text-base  text-indigo-600 font-semibold tracking-wide uppercase">
+        Fri Oct 7, 2022
+      </span>
+      <h1 class="mt-2 py-4 block text-2xl text-center leading-8 font-black tracking-tight text-gray-900 sm:text-3xl">
+        Writing API Documentation - Best Practices and Mistakes to Avoid
+      </h1>
+    </div>
+    <article class="mt-6 prose prose-indigo prose-base text-gray-900 mx-auto">
+      <p>
+<figure>
+   <img  src="./best-practices.webp" alt="Best practice" />
+   <div>Best practices. Photo from Pexels.com</div>
+</figure>
+
+</p>
+<p>An API is only as good as the API documentation because a good API can be rendered useless if users don&rsquo;t know how to use it, a documentation is often essential for success in the API economy <a href="https://apitoolkit.io/blog/api-documentation-top-tools-and-using-them-right/">Read more on API documentation</a>. Nevertheless, it can be quite difficult to develop and keep up with effective documentation that is simple to read, entertaining to engage with, and helps the user succeed. The adoption and maintainance of APIs are directly impacted by creating excellent documentation, which involves time and effort. By choosing the appropriate API Application Tool like <a href="https://app.apitoolkit.io">Apitoolkit</a>, you can manage the documentation of your APIs much easier.  We&rsquo;ve outlined a few best practices to assist your team in producing outstanding API documentation that your end users will like.</p>
+<h2 id="guidelines-for-api-documentation">Guidelines For API Documentation</h2>
+<p>Let&rsquo;s list out some of the best practices to make your documentation truly sparkle for developers and decision-makers.</p>
+<ul>
+<li>
+<p><strong>Record all Request and Responses</strong>
+There is never too much information provided in the API documentation. Users are unlikely to finish it in a single sitting regardless. When a user first begins using your API, they probably require some assistance until they have incorporated it into their workflow. Talk about things as simple as signing up, this may soud really simple, I mean who doesn&rsquo;t know how to sign up but it is neccessary.</p>
+</li>
+<li>
+<p><strong>Arm your Documentation with Resources</strong>
+You can give your customers more data and resources to help them use your API successfully and make their journey swift. The goal of a great API documentation is to help customers and prospects succeed with your API as soon as possible. It goes beyond the fundamental text provided. You can add to your documentation by using extra sources and tools.</p>
+</li>
+<li>
+<p><strong>The Quick Start Guide</strong>
+The Getting Started manual gives a thorough explanation of how to use your API right now. The focus of the guide should be on helping users succeed with your API as soon as possible and providing them with support along the way. This will give readers an excellent overview of integrating and using their API.</p>
+</li>
+<li>
+<p><strong>SDKs and Libraries</strong>
+Developers can quickly call many resources thanks to code libraries. Developers will feel more at ease using your API if there are quick and simple ways to use it in several languages. SDKs are challenging to create and are not necessary for launch, but they can significantly increase API use. Having SDKs is a fantastic method to interact with the developer community if your business strategy is based on a public or open API paradigm. In such a case, there is a significant probability that if developers see value in your SDKs and APIs, they will build upon it or add more libraries. The Swagger Codegen project enables teams to quickly create SDKs from their API documentation.</p>
+</li>
+<li>
+<p><strong>Interactive Console</strong>
+Encourage potential customers to check what they read in the API documentation using the API console right away. A console makes getting started quick and easy, with no risk to the consumer. Experimentation is powerful. The work required to build a console or sandbox environment for users to interact with your API is rather low, but it can greatly aid engineers in understanding the value of your API graphically. Many organizations, including Microsoft and GitHub, provide interactive consoles for experimenting with their API services.</p>
+</li>
+</ul>
+<p>
+<figure>
+   <img  src="./mistakes-to-avoid.jpg" alt="mistakes-to-avoid" />
+   <div>Photos by Bankrs on Istock</div>
+</figure>
+
+</p>
+<h2 id="mistakes-to-avoid">Mistakes to AVOID</h2>
+<p>While there are best practices there are also mistakes to avoid if you want to have only good API documentation and they include:</p>
+<h3 id="avoid-using-jargon">Avoid Using Jargon</h3>
+<p>Keep in mind that you have very little control over who will use your API. Your API will be used by users with a range of skill levels, and these users will read your API documentation. You want your API and its documentation to be friendly and helpful to both expert and novice users. Writers may fall into the trap of using excessive language, which has several negative effects. The plain language will persuade people to invest in your API much more effectively than complex technical jargon. Secondly, you want your API to be helpful to as many programmers as you can, regardless of their degree of experience. If you must use technical lingo, offer a link in your API documentation to a <a href="https://rapidapi.com/blog/api-glossary/">glossary  explanation</a>, or instructional that explains the term in question.</p>
+<h3 id="focusing-on-competitors">Focusing on Competitors</h3>
+<p>Your documentation doesn&rsquo;t have to look like that of your competitors, remember your APIs dont work alike, so its important to draw your attention back to your API and focus on how to make every client and prospect satisfiesd with what you have to offer in a unique and straitforward way.</p>
+<h3 id="bad-documentation-structure">Bad Documentation Structure</h3>
+<p>If its not well structured, then its a problem. Every developer wants to have easy access to what they want in order to solve their problem as fast as they can. <a href="https://apitoolkit.io">You can take a look at a typical example of an organized documentation</a>.  Remember that if you have a structure issue, you are driving developers away.</p>
+<p>Finally, a good API documentation is worthwhile even if it takes time. It is a potent tool for accelerating the development and maturity of your APIs. It lays the groundwork for an excellent developer experience when using APIs. The aforementioned advice should make it simpler for you to create quality documentation. Teams may automate the documentation process and work on creating an excellent overall experience while accessing APIs thanks to popular open source description formats like OpenAPI Specification.</p>
+
+    </article>
+  </div>
+</main>
+</div><footer class="border-t border-stone-100 bg-stone-50 text-center" aria-labelledby="footer-heading">
+  <section class="our_containerx inline-block max-w-5xl text-left">
+    <h2 id="footer-heading" class="sr-only">Footer</h2>
+    <div class="py-12 lg:py-16 px-4">
+      <div class="xl:grid xl:grid-cols-3 xl:gap-2">
+        <div class="grid grid-cols-2 xl:col-span-2">
+          <div class="md:grid md:gap-8">
+            <div class="">
+              <h3 class="text-base font-medium text-gray-900">Support</h3>
+              <ul role="list" class="mt-4 space-y-2 text-sm text-gray-600">
+                <li>
+                  <a href="https://apitoolkit.io/pricing/" class=" hover:text-gray-900"> Pricing </a>
+                </li>
+
+                <li>
+                  <a href="https://apitoolkit.io/docs/" class=" hover:text-gray-900"> Documentation </a>
+                </li>
+
+                <li>
+                  <a href="https://apitoolkit.io/docs/quickstarts/" class="hover:text-gray-900"> Guides </a>
+                </li>
+
+                <li>
+                  <a href="https://updown.io/6kqs" class=" hover:text-gray-900"> Status Page</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class=" md:gap-8">
+            <div>
+              <h3 class="text-base font-medium text-gray-900">Company</h3>
+              <ul role="list" class="mt-4 space-y-2 text-sm text-gray-600">
+                <li>
+                  <a href="https://apitoolkit.io/about/" class="  hover:text-gray-900"> About </a>
+                </li>
+
+                <li>
+                  <a href="https://apitoolkit.io/blog/" class=" hover:text-gray-900">Blog </a>
+                </li>
+
+                <li>
+                  <a href="https://apitoolkit.io/privacy-policy/" class=" hover:text-gray-900"> Privacy Policy </a>
+                </li>
+
+                <li>
+                  <a href="https://apitoolkit.io/terms-and-conditions/" class=" hover:text-gray-900">Terms and
+                    Conditions </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="mt-8 xl:mt-0">
+          <h3 class="text-base font-medium text-gray-900">Subscribe to our newsletter</h3>
+          <p class="mt-4 text-sm text-gray-500">Follow the APIToolkit journey with news and updates right to your inbox.
+          </p>
+
+          <form action="https://app.convertkit.com/forms/2724709/subscriptions" class="seva-form formkit-form"
+            method="post" data-sv-form="2724709" data-uid="15d365ef1d" data-format="inline" data-version="5"
+            data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"Success! Now check your email to confirm your subscription.","redirect_url":""},"analytics":{"google":null,"facebook":null,"segment":null,"pinterest":null,"sparkloop":null,"googletagmanager":null},"modal":{"trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"powered_by":{"show":true,"url":"https://convertkit.com?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic"},"recaptcha":{"enabled":false},"return_visitor":{"action":"show","custom_content":""},"slide_in":{"display_in":"bottom_right","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"sticky_bar":{"display_in":"top","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15}},"version":"5"}'>
+            <div class="flex flex-col sm:flex-row mt-4">
+              <input class="border border-blue-500 rounded-md px-4 py-2 text-xs sm:w-96" name="email_address"
+                placeholder="Email address. eg abc@example.com" />
+              <button
+                class="rounded-md bg-blue-900 hover:bg-blue-800 border-blue-900 text-xs text-white inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0">
+                Subscribe
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="our_containerx bg-stone-200 text-center">
+    <div class="inline-block w-full max-w-5xl text-left py-6 px-3">
+      <img src="https://apitoolkit.io/assets/img/logo_black.svg" alt="APIToolkit logo" />
+      <p class="py-4 text-xs text-black">
+        &copy; 2022 APIToolkit.io (<a href="mailto:hello@apitoolkit.io">hello@apitoolkit.io</a>) . All rights
+        reserved.
+      </p>
+      <div class="flex space-x-6 md:order-2">
+        <a href="https://twitter.com/apitoolkit" class="text-gray-400 hover:text-gray-500">
+          <span class="sr-only">Twitter</span>
+          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+          </svg>
+        </a>
+
+        <a href="https://github.com/apitoolkit" class="text-gray-400 hover:text-gray-500">
+          <span class="sr-only">GitHub</span>
+          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd"
+              d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+              clip-rule="evenodd" />
+          </svg>
+        </a>
+
+      </div>
+    </div>
+  </section>
+</footer>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FZERLHDJ7J"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-FZERLHDJ7J");
+  </script>
+</body>
+
+</html>

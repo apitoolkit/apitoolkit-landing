@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang="en"><head itemscope>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="https://apitoolkit.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://apitoolkit.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://apitoolkit.io/favicon-16x16.png" />
+  <link rel="manifest" href="https://apitoolkit.io/site.webmanifest" />
+  <link rel="mask-icon" href="https://apitoolkit.io/safari-pinned-tab.svg" color="#5bbad5" />
+  <meta name="msapplication-TileColor" content="#da532c" />
+  <meta name="theme-color" content="#ffffff" />
+  
+  <title itemprop="name">How to write API Docs; 6 API Documentation Best Practices - APIToolkit </title>
+  <meta property="og:title" content='How to write API Docs; 6 API Documentation Best Practices - APIToolkit' />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content='How to write API Docs; 6 API Documentation Best Practices - APIToolkit' />
+  <meta itemprop="name" content="APIToolkit.io: Stay on top of your APIs!" />
+  <meta name="application-name" content="APIToolkit.io: Stay on top of your APIs!" />
+  <meta property="og:site_name" content="" />
+  
+  <meta name="description"
+    content='' />
+  <meta itemprop="description"
+    content="" />
+  <meta property="og:description"
+    content="" />
+  <meta name="twitter:description"
+    content="" />
+  
+  <base href="https://apitoolkit.io/blog/how-to-write-api-docs/" />
+  <link rel="canonical" href="https://apitoolkit.io/blog/how-to-write-api-docs/" />
+  <meta name="url" content="https://apitoolkit.io/blog/how-to-write-api-docs/" />
+  <meta name="twitter:url" content="https://apitoolkit.io/blog/how-to-write-api-docs/" />
+  <meta property="og:url" content="https://apitoolkit.io/blog/how-to-write-api-docs/" />
+  
+  <meta property="og:locale" content="en" />
+  <meta name="language" content="" />
+  
+  
+  
+  <meta itemprop="image" content="https://apitoolkit.io/og.png" />
+  <meta property="og:image" content="https://apitoolkit.io/og.png" />
+  <meta name="twitter:image" content="https://apitoolkit.io/og.png" />
+  <meta name="twitter:image:src" content="https://apitoolkit.io/og.png" />
+  
+  
+  <meta property="og:updated_time" content=" 2022-10-12T01:05:11&#43;0200" />
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://apitoolkit.io/sitemap.xml" />
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="article:publisher" content="" />
+  <meta property="og:article:published_time" content=2022-05-04T20:00:09&#43;0200 />
+  <meta property="article:published_time" content=2022-05-04T20:00:09&#43;0200 />
+  
+  <meta property="og:article:author" content="Irhose" />
+  <meta property="article:author" content="Irhose" />
+  <meta name="author" content="Irhose" />
+   
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Article",
+      "headline": "How to write API Docs; 6 API Documentation Best Practices",
+      "author": {
+        "@type": "Person",
+        "name": "https:\/\/github.com\/apitoolkit"
+      },
+      "datePublished": "2022-05-04",
+      "description": "",
+      "wordCount":  1091 ,
+      "mainEntityOfPage": "True",
+      "dateModified": "2022-10-12",
+      "image": {
+        "@type": "imageObject",
+        "url": ""
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "APIToolkit.io: Stay on top of your APIs!",
+        "logo": {
+          "@type": "imageObject",
+          "url": "https://www.example.com/images/brand/favicon.png"
+        }
+      }
+    }
+  </script>
+  
+
+  
+  <meta name="robots" content="index,follow" />
+  <meta name="googlebot" content="index,follow" />
+
+  
+  <meta name="twitter:site" content="@ApiToolkit" />
+  <meta name="twitter:creator" content="@ApiToolkit" />
+  
+  
+
+  
+  <meta name="keywords" content="" />
+  <meta name="imagemode" content="force" />
+  <meta name="coverage" content="Worldwide" />
+  <meta name="distribution" content="Global" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="msapplication-tap-highlight" content="no" />
+  <meta name="apple-mobile-web-app-title" content="" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-touch-fullscreen" content="yes" />
+
+  
+  
+  <link rel="stylesheet" href="https://apitoolkit.io/assets/css/tailwind.prod.min.css" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+  
+  
+  
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@564&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      width: 100%;
+      font-size: 16px;
+      font-family: 'Inter', sans-serif;
+       
+      ;
+    }
+
+    .monospace {
+      font-family: 'Roboto Mono', monospace;
+    }
+
+    @media (min-width: 500px) {
+      body {
+        font-size: 16px;
+      }
+    }
+  </style>
+  <script src="https://unpkg.com/hyperscript.org@0.9.5"></script>
+  <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+</head>
+<body class="relative"><div class="text-center z-10">
+    <nav class="our_container w-full">
+      <div class="flex flex-row justify-between items-center pt-8">
+        <a href="https://apitoolkit.io/"><img src="https://apitoolkit.io/assets/img/logo_black.svg" alt="APItoolkit logo" /></a>
+        <div class="text-xs space-x-1 sm:space-x-5 ">
+          <button type="button" class="hidden bg-gray-200 px-3 py-2 rounded-full">
+            Sign in
+          </button>
+          <a href="https://apitoolkit.io/blog/" class="">blog</a>
+          <a href="https://apitoolkit.io/pricing/" class="">pricing</a>
+          <a href="https://apitoolkit.io/docs/" class="">Docs</a>
+          <a href="https://app.apitoolkit.io"
+            class="border border-amber-400 hover:bg-yellow-300 bg-amber-300 text-black  px-3 py-2 rounded-full inline-block">
+            Get Started
+          </a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div id="content">
+<main class="text-center">
+  <div class="our_container w-full relative py-16 overflow-hidden">
+    <div class="text-lg max-w-prose mx-auto text-center">
+      <span class="block text-base  text-indigo-600 font-semibold tracking-wide uppercase">
+        Wed May 4, 2022
+      </span>
+      <h1 class="mt-2 py-4 block text-2xl text-center leading-8 font-black tracking-tight text-gray-900 sm:text-3xl">
+        How to write API Docs; 6 API Documentation Best Practices
+      </h1>
+    </div>
+    <article class="mt-6 prose prose-indigo prose-base text-gray-900 mx-auto">
+      <p>
+<figure>
+   <img  src="./image1.jpg" alt="Laptop, notepad, two phones and other items on a wooden table" />
+   <div></div>
+</figure>
+
+</p>
+<p>As is the way with most programming concepts, documentation is vital. An API might as well be gibberish if the documentation isn’t laid out properly.</p>
+<p>Developing easy-to-understand API documentation can be quite challenging. But for those who know the right approaches, it can be a breeze. With only 32% of API providers confident that their API docs are above average, we thought it crucial to detail the best approaches and give you compelling reasons why you should always provide excellent documentation for your APIs.</p>
+<p>But first…</p>
+<h2 id="who-benefits-from-api-documentation">Who Benefits From API Documentation?</h2>
+<p>Your API documentation audience is segmented. As such, it’s important to identify the different groups of people who benefit from your documentation. This will give you insights into serving their needs.</p>
+<h3 id="developers">Developers</h3>
+<p>Developers are the people who directly use your APIs. In order to use your APIs effectively, they need to understand how it applies to their use case.  Additionally, if they need to run QA tests on the APIs, they require as much information as possible about the APIs. They may need to learn how to access and integrate with dozens, or even hundreds, of the resources you expose.</p>
+<p>Studies show that developers have become more confident in API documentation over the years. With the numbers rising, it only makes sense if you provide the relevant technical docs to accompany your APIs.</p>
+<h3 id="administrators-and-others">Administrators and Others</h3>
+<p>This group of people may never actually use your APIs. They are responsible for identifying resources needed by their teams. Some of them are technical like CTOs, whereas others might be COOs. Ensure your API documentation is written with such an audience in mind.</p>
+<p>Lastly, journalists, tech enthusiasts, and other non-specialized people will likely come across your API docs. How do you target them? By writing for the least technical audience.</p>
+<h2 id="1-target-the-least-specialized-audience">1. Target the Least Specialized Audience</h2>
+<p>When writing for a mixed audience, the smartest approach is to address the least technical amongst your readers. Try to answer basic questions, give explanations where necessary, and reduce your use of jargon. Here are a bunch of ways to target non-technical audiences</p>
+<p>Tell stories: Utilize case scenarios and make stories around them. This engages every kind of audience and shows your product in action.</p>
+<p>Be detailed: It’s important to put in all the important bits of information but you should try to do that in as few words as possible. Have an outline that lets you break concepts down into concise bits.</p>
+<p>Be instructional: Let your users know where to begin and where to end. Detail complex pieces of information in clearly outlines steps. Give examples where necessary</p>
+<h2 id="2-point-to-relevant-supporting-resources">2. Point to Relevant Supporting Resources</h2>
+<p>Your readers want all the help they can get. Don’t be stingy with information. Point to any relevant guides and supporting resources that they may need. Don’t leave them guessing. Some examples of supporting documents are:</p>
+<p>A Getting Started Guide: This gives a comprehensive approach to using your API. The goal is to ensure your consumers attain success with using your product.</p>
+<p>Interactive Console:
+A console helps your audience to test your APIs and see results in real time. It’s a simple approach that yields big rewards.</p>
+<p>Libraries: Code libraries enable developers to easily call different resources. Access to methods in different languages to work with your API helps developers feel more comfortable working with the API.</p>
+<h2 id="3-utilize-industry-standards">3. Utilize Industry Standards</h2>
+<p>Make it easy for your readers to understand your documents; use familiar layouts and designs. If you’re using a document generator then the layout is already decided for you.</p>
+<p>Here are some recommendations:
+Use good contrast: The Web Content Accessibility Guidelines 2.1 (WCAG) recommends a contrast ratio of at least 3:1 for graphics and user interface components (such as form input borders). WCAG Level AAA requires a contrast ratio of at least 7:1 for normal text and 4.5:1 for large text.</p>
+<p>Use a dynamic layout: These days, layouts must be easy to bookmark. The use of PDFs and single-page documents doesn’t cut it. Ensure your docs are dynamic and scalable.</p>
+<p>Navigation bar: Your navigation bar should stick to the screen. Make it easy for users to switch between pages.</p>
+<h2 id="4-describe-your-request-response-cycles-in-detail">4. Describe Your Request-response Cycles in Detail</h2>
+<p>Your users should not be surprised by API responses. They should know exactly what to expect from API calls.</p>
+<p>Document all possible calls your API could offer in relation to the parameters and responses. Responses serve as a contextual guide for your users, showing when they’re on the right path.</p>
+<p>Responses also provide guidance with error messages. Overall this helps your users to succeed. Be sure to cover multiple formats when describing the full sample response body.</p>
+<p>Lastly, examples are important. Provide examples in each object that your API is meant to return, together with examples of parameters that consumers can add for a successful API call. API observability tools can help with this.</p>
+<h2 id="5-make-it-freely-available">5 Make It Freely Available</h2>
+<p>One thing that really irks developers is gated API docs. Don’t be fooled, gated docs do not increase conversions. Developers and decision-makers want to know what to expect before deciding to use your APIs.</p>
+<p>Use as many code samples as necessary. Developers appreciate this a lot. Don’r be all talk and no sample.</p>
+<p>Lastly, optimize it for search engines. Your docs are no good if they can’t be found with a simple Google search. Ensure the page is indexed, titled properly, and well described.</p>
+<h2 id="6-update-your-docs-regularly">6. Update Your Docs Regularly</h2>
+<p>No one likes an outdated document. Stay on top of this. Update your API docs regularly. Here are some recommendations:</p>
+<p>Have a standard process/framework for updates: Incorporate your docs into your API update process. This ensures that as you roll out new features, your docs are ready to be published as well.</p>
+<p>Review often: Frequent review of your docs will expose outdated areas. Schedule your reviews to keep your processes streamlined.</p>
+<p>Use analytics: Good API analytics will show what endpoints are used most frequently. This will inform your API doc review process, helping you focus your updates on the most used portions. APIToolkit provides detailed analytics and much more. It’s a one-stop solution for API observability and monitoring.</p>
+<h3 id="final-thoughts">Final Thoughts</h3>
+<p>Documenting your APIs is just as important as building them. It’s essential to have frameworks and processes that make your API documentation seamless and scalable.</p>
+<p>You will have different audiences. Be sure to cater to all their varying needs when developing your API docs.</p>
+<p>APIToolkit gives you comprehensive analyses of your API docs to ensure you’re constantly up to date with the information you serve your community.</p>
+
+    </article>
+  </div>
+</main>
+</div><footer class="border-t border-stone-100 bg-stone-50 text-center" aria-labelledby="footer-heading">
+  <section class="our_containerx inline-block max-w-5xl text-left">
+    <h2 id="footer-heading" class="sr-only">Footer</h2>
+    <div class="py-12 lg:py-16 px-4">
+      <div class="xl:grid xl:grid-cols-3 xl:gap-2">
+        <div class="grid grid-cols-2 xl:col-span-2">
+          <div class="md:grid md:gap-8">
+            <div class="">
+              <h3 class="text-base font-medium text-gray-900">Support</h3>
+              <ul role="list" class="mt-4 space-y-2 text-sm text-gray-600">
+                <li>
+                  <a href="https://apitoolkit.io/pricing/" class=" hover:text-gray-900"> Pricing </a>
+                </li>
+
+                <li>
+                  <a href="https://apitoolkit.io/docs/" class=" hover:text-gray-900"> Documentation </a>
+                </li>
+
+                <li>
+                  <a href="https://apitoolkit.io/docs/quickstarts/" class="hover:text-gray-900"> Guides </a>
+                </li>
+
+                <li>
+                  <a href="https://updown.io/6kqs" class=" hover:text-gray-900"> Status Page</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class=" md:gap-8">
+            <div>
+              <h3 class="text-base font-medium text-gray-900">Company</h3>
+              <ul role="list" class="mt-4 space-y-2 text-sm text-gray-600">
+                <li>
+                  <a href="https://apitoolkit.io/about/" class="  hover:text-gray-900"> About </a>
+                </li>
+
+                <li>
+                  <a href="https://apitoolkit.io/blog/" class=" hover:text-gray-900">Blog </a>
+                </li>
+
+                <li>
+                  <a href="https://apitoolkit.io/privacy-policy/" class=" hover:text-gray-900"> Privacy Policy </a>
+                </li>
+
+                <li>
+                  <a href="https://apitoolkit.io/terms-and-conditions/" class=" hover:text-gray-900">Terms and
+                    Conditions </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="mt-8 xl:mt-0">
+          <h3 class="text-base font-medium text-gray-900">Subscribe to our newsletter</h3>
+          <p class="mt-4 text-sm text-gray-500">Follow the APIToolkit journey with news and updates right to your inbox.
+          </p>
+
+          <form action="https://app.convertkit.com/forms/2724709/subscriptions" class="seva-form formkit-form"
+            method="post" data-sv-form="2724709" data-uid="15d365ef1d" data-format="inline" data-version="5"
+            data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"Success! Now check your email to confirm your subscription.","redirect_url":""},"analytics":{"google":null,"facebook":null,"segment":null,"pinterest":null,"sparkloop":null,"googletagmanager":null},"modal":{"trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"powered_by":{"show":true,"url":"https://convertkit.com?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic"},"recaptcha":{"enabled":false},"return_visitor":{"action":"show","custom_content":""},"slide_in":{"display_in":"bottom_right","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"sticky_bar":{"display_in":"top","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15}},"version":"5"}'>
+            <div class="flex flex-col sm:flex-row mt-4">
+              <input class="border border-blue-500 rounded-md px-4 py-2 text-xs sm:w-96" name="email_address"
+                placeholder="Email address. eg abc@example.com" />
+              <button
+                class="rounded-md bg-blue-900 hover:bg-blue-800 border-blue-900 text-xs text-white inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0">
+                Subscribe
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="our_containerx bg-stone-200 text-center">
+    <div class="inline-block w-full max-w-5xl text-left py-6 px-3">
+      <img src="https://apitoolkit.io/assets/img/logo_black.svg" alt="APIToolkit logo" />
+      <p class="py-4 text-xs text-black">
+        &copy; 2022 APIToolkit.io (<a href="mailto:hello@apitoolkit.io">hello@apitoolkit.io</a>) . All rights
+        reserved.
+      </p>
+      <div class="flex space-x-6 md:order-2">
+        <a href="https://twitter.com/apitoolkit" class="text-gray-400 hover:text-gray-500">
+          <span class="sr-only">Twitter</span>
+          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+          </svg>
+        </a>
+
+        <a href="https://github.com/apitoolkit" class="text-gray-400 hover:text-gray-500">
+          <span class="sr-only">GitHub</span>
+          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd"
+              d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+              clip-rule="evenodd" />
+          </svg>
+        </a>
+
+      </div>
+    </div>
+  </section>
+</footer>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FZERLHDJ7J"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-FZERLHDJ7J");
+  </script>
+</body>
+
+</html>

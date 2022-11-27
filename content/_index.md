@@ -39,11 +39,11 @@ description: "Build and maintain your APIs with Less downtimes, Fewer support ti
       <div class="">
         <h1 class="text-blue-title tracking-tight text-5xl" style="font-variation-settings: 'wght' 900;">Stay on top of your APIs!</h1>
         <div class="pt-8 space-y-5 sm:pr-20">
-          <p>
-          <strong class="font-normal text-xl"
-              >
+          <p class="font-normal text-xl">
             Build and maintain your APIs with Less downtimes, Fewer support tickets, Faster time to resolution and always up to date insights into your APIs
-            </strong>
+          </p>
+          <p class="font-normal text-base">
+              APIToolkit spots broken/slow api endpoints, missing/incorrect data, etc before your customers. 
           </p>
           <!-- <img src="/assets/img/blob-landing-center.svg"/> -->
           <!-- <p> -->
@@ -59,44 +59,19 @@ description: "Build and maintain your APIs with Less downtimes, Fewer support ti
               class="w-24 inline-block"
             />
           </div>
-          <div class="space-y-2 text-sm sm:pt-4" id="waitlist-form-1">
-            <small class="text-blue-900"
-              >APIToolkit is in closed beta. But you can join the
-              waitlist below</small
+          <div class="space-y-1 text-sm sm:pt-1" id="waitlist-form-1">
+            <a
+              href="https://app.apitoolkit.io"
+              class=" drop-shadow  rounded-md hover:bg-yellow-300 bg-amber-300 text-black border border-amber-400 font-medium inline-block px-4 py-2 mt-2 sm:mt-0"
             >
-            <div>
-              <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
-              <form
-                action="https://app.convertkit.com/forms/2724709/subscriptions"
-                class="seva-form formkit-form"
-                method="post"
-                data-sv-form="2724709"
-                data-uid="15d365ef1d"
-                data-format="inline"
-                data-version="5"
-                data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"Success! Now check your email to confirm your subscription.","redirect_url":""},"analytics":{"google":null,"facebook":null,"segment":null,"pinterest":null,"sparkloop":null,"googletagmanager":null},"modal":{"trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"powered_by":{"show":true,"url":"https://convertkit.com?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic"},"recaptcha":{"enabled":false},"return_visitor":{"action":"show","custom_content":""},"slide_in":{"display_in":"bottom_right","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"sticky_bar":{"display_in":"top","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15}},"version":"5"}'
-              >
-                <input
-                  class="block border border-blue-500 rounded-md px-4 py-2 text-xs w-full sm:w-96"
-                  type="email"
-                  name="email_address"
-                  placeholder="Email address. eg abc@example.com"
-                />
-                <div class=" pt-3">
-                  <button
-                    class=" drop-shadow  rounded-md hover:bg-yellow-300 bg-amber-300 text-black border border-amber-400 font-medium inline-block px-4 py-2 mt-2 sm:mt-0"
-                  >
-                    Get Early Access for Free
-                  </button>
-                  <span class="inline-block px-5"> OR </span>
-                  <button
-                    class="drop-shadow rounded-md border border-gray-200 bg-gray-100 hover:bg-gray-200  text-xs text-gray-900 inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0"
-                  >
-                    Watch Intro Video &nbsp; ▶
-                  </button>
-                </div>
-              </form>
-            </div>
+              Get Started for Free
+            </a>
+            <span class="inline-block px-5"> OR </span>
+            <a href="#intro-video"
+              class="drop-shadow rounded-md border border-gray-200 bg-gray-100 hover:bg-gray-200  text-xs text-gray-900 inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0"
+            >
+              Watch Intro Video &nbsp; ▶
+            </a>
             <div class="space-x-5 text-xs">
               <small class="inline-block">✓ Always free plan</small>
               <small class="inline-block">✓ GDPR compliant</small>
@@ -116,7 +91,7 @@ description: "Build and maintain your APIs with Less downtimes, Fewer support ti
 {{</ rawhtml >}}
 
 <section class="flex items-center justify-center pt-24">
-  <div class=" gradient1 p-5 md:max-w-3xl rounded-xl drop-shadow w-full">
+  <div class=" gradient1 p-5 md:max-w-3xl rounded-xl drop-shadow w-full" id="intro-video">
     <div  class="w-full" style="position: relative; padding-bottom: 65.77344701583435%; height: 0;"><iframe class="rounded-lg border-4 border-gray-200 " src="https://www.loom.com/embed/24ea3ae9600544d68f1001af3f4feac2?hide_title=true&hide_owner=true&hideEmbedTopBar=true" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
     <div class="mt-2"><a href="https://www.loom.com/share/24ea3ae9600544d68f1001af3f4feac2" target="_blank" class="inline-block bg-blue-900 text-white px-3 py-1 text-xs rounded-lg" >Learn how APIToolkit works (Video)</a></div>
   </div>
@@ -128,6 +103,7 @@ description: "Build and maintain your APIs with Less downtimes, Fewer support ti
     <div class="md:max-w-4xl text-left px-5  pt-44 pb-32 text-lg">
     
 ###### WHY APITOOLKIT?
+<!-- Get daily & weekly reports on everything going on in your services. -->
 ## Finally **Trust**  and **Understand** your APIs
 
 <br/>
@@ -137,6 +113,7 @@ The list of problems modern backend systems have to deal with are endless. And t
 <br/>
 <br/>
 All the tools you need to understand what's going on in your APIs, Investigate incidents and generate insights. 
+With daily & weekly reports on everything going on in your services.
 
   </div>
 
@@ -419,14 +396,13 @@ thing of the past.
       </h1>
       <div class="pt-8 space-y-5">
         <p>
-          APIToolkit is creating a world where you don’t lose money because of
+          APIToolkit is creating a world where you don’t lose customers because of
           wrongly documented services or broken API contracts. Signup to join
-          our early waitlist and get great lifetime deals when we launch fully
+          to be a part of our journey. 
         </p>
         <div class="space-y-2 text-sm">
           <small class="text-blue-900"
-            >APIToolkit is still in closed beta. But you can join the waitlist
-            below</small
+            >Subscribe to keep up with our journey below</small
           >
           <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
           <form
@@ -448,7 +424,7 @@ thing of the past.
               <button
                 class="rounded-md bg-blue-900 hover:bg-blue-800 border-blue-900 text-xs text-white inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0"
               >
-                Join Waitlist
+                Subscribe 
               </button>
             </div>
           </form>
