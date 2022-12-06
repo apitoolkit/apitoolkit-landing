@@ -6,7 +6,7 @@ categories:
   - APIs
 --- 
 
-![goswagger](./go-swagger.jpg)
+![goswagger](./goswagger.jpg)
 As a developer you've just completed the development of a brand-new API and now need to provide documentation to aid you when constructing client-side applications that use the API. To achieve this, you begin to consider several approaches, and you present some options such as Swagger, Docusaurus, Postman, and others. You recall the tension of the API documentation phase and wonder if there are any shortcuts to speed things up - you can't skip this phase because software is useless if no one can use it. 
 
 As a developer, it is vital to document and arrange all APIs, but you also know that not every developer like the documentation aspect. To do so, we'll need certain tools that make it simple to create API documentation. 
@@ -88,7 +88,6 @@ Step 5: Write Documentation using Go Swagger
 Now, let’s see how to document using Swagger. It will consist of basic configurations, models, and API routes. 
 
 Basic Configuration 
-Shape Copy Text 
 
 ```go
 //  Comapany Api: 
@@ -114,7 +113,6 @@ We can define security using the API key, which can be checked for each API.
 Step5: Create a Model 
 You can create models for our APIs' requests and answers. Below are some structural examples with swagger comments. Every field can have a name, type, schema, required, and description. 
 
-Shape Copy Text 
 ```go
 type ReqAddCompany struct { 
    // Name of the company 
@@ -288,7 +286,6 @@ func (h *BaseHandlerSqlx) DeleteCompany(w http.ResponseWriter, r *http.Request) 
 }
 ```
 
-Shape Copy Text 
    ```go
 // documentation for developers 
    opts := middleware.SwaggerUIOpts{SpecURL: "/swagger.yaml"} 
@@ -317,8 +314,6 @@ Generate Clients using Swagger Documentation
 Swagger, as indicated earlier, isn't just for API documentation; we can also use it to construct clients. Consider the following AngularJS client creation example. 
 
 Example: Client Generation for AngularJS. 
-
-Shape Copy Text 
 
 ```go
 npm install ng-swagger-gen --save-dev 
