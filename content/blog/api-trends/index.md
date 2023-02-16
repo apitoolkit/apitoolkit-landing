@@ -1,6 +1,6 @@
 ---
-title: "Must-Know API trends in 2022"
-date: 2022-06-05T01:33:53+02:00
+title: "Must-Know API trends in 2023"
+date: 2023-02-05T01:33:53+02:00
 author: irhose
 categories:
   - APIs
@@ -9,7 +9,7 @@ categories:
 ![API Trends](./image1.jpg)
 
 
-What do developers do with APIs these days? Find out in this breakdown of the relevant trends in API use in 2022
+What do developers do with APIs these days? Find out in this breakdown of the relevant trends in API use in 2023
 
 What is the future of APIs? Where are we headed in this burgeoning intersystem communications industry that has brought us closer and helped us work more efficiently than any innovation since the invention of the world wide web? 
 
@@ -21,7 +21,7 @@ What's more, according to the majority of respondents (94%) in that study, the i
 
 To help you make the best choices going forward, I've curated a list of the most relevant API trends you should know about
 
-Must-Know API Trends in 2022
+Must-Know API Trends in 2023
 - API analytics and monitoring platforms
 - API-as-a-Product
 - The proliferation of low code and no code API development 
@@ -55,11 +55,11 @@ For complex integrations between multiple applications in a production environme
 A remarkable benefit is that no-code platforms are easily customizable. As a result, a low-code tool can make API integration much easier with no need for specialized IT experts.
 
 
-As API adoption continues to rise across industries, low code/no-code features will become increasingly important in 2022. Companies looking to scale new APIs should apply low-code/no-code approaches to reach efficiency in the development lifecycle.
+As API adoption continues to rise across industries, low code/no-code features will become increasingly important in 2023. Companies looking to scale new APIs should apply low-code/no-code approaches to reach efficiency in the development lifecycle.
 
 ## 4. Machine Learning APIs
 
-Based on the general shift in trends across the software industry, I anticipate that in 2022 many organizations will begin utilizing AI or ML technologies simply because so many more are becoming available via APIs. 
+Based on the general shift in trends across the software industry, I anticipate that in 2023 many organizations will begin utilizing AI or ML technologies simply because so many more are becoming available via APIs. 
 
 Main areas of interest include translation services, speech recognition, chatbots, predictive analytics, and customer service automation tools.
 
