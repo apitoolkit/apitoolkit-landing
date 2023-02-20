@@ -37,7 +37,7 @@ We’ve curated a list of the best API observability and monitoring tools to hel
 
 ![A screenshot of the APIToolkit Dashboard](./apitoolkitdash.jpeg)
 
-Built by software engineers to solve problems that have cost their employers lots of money in the past, APIToolkit is an automated tool for API contract monitoring and documentation. 
+Built by expert software engineers to solve problems that have cost their employers lots of money in the past, APIToolkit is an automated tool for API contract monitoring and documentation. 
 
 Using best-in-class technology, APIToolkit leverages a highly specialized and powerful platform to provide a secure environment for developers to build and maintain APIs with enhanced analytics.
 
