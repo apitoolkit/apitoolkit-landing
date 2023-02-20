@@ -13,7 +13,7 @@ Connectivity is one fantastic thing that has put the world at our fingertips, an
 
 How do you think apps and websites let you create an account and log in with your Facebook or Google credentials? Or how do weather apps get the day’s forecast? The answer to both questions is that they talk to other systems to get the data or verify your credentials. These two systems talk to each other through an API or Application Programming Interface.
 
-![API Connectivity Infographic](./apitoolkitinfographic.png)
+![API Connectivity Infographic](./apitoolkitinfographic1.png)
 
 ## What is an API?
 
