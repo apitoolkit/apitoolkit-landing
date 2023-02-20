@@ -111,7 +111,7 @@ According to a [Salt](https://salt.security/api-security-trends?) API security s
 
 In addition to API security, API observability and monitoring can serve as your API performance management agent, verifying that your payloads are returning the correct data and notifying you of any changes. It can also provide you with real-time analytics concerning user behavior.
 
-An efficient API observability and monitoring tool will help you build and maintain your APIs with less downtimes, spotting broken/slow API endpoints, missing/incorrect data, etc., before your customers. This helps you secure brand patronage and customer loyalty.
+An efficient [API observability and monitoring tool](https://apitoolkit.io/blog/best-api-monitoring-and-observability-tools/) will help you build and maintain your APIs with less downtimes, spotting broken/slow API endpoints, missing/incorrect data, etc., before your customers. This helps you secure brand patronage and customer loyalty.
 
 Also, not forgetting that a loyal customer keeps you on the job.
 
