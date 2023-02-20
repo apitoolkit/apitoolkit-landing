@@ -11,7 +11,25 @@ categories:
 
 With [API observability](https://apitoolkit.io/blog/what-is-api-testing/), out of sight shouldn’t mean out of mind. APIs work in the background using simple commands to move requests back and forth. Perhaps because they do a lot of background work, QA teams tend to neglect them.
 
-API observability is an underrated yet hugely important aspect of quality assurance testing. One shouldn’t wait until a downtime occurs before jumping to fix broken or missing APIs. 
+API observability is an underrated yet hugely important aspect of quality assurance testing. One shouldn’t wait until a downtime occurs before jumping to fix broken or missing APIs.
+
+### What is an API?
+
+An API serves as a liaison between various software programs, enabling them to talk to one another and share data. This is similar to a waiter in a restaurant who takes your order and then relays it to the kitchen, and returns with your requested meal.
+
+When you use an app on your phone or computer, it frequently has to make a request for data from a web server. Such communication is made possible by the API. It offers a set of guidelines and procedures for how various software applications can communicate with one another.
+
+For instance, if you use a weather app, it might use an API to ask a web server for the current weather data. The API provides a standard way for the app to make that request and receive the data it needs.
+
+## What is API Monitoring and Observability?
+
+[API monitoring and observability](https://apitoolkit.io/blog/api-documentation-and-observability-the-truth-you-must-know/) relate to the process of closely monitoring an API's behavior and performance to make sure it is operating effectively and efficiently.
+
+Monitoring an API entails keeping track of a number of metrics, including response time, error rates, and availability, to make sure it is operating as it should. This monitoring enables programmers to swiftly identify and address any potential problems.
+
+On the other side, observability refers to the capacity to analyze a system's internal state in order to comprehend and diagnose its behavior. Observability in the context of APIs is gathering and analyzing data from many sources, including logs, traces, and metrics, in order to get knowledge about how the API is operating and how it is being used.
+
+### Best API Monitoring and Observability Tools 
 
 We’ve curated a list of the best API observability and monitoring tools to help make your QA processes seamless and improve your [API documentation](http://apitoolkit.io/blog/how-to-write-api-docs).
 
