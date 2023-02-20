@@ -36,7 +36,7 @@ The unsung superheroes who ventured into the development of [API analytics and m
 
 To get ahead of your competition and scale seamlessly, you need real-time data to make informed decisions. API analytics are valuable across the company. Such analytics are designed to capture a wide range of metrics for use by several teams.
 
-APIToolkit.io is a one stop solution for API observability and monitoring. You really should check us out. 
+APIToolkit.io is a one stop solution for [API observability and monitoring](https://apitoolkit.io/blog/api-documentation-and-observability-the-truth-you-must-know/). You really should check us out. 
 
 ## 2. The Rise of API-as-a-Product
 APIs have enabled completely new business models to surface, such as API-as-a-Product.
