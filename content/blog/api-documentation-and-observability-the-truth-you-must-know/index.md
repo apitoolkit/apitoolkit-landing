@@ -49,11 +49,11 @@ APIs have the following standard key components:
 
 APIs have become increasingly important in recent years as they allow different software systems to communicate with each other and exchange data. They have been widely adopted across various industries such as technology, healthcare, finance, and more. However, behind the successful use of an API to send and receive requests is API documentation.
 
-## What is API Documentation?
+### What is API Documentation?
 
 API documentation is a crucial aspect of software development that provides information about the functionality and use of an application programming interface (API). It serves as a reference for developers who want to integrate their applications with the API and for users who want to understand how to use the API effectively.
 
-## Why is API Documentation Important?
+### Why is API Documentation Important?
 
 API documentation plays a vital role in ensuring that an API is easy to understand and use. It’s the equivalent of a primer or product guide. API documentation helps to bridge the gap between the API creators and API users by providing clear and concise information about the API’s capabilities, inputs, outputs, and error handling.
 
@@ -67,7 +67,7 @@ However, if the documentation doesn't include this information, the developer ma
 
 Ensuring that your API documentation is well-detailed and easy to understand increases your patronage and revenue.
 
-## Essential Elements of API Documentation
+### Essential Elements of API Documentation
 
 1. Endpoints: A clear and comprehensive list of all the endpoints that the API offers.
 2. Request and Response examples: Detailed examples of the requests and responses for each endpoint, including the expected input parameters, output format, and response codes.
@@ -77,7 +77,7 @@ Ensuring that your API documentation is well-detailed and easy to understand inc
 6. Rate limits: Information about the rate limits for each endpoint, including the maximum number of requests per unit of time.
 7. SDKs and code samples: Code samples and software development kits (SDKs) that make it easier to integrate with the API.
 
-## API Documentation Best Practices
+### API Documentation Best Practices
 
 Creating highly useful API documentation requires intelligent effort and strategy. Below are some key things you should take cognizance of:
 
