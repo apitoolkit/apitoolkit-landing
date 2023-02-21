@@ -51,7 +51,7 @@ Utilize a variety of parameters to segment and aggregate API calls at scale
 
 ## 4. Stay Vigilant with Our Anomaly Detector
 
-![APIToolkit Dashboard](./apitoolkitdash.jpg)
+![APIToolkit Dashboard](./apitoolkit1.png)
 
 Our powerful Anomaly Detector tool monitors your API endpoints traffic and reports any form of changes to you. It maintains a laser-focused view at your endpoints, tracking activities and alerting you about any alteration or change – your watchman during the day and at night.
 
@@ -76,7 +76,7 @@ Lastly, APIToolkit can help you uncover deeper insights about your API usage tha
 
 ## 7. Get a Bird's Eye View of your Entire API
 
-![APITookit Endpoints Interface](./apitoolkitdash1.png)
+![APITookit Endpoints Interface](./apitoolkit2.png)
 
 APIToolkit is equipped with the most advanced tools to give you a detailed insight into everything that is happening on your API. From the list of all your endpoints to metrics to documentation, etc., we have got you covered.
 
