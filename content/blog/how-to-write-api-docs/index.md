@@ -1,5 +1,5 @@
 ---
-title: How to Write API Documentation: 10 Essential Guidelines
+title: "How to Write API Documentation: 10 Essential Guidelines"
 date: 2022-05-04T20:00:09+02:00
 author: irhose
 categories:
@@ -86,7 +86,7 @@ Lastly, examples are important. Provide examples in each object that your API is
 Errors are an inevitable part of using any API, and it’s important to explain errors clearly in your documentation. This way, users will understand why something went wrong and know what steps to take to fix the problem. Providing examples of common error messages can also be helpful for users to reference when troubleshooting. Be sure to include good descriptions of each error message and provide explanations for why it occurred.
 
 ## 9. Make It Freely Available
-One thing that really irks developers is gated API docs. Don’t be fooled, gated docs do not increase conversions. Developers and decision-makers want to know what to expect before deciding to use your APIs.
+Trust me, one thing that really irks developers is gated API docs. Don’t be fooled, gated docs do not increase conversions. Developers and decision-makers want to know what to expect before deciding to use your APIs.
 
 Use as many code samples as necessary. Developers appreciate this a lot. Don’r be all talk and no sample. 
 
