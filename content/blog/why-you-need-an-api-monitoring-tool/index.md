@@ -1,6 +1,6 @@
 ---
-title: Top 4 Reasons Why Your Team Should Use A Plug & Play API Monitoring Tool — APIToolkit.io
-seo_title: Why Developers Need a Plug-and-play API Monitoring Tool—APIToolkit
+title: Top 7 Reasons Why Your Team Should Use A Plug & Play API Monitoring Tool — APIToolkit.io
+seo_title: Why Developers Need the Plug-and-play API Observability and Monitoring Tool—APIToolkit
 date: 2022-05-07T16:02:02+02:00
 author: irhose
 description: Every website experiences downtimes. Downtimes could cost thousands of dollars in losses. APIToolkit ensures you’re notified the moment an API breaks
@@ -10,22 +10,25 @@ categoties:
 
 ![a stock computer image](image1.jpg)
 
-Your website is a dynamic entity. A lot happens on a daily basis; hundreds or more API requests are sent regularly which makes monitoring the integrity of each call a demanding task.
+Your website is a dynamic entity. A lot happens on a daily basis; hundreds or more [API](https://apitoolkit.io/blog/best-api-monitoring-and-observability-tools/) requests are sent regularly which makes monitoring the integrity of each call a demanding task.
 
 Developers may choose to ignore APIs that are provided by reputable companies. However, data shows that even the most reputable developer playgrounds like Discord and Slack have had downtimes due to APIs breaking. No one’s immune to downtimes.
 
-The good news is that Plug-and-play monitoring tools like APIToolkit can show your data in real time and alert you the second something breaks. This ensures you stay on top of your processes.
+The good news is that a Plug-and-play [API observability and monitoring](https://apitoolkit.io/blog/api-documentation-and-observability-the-truth-you-must-know/) tool like APIToolkit can show your data in real time and alert you the second something breaks. This ensures you stay on top of your processes.
 
 If you aren’t convinced yet, here are the top 4 reasons why you should use a tool like ours.
 
 ## 1. APIToolkit Was Built by Devs for Devs
-APIToolkit was built by software engineers to solve problems that have cost their employers lots of money in the past. Anthony, one of the co-founders of APIToolkit can be quoted saying, “We’re engineers at our core, who are very close to the problems we are solving. So, we encourage our users to be a part of this community evolving solutions to solve API documentation and observability.”
+APIToolkit was built by software engineers to solve problems that have cost their employers lots of money in the past. [Anthony](https://twitter.com/tonialaribe), one of the co-founders of APIToolkit can be quoted saying, “We’re engineers at our core, who are very close to the problems we are solving. So, we encourage our users to be a part of this community evolving solutions to solve API documentation and observability.”
 
 The team at APIToolkit has a combined experience of 17+ years in software development. Not only does APIToolkit provide observability and monitoring services, but we also have a supportive community on Discord where you can have open conversations with us. 
 
 Feel free to join the community or book a call with Anthony to chat about your experiences with API documentation and observability.
 
 ## 2. Stay up to Date With Your API docs
+
+![APIToolkit Log Explorer](./apitoolkitlogexplorer.png)
+
 To keep our users informed in real time, we offer live API contract monitoring & alerts. This ensures you’re notified of any changes to your APIs. New fields, new endpoints, empty fields, changes in field types, etc.
 
 Our plug & play integration also lets you view your live API shapes, fields, etc., and generate Swagger docs at anytime via your live traffic.
@@ -46,12 +49,38 @@ Real-time tailing and filtering of HTTP requests
 Examine HTTP request and response payloads
 Utilize a variety of parameters to segment and aggregate API calls at scale
 
-## 4. Refactor and Migrate Safely
+## 4. Stay Vigilant with Our Anomaly Detector
+
+![APIToolkit Dashboard](./apitoolkitdash.jpg)
+
+Our powerful Anomaly Detector tool monitors your API endpoints traffic and reports any form of changes to you. It maintains a laser-focused view at your endpoints, tracking activities and alerting you about any alteration or change – your watchman during the day and at night.
+
+Examples of an anomaly could be that a new endpoint was created, a new field was added to the endpoints, a field is behaving differently from how it used to, an endpoint speed has suddenly dropped, a sudden drop in your traffic, etc. Basically, any form of changes to your endpoints that returns an unfamiliar response will be tracked and reported by our powerful Anomaly Detector tool. It’s now left for you to acknowledge whether the change was sanctioned by you, or you take action.
+
+In a nutshell, APIToolkit will verify that your payloads are returning the correct data and would notify you of any changes.
+
+Save your company millions in lost revenue by using APIToolkit. We spot errors and address them before your customers.
+
+## 5. Detect and Track Slow Endpoints
+
+![APIToolkit Dashboard Interface](./apitoolkitdashboard.png)
+
+Our powerful AI tool sits atop your performance, showing you endpoint latency degradations, and our AI can suggest where there is room for improvement. For example, data that could be cached easily.
+
+## 6. Refactor and Migrate Safely
 You no longer have to break your APIs to refactor them. Catch bugs and changes due to refactorings or migrations faster than your customers. Stay on top of your game with one dashboard that provides you with the analytics you need for seamless service.
 
 Furthermore, you can quickly and seamlessly debug errors without tedious log-searching and fragile single-metric tests.
 
 Lastly, APIToolkit can help you uncover deeper insights about your API usage than you can with simple infrastructure monitoring.
 
+## 7. Get a Bird's Eye View of your Entire API
+
+![APITookit Endpoints Interface](./apitoolkitdash1.png)
+
+APIToolkit is equipped with the most advanced tools to give you a detailed insight into everything that is happening on your API. From the list of all your endpoints to metrics to documentation, etc., we have got you covered.
+
+In a nutshell, you get a live and in-depth view of your API. View your endpoints, fields, and even export your API as swagger if you like. The always up-to-date documentation is generated automatically from your live traffic.
+
 ## Final Thoughts
-Automating your processes isn’t always the answer to efficiency problems. But in this case, it definitely is. APIToolkit comes with features to supercharge yourdocumentation and monitoring processes, saving you time and money.
+Automating your processes isn’t always the answer to efficiency problems. But in this case, it definitely is. [APIToolkit](https://app.apitoolkit.io/) comes with features to supercharge your documentation and monitoring processes, keeping you alert, and saving you time and money.
