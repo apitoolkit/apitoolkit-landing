@@ -128,7 +128,7 @@ With daily & weekly reports on everything going on in your services.
 
 Apitoolkit will verify that your payloads are returning the correct data and would notify you if we notice changes.
 
-<a class="text-blue-900" href="">More about the Anomaly detector →</a>
+<a class="text-blue-900" href="/api-anomalies-validation-and-checks">More about the Anomaly detector →</a>
 
 </div>
 {{% /benefits_section %}}
@@ -141,7 +141,7 @@ Apitoolkit will verify that your payloads are returning the correct data and wou
 
 Your API requests are logged for you on Apitoolkit, so you can query, explore and gain insight into the data hidden in your live API requests and responses. With our Log Explorer, your imagination is your limit.
 
-<a class="text-blue-900" href="">More about the Log explorer →</a>
+<a class="text-blue-900" href="/api-logs-and-metrics">More about the Log explorer →</a>
 
 </div>
 <div  class="home-feature-image-div">
@@ -159,7 +159,7 @@ Your API requests are logged for you on Apitoolkit, so you can query, explore an
 ## DETECT AND TRACK SLOW ENDPOINTS 
 Our API Metrics detect and show you endpoint latency degradations, and our AI can suggest when there's room for improvement. Eg data that could be cached easily.
 
-<a class="text-blue-900" href="">More about the performance metrics →</a>
+<a class="text-blue-900" href="/api-performance-monitoring-and-compliance">More about the performance metrics →</a>
 
 </div>
 {{% /benefits_section %}}
@@ -172,7 +172,7 @@ Our API Metrics detect and show you endpoint latency degradations, and our AI ca
 Get a live and in-depth view of your API. View your endpoints, fields, and even export your API as swagger if you like.
 The always up to date documentation is generated automatically from your live traffic.
 
-<a class="text-blue-900" href="">More about Mission Control for your APIs→</a>
+<a class="text-blue-900" href="/api-mission-control">More about Mission Control for your APIs→</a>
 
 </div>
 <div class="home-feature-image-div">
@@ -192,7 +192,7 @@ The always up to date documentation is generated automatically from your live tr
 Documenting is very hard, but not anymore. Apitoolkit generates always up to date docs based on your live API traffic.
 You get a gentle nudge when new fields are added, so you can add any extra context our AI might have missed.
 
-<a class="text-blue-900" href="">More about our Automatic Documenter →</a>
+<a class="text-blue-900" href="/api-documentation-and-developer-portals">More about our Automatic Documenter →</a>
 
 </div>
 {{% /benefits_section %}}
