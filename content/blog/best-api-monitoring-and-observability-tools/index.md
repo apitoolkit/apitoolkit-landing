@@ -23,7 +23,7 @@ For instance, if you use a weather app, it might use an API to ask a web server 
 
 ## What is API Monitoring and Observability?
 
-In simple terms, [API monitoring and observability](https://apitoolkit.io/blog/api-documentation-and-observability-the-truth-you-must-know/) relate to the process of closely monitoring an API's behavior and performance to make sure it is operating effectively and efficiently.
+[API monitoring and observability](https://apitoolkit.io/blog/api-documentation-and-observability-the-truth-you-must-know/) relate to the process of closely monitoring an API's behavior and performance to make sure it is operating effectively and efficiently.
 
 Monitoring an API entails keeping track of a number of metrics, including response time, error rates, and availability, to make sure it is operating as it should. This monitoring enables programmers to swiftly identify and address any potential problems.
 
