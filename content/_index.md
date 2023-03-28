@@ -67,10 +67,11 @@ description: "Build and maintain your APIs with Less downtimes, Fewer support ti
               Get Started for Free
             </a>
             <span class="inline-block px-5"> OR </span>
-            <a href="#intro-video"
+            <a href="https://calendly.com/tonyalaribe/30min"
+              target="_blank"
               class="drop-shadow rounded-md border border-gray-200 bg-gray-100 hover:bg-gray-200  text-xs text-gray-900 inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0"
             >
-              Watch Intro Video &nbsp; ▶
+              Get a demo &nbsp;
             </a>
             <div class="space-x-5 text-xs">
               <small class="inline-block">✓ Always free plan</small>
@@ -107,15 +108,43 @@ description: "Build and maintain your APIs with Less downtimes, Fewer support ti
 ## Finally **Trust**  and **Understand** your APIs
 
 <br/>
-Innovating is hard! Super hard! Everyday brings a new curveball. How do you secure what you can't see? How do you fix a problem you can't find?
-The list of problems modern backend systems have to deal with are endless. And that's why we're here;
-
+<strong>Innovating is hard!</strong> Everyday brings it's own challenges. How do you secure what you can't see? How do you fix a problem you can't find?
+The list of problems modern backend systems have to deal with are endless. And that is why APIToolkit exists;
 <br/>
 <br/>
-All the tools you need to understand what's going on in your APIs, Investigate incidents and generate insights. 
-With daily & weekly reports on everything going on in your services.
+All the tools you need to understand <strong>what's going on</strong> in your APIs, <strong>Investigate incidents</strong> and <strong>generate insights</strong>. 
+With <strong>daily & weekly reports</strong> on everything going on in your services.
 
   </div>
+
+<section class="py-36">
+<h3 class="pb-16 font-bold text-2xl text-center">Tools in this Toolbox</h3>
+<div class="grid grid-cols-3 gap-5 text-lg ">
+  <a class="rounded-md p-5 border border-gray-200 drop-shadow-md shadow-stone-500" href="/api-anomalies-validation-and-checks">
+    API Contract testing / Validation
+  </a>
+  <a class="rounded-md p-5 border border-gray-200 drop-shadow-md shadow-stone-500" href="/api-logs-and-metrics">
+    API Logs & Metrics Explorer 
+  </a>
+  <a class="rounded-md p-5 border border-gray-200 drop-shadow-md shadow-stone-500" href="/api-performance-monitoring-and-compliance">
+    Performance Monitoring
+  </a>
+  <a class="rounded-md p-5 border border-gray-200 drop-shadow-md shadow-stone-500" href="/api-mission-control">
+   Mission Control for your APIs
+  </a>
+  <a class="rounded-md p-5 border border-gray-200 drop-shadow-md shadow-stone-500" href="/api-documentation-and-developer-portals">
+    Low Effort Documentation 
+  </a>
+  <a class="rounded-md p-5 border border-gray-200 drop-shadow-md shadow-stone-500" href="/api-anomalies-validation-and-checks">
+    Payload Anomaly Detection  
+  </a>
+</div>
+</section>
+
+<div class="text-center pb-5 pt-24">
+
+## Features
+</div>
 
 {{% benefits_section %}}
 <div  class="home-feature-image-div">
@@ -126,7 +155,7 @@ With daily & weekly reports on everything going on in your services.
 ##### Anomalies and Data validation
 ## DETECT CRITICAL INCIDENTS
 
-Apitoolkit will verify that your payloads are returning the correct data and would notify you if we notice changes.
+Upload your API contract or let our AI learn it automativally. Then, Apitoolkit will verify and test that your payloads are returning the correct data and would notify you if we notice changes. API Contract testing on steroids.
 
 <a class="text-blue-900" href="/api-anomalies-validation-and-checks">More about the Anomaly detector →</a>
 
@@ -189,7 +218,7 @@ The always up to date documentation is generated automatically from your live tr
 
 ##### Documentation and Overview
 ## ALWAYS UP TO DATE API DOCUMENTATION
-Documenting is very hard, but not anymore. Apitoolkit generates always up to date docs based on your live API traffic.
+Documenting is very hard, but not anymore. Apitoolkit generates always up to date docs (& swagger files) based on your live API traffic.
 You get a gentle nudge when new fields are added, so you can add any extra context our AI might have missed.
 
 <a class="text-blue-900" href="/api-documentation-and-developer-portals">More about our Automatic Documenter →</a>
@@ -212,6 +241,22 @@ When something goes wrong, notify the right person at the right time over slack,
 
   </section>
 </section>
+
+<section class="my-24">
+
+#### Wall of **LOVE**
+## Loved by Developers and Engineering teams
+
+<br/>
+<br/>
+
+<!-- <script type="text/javascript" src="https://testimonial.to/js/iframeResizer.min.js"></script> -->
+<!-- <iframe id="testimonialto-carousel-all-apitoolkit-light" src="https://embed-v2.testimonial.to/carousel/all/apitoolkit?theme=light&autoplay=on&showmore=on&one-row=on&hideDate=on&same-height=on" frameborder="0" scrolling="no" width="100%"></iframe> -->
+<!-- <script type="text/javascript">iFrameResize({log: false, checkOrigin: false}, "#testimonialto-carousel-all-apitoolkit-light");</script> -->
+<iframe height="800px" id="testimonialto-apitoolkit-light-animated" src="https://embed-v2.testimonial.to/w/apitoolkit?animated=off&theme=light&shadowColor=f78da740" frameborder="0" scrolling="no" width="100%"></iframe>
+</section>
+
+
 
 {{% container %}}
   <section class="pt-20 sm:pt-36">
