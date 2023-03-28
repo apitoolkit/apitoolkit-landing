@@ -43,7 +43,7 @@ description: "Build and maintain your APIs with Less downtimes, Fewer support ti
             Build and maintain your APIs with Less downtimes, Fewer support tickets, Faster time to resolution and always up to date insights into your APIs
           </p>
           <p class="font-normal text-base">
-              APIToolkit spots broken/slow api endpoints, missing/incorrect data, etc before your customers. 
+              TL;DR. APIToolkit is an API monitoring and observability platform that can spot broken/slow api endpoints, missing/incorrect data, etc before your customers. 
           </p>
           <!-- <img src="/assets/img/blob-landing-center.svg"/> -->
           <!-- <p> -->
