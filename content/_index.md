@@ -5,30 +5,6 @@ publishdate: 2022-03-24
 description: "Build and maintain your APIs with Less downtimes, Fewer support tickets, Faster time to resolution and always up to date insights into your APIs"
 ---
 {{< rawhtml >}}
-    <style>
-      .formkit-alert {
-        font-weight: bold;
-        font-size: large;
-        margin: 2rem;
-        line-height: 2rem;
-        color: #353f5f;
-      }
-    .fade-in-section, .home-feature-image-div {
-      opacity: 0;
-      transform: translateY(20vh);
-      visibility: hidden;
-      transition: opacity 0.6s ease-out, transform 1.2s ease-out;
-      will-change: opacity, visibility;
-    }
-    .fade-in-section.is-visible, .home-feature-image-div.is-visible {
-      opacity: 1;
-      transform: none;
-      visibility: visible;
-    }
-    </style>
-{{< /rawhtml >}}
-
-{{< rawhtml >}}
 
 
 <!-- Blurred bg image generated from: https://fffuel.co/bbblurry/ -->
@@ -449,16 +425,11 @@ thing of the past.
           <small class="text-blue-900"
             >Subscribe to keep up with our journey below</small
           >
-          <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
           <form
-            action="https://app.convertkit.com/forms/2724709/subscriptions"
-            class="seva-form formkit-form"
+            class=""
             method="post"
-            data-sv-form="2724709"
-            data-uid="15d365ef1d"
-            data-format="inline"
-            data-version="5"
-            data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"Success! Now check your email to confirm your subscription.","redirect_url":""},"analytics":{"google":null,"facebook":null,"segment":null,"pinterest":null,"sparkloop":null,"googletagmanager":null},"modal":{"trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"powered_by":{"show":true,"url":"https://convertkit.com?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic"},"recaptcha":{"enabled":false},"return_visitor":{"action":"show","custom_content":""},"slide_in":{"display_in":"bottom_right","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"sticky_bar":{"display_in":"top","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15}},"version":"5"}'
+            id="apitoolkit-newsletter-form"
+            onsubmit="document.getElementByID('apitoolkit-newsletter-form').innerHTML = 'Success! Now check your email to confirm your subscription.'"
           >
             <div>
               <input
