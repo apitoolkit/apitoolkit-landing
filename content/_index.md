@@ -119,7 +119,7 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
 
 <section class="py-36">
 <h3 class="pb-16 font-bold text-2xl text-center">Tools in this Toolbox</h3>
-<div class="grid grid-cols-3 gap-5 text-lg ">
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-5 text-lg p-1">
   <a class="rounded-md p-5 border border-gray-200 drop-shadow-md shadow-stone-500" href="/api-anomalies-validation-and-checks">
     API Contract testing / Validation
   </a>
