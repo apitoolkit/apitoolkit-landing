@@ -6,7 +6,7 @@ hide-date: true
 ![Detect Slow Endpoints](../gif-endpoint.gif)
 ### Detect and Track Slow Endpoints
 
-Our powerful AI tool sits atop your performance metrics: throughput, latency distribution, etc.
+Our powerful AI tool oversees your performance metrics: throughput, latency distribution, etc.
 
 Latency distribution will inform you on how slow or fast your endpoint is. Throughput will notify you of how many requests per minute are coming into your endpoints, the error rates, speed, etc.
  
