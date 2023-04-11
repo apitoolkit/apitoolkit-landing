@@ -4,6 +4,8 @@ date: 2022-03-23
 hide-date: true
 ---
 
+![Anomaly Detection](../gif1.gif)
+
 ## Anomaly Detector
  
 Our powerful Anomaly Detector tool monitors your API endpoints traffic and reports any form of changes to you. It maintains a laser-focused view at your endpoints, tracking activities and alerting you about any alteration or change – your watchman during the day and at night.
