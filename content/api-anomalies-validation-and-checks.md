@@ -4,9 +4,11 @@ date: 2022-03-23
 hide-date: true
 ---
 
+![Anomaly Detection](../gif1.gif)
+
 ## Anomaly Detector
  
-Our powerful Anomaly Detector tool monitors your API endpoints traffic and reports any form of changes to you. It maintains a laser-focused view at your endpoints, tracking activities and alerting you about any alteration or change – your watchman during the day and at night.
+Our powerful Anomaly Detector tool monitors your API endpoints traffic and reports any alteration to you. It maintains a laser-focused view at your endpoints, tracking activities and alerting you about any alteration or change – your watchman during the day and at night.
  
 Examples of an anomaly could be that a new endpoint was created, a new field was added to the endpoints, a field is behaving differently from how it used to, an endpoint speed has suddenly dropped, a sudden drop in your traffic, etc. Basically, any form of changes to your endpoints that returns an unfamiliar response will be tracked and reported by our powerful Anomaly Detector tool. It’s now left for you to acknowledge whether the change was sanctioned by you, or you take action.
  
