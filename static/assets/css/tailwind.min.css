@@ -2254,6 +2254,14 @@ img {
   height: 1.5rem;
 }
 
+.h-3 {
+  height: 0.75rem;
+}
+
+.h-4 {
+  height: 1rem;
+}
+
 .w-24 {
   width: 6rem;
 }
