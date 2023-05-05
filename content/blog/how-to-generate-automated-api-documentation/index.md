@@ -23,6 +23,8 @@ As a general rule of thumb, good API documentation should be clear, concise, and
 
 **Update.** Another important aspect of API documentation is keeping it up-to-date. APIs can change over time, so it's crucial to ensure that the documentation reflects the latest version of the API. This means updating the documentation whenever changes are made to the API, and ideally providing a changelog to inform developers of any new features or changes.
 
+Read: [How to Use Notion for API Documentation](https://apitoolkit.io/blog/using-notion-for-documentation/)
+
 ## Generating Automated AI Documnentation
 
 As a company, we had conversations with small and large development teams about how they maintain their API documentation. Out of almost 60 companies, it turns out that the processes were quite heavily dependent on their tech stacks and frameworks.
@@ -126,3 +128,5 @@ APIToolkit is committed to guiding you through managing quality documentation, a
 [How to Write API Documentation: 10 Essential Guidelines](https://apitoolkit.io/blog/how-to-write-api-docs/)
 
 [API Documentation and Observability: The Truth You Must Know](https://apitoolkit.io/blog/api-documentation-and-observability-the-truth-you-must-know/)
+
+[Top 8 API Documentation Tools for Developers](https://apitoolkit.io/blog/top-8-api-documentation-tools-for-developers/)
