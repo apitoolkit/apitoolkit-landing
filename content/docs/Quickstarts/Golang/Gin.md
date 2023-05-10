@@ -34,7 +34,7 @@ Run the following command to install the package into your Go application
 go get github.com/apitoolkit/apitoolkit-go
 ```
 
-Now you can initialize APIToolkit in your application’s entry point (main.go)
+Now you can initialize APIToolkit in your application’s entry point (eg main.go)
 
 ```go
 package main
