@@ -1,5 +1,5 @@
 ---
-title: .Net 
+title: .Net
 date: 2022-03-23
 publishdate: 2022-03-24
 weight: 20
@@ -7,22 +7,25 @@ menu:
   main:
     weight: 20
 ---
-To integrate .Net web services with API Toolkit, an SDK called the `ApiToolkit.Net` client for API Toolkit is utilized. It keeps track of incoming traffic, aggregates the requests, and then delivers them to the apitoolkit servers. 
-We'll concentrate on providing a step-by-step instruction for integrating an API toolkit into our Golang web service in this tutorial.  
+
+To integrate .Net web services with API Toolkit, an SDK called the `ApiToolkit.Net` client for API Toolkit is utilized. It keeps track of incoming traffic, aggregates the requests, and then delivers them to the apitoolkit servers.
+We'll concentrate on providing a step-by-step instruction for integrating an API toolkit into our Golang web service in this tutorial.
 
 ## Design decisions:
+
 - The SDK relies on google cloud pubsub over grpc behind the scenes, to ensure that your traffic is communicated to APIToolkit for processing in the most efficient ways.
 - Processing the live traffic in this way, allows :
   1. APIToolkit to perform all kinds of analysis and anomaly detection and monitoring on your APIs in real time.
   2. Users to explore their API live, via the api log explorer.
 
 ## How to Integrate with a DotNet Web Service:
+
 1. Sign up / Sign in to the [API dashboard](https://app.apitoolkit.io)
-   ![Sign up / Sign in](../signin.png)
+   ![Sign up / Sign in](/signin.png)
 2. [Create a project](/docs/dashboard/creating-a-project/)
-3. [Generate an API key for your project](/docs/dashboard/generating-api-keys), and include a brief description of your work. And to prevent losing your key after it has been generated, remember to make a copy of it. 
-    ![API key generation](../api-keys-generation.png)
-3. Initialize the middleware with the APItoolkit API key you generated above. Integrating only takes 3 lines of Go code: 
+3. [Generate an API key for your project](/docs/dashboard/generating-api-keys), and include a brief description of your work. And to prevent losing your key after it has been generated, remember to make a copy of it.
+   ![API key generation](/api-keys-generation.png)
+4. Initialize the middleware with the APItoolkit API key you generated above. Integrating only takes 3 lines of Go code:
 
 ## Installation
 
@@ -51,15 +54,15 @@ app.Use(async (context, next) =>
 ```
 
 The field `{Your_APIKey}` should be replaced with the api key which you generated from the apitoolkit dashboard.
-In practice, you would set this field using 
-
+In practice, you would set this field using
 
 ## Redacting/Masking fields
 
 If you have fields which are too sensitive and should not be sent to APIToolkit servers, you can mark those fields to be redacted either via the APIToolkit dashboard, or via this client SDK. Redacting fields via the SDK means that those fields never leave your servers in the first place, compared to redacting it via the APIToolkit dashboard, which would redact the fields on the edge before further processing. But then the data still needs to be transported from your servers before they are redacted.
 
 To mark a field for redacting via this SDK, you simply need to provide additional arguments to the APIToolkitService with the paths to the fields that should be redacted. There are 3 potential arguments which you can provide to configure what gets redacted.
-- `RedactHeaders`:  A list of HTTP header keys which should be redacted before data is sent out. eg COOKIE(redacted by default), CONTENT-TYPE, etc
+
+- `RedactHeaders`: A list of HTTP header keys which should be redacted before data is sent out. eg COOKIE(redacted by default), CONTENT-TYPE, etc
 - `RedactRequestBody`: A list of JSONpaths which will be redacted from the request body, if the request body is a valid json.
 - `RedactResponseBody`: A list of JSONpaths which will be redacted from the response body, if the response body is a valid json.
 
@@ -70,8 +73,8 @@ Examples of valid jsonpaths would be:
 
 For more examples and introduction to json path, please take a look at: [https://support.smartbear.com/alertsite/docs/monitors/api/endpoint/jsonpath.html](https://support.smartbear.com/alertsite/docs/monitors/api/endpoint/jsonpath.html)
 
-
 Here's an example of what your configuration in your entry point (Program.cs) would look like with the redacted fields configured:
+
 ```csharp
 var config = new Config
 {
@@ -91,8 +94,7 @@ app.Use(async (context, next) =>
 
 ```
 
-
-It is important to note that while the `RedactHeaders` config field accepts a list of headers(case insensitive), 
+It is important to note that while the `RedactHeaders` config field accepts a list of headers(case insensitive),
 the `RedactRequestBody` and `RedactResponseBody` expect a list of JSONPath strings as arguments.
 
 The choice of JSONPath was selected to allow you have great flexibility in describing which fields within your responses are sensitive.
@@ -103,6 +105,6 @@ To learn more about jsonpath to help form your queries, please take a look at th
 ## Next Steps
 
 1. Deploy your application or send test http requests to your service
-2. Check API log explorer or Endpoints pages on the APIToolkit dashboard to see if your test request was processed correctly 
-![Endpoint-after-integration](../endpoint-screenshot.png)
-6. Enjoy having our API comanage your backends and APIs with you.
+2. Check API log explorer or Endpoints pages on the APIToolkit dashboard to see if your test request was processed correctly
+   ![Endpoint-after-integration](/endpoint-screenshot.png)
+3. Enjoy having our API comanage your backends and APIs with you.
