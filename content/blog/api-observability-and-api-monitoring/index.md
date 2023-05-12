@@ -13,11 +13,11 @@ tags:
 
 ![Camera charcoal painting pointing downwards](image1.jpg)
 
-This is where we like to play—the not so clearly defined border of [API observability and API monitoring](https://apitoolkit.io/blog/best-api-monitoring-and-observability-tools/). It’s why our tool was built. We wanted to help startup teams with the heavy-lifting.
+This is where we like to play—the not so clearly defined border of [API observability and API monitoring](https://apitoolkit.io/blog/best-api-monitoring-and-observability-tools/). It’s why our [tool](https://apitoolkit.io/blog/why-you-need-an-api-monitoring-tool/) was built. We wanted to help startup teams with the heavy-lifting.
 
 ## API Monitoring and API Observability
 
-While API monitoring enables you to check for uptime and take action if your API has time-outs or responds with 500 errors, it is also limited due to it being a blackbox form of monitoring with assertion checks created ahead of time. 
+While [API monitoring](https://apitoolkit.io/blog/api-documentation-and-observability-the-truth-you-must-know/) enables you to check for uptime and take action if your API has time-outs or responds with 500 errors, it is also limited due to it being a blackbox form of monitoring with assertion checks created ahead of time. 
 
 The test or probe is already known ahead of time which means API monitoring is unable to answer arbitrary questions on how your API is behaving. Instead, API monitoring can only check on the traffic that it generates, not actual customer API traffic. As more APIs are exposed to the internet, there are new requirements to explore and find unknown unknowns for preventing API threats, troubleshooting customer issues, and understanding API usage. These requirements led to the emergence of API Observability.
 
@@ -63,6 +63,8 @@ APIs contain timing information on when the request was initiated, and how long 
 
 API traces make it easy to understand how long different services take to respond and where timing errors can occur. Traces enable you to further explore which logs to look at for a particular session or related set of API calls.
 
+Read: [How to Write API Documentation: 10 Essential Guidelines](https://apitoolkit.io/blog/how-to-write-api-docs/)
+
 ## API Monitoring
 
 API Monitoring refers to the practice of monitoring Application Programming Interfaces, most commonly in production, to gain visibility into performance, availability, and functional correctness. API Monitoring tools are designed to help you analyze the performance of your applications and improve poorly performing APIs. 
@@ -71,8 +73,22 @@ They provide measurements of how long a routine takes to execute, how often it i
 
 An API monitoring tool initiates API calls against your chosen endpoints and then records the response received. Additional checks can be added such as creating a Trello alert on a 500 error or timeout. The test can be started either on a trigger (such as when a new version is deployed by your CI/CD pipeline) or on a recurring schedule (such as every 1 minute). API monitoring tests can be simple such as simple health and uptime checks or can be very elaborate running through a long sequence of API calls and checking against specific status codes, body fields, and more.
 
+![API Observability vs API Monitoring](./api-monitoring-observability.jpg)
+
+## The importance of API Observability and Monitoring
+
+API observability and monitoring are crucial for ensuring the reliability and performance of your APIs. By collecting and analyzing data, observability can provide insights into the behavior of your APIs, helping you identify potential issues before they become major problems. Monitoring, on the other hand, allows you to quickly detect and respond to issues in real-time, minimizing downtime and ensuring that your APIs are always available and performing at their best. Together, these practices can help you deliver a better user experience and improve the overall reliability of your APIs.
+
+## Best Practices for Implementing API Observability and Monitoring
+
+When implementing API observability and monitoring, it’s important to start by defining your goals and objectives. What do you want to achieve with these practices? Once you have a clear understanding of your goals, you can start selecting the right tools and technologies to help you achieve them. Some best practices to keep in mind include setting up alerts and notifications to quickly respond to issues, using analytics and visualization tools to gain insights into API behavior, and regularly reviewing and analyzing data to identify trends and patterns. It’s also important to involve all stakeholders in the process, including developers, operations teams, and business leaders, to ensure everyone is aligned and working towards the same goals.
+
+Read: [How to Tackle Anomalies in RESTful APIs (the Right Way)](https://apitoolkit.io/blog/anomalies-in-restful-apis/)
+
 ### Conclusion
 
-If you’re looking to ship APIs with speed and confidence, then you need an API observability platform like [ours](https://apitoolkit.io). APIs provide the window to the rest of your companies infrastructure and enable entirely new digital experiences, but traditional monitoring can only answer already known questions like “Is my API down”, but cannot answer arbitrary questions required for data-driven engineering and business teams, nor report on actual customer API usage needed for security and product analytics.
+If you’re looking to ship APIs with speed and confidence, then you need an API monitoring and observability platform like [ours](https://apitoolkit.io). APIs provide the window to the rest of your companies infrastructure and enable entirely new digital experiences, but traditional monitoring can only answer already known questions like “Is my API down”, but cannot answer arbitrary questions required for data-driven engineering and business teams, nor report on actual customer API usage needed for security and product analytics.
 
 As an API [observability and monitoring platform](https://apitoolkit.io/blog/why-you-need-an-api-monitoring-tool/), we have all your bases covered.
+
+Recommended Post: [How to Generate Automated API Documentation](https://apitoolkit.io/blog/how-to-generate-automated-api-documentation/)
