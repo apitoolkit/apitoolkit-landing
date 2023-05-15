@@ -9,9 +9,9 @@ categories:
 
 ![Oriental battle](./image1.jpg)
 
-Developers tend to be finicky about describing things they work with. There are developer debates as old as time itself (maybe not that old, but yunno…). For instance, is HTML a programming language? I’m not getting into that, don’t bother. 
+Developers tend to be finicky about describing things they work with. There are [developer](https://apitoolkit.io/blog/top-api-tools-for-developers/) debates as old as time itself (maybe not that old, but yunno…). For instance, is HTML a programming language? I’m not getting into that, don’t bother. 
 
-What I do want to describe are the differences between APIs and Web services. It’s a more straightforward and clearly defined topic, so I know I won’t be attacked for this article. Let’s jump right into it!
+What I do want to describe are the differences between [APIs](https://apitoolkit.io/blog/best-api-monitoring-and-observability-tools/) and Web services. It’s a more straightforward and clearly defined topic, so I know I won’t be attacked for this article. Let’s jump right into it!
 
 Bear in mind that a web service and an API are two very similar concepts, so it can be difficult to understand the similarities and differences.
 
@@ -31,6 +31,8 @@ A web server running on a computer listens for requests from other computers. Wh
 
 It’s important to note the requirement of the request being made over a network.
 
+Read: [API Monitoring and Documentation: The Truth You Must Know](https://apitoolkit.io/blog/api-documentation-and-observability-the-truth-you-must-know/)
+
 ## What Is the Key Difference Between APIs and Web Services?
 From everything I've said so far, it's clear that APIs and web services have more similarities than differences. Of course, this is the case because web services are a subset of APIs.
 
@@ -42,15 +44,17 @@ Unlike APIs in general, web services require a network (the internet) in order f
 The different types of central web services are REST, SOAP, XML-RPC, and UDDI. 
 
 
-**REST**: Rest stands for Representational State Transfer. A REST service uses HTTP and supports several HTTP methods such as GET, POST, PUT, or DELETE. It provides communication and connectivity between devices and the internet for API-based tasks. 
+**REST**: Rest stands for Representational State Transfer. A [REST service](https://apitoolkit.io/blog/anomalies-in-restful-apis/) uses HTTP and supports several HTTP methods such as GET, POST, PUT, or DELETE. It provides communication and connectivity between devices and the internet for [API-based tasks](https://apitoolkit.io/blog/the-ultimate-api-management-strategy/). 
 
-**SOAP**: SOAP is an acronym for Simple Object Access Protocol. It's an XML-based web service protocol that facilitates the exchange of data and documents over HTTP or SMTP (Simple Mail Transfer Protocol). It allows independent processes operating on different systems to communicate using XML.
+**SOAP**: [SOAP](https://apitoolkit.io/blog/everything-about-soap-apis/) is an acronym for Simple Object Access Protocol. It's an XML-based web service protocol that facilitates the exchange of data and documents over HTTP or SMTP (Simple Mail Transfer Protocol). It allows independent processes operating on different systems to communicate using XML.
 
 **XML-RPC (Remote Procedure Call)**: This is the most basic XML protocol. It allows for data exchange between a wide variety of devices on a given network. It uses HTTP to quickly and easily transfer data and other information from client to server. 
 
 **UDDI**: an abbreviation for Universal Description, Discovery, and Integration, is an XML-based standard for detailing, publishing, and discovering web services. 
 
-It’s essentially an internet registry for businesses around the world. The goal is to streamline digital transactions and e-commerce among company systems.
+It’s essentially an internet registry for [businesses around the world](https://apitoolkit.io/blog/api-as-a-product/). The goal is to streamline digital transactions and e-commerce among company systems.
+
+Read: [How to Tackle Anomalies in RESTful APIs](https://apitoolkit.io/blog/anomalies-in-restful-apis/).
 
 ### Other Types of Web Services
 
@@ -81,6 +85,8 @@ Facts about the SOAP web service
 - Easier to consume
 - It has more standards
 
+Read: [How to Generate Automated API Documentation](https://apitoolkit.io/blog/how-to-generate-automated-api-documentation/)
+
 ## Closing Thoughts
 
 If things got a little confusing when reading about APIs and web services, here is a quick summary of what I covered above.
@@ -94,3 +100,6 @@ I hope that this article has helped you sort through the differences and general
 
 Lastly, [APIToolkit](https://apitoolkit.io) is one platform where you can [monitor your APIs and web services](https://apitoolkit.io/blog/why-you-need-an-api-monitoring-tool/). [Click here to find out how](https://apitoolkit.io).
 
+Recommended Post: [How to Write API Documentation: 10 Essential Guidelines](https://apitoolkit.io/blog/how-to-write-api-docs/)
+
+Recommended Post: [Top 7 Reasons Why Your Team Should Use an API Monitoring Tool](https://apitoolkit.io/blog/why-you-need-an-api-monitoring-tool/)
