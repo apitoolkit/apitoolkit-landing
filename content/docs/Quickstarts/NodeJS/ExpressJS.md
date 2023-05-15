@@ -14,7 +14,7 @@ The NODEJS SDK integration guide for APIToolkit. It monitors incoming traffic, g
 Run the following command to install the package from your projects root:
 
 ```sh
-npm install apitoolkit-js
+npm install apitoolkit-express
 
 ```
 
