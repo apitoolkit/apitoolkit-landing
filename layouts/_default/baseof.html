@@ -2,32 +2,39 @@
 <html prefix="og: http://ogp.me/ns#" lang="{{ .Language }}">
 {{- partial "head.html" . -}}
 
-<body class="relative pt-6">
+<body class="relative" onscroll="scrollfunc(this)">
   {{- partial "header.html" . -}}
-  <div class="text-center z-10  sticky top-0 py-2 bg-white">
-    <nav class="our_container w-full md:max-w-5xl">
-      <div class="flex flex-row justify-between items-center content-between">
-        <a href="/" class="inline-block">
-          <img src="/assets/img/logo-full.svg" alt="APItoolkit logo" class="h-6 hidden sm:inline-block"/>
-          <img src="/assets/img/logo-mini.svg" alt="APItoolkit logo" class="h-5 sm:hidden"/>
-        </a>
-        <div class="text-xs space-x-1 sm:space-x-5 ">
-          <button type="button" class="hidden bg-gray-200 px-3 py-2 rounded-full">
-            Sign in
-          </button>
-          <a href="/blog/" class="">blog</a>
-          <a href="/pricing/" class="">pricing</a>
-          <a href="/docs/" class="">Docs</a>
-          <a href="https://app.apitoolkit.io"
-            class="border border-amber-400 hover:bg-yellow-300 bg-amber-300 text-black  px-2 sm:px-3 py-1 sm:py-2 rounded-full inline-block">
-            Get Started
-          </a>
-        </div>
+  <div class="sticky top-0 flex flex-col items-center w-full text-center z-10" id="header">
+    <nav class="our_container w-full">
+      <div class="flex flex-row justify-between items-center py-4">
+        <a href="/"><img src="/assets/img/logo-full.svg" alt="APItoolkit logo" class="h-6" /></a>
+        <ul class="flex items-center gap-1 text-xm md:gap-8">
+          <li class="bg-red-100">
+            <button type=" button" class="hidden bg-gray-200 px-3 py-2 rounded-full">
+              Sign in
+            </button>
+          </li>
+          <li class="nav_link">
+            <a href="/blog/">Blog</a>
+          </li>
+          <li class="nav_link">
+            <a href="/pricing/">Pricing</a>
+          </li>
+          <li class="nav_link">
+            <a href="/docs/">Docs</a>
+          </li>
+          <li>
+            <a href="https://app.apitoolkit.io"
+              class="border border-amber-400 hover:bg-yellow-300 bg-amber-300 text-black px-3 py-2 rounded-full inline-block">
+              Get Started
+            </a>
+          </li>
+        </ul>
       </div>
     </nav>
   </div>
 
-  <div id="content">{{- block "main" . }}{{- end }}</div>
+  <div id="content" class="">{{- block "main" . }}{{- end }}</div>
 
   {{- partial "footer.html" . -}}
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -40,6 +47,16 @@
     gtag("js", new Date());
 
     gtag("config", "G-FZERLHDJ7J");
+
+    function scrollfunc(e) {
+      const h = document.querySelector("#header")
+      if (e.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        h.classList.add("header_scrolled")
+      } else {
+        h.classList.remove("header_scrolled")
+      }
+    }
+
   </script>
 </body>
 

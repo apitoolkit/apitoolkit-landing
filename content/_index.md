@@ -1,17 +1,17 @@
 ---
-title: The API Developer's Toolbox 
+title: The API Developer's Toolbox
 date: 2022-03-23
 publishdate: 2022-03-24
-description: "Build and maintain your APIs with Less downtimes, Fewer support tickets, Faster time to resolution and always up to date insights into your APIs"
+description: 'Build and maintain your APIs with Less downtimes, Fewer support tickets, Faster time to resolution and always up to date insights into your APIs'
 ---
+
 {{< rawhtml >}}
 
-
 <!-- Blurred bg image generated from: https://fffuel.co/bbblurry/ -->
-<section  style="background: url('/assets/img/blob-landing-center5.svg') no-repeat left bottom local" class=" bg-contain">
+<section  style="background: url('/assets/img/blob-landing-center5.svg') no-repeat left top local; margin-top: -90px" class="bg-contain">
 {{< container >}}
 <section>
-  <div class="flex flex-col sm:flex-row items-center pt-16 sm:pt-24 ">
+  <div class="flex flex-col sm:flex-row items-center pt-28 sm:pt-24 ">
     <div class="">
       <br/><br/>
       <a class="inline-block bg-blue-900/90 text-white px-5 py-1 text-xs rounded-2xl" href="/blog/updates-october-2022/">
@@ -80,7 +80,6 @@ description: "Build and maintain your APIs with Less downtimes, Fewer support ti
 ###### WHY APITOOLKIT?
 ## Empower your <span class="bg-amber-300 px-2 rounded-md"><strong class="drop-shadow-md">Developers</strong></span> to create  <span class="bg-amber-300 px-2 rounded-md inline-block"><strong class="drop-shadow-md">Happier Customer</strong></span> **experiences**.
 
-
 <br/>
 <br/>
 <div class="text-base sm:text-lg">
@@ -114,35 +113,40 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
 </div>
 
 {{% benefits_section %}}
+
 <div  class="home-feature-image-div">
   <img src="./anomaly_section.png"/>
 </div>
 <div  class="flex-1 home-feature-text-box">
 
 ##### <span class="bg-amber-300 px-1  font-bold">Anomalies and Data validation</span>
+
 ## DETECT CRITICAL INCIDENTS
+
 <br/>
 
-  - Validate all live traffic against OpenAPI spec
-  - Define custom API Test workflows to be run and their schedule
-  - Get notified about API changes or test failures before your customers
-  
+- Validate all live traffic against OpenAPI spec
+- Define custom API Test workflows to be run and their schedule
+- Get notified about API changes or test failures before your customers
+
 <a class="text-blue-900" href="/api-anomalies-validation-and-checks">More about the Anomaly detector →</a>
 
 </div>
 {{% /benefits_section %}}
 
 {{% benefits_section %}}
+
 <div  class="flex-1 home-feature-text-box">
 
 ##### <span class="bg-amber-300 px-1 font-bold ">API Logs and Metrics</span>
+
 ## QUERY, ANALYZE & VISUALIZE API DATA
+
 <br/>
 
-  - During API incidents Query and analyze failing API requests and responses 
-  - Analyze or Chart against fields within your API requests and responses 
-  - Calculate aggregates from fields in your API Data without going to your database
-
+- During API incidents Query and analyze failing API requests and responses
+- Analyze or Chart against fields within your API requests and responses
+- Calculate aggregates from fields in your API Data without going to your database
 
 <a class="text-blue-900" href="/api-logs-and-metrics">More about the Log explorer →</a>
 
@@ -153,18 +157,21 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
 {{% /benefits_section %}}
 
 {{% benefits_section %}}
+
 <div  class="home-feature-image-div">
   <img src="./latency_percentile_distribution.png"/>
 </div>
 <div  class="flex-1  home-feature-text-box">
 
 ##### <span class="bg-amber-300 px-1  font-bold">Performance monitoring</span>
-## DETECT AND TRACK SLOW ENDPOINTS 
+
+## DETECT AND TRACK SLOW ENDPOINTS
+
 <br/>
 
-  - View Endpoint response times over periods of time
-  - View latency distributions over your entire backend or specific endpoints
-  - Get optimization advice. Eg about data that should be cached
+- View Endpoint response times over periods of time
+- View latency distributions over your entire backend or specific endpoints
+- Get optimization advice. Eg about data that should be cached
 
 <a class="text-blue-900" href="/api-performance-monitoring-and-compliance">More about the performance metrics →</a>
 
@@ -172,15 +179,18 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
 {{% /benefits_section %}}
 
 {{% benefits_section %}}
+
 <div  class="flex-1  home-feature-text-box">
 
 ##### <span class="bg-amber-300 px-1  font-bold">Mission Control for your APIs </span>
+
 ## BIRDS EYE VIEW OF YOUR ENTIRE API
+
 <br/>
 
-  - View all your endpoints, fields, and the shapes of data passing through your endpoints.
-  - Watch anomalies as they happen, and their distribution between endpoints 
-  - Track throughput, Latency and Errors across your service and endpoints
+- View all your endpoints, fields, and the shapes of data passing through your endpoints.
+- Watch anomalies as they happen, and their distribution between endpoints
+- Track throughput, Latency and Errors across your service and endpoints
 
 <a class="text-blue-900" href="/api-mission-control">More about Mission Control for your APIs→</a>
 
@@ -192,32 +202,36 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
 {{% /benefits_section %}}
 
 {{% benefits_section %}}
+
 <div  class="home-feature-image-div">
   <img src="./field_documentation.png"/>
 </div>
 <div  class="flex-1  home-feature-text-box">
 
 ##### <span class="bg-amber-300 px-1 font-bold">Documentation and Overview</span>
+
 ## ALWAYS UP TO DATE API DOCUMENTATION
+
 <br/>
 
-  - Always up to date API Docs based on your live traffic 
-  - Upload swagger or open API specs from CI and collaborate on the swagger Documentation with your team 
-  - Generate swagger or open API spec based on your live production traffic
+- Always up to date API Docs based on your live traffic
+- Upload swagger or open API specs from CI and collaborate on the swagger Documentation with your team
+- Generate swagger or open API spec based on your live production traffic
 
 <a class="text-blue-900" href="/api-documentation-and-developer-portals">More about our Automatic Documenter →</a>
 
 </div>
 {{% /benefits_section %}}
 
-
 <div  class="p-5 md:p-16 bg-amber-50/50 border border-amber-50 rounded-lg space-y-2">
 
 ##### <span class="bg-amber-300 px-1  font-bold">Alerting and incident management </span>
-## ALERT THE RIGHT PERSON AT THE RIGHT TIME 
 
-When something goes wrong, notify the right person at the right time over slack, pagerduty, opsgenie or any other platform via our zapier integrations. 
+## ALERT THE RIGHT PERSON AT THE RIGHT TIME
 
+## ALERT THE RIGHT PERSON AT THE RIGHT TIME
+
+When something goes wrong, notify the right person at the right time over slack, pagerduty, opsgenie or any other platform via our zapier integrations.
 
 <a class="text-blue-900" href="">Learn about our incident management integrations.</a>
 
@@ -229,6 +243,7 @@ When something goes wrong, notify the right person at the right time over slack,
 <section class="my-24">
 
 #### Wall of <span class="bg-amber-300 px-1 font-bold">**LOVE**</span>
+
 ## Loved by Developers and Engineering teams
 
 <br/>
@@ -237,8 +252,8 @@ When something goes wrong, notify the right person at the right time over slack,
 <iframe height="800px" id="testimonialto-apitoolkit-light-animated" src="https://embed-v2.testimonial.to/w/apitoolkit?animated=off&theme=light&shadowColor=f78da740" frameborder="0" scrolling="no" width="100%"></iframe>
 </section>
 
-
 {{% container %}}
+
   <section class="pt-20 sm:pt-36">
     <!-- integrations -->
     <div class="flex flex-row gap-2 md:gap-10 flex-wrap text-xs sm:text-base">
@@ -257,8 +272,7 @@ When something goes wrong, notify the right person at the right time over slack,
   <section class="mt-48 mb-28">
     <!-- Founders note -->
 
-
-
+##### Or Why we are solving API observability
 
   <br/>
   <div
@@ -267,21 +281,22 @@ When something goes wrong, notify the right person at the right time over slack,
     <div class="pt-2 space-y-4 leading-5 text-xs sm:columns-2 gap-8 ">
 
 ## Founders Note
+
 #### ( Why we are solving API reliability )
 
-Picture this: I joined a food delivery company, all excited and ready to tackle challenges. 
-One day, we migrated a service from PHP to Golang, following the swagger docs diligently. 
+Picture this: I joined a food delivery company, all excited and ready to tackle challenges.
+One day, we migrated a service from PHP to Golang, following the swagger docs diligently.
 We made sure the responses matched, tested everything, and launched with confidence.
 
-But oh boy, did things go haywire! Our order monitoring charts went berserk within minutes. 
+But oh boy, did things go haywire! Our order monitoring charts went berserk within minutes.
 A whopping 20k orders vanished into thin air. Panic ensued. What on earth happened?
 
-Turns out, in a few countries we operated in, a crucial field required by the apps mysteriously disappeared. 
+Turns out, in a few countries we operated in, a crucial field required by the apps mysteriously disappeared.
 No one saw it coming because it wasn't mentioned in the inherited documentation. It only affected specific countries that weren't part of our manual tests.
 
 We swiftly fixed the issue and reverted to the old system. But here's the kicker: I wished we had a magical tool that could have caught this problem way sooner.
 
-Fast forward to today, and guess what? We've created that tool! We want to hear your own epic tales of API chaos and help you bid them farewell. 
+Fast forward to today, and guess what? We've created that tool! We want to hear your own epic tales of API chaos and help you bid them farewell.
 Let's make sure those stories become relics of the past together.
 
 Join us on this exciting journey!
@@ -306,11 +321,11 @@ Join us on this exciting journey!
     {{% container %}}
 <div class="space-y-5 py-16 sm:py-36 max-w-prose sm:text-lg ">
 
-  ## APIToolkit is built by <span class="bg-amber-300 px-1 font-bold text-black inline-block ">Developers for Developers</span>. To solve pain points we've all faced.
+## APIToolkit is built by <span class="bg-amber-300 px-1 font-bold text-black inline-block ">Developers for Developers</span>. To solve pain points we've all faced.
 
-  We’re engineers at our core, who are very close to the problems we are
-  solving. So, we encourage you to be a part of this community
-  evolving solutions to solve API documentation, management and observability.
+We’re engineers at our core, who are very close to the problems we are
+solving. So, we encourage you to be a part of this community
+evolving solutions to solve API documentation, management and observability.
 
   <div class="flex flex-row items-center pt-8">
     <a
@@ -332,6 +347,7 @@ Join us on this exciting journey!
   </section>
 
 {{< rawhtml >}}
+
 <section class="flex flex-row justify-center">
   <div
     class="our_container space-y-5 py-36 flex flex-col sm:flex-row items-center"
@@ -407,4 +423,5 @@ for (var i = 0; i < targets.length; i++) {
   observer.observe(targets[i]);
 }
 </script>
+
 {{< /rawhtml >}}

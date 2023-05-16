@@ -159,6 +159,7 @@
   {{else}}
   <link rel="stylesheet" href="/assets/css/tailwind.min.css" />
   {{end}}
+  <link rel="stylesheet" href="/assets/css/landing.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <!-- <link -->
@@ -194,32 +195,35 @@
 
   <!-- Ortto apitoolkit capture code -->
   <script>
-      window.ap3c = window.ap3c || {};
-      var ap3c = window.ap3c;
-      ap3c.cmd = ap3c.cmd || [];
-      ap3c.cmd.push(function() {
-          ap3c.init('ZCp34YmuGHeQ46i4YXBpdG9vbGtpdA', 'https://capture-api.eu.autopilotapp.com/');
-          ap3c.track({v: 0});
-      });
-      ap3c.activity = function(act) { ap3c.act = (ap3c.act || []); ap3c.act.push(act); };
-      var s, t; s = document.createElement('script'); s.type = 'text/javascript'; s.src = "https://cdneu.net/app.js";
-      t = document.getElementsByTagName('script')[0]; t.parentNode.insertBefore(s, t);
+    window.ap3c = window.ap3c || {};
+    var ap3c = window.ap3c;
+    ap3c.cmd = ap3c.cmd || [];
+    ap3c.cmd.push(function () {
+      ap3c.init('ZCp34YmuGHeQ46i4YXBpdG9vbGtpdA', 'https://capture-api.eu.autopilotapp.com/');
+      ap3c.track({ v: 0 });
+    });
+    ap3c.activity = function (act) { ap3c.act = (ap3c.act || []); ap3c.act.push(act); };
+    var s, t; s = document.createElement('script'); s.type = 'text/javascript'; s.src = "https://cdneu.net/app.js";
+    t = document.getElementsByTagName('script')[0]; t.parentNode.insertBefore(s, t);
   </script>
   <!-- End Ortho -->
 
   <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-PTLSTQ8');</script>
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-PTLSTQ8');</script>
   <!-- End Google Tag Manager -->
 
   <!-- Hotjar Tracking Code for my site -->
   <script>
     (function (h, o, t, j, a, r) {
-      h.hj = h.hj || function () {(h.hj.q = h.hj.q || []).push(arguments)};
-      h._hjSettings = {hjid: 3393437, hjsv: 6};
+      h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+      h._hjSettings = { hjid: 3393437, hjsv: 6 };
       a = o.getElementsByTagName('head')[0];
       r = o.createElement('script'); r.async = 1;
       r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
