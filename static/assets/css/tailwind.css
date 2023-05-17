@@ -46,7 +46,7 @@
   width: min(100vw, 1100px);
   display: inline-block;
   text-align: left;
-  padding-inline: 4px;
+  padding: 0 20px;
 }
 
 .nav_link {
