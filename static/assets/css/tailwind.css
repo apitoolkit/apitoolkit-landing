@@ -58,7 +58,7 @@
   left: 0;
 }
 .nav_link::before {
-  transition: all 0.2s;
+  transition: all 1s;
   content: '';
   position: absolute;
   bottom: 0;
