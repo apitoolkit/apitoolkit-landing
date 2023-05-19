@@ -2,11 +2,11 @@
 <html prefix="og: http://ogp.me/ns#" lang="{{ .Language }}">
 {{- partial "head.html" . -}}
 
-<body class="relative">
+<body class="relative pt-6">
   {{- partial "header.html" . -}}
-  <div class="text-center z-10">
+  <div class="text-center z-10  sticky top-0 py-2 bg-white">
     <nav class="our_container w-full">
-      <div class="flex flex-row justify-between items-center pt-8">
+      <div class="flex flex-row justify-between items-center">
         <a href="/"><img src="/assets/img/logo-full.svg" alt="APItoolkit logo" class="h-6"/></a>
         <div class="text-xs space-x-1 sm:space-x-5 ">
           <button type="button" class="hidden bg-gray-200 px-3 py-2 rounded-full">

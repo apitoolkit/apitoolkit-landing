@@ -1,5 +1,5 @@
 ---
-title: Stay on top of your APIs 
+title: The API Developer's Toolbox 
 date: 2022-03-23
 publishdate: 2022-03-24
 description: "Build and maintain your APIs with Less downtimes, Fewer support tickets, Faster time to resolution and always up to date insights into your APIs"
@@ -8,67 +8,59 @@ description: "Build and maintain your APIs with Less downtimes, Fewer support ti
 
 
 <!-- Blurred bg image generated from: https://fffuel.co/bbblurry/ -->
-<section  style="background: url('/assets/img/blob-landing-center4.svg') no-repeat left bottom local">
+<section  style="background: url('/assets/img/blob-landing-center5.svg') no-repeat left bottom local" class=" bg-contain">
 {{< container >}}
-  <section>
-    <div class="flex flex-col sm:flex-row items-center pt-16 sm:pt-24 ">
-      <div class="">
-        <h1 class="text-blue-title tracking-tight text-5xl" style="font-variation-settings: 'wght' 900;">Stay on top of your APIs!</h1>
-        <div class="pt-8 space-y-5 sm:pr-20">
-          <p class="font-normal text-xl">
-            Build and maintain your APIs with Less downtimes, Fewer support tickets, Faster time to resolution and always up to date insights into your APIs
-          </p>
-          <p class="font-normal text-base">
-              TL;DR. APIToolkit is an API monitoring and observability platform that can spot broken/slow api endpoints, missing/incorrect data, etc before your customers. 
-          </p>
-          <!-- <img src="/assets/img/blob-landing-center.svg"/> -->
-          <!-- <p> -->
-          <!--   <strong class="font-medium" -->
-          <!--     >APIToolkit spots broken or slow api endpoints, -->
-          <!--     missing/incorrect data, etc before your customers.</strong -->
-          <!--   > -->
-          <!-- </p> -->
-          <div class="text-center py-4 sm:hidden">
-            <img
-              src="/assets/img/ill_man_measuring.svg"
-              alt="Man measuring a graph"
-              class="w-24 inline-block"
-            />
-          </div>
-          <div class="space-y-1 text-sm sm:pt-1" id="waitlist-form-1">
-            <a
-              href="https://app.apitoolkit.io"
-              class=" drop-shadow  rounded-md hover:bg-yellow-300 bg-amber-300 text-black border border-amber-400 font-medium inline-block px-4 py-2 mt-2 sm:mt-0"
-            >
-              Get Started for Free
-            </a>
-            <span class="inline-block px-5"> OR </span>
-            <a href="https://calendly.com/tonyalaribe/30min"
-              target="_blank"
-              class="drop-shadow rounded-md border border-gray-200 bg-gray-100 hover:bg-gray-200  text-xs text-gray-900 inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0"
-            >
-              Get a demo &nbsp;
-            </a>
-            <div class="space-x-5 text-xs">
-              <small class="inline-block">✓ Always free plan</small>
-              <small class="inline-block">✓ GDPR compliant</small>
-              <small class="inline-block">✓ Data processed in EU</small>
-            </div>
+<section>
+  <div class="flex flex-col sm:flex-row items-center pt-16 sm:pt-24 ">
+    <div class="">
+      <br/><br/>
+      <a class="inline-block bg-blue-900/90 text-white px-5 py-1 text-xs rounded-2xl" href="/blog/updates-october-2022/">
+        ✨ Read the latest updates  🚀
+      </a>
+      <h1 class="pt-2 text-blue-title leading-tight tracking-tight text-5xl" style="font-variation-settings: 'wght' 900;">The API Developer's <span class="decoration-amber-300 underline underline-offset-4">Toolbox!</span></h1>
+      <div class="pt-8 space-y-8 sm:pr-20">
+        <p class="font-normal text-xl">Every <strong>Tool</strong> you need to <strong>Design</strong>, <strong>Test</strong>, <strong>Monitor</strong> & <strong>Maintain</strong> the most reliable APIs.</p>
+        <div class="text-center py-4 sm:hidden">
+          <img
+            src="/assets/img/ill_man_measuring.svg"
+            alt="Man measuring a graph"
+            class="w-24 inline-block"
+          />
+        </div>
+        <div class="space-y-2 text-sm sm:pt-1" id="waitlist-form-1">
+          <a
+            href="https://app.apitoolkit.io"
+            class=" drop-shadow hover:drop-shadow-lg transition-all rounded-md hover:bg-yellow-300 bg-amber-300 text-black border border-amber-400 font-semibold inline-block px-4 py-2 mt-2 sm:mt-0"
+          >
+            Get Started for Free
+          </a>
+          <span class="inline-block px-5"> OR </span>
+          <a href="https://calendly.com/tonyalaribe/30min"
+            target="_blank"
+            class="drop-shadow rounded-md border border-gray-200 bg-gray-100 hover:bg-gray-200  text-xs text-gray-900 inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0"
+          >
+            Get a demo &nbsp;
+          </a>
+          <div class="space-x-5 text-xs">
+            <small class="inline-block">✓ Always free plan</small>
+            <small class="inline-block">✓ GDPR compliant</small>
+            <small class="inline-block">✓ Data processed in EU</small>
           </div>
         </div>
       </div>
-      <img
-        src="/assets/img/ill_man_measuring.svg"
-        alt="Man measuring a graph"
-        class="hidden sm:inline-block w-60"
-      />
     </div>
-  </section>
+    <img
+      src="/assets/img/ill_man_measuring.svg"
+      alt="Man measuring a graph"
+      class="hidden sm:inline-block w-60"
+    />
+  </div>
+</section>
 {{</ container >}}
 {{</ rawhtml >}}
 
 <section class="flex items-center justify-center pt-24">
-  <div class=" gradient1 p-5 md:max-w-3xl rounded-xl drop-shadow w-full" id="intro-video">
+  <div class="backdrop-opacity-5 backdrop-invert-0 bg-white/50 xgradient1 p-5 md:max-w-3xl rounded-xl drop-shadow w-full" id="intro-video">
     <div  class="w-full" style="position: relative; padding-bottom: 65.77344701583435%; height: 0;"><iframe class="rounded-lg border-4 border-gray-200 " src="https://www.loom.com/embed/24ea3ae9600544d68f1001af3f4feac2?hide_title=true&hide_owner=true&hideEmbedTopBar=true" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
     <div class="mt-2"><a href="https://www.loom.com/share/24ea3ae9600544d68f1001af3f4feac2" target="_blank" class="inline-block bg-blue-900 text-white px-3 py-1 text-xs rounded-lg" >Learn how APIToolkit works (Video)</a></div>
   </div>
@@ -80,46 +72,42 @@ description: "Build and maintain your APIs with Less downtimes, Fewer support ti
     <div class="md:max-w-4xl text-left px-5  pt-44 pb-32 text-lg">
     
 ###### WHY APITOOLKIT?
-<!-- Get daily & weekly reports on everything going on in your services. -->
-## Finally **Trust**  and **Understand** your APIs
+## Empower your <span class="bg-amber-300 px-2 rounded-md">**Developers**</span> to create  <span class="bg-amber-300 px-2 rounded-md inline-block">**Happier Customer**</span> **experiences**.
+
 
 <br/>
-<strong>Innovating is hard!</strong> Everyday brings it's own challenges. How do you secure what you can't see? How do you fix a problem you can't find?
-The list of problems modern backend systems have to deal with are endless. And that is why APIToolkit exists;
 <br/>
-<br/>
-All the tools you need to understand <strong>what's going on</strong> in your APIs, <strong>Investigate incidents</strong> and <strong>generate insights</strong>. 
+All the <strong>Tools</strong> you need to <strong>design</strong> your APIs, <strong>interpret</strong> what's going on in your APIs, <strong>Investigate incidents</strong> and <strong>generate insights</strong>. In one package.
+<br/><br/>
 With <strong>daily & weekly reports</strong> on everything going on in your services.
+<br/><br/><br/><br/>
 
+  <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 text-lg p-1 font-medium">
+    <a class="transition-all border-l-4 border-l-amber-400  rounded-md p-5 border border-gray-200 drop-shadow-md shadow-amber-500 hover:shadow-md" href="/api-anomalies-validation-and-checks">
+      API Designer and Mocker 
+    </a>
+    <a class="transition-all border-l-4 border-l-amber-400 rounded-md p-5 border border-gray-200 drop-shadow-md shadow-amber-500 hover:shadow-md" href="/api-anomalies-validation-and-checks">
+      Live API tester 
+    </a>
+    <a class="transition-all border-l-4 border-l-amber-400  rounded-md p-5 border border-gray-200 drop-shadow-md shadow-amber-500 hover:shadow-md" href="/api-logs-and-metrics">
+      API Log Explorer
+    </a>
+    <a class="transition-all border-l-4 border-l-amber-400 rounded-md p-5 border border-gray-200 drop-shadow-md shadow-amber-500 hover:shadow-md" href="/api-performance-monitoring-and-compliance">
+      Metrics & Performance Monitor
+    </a>
+    <a class="transition-all border-l-4 border-l-amber-400 rounded-md p-5 border border-gray-200 drop-shadow-md shadow-amber-500 hover:shadow-md" href="/api-documentation-and-developer-portals">
+      Swagger Generator & Editor
+    </a>
+    <a class="transition-all border-l-4 border-l-amber-400 rounded-md p-5 border border-gray-200 drop-shadow-md shadow-amber-500 hover:shadow-md" href="/api-anomalies-validation-and-checks">
+      Payload Validation & Anomaly Detector  
+    </a>
   </div>
 
-<section class="py-36">
-<h3 class="pb-16 font-bold text-2xl text-center">Tools in this Toolbox</h3>
-<div class="grid grid-cols-1 sm:grid-cols-3 gap-5 text-lg p-1">
-  <a class="rounded-md p-5 border border-gray-200 drop-shadow-md shadow-stone-500" href="/api-anomalies-validation-and-checks">
-    API Contract testing / Validation
-  </a>
-  <a class="rounded-md p-5 border border-gray-200 drop-shadow-md shadow-stone-500" href="/api-logs-and-metrics">
-    API Logs & Metrics Explorer 
-  </a>
-  <a class="rounded-md p-5 border border-gray-200 drop-shadow-md shadow-stone-500" href="/api-performance-monitoring-and-compliance">
-    Performance Monitoring
-  </a>
-  <a class="rounded-md p-5 border border-gray-200 drop-shadow-md shadow-stone-500" href="/api-mission-control">
-   Mission Control for your APIs
-  </a>
-  <a class="rounded-md p-5 border border-gray-200 drop-shadow-md shadow-stone-500" href="/api-documentation-and-developer-portals">
-    Low Effort Documentation 
-  </a>
-  <a class="rounded-md p-5 border border-gray-200 drop-shadow-md shadow-stone-500" href="/api-anomalies-validation-and-checks">
-    Payload Anomaly Detection  
-  </a>
 </div>
-</section>
 
 <div class="text-center pb-5 pt-24">
 
-## Features
+<!-- ## Features -->
 </div>
 
 {{% benefits_section %}}
@@ -128,11 +116,14 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
 </div>
 <div  class="flex-1 home-feature-text-box">
 
-##### Anomalies and Data validation
+##### <span class="bg-amber-300 px-1  font-bold">Anomalies and Data validation</span>
 ## DETECT CRITICAL INCIDENTS
+<br/>
 
-Upload your API contract or let our AI learn it automativally. Then, Apitoolkit will verify and test that your payloads are returning the correct data and would notify you if we notice changes. API Contract testing on steroids.
-
+  - Validate all live traffic against OpenAPI spec
+  - Define custom API Test workflows to be run and their schedule
+  - Get notified about API changes or test failures before your customers
+  
 <a class="text-blue-900" href="/api-anomalies-validation-and-checks">More about the Anomaly detector →</a>
 
 </div>
@@ -141,10 +132,14 @@ Upload your API contract or let our AI learn it automativally. Then, Apitoolkit 
 {{% benefits_section %}}
 <div  class="flex-1 home-feature-text-box">
 
-##### API Logs and Metrics
+##### <span class="bg-amber-300 px-1 font-bold ">API Logs and Metrics</span>
 ## QUERY, ANALYZE & VISUALIZE API DATA
+<br/>
 
-Your API requests are logged for you on Apitoolkit, so you can query, explore and gain insight into the data hidden in your live API requests and responses. With our Log Explorer, your imagination is your limit.
+  - During API incidents Query and analyze failing API requests and responses 
+  - Analyze or Chart against fields within your API requests and responses 
+  - Calculate aggregates from fields in your API Data without going to your database
+
 
 <a class="text-blue-900" href="/api-logs-and-metrics">More about the Log explorer →</a>
 
@@ -160,9 +155,13 @@ Your API requests are logged for you on Apitoolkit, so you can query, explore an
 </div>
 <div  class="flex-1  home-feature-text-box">
 
-##### Performance monitoring
+##### <span class="bg-amber-300 px-1  font-bold">Performance monitoring</span>
 ## DETECT AND TRACK SLOW ENDPOINTS 
-Our API Metrics detect and show you endpoint latency degradations, and our AI can suggest when there's room for improvement. Eg data that could be cached easily.
+<br/>
+
+  - View Endpoint response times over periods of time
+  - View latency distributions over your entire backend or specific endpoints
+  - Get optimization advice. Eg about data that should be cached
 
 <a class="text-blue-900" href="/api-performance-monitoring-and-compliance">More about the performance metrics →</a>
 
@@ -172,10 +171,13 @@ Our API Metrics detect and show you endpoint latency degradations, and our AI ca
 {{% benefits_section %}}
 <div  class="flex-1  home-feature-text-box">
 
-##### Mission Control for your APIs 
+##### <span class="bg-amber-300 px-1  font-bold">Mission Control for your APIs </span>
 ## BIRDS EYE VIEW OF YOUR ENTIRE API
-Get a live and in-depth view of your API. View your endpoints, fields, and even export your API as swagger if you like.
-The always up to date documentation is generated automatically from your live traffic.
+<br/>
+
+  - View all your endpoints, fields, and the shapes of data passing through your endpoints.
+  - Watch anomalies as they happen, and their distribution between endpoints 
+  - Track throughput, Latency and Errors across your service and endpoints
 
 <a class="text-blue-900" href="/api-mission-control">More about Mission Control for your APIs→</a>
 
@@ -192,10 +194,13 @@ The always up to date documentation is generated automatically from your live tr
 </div>
 <div  class="flex-1  home-feature-text-box">
 
-##### Documentation and Overview
+##### <span class="bg-amber-300 px-1 font-bold">Documentation and Overview</span>
 ## ALWAYS UP TO DATE API DOCUMENTATION
-Documenting is very hard, but not anymore. Apitoolkit generates always up to date docs (& swagger files) based on your live API traffic.
-You get a gentle nudge when new fields are added, so you can add any extra context our AI might have missed.
+<br/>
+
+  - Always up to date API Docs based on your live traffic 
+  - Upload swagger or open API specs from CI and collaborate on the swagger Documentation with your team 
+  - Generate swagger or open API spec based on your live production traffic
 
 <a class="text-blue-900" href="/api-documentation-and-developer-portals">More about our Automatic Documenter →</a>
 
@@ -205,7 +210,7 @@ You get a gentle nudge when new fields are added, so you can add any extra conte
 
 <div  class="p-5 md:p-16 bg-amber-50/50 border border-amber-50 rounded-lg space-y-2">
 
-##### Alerting and incident management 
+##### <span class="bg-amber-300 px-1  font-bold">Alerting and incident management </span>
 ## ALERT THE RIGHT PERSON AT THE RIGHT TIME 
 
 When something goes wrong, notify the right person at the right time over slack, pagerduty, opsgenie or any other platform via our zapier integrations. 
@@ -220,18 +225,14 @@ When something goes wrong, notify the right person at the right time over slack,
 
 <section class="my-24">
 
-#### Wall of **LOVE**
+#### Wall of <span class="bg-amber-300 px-1 font-bold">**LOVE**</span>
 ## Loved by Developers and Engineering teams
 
 <br/>
 <br/>
 
-<!-- <script type="text/javascript" src="https://testimonial.to/js/iframeResizer.min.js"></script> -->
-<!-- <iframe id="testimonialto-carousel-all-apitoolkit-light" src="https://embed-v2.testimonial.to/carousel/all/apitoolkit?theme=light&autoplay=on&showmore=on&one-row=on&hideDate=on&same-height=on" frameborder="0" scrolling="no" width="100%"></iframe> -->
-<!-- <script type="text/javascript">iFrameResize({log: false, checkOrigin: false}, "#testimonialto-carousel-all-apitoolkit-light");</script> -->
 <iframe height="800px" id="testimonialto-apitoolkit-light-animated" src="https://embed-v2.testimonial.to/w/apitoolkit?animated=off&theme=light&shadowColor=f78da740" frameborder="0" scrolling="no" width="100%"></iframe>
 </section>
-
 
 
 {{% container %}}
@@ -253,41 +254,34 @@ When something goes wrong, notify the right person at the right time over slack,
   <section class="mt-48 mb-28">
     <!-- Founders note -->
 
-### Founders Note
-##### Or Why we are solving API observability
+
 
 
   <br/>
   <div
-    class="fade-in-section px-5 sm:px-12 py-8 bg-gray-50 border border-gray-200 text-blue-title filter drop-shadow-xl text-sm rounded-sm monospace"
+    class="fade-in-section px-5 sm:px-12 py-8 bg-amber-300 border border-gray-200 text-black filter drop-shadow-xl text-sm font-medium rounded-sm monospace"
   >
     <div class="pt-2 space-y-4 leading-5 text-xs sm:columns-2 gap-8 ">
 
-A few years ago, I was a new hire at a food delivery company,
-migrating a legacy service from PHP to Golang. We implemented the
-fields listed in the swagger docs, and compared the responses from
-the legacy service to the responses of the new service, fixing
-differences until everything matched. 
+## Founders Note
+#### (Or Why we are solving API reliability)
 
-After weeks of implementation and testing, 
-we rolled out the new service after running tests to
-make sure everything worked as expected. But immediately we looked
-at our order monitoring charts, we knew we had messed up. Within
-10mins, 20k orders lost. I was terrified. What happened?
+Picture this: I joined a food delivery company, all excited and ready to tackle challenges. 
+One day, we migrated a service from PHP to Golang, following the swagger docs diligently. 
+We made sure the responses matched, tested everything, and launched with confidence.
 
-Apparently in a couple countries we ran in, a particular field which
-was expected by the apps was no longer being sent, prevent placing
-of orders. We had no idea since this field was not in the inherited
-documentation, and was only applicable in a couple countries which
-were not part of the samples we manually tested. 
+But oh boy, did things go haywire! Our order monitoring charts went berserk within minutes. 
+A whopping 20k orders vanished into thin air. Panic ensued. What on earth happened?
 
-We rolled back and fixed the issue, 
-but I was sad that there was no tool which could
-have detected this issue faster.
+Turns out, in a few countries we operated in, a crucial field required by the apps mysteriously disappeared. 
+No one saw it coming because it wasn't mentioned in the inherited documentation. It only affected specific countries that weren't part of our manual tests.
 
-Years later, this is that tool, and we would love to listen to
-similar stories you've experienced, and help make such stories a
-thing of the past.
+We swiftly fixed the issue and reverted to the old system. But here's the kicker: I wished we had a magical tool that could have caught this problem way sooner.
+
+Fast forward to today, and guess what? We've created that tool! We want to hear your own epic tales of API chaos and help you bid them farewell. 
+Let's make sure those stories become relics of the past together.
+
+Join us on this exciting journey!
 
   <p class="text-xs text-right">
     Anthony (<a
@@ -303,89 +297,17 @@ thing of the past.
   </div>
 </div>
   </section>
-  <section class="my-24 hidden">
-    <h3 class="text-3xl mb-20">Features?</h3>
-    <section class="grid grid-cols-2 gap-14 text-sm">
-      <!-- features -->
-      <div class="space-y-4">
-        <img
-          src="/assets/img/ill_man_putting_puzzles.svg"
-          alt="man fixing puzzle pieces"
-          class="h-32"
-        />
-        <div class="space-y-3">
-          <h3 class="text-xl">🚀 Always up to date API docs</h3>
-          <p>
-            View your live API shapes, fields, etc and Generate swagger Docs
-            at anytime via your live taffic.
-          </p>
-        </div>
-      </div>
-      <!--..-->
-      <div class="space-y-4">
-        <img
-          src="/assets/img/ill_man_looks_at_growth.svg"
-          alt="man fixing puzzle pieces"
-          class="h-32"
-        />
-        <div class="space-y-3">
-          <h3 class="text-xl">📈 Live API Contract monitoring & alerts</h3>
-          <p>
-            Keep up with any changes to your API. New fields, new endpoints,
-            empty fields, change in field types, etc.
-          </p>
-        </div>
-      </div>
-      <!--..-->
-      <div class="space-y-4">
-        <img
-          src="/assets/img/ill_couple_and_rocket.svg"
-          alt="man fixing puzzle pieces"
-          class="h-32"
-        />
-        <div class="space-y-3">
-          <h3 class="text-xl">⛑ Refactor and Migrate Safely</h3>
-          <p>
-            Catch any bug and changes due to refactorings or migrations,
-            faster than your customers.
-          </p>
-        </div>
-      </div>
-      <!--..-->
-      <div class="space-y-4">
-        <img
-          src="/assets/img/ill_man_sit_laptop_stats.svg"
-          alt="man fixing puzzle pieces"
-          class="h-32"
-        />
-        <div class="space-y-3">
-          <h3 class="text-xl">📊 View your API analytics in one place</h3>
-          <p>
-            Response times, latency, etc. Run queries on your live api
-            requests and responses.
-          </p>
-        </div>
-      </div>
-      <!--..-->
-    </section>
-  </section>
 {{% /container %}}
 
   <section class="bg-gradient-yellow  mt-32 text-white gradient-yellow">
     {{% container %}}
 <div class="space-y-5 py-16 sm:py-36 max-w-prose sm:text-lg ">
 
-  ## APIToolkit is built by real engineers to solve problems that have cost them a lot in the past.
+  ## APIToolkit is built by <span class="bg-amber-300 px-1 font-bold text-black inline-block ">Developers for Developers</span>. To solve pain points we've all faced.
 
   We’re engineers at our core, who are very close to the problems we are
-  solving. So, we encourage our users to be a part of this community
+  solving. So, we encourage you to be a part of this community
   evolving solutions to solve API documentation, management and observability.
-
-  You can do this by joining our Discord channel to join others who are
-  part of our journey in evolving APIToolkit or book a slot to have an
-  open conversation with us. We’re always open to have a chat with
-  everyone and learn about their experiences around API documentation and
-  observability.
 
   <div class="flex flex-row items-center pt-8">
     <a
@@ -413,37 +335,18 @@ thing of the past.
   >
     <div class="sm:pr-16">
       <h1 class="text-3xl text-blue-title">
-        APIToolkit is fixing API Documentation <br />& Observability
+        APIToolkit is fixing <span class="bg-amber-300 px-1 font-bold">API Workflows</span> & <span class="bg-amber-300 px-1 font-bold">Reliability </span>
       </h1>
       <div class="pt-8 space-y-5">
         <p>
-          APIToolkit is creating a world where you don’t lose customers because of
-          wrongly documented services or broken API contracts. Signup to join
+          APIToolkit is creating a world where you don’t lose customers
+          due to broken API contracts or reliability. Signup 
           to be a part of our journey. 
         </p>
         <div class="space-y-2 text-sm">
-          <small class="text-blue-900"
+          <small class="text-blue-title font-semibold px-1"
             >Subscribe to keep up with our journey below</small
           >
-          <!-- <form -->
-          <!--   class="" -->
-          <!--   method="post" -->
-          <!--   id="apitoolkit-newsletter-form" -->
-          <!--   onsubmit="document.getElementByID('apitoolkit-newsletter-form').innerHTML = 'Success! Now check your email to confirm your subscription.'" -->
-          <!-- > -->
-          <!--   <div> -->
-          <!--     <input -->
-          <!--       class="border border-blue-500 rounded-md px-4 py-2 text-xs w-full sm:w-96" -->
-          <!--       name="email_address" -->
-          <!--       placeholder="Email address. eg abc@example.com" -->
-          <!--     /> -->
-          <!--     <button -->
-          <!--       class="rounded-md bg-blue-900 hover:bg-blue-800 border-blue-900 text-xs text-white inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0" -->
-          <!--     > -->
-          <!--       Subscribe  -->
-          <!--     </button> -->
-          <!--   </div> -->
-          <!-- </form> -->
 <div id="6430710fa90d72f544ac4d87" style="width: 100%; height: 100%;">
     <div id="6430710fa90d72f544ac4d87-form" class="6430710fa90d72f544ac4d87-template" >
         <div id="selected-_ok1f66w6r" class="ap3w-embeddable-form-6430710fa90d72f544ac4d87 ap3w-embeddable-form-6430710fa90d72f544ac4d87-full ap3w-embeddable-form-6430710fa90d72f544ac4d87-solid" data-select="true">

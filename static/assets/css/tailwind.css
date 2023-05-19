@@ -128,6 +128,10 @@ html, body {
       @apply w-full h-1 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700;
     }
 
+  .home-feature-section ul {
+      @apply list-disc space-y-1
+  }
+
 
 }
 
