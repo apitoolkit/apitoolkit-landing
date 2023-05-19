@@ -17,7 +17,7 @@ description: "Build and maintain your APIs with Less downtimes, Fewer support ti
       <a class="inline-block bg-blue-900/90 text-white px-5 py-1 text-xs rounded-2xl" href="/blog/updates-october-2022/">
         ✨ Read the latest updates  🚀
       </a>
-      <h1 class="pt-2 text-blue-title leading-tight tracking-tight text-5xl" style="font-variation-settings: 'wght' 900;">The API Developer's <span class="decoration-amber-300 underline underline-offset-4">Toolbox!</span></h1>
+      <h1 class="pt-2 text-blue-title leading-tight tracking-tight text-5xl drop-shadow-lg" style="font-variation-settings: 'wght' 900;">The API Developer's <span class="decoration-amber-300 underline underline-offset-4">Toolbox!</span></h1>
       <div class="pt-8 space-y-8 sm:pr-20">
         <p class="font-normal text-xl">Every <strong>Tool</strong> you need to <strong>Design</strong>, <strong>Test</strong>, <strong>Monitor</strong> & <strong>Maintain</strong> the most reliable APIs.</p>
         <div class="text-center py-4 sm:hidden">
@@ -72,7 +72,7 @@ description: "Build and maintain your APIs with Less downtimes, Fewer support ti
     <div class="md:max-w-4xl text-left px-5  pt-44 pb-32 text-lg">
     
 ###### WHY APITOOLKIT?
-## Empower your <span class="bg-amber-300 px-2 rounded-md">**Developers**</span> to create  <span class="bg-amber-300 px-2 rounded-md inline-block">**Happier Customer**</span> **experiences**.
+## Empower your <span class="bg-amber-300 px-2 rounded-md"><strong class="drop-shadow-md">Developers</strong></span> to create  <span class="bg-amber-300 px-2 rounded-md inline-block"><strong class="drop-shadow-md">Happier Customer</strong></span> **experiences**.
 
 
 <br/>
