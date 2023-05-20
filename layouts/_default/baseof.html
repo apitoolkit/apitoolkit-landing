@@ -6,8 +6,9 @@
   {{- partial "header.html" . -}}
   <div class="text-center z-10  sticky top-0 py-2 bg-white">
     <nav class="our_container w-full">
-      <div class="flex flex-row justify-between items-center">
-        <a href="/"><img src="/assets/img/logo-full.svg" alt="APItoolkit logo" class="h-6"/></a>
+      <div class="flex flex-row justify-between items-center content-between">
+        <a href="/"><img src="/assets/img/logo-full.svg" alt="APItoolkit logo" class="h-6 hidden sm:inline-block"/></a>
+        <a href="/"><img src="/assets/img/logo-mini.svg" alt="APItoolkit logo" class="h-5 sm:hidden"/></a>
         <div class="text-xs space-x-1 sm:space-x-5 ">
           <button type="button" class="hidden bg-gray-200 px-3 py-2 rounded-full">
             Sign in
@@ -16,7 +17,7 @@
           <a href="/pricing/" class="">pricing</a>
           <a href="/docs/" class="">Docs</a>
           <a href="https://app.apitoolkit.io"
-            class="border border-amber-400 hover:bg-yellow-300 bg-amber-300 text-black  px-3 py-2 rounded-full inline-block">
+            class="border border-amber-400 hover:bg-yellow-300 bg-amber-300 text-black  px-2 sm:px-3 py-1 sm:py-2 rounded-full inline-block">
             Get Started
           </a>
         </div>

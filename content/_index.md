@@ -17,16 +17,16 @@ description: "Build and maintain your APIs with Less downtimes, Fewer support ti
       <a class="inline-block bg-blue-900/90 text-white px-5 py-1 text-xs rounded-2xl" href="/blog/updates-october-2022/">
         ✨ Read the latest updates  🚀
       </a>
-      <h1 class="pt-2 text-blue-title leading-tight tracking-tight text-5xl drop-shadow-lg" style="font-variation-settings: 'wght' 900;">The API Developer's <span class="decoration-amber-300 underline underline-offset-4">Toolbox!</span></h1>
+      <h1 class="pt-2 text-blue-title leading-tight tracking-tight text-[1.83rem] sm:text-5xl drop-shadow-lg" style="font-variation-settings: 'wght' 900;">The API Developer's <span class="decoration-amber-300 underline underline-offset-4">Toolbox!</span></h1>
       <div class="pt-8 space-y-8 sm:pr-20">
-        <p class="font-normal text-xl">Every <strong>Tool</strong> you need to <strong>Design</strong>, <strong>Test</strong>, <strong>Monitor</strong> & <strong>Maintain</strong> the most reliable APIs.</p>
-        <div class="text-center py-4 sm:hidden">
-          <img
-            src="/assets/img/ill_man_measuring.svg"
-            alt="Man measuring a graph"
-            class="w-24 inline-block"
-          />
-        </div>
+        <p class="font-normal text-lg sm:text-xl">Every <strong>Tool</strong> you need to <strong>Design</strong>, <strong>Test</strong>, <strong>Monitor</strong> & <strong>Maintain</strong> the most reliable APIs.</p>
+        <!-- <div class="text-center py-4 sm:hidden"> -->
+        <!--   <img -->
+        <!--     src="/assets/img/ill_man_measuring.svg" -->
+        <!--     alt="Man measuring a graph" -->
+        <!--     class="w-24 inline-block" -->
+        <!--   /> -->
+        <!-- </div> -->
         <div class="space-y-2 text-sm sm:pt-1" id="waitlist-form-1">
           <a
             href="https://app.apitoolkit.io"
@@ -41,7 +41,7 @@ description: "Build and maintain your APIs with Less downtimes, Fewer support ti
           >
             Get a demo &nbsp;
           </a>
-          <div class="space-x-5 text-xs">
+          <div class="sm:space-x-5 text-xs">
             <small class="inline-block">✓ Always free plan</small>
             <small class="inline-block">✓ GDPR compliant</small>
             <small class="inline-block">✓ Data processed in EU</small>
@@ -77,28 +77,30 @@ description: "Build and maintain your APIs with Less downtimes, Fewer support ti
 
 <br/>
 <br/>
+<div class="text-base sm:text-lg">
 All the <strong>Tools</strong> you need to <strong>design</strong> your APIs, <strong>interpret</strong> what's going on in your APIs, <strong>Investigate incidents</strong> and <strong>generate insights</strong>. In one package.
 <br/><br/>
 With <strong>daily & weekly reports</strong> on everything going on in your services.
 <br/><br/><br/><br/>
+</div>
 
-  <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 text-lg p-1 font-medium">
-    <a class="transition-all border-l-4 border-l-amber-400  rounded-md p-5 border border-gray-200 drop-shadow-md shadow-amber-500 hover:shadow-md" href="/api-anomalies-validation-and-checks">
+  <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-5 text-sm sm:text-lg p-1 sm:p-2 font-normal sm:font-medium">
+    <a class="transition-all border-l-4 border-l-amber-400  rounded-md p-2 sm:p-5 border border-gray-200 drop-shadow-md shadow-amber-500 hover:shadow-md" href="/api-anomalies-validation-and-checks">
       API Designer and Mocker 
     </a>
-    <a class="transition-all border-l-4 border-l-amber-400 rounded-md p-5 border border-gray-200 drop-shadow-md shadow-amber-500 hover:shadow-md" href="/api-anomalies-validation-and-checks">
+    <a class="transition-all border-l-4 border-l-amber-400 rounded-md p-2 sm:p-5 border border-gray-200 drop-shadow-md shadow-amber-500 hover:shadow-md" href="/api-anomalies-validation-and-checks">
       Live API tester 
     </a>
-    <a class="transition-all border-l-4 border-l-amber-400  rounded-md p-5 border border-gray-200 drop-shadow-md shadow-amber-500 hover:shadow-md" href="/api-logs-and-metrics">
+    <a class="transition-all border-l-4 border-l-amber-400  rounded-md p-2 sm:p-5 border border-gray-200 drop-shadow-md shadow-amber-500 hover:shadow-md" href="/api-logs-and-metrics">
       API Log Explorer
     </a>
-    <a class="transition-all border-l-4 border-l-amber-400 rounded-md p-5 border border-gray-200 drop-shadow-md shadow-amber-500 hover:shadow-md" href="/api-performance-monitoring-and-compliance">
+    <a class="transition-all border-l-4 border-l-amber-400 rounded-md p-2 sm:p-5 border border-gray-200 drop-shadow-md shadow-amber-500 hover:shadow-md" href="/api-performance-monitoring-and-compliance">
       Metrics & Performance Monitor
     </a>
-    <a class="transition-all border-l-4 border-l-amber-400 rounded-md p-5 border border-gray-200 drop-shadow-md shadow-amber-500 hover:shadow-md" href="/api-documentation-and-developer-portals">
+    <a class="transition-all border-l-4 border-l-amber-400 rounded-md p-2 sm:p-5 border border-gray-200 drop-shadow-md shadow-amber-500 hover:shadow-md" href="/api-documentation-and-developer-portals">
       Swagger Generator & Editor
     </a>
-    <a class="transition-all border-l-4 border-l-amber-400 rounded-md p-5 border border-gray-200 drop-shadow-md shadow-amber-500 hover:shadow-md" href="/api-anomalies-validation-and-checks">
+    <a class="transition-all border-l-4 border-l-amber-400 rounded-md p-2 sm:p-5 border border-gray-200 drop-shadow-md shadow-amber-500 hover:shadow-md" href="/api-anomalies-validation-and-checks">
       Payload Validation & Anomaly Detector  
     </a>
   </div>
