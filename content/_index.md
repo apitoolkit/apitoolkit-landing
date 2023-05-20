@@ -69,7 +69,7 @@ description: "Build and maintain your APIs with Less downtimes, Fewer support ti
 
 <section class="mt-20 text-center">
   <section class="md:max-w-5xl inline-block text-left">
-    <div class="md:max-w-4xl text-left px-5  pt-44 pb-32 text-lg">
+    <div class="md:max-w-4xl text-left px-2  py-44 text-base sm:text-lg">
     
 ###### WHY APITOOLKIT?
 ## Empower your <span class="bg-amber-300 px-2 rounded-md"><strong class="drop-shadow-md">Developers</strong></span> to create  <span class="bg-amber-300 px-2 rounded-md inline-block"><strong class="drop-shadow-md">Happier Customer</strong></span> **experiences**.
@@ -105,11 +105,6 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
     </a>
   </div>
 
-</div>
-
-<div class="text-center pb-5 pt-24">
-
-<!-- ## Features -->
 </div>
 
 {{% benefits_section %}}
@@ -261,12 +256,12 @@ When something goes wrong, notify the right person at the right time over slack,
 
   <br/>
   <div
-    class="fade-in-section px-5 sm:px-12 py-8 bg-amber-300 border border-gray-200 text-black filter drop-shadow-xl text-sm font-medium rounded-sm monospace"
+    class="fade-in-section px-4 sm:px-12 py-8 bg-amber-300 border border-gray-200 text-black filter drop-shadow-xl text-sm font-medium rounded-sm monospace"
   >
     <div class="pt-2 space-y-4 leading-5 text-xs sm:columns-2 gap-8 ">
 
 ## Founders Note
-#### (Or Why we are solving API reliability)
+#### ( Why we are solving API reliability )
 
 Picture this: I joined a food delivery company, all excited and ready to tackle challenges. 
 One day, we migrated a service from PHP to Golang, following the swagger docs diligently. 
