@@ -2289,6 +2289,22 @@ img {
   width: 1.5rem;
 }
 
+.w-72 {
+  width: 18rem;
+}
+
+.w-64 {
+  width: 16rem;
+}
+
+.w-96 {
+  width: 24rem;
+}
+
+.w-80 {
+  width: 20rem;
+}
+
 .max-w-prose {
   max-width: 65ch;
 }

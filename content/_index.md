@@ -19,7 +19,7 @@ description: "Build and maintain your APIs with Less downtimes, Fewer support ti
       </a>
       <h1 class="pt-2 text-blue-title leading-tight tracking-tight text-[1.83rem] sm:text-5xl drop-shadow-lg" style="font-variation-settings: 'wght' 900;">The API Developer's <span class="decoration-amber-300 underline underline-offset-4">Toolbox!</span></h1>
       <div class="pt-8 space-y-8 sm:pr-20">
-        <p class="font-normal text-lg sm:text-xl">Every <strong>Tool</strong> you need to <strong>Design</strong>, <strong>Test</strong>, <strong>Monitor</strong> & <strong>Maintain</strong> the most reliable APIs.</p>
+        <p class="font-normal text-lg sm:text-xl">Every <strong>Tool</strong> you need to <strong>Design</strong>, <strong>Test</strong>, & <strong>Monitor</strong> the most reliable APIs.</p>
         <!-- <div class="text-center py-4 sm:hidden"> -->
         <!--   <img -->
         <!--     src="/assets/img/ill_man_measuring.svg" -->
@@ -50,10 +50,16 @@ description: "Build and maintain your APIs with Less downtimes, Fewer support ti
       </div>
     </div>
     <img
-      src="/assets/img/ill_man_measuring.svg"
-      alt="Man measuring a graph"
-      class="hidden sm:inline-block w-60"
+      src="/assets/img/ill_guy_yellow_toolbox.png"
+      alt="API Developer and his toolbox"
+      class="hidden sm:inline-block w-80"
+      
     />
+    <!-- <img -->
+    <!--   src="/assets/img/ill_man_measuring.svg" -->
+    <!--   alt="Man measuring a graph" -->
+    <!--   class="hidden sm:inline-block w-60" -->
+    <!-- /> -->
   </div>
 </section>
 {{</ container >}}
