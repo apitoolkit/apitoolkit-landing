@@ -73,23 +73,32 @@ description: 'Build and maintain your APIs with Less downtimes, Fewer support ti
 </section>
 </section>
 
-<section class="mt-20 text-center">
-  <section class="md:max-w-5xl inline-block text-left">
-    <div class="md:max-w-4xl text-left px-2  py-44 text-base sm:text-lg">
-    
-###### WHY APITOOLKIT?
-## Empower your <span class="bg-amber-300 px-2 rounded-md"><strong class="drop-shadow-md">Developers</strong></span> to create  <span class="bg-amber-300 px-2 rounded-md inline-block"><strong class="drop-shadow-md">Happier Customer</strong></span> **experiences**.
+ <section class="w-full mt-40 inline-block text-left bg-[#f5f5f5]">
+  {{< container >}}
+  <div class="flex  flex-col sm:flex-row flex-shrink-0">
+    <div class="text-left pt-36 pb-36 text-lg">
+     <h6 class="text-amber-500">WHY APITOOLKIT?</h6>
+     <!-- Get daily & weekly reports on everything going on in your services. -->
+     <h2 class="my-4 leading-[60px] text-blue-title"> Empower your <span class="bg-amber-300 px-2 rounded-md"><strong class="drop-shadow-md">Developers</strong></span> to create  <span class="bg-amber-300 px-2 rounded-md"><strong class="drop-shadow-md">Happier Customer</strong></span> experiences.
+     </h2>
+     <p>All the <span class="text-amber-500 font-semibold">Tools</span> you need to <span class="text-amber-500 font-semibold">design</span>  your APIs, <span class="text-amber-500 font-semibold">interpret</span> waht's going on in your APIs, <span class="text-amber-500 font-semibold">Investigate incidents</span>  and <span class="text-amber-500 font-semibold">generate insights</span>. In one package.
+     </p>
+     <br/>
+     <br/>
+     <br/>
+     <p>With <strong>daily & weekly reports</strong> on everything going on in your services.</p>
+   </div>
+   <div class="w-[50%] flex flex-col justify-end">
+   <img src="/assets/question.svg" alt="" class="w-full">
+   </div>
+   </div>
+   {{</ container >}}
+  </section>
 
-<br/>
-<br/>
-<div class="text-base sm:text-lg">
-All the <strong>Tools</strong> you need to <strong>design</strong> your APIs, <strong>interpret</strong> what's going on in your APIs, <strong>Investigate incidents</strong> and <strong>generate insights</strong>. In one package.
-<br/><br/>
-With <strong>daily & weekly reports</strong> on everything going on in your services.
-<br/><br/><br/><br/>
-</div>
-
-  <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-5 text-sm sm:text-lg p-1 sm:p-2 font-normal sm:font-medium">
+<section class="text-center">
+    <div class="text-left px-2  bg-[#111921] py-44 text-base sm:text-lg">
+    {{< container >}}
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-5 text-sm sm:text-lg p-1 sm:p-2 font-normal sm:font-medium">
     <a class="transition-all border-l-4 border-l-amber-400  rounded-md p-2 sm:p-5 border border-gray-200 drop-shadow-md shadow-amber-500 hover:shadow-md" href="/api-anomalies-validation-and-checks">
       API Designer and Mocker 
     </a>
@@ -109,9 +118,9 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
       Payload Validation & Anomaly Detector  
     </a>
   </div>
-
+{{</ container>}}
 </div>
-
+   <section class="md:max-w-5xl inline-block text-left">
 {{% benefits_section %}}
 
 <div  class="home-feature-image-div">
