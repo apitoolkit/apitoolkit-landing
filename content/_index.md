@@ -8,10 +8,10 @@ description: 'Build and maintain your APIs with Less downtimes, Fewer support ti
 {{< rawhtml >}}
 
 <!-- Blurred bg image generated from: https://fffuel.co/bbblurry/ -->
-<section  style="background: url('/assets/img/blob-landing-center5.svg') no-repeat left top local; margin-top: -90px" class="bg-contain">
+<section  style="background: url('/assets/img/blob-landing-center5.svg') no-repeat left top local; margin-top: -90px; padding-top: 60px" class="bg-contain">
 {{< container >}}
 <section>
-  <div class="flex flex-col sm:flex-row items-center pt-28 sm:pt-24 ">
+  <div class="flex flex-col sm:flex-row items-center pt-16 sm:pt-24 ">
     <div class="">
       <br/><br/>
       <a class="inline-block bg-blue-900/90 text-white px-5 py-1 text-xs rounded-2xl" href="/blog/updates-october-2022/">

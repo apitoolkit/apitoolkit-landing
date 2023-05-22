@@ -43,7 +43,7 @@
 
 .our_container {
   /* prettier-ignore */
-  width: min(100vw, 1100px);
+  width: min(100vw, 1200px);
   display: inline-block;
   text-align: left;
   padding: 0 20px;
