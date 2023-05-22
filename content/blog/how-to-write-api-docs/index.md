@@ -43,6 +43,8 @@ Be instructional: Let your users know where to begin and where to end. Detail co
 
 ![APIToolkit installation doc](./apitoolkitdoc2.png)
 
+Read: [Top 7 Reasons Why Your Team should Use an API Monitoring and Observability Tool](https://apitoolkit.io/blog/why-you-need-an-api-monitoring-tool/)
+
 ## 3. Include Detailed Examples
 Examples are an essential part of any API documentation since they make the concepts easier to understand, particularly for those who have no experience with the language being used. When providing examples in your documentation, be sure to include detailed steps and provide full descriptions of what is being done. Provide both code examples, as well as images or screenshots if possible. This will help users better visualize what’s going on and create a more effective result.
 
@@ -58,6 +60,8 @@ A console helps your audience to test your APIs and see results in real time. It
 
 Libraries: Code libraries enable developers to easily call different resources. Access to methods in different languages to work with your API helps developers feel more comfortable working with the API.
 
+Read: [Must-Know API Trends in 2023](https://apitoolkit.io/blog/api-trends/)
+
 ## 5. Show How to Request and Use Authentication Credentials
 One of the most important guidelines for writing API documentation is to include instructions on requesting and using authentication credentials. Authentication is an important part of many APIs, but it can often be a complex process that users need assistance with. Provide them with the information they need to request and use authentication credentials, so they know exactly how to access your API securely and safely.
 
@@ -72,6 +76,8 @@ Use good contrast: The Web Content Accessibility Guidelines 2.1 (WCAG) recommend
 Use a dynamic layout: These days, layouts must be easy to bookmark. The use of PDFs and single-page documents doesn’t cut it. Ensure your docs are dynamic and scalable.
 
 Navigation bar: Your navigation bar should stick to the screen. Make it easy for users to switch between pages.
+
+Read: [How to Generate Automated API Documentation](https://apitoolkit.io/blog/how-to-generate-automated-api-documentation/)
 
 ## 7. Describe Your Request-response Cycles in Detail
 Your users should not be surprised by API responses. They should know exactly what to expect from API calls. 
@@ -92,6 +98,8 @@ Use as many code samples as necessary. Developers appreciate this a lot. Don’r
 
 Lastly, optimize it for search engines. Your docs are no good if they can’t be found with a simple Google search. Ensure the page is indexed, titled properly, and well described.
 
+Read: [How to Write API Documentation: 10 Essential Guidelines](https://apitoolkit.io/blog/how-to-write-api-docs/)
+
 ## 10. Update Your Docs Regularly
 No one likes an outdated document. Stay on top of this. Update your API docs regularly. Here are some recommendations:
 
@@ -107,3 +115,9 @@ Documenting your [APIs](https://apitoolkit.io/blog/best-api-monitoring-and-obser
 You will have different audiences. Be sure to cater to all their varying needs when developing your API docs.
 
 APIToolkit gives you comprehensive analyses of your API docs to ensure you’re constantly up to date with the information you serve your community.
+
+Recommended Post: [Key Benefits of API Integration for Developers](https://apitoolkit.io/blog/benefits-of-api-integration/)
+
+Recommended Post: [API Documentation vs API Specification: What It Means for You](https://apitoolkit.io/blog/api-documentation-vs-api-specification/)
+
+Recommended Post: [API Observability and Monitoring: What's the Difference?](https://apitoolkit.io/blog/api-observability-and-api-monitoring/)

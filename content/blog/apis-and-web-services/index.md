@@ -71,6 +71,8 @@ A defining feature of web services is that they are language agnostic. Meaning t
 
 A client summons a web service by sending a request via XML, and the service then responds with an XML response. 
 
+Read: [Key Benefits of API Integration for Developers](https://apitoolkit.io/blog/benefits-of-api-integration/)
+
 ## SOAP vs REST
 
 Of course, I couldn’t go over such a topic without touching on some age-old developer debate. SOAP and REST, which is better. Here are a few points for both sides. Bear in mind, that I don’t think there’s a clear-cut winner.
