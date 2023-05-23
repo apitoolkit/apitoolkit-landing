@@ -78,11 +78,10 @@ description: 'Build and maintain your APIs with Less downtimes, Fewer support ti
     <div class="text-left pt-36 pb-36 text-lg">
      <h6 class="text-amber-500">WHY APITOOLKIT?</h6>
      <!-- Get daily & weekly reports on everything going on in your services. -->
-     <h2 class="my-4 leading-[60px] text-blue-title"> Empower your <span class="bg-amber-300 px-2 rounded-md"><strong class="drop-shadow-md">Developers</strong></span> to create  <span class="bg-amber-300 px-2 rounded-md"><strong class="drop-shadow-md">Happier Customer</strong></span> experiences.
+     <h2 class="my-4 leading-loose md:leading-[60px] text-blue-title"> Empower your <span class="bg-amber-300 px-2 rounded-md"><strong class="drop-shadow-md">Developers</strong></span> to create  <span class="bg-amber-300 px-2 rounded-md"><strong class="drop-shadow-md inline-block">Happier Customer</strong></span> experiences.
      </h2>
      <p>All the <span class="text-amber-500 font-semibold">Tools</span> you need to <span class="text-amber-500 font-semibold">design</span>  your APIs, <span class="text-amber-500 font-semibold">interpret</span> waht's going on in your APIs, <span class="text-amber-500 font-semibold">Investigate incidents</span>  and <span class="text-amber-500 font-semibold">generate insights</span>. In one package.
      </p>
-     <br/>
      <br/>
      <br/>
      <p>With <strong>daily & weekly reports</strong> on everything going on in your services.</p>
