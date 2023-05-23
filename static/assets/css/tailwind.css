@@ -79,6 +79,22 @@
   animation: rotate 10s linear infinite;
 }
 
+.rotator {
+  animation: rotate2 20s linear infinite;
+}
+.alert-platform {
+  animation: rotate2 20s linear reverse infinite;
+}
+
+@keyframes rotate2 {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 @keyframes rotate {
   0% {
     transform: rotate(0);

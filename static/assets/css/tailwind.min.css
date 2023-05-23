@@ -2173,8 +2173,20 @@ img {
   margin-top: 10rem;
 }
 
+.mb-16 {
+  margin-bottom: 4rem;
+}
+
 .mt-1 {
   margin-top: 0.25rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.mt-10 {
+  margin-top: 2.5rem;
 }
 
 .mt-48 {
@@ -2203,14 +2215,6 @@ img {
 
 .mt-3 {
   margin-top: 0.75rem;
-}
-
-.mb-24 {
-  margin-bottom: 6rem;
-}
-
-.mb-16 {
-  margin-bottom: 4rem;
 }
 
 .block {
@@ -2261,6 +2265,22 @@ img {
   height: 50%;
 }
 
+.h-\[450px\] {
+  height: 450px;
+}
+
+.h-\[400px\] {
+  height: 400px;
+}
+
+.h-\[270px\] {
+  height: 270px;
+}
+
+.h-\[140px\] {
+  height: 140px;
+}
+
 .h-7 {
   height: 1.75rem;
 }
@@ -2293,6 +2313,18 @@ img {
   width: 50%;
 }
 
+.w-\[400px\] {
+  width: 400px;
+}
+
+.w-\[270px\] {
+  width: 270px;
+}
+
+.w-\[140px\] {
+  width: 140px;
+}
+
 .w-32 {
   width: 8rem;
 }
@@ -2311,6 +2343,10 @@ img {
 
 .w-6 {
   width: 1.5rem;
+}
+
+.max-w-xl {
+  max-width: 36rem;
 }
 
 .max-w-prose {
@@ -2507,16 +2543,16 @@ img {
   border-radius: 0.5rem;
 }
 
+.rounded-full {
+  border-radius: 9999px;
+}
+
 .rounded-sm {
   border-radius: 0.125rem;
 }
 
 .rounded {
   border-radius: 0.25rem;
-}
-
-.rounded-full {
-  border-radius: 9999px;
 }
 
 .border {
@@ -2534,10 +2570,6 @@ img {
 .border-y {
   border-top-width: 1px;
   border-bottom-width: 1px;
-}
-
-.border-l-4 {
-  border-left-width: 4px;
 }
 
 .border-t {
@@ -2561,11 +2593,6 @@ img {
 .border-gray-900 {
   --tw-border-opacity: 1;
   border-color: rgb(17 24 39 / var(--tw-border-opacity));
-}
-
-.border-amber-50 {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 251 235 / var(--tw-border-opacity));
 }
 
 .border-blue-500 {
@@ -2603,11 +2630,6 @@ img {
   border-color: rgb(245 245 244 / var(--tw-border-opacity));
 }
 
-.border-l-amber-400 {
-  --tw-border-opacity: 1;
-  border-left-color: rgb(251 191 36 / var(--tw-border-opacity));
-}
-
 .bg-blue-900\/90 {
   background-color: rgb(30 58 138 / 0.9);
 }
@@ -2639,10 +2661,6 @@ img {
 .bg-\[\#0a0118\] {
   --tw-bg-opacity: 1;
   background-color: rgb(10 1 24 / var(--tw-bg-opacity));
-}
-
-.bg-amber-50\/50 {
-  background-color: rgb(255 251 235 / 0.5);
 }
 
 .bg-white {
@@ -2750,6 +2768,16 @@ img {
   padding-right: 0.25rem;
 }
 
+.py-24 {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.py-\[25px\] {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -2788,11 +2816,6 @@ img {
 .py-1\.5 {
   padding-top: 0.375rem;
   padding-bottom: 0.375rem;
-}
-
-.py-24 {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
 }
 
 .pt-16 {
@@ -2932,11 +2955,6 @@ img {
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
-}
-
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
 }
 
 .font-normal {
@@ -3099,11 +3117,6 @@ img {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.shadow-amber-500 {
-  --tw-shadow-color: #f59e0b;
-  --tw-shadow: var(--tw-shadow-colored);
-}
-
 .shadow-slate-200 {
   --tw-shadow-color: #e2e8f0;
   --tw-shadow: var(--tw-shadow-colored);
@@ -3219,6 +3232,35 @@ img {
   left: -50%;
   -webkit-animation: rotate 10s linear infinite;
           animation: rotate 10s linear infinite;
+}
+
+.rotator {
+  -webkit-animation: rotate2 20s linear infinite;
+          animation: rotate2 20s linear infinite;
+}
+
+.alert-platform {
+  animation: rotate2 20s linear reverse infinite;
+}
+
+@-webkit-keyframes rotate2 {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate2 {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @-webkit-keyframes rotate {
@@ -3488,10 +3530,6 @@ img {
     padding: 0.5rem;
   }
 
-  .sm\:p-5 {
-    padding: 1.25rem;
-  }
-
   .sm\:px-12 {
     padding-left: 3rem;
     padding-right: 3rem;
@@ -3633,10 +3671,6 @@ img {
     row-gap: 3rem;
   }
 
-  .md\:p-16 {
-    padding: 4rem;
-  }
-
   .md\:p-6 {
     padding: 1.5rem;
   }
@@ -3653,6 +3687,11 @@ img {
 
   .lg\:p-8 {
     padding: 2rem;
+  }
+
+  .lg\:px-10 {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
   }
 
   .lg\:py-16 {

@@ -11,7 +11,7 @@ description: 'Build and maintain your APIs with Less downtimes, Fewer support ti
 <section  style="background: url('/assets/img/blob-landing-center5.svg') no-repeat left top local; margin-top: -90px; padding-top: 60px" class="bg-contain">
 {{< container >}}
 <section>
-  <div class="flex flex-col sm:flex-row items-center pt-16 sm:pt-24 ">
+  <div class="flex flex-col sm:flex-row items-center pt-16 sm:pt-24 lg:px-10">
     <div class="">
       <br/><br/>
       <a class="inline-block bg-blue-900/90 text-white px-5 py-1 text-xs rounded-2xl" href="/blog/updates-october-2022/">
@@ -96,7 +96,7 @@ description: 'Build and maintain your APIs with Less downtimes, Fewer support ti
   </section>
 
 <section class="text-center">
-    <div class="text-left px-2 bg-[#0a0118] py-44 text-base sm:text-lg" style="--bg:#0a0118">
+    <div class="text-left px-2 bg-[#0a0118] py-44 text-base" style="--bg:#0a0118">
     {{< container >}}
       <h4 class="text-center text-white  text-3xl mb-16">Tools In This ToolBox</h4>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-5 text-sm sm:text-lg p-1 sm:p-2 font-normal sm:font-medium">
@@ -230,7 +230,7 @@ description: 'Build and maintain your APIs with Less downtimes, Fewer support ti
   </div>
 {{</ container>}}
 </div>
-   <section class="md:max-w-5xl inline-block text-left">
+  <section class="our_container inline-block text-left">
 {{% benefits_section %}}
 
 <div  class="home-feature-image-div">
@@ -341,20 +341,33 @@ description: 'Build and maintain your APIs with Less downtimes, Fewer support ti
 
 </div>
 {{% /benefits_section %}}
+  </section>
+</section>
 
-<div  class="p-5 md:p-16 bg-amber-50/50 border border-amber-50 rounded-lg space-y-2">
-
-##### <span class="bg-amber-300 px-1  font-bold">Alerting and incident management </span>
-
-## ALERT THE RIGHT PERSON AT THE RIGHT TIME
-
-When something goes wrong, notify the right person at the right time over slack, pagerduty, opsgenie or any other platform via our zapier integrations.
-
-<a class="text-blue-900" href="">Learn about our incident management integrations.</a>
-
+<section class="text-left px-2 bg-[#0a0118] py-24 text-base">
+{{< container >}}
+<div class="text-center flex flex-col items-center">
+ <span class="bg-amber-300 px-1 font-bold">Alerting and incident management </span>
+ <h2 class="text-white mb-2 mt-2">ALERT THE RIGHT PERSON AT THE RIGHT TIME</h2>
+ <p class="text-gray-400 max-w-xl">When something goes wrong, notify the right person at the right time over slack, pagerduty, opsgenie or any other platform via our zapier integrations.</p>
+ <a class="text-blue-900" href="">Learn about our incident management integrations.</a>
+ <div class="relative w-full h-[450px] mt-10  overflow-hidden py-[25px] flex flex-col justify-center items-center">
+    <div class="rotator relative border rounded-full border-gray-900 flex justify-center items-center w-[400px] h-[400px]">
+      <div class="rounded-full flex border-gray-900 justify-center items-center border w-[270px] h-[270px]">
+        <div class="rounded-full flex border-gray-900 justify-center items-center border w-[140px] h-[140px]">
+        </div>
+      </div>
+     <img src="/assets/img/slack.svg"  class="alert-platform absolute" style="width:50px; right: -25px" alt="slack" title="slack">
+     <img src="/assets/img/pagerduty.svg"  class="alert-platform absolute" style="width:50px; top: 40px" alt="pager duty" title="pagerduty">
+     <img src="/assets/img/opsgenie.svg"  class="alert-platform absolute" style="width:50px; left:-25px" alt="opsgenie" title="opsgenie">
+     <img src="/assets/img/zapier.svg"  class="alert-platform absolute" style="width:50px; bottom: 40px" alt="zapier" title="zapier">
+    </div>
+     <img src="/assets/img/logo-full-white.svg"  class="absolute" style="width:100px" alt="api toolkit" title="apitoolkit">
+ </div>
 </div>
 
-  </section>
+{{</ container >}}
+
 </section>
 
 <section class="my-24">
