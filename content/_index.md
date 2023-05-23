@@ -11,8 +11,8 @@ description: 'Build and maintain your APIs with Less downtimes, Fewer support ti
 <section  style="background: url('/assets/img/blob-landing-center5.svg') no-repeat left top local; margin-top: -90px; padding-top: 60px" class="bg-contain">
 {{< container >}}
 <section>
-  <div class="flex flex-col sm:flex-row items-center pt-16 sm:pt-24 lg:px-10">
-    <div class="">
+  <div class="flex flex-col md:flex-row items-center pt-16 sm:pt-24 lg:px-10">
+    <div class="text-center sm:text-start">
       <br/><br/>
       <a class="inline-block bg-blue-900/90 text-white px-5 py-1 text-xs rounded-2xl" href="/blog/updates-october-2022/">
         ✨ Read the latest updates  🚀
@@ -27,7 +27,7 @@ description: 'Build and maintain your APIs with Less downtimes, Fewer support ti
         <!--     class="w-24 inline-block" -->
         <!--   /> -->
         <!-- </div> -->
-        <div class="space-y-2 text-sm sm:pt-1" id="waitlist-form-1">
+        <div class="space-y-2 text-sm sm:pt-1 text-center sm:text-start" id="waitlist-form-1">
           <a
             href="https://app.apitoolkit.io"
             class=" drop-shadow hover:drop-shadow-lg transition-all rounded-md hover:bg-yellow-300 bg-amber-300 text-black border border-amber-400 font-semibold inline-block px-4 py-2 mt-2 sm:mt-0"
@@ -41,10 +41,10 @@ description: 'Build and maintain your APIs with Less downtimes, Fewer support ti
           >
             Get a demo &nbsp;
           </a>
-          <div class="sm:space-x-5 text-xs">
-            <small class="inline-block">✓ Always free plan</small>
-            <small class="inline-block">✓ GDPR compliant</small>
-            <small class="inline-block">✓ Data processed in EU</small>
+          <div class="flex gap-5 justify-center sm:justify-start sm:block sm:space-x-5 text-xs">
+            <small class="inline-block"><span class="text-green-500 text-[17px] font-bold">✓</span> Always free plan</small>
+            <small class="inline-block"><span class="text-green-500 text-[17px] font-bold">✓</span> GDPR compliant</small>
+            <small class="inline-block"><span class="text-green-500 text-[17px] font-bold">✓</span> Data processed in EU</small>
           </div>
         </div>
       </div>
@@ -53,7 +53,6 @@ description: 'Build and maintain your APIs with Less downtimes, Fewer support ti
       src="/assets/img/ill_guy_yellow_toolbox.png"
       alt="API Developer and his toolbox"
       class="hidden sm:inline-block w-80"
-      
     />
     <!-- <img -->
     <!--   src="/assets/img/ill_man_measuring.svg" -->

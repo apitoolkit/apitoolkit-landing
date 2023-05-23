@@ -2965,6 +2965,10 @@ img {
   line-height: 2rem;
 }
 
+.text-\[17px\] {
+  font-size: 17px;
+}
+
 .font-normal {
   font-weight: 400;
 }
@@ -3103,6 +3107,11 @@ img {
 .text-slate-600 {
   --tw-text-opacity: 1;
   color: rgb(71 85 105 / var(--tw-text-opacity));
+}
+
+.text-green-500 {
+  --tw-text-opacity: 1;
+  color: rgb(34 197 94 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -3491,6 +3500,10 @@ img {
     margin-left: 0.25rem;
   }
 
+  .sm\:block {
+    display: block;
+  }
+
   .sm\:inline-block {
     display: inline-block;
   }
@@ -3522,6 +3535,10 @@ img {
 
   .sm\:flex-row {
     flex-direction: row;
+  }
+
+  .sm\:justify-start {
+    justify-content: flex-start;
   }
 
   .sm\:gap-5 {
@@ -3567,6 +3584,10 @@ img {
 
   .sm\:pt-36 {
     padding-top: 9rem;
+  }
+
+  .sm\:text-start {
+    text-align: start;
   }
 
   .sm\:text-5xl {
@@ -3632,6 +3653,10 @@ img {
 
   .md\:w-1\/5 {
     width: 20%;
+  }
+
+  .md\:w-80 {
+    width: 20rem;
   }
 
   .md\:max-w-3xl {
