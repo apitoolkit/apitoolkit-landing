@@ -348,8 +348,6 @@ description: 'Build and maintain your APIs with Less downtimes, Fewer support ti
 
 ## ALERT THE RIGHT PERSON AT THE RIGHT TIME
 
-## ALERT THE RIGHT PERSON AT THE RIGHT TIME
-
 When something goes wrong, notify the right person at the right time over slack, pagerduty, opsgenie or any other platform via our zapier integrations.
 
 <a class="text-blue-900" href="">Learn about our incident management integrations.</a>
