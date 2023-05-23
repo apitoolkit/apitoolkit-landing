@@ -98,8 +98,11 @@ description: 'Build and maintain your APIs with Less downtimes, Fewer support ti
 <section class="text-center">
     <div class="text-left px-2 bg-[#0a0118] py-44 text-base sm:text-lg" style="--bg:#0a0118">
     {{< container >}}
-      <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-5 text-sm sm:text-lg p-1 sm:p-2 font-normal sm:font-medium">
-      <article class="relative border rounded-lg border-gray-900 overflow-hidden" style="height:300px">
+      <h4 class="text-center text-white  text-3xl mb-16">Tools In This ToolBox</h4>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-5 text-sm sm:text-lg p-1 sm:p-2 font-normal sm:font-medium">
+      <article class="tool-card relative border rounded-lg border-gray-900 overflow-hidden" style="height:300px"
+       onmouseenter="showHighlight(event)" onmouseleave="hideHighlight(event)" onmousemove="calculateDifference(event)">
+        <div class="tool-card-highlight"> </div>
         <div class="absolute top-0 left-0 h-full  w-full backdrop-blur-lg bg-white/1" style="z-index:1;">
         </div>
          <div class="absolute top-0 left-0 h-full w-full bg-gradient-to-b from-transparent to-[#0a0118]" style="z-index:2;background: linear-gradient(to bottom, transparent, var(--bg), var(--bg))">
@@ -107,15 +110,19 @@ description: 'Build and maintain your APIs with Less downtimes, Fewer support ti
          <div class="h-[50%] w-full">
            <img src="/assets/img/apibuilder.svg" style="">
         </div>
-        <div class="absolute w-full px-2 pt-1 pb-4" style="z-index:3; bottom:0">
+        <div class="absolute w-full px-2 pt-1 pb-4 leading-tight" style="z-index:3; bottom:0">
           <div>
            <img src="/assets/img/apibuilder.svg" style="height:40px; width:40px">
           </div>
-          <h5 class="text-gray-200 text-md">API Designer and Mocker</h5>
+          <h5 class="text-gray-200 text-md underline cursor-pointer leading-tight hover:decoration-amber-400">
+           <a  href="/api-anomalies-validation-and-checks">API Designer and Mocker</a>
+          </h5>
           <p class="leading-tight text-sm mt-1 font-light text-gray-400">Something about  and the rest of the players are just standing there looking how good out palyer and help you mock you stuff</p>
         </div>
       </article>
-      <article class="relative border rounded-lg border-gray-900 overflow-hidden" style="height:300px">
+      <article class="tool-card relative border rounded-lg border-gray-900 overflow-hidden" style="height:300px"
+       onmouseenter="showHighlight(event)" onmouseleave="hideHighlight(event)" onmousemove="calculateDifference(event)">
+        <div class="tool-card-highlight"> </div>
         <div class="absolute top-0 left-0 h-full  w-full backdrop-blur-lg bg-white/1" style="z-index:1;">
         </div>
          <div class="absolute top-0 left-0 h-full w-full bg-gradient-to-b from-transparent to-[#0a0118]" style="z-index:2;background: linear-gradient(to bottom, transparent, var(--bg), var(--bg))">
@@ -123,31 +130,19 @@ description: 'Build and maintain your APIs with Less downtimes, Fewer support ti
          <div class="h-[50%] w-full">
            <img src="/assets/img/tester.svg" style="margin-left: 60px">
         </div>
-        <div class="absolute w-full px-2 pt-1 pb-4" style="z-index:3; bottom:0">
+        <div class="absolute w-full px-2 pt-1 pb-4 leading-tight" style="z-index:3; bottom:0">
           <div>
            <img src="/assets/img/tester.svg" style="height:40px; width:40px">
           </div>
-          <h5 class="text-gray-200 text-md">Live API tester</h5>
+          <h5 class="text-gray-200 text-md underline cursor-pointer leading-tight hover:decoration-amber-400">
+           <a  href="/api-anomalies-validation-and-checks">Live API Tester</a>
+          </h5>
           <p class="leading-tight text-sm mt-1 font-light text-gray-400">Something about  and the rest of the players are just standing there looking how good out palyer and help you mock you stuff</p>
         </div>
       </article>
-      <article class="relative border rounded-lg border-gray-900 overflow-hidden" style="height:300px">
-        <div class="absolute top-0 left-0 h-full  w-full backdrop-blur-lg bg-white/1" style="z-index:1;">
-        </div>
-         <div class="absolute top-0 left-0 h-full w-full bg-gradient-to-b from-transparent to-[#0a0118]" style="z-index:2;background: linear-gradient(to bottom, transparent, var(--bg), var(--bg))">
-        </div>
-         <div class="h-[50%] w-full">
-           <img src="/assets/img/explorer.svg" style="margin-left: 150px;margin-top:30px; width:200px">
-        </div>
-        <div class="absolute w-full px-2 pt-1 pb-4" style="z-index:3; bottom:0">
-          <div>
-           <img src="/assets/img/explorer.svg" style="height:40px; width:40px">
-          </div>
-          <h5 class="text-gray-200 text-md">API Log Explorer</h5>
-          <p class="leading-tight text-sm mt-1 font-light text-gray-400">Query, Analyze and Visualize your api logs. Our Log and Metrics Explorer tool is responsible for showing you information that is coming in and out of your server.</p>
-        </div>
-      </article>
-      <article class="relative border rounded-lg border-gray-900 overflow-hidden" style="height:300px">
+      <article class="tool-card relative border rounded-lg border-gray-900 overflow-hidden" style="height:300px"
+       onmouseenter="showHighlight(event)" onmouseleave="hideHighlight(event)" onmousemove="calculateDifference(event)">
+        <div class="tool-card-highlight"> </div>
        <div class="absolute top-0 left-0 h-full  w-full backdrop-blur-lg bg-white/1" style="z-index:1;">
         </div>
          <div class="absolute top-0 left-0 h-full w-full bg-gradient-to-b from-transparent to-[#0a0118]" style="z-index:2;background: linear-gradient(to bottom, transparent, var(--bg), var(--bg))">
@@ -155,18 +150,42 @@ description: 'Build and maintain your APIs with Less downtimes, Fewer support ti
         <div class="h-[50%] w-full">
           <img src="/assets/img/spark-icon.svg" style="margin-left: 150px;margin-top:30px; width:200px">
        </div>
-       <div class="absolute w-full px-2 pt-1 pb-4" style="z-index:3; bottom:0">
+       <div class="absolute w-full px-2 pt-1 pb-4 leading-tight" style="z-index:3; bottom:0">
          <div>
           <img src="/assets/img/spark-icon.svg" style="height:40px; width:40px">
          </div>
-         <h5 class="text-gray-200 text-md">Metrics & Performance Monitor</h5>
+         <h5 class="text-gray-200 text-md underline cursor-pointer leading-tight hover:decoration-amber-400">
+           <a  href="/api-performance-monitoring-and-compliance">Metrics & Performance Monitor</a>
+         </h5>
          <p class="leading-tight text-sm mt-1 font-light text-gray-400">
              Detect and Track Slow Endpoints
              Our powerful AI tool oversees your performance metrics: throughput, latency distribution, etc.
              </p>
        </div>
       </article>
-            <article class="relative border rounded-lg border-gray-900 overflow-hidden" style="height:300px">
+      <article class="tool-card relative border rounded-lg border-gray-900 overflow-hidden" style="height:300px"
+       onmouseenter="showHighlight(event)" onmouseleave="hideHighlight(event)" onmousemove="calculateDifference(event)">
+        <div class="tool-card-highlight"> </div>
+        <div class="absolute top-0 left-0 h-full  w-full backdrop-blur-lg bg-white/1" style="z-index:1;">
+        </div>
+         <div class="absolute top-0 left-0 h-full w-full bg-gradient-to-b from-transparent to-[#0a0118]" style="z-index:2;background: linear-gradient(to bottom, transparent, var(--bg), var(--bg))">
+        </div>
+         <div class="h-[50%] w-full">
+           <img src="/assets/img/explorer.svg" style="margin-left: 150px;margin-top:30px; width:200px">
+        </div>
+        <div class="absolute w-full px-2 pt-1 pb-4 leading-tight" style="z-index:3; bottom:0">
+          <div>
+           <img src="/assets/img/explorer.svg" style="height:40px; width:40px">
+          </div>
+          <h5 class="text-gray-200 text-md underline cursor-pointer leading-tight hover:decoration-amber-400">
+           <a  href="/api-logs-and-metrics">API Log Explorer</a>
+          </h5>
+          <p class="leading-tight text-sm mt-1 font-light text-gray-400">Query, Analyze and Visualize your api logs. Our Log and Metrics Explorer tool is responsible for showing you information that is coming in and out of your server.</p>
+        </div>
+      </article>
+      <article class="tool-card relative border rounded-lg border-gray-900 overflow-hidden" style="height:300px"
+       onmouseenter="showHighlight(event)" onmouseleave="hideHighlight(event)" onmousemove="calculateDifference(event)">
+        <div class="tool-card-highlight"> </div>
        <div class="absolute top-0 left-0 h-full  w-full backdrop-blur-lg bg-white/1" style="z-index:1;">
         </div>
          <div class="absolute top-0 left-0 h-full w-full bg-gradient-to-b from-transparent to-[#0a0118]" style="z-index:2;background: linear-gradient(to bottom, transparent, var(--bg), var(--bg))">
@@ -174,18 +193,21 @@ description: 'Build and maintain your APIs with Less downtimes, Fewer support ti
         <div class="h-[50%] w-full">
           <img src="/assets/img/swagger.svg" style="margin-left: 150px;margin-top:30px; width:200px">
        </div>
-       <div class="absolute w-full px-2 pt-1 pb-4" style="z-index:3; bottom:0">
+       <div class="absolute w-full px-2 pt-1 pb-4 leading-tight" style="z-index:3; bottom:0">
          <div>
           <img src="/assets/img/swagger.svg" style="height:40px; width:40px">
          </div>
-         <h5 class="text-gray-200 text-md">Swagger Generator & Editor</h5>
+         <h5 class="text-gray-200 text-md underline cursor-pointer leading-tight hover:decoration-amber-400">
+          <a  href="/api-documentation-and-developer-portals">Swagger Editor & Generator</a>
+         </h5>
          <p class="leading-tight text-sm mt-1 font-light text-gray-400">
-             Always Up to Date API Documentation Our powerful AI steadfastly understudies every request and utilizes the information to generate documentation automatically. 
+             Always Up to Date API Documentation Our powerful AI steadfastly understudies every request and utilizes the information to generate documentation automatically.
              </p>
        </div>
       </article>
-          </article>
-            <article class="relative border rounded-lg border-gray-900 overflow-hidden" style="height:300px">
+      <article class="tool-card relative border rounded-lg border-gray-900 overflow-hidden" style="height:300px"
+       onmouseenter="showHighlight(event)" onmouseleave="hideHighlight(event)" onmousemove="calculateDifference(event)">
+        <div class="tool-card-highlight"> </div>
        <div class="absolute top-0 left-0 h-full  w-full backdrop-blur-lg bg-white/1" style="z-index:1;">
         </div>
          <div class="absolute top-0 left-0 h-full w-full bg-gradient-to-b from-transparent to-[#0a0118]" style="z-index:2;background: linear-gradient(to bottom, transparent, var(--bg), var(--bg))">
@@ -197,26 +219,14 @@ description: 'Build and maintain your APIs with Less downtimes, Fewer support ti
          <div>
           <img src="/assets/img/anomalydetector.svg" style="height:40px; width:40px">
          </div>
-         <h5 class="text-gray-200 text-md leading-tight">Payload Validation & Anomaly Detector</h5>
+         <h5 class="text-gray-200 text-md underline cursor-pointer leading-tight hover:decoration-amber-400">
+          <a  href="/api-anomalies-validation-and-checks">Payload Validation & Anomaly Detector</a>
+         </h5>
          <p class="leading-tight text-sm mt-1 font-light text-gray-400">
            Our powerful Anomaly Detector tool monitors your API endpoints traffic and reports any alteration to you.
          </p>
        </div>
       </article>
-
-    <!-- <a class="transition-all border-l-4 border-l-amber-400  rounded-md p-2 sm:p-5 border border-gray-200 drop-shadow-md shadow-amber-500 hover:shadow-md" href="/api-logs-and-metrics">
-      API Log Explorer
-    </a>
-    <a class="transition-all border-l-4 border-l-amber-400 rounded-md p-2 sm:p-5 border border-gray-200 drop-shadow-md shadow-amber-500 hover:shadow-md" href="/api-performance-monitoring-and-compliance">
-      Metrics & Performance Monitor
-    </a>
-    <a class="transition-all border-l-4 border-l-amber-400 rounded-md p-2 sm:p-5 border border-gray-200 drop-shadow-md shadow-amber-500 hover:shadow-md" href="/api-documentation-and-developer-portals">
-      Swagger Generator & Editor
-    </a>
-    <a class="transition-all border-l-4 border-l-amber-400 rounded-md p-2 sm:p-5 border border-gray-200 drop-shadow-md shadow-amber-500 hover:shadow-md" href="/api-anomalies-validation-and-checks">
-      Payload Validation & Anomaly Detector
-    </a>  -->
-
   </div>
 {{</ container>}}
 </div>
@@ -517,6 +527,37 @@ evolving solutions to solve API documentation, management and observability.
 </section>
 
 <script>
+  function calculateDifference(event) {
+    console.log("here")
+    const mouseX = event.clientX;
+    const mouseY = event.clientY;
+
+    const article = event.currentTarget;
+    const articleRect = article.getBoundingClientRect();
+    const articleX = articleRect.left 
+    const articleY = articleRect.top
+
+    const diffX = Math.abs(mouseX - articleX) - 50
+    const diffY = Math.abs(mouseY - articleY) - 50
+    const target = article.querySelector(".tool-card-highlight")
+    console.log(target)
+
+    if(target) {
+      target.style.left = diffX + 'px'
+      target.style.top = diffY + 'px'
+    }
+  }
+
+  function showHighlight(event) {
+    var highlightElement = event.currentTarget.querySelector('.tool-card-highlight');
+    highlightElement.style.display = 'block'
+  }
+
+  function hideHighlight(event) {
+    var highlightElement = event.currentTarget.querySelector('.tool-card-highlight');
+    highlightElement.style.display = 'none'
+  }
+
 const targets = document.querySelectorAll(".home-feature-image-div, .fade-in-section");
 for (var i = 0; i < targets.length; i++) {
   const observer = new IntersectionObserver(entries => {

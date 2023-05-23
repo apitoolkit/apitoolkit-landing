@@ -41,9 +41,24 @@
   }
 }
 
+.tool-card-highlight {
+  display: none;
+  content: '';
+  position: absolute;
+  top: 150px;
+  left: 150px;
+  width: 100px;
+  border-radius: 50%;
+  z-index: 3;
+  height: 100px;
+  background-color: rgb(251 191 36);
+  opacity: 0.35;
+  @apply blur-3xl;
+}
+
 .our_container {
   /* prettier-ignore */
-  width: min(100vw, 1200px);
+  width: min(100vw, 1300px);
   display: inline-block;
   text-align: left;
   padding: 0 20px;
