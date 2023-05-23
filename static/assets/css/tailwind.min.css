@@ -2201,6 +2201,10 @@ img {
   margin-top: 8rem;
 }
 
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
 .mt-4 {
   margin-top: 1rem;
 }
@@ -2363,6 +2367,10 @@ img {
 
 .max-w-5xl {
   max-width: 64rem;
+}
+
+.max-w-3xl {
+  max-width: 48rem;
 }
 
 .flex-1 {
@@ -3561,10 +3569,6 @@ img {
     padding-top: 9rem;
   }
 
-  .sm\:pr-16 {
-    padding-right: 4rem;
-  }
-
   .sm\:text-5xl {
     font-size: 3rem;
     line-height: 1;
@@ -3683,6 +3687,10 @@ img {
 
   .lg\:max-w-7xl {
     max-width: 80rem;
+  }
+
+  .lg\:flex-row {
+    flex-direction: row;
   }
 
   .lg\:p-8 {

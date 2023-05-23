@@ -447,15 +447,15 @@ Join us on this exciting journey!
   </section>
 {{% /container %}}
 
-  <section class="bg-gradient-yellow  mt-32 text-white gradient-yellow">
-    {{% container %}}
-<div class="space-y-5 py-16 sm:py-36 max-w-prose sm:text-lg ">
+  <section class="bg-gradient-yellow mt-32 text-white gradient-yellow">
+    {{< container >}}
+<div class="flex flex-col items-center space-y-5 py-16 sm:py-36 sm:text-lg ">
+<div class="max-w-prose flex flex-col items-center text-center">
+<h2 class="mb-4"> APIToolkit is built by <span class="bg-amber-300 px-1 font-bold text-black inline-block ">Developers for Developers</span>. To solve pain points we've all faced.</h2>
 
-## APIToolkit is built by <span class="bg-amber-300 px-1 font-bold text-black inline-block ">Developers for Developers</span>. To solve pain points we've all faced.
-
-We’re engineers at our core, who are very close to the problems we are
+<p>We’re engineers at our core, who are very close to the problems we are
 solving. So, we encourage you to be a part of this community
-evolving solutions to solve API documentation, management and observability.
+evolving solutions to solve API documentation, management and observability.</p>
 
   <div class="flex flex-row items-center pt-8">
     <a
@@ -472,17 +472,20 @@ evolving solutions to solve API documentation, management and observability.
       >Let's have a Chat</a
     >
   </div>
+  </div>
 </div>
-    {{% /container%}}
+    {{</ container >}}
   </section>
 
 {{< rawhtml >}}
 
+{{< container >}}
+
 <section class="flex flex-row justify-center">
   <div
-    class="our_container space-y-5 py-36 flex flex-col sm:flex-row items-center"
+    class="space-y-5 py-36 flex flex-col lg:flex-row items-center"
   >
-    <div class="sm:pr-16">
+    <div class="max-w-xl">
       <h1 class="text-3xl text-blue-title">
         APIToolkit is fixing <span class="bg-amber-300 px-1 font-bold">API Workflows</span> & <span class="bg-amber-300 px-1 font-bold">Reliability </span>
       </h1>
@@ -532,10 +535,11 @@ evolving solutions to solve API documentation, management and observability.
     <img
       src="/assets/img/ill_phone_and_chart.svg"
       alt="Man measuring a graph"
-      class="w-48 sm:w-60"
+      class="sm:w-60"
     />
   </div>
 </section>
+{{</ container >}}
 
 <script>
   function calculateDifference(event) {
