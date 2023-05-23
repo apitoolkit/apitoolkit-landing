@@ -51,7 +51,7 @@
   border-radius: 50%;
   z-index: 3;
   height: 100px;
-  background-color: rgb(251 191 36);
+  background-color: blue;
   opacity: 0.35;
   @apply blur-3xl;
 }
@@ -214,6 +214,10 @@
 
   .home-feature-section ul {
     @apply list-disc space-y-1;
+  }
+
+  .bg-orange-x-dark {
+    background-color: #dc562e;
   }
 
   .pricing-card {
