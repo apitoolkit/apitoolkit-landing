@@ -2787,9 +2787,9 @@ img {
   padding-right: 0.25rem;
 }
 
-.py-24 {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
+.py-36 {
+  padding-top: 9rem;
+  padding-bottom: 9rem;
 }
 
 .py-\[25px\] {
@@ -2812,11 +2812,6 @@ img {
   padding-right: 2rem;
 }
 
-.py-36 {
-  padding-top: 9rem;
-  padding-bottom: 9rem;
-}
-
 .py-5 {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
@@ -2835,6 +2830,11 @@ img {
 .py-1\.5 {
   padding-top: 0.375rem;
   padding-bottom: 0.375rem;
+}
+
+.py-24 {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
 }
 
 .pt-16 {
@@ -3304,12 +3304,12 @@ img {
     transform: scale(0);
   }
 
-  30% {
-    transform: scale(5);
+  50% {
+    transform: scale(3);
   }
 
   100% {
-    transform: scale(5);
+    transform: scale(3);
   }
 }
 
@@ -3318,12 +3318,12 @@ img {
     transform: scale(0);
   }
 
-  30% {
-    transform: scale(5);
+  50% {
+    transform: scale(3);
   }
 
   100% {
-    transform: scale(5);
+    transform: scale(3);
   }
 }
 

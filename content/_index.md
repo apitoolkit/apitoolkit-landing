@@ -342,7 +342,7 @@ description: 'Build and maintain your APIs with Less downtimes, Fewer support ti
   </section>
 </section>
 
-<section class="text-left px-2 bg-[#0a0118] py-24 text-base">
+<section class="text-left px-2 bg-[#0a0118] py-36 text-base">
 {{< container >}}
 <div class="text-center flex flex-col items-center">
  <span class="bg-amber-300 px-1 font-bold">Alerting and incident management </span>

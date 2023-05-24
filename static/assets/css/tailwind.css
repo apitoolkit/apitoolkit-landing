@@ -105,11 +105,11 @@
   0% {
     transform: scale(0);
   }
-  30% {
-    transform: scale(5);
+  50% {
+    transform: scale(3);
   }
   100% {
-    transform: scale(5);
+    transform: scale(3);
   }
 }
 
