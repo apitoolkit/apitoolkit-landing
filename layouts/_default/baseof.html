@@ -8,8 +8,8 @@
     <nav class="our_container w-full">
       <div class="flex flex-row justify-between items-center py-4">
         <a href="/"><img src="/assets/img/logo-full.svg" alt="APItoolkit logo" class="h-6" /></a>
-        <ul class="flex items-center gap-1 text-xm md:gap-8">
-          <li class="bg-red-100">
+        <ul class="hidden items-center gap-1 hidden sm:flex text-xm md:gap-8">
+          <li>
             <button type=" button" class="hidden bg-gray-200 px-3 py-2 rounded-full">
               Sign in
             </button>
@@ -30,6 +30,38 @@
             </a>
           </li>
         </ul>
+        <div class="sm:hidden" onclick="showMenu(event)">
+          <img src="/assets/img/hamburger_menu.svg" class="w-6" />
+        </div>
+        <ul id="menu-items" onclick="stopPro(event)"
+          class="fixed bg-blue-900 text-white sm:hidden flex flex-col overflow-hidden h-0 w-0 top-2 right-2 rounded shadow gap-1 text-xm md:gap-8">
+          <div onclick="closeMenu(event)" class="w-full flex justify-end">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 6L6 18" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M6 6L18 18" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </div>
+          <li class="">
+            <button type=" button" class="hidden bg-gray-200 px-3 py-2 rounded-full">
+              Sign in
+            </button>
+          </li>
+          <li class="nav_link">
+            <a href="/blog/">Blog</a>
+          </li>
+          <li class="nav_link">
+            <a href="/pricing/">Pricing</a>
+          </li>
+          <li class="nav_link">
+            <a href="/docs/">Docs</a>
+          </li>
+          <li>
+            <a href="https://app.apitoolkit.io"
+              class="border bg-orange-x-dark bg-amber-300 text-black px-3 py-1 text-sm mt-4 rounded-full inline-block">
+              Get Started
+            </a>
+          </li>
+        </ul>
       </div>
     </nav>
   </div>
@@ -40,10 +72,22 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-FZERLHDJ7J"></script>
   <script>
+    const stopPro = (e) => {
+      e.stopPropagation()
+    }
+    const showMenu = (e) => {
+      e.stopPropagation()
+      document.getElementById("menu-items").classList.add("menu-show")
+    }
+    const closeMenu = (e) => {
+      e.stopPropagation()
+      document.getElementById("menu-items").classList.remove("menu-show")
+    }
     window.dataLayer = window.dataLayer || [];
     function gtag() {
       dataLayer.push(arguments);
     }
+    document.body.addEventListener('click', closeMenu)
     gtag("js", new Date());
 
     gtag("config", "G-FZERLHDJ7J");

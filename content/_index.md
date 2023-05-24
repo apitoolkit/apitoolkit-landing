@@ -50,7 +50,7 @@ description: 'Build and maintain your APIs with Less downtimes, Fewer support ti
       </div>
     </div>
     <img
-      src="/assets/img/ill_guy_yellow_toolbox.png"
+      src="/assets/img/ill_guy_yellow_toolbox_tr.png"
       alt="API Developer and his toolbox"
       class="hidden sm:inline-block w-80"
     />
@@ -349,18 +349,21 @@ description: 'Build and maintain your APIs with Less downtimes, Fewer support ti
  <h2 class="text-white mb-2 mt-2">ALERT THE RIGHT PERSON AT THE RIGHT TIME</h2>
  <p class="text-gray-400 max-w-xl">When something goes wrong, notify the right person at the right time over slack, pagerduty, opsgenie or any other platform via our zapier integrations.</p>
  <a class="text-blue-900" href="">Learn about our incident management integrations.</a>
- <div class="relative w-full h-[450px] mt-10  overflow-hidden py-[25px] flex flex-col justify-center items-center">
+ <div class="relative w-full h-[450px] mt-10  overflow-hidden  flex flex-col justify-center items-center">
+  <div class="relative w-full h-full overflow-hidden rounded-full w-[450px] py-[25px] flex flex-col justify-center items-center">
     <div class="rotator relative border rounded-full border-gray-900 flex justify-center items-center w-[400px] h-[400px]">
       <div class="rounded-full flex border-gray-900 justify-center items-center border w-[270px] h-[270px]">
         <div class="rounded-full flex border-gray-900 justify-center items-center border w-[140px] h-[140px]">
         </div>
       </div>
+     <span class="scale-anime absolute inline-flex h-full w-full rounded-full opacity-75"></span>
      <img src="/assets/img/slack.svg"  class="alert-platform absolute" style="width:50px; right: -25px" alt="slack" title="slack">
      <img src="/assets/img/pagerduty.svg"  class="alert-platform absolute" style="width:50px; top: 40px" alt="pager duty" title="pagerduty">
      <img src="/assets/img/opsgenie.svg"  class="alert-platform absolute" style="width:50px; left:-25px" alt="opsgenie" title="opsgenie">
      <img src="/assets/img/zapier.svg"  class="alert-platform absolute" style="width:50px; bottom: 40px" alt="zapier" title="zapier">
     </div>
      <img src="/assets/img/logo-full-white.svg"  class="absolute" style="width:100px" alt="api toolkit" title="apitoolkit">
+ </div>
  </div>
 </div>
 
@@ -541,7 +544,6 @@ evolving solutions to solve API documentation, management and observability.</p>
 
 <script>
   function calculateDifference(event) {
-    console.log("here")
     const mouseX = event.clientX;
     const mouseY = event.clientY;
 
@@ -553,7 +555,6 @@ evolving solutions to solve API documentation, management and observability.</p>
     const diffX = Math.abs(mouseX - articleX) - 50
     const diffY = Math.abs(mouseY - articleY) - 50
     const target = article.querySelector(".tool-card-highlight")
-    console.log(target)
 
     if(target) {
       target.style.left = diffX + 'px'

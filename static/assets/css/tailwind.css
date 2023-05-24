@@ -79,11 +79,38 @@
   animation: rotate 10s linear infinite;
 }
 
+#menu-items {
+  transition: all 0.5s;
+}
+
+.menu-show {
+  height: 300px;
+  width: 250px;
+  padding: 25px 25px 25px 25px;
+}
+
 .rotator {
   animation: rotate2 20s linear infinite;
 }
 .alert-platform {
   animation: rotate2 20s linear reverse infinite;
+}
+.scale-anime {
+  @apply border-sky-400;
+  background: radial-gradient(transparent, transparent, currentColor);
+  animation: scale 5s linear infinite;
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(0);
+  }
+  30% {
+    transform: scale(5);
+  }
+  100% {
+    transform: scale(5);
+  }
 }
 
 @keyframes rotate2 {
