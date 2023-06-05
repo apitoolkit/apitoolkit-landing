@@ -2201,6 +2201,42 @@ img {
   margin-top: 0.25rem;
 }
 
+<<<<<<< Updated upstream
+||||||| constructed merge base
+.mt-16 {
+  margin-top: 4rem;
+}
+
+.-mt-16 {
+  margin-top: -4rem;
+}
+
+.-mt-36 {
+  margin-top: -9rem;
+}
+
+.-mt-40 {
+  margin-top: -10rem;
+}
+
+.-mt-44 {
+  margin-top: -11rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+=======
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.-mt-44 {
+  margin-top: -11rem;
+}
+
+>>>>>>> Stashed changes
 .block {
   display: block;
 }
@@ -2990,6 +3026,35 @@ img {
   color: rgb(71 85 105 / var(--tw-text-opacity));
 }
 
+<<<<<<< Updated upstream
+||||||| constructed merge base
+.text-amber-600 {
+  --tw-text-opacity: 1;
+  color: rgb(217 119 6 / var(--tw-text-opacity));
+}
+
+.text-gray-50 {
+  --tw-text-opacity: 1;
+  color: rgb(249 250 251 / var(--tw-text-opacity));
+}
+
+.text-amber-400 {
+  --tw-text-opacity: 1;
+  color: rgb(251 191 36 / var(--tw-text-opacity));
+}
+
+=======
+.text-amber-400 {
+  --tw-text-opacity: 1;
+  color: rgb(251 191 36 / var(--tw-text-opacity));
+}
+
+.text-gray-50 {
+  --tw-text-opacity: 1;
+  color: rgb(249 250 251 / var(--tw-text-opacity));
+}
+
+>>>>>>> Stashed changes
 .underline {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
