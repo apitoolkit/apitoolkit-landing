@@ -129,7 +129,7 @@ Read: [Top 7 Reasons Why Your Team Needs an API Monitoring Tool](https://apitool
 
 ## Major Causes of API Downtime
 
-Any company, big or small, may suffer API downtime at some point, resulting in revenue loss and lost customer trust. This is generally bad for business. 
+Any company, big or small, may suffer [API downtime](https://apitoolkit.io/blog/api-downtime/) at some point, resulting in revenue loss and lost customer trust. This is generally bad for business. 
 
 Discussed below are some of the major factors that cause API downtimes:
 
@@ -257,12 +257,14 @@ Therefore, whether you are making an API connection, building a new API, or look
 
 [Try APIToolkit for Free](apitoolkit.io)
 
-Recommended Post: [Fintech API: Unlocking the Secret to Its Rapid Growth in the Financial Sector](https://apitoolkit.io/blog/fintech-api/)
+**Also Read**
 
-Recommended Post: [How to Write API Documentation: 10 Essential Guidelines](https://apitoolkit.io/blog/how-to-write-api-docs/)
+[Fintech API: Unlocking the Secret to Its Rapid Growth in the Financial Sector](https://apitoolkit.io/blog/fintech-api/)
 
-Recommended Post: [How to Generate Automated API Documentation](https://apitoolkit.io/blog/how-to-generate-automated-api-documentation/)
+[How to Write API Documentation: 10 Essential Guidelines](https://apitoolkit.io/blog/how-to-write-api-docs/)
 
-Recommended Post: [API Observability and Monitoring: What's the Difference?](https://apitoolkit.io/blog/api-observability-and-api-monitoring/)
+[How to Generate Automated API Documentation](https://apitoolkit.io/blog/how-to-generate-automated-api-documentation/)
 
-Recommended Post: [API Documentation vs API Specification: What It Means for You](https://apitoolkit.io/blog/api-documentation-vs-api-specification/)
+[API Observability and Monitoring: What's the Difference?](https://apitoolkit.io/blog/api-observability-and-api-monitoring/)
+
+[API Documentation vs API Specification: What It Means for You](https://apitoolkit.io/blog/api-documentation-vs-api-specification/)
