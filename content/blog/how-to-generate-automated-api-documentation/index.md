@@ -125,10 +125,14 @@ Check out the [AIToolkit features](https://apitoolkit.io/).
 
 APIToolkit is committed to guiding you through managing quality documentation, and we have written some articles on this topic. Take a look:
 
-Recommended Post: [How to Write API Documentation: 10 Essential Guidelines](https://apitoolkit.io/blog/how-to-write-api-docs/)
+**Also Read**
 
-Recommended Post: [API Documentation and Observability: The Truth You Must Know](https://apitoolkit.io/blog/api-documentation-and-observability-the-truth-you-must-know/)
+[How to Write API Documentation: 10 Essential Guidelines](https://apitoolkit.io/blog/how-to-write-api-docs/)
 
-Recommended Post: [Top 8 API Documentation Tools for Developers](https://apitoolkit.io/blog/top-8-api-documentation-tools-for-developers/)
+[Incident Management: How to Resolve API Downtime Issues Before It Escalates](https://apitoolkit.io/blog/api-downtime/)
 
-Recommended Post: [Key Benefits of API Integration for Developers](https://apitoolkit.io/blog/benefits-of-api-integration/)
+[API Documentation and Observability: The Truth You Must Know](https://apitoolkit.io/blog/api-documentation-and-observability-the-truth-you-must-know/)
+
+[Top 8 API Documentation Tools for Developers](https://apitoolkit.io/blog/top-8-api-documentation-tools-for-developers/)
+
+[Key Benefits of API Integration for Developers](https://apitoolkit.io/blog/benefits-of-api-integration/)

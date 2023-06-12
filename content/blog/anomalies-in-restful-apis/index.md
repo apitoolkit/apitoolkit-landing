@@ -77,7 +77,7 @@ Here are key strategies you can use to tackle API anomalies in RESTful APIs:
 
 #### **Define Normal API Behavior**
 
-Before you can detect API anomalies, you need to define what constitutes normal API behavior. This involves setting baseline metrics, such as response times, error rates, and throughput, that your API should meet under normal conditions. You can use these metrics as a benchmark for detecting anomalies.
+Before you can detect API anomalies, you need to define what constitutes normal [API behavior](https://apitoolkit.io/blog/api-downtime/). This involves setting baseline metrics, such as response times, error rates, and throughput, that your API should meet under normal conditions. You can use these metrics as a benchmark for detecting anomalies.
 
 #### **Monitor APIs**
 
