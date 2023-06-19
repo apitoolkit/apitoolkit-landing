@@ -102,6 +102,10 @@ I hope that this article has helped you sort through the differences and general
 
 Lastly, [APIToolkit](https://apitoolkit.io) is one platform where you can [monitor your APIs and web services](https://apitoolkit.io/blog/why-you-need-an-api-monitoring-tool/). [Click here to find out how](https://apitoolkit.io).
 
-Recommended Post: [How to Write API Documentation: 10 Essential Guidelines](https://apitoolkit.io/blog/how-to-write-api-docs/)
+**Also Read**
 
-Recommended Post: [Top 7 Reasons Why Your Team Should Use an API Monitoring Tool](https://apitoolkit.io/blog/why-you-need-an-api-monitoring-tool/)
+[Incident Management: How to Resolve API Downtime Issues Before It Escalates](https://apitoolkit.io/blog/api-downtime/)
+
+[How to Write API Documentation: 10 Essential Guidelines](https://apitoolkit.io/blog/how-to-write-api-docs/)
+
+[Top 7 Reasons Why Your Team Should Use an API Monitoring Tool](https://apitoolkit.io/blog/why-you-need-an-api-monitoring-tool/)

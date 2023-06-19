@@ -116,8 +116,12 @@ You will have different audiences. Be sure to cater to all their varying needs w
 
 APIToolkit gives you comprehensive analyses of your API docs to ensure you’re constantly up to date with the information you serve your community.
 
-Recommended Post: [Key Benefits of API Integration for Developers](https://apitoolkit.io/blog/benefits-of-api-integration/)
+**Also Read**
 
-Recommended Post: [API Documentation vs API Specification: What It Means for You](https://apitoolkit.io/blog/api-documentation-vs-api-specification/)
+[Incident Management: How to Resolve API Downtime Issues Before It Escalates](https://apitoolkit.io/blog/api-downtime/)
 
-Recommended Post: [API Observability and Monitoring: What's the Difference?](https://apitoolkit.io/blog/api-observability-and-api-monitoring/)
+[Key Benefits of API Integration for Developers](https://apitoolkit.io/blog/benefits-of-api-integration/)
+
+[API Documentation vs API Specification: What It Means for You](https://apitoolkit.io/blog/api-documentation-vs-api-specification/)
+
+[API Observability and Monitoring: What's the Difference?](https://apitoolkit.io/blog/api-observability-and-api-monitoring/)

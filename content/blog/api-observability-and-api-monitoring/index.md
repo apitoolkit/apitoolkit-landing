@@ -87,14 +87,16 @@ Read: [How to Tackle Anomalies in RESTful APIs (the Right Way)](https://apitoolk
 
 ### Conclusion
 
-If you’re looking to ship APIs with speed and confidence, then you need an API monitoring and observability platform like [ours](https://apitoolkit.io). APIs provide the window to the rest of your companies infrastructure and enable entirely new digital experiences, but traditional monitoring can only answer already known questions like “Is my API down”, but cannot answer arbitrary questions required for data-driven engineering and business teams, nor report on actual customer API usage needed for security and product analytics.
+If you’re looking to ship APIs with speed and confidence, then you need an API monitoring and observability platform like [ours](https://apitoolkit.io). APIs provide the window to the rest of your companies infrastructure and enable entirely new digital experiences, but traditional monitoring can only answer already known questions like “[Is my API down](https://apitoolkit.io/blog/api-downtime/)?” but cannot answer arbitrary questions required for data-driven engineering and business teams, nor report on actual customer API usage needed for security and product analytics.
 
 As an API [observability and monitoring platform](https://apitoolkit.io/blog/why-you-need-an-api-monitoring-tool/), we have all your bases covered.
 
-Recommended Post: [How to Generate Automated API Documentation](https://apitoolkit.io/blog/how-to-generate-automated-api-documentation
+**Also Read**
 
-Recommended Post: [Key Benefits of API Integration for Developers](https://apitoolkit.io/blog/benefits-of-api-integration/)
+[How to Generate Automated API Documentation](https://apitoolkit.io/blog/how-to-generate-automated-api-documentation
 
-Recommended Post: [Must-Know API Trends in 2023](https://apitoolkit.io/blog/api-trends/)
+[Key Benefits of API Integration for Developers](https://apitoolkit.io/blog/benefits-of-api-integration/)
 
-Recommended Post: [API Observability and Monitoring: What's the Difference?](https://apitoolkit.io/blog/api-observability-and-api-monitoring/)
+[Must-Know API Trends in 2023](https://apitoolkit.io/blog/api-trends/)
+
+[API Observability and Monitoring: What's the Difference?](https://apitoolkit.io/blog/api-observability-and-api-monitoring/)
