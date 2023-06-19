@@ -73,6 +73,9 @@ Read: [What You Need to Know About REST APIs](https://apitoolkit.io/blog/everyth
 
 API anomalies are bad for business; they cause downtime and latency degradation, which can not only affect the performance of your APIs, but also the reputation of your company. Tackling API anomalies is a mandatory activity for every API developer and tech company. We cannot tell when APIs will fail, and [Gartner](https://blogs.gartner.com/andrew-lerner/2014/07/16/the-cost-of-downtime/) posits that the average cost of IT downtime is $5,600 per minute, which extrapolates to well over $300,000 p/hour.
 
+![API Anomaly Dashboard on APIToolit](./api-anomalies.png)
+Image source: API anomaly dashboard on APIToolkit
+
 Here are key strategies you can use to tackle API anomalies in RESTful APIs:
 
 #### **Define Normal API Behavior**
@@ -84,7 +87,7 @@ Before you can detect API anomalies, you need to define what constitutes normal 
 Effective [API monitoring](https://apitoolkit.io/blog/why-you-need-an-api-monitoring-tool/) is key to detecting anomalies before they cause significant disruptions. Use a tool like [APIToolkit](https://apitoolkit.io/) to track key metrics such as response times, latency distribution, error rates, and throughput. Receive alerts that notify you when these metrics deviate from normal behavior. This can help you catch API anomalies early and address them before they become major problems. APIToolkit uses machine learning algorithms to detect anomalies in real-time, such as unusual traffic patterns or abnormal usage behavior.
 
 ![APIToolkit Anomaly Detection Dashboard](./apitoolkit-anomaly-dashboard.gif)
-Source: APIToolkit's anomaly detection dashboard.
+Source: APIToolkit's app interface.
 
 Read: [Best API Monitoring and Observability Tools in 2023](https://apitoolkit.io/blog/best-api-monitoring-and-observability-tools/)
 

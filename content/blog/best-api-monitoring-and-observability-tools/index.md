@@ -37,7 +37,7 @@ We’ve curated a list of the best API observability and monitoring tools to hel
 
 ## 1. [APIToolkit](http://www.apitoolkit.io)
 
-![A screenshot of the APIToolkit Dashboard](./apitoolkitdash.jpeg)
+![APIToolkit User Dashboard](./apitoolkit-user-dashboard.png)
 
 Built by expert software engineers to solve problems that have cost their employers lots of money in the past, APIToolkit is an automated tool for API contract monitoring and documentation. 
 
