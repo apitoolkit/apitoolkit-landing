@@ -18,14 +18,44 @@ Trust your APIs, and only pay for what you use as you grow.
 
 1 Team Member <br/>
 Last *14 days Data Retained<br/>
+<br/>
+<br/>
 
 <a class="blue-button" href="https://app.apitoolkit.io/p/new?plan=free&annual">Get Started</a>
 
 </div>
 <div class="flex-1">
 
+### Hobby
+#### <strong>$<span id="hobby-price">20</span></strong>/mo
+<div class="px-3 py-5">
+<input type="range" value="0" 
+    for="hobby-price"
+    min="250000"
+    max="2000000"
+    steps="10000"
+    _="on change set price to parseFloat(Math.trunc((((my value)-(my min))/10000)+50)).toLocaleString('en-US') then 
+                 set #startup-price.innerHTML to `${price}` then 
+                 set #startup-reqs.innerHTML to (parseFloat(my value).toLocaleString('en-US'))"
+    class="price-range">
+</div>
+
+<strong id="hobby-reqs">250,000</strong> Reqs / mo <small>included</small><br/>
+$1 per extra 10,000 reqs <br/>
+
+3 Team Member <br/>
+Last *7 days Data Retained<br/>
+API test pipelines<br/>
+Custom API request validations<br/>
+
+<a class="blue-button" href="https://app.apitoolkit.io/p/new?plan=startup&annual">Get Started</a>
+
+
+</div>
+<div class="flex-1">
+
 ### Startup
-#### <strong>$<span id="startup-price">50</span></strong>/mo
+#### <strong class="">*$<span id="startup-price">50</span></strong>/mo
 <div class="px-3 py-5">
 <input type="range" value="0" 
     for="startup-price"
@@ -41,8 +71,11 @@ Last *14 days Data Retained<br/>
 <strong id="startup-reqs">500,000</strong> Reqs / mo <small>included</small><br/>
 $1 per extra 10,000 reqs <br/>
 
-3 Team Member <br/>
+5 Team Members <br/>
 Last *14 days Data Retained<br/>
+Popular option<br/>
+API test pipelines<br/>
+Custom API request validations<br/>
 
 <a class="blue-button" href="https://app.apitoolkit.io/p/new?plan=startup&annual">Get Started</a>
 
@@ -68,7 +101,9 @@ Last *14 days Data Retained<br/>
 $1 per extra 12,000 reqs <br/>
 
 10 Team members <br/>
-Last *14 days Data Retained 
+Last *14 days Data Retained <br/>
+API test pipelines<br/>
+Custom API request validations<br/>
 
 <a class="blue-button" href="https://app.apitoolkit.io/p/new?plan=growth&annual">Get Started</a>
 
