@@ -669,7 +669,7 @@ Join us on this exciting journey!
 
 </div>
 <br/>
-<a class="showcase1-buttons showcase1-buttons-active " >See all questions</a>
+<a class="showcase1-buttons showcase1-buttons-active " href="/faq">See all questions</a>
 
 
 </div>
