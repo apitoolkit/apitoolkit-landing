@@ -300,7 +300,7 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
 <p class="pt-3 text-lg m-w-prose" data-hs="zoom up"> Not having enough details to discover issues, investigate bugs, and test to ensure bugs don't get reintroduced.</p>
 <br/>
 
-<div class="py-8 text-lg">
+<div class="py-8 text-lg sm:hidden">
     <ul class="customer-old-workflow flex flex-row flex-wrap gap-4 gap-y-10 justify-items-stretch items-stretch">
      <li data-hs="fade right" class="flex-1">Build & Deploy <strong class="bg-amber-300 px-2 rounded-md inline-block">new features</strong></li>
      <li data-hs="fade right" class="flex-shrink-0 "><img src="/assets/img/svgs/right-arrow-svgrepo-com.svg" class="w-12"/></li>
