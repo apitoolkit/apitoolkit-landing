@@ -111,7 +111,7 @@ svg#bee {
           <div class="sm:space-x-5 text-xs" data-hs="fade up">
             <small class="inline-block">✓ Always free plan</small>
             <small class="inline-block">✓ GDPR compliant</small>
-            <small class="inline-block">✓ Security first experiences</small>
+            <small class="inline-block">✓ Security first</small>
           </div>
         </div>
       </div>
@@ -154,7 +154,7 @@ svg#bee {
     <div class="md:max-w-4xl text-left px-2  py-44 text-base sm:text-lg">
     
 ###### WHY APITOOLKIT?
-## Empower your <span class="bg-amber-300 px-2 rounded-md"><strong class="drop-shadow-md">Developers</strong></span> to create  <span class="bg-amber-300 px-2 rounded-md inline-block"><strong class="drop-shadow-md">Happier Customer</strong></span> **experiences**.
+## Empower <span class="bg-amber-300 px-2 rounded-md"><strong class="drop-shadow-md">Developer</strong></span> teams to build <span class="bg-amber-300 px-2 rounded-md inline-block"><strong class="drop-shadow-md">Happier Customer</strong></span> **experiences**.
 
 
 <br/>
@@ -170,6 +170,7 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
   <div class="my-3 space-x-2" data-hsx="fade up" >
     <a  class="showcase1-buttons showcase1-buttons-active " _="on click remove .showcase1-buttons-active from .showcase1-buttons then add .showcase1-buttons-active to me then add .hidden to .showcase1 then remove .hidden from #showcase1-monitor" >Monitor</a>
     <a  class="showcase1-buttons " _="on click remove .showcase1-buttons-active from .showcase1-buttons then add .showcase1-buttons-active to me then add .hidden to .showcase1 then remove .hidden from #showcase1-document">Document</a>
+    <a  class="showcase1-buttons " _="on click remove .showcase1-buttons-active from .showcase1-buttons then add .showcase1-buttons-active to me then add .hidden to .showcase1 then remove .hidden from #showcase1-investigate">Investigate</a>
     <a  class="showcase1-buttons " _="on click remove .showcase1-buttons-active from .showcase1-buttons then add .showcase1-buttons-active to me then add .hidden to .showcase1 then remove .hidden from #showcase1-test">Test</a>
   </div>
     <div class="showcase1 " id="showcase1-monitor"  data-hs="fade up">
@@ -177,7 +178,7 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
         <p class="text-sm prose pt-3 pb-7">Keep a close eye on the numbers that matter. Don't let your error rates or latency get too high on your customers.</p>
         <div class="border border-blue-900" data-hs="fade up">
             <video class="w-full" loop autoplay muted playsinline>
-                <source src='/assets/video/APIToolkitDashboardTrimmed.mp4' type='video/mp4'>
+                <source src='/assets/video/dashboard.mp4' type='video/mp4'>
                 Your browser does not support the video tag.
             </video>
         </div>
@@ -186,18 +187,30 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
         <p class="text-sm prose pt-3 pb-7">Collaborate on your Documentation and Swagger. Our API inform you when we spot new fields in your live traffic.</p>
         <div class="border border-blue-900" data-hs="fade up">
             <video class="w-full" loop autoplay muted playsinline>
-                <source src='/assets/video/APIToolkitDashboardTrimmed.mp4' type='video/mp4'>
+                <source src='/assets/video/APIToolkitDocumentation.mp4' type='video/mp4'>
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+    <div class="showcase1 hidden" id="showcase1-investigate"  data-hs="fade up">
+        <p class="text-sm prose pt-3 pb-7">Explore live traffic, and query or isolate affected request payloads for the smoothest experience while investigating bugs.</p>
+        <div class="border border-blue-900" data-hs="fade up">
+            <video class="w-full" loop autoplay muted playsinline>
+                <source src='/assets/video/log_explorer.mp4' type='video/mp4'>
                 Your browser does not support the video tag.
             </video>
         </div>
     </div>
     <div class="showcase1 hidden" id="showcase1-test"  data-hs="fade up">
-        <p class="text-sm prose pt-3 pb-7">Build testing workflows with our powerful test worker UI builder. Schedule these workflows to run against prod regularly</p>
+        <p class="text-sm prose pt-3 pb-7">Build testing workflows with our powerful test worker UI builder. Schedule these workflows to run against prod regularly. (Coming Soon)</p>
         <div class="border border-blue-900" data-hs="fade up">
-            <video class="w-full" loop autoplay muted playsinline>
-                <source src='/assets/video/APIToolkitDashboardTrimmed.mp4' type='video/mp4'>
-                Your browser does not support the video tag.
-            </video>
+            <div  class="home-feature-image-div">
+              <img src="/assets/img/integrations/testing_coming_soon.png"/>
+            </div>
+            <!-- <video class="w-full" loop autoplay muted playsinline> -->
+            <!--     <source src='/assets/video/APIToolkitDashboardTrimmed.mp4' type='video/mp4'> -->
+            <!--     Your browser does not support the video tag. -->
+            <!-- </video> -->
         </div>
     </div>
     <div data-hs="fade up" class="mt-2"><a href="https://www.loom.com/share/24ea3ae9600544d68f1001af3f4feac2" target="_blank" class="inline-block bg-blue-900 text-white px-3 py-1 text-xs rounded-lg" >Learn how APIToolkit works (Video)</a></div>
@@ -375,12 +388,16 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
 
 </div>
     <div  class="home-feature-image-div">
-      <img src="./field_documentation.png"/>
+        <video class="w-full" loop autoplay muted playsinline>
+            <source src='/assets/video/APIToolkitDocumentation.mp4' type='video/mp4'>
+            Your browser does not support the video tag.
+        </video>
     </div>
 </div>
 </div>
 
 <div class="py-8 text-center">
+    <!-- https://www.svgrepo.com/collection/hand-drawn-arrows/ -->
     <img src="/assets/img/svgs/3d-turn-right-arrow-svgrepo-com.svg" class="w-24 inline-block mr-20" style="transform: scaleX(-1) rotate(90deg)"/>
     <!-- <img src="/assets/img/svgs/right-arrow-svgrepo-com.svg" class="w-24 rotate-90 inline-block mr-20"/> -->
 </div>
@@ -408,7 +425,7 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
 </div>
     <div  class="home-feature-image-div">
         <video class="w-full" loop autoplay muted playsinline>
-            <source src='/assets/video/APIToolkitDashboardTrimmed.mp4' type='video/mp4'>
+            <source src='/assets/video/dashboard.mp4' type='video/mp4'>
             Your browser does not support the video tag.
         </video>
     </div>
@@ -425,7 +442,7 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
 
 #### <span class="bg-amber-300 px-2 rounded-md"><strong class="drop-shadow-md">Anomaly Detection, Monitors & Validation</strong></span>
 ### Detect bugs and issues via our Anomaly Detection,<br/>your Custom monitors<br/>or Custom payload Validation.
-<p class="pt-3 prose m-w-prose">There's a bug/issue. But the Anomaly detector or Custom monitors or Custom payload validators caught them before your customers even noticed.
+<p class="pt-3 prose m-w-prose">There's a bug/issue. But the Anomaly detector or Custom monitors or Custom payload validators caught them <strong>before your customers even noticed</strong>.
 </p>
 
 <div class="home-feature-section pt-5 pb-24  flex flex-col sm:flex-row odd:flex-col-reverse sm:odd:flex-row  gap-5 x:sm:gap-8 justify-center ">
@@ -440,7 +457,10 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
 
 </div>
     <div  class="home-feature-image-div">
-      <img src="./field_documentation.png"/>
+        <video class="w-full" loop autoplay muted playsinline>
+            <source src='/assets/video/anomalies.mp4' type='video/mp4'>
+            Your browser does not support the video tag.
+        </video>
     </div>
 </div>
 </div>
@@ -455,7 +475,7 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
 
 #### <span class="bg-amber-300 px-2 rounded-md"><strong class="drop-shadow-md">Alerting and Incident Workflows</strong></span>
 ### The right people must know that there is an issue.
-<p class="pt-3 prose m-w-prose">You don't want noise, nor do you want the detected issues to go unnoticed. So the alerts are routed to the right people, and trivial issues are delivered in the daily or weekly reports.
+<p class="pt-3 prose m-w-prose">You don't want noise, nor do you want the detected issues to go unnoticed. So the alerts are <strong>routed to the right people</strong>, and trivial issues are delivered in the daily or weekly reports.
 </p>
 
 <div class="home-feature-section pt-5 pb-24  flex flex-col sm:flex-row odd:flex-col-reverse sm:odd:flex-row  gap-5 x:sm:gap-8 justify-center ">
@@ -470,7 +490,10 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
 
 </div>
     <div  class="home-feature-image-div">
-      <img src="./field_documentation.png"/>
+        <video class="w-full" loop autoplay muted playsinline>
+            <source src='/assets/video/slack_channels.mp4' type='video/mp4'>
+            Your browser does not support the video tag.
+        </video>
     </div>
 </div>
 </div>
@@ -485,7 +508,7 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
 
 #### <span class="bg-amber-300 px-2 rounded-md"><strong class="drop-shadow-md">Query, Analyze and Visualize API Payloads</strong></span>
 ### Investigate the bug by exploring live requests and responses from your server.
-<p class="pt-3 prose m-w-prose">Investigate the bug or other issue using the <strong>Log Explorer</strong>. Query, analyze and visualize real time requests and responses going through your server.
+<p class="pt-3 prose m-w-prose"><strong>Investigate the bug</strong> or other issue using the Log Explorer. Query, <strong>analyze and visualize</strong> real time requests and responses going through your server.
 </p>
 
 <div class="home-feature-section pt-5 pb-24  flex flex-col sm:flex-row odd:flex-col-reverse sm:odd:flex-row  gap-5 x:sm:gap-8 justify-center ">
@@ -500,7 +523,10 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
 
 </div>
     <div  class="home-feature-image-div">
-      <img src="./log_explorer2.png"/>
+        <video class="w-full" loop autoplay muted playsinline>
+            <source src='/assets/video/log_explorer.mp4' type='video/mp4'>
+            Your browser does not support the video tag.
+        </video>
     </div>
 </div>
 </div>
@@ -515,8 +541,8 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
 
 #### <span class="bg-amber-300 px-2 rounded-md"><strong class="drop-shadow-md">Schedule API Tests against your APIs at interval</strong></span>
 ### Write API Tests to ensure the bug is never reintroduced.
-<p class="pt-3 prose m-w-prose">Bug is fixed, so now you utiilize the API workflows and tester to write test cases for this scenario, so it never happens again. 
-Use the APItoolkit test workflow UI builder to easily create these tests. Your tests can be scheduled to run against production at any interval you prefer.
+<p class="pt-3 prose m-w-prose">Bug is fixed, so now you utiilize the API workflows and tester to <strong>write test cases</strong> for this scenario, so it never happens again. 
+Use the APItoolkit test workflow UI builder to easily create these tests. Your tests can be <strong>scheduled</strong> to run against production at any <strong>interval</strong> you prefer.
 (Coming soon)
 </p>
 
@@ -528,11 +554,11 @@ Use the APItoolkit test workflow UI builder to easily create these tests. Your t
 - Detailed reports for retrospectives and planning.
 
 <br/>
-<a class="text-blue-900" href="/api-documentation-and-developer-portals">More about Alerting and Incident Management →</a>
+<a class="text-blue-900" href="/api-documentation-and-developer-portals">More about Scheduled API Tests →</a>
 
 </div>
     <div  class="home-feature-image-div">
-      <img src="./field_documentation.png"/>
+      <img src="/assets/img/integrations/testing_coming_soon.png"/>
     </div>
 </div>
 </div>

@@ -58,9 +58,14 @@ html, body {
     flex: 1.6;
   }
 
-  .home-feature-image-div img {
+  .home-feature-image-div img{
     @apply rounded-lg drop-shadow-xl border-4 border-gray-200;
   }
+
+  .home-feature-image-div video {
+    @apply rounded-lg drop-shadow-xl border-4 border-gray-200;
+  }
+
   .home-feature-section p {
     @apply py-3;
   }
