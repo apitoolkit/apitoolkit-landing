@@ -135,9 +135,9 @@ svg#bee {
 
 
 <div>
-    <div class="our_container pb-12 text-center">
+    <div class="our_container pb-12 text-center pt-24 sm:pt-0">
         <strong class="pb-4 block"> Loved By Engineers at these companies and more:</strong>
-        <div class="grid  grid-cols-6 gap-7 justify-center items-center">
+        <div class="grid  grid-cols-3 sm:grid-cols-6 gap-2 sm:gap-7 justify-center items-center">
             <img class="w-full" src="https://uploads-ssl.webflow.com/641975b718b45d0d6f1822ac/646adf0fa725242fc86306b4_andela.svg" />
             <img class="w-full" src="https://uploads-ssl.webflow.com/641975b718b45d0d6f1822ac/646adf0f1364a74f7a3916ca_google.svg" />
             <img class="w-full" src="https://uploads-ssl.webflow.com/641975b718b45d0d6f1822ac/646adf0fb920caa9e1a3b792_paystack-1.svg" />
