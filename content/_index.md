@@ -519,7 +519,7 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
 
 </div>
     <div  class="home-feature-image-div"  data-hs="fade up">
-        <video class="w-full" loop autoplay muted playsinline>
+        <video class="w-full" loop autoplay muted playsinline onloadstart="this.playbackRate = 1.5;">
             <source src='/assets/video/slack_channels.mp4' type='video/mp4'>
             Your browser does not support the video tag.
         </video>
@@ -552,7 +552,7 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
 
 </div>
     <div  class="home-feature-image-div">
-        <video class="w-full" loop autoplay muted playsinline>
+        <video class="w-full" loop autoplay muted playsinline onloadstart="this.playbackRate = 2;">
             <source src='/assets/video/log_explorer.mp4' type='video/mp4'>
             Your browser does not support the video tag.
         </video>
