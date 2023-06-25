@@ -9,7 +9,6 @@ description: "Build and maintain your APIs with Less downtimes, Fewer support ti
 
 <script src="https://cdn.jsdelivr.net/npm/jarallax@2/dist/jarallax.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="/assets/js/humbleScroll.js"></script>
 <style>
 
 .jarallax {
@@ -413,7 +412,7 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
 - APIToolkit learns expected service payloads from the swagger.
 
 <br/>
-<a class="text-blue-900" href="/api-documentation-and-developer-portals">More about our Automatic Documenter →</a>
+<a class="text-blue-900" href="/api-documentation-and-developer-portals">More about our OpenAPI and documentation tools →</a>
 
 </div>
     <div  class="home-feature-image-div" data-hs="fade up">
@@ -449,7 +448,7 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
 - Run Benchmarks to test backend limits (coming soon)
 
 <br/>
-<a class="text-blue-900" href="/api-documentation-and-developer-portals">More about our Performance and Benchmarking →</a>
+<a class="text-blue-900" href="/api-performance-monitoring-and-compliance">More about our Performance and Benchmarking →</a>
 
 </div>
     <div  class="home-feature-image-div" data-hs="fade up">
@@ -482,7 +481,7 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
 - Your validators executed against every payload
 
 <br/>
-<a class="text-blue-900" href="/api-documentation-and-developer-portals">More about Anomalies, Monitors and Validation →</a>
+<a class="text-blue-900" href="/api-anomalies-validation-and-checks">More about Anomalies, Monitors and Validation →</a>
 
 </div>
     <div  class="home-feature-image-div"  data-hs="fade up">
@@ -515,7 +514,8 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
 - Detailed reports for retrospectives and planning.
 
 <br/>
-<a class="text-blue-900" href="/api-documentation-and-developer-portals">More about Alerting and Incident Management →</a>
+<!-- <a class="text-blue-900 hidden" href="/api-documentation-and-developer-portals">More about Alerting and Incident Management →</a> -->
+<a class="text-blue-900 " href="https://app.apitoolkit.io">Get Started for Free →</a>
 
 </div>
     <div  class="home-feature-image-div"  data-hs="fade up">
@@ -583,7 +583,8 @@ Use the APItoolkit test workflow UI builder to easily create these tests. Your t
 - Detailed reports for retrospectives and planning.
 
 <br/>
-<a class="text-blue-900" href="/api-documentation-and-developer-portals">More about Scheduled API Tests →</a>
+<!-- <a class="text-blue-900" href="/api-documentation-and-developer-portals">More about Scheduled API Tests →</a> -->
+<a class="text-blue-900 " href="https://app.apitoolkit.io">Get Started for Free →</a>
 
 </div>
     <div  class="home-feature-image-div">
