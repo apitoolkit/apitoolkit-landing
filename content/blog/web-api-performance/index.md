@@ -21,7 +21,7 @@ Therefore, it is crucial for [web developers](https://apitoolkit.io/blog/top-8-a
 
 The first step to optimize your web API performance is to [design your API](https://apitoolkit.io/api-documentation-and-developer-portals/) with performance in mind. A well-designed API can reduce the amount of data transferred, the number of requests made, and the complexity of processing required by the API. 
 
-Here are some of the key aspects of API design that can affect its performance:
+Below are some of the key aspects of API design that can affect its performance:
 
 ### A. Use Proper Endpoint Structure
 
