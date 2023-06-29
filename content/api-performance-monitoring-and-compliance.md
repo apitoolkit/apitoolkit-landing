@@ -8,7 +8,7 @@ layout: blank
   
 <div  class="home-feature-image-div text-center w-full max-w-full aspect-auto" >
 <div class="max-w-4xl">
-<div class="text-left">
+<div class="text-left  text-xl sm:text-2xl">
 
 ###### <span class="bg-amber-300 px-2 rounded-md"><strong class="drop-shadow-md">Performance monitoring & error tracking</strong></span>
 <h3 class="mt-2"> Monitor Performance and Error Rates.<br/>Don't let slow & broken endpoints sneak up on your customers.</h3>

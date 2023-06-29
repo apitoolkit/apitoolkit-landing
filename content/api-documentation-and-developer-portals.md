@@ -9,7 +9,7 @@ layout: blank
   
 <div  class="home-feature-image-div text-center w-full max-w-full aspect-auto" >
 <div>
-<div class="text-left">
+<div class="text-left  text-xl sm:text-2xl">
 
 ###### <span class="bg-amber-300 px-2 rounded-md"><strong class="drop-shadow-md">API specification & Documentation (on steroids)</strong></span>
 <h3 class="mt-2"> Say goodbye to tedious manual <br/>API specification & Documentation </h3>

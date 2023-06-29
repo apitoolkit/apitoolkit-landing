@@ -8,7 +8,7 @@ layout: blank
   
 <div  class="home-feature-image-div text-center w-full max-w-full aspect-auto" >
 <div class="max-w-4xl inline-block">
-<div class="text-left">
+<div class="text-left  text-xl sm:text-2xl">
 
 ###### <span class="bg-amber-300 px-2 rounded-md"><strong class="drop-shadow-md">Query, Analyze and Visualize API Payloads</strong></span>
 <h3 class="mt-2"> Investigate the bug by exploring live requests and responses from your server.</h3>

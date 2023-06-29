@@ -8,7 +8,7 @@ layout: blank
   
 <div  class="home-feature-image-div text-center w-full max-w-full aspect-auto" >
 <div class="max-w-4xl">
-<div class="text-left">
+<div class="text-left text-xl sm:text-2xl">
 
 ###### <span class="bg-amber-300 px-2 rounded-md"><strong class="drop-shadow-md">Anomaly Detection, Monitors & Validation</strong></span>
 <h3 class="mt-2"> Detect bugs and issues via our Anomaly Detection,<br/>your Custom monitors
