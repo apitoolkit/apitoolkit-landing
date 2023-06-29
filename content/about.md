@@ -57,3 +57,12 @@ part of our journey in evolving APIToolkit or book a slot to have an
 open conversation with us. We’re always open to have a chat with
 everyone and learn about their experiences around API documentation and
 observability.
+
+
+## Business Contact us 
+
+APIToolkit is a product of Past 3 Technologies, a software consulting firm based out of Berlin, Germany.
+
+hello@past3.tech
+Past 3 Technologies UG <br/>
+Gruntaler Str. 10553 Berlin, Germany

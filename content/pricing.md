@@ -6,8 +6,10 @@ layout: baseonly
 ---
 <section class="text-center pt-5">
 Trust your APIs, and only pay for what you use as you grow.
+<br/>
+14 days free trial included with all plans
 
-<div class="flex flex-col sm:flex-row text-sm bg-white drop-shadow-xl pricing-card mt-8  divide-y  divide-x border-2">
+<div class="flex flex-col sm:flex-row text-sm bg-white drop-shadow-xl pricing-card mt-8  divide-y sm:divide-x-none  divide-x border-2">
 
 <!--  
 <div class="flex-1">
@@ -55,7 +57,7 @@ Custom API request validations<br/>
 
 
 </div>
-<div class="flex-1">
+<div class="flex-1 border sm:border-t-8 border-t-amber-500">
 
 ### Startup
 #### <strong class="">*$<span id="startup-price">50</span></strong>/mo
