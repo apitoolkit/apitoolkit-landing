@@ -8,6 +8,8 @@ layout: baseonly
 Trust your APIs, and only pay for what you use as you grow.
 
 <div class="flex flex-col sm:flex-row text-sm bg-white drop-shadow-xl pricing-card mt-8  divide-y  divide-x border-2">
+
+<!--  
 <div class="flex-1">
 
 ### Free
@@ -24,6 +26,7 @@ Last *14 days Data Retained<br/>
 <a class="blue-button" href="https://app.apitoolkit.io/p/new?plan=free&annual">Get Started</a>
 
 </div>
+-->
 <div class="flex-1">
 
 ### Hobby
