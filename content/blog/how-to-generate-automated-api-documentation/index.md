@@ -47,6 +47,8 @@ Therefore, the question is:
 
 The journey is a marathon and not a sprint. So, while we have grander goals, at the moment we’re exploring specific solutions to these 3 questions.
 
+Read: [How to Analyze API Logs and Metrics for Better Performance](https://apitoolkit.io/blog/api-logs-and-metrics/)
+
 ### Derive Documentation from Production Traffic
 
 ![Field documentation](./field_documentation.png)

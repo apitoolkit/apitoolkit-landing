@@ -84,3 +84,5 @@ In a nutshell, you get a live and in-depth view of your API. View your endpoints
 
 ## Final Thoughts
 Automating your processes isn’t always the answer to efficiency problems. But in this case, it definitely is. [APIToolkit](https://app.apitoolkit.io/) comes with features to supercharge your documentation and monitoring processes, keeping you alert, and saving you time and money.
+
+Read: [How to Analyze API Logs and Metrics for Better Performance](https://apitoolkit.io/blog/api-logs-and-metrics/)

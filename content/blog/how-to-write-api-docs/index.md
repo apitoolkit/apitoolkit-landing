@@ -118,6 +118,8 @@ APIToolkit gives you comprehensive analyses of your API docs to ensure you’re 
 
 **Also Read**
 
+[How to Analyze API Logs and Metrics for Better Performance](https://apitoolkit.io/blog/api-logs-and-metrics/)
+
 [Incident Management: How to Resolve API Downtime Issues Before It Escalates](https://apitoolkit.io/blog/api-downtime/)
 
 [Key Benefits of API Integration for Developers](https://apitoolkit.io/blog/benefits-of-api-integration/)
