@@ -93,6 +93,8 @@ As an API [observability and monitoring platform](https://apitoolkit.io/blog/why
 
 **Also Read**
 
+[How to Analyze API Logs and Metrics for Better Performance](https://apitoolkit.io/blog/api-logs-and-metrics/)
+
 [How to Generate Automated API Documentation](https://apitoolkit.io/blog/how-to-generate-automated-api-documentation
 
 [Key Benefits of API Integration for Developers](https://apitoolkit.io/blog/benefits-of-api-integration/)

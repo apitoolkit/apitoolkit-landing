@@ -104,6 +104,8 @@ Lastly, [APIToolkit](https://apitoolkit.io) is one platform where you can [monit
 
 **Also Read**
 
+[How to Analyze API Logs and Metrics for Better Performance](https://apitoolkit.io/blog/api-logs-and-metrics/)
+
 [Incident Management: How to Resolve API Downtime Issues Before It Escalates](https://apitoolkit.io/blog/api-downtime/)
 
 [How to Write API Documentation: 10 Essential Guidelines](https://apitoolkit.io/blog/how-to-write-api-docs/)

@@ -169,6 +169,8 @@ Moreover, API downtime can also have a negative impact on the development of new
 
 Additionally, API downtime can impact the reputation of the API provider. Let’s say an API provider experiences repeated downtime, it can damage its reputation and lead to loss of trust from its customers and partners.
 
+Read: [How to Analyze API Logs and Metrics for Better Performance](https://apitoolkit.io/blog/api-logs-and-metrics/)
+
 ![The APIToolkit Triad](./apitoolkitinfographic3.png)
 
 ### Our Founder’s API Downtime Story
