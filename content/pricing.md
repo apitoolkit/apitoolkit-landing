@@ -40,8 +40,8 @@ Last *14 days Data Retained<br/>
     max="2000000"
     steps="10000"
     _="on change set price to parseFloat(Math.trunc((((my value)-(my min))/10000)+50)).toLocaleString('en-US') then 
-                 set #startup-price.innerHTML to `${price}` then 
-                 set #startup-reqs.innerHTML to (parseFloat(my value).toLocaleString('en-US'))"
+                 set #hobby-price.innerHTML to `${price}` then 
+                 set #hobby-reqs.innerHTML to (parseFloat(my value).toLocaleString('en-US'))"
     class="price-range">
 </div>
 
