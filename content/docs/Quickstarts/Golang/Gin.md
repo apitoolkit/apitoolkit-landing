@@ -62,9 +62,44 @@ func main() {
 }
 ```
 
+## Redacting Sensitive Fields
+
+While it's possible to mark a field as redacted from the API Toolkit dashboard, this client also supports redacting at the client side. Client-side redacting means that those fields would never leave your servers at all. So you feel safer that your sensitive data only stays on your servers.
+
+To mark fields that should be redacted, simply add them to the `apitoolkit` config struct. Eg:
+
+```go
+func main() {
+    apitoolkitCfg := apitoolkit.Config{
+        RedactHeaders: []string{"Content-Type", "Authorization", "Cookies"},
+        RedactRequestBody: []string{"$.credit-card.cvv", "$.credit-card.name"},
+        RedactResponseBody: []string{"$.message.error"},
+        APIKey: "<APIKEY>",
+    }
+
+    // Initialize the client using your apitoolkit.io generated apikey
+    apitoolkitClient, _ := apitoolkit.NewClient(context.Background(), apitoolkitCfg)
+
+    router := gin.New()
+    // Register with the corresponding middleware of your choice. For Gin router, we use the GinMiddleware method.
+    router.Use(apitoolkitClient.GinMiddleware)
+    // Register your handlers as usual and run the gin server as usual.
+    router.POST("/:slug/test", func(c *gin.Context) {c.Text(200, "ok")})
+    ...
+}
+```
+
+It is important to note that while the `RedactHeaders` config field accepts a list of headers (case insensitive), the `RedactRequestBody` and `RedactResponseBody` expect a list of JSONPath strings as arguments.
+
+The choice of JSONPath was selected to allow you to have great flexibility in describing which fields within your responses are sensitive. Also, note that this list of items to be redacted will be applied to all endpoint requests and responses on your server. To learn more about JSONPath to help form your queries, please take a look at this cheatsheet: [JSONPath Cheatsheet](https://lzone.de/cheat-sheet/JSONPath)
+
 ## Next Steps
 
 1. Deploy your application or send test http requests to your service
 2. Check API log explorer or Endpoints pages on the APIToolkit dashboard to see if your test request was processed correctly
    ![Endpoint-after-integration](/endpoint-screenshot.png)
 3. Enjoy having our API comanage your backends and APIs with you.
+
+```
+
+```
