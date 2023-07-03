@@ -39,14 +39,18 @@ To redact the password field, you would use the following JSONPath expression: `
 Now that we understand the basic concept of using JSONPath to redact fields, let's go through a step-by-step guide on how to achieve this in API Toolkit. After Identify the sensitive fields Follow these steps to redact them on the APIToolkit dashboard.
 
 1. After Identify the sensitive fields, Login to your APIToolkit dashboard and click on `Redacted fields` on the side menu.
+   ![Redacted field nav](../redacted_field.png)
 
 2. Identify JSONPath expressions: Use JSONPath expressions to identify the specific fields you want to redact. Refer to the JSON structure of your API payload and craft the JSONPath expression accordingly.
 
 3. Click `Add new field`: Click the `Add new field` button and enter the JSONPath expression in the field path input box. you can also add optional description of the redacted field as well.
+   ![Add new field](../add_redacted_field.png)
 
 4. Click `Submit`: After submitting successfully, the specified field would be redacted and excluded from all captured traffic moving forward.
+   ![Submit](../field_path.png)
 
 5. Add as many fields as you want: You can add as many sensitive fields as required by repeating steps 2 to 4. This ensures all sensitive data remains protected while still capturing useful insights from the API traffic.
+   ![Submitted](../field_path_submitted.png)
 
 By following these steps, you can effectively redact sensitive fields and those fields never leave your servers, enhancing data privacy and compliance within your application.
 
