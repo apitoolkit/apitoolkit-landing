@@ -66,13 +66,30 @@ func main() {
 
 While it's possible to mark a field as redacted from the API Toolkit dashboard, this client also supports redacting at the client side. Client-side redacting means that those fields would never leave your servers at all. So you feel safer that your sensitive data only stays on your servers.
 
-To mark fields that should be redacted, simply add them to the `apitoolkit` config struct. Eg:
+To mark fields that should be redacted, Add them to the `apitoolkit` config struct.
+For instance to redact the `password` and credit card `number` fields from a request body like this:
+
+```json
+{
+  "user": {
+    "id": 123456789,
+    "name": "John Doe",
+    "password": "secretpassword123",
+    "creditCard": {
+      "number": "1234567890123456",
+      "expiry": "12/25"
+    }
+  }
+}
+```
+
+Add `$.user.password` and `$.user.creditCard.number` to the `RedactRequestBody` list like so:
 
 ```go
 func main() {
     apitoolkitCfg := apitoolkit.Config{
-        RedactHeaders: []string{"Content-Type", "Authorization", "Cookies"},
-        RedactRequestBody: []string{"$.credit-card.cvv", "$.credit-card.name"},
+        RedactHeaders: []string{"Content-Type", "Authorization", "Cookies"}, // Redacting both request and response headers
+        RedactRequestBody: []string{"$.user.password", "$.user.creditCard.number"},
         RedactResponseBody: []string{"$.message.error"},
         APIKey: "<APIKEY>",
     }
@@ -99,7 +116,3 @@ The choice of JSONPath was selected to allow you to have great flexibility in de
 2. Check API log explorer or Endpoints pages on the APIToolkit dashboard to see if your test request was processed correctly
    ![Endpoint-after-integration](/endpoint-screenshot.png)
 3. Enjoy having our API comanage your backends and APIs with you.
-
-```
-
-```
