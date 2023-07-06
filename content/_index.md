@@ -254,7 +254,7 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
 
 
 <div class="md:max-w-4xl text-left px-2   text-base sm:text-lg" >
-<!-- Michael Okoh  ThePeer Testimonial -->
+<!-- Michael Okoh  Thepeer Testimonial -->
 <section class="bg-white px-6 py-40 sm:py-32 lg:px-8 flex flex-col justify-center ">
   <figure class="mx-auto max-w-2xl">
     <p class="sr-only">5 out of 5 stars</p>
@@ -282,7 +282,7 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
       <img data-hs="fade left" class="h-12 w-12 rounded-full bg-gray-50" src="/assets/img/love/trojan.jpeg" alt="Michael Okoh">
       <div data-hs="fade right" class="text-sm leading-6">
         <div class="font-semibold text-gray-900">Michael Okoh</div>
-        <div class="mt-0.5 text-gray-600">CTO @ ThePeer</div>
+        <div class="mt-0.5 text-gray-600">CTO @ Thepeer</div>
       </div>
     </figcaption>
   </figure>
