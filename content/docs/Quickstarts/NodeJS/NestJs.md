@@ -100,11 +100,11 @@ async function bootstrap() {
     AppModule,
     new FastifyAdapter(fastifyInstance)
   );
-  const client = await APIToolkit.NewClient({
+  const apiToolkitClient = await APIToolkit.NewClient({
     apiKey: '<YOUR API KEY>',
     fastify: fastifyInstance,
   });
-  client.init();
+  apiToolkitClient.init();
 }
 ```
 
@@ -128,7 +128,7 @@ import {
   NestFastifyApplication,
 } from '@nestjs/platform-fastify';
 import fastify from 'fastify';
-import APIToolkit from './apitoolkit';
+import APIToolkit from 'apitoolkit-fastify';
 
 async function bootstrap() {
   const fastifyInstance = fastify();
@@ -136,17 +136,17 @@ async function bootstrap() {
     AppModule,
     new FastifyAdapter(fastifyInstance)
   );
-  const client = await APIToolkit.NewClient({
+  const apiToolkitClient = await APIToolkit.NewClient({
     apiKey: '<YOUR API KEY>',
     fastify: fastifyInstance,
   });
-  client.init();
+  apiToolkitClient.init();
   await app.listen(3000);
 }
 bootstrap();
 ```
 
-In this Fastify integration, the APIToolkit Fastify SDK allows you to seamlessly integrate your APIToolkit into your fastify based NestJs app. Don't forget to replace `<API-KEY>` with your actual API key obtained from your APIToolkit dashboard [learn how](https://apitoolkit.io/docs/dashboard/generating-api-keys/) account.
+In this Fastify integration, the APIToolkit Fastify SDK allows you to seamlessly integrate your APIToolkit into your fastify based NestJs app. Don't forget to replace `<API-KEY>` with your actual API key obtained from your APIToolkit dashboard [learn how](https://apitoolkit.io/docs/dashboard/generating-api-keys/).
 
 Now you have successfully integrated APIToolkit's Fastify SDK into your Nest.js application.
 
@@ -159,13 +159,14 @@ While it's possible to mark a field as redacted from the apitoolkit dashboard, b
 You can redact `headers`, `requestBody` and `responseBody` fields using the Express SDK by providing a list of headers and fields to redact when initializing the SDK:
 
 ```js
+import { NestFactory } from '@nestjs/core';
 import { APIToolkit } from 'apitoolkit-express';
 
 async function bootstrap() {
   const redactHeaders = ['Authorization', 'X-Secret-Token'];
   const redactRequestBody = ['$.password', '$.user.creditcard.cvv'];
   const redactResponseBody = ['$.apikeys[*]', '$.message.type'];
-  const client = APIToolkit.NewClient({
+  const apiToolkitClient = APIToolkit.NewClient({
     apikey: '<API-KEY>',
     redactHeaders,
     redactRequestBody,
@@ -183,8 +184,15 @@ bootstrap();
 You can redact `headers`, `requestBody` and `responseBody` fields using the fastify SDK by providing a list of headers and fields to redact when initializing the SDK:
 
 ```js
+import { NestFactory } from '@nestjs/core';
+import {
+  FastifyAdapter,
+  NestFastifyApplication,
+} from '@nestjs/platform-fastify';
 import APIToolkit from 'apitoolkit-fastify';
 import Fastify from 'fastify';
+import { AppModule } from './app.module';
+
 const fastify = Fastify();
 async function bootstrap() {
   const redactHeaders = ['Authorization', 'X-Secret-Token'];
@@ -207,5 +215,9 @@ async function bootstrap() {
 }
 bootstrap();
 ```
+
+It is important to note that while the RedactHeaders config field accepts a list of headers (case insensitive), the RedactRequestBody and RedactResponseBody expect a list of JSONPath strings as arguments.
+
+The choice of JSONPath was selected to allow you to have great flexibility in describing which fields within your responses are sensitive. Also, note that this list of items to be redacted will be applied to all endpoint requests and responses on your server. To learn more about JSONPath to help form your queries, please take a look at this cheatsheet: [JSONPath Cheatsheet](https://lzone.de/cheat-sheet/JSONPath)
 
 Hopefully, this documentation has everything you need to get APIToolkit app and runing in both your fastify and express based Nest.js application.
