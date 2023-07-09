@@ -62,6 +62,54 @@ func main() {
 }
 ```
 
+## Redacting Sensitive Fields
+
+While it's possible to mark a field as redacted from the API Toolkit dashboard, this client also supports redacting at the client side. Client-side redacting means that those fields would never leave your servers at all. So you feel safer that your sensitive data only stays on your servers.
+
+To mark fields that should be redacted, Add them to the `apitoolkit` config struct.
+For instance to redact the `password` and credit card `number` fields from a request body like this:
+
+```json
+{
+  "user": {
+    "id": 123456789,
+    "name": "John Doe",
+    "password": "secretpassword123",
+    "creditCard": {
+      "number": "1234567890123456",
+      "expiry": "12/25"
+    }
+  }
+}
+```
+
+Add `$.user.password` and `$.user.creditCard.number` to the `RedactRequestBody` list like so:
+
+```go
+func main() {
+    apitoolkitCfg := apitoolkit.Config{
+        RedactHeaders: []string{"Content-Type", "Authorization", "Cookies"}, // Redacting both request and response headers
+        RedactRequestBody: []string{"$.user.password", "$.user.creditCard.number"},
+        RedactResponseBody: []string{"$.message.error"},
+        APIKey: "<APIKEY>",
+    }
+
+    // Initialize the client using your apitoolkit.io generated apikey
+    apitoolkitClient, _ := apitoolkit.NewClient(context.Background(), apitoolkitCfg)
+
+    router := gin.New()
+    // Register with the corresponding middleware of your choice. For Gin router, we use the GinMiddleware method.
+    router.Use(apitoolkitClient.GinMiddleware)
+    // Register your handlers as usual and run the gin server as usual.
+    router.POST("/:slug/test", func(c *gin.Context) {c.Text(200, "ok")})
+    ...
+}
+```
+
+It is important to note that while the `RedactHeaders` config field accepts a list of headers (case insensitive), the `RedactRequestBody` and `RedactResponseBody` expect a list of JSONPath strings as arguments.
+
+The choice of JSONPath was selected to allow you to have great flexibility in describing which fields within your responses are sensitive. Also, note that this list of items to be redacted will be applied to all endpoint requests and responses on your server. To learn more about JSONPath to help form your queries, please take a look at this cheatsheet: [JSONPath Cheatsheet](https://lzone.de/cheat-sheet/JSONPath)
+
 ## Next Steps
 
 1. Deploy your application or send test http requests to your service
