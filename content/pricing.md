@@ -32,8 +32,8 @@ Last *14 days Data Retained<br/>
 <div class="flex-1">
 
 ### Hobby
-#### <strong>$<span id="hobby-price">20</span></strong>/mo
-<div class="px-3 py-5">
+#### <strong>$<span id="hobby-price">10</span></strong>/mo
+<div class="px-3 py-5 hidden">
 <input type="range" value="0" 
     for="hobby-price"
     min="250000"
@@ -45,9 +45,10 @@ Last *14 days Data Retained<br/>
     class="price-range">
 </div>
 
-<strong id="hobby-reqs">250,000</strong> Reqs / mo <small>included</small><br/>
+<strong id="hobby-reqs">250K</strong> Reqs / mo <small>included</small><br/>
 $1 per extra 10,000 reqs <br/>
 
+2 weeks free trial <br/>
 3 Team Member <br/>
 Last *7 days Data Retained<br/>
 API test pipelines<br/>
@@ -61,7 +62,7 @@ Custom API request validations<br/>
 
 ### Startup
 #### <strong class="">*$<span id="startup-price">50</span></strong>/mo
-<div class="px-3 py-5">
+<div class="px-3 py-5 hidden">
 <input type="range" value="0" 
     for="startup-price"
     min="500000"
@@ -73,9 +74,10 @@ Custom API request validations<br/>
     class="price-range">
 </div>
 
-<strong id="startup-reqs">500,000</strong> Reqs / mo <small>included</small><br/>
+<strong id="startup-reqs">1M</strong> Reqs / mo <small>included</small><br/>
 $1 per extra 10,000 reqs <br/>
 
+2 weeks free trial <br/>
 5 Team Members <br/>
 Last *14 days Data Retained<br/>
 Popular option<br/>
@@ -90,7 +92,7 @@ Custom API request validations<br/>
 
 ### Growth
 #### <strong>$<span id="growth-price">250</span></strong>/mo
-<div class="px-3 py-5">
+<div class="px-3 py-5 hidden">
   <input type="range" value="0" 
     for="growth-price"
     min="5000000"
@@ -102,9 +104,10 @@ Custom API request validations<br/>
     class="price-range ">
 </div>
 
-<strong id="growth-reqs">5,000,000</strong> Reqs / mo <small>included</small><br/>
+<strong id="growth-reqs">10M</strong> Reqs / mo <small>included</small><br/>
 $1 per extra 12,000 reqs <br/>
 
+2 weeks free trial <br/>
 10 Team members <br/>
 Last *14 days Data Retained <br/>
 API test pipelines<br/>
