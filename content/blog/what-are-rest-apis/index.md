@@ -1,11 +1,13 @@
 ---
 title: "Unlocking the Mystery: What Are REST APIs?"
-date: 2023-07-16T12:36:58+02:00
+date: 2023-07-14T12:36:58+02:00
 author: anthony 
 description: Delve into the intricate world of REST APIs, exploring their role in modern computing and unraveling the complexities behind their design. What are REST APIs? Discover the answer and much more in this detailed exploration.
 categories:
   - API
 ---
+
+![What are REST APIs](./what-are-rest-apis.png)
 
 _Delve into the intricate world of REST APIs, exploring their role in modern computing and unraveling the complexities behind their design. What are REST APIs? Discover the answer and much more in this detailed exploration._
 
@@ -22,9 +24,9 @@ _Delve into the intricate world of REST APIs, exploring their role in modern com
 
 ## **What are REST APIs? An Introduction**
 
-In the age of interconnectivity, data exchange is the lifeblood of software applications. REST APIs, or Representational State Transfer Application Programming Interfaces, are integral to this process. But what are REST APIs exactly?
+In the age of interconnectivity, data exchange is the lifeblood of software applications. [REST APIs](https://apitoolkit.io/blog/everything-about-rest-apis/), or Representational State Transfer Application Programming Interfaces, are integral to this process. But what are REST APIs exactly?
 
-A REST API is a set of rules or conventions for building web services. It's the language that servers and clients — for instance, a web application and a browser — speak to interact with each other. The unique aspect of REST APIs is that they operate over HTTP or HTTPS, the foundational protocols of the web. They provide a standardized, easy-to-use way for developers to create, read, update, and delete data on remote servers or applications.
+A [REST API](https://apitoolkit.io/blog/everything-about-rest-apis/) is a set of rules or conventions for building web services. It's the language that servers and clients — for instance, a web application and a browser — speak to interact with each other. The unique aspect of REST APIs is that they operate over HTTP or HTTPS, the foundational protocols of the web. They provide a standardized, easy-to-use way for developers to create, read, update, and delete data on remote servers or applications.
 
 Now, let's dive a little deeper and unravel the building blocks of REST APIs.
 

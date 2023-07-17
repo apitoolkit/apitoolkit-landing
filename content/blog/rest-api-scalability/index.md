@@ -1,11 +1,13 @@
 ---
 title: "REST APIs and Their Scalability Feature"
-date: 2023-07-17T12:36:58+02:00
+date: 2023-07-16T12:36:58+02:00
 author: anthony 
 description: Scalability has become a buzzword in the software industry, often touted as the golden standard for any system worth its salt. But what exactly does it mean, and how does it relate to REST APIs?  
 categories:
   - API
 ---
+
+![scalability](./scalability.jpeg)
 
 Scalability has become a buzzword in the software industry, often touted as the golden standard for any system worth its salt. But what exactly does it mean, and how does it relate to REST APIs? 
 
