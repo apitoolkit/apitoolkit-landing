@@ -16,15 +16,15 @@ The communication can be done via a rest API
 
 ## What Are REST APIs?
 
-REST API is an API that conforms to the design principles of the REST, or representational state transfer architectural style. Because of this, REST APIs are sometimes referred to RESTful APIs.
+[REST API](https://apitoolkit.io/blog/everything-about-rest-apis/) is an API that conforms to the design principles of the REST, or representational state transfer architectural style. Because of this, REST APIs are sometimes referred to RESTful APIs.
 
-RESTAPIs are all about Communication between client and server.
+[REST APIs](https://apitoolkit.io/blog/what-are-rest-apis/) are all about Communication between client and server.
 
 ## What Are The Benefits of REST APIs?
 
 1. They are a simple and standardized approach to communication. You don’t have to worry about what data is being used or how to format your requests
 
-2. They are scalable and stateless
+2. [They are scalable and stateless](https://apitoolkit.io/blog/rest-api-scalability/)
 As your service grows in complexity, you can easily make modifications. Also, you don’t have to concern yourself with what data is in which state and keep track of data across client and server.
 
 3. High performance. In large part due to the fact that they support caching. As your service gets more complex, your performance stays high.
@@ -41,7 +41,7 @@ The [framework for some APIs](https://apitoolkit.io/blog/web-service-apis-struct
 
 **Client-server decoupling**. In REST API design, client and server applications must be completely independent of each other. The only information the client application should know is the URI of the requested resource; it can't interact with the server application in any other way. Similarly, a server application shouldn't modify the client application other than passing it to the requested data via HTTP.
 
-**Cacheability**. When possible, resources should be cacheable on the client or server side. Server responses also need to contain information about whether caching is allowed for the delivered resource. The goal is to improve performance on the client side, while increasing scalability on the server side.
+**Cacheability**. When possible, resources should be cacheable on the client or server side. Server responses also need to contain information about whether caching is allowed for the delivered resource. The goal is to improve performance on the client side, while increasing [scalability](https://apitoolkit.io/blog/rest-api-scalability/) on the server side.
 
 **Code on demand (optional)**. REST APIs usually send static resources, but in certain cases, responses can also contain executable code (such as Java applets). In these cases, the code should only run on-demand.
 
@@ -49,7 +49,7 @@ The [framework for some APIs](https://apitoolkit.io/blog/web-service-apis-struct
 
 REST APIs communicate using [HTTP requests](https://developer.mozilla.org/en-US/docs/Web/HTTP) to perform standard database functions like creating, reading, updating, and deleting records (CRUD) within a resource. 
 
-For instance, a REST API would use a GET request to retrieve a record, a POST request to create one, a PUT request to update a record, and a DELETE request to delete one. All HTTP methods can be used in API calls. A well-designed REST API is similar to a website running in a web browser with built-in HTTP functionality.
+For instance, a [REST API](https://apitoolkit.io/blog/what-are-rest-apis/) would use a GET request to retrieve a record, a POST request to create one, a PUT request to update a record, and a DELETE request to delete one. All HTTP methods can be used in API calls. A well-designed REST API is similar to a website running in a web browser with built-in HTTP functionality.
 
 The state of a resource at any particular instant, or timestamp, is known as the resource representation. This information can be delivered to a client in virtually any format including JavaScript Object Notation (JSON), HTML, XLT, Python, PHP, or plain text.
 
