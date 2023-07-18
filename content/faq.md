@@ -14,7 +14,7 @@ layout: blank
 
 <div class="text-left space-y-4 prose"  >
 <details class="p-4 border border-blue-900 rounded-md ">
-    <summary class="cursor-pointer py-3 text-lg font-medium">What programming languages are support?</summary>
+    <summary class="cursor-pointer py-3 text-lg font-medium">What programming languages are supported?</summary>
     <p>Some services like the API testing does not need any SDK integration. But we have SDKs for multiple languages: Golang, PHP, C#, Java, etc. If we don't support your language or framework, please drop a message. We can create one on demand quite quickly.</p>
 </details>
 

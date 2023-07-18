@@ -2157,6 +2157,10 @@ img {
   border-width: 0;
 }
 
+.visible {
+  visibility: visible;
+}
+
 .static {
   position: static;
 }
@@ -2292,10 +2296,6 @@ img {
 
 .mt-3 {
   margin-top: 0.75rem;
-}
-
-.mb-2 {
-  margin-bottom: 0.5rem;
 }
 
 .mt-1 {
@@ -2495,6 +2495,10 @@ img {
   align-content: space-between;
 }
 
+.content-around {
+  align-content: space-around;
+}
+
 .items-center {
   align-items: center;
 }
@@ -2509,6 +2513,10 @@ img {
 
 .justify-between {
   justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
 }
 
 .justify-items-stretch {
@@ -2781,6 +2789,11 @@ img {
 
 .bg-amber-50\/50 {
   background-color: rgb(255 251 235 / 0.5);
+}
+
+.bg-amber-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 243 199 / var(--tw-bg-opacity));
 }
 
 .bg-gray-200 {
