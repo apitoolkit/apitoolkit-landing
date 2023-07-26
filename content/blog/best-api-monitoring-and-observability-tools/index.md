@@ -21,13 +21,17 @@ When you use an app on your phone or computer, it frequently has to make a reque
 
 For instance, if you use a weather app, it might use an API to ask a web server for the current weather data. The API provides a standard way for the app to make that request and receive the data it needs.
 
-## What is API Monitoring and Observability?
+## What is API Observability?
 
-[API monitoring and observability](https://apitoolkit.io/blog/api-documentation-and-observability-the-truth-you-must-know/) relate to the process of closely monitoring an API's behavior and performance to make sure it is operating effectively and efficiently.
+API observability is a comprehensive practice that revolves around the systematic gathering, processing, and interpretation of data emanating from an Application Programming Interface (API). The primary aim of API observability is to acquire valuable insights into the API's [performance metrics](https://apitoolkit.io/blog/web-api-performance/), availability, and overall usage patterns. Diligently monitoring and scrutinizing this data ensures that developers and system administrators can effectively identify, diagnose, and rectify various issues and anomalies that may arise during the API's lifecycle.
 
-Monitoring an API entails keeping track of a number of metrics, including response time, error rates, and availability, to make sure it is operating as it should. This monitoring enables programmers to swiftly identify and address any potential problems.
+![Components of API Observability](./observability-api.png)
 
-On the other side, observability refers to the capacity to analyze a system's internal state in order to comprehend and diagnose its behavior. Observability in the context of APIs is gathering and analyzing data from many sources, including logs, traces, and metrics, in order to get knowledge about how the API is operating and how it is being used.
+API observability is a more comprehensive approach to monitoring than [traditional API monitoring](https://apitoolkit.io/blog/api-documentation-and-observability-the-truth-you-must-know/). Traditional monitoring typically focuses on [collecting metrics](https://apitoolkit.io/blog/api-logs-and-metrics/) such as request latency, error rate, and throughput. API observability, on the other hand, collects a wider range of data, including logs, traces, and metrics. This data can be used to gain a deeper understanding of how an API is performing and how it is being used.
+
+Moreover, API observability paves the way for real-time monitoring and alerting mechanisms, ensuring that any deviations from expected behavior are promptly flagged, enabling proactive responses to potential issues before they escalate. This proactive approach significantly reduces downtime and improves overall system reliability.
+
+By using advanced data visualization techniques, such as dashboards and analytics tools, API observability empowers dev teams to interpret complex datasets effectively. This in turn helps them make data-driven decisions and devise strategies for enhancing the API's performance, bolstering its scalability, and fine-tuning its overall behavior.
 
 Read: [Must-Know API Trends in 2023](https://apitoolkit.io/blog/api-trends/)
 
@@ -43,15 +47,16 @@ Built by expert software engineers to solve problems that have cost their employ
 
 Using best-in-class technology, APIToolkit leverages a highly specialized and powerful platform to provide a secure environment for developers to build and maintain APIs with enhanced analytics.
 
-APIToolkit spots broken apis, changed fields, etc., before your customers.
+APIToolkit spots broken APIs, changed fields, etc., before your customers.
 
-Features:
-- **Real time updates to API docs:** View your live API shapes, fields, etc and Generate swagger Docs at anytime via your live taffic.
+**Features:**
+- **Real time updates to API docs (auto-generated):** View your live API shapes, fields, etc and generate swagger docs at anytime via your live taffic. Say goodbye to tedious manual documentation.
 - **Live API Contract monitoring & alerts:** Keep up with any changes to your API. New fields, new endpoints, empty fields, change in field types, etc
 - **Refactor and Migrate Safely:** Catch any bug and changes due to refactorings or migrations, faster than your customers.
 - **View your API analytics in one place:** Response times, latency, etc. Run queries on your live api requests and responses.
+- **API Testing**: Our API testing tool is designed to help you ensure the quality, functionality, and reliability of your APIs. It allows you to thoroughly test and validate various aspects of your APIs, including endpoints, request and response data, authentication mechanisms, error handling, and performance metrics.
 
-Read: [Top 7 Reasons Why Your Team Needs an API Monitoring Tool](https://apitoolkit.io/blog/why-you-need-an-api-monitoring-tool/)
+Read: [Top 7 Reasons Why Your Team Needs an API Observability and Monitoring Tool](https://apitoolkit.io/blog/why-you-need-an-api-monitoring-tool/)
 
 ## 2. [Postman](http://www.postman.com)
 
@@ -129,6 +134,35 @@ Datadog’s API monitoring lets you automate site availability monitoring and re
 - **Infrastructure Monitoring**
 - **Log Management, Database, Network, and Serverless monitoring**
 
+## 8. [Treblle](https://www.treblle.com/)
+
+![Treblle screenshot](./treblle-screenshot.png)
+
+Treblle is a lightweight SDK designed for rapid API development, offering real-time monitoring, analytics, automated API documentation, and automated API security audits. It provides seamless integration with popular development tools and supports over 18 languages/frameworks.
+
+**Features:**
+
+**Real-time API Monitoring**: Keep track of API performance and availability instantly.
+
+**Error Tracking and Alerts**: Identify and monitor API errors with customizable alerts.
+
+**Performance Insights**: Obtain valuable insights into API performance for optimization.
+
+**Debugging Tools**: Efficiently debug and resolve issues in API implementations.
+
+**Integration Support**: Easily integrate Treblle with widely-used development tools.
+
+**Historical Data Analysis**: Analyze historical trends for long-term performance improvements.
+
+**Security Monitoring**: Detect and address potential vulnerabilities in API implementations.
+
+**Documentation Generation**: Automatically generate up-to-date API documentation.
+
+**Scalability and Reliability**: Ensure high scalability and reliability for large-scale API monitoring.
+
+**User-friendly Interface**: Enjoy an intuitive interface for easy navigation and efficient monitoring."
+
+
 **Also Read**
 
 [Incident Management: How to Resolve API Downtime Issues Before It Escalates](https://apitoolkit.io/blog/api-downtime/)
@@ -138,3 +172,6 @@ Datadog’s API monitoring lets you automate site availability monitoring and re
 [How to Write API Documentation: 10 Essential Guidelines](https://apitoolkit.io/blog/how-to-write-api-docs/)
 
 [How to Tackle Anomalies in RESTful APIs (the Right Way)](https://apitoolkit.io/blog/anomalies-in-restful-apis/)
+
+***
+Try APIToolkit [here](https://apitoolkit.io).
