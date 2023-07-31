@@ -51,10 +51,10 @@ svg#bee {
 <!--     <svg class="h-12 top-32 right-24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 428.4 394.6"><path d="M369.4 109.2c43.2 55.3 71.5 121.4 53.4 167.3-18.2 45.8-82.8 71.4-140.5 91.7-57.8 20.4-108.7 35.4-152.9 20.3C85.1 373.4 47.6 328.3 23.2 267c-24.5-61.2-35.8-138.6-2.5-191.7C54.1 22.2 132-6.6 200 1.3c68 7.9 126.1 52.5 169.4 107.9z"></path></svg> -->
 <!-- </div> -->
 
-<section class="overflow-hidden">
-{{< container >}}
+<section class="overflow-hidden text-center">
+    <div class="md:max-w-5xl inline-block text-left w-full">
     <br/><br/>
-  <div class="flex flex-col sm:flex-row items-center pt-16 sm:pt-24 text-center " data-hs="fade up">
+  <div class="flex flex-col sm:flex-row pt-16 sm:pt-24 text-left " data-hs="fade up">
     <div class="jarallax" data-jarallax data-speed="-1">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-25 0 150 100" width="150" height="100" class="w-fullx inline-block absolute top-0 right-0">
   <path id="path" stroke="none" fill="none" d="M -25 -20 a 30 30 0 0 0 60 0 30 30 0 0 0 -60 0 30 30 0 0 1 -60 0 30 30 0 0 1 60 0" />
@@ -80,9 +80,9 @@ svg#bee {
       <a class="inline-block bg-blue-900/90 text-white px-5 py-1 text-xs rounded-2xl" href="/blog/updates-october-2022/">
         ✨ Read the latest updates  🚀
       </a>
-      <h1 class="pt-2 text-blue-title leading-tight tracking-tight text-[1.83rem] sm:text-6xl drop-shadow-lg" style="font-variation-settings: 'wght' 900;">The API Developer's  <br/><span class="decoration-amber-300 underline underline-offset-4">Toolbox!</span></h1>
+      <h1 class="pt-2 text-blue-title leading-tight tracking-tight text-4xl sm:text-6xl drop-shadow-lg" style="font-variation-settings: 'wght' 900;">The API Developer's  <br/><span class="decoration-amber-300 underline underline-offset-4">Toolbox!</span></h1>
       <div class="pt-8 space-y-8 xsm:pr-20">
-        <p class="prose font-normal text-lg sm:text-xl">Every <strong>Tool</strong> Engineering Teams need to <strong>Document</strong>, <strong>Test</strong>, & <strong>Monitor</strong> the most reliable REST based APIs. <br/>
+        <p class="max-w-xl prose font-normal text-2xl lg:text-3xl"><strong>Tools</strong> to <span class="inline-block"><strong>Document</strong>, <strong>Test</strong>, & <strong>Monitor</strong></span> the most reliable APIs.<br/>
         </p>
         <!-- <div class="text-center py-4 sm:hidden"> -->
         <!--   <img -->
@@ -127,7 +127,7 @@ svg#bee {
     <!--   class="hidden sm:inline-block w-60" -->
     <!-- /> -->
   </div>
-{{</ container >}}
+  </div>
 </section>
 
 {{</ rawhtml >}}
@@ -138,19 +138,19 @@ svg#bee {
         <strong class="pb-4 block"> Loved By Engineers at these companies and more:</strong>
         <div class="grid  grid-cols-3 sm:grid-cols-6 gap-2 sm:gap-7 justify-center items-center">
             <img class="w-full" src="https://uploads-ssl.webflow.com/641975b718b45d0d6f1822ac/646adf0fa725242fc86306b4_andela.svg" />
-            <img class="w-full" src="https://uploads-ssl.webflow.com/641975b718b45d0d6f1822ac/646adf0f1364a74f7a3916ca_google.svg" />
             <img class="w-full" src="https://uploads-ssl.webflow.com/641975b718b45d0d6f1822ac/646adf0fb920caa9e1a3b792_paystack-1.svg" />
             <img class="w-full" src="/assets/img/love/thepeer.svg" />
             <img class="w-full" src="/assets/img/love/grovepay.svg" />
             <img class="w-full" src="/assets/img/love/deliveryhero.svg" />
+            <img class="w-full" src="/assets/img/love/samedaycustomLogo.svg" />
         </div>
     </div>
 </div>
 </section>
 
 <section class="mt-20 text-center">
-  <section class="md:max-w-5xl inline-block text-left">
-    <div class="md:max-w-4xl text-left px-2  py-44 text-base sm:text-lg">
+  <section class="md:max-w-5xl inline-block text-center">
+    <div class="inline-block md:max-w-4xl text-left px-2  py-44 text-base sm:text-lg">
     
 ###### WHY APITOOLKIT?
 ## Empower <span class="bg-amber-300 px-2 rounded-md"><strong class="drop-shadow-md">Developer</strong></span> teams to build <span class="bg-amber-300 px-2 rounded-md inline-block"><strong class="drop-shadow-md">Happier Customer</strong></span> **experiences**.
@@ -390,7 +390,7 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
 
 ## Your Team's workflow <span class="bg-amber-300 px-2 rounded-md"><strong class="drop-shadow-md">with APIToolkit </strong></span>
 
-<p data-hs="fade up"  class="pt-3 text-lg m-w-prose"> You now have enough tools and insight about your APIs and payloads, to discover issues, investigate bugs, and test to ensure bugs don't get reintroduced.</p>
+<p data-hs="fade up"  class="pt-3 text-lg max-w-3xl inline-block"> You now have enough tools and insight about your APIs and payloads, to discover issues, investigate bugs, and test to ensure bugs don't get reintroduced.</p>
 </div>
 
 
@@ -404,7 +404,7 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
 </p>
 
 <div class="home-feature-section pt-5 pb-24  flex flex-col sm:flex-row odd:flex-col-reverse sm:odd:flex-row  gap-5 x:sm:gap-8 justify-center ">
-<div  class="flex-1  home-feature-text-box text-sm prose prose-ul:leading-loose">
+<div  class="flex-1  home-feature-text-box text-base">
 
 - Auto generated OpenAPI/Swagger from live traffic 
 - Manually edit swagger or upload from your CI
@@ -440,7 +440,7 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
 </p>
 
 <div class="home-feature-section pt-5 pb-24  flex flex-col sm:flex-row odd:flex-col-reverse sm:odd:flex-row  gap-5 x:sm:gap-8 justify-center ">
-<div  class="flex-1  home-feature-text-box text-sm prose prose-ul:leading-loose">
+<div  class="flex-1  home-feature-text-box text-base">
 
 - Error rates across endpoints
 - Latency distributions across endpoints
@@ -469,12 +469,12 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
 <div class="benefit-section px-2 sm:px-0">
 
 #### <span class="bg-amber-300 px-2 rounded-md"><strong class="drop-shadow-md">Anomaly Detection, Monitors & Validation</strong></span>
-### Detect bugs and issues via our Anomaly Detection,<br/>your Custom monitors<br/>or Custom payload Validation.
+### Detect bugs and issues via our Anomaly Detection,<br/>your Custom monitors & payload Validation.
 <p class="pt-3 prose m-w-prose">There's a bug/issue. But the Anomaly detector or Custom monitors or Custom payload validators caught them <strong>before your customers even noticed</strong>.
 </p>
 
 <div class="home-feature-section pt-5 pb-24  flex flex-col sm:flex-row odd:flex-col-reverse sm:odd:flex-row  gap-5 x:sm:gap-8 justify-center ">
-<div  class="flex-1  home-feature-text-box text-sm prose prose-ul:leading-loose">
+<div  class="flex-1  home-feature-text-box text-base">
 
 - Live traffic validated against latest OpenAPI spec
 - Your custom API Tests executed on schedule 
@@ -507,7 +507,7 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
 </p>
 
 <div class="home-feature-section pt-5 pb-24  flex flex-col sm:flex-row odd:flex-col-reverse sm:odd:flex-row  gap-5 x:sm:gap-8 justify-center ">
-<div  class="flex-1  home-feature-text-box text-sm prose prose-ul:leading-loose">
+<div  class="flex-1  home-feature-text-box text-base">
 
 - Connect your on-call tracking system for emergencies
 - Setup slack and email or pagerduty, etc 
@@ -541,7 +541,7 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
 </p>
 
 <div class="home-feature-section pt-5 pb-24  flex flex-col sm:flex-row odd:flex-col-reverse sm:odd:flex-row  gap-5 x:sm:gap-8 justify-center ">
-<div  class="flex-1  home-feature-text-box text-sm prose prose-ul:leading-loose">
+<div  class="flex-1  home-feature-text-box text-base">
 
 - During API incidents Query and analyze failing API requests and responses 
 - Analyze or Chart against fields within your API requests and responses 
@@ -576,7 +576,7 @@ Use the APItoolkit test workflow UI builder to easily create these tests. Your t
 </p>
 
 <div class="home-feature-section pt-5 pb-24  flex flex-col sm:flex-row odd:flex-col-reverse sm:odd:flex-row  gap-5 x:sm:gap-8 justify-center ">
-<div  class="flex-1  home-feature-text-box text-sm prose prose-ul:leading-loose">
+<div  class="flex-1  home-feature-text-box text-base">
 
 - Connect your on-call tracking system for emergencies
 - Setup slack and email or pagerduty, etc 

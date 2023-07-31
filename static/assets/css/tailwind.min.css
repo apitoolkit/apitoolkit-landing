@@ -411,7 +411,7 @@ video {
 }
 
 html, body {
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .text-blue-title {
@@ -2145,6 +2145,10 @@ img {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.benefit-section {
+  text-align: left;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -2374,6 +2378,10 @@ img {
   width: 12rem;
 }
 
+.w-full {
+  width: 100%;
+}
+
 .w-24 {
   width: 6rem;
 }
@@ -2384,10 +2392,6 @@ img {
 
 .w-60 {
   width: 15rem;
-}
-
-.w-full {
-  width: 100%;
 }
 
 .w-5 {
@@ -2408,6 +2412,10 @@ img {
 
 .w-1\/6 {
   width: 16.666667%;
+}
+
+.max-w-xl {
+  max-width: 36rem;
 }
 
 .max-w-2xl {
@@ -2432,6 +2440,10 @@ img {
 
 .max-w-5xl {
   max-width: 64rem;
+}
+
+.max-w-3xl {
+  max-width: 48rem;
 }
 
 .flex-none {
@@ -3064,13 +3076,14 @@ img {
   line-height: 1rem;
 }
 
-.text-\[1\.83rem\] {
-  font-size: 1.83rem;
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 .text-sm {
@@ -3088,14 +3101,14 @@ img {
   line-height: 1.75rem;
 }
 
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
-}
-
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
 }
 
 .font-normal {
@@ -3471,10 +3484,6 @@ img {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.prose-ul\:leading-loose :is(:where(ul):not(:where([class~="not-prose"] *))) {
-  line-height: 2;
-}
-
 @media (min-width: 640px) {
   .sm\:mt-0 {
     margin-top: 0px;
@@ -3605,11 +3614,6 @@ img {
   .sm\:text-6xl {
     font-size: 3.75rem;
     line-height: 1;
-  }
-
-  .sm\:text-xl {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
   }
 
   .sm\:text-lg {
@@ -3760,6 +3764,11 @@ img {
   .lg\:pb-28 {
     padding-bottom: 7rem;
   }
+
+  .lg\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
 }
 
 @media (min-width: 1280px) {
@@ -3783,5 +3792,6 @@ img {
     gap: 0.5rem;
   }
 }
+
 
 

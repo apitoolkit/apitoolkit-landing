@@ -4,7 +4,7 @@
 
 @layer base {
 html, body {
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .text-blue-title {
@@ -144,10 +144,15 @@ html, body {
     @apply bg-blue-900 text-white;
   }
 
+  .benefit-section {
+      @apply text-left;
+    }
+
 }
 
 .ul-1 {@apply pl-3 pb-1 space-y-1; }
 .ul-2 {@apply pl-5 pb-1 space-y-1; }
 .ul-3 {@apply pl-7 pb-1 space-y-1; }
+
 
 
