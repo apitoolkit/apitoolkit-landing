@@ -107,7 +107,7 @@ svg#bee {
           >
             Get a demo &nbsp;
           </a>
-          <div class="sm:space-x-5 text-xs" data-hs="fade up">
+          <div class="sm:space-x-5 text-sm" data-hs="fade up">
             <small class="inline-block">✓ Always free plan</small>
             <small class="inline-block">✓ GDPR compliant</small>
             <small class="inline-block">✓ Security first</small>
@@ -176,8 +176,8 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
         <!-- <div  class="w-full" style="position: relative; padding-bottom: 65.77344701583435%; height: 0;"><iframe class="rounded-lg border-4 border-gray-200 " src="https://www.loom.com/embed/24ea3ae9600544d68f1001af3f4feac2?hide_title=true&hide_owner=true&hideEmbedTopBar=true" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div> -->
         <p class="text-sm prose pt-3 pb-7">Keep a close eye on the numbers that matter. Don't let your error rates or latency get too high on your customers.</p>
         <div class="border border-blue-900" data-hs="fade up">
-            <video class="w-full" loop autoplay muted playsinline>
-                <source src='/assets/video/dashboard.mp4' type='video/mp4'>
+            <video class="lazy w-full" loop autoplay muted playsinline>
+                <source data-src='/assets/video/dashboard.mp4' type='video/mp4'>
                 Your browser does not support the video tag.
             </video>
         </div>
@@ -185,8 +185,8 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
     <div class="showcase1 hidden" id="showcase1-document"  data-hs="fade up">
         <p class="text-sm prose pt-3 pb-7">Collaborate on your Documentation and Swagger. Our API inform you when we spot new fields in your live traffic.</p>
         <div class="border border-blue-900" data-hs="fade up">
-            <video class="w-full" loop autoplay muted playsinline>
-                <source src='/assets/video/APIToolkitDocumentation.mp4' type='video/mp4'>
+            <video class="lazy w-full" loop autoplay muted playsinline>
+                <source data-src='/assets/video/APIToolkitDocumentation.mp4' type='video/mp4'>
                 Your browser does not support the video tag.
             </video>
         </div>
@@ -194,8 +194,8 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
     <div class="showcase1 hidden" id="showcase1-investigate"  data-hs="fade up">
         <p class="text-sm prose pt-3 pb-7">Explore live traffic, and query or isolate affected request payloads for the smoothest experience while investigating bugs.</p>
         <div class="border border-blue-900" data-hs="fade up">
-            <video class="w-full" loop autoplay muted playsinline>
-                <source src='/assets/video/log_explorer.mp4' type='video/mp4'>
+            <video class="lazy w-full" loop autoplay muted playsinline>
+                <source data-src='/assets/video/log_explorer.mp4' type='video/mp4'>
                 Your browser does not support the video tag.
             </video>
         </div>
@@ -203,7 +203,7 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
     <div class="showcase1 hidden" id="showcase1-test"  data-hs="fade up">
         <p class="text-sm prose pt-3 pb-7">Build testing workflows with our powerful test worker UI builder. Schedule these workflows to run against prod regularly. (Coming Soon)</p>
         <div class="border border-blue-900" data-hs="fade up">
-            <div  class="home-feature-image-div">
+            <div  class="lazy home-feature-image-div">
               <img src="/assets/img/integrations/testing_coming_soon.png"/>
             </div>
             <!-- <video class="w-full" loop autoplay muted playsinline> -->
@@ -215,34 +215,39 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
     <div data-hs="fade up" class="mt-2"><a href="https://www.loom.com/share/24ea3ae9600544d68f1001af3f4feac2" target="_blank" class="inline-block bg-blue-900 text-white px-3 py-1 text-xs rounded-lg" >Learn how APIToolkit works (Video)</a></div>
 </div>
 
-<!-- <div class="grid grid-cols-6"> -->
-<!--   <div class="col-span-2 text-sm sm:text-lg p-1 sm:p-2 font-normal sm:font-medium"> -->
-<!--     <a class="block transition-all border-l-4 border-l-amber-400  rounded-md p-2 sm:p-5 border border-gray-200 drop-shadow-md shadow-amber-500 hover:shadow-md" href="/api-anomalies-validation-and-checks"> -->
-<!--       API Designer and Mocker  -->
-<!--     </a> -->
-<!--     <a class="block transition-all border-l-4 border-l-amber-400 rounded-md p-2 sm:p-5 border border-gray-200 drop-shadow-md shadow-amber-500 hover:shadow-md" href="/api-anomalies-validation-and-checks"> -->
-<!--       Live API tester  -->
-<!--     </a> -->
-<!--     <a class="block transition-all border-l-4 border-l-amber-400  rounded-md p-2 sm:p-5 border border-gray-200 drop-shadow-md shadow-amber-500 hover:shadow-md" href="/api-logs-and-metrics"> -->
-<!--       API Log Explorer -->
-<!--     </a> -->
-<!--     <a class="block transition-all border-l-4 border-l-amber-400 rounded-md p-2 sm:p-5 border border-gray-200 drop-shadow-md shadow-amber-500 hover:shadow-md" href="/api-performance-monitoring-and-compliance"> -->
-<!--       Metrics & Performance Monitor -->
-<!--     </a> -->
-<!--     <a class="block transition-all border-l-4 border-l-amber-400 rounded-md p-2 sm:p-5 border border-gray-200 drop-shadow-md shadow-amber-500 hover:shadow-md" href="/api-documentation-and-developer-portals"> -->
-<!--       Swagger Generator & Editor -->
-<!--     </a> -->
-<!--     <a class="block transition-all border-l-4 border-l-amber-400 rounded-md p-2 sm:p-5 border border-gray-200 drop-shadow-md shadow-amber-500 hover:shadow-md" href="/api-anomalies-validation-and-checks"> -->
-<!--       Payload Validation & Anomaly Detector   -->
-<!--     </a> -->
-<!--   </div> -->
+<div class="mt-12 sm:mt-24">
+
+### Many features and more...
+</div>
+<div class="grid grid-cols-3 gap-8 pt-8">
+  <!-- <div class="col-span-2 text-sm sm:text-lg p-1 sm:p-2 font-normal sm:font-medium"> -->
+    <!-- <a class="grid-cols-1 sm:grid-cols-6  block transition-all border-l-4 border-l-amber-400  rounded-md p-2 sm:p-5 border border-gray-200 drop-shadow-md shadow-amber-500 hover:shadow-md" href="/api-anomalies-validation-and-checks"> -->
+    <!--   API Designer and Mocker  -->
+    <!-- </a> -->
+    <a class="grid-cols-1 sm:grid-cols-6  block transition-all border-l-4 border-l-amber-400 rounded-md p-2 sm:p-5 border border-gray-200 drop-shadow-md shadow-amber-500 hover:shadow-md" href="/api-performance-monitoring-and-compliance">
+      Metrics & Performance Monitor
+    </a>
+    <a class="grid-cols-1 sm:grid-cols-6  block transition-all border-l-4 border-l-amber-400  rounded-md p-2 sm:p-5 border border-gray-200 drop-shadow-md shadow-amber-500 hover:shadow-md" href="/api-logs-and-metrics">
+      API Log Explorer & Debugger
+    </a>
+    <a class="grid-cols-1 sm:grid-cols-6  block transition-all border-l-4 border-l-amber-400 rounded-md p-2 sm:p-5 border border-gray-200 drop-shadow-md shadow-amber-500 hover:shadow-md" href="/api-documentation-and-developer-portals">
+      Swagger Generator & Editor
+    </a>
+    <a class="grid-cols-1 sm:grid-cols-6  block transition-all border-l-4 border-l-amber-400 rounded-md p-2 sm:p-5 border border-gray-200 drop-shadow-md shadow-amber-500 hover:shadow-md" href="/api-anomalies-validation-and-checks">
+      Payload Validation & Anomaly Detector  
+    </a>
+    <a class="grid-cols-1 sm:grid-cols-6  block transition-all border-l-4 border-l-amber-400 rounded-md p-2 sm:p-5 border border-gray-200 drop-shadow-md shadow-amber-500 hover:shadow-md" href="/api-anomalies-validation-and-checks">
+      Live API tester 
+    </a>
+  <!-- </div> -->
+</div>
 
 <!-- <div class="col-span-4 flex items-center justify-center "> -->
 <!--   <div class="backdrop-opacity-5 backdrop-invert-0 bg-white/50 xgradient1 p-5 md:max-w-3xl rounded-xl drop-shadow w-full" id="intro-video"> -->
 <!--     <!-- <div  class="w-full" style="position: relative; padding-bottom: 65.77344701583435%; height: 0;"><iframe class="rounded-lg border-4 border-gray-200 " src="https://www.loom.com/embed/24ea3ae9600544d68f1001af3f4feac2?hide_title=true&hide_owner=true&hideEmbedTopBar=true" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div> --> 
 <!--     <div class=""> -->
-<!--         <video class="w-full" loop autoplay> -->
-<!--             <source src='/assets/video/APIToolkitDashboardTrimmed.mp4' type='video/mp4'> -->
+<!--         <video class="lazy w-full" loop autoplay> -->
+<!--             <source data-src='/assets/video/APIToolkitDashboardTrimmed.mp4' type='video/mp4'> -->
 <!--             Your browser does not support the video tag. -->
 <!--         </video> -->
 <!--     </div> -->
@@ -416,8 +421,8 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
 
 </div>
     <div  class="home-feature-image-div" data-hs="fade up">
-        <video class="w-full" loop autoplay muted playsinline>
-            <source src='/assets/video/APIToolkitDocumentation.mp4' type='video/mp4'>
+        <video class="lazy w-full" loop autoplay muted playsinline>
+            <source data-src='/assets/video/APIToolkitDocumentation.mp4' type='video/mp4'>
             Your browser does not support the video tag.
         </video>
     </div>
@@ -452,8 +457,8 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
 
 </div>
     <div  class="home-feature-image-div" data-hs="fade up">
-        <video class="w-full" loop autoplay muted playsinline>
-            <source src='/assets/video/dashboard.mp4' type='video/mp4'>
+        <video class="lazy w-full" loop autoplay muted playsinline>
+            <source data-src='/assets/video/dashboard.mp4' type='video/mp4'>
             Your browser does not support the video tag.
         </video>
     </div>
@@ -485,8 +490,8 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
 
 </div>
     <div  class="home-feature-image-div"  data-hs="fade up">
-        <video class="w-full" loop autoplay muted playsinline>
-            <source src='/assets/video/anomalies.mp4' type='video/mp4'>
+        <video class="lazy w-full" loop autoplay muted playsinline>
+            <source data-src='/assets/video/anomalies.mp4' type='video/mp4'>
             Your browser does not support the video tag.
         </video>
     </div>
@@ -519,8 +524,8 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
 
 </div>
     <div  class="home-feature-image-div"  data-hs="fade up">
-        <video class="w-full" loop autoplay muted playsinline onloadstart="this.playbackRate = 1.5;">
-            <source src='/assets/video/slack_channels.mp4' type='video/mp4'>
+        <video class="lazy w-full" loop autoplay muted playsinline onloadstart="this.playbackRate = 1.5;">
+            <source data-src='/assets/video/slack_channels.mp4' type='video/mp4'>
             Your browser does not support the video tag.
         </video>
     </div>
@@ -552,8 +557,8 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
 
 </div>
     <div  class="home-feature-image-div">
-        <video class="w-full" loop autoplay muted playsinline onloadstart="this.playbackRate = 2;">
-            <source src='/assets/video/log_explorer.mp4' type='video/mp4'>
+        <video class="lazy w-full" loop autoplay muted playsinline onloadstart="this.playbackRate = 2;">
+            <source data-src='/assets/video/log_explorer.mp4' type='video/mp4'>
             Your browser does not support the video tag.
         </video>
     </div>
