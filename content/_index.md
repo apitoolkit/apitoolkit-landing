@@ -52,7 +52,7 @@ svg#bee {
 <!-- </div> -->
 
 <section class="overflow-hidden text-center">
-    <div class="md:max-w-5xl inline-block text-left w-full">
+    <div class="md:max-w-5xl inline-block text-left w-full px-2 md:px-0" >
     <br/><br/>
   <div class="flex flex-col sm:flex-row pt-16 sm:pt-24 text-left " data-hs="fade up">
     <div class="jarallax" data-jarallax data-speed="-1">
