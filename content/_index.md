@@ -695,7 +695,7 @@ Join us on this exciting journey!
   </section>
 {{% /container %}}
 
-
+<section>
 <div class="our_container w-full">
 
 ## Frequently asked Questions
@@ -731,9 +731,8 @@ Join us on this exciting journey!
 </div>
 <br/>
 <a class="showcase1-buttons showcase1-buttons-active " href="/faq">See all questions</a>
-
-
 </div>
+</section>
 
   <section class="bg-gradient-yellow  mt-32 text-white gradient-yellow">
     {{% container %}}
