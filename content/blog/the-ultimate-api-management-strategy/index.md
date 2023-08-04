@@ -7,6 +7,7 @@ categories:
 ---
 
 ![a chess pawn](./image1.jpg)
+[Image source](https://www.woodenearth.com/blogs/wooden-blog/disadvantages-of-playing-chess)
 
 APIs are very significant tools for developers. Sadly, there are teams that just don’t know how to manage them. This leads to broken APIs, data losses, downtimes, etc.
 
