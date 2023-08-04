@@ -34,7 +34,7 @@ According to a [Google Cloud Apigee article](https://cloud.google.com/files/apig
 
 Google Cloud also goes on to state that a company like "Salesforce has generated half its revenue through APIs."
 
-> “APIs make digital society and digital business work by connecting people, businesses and things. Those connections enable new digital products and business models and create new business channels,” research firm Gartner states in its article “Put APIs at the Center of Your Digital Business Platform."
+> “APIs make digital society and [digital business](https://www.informalli.com/powerful-seo-tools-for-digital-marketing) work by connecting people, businesses and things. Those connections enable new digital products and business models and create new business channels,” research firm Gartner states in its article “Put APIs at the Center of Your Digital Business Platform."
 
 Initially, APIs were used primarily for internal purposes, but the rise of API as a product has seen companies using them to drive revenue and create new business opportunities.
 
@@ -171,7 +171,7 @@ Read: [How to Generate Automated API Documentation](https://apitoolkit.io/blog/h
 
 ## API Monetization Strategies
 
-There are several API monetization strategies that businesses can use. These include:
+There are several API [monetization strategies](https://www.informalli.com/how-to-start-a-blog-and-make-money-online) that businesses can use. These include:
 
 - **Per-transaction fees:** Businesses can charge a fee every time their API is used to perform a transaction.
 - **Subscription-based pricing:** Businesses can offer access to their API on a subscription basis, charging a monthly or yearly fee.
