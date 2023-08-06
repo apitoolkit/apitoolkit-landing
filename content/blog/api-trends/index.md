@@ -1,7 +1,7 @@
 ---
 title: "10 Must-Know API trends in 2023"
 date: 2023-02-05T01:33:53+02:00
-author: irhose
+author: collins
 categories:
   - APIs
 ---
