@@ -80,7 +80,7 @@ svg#bee {
       <a class="inline-block bg-blue-900/90 text-white px-5 py-1 text-xs rounded-2xl" href="/blog/updates-october-2022/">
         ✨ Read the latest updates  🚀
       </a>
-      <h1 class="pt-2 text-blue-title leading-tight tracking-tight text-4xl sm:text-6xl drop-shadow-lg" style="font-variation-settings: 'wght' 900;">The API Developer's  <br/><span class="decoration-amber-300 underline underline-offset-4">Toolbox!</span></h1>
+      <h1 class="pt-2 text-blue-title leading-relaxed xtracking-tight text-4xl sm:text-6xl drop-shadow-lg" style="font-variation-settings: 'wght' 500;"><span class="inline-block"><strong>Document</strong>, <strong>Test</strong>, & <strong>Monitor</strong></span><br/>the most reliable <span class="decoration-amber-300 underline underline-offset-4">APIs!</span></h1>
       <div class="pt-8 space-y-8 xsm:pr-20">
         <p class="max-w-xl prose font-normal text-2xl lg:text-3xl"><strong>Tools</strong> to <span class="inline-block"><strong>Document</strong>, <strong>Test</strong>, & <strong>Monitor</strong></span> the most reliable APIs.<br/>
         </p>

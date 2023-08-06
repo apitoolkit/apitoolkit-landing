@@ -61,3 +61,12 @@ However, scaling doesn't happen automatically. There are certain practices that 
 Remember, building a scalable REST API is a continuous process. As your application grows, you need to constantly monitor, analyze, and adapt your API to meet evolving demands. By following these practices and avoiding potential pitfalls, you can ensure your REST API remains scalable and robust, no matter how much it grows.
 
 When you build your APIs, explore using [APIToolkit](https://apitoolkit.io) to monitor and test them to ensure they reach your scalability requirements, and stay safe from bugs which your customers might dislike.
+
+**Keep Reading**
+
+[How to Generate utomated API Documentation](https://apitoolkit.io/blog/how-to-generate-automated-api-documentation/)
+[Ultimate Guide to API Testing Automation](https://apitoolkit.io/blog/api-testing-automation)
+
+[How to Generate Automated API Documentation](https://apitoolkit.io/blog/how-to-generate-automated-api-documentation/)
+
+[API Observability and Monitoring: What's the Difference](https://apitoolkit.io/blog/api-observability-and-api-monitoring/)
