@@ -207,7 +207,9 @@ Read: [API Observability and Monitoring: What’s the Difference?](https://apito
 
 ### C. Conduct Regular Performance Testing
 
-Once proper monitoring has been achieved and a bug is fixed, you can now you utiilize the API workflows and a tester tool to write test cases for this scenario, so it never happens again. Use the APItoolkit test workflow UI builder to easily create these tests. Your tests can be scheduled to run against production at any interval you prefer.
+Once proper monitoring has been achieved and a bug is fixed, you can now you utiilize the API workflows and a tester tool to write test cases for this scenario, so it never happens again. Use the [APItoolkit test workflow UI builder](https://apitoolkit.io/blog/api-testing-automation) to easily run these tests. Your tests can be scheduled to run against production at any interval you prefer.
+
+Read: [Ultimate Guide to API Testing Automation](https://apitoolkit.io/blog/api-testing-automation)
 
 ## Conclusion
 
