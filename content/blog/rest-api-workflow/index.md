@@ -60,7 +60,7 @@ Some of the common challenges that developers face when working with APIs are:
 
 To overcome these challenges, you need to establish some [metrics](https://apitoolkit.io/blog/api-logs-and-metrics/) to measure your API workflow performance. Some of these metrics are:
 
-- **Time-to-market**: How long does it take to design, develop, test, and deploy your API? How often do you update or release new versions of your API?
+- **Time-to-market**: How long does it take to design, develop, [test](https://apitoolkit.io/blog/api-testing-automation), and deploy your API? How often do you update or release new versions of your API?
 - **User satisfaction**: How satisfied are your users with your API? How easy is it for them to use your API? How well does your API meet their expectations and needs?
 - **Error rate**: How often does your API encounter errors or failures? How severe are these errors or failures? How quickly do you resolve them?
 - **Availability**: How available is your API? How often does it experience downtime or interruptions? How resilient is it to handle high traffic or load?
@@ -173,7 +173,7 @@ schema:
 
 **Read**: 
 
-[Best API Mnitring and Observability Tools in 2023](https://apitoolkit.io/blog/best-api-monitoring-and-observability-tools/)
+[Best API Monitoring and Observability Tools in 2023](https://apitoolkit.io/blog/best-api-monitoring-and-observability-tools/)
 
 [AP Documentation and Observability: the Truth You Must Know](https://apitoolkit.io/blog/api-documentation-and-observability-the-truth-you-must-know/)
 
@@ -225,7 +225,7 @@ As your business requirements change and new features or functionalities are add
 
 - **Follow a versioning strategy for your APIs**. Versioning allows you to introduce changes or updates to your APIs without breaking the existing clients or consumers. You can use different methods for versioning, such as using URL parameters, headers, media types, etc. You should also document and communicate your versioning policy and changes clearly and transparently to your clients or consumers.
 
-- **Implement a testing strategy for your APIs**. Testing ensures that your APIs function correctly and meet the expected quality standards. You can use different types of testing, such as unit testing, integration testing, functional testing, performance testing, security testing, etc. You should also automate your testing process using tools and frameworks that support REST API testing.
+- **Implement a testing strategy for your APIs**. [Testing](https://apitoolkit.io/blog/api-testing-automation) ensures that your APIs function correctly and meet the expected quality standards. You can use different types of testing, such as unit testing, integration testing, functional testing, performance testing, security testing, etc. You should also automate your testing process using tools and frameworks that support REST API testing.
 
 - **Adopt a documentation strategy for your APIs**. Documentation provides a clear and comprehensive description of your APIs' features, functionalities, parameters, responses, errors, etc. Documentation helps your clients or consumers understand and use your APIs effectively and efficiently. You can use different formats and tools for documentation, such as Swagger, [APIToolkit](https://apitoolkit.io), Postman, Markdown, etc. You should also update your documentation regularly and consistently with your API changes or updates.
 
@@ -236,7 +236,9 @@ By following a good REST API workflow, you can create RESTful APIs that are reli
 
 **Keep Reading**
 
-[How to Generate utomated API Documentation](https://apitoolkit.io/blog/how-to-generate-automated-api-documentation/)
+[Ultimate Guide to API Testing Automation](https://apitoolkit.io/blog/api-testing-automation)
+
+[How to Generate Automated API Documentation](https://apitoolkit.io/blog/how-to-generate-automated-api-documentation/)
 
 [API Observability and Monitoring: What's the Difference](https://apitoolkit.io/blog/api-observability-and-api-monitoring/)
 

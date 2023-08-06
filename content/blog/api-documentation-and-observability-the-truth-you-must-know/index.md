@@ -260,6 +260,7 @@ Therefore, whether you are making an API connection, building a new API, or look
 [Try APIToolkit for Free](apitoolkit.io)
 
 **Also Read**
+[Ultimate Guide to API Testing Automation](https://apitoolkit.io/blog/api-testing-automation)
 
 [Fintech API: Unlocking the Secret to Its Rapid Growth in the Financial Sector](https://apitoolkit.io/blog/fintech-api/)
 

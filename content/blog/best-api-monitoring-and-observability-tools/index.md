@@ -1,7 +1,7 @@
 ---
 title: "Best API Monitoring and Observability Tools in 2023"
 date: 2023-01-02T18:36:58+02:00
-author: irhose
+author: collins
 description: Find out what the best API observability tools are to keep your APIs functioning optimally
 categories:
   - API Observability
@@ -11,7 +11,7 @@ categories:
 
 With [API observability](https://apitoolkit.io/blog/what-is-api-testing/), out of sight shouldn’t mean out of mind. APIs work in the background using simple commands to move requests back and forth. Perhaps because they do a lot of background work, QA teams tend to neglect them.
 
-API observability is an underrated yet hugely important aspect of quality assurance testing. One shouldn’t wait until a downtime occurs before jumping to fix broken or missing APIs.
+API observability is an underrated yet hugely important aspect of [quality assurance testing](https://apitoolkit.io/blog/api-testing-automation). One shouldn’t wait until a downtime occurs before jumping to fix broken or missing APIs.
 
 ## What is an API?
 
