@@ -80,7 +80,7 @@
                   {{ with .GetMatch "{cover.*,*.jpg,*.png,*.jpeg}" }}
                   {{ $cover := .Resize "600x" }}
                   {{ with $cover }}
-                  <img src="{{ .Permalink }}" class="aspect-[7/3] rounded-md object-cover border border-slate-100" />
+                  <img data-src="{{ .Permalink }}" class="lazy aspect-[7/3] rounded-md object-cover border border-slate-100" />
                   {{ end }}
                   {{ end }}
                   {{ end }}

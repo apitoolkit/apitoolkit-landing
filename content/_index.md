@@ -82,8 +82,13 @@ svg#bee {
       </a>
       <h1 class="pt-2 text-blue-title leading-relaxed xtracking-tight text-4xl sm:text-6xl drop-shadow-lg" style="font-variation-settings: 'wght' 500;"><span class="inline-block"><strong>Document</strong>, <strong>Test</strong>, & <strong>Monitor</strong></span><br/>the most reliable <span class="decoration-amber-300 underline underline-offset-4">APIs!</span></h1>
       <div class="pt-8 space-y-8 xsm:pr-20">
-        <p class="max-w-xl prose font-normal text-2xl lg:text-3xl"><strong>Tools</strong> to <span class="inline-block"><strong>Document</strong>, <strong>Test</strong>, & <strong>Monitor</strong></span> the most reliable APIs.<br/>
+        <!-- <p class="max-w-xl prose font-normal text-2xl lg:text-3xl"><strong>Tools</strong> to <span class="inline-block"><strong>Document</strong>, <strong>Test</strong>, & <strong>Monitor</strong></span> the most reliable APIs.<br/> -->
+        <!-- </p> -->
+        <p class="xmax-w-xl prose font-normal text-xl md:text-2xl">Reduce <strong>downtime</strong> & customer <strong>complaints</strong>. <strong>Fix issues</strong> faster.<br/>
+        We’ll tell you when your APIs break before your customers do.<br/>
         </p>
+        <!-- <p class="xmax-w-xl prose font-normal text-xl md:text-2xl pt-2">We'll Verify your API payloads are returning the correct data. -->
+        <!-- </p> -->
         <!-- <div class="text-center py-4 sm:hidden"> -->
         <!--   <img -->
         <!--     src="/assets/img/ill_man_measuring.svg" -->
@@ -161,7 +166,10 @@ svg#bee {
 <div class="text-base sm:text-lg" data-hs="fade up">
 All the <strong>Tools</strong> you need to <strong>design</strong> your APIs, <strong>interpret</strong> what's going on in your APIs, <strong>Investigate incidents</strong> and <strong>generate insights</strong>. In one package.
 <br/><br/>
+We'll <strong>Verify</strong> your API payloads are returning the <strong>correct data</strong>.
+<br/>
 With <strong>daily & weekly reports</strong> on everything going on in your services.
+<br/>
 <br/><br/><br/><br/>
 </div>
 
@@ -404,7 +412,7 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
 <div class="benefit-section px-2 sm:px-0">
 
 #### <span class="bg-amber-300 px-2 rounded-md"><strong class="drop-shadow-md">Always up to date Documentation</strong></span>
-### Collaborate with your team and our AI,<br/>on your latest API Spec
+### Collaborate with your team/our AI,<br/>to build your OpenAPI Spec/Docs
 <p data-hs="fade up" class="pt-3 prose m-w-prose">Design your APIs with <strong>always up to date</strong> API Docs; Manually written by you, or <strong>auto-generated</strong> by APIToolkit AI based off your <strong>live traffic</strong>, or both. 
 </p>
 
