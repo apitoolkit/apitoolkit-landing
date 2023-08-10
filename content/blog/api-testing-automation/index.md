@@ -1,5 +1,5 @@
 ---
-title: "Ultimate Guide to API Testing Automation"
+title: 'Ultimate Guide to API Testing Automation'
 date: 2023-08-05T12:36:58+02:00
 author: collins
 description: API testing is the process of verifying that an API (Application Programming Interface) works as expected and meets the requirements of its consumers.
@@ -9,7 +9,7 @@ categories:
 
 ![API Testing Automation](./api-test-automation_png.png)
 
-API testing automation is a crucial aspect of software development that ensures the quality, performance, and reliability of APIs. The number of [APIs](https://apitoolkit.io/blog/the-ultimate-api-management-strategy/) are expanding exponentially on a yearly basis. Therefore, directing automated tests on the APIs has turned into a pivotal step in the software development process since malfunctioning or [ineffective APIs](https://apitoolkit.io/blog/anomalies-in-restful-apis/) can result in lower product acquisition and ultimately a loss in revenue. 
+API testing automation is a crucial aspect of software development that ensures the quality, performance, and reliability of APIs. The number of [APIs](https://apitoolkit.io/blog/the-ultimate-api-management-strategy/) are expanding exponentially on a yearly basis. Therefore, directing automated tests on the APIs has turned into a pivotal step in the software development process since malfunctioning or [ineffective APIs](https://apitoolkit.io/blog/anomalies-in-restful-apis/) can result in lower product acquisition and ultimately a loss in revenue.
 
 In this comprehensive guide, you will learn everything you need about API testing automation, from its definition and importance to the tools and frameworks that can help you achieve it. You will also gain a deeper understanding of APIs and their functionality, as well as the steps and best practices for preparing for API testing automation.
 
@@ -23,6 +23,7 @@ API testing is the process of verifying that an API (Application Programming Int
 As compared to manual testing, automated API testing can help developers and testers save time, reduce errors, increase coverage, and ensure the quality of software applications that rely on APIs for communication and data exchange.
 
 ## What are the Types of API Testing?
+
 The different types of API testing are:
 
 - Functional Testing
@@ -30,7 +31,7 @@ The different types of API testing are:
 - Stress Testing
 - Exception or negative Testing
 - Performance Testing, and
-- Load testing 
+- Load testing
 
 ![Types of API Testing](./types-of-api-testing_png.png)
 
@@ -114,7 +115,7 @@ To write effective test cases for API testing automation, you should follow thes
 
 To automate API testing, you need to follow some steps:
 
-1. **Choose an API testing automation tool that suits the needs and preferences of the project.** There are many tools available for API testing automation, such as [APIToolkit Tester](https://usetestkit.com/), ZAPTEST1, Assertible2, Postman3, SoapUI4, and more. 
+1. **Choose an API testing automation tool that suits the needs and preferences of the project.** There are many tools available for API testing automation, such as [APIToolkit Tester](https://usetestkit.com/), ZAPTEST1, Assertible2, Postman3, SoapUI4, and more.
 
 Some factors to consider when choosing an API testing automation tool are:
 
@@ -142,7 +143,7 @@ Read: [10 Must-Know API Trends in 2023](https://apitoolkit.io/blog/api-trends/)
 
 ## Handling Data Validation and Assertions
 
-Data validation and assertions are essential components of your test cases that help you verify the correctness and accuracy of your API responses. Data validation is the process of checking whether the data returned by your API matches the expected format, structure, and values. 
+Data validation and assertions are essential components of your test cases that help you verify the correctness and accuracy of your API responses. Data validation is the process of checking whether the data returned by your API matches the expected format, structure, and values.
 
 Assertions are statements that compare the actual results of your test cases with the expected results and determine whether the test passed or failed.
 
@@ -281,6 +282,7 @@ Download and install [Testkit](https://usetestkit.com).
 Launch Testkit and create a new collection named “API Testing Automation”.
 
 In the collection, create a new request named “Get Users” with the following details:
+
 - Method: GET
 - URL: https://jsonplaceholder.typicode.com/users
 
@@ -288,26 +290,20 @@ Click on “Send” button to send the request and see the response in JSON form
 
 Click on “Tests” tab to write some test scripts using JavaScript syntax. For example:
 
-```// Check status code is 200
-pm.test("Status code is 200", function () {
-    pm.response.to.have.status(200);
-});
-
-// Check response time is less than 200 ms
-pm.test("Response time is less than 200 ms", function () {
-    pm.expect(pm.response.responseTime).to.be.below(200);
-});
-
-// Check response body is not empty
-pm.test("Response body is not empty", function () {
-    pm.expect(pm.response.text()).to.not.be.empty;
-});
-
-// Check response body contains 10 users
-pm.test("Response body contains 10 users", function () {
-    var jsonData = pm.response.json();
-    pm.expect(jsonData.length).to.equal(10);
-});
+```yaml
+- title: Get users
+  GET: https://jsonplaceholder.typicode.com/users
+  asserts:
+    # Status code is 200
+    ok: $.resp.status == 200
+    # Check response body contains 10 users
+    ok: $.resp.json.length() == 10
+    # First user to be bre
+    ok: $.resp.json[0].username == "Bret"
+    # Id to be a number
+    number: $.resp.json[*].id
+    # Check response body is not empty
+    ok: $.resp.json.length() != 0
 ```
 
 Click on “Send” button again to run the test scripts and see the test results in the “Test Results” tab.
@@ -324,7 +320,7 @@ Click on “Runner” button to open the Collection Runner window, where one can
 
 One of the main challenges of API testing automation is dealing with flaky tests, which are tests that produce inconsistent results (pass or fail) when run multiple times under the same conditions. Flaky tests can undermine the reliability and credibility of the test results, and cause confusion and frustration among the testers and developers.
 
-Flaky tests can be caused by various factors, such as network issues, concurrency problems, timing issues, external dependencies, insufficient test data, or bugs in the test code or the API itself. To handle flaky tests, you need to identify the root cause of the flakiness and fix it accordingly. 
+Flaky tests can be caused by various factors, such as network issues, concurrency problems, timing issues, external dependencies, insufficient test data, or bugs in the test code or the API itself. To handle flaky tests, you need to identify the root cause of the flakiness and fix it accordingly.
 
 Some of the common ways to identify and fix flaky tests are:
 
