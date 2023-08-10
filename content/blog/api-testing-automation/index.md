@@ -9,7 +9,7 @@ categories:
 
 ![API Testing Automation](./api-test-automation_png.png)
 
-API testing automation is a crucial aspect of software development that ensures the quality, performance, and reliability of APIs. The number of [APIs](https://apitoolkit.io/blog/the-ultimate-api-management-strategy/) are expanding exponentially on a yearly basis. Therefore, directing automated tests on the APIs has turned into a pivotal step in the software development process since malfunctioning or [ineffective APIs](https://apitoolkit.io/blog/anomalies-in-restful-apis/) can result in lower product acquisition and ultimately a loss in revenue.
+API testing automation is a crucial aspect of software development that ensures the quality, performance, and reliability of APIs. The number of [APIs](https://apitoolkit.io/blog/the-ultimate-api-management-strategy/) are expanding exponentially on a yearly basis. Therefore, directing automated tests on the APIs has turned into a pivotal step in the software development process. This is because malfunctioning or [ineffective APIs](https://apitoolkit.io/blog/anomalies-in-restful-apis/) can result in lower product acquisition and ultimately a loss in revenue.
 
 In this comprehensive guide, you will learn everything you need about API testing automation, from its definition and importance to the tools and frameworks that can help you achieve it. You will also gain a deeper understanding of APIs and their functionality, as well as the steps and best practices for preparing for API testing automation.
 
@@ -58,6 +58,8 @@ This type of testing checks how fast and efficient the API is in delivering its 
 ### Load testing
 
 This type of testing checks how the API performs under normal or expected conditions, such as moderate load, average concurrency, or sufficient resources. It helps evaluate the stability, consistency, and reliability of the API. Load testing helps ensure that the API can deliver its functionality without compromising its quality.
+
+Read: [Load Testing vs Stress Testing: What's the Difference and Why It Matters](https://apitoolkit.io/blog/load-testing-vs-stress-testing-differences/)
 
 ## Why API Testing Automation is Important
 
@@ -227,8 +229,11 @@ Some of the essential elements of API test reporting and metrics are:
 Test reports are documents that summarize the outcomes and details of the test execution. They typically include information such as:
 
 **Test summary**: A high-level overview of the test objectives, scope, duration, status, pass/fail rate, etc.
+
 **Test details**: A low-level breakdown of the test cases, steps, inputs, outputs, assertions, validations, errors, etc.
+
 **Test logs**: A chronological record of the test events, actions, messages, responses, etc.
+
 **Test screenshots**: A visual representation of the test scenarios, interfaces, results, etc.
 
 Test reports should be generated automatically by the test tools or frameworks after each test run. They should be formatted in a clear, concise, and consistent manner that is easy to read and understand. They should also be stored in a central location that is accessible to all relevant parties.
