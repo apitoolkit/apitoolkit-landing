@@ -275,9 +275,9 @@ KPIs should be defined and measured periodically by using user feedback tools or
 
 ## Example of API Testing Automation
 
-Here is an example of how to automate API testing using [Testkit](usetestkit.com), a popular tool for API development and testing.
+Here is an example of how to automate API testing using [Testkit](https://www.usetestkit.com), a popular tool for API development and testing.
 
-Download and install [Testkit](https://usetestkit.com).
+Download and install [Testkit](https://www.usetestkit.com).
 
 Launch Testkit and create a new collection named “API Testing Automation”.
 
