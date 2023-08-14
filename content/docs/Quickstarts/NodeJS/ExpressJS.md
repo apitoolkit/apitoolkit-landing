@@ -21,6 +21,7 @@ npm install apitoolkit-express
 Intialize apitoolkit into your project is as simple as :
 
 ```js
+import APIToolkit from 'apitoolkit-express';
 const apitoolkitClient = await APIToolkit.NewClient({ apiKey: '<API-KEY>' });
 ```
 where ```<API-KEY>``` is the API key which can be generated from your  [apitoolkit.io](apitoolkit.io) accoun
@@ -38,7 +39,9 @@ where app is your express js instance.
 Your final could might look something like this:
 
 ```js
-const express = require('express');
+import express from 'express';
+import APIToolkit from 'apitoolkit-express';
+
 const app = express();
 const port = 3000;
 
@@ -61,7 +64,8 @@ While it's possible to mark a field as redacted from the apitoolkit dashboard, t
 To mark fields that should be redacted, simply add them to the apitoolkit config object. Eg:
 
 ```js
-const express = require('express');
+import express from 'express';
+import APIToolkit from 'apitoolkit-express';
 const app = express();
 const port = 3000;
 
