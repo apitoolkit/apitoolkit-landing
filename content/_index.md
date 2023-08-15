@@ -93,7 +93,7 @@ The single platform for the entire API lifecycle: <strong id="header-typewriter"
     Get a demo &nbsp;
   </a>
   <div class="sm:space-x-5 text-base" data-hs="fade up">
-    <small class="inline-block">✓ Always free plan</small>
+    <small class="inline-block">✓ Privacy controls</small>
     <small class="inline-block">✓ GDPR compliant</small>
     <small class="inline-block">✓ Security first</small>
   </div>
