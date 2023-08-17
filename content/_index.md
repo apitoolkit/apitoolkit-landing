@@ -15,6 +15,13 @@ showcase:
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <style>
+.formkit-alert {
+    font-weight: bold;
+    font-size: large;
+    margin: 2rem;
+    line-height: 2rem;
+    color: #353f5f;
+}
 .jarallax {
   position: relative;
   z-index: 0;
@@ -725,36 +732,29 @@ Join us on this exciting journey!
           <small class="text-blue-title font-semibold px-1"
             >Subscribe to keep up with our journey below</small
           >
-<div id="6430710fa90d72f544ac4d87" style="width: 100%; height: 100%;">
-    <div id="6430710fa90d72f544ac4d87-form" class="6430710fa90d72f544ac4d87-template" >
-        <div id="selected-_ok1f66w6r" class="ap3w-embeddable-form-6430710fa90d72f544ac4d87 ap3w-embeddable-form-6430710fa90d72f544ac4d87-full ap3w-embeddable-form-6430710fa90d72f544ac4d87-solid" data-select="true">
-            <form id="ap3w-embeddable-form-6430710fa90d72f544ac4d87" class="ap3w-embeddable-form-content flex flex-col sm:flex-row mt-4">
-                <div id="selected-_bilsjlm83" class="sm:w-96 grow  ap3w-form-input ap3w-form-input-6430710fa90d72f544ac4d87" data-select="true" data-field-id="str::email" data-merge-strategy="override">
-                    <input type="email" id="ap3w-form-input-email-6430710fa90d72f544ac4d87" step="1" name="email" required="" 
-                        class="border border-blue-500 rounded-md px-4 py-2 text-xs w-full" name="email_address"
-                        placeholder="Email address. eg abc@example.com"
-                    />
-                </div>
-                <div id="selected-_v0kuy19nx" class="ap3w-form-button ap3w-form-button-6430710fa90d72f544ac4d87">
-                    <button id="ap3w-form-button-6430710fa90d72f544ac4d87" type="submit" data-select="true" data-button-on-click="thank-you"
-                        class="rounded-md bg-blue-900 hover:bg-blue-800 border-blue-900 text-xs text-white inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0"
-                    >Subscribe</button>
-                </div>
-            </form>
-        </div>
-    </div>
-    <div id="6430710fa90d72f544ac4d87-thank-you" class="6430710fa90d72f544ac4d87-template" style="display: none;">
-        <div id="selected-_zv10celpx" class="ap3w-embeddable-form-6430710fa90d72f544ac4d87 ap3w-embeddable-form-6430710fa90d72f544ac4d87-full ap3w-embeddable-form-6430710fa90d72f544ac4d87-solid" data-select="true">
-            <form id="ap3w-embeddable-form-6430710fa90d72f544ac4d87" class="ap3w-embeddable-form-content">
-                <div id="selected-_z3k25bmgb" class="ap3w-text ap3w-text-6430710fa90d72f544ac4d87 ap3w-text--first ap3w-text--last">
-                    <div data-select="true">
-                        <p data-size="h1" class="text-lg py-4">Success! Now check your email to confirm your subscription.</p>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
+          <form
+            action="https://app.convertkit.com/forms/2724709/subscriptions"
+            class="seva-form formkit-form"
+            method="post"
+            data-sv-form="2724709"
+            data-uid="15d365ef1d"
+            data-format="inline"
+            data-version="5"
+            data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"Success! Now check your email to confirm your subscription.","redirect_url":""},"analytics":{"google":null,"facebook":null,"segment":null,"pinterest":null,"sparkloop":null,"googletagmanager":null},"modal":{"trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"powered_by":{"show":true,"url":"https://convertkit.com?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic"},"recaptcha":{"enabled":false},"return_visitor":{"action":"show","custom_content":""},"slide_in":{"display_in":"bottom_right","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"sticky_bar":{"display_in":"top","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15}},"version":"5"}'
+          >
+            <div>
+              <input
+                class="border border-blue-500 rounded-md px-4 py-2 text-xs w-full sm:w-96"
+                name="email_address"
+                placeholder="Email address. eg abc@example.com"
+              />
+              <button
+                class="rounded-md bg-blue-900 hover:bg-blue-800 border-blue-900 text-xs text-white inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0"
+              >
+                Subscribe 
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
