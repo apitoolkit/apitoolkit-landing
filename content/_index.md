@@ -76,9 +76,9 @@ background-repeat: repeat;
 --
 
 **Reduce** customer **Bug & Support Tickets**. Increase team **velocity**
-{.text-2xl}
+{.text-xl .sm:text-2xl}
 The single platform for the entire API lifecycle: <strong id="header-typewriter"></strong>
-{.text-2xl}
+{.text-xl .pt-2 .sm:text-2xl}
 
 <!-- {{< param "title" >}} -->
 
@@ -732,29 +732,7 @@ Join us on this exciting journey!
           <small class="text-blue-title font-semibold px-1"
             >Subscribe to keep up with our journey below</small
           >
-          <form
-            action="https://app.convertkit.com/forms/2724709/subscriptions"
-            class="seva-form formkit-form"
-            method="post"
-            data-sv-form="2724709"
-            data-uid="15d365ef1d"
-            data-format="inline"
-            data-version="5"
-            data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"Success! Now check your email to confirm your subscription.","redirect_url":""},"analytics":{"google":null,"facebook":null,"segment":null,"pinterest":null,"sparkloop":null,"googletagmanager":null},"modal":{"trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"powered_by":{"show":true,"url":"https://convertkit.com?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic"},"recaptcha":{"enabled":false},"return_visitor":{"action":"show","custom_content":""},"slide_in":{"display_in":"bottom_right","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"sticky_bar":{"display_in":"top","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15}},"version":"5"}'
-          >
-            <div>
-              <input
-                class="border border-blue-500 rounded-md px-4 py-2 text-xs w-full sm:w-96"
-                name="email_address"
-                placeholder="Email address. eg abc@example.com"
-              />
-              <button
-                class="rounded-md bg-blue-900 hover:bg-blue-800 border-blue-900 text-xs text-white inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0"
-              >
-                Subscribe 
-              </button>
-            </div>
-          </form>
+            <script async data-uid="15d365ef1d" src="https://apitoolkit.ck.page/15d365ef1d/index.js"></script>
         </div>
       </div>
     </div>
