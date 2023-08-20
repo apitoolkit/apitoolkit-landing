@@ -21,7 +21,7 @@ Trust your APIs, and only pay for what you use as you grow.
 
 <div class="flex flex-col sm:flex-row text-sm bg-white drop-shadow-xl pricing-card mt-8  divide-y sm:divide-x-none  divide-x border-2">
 
-<div class="flex flex-1 hidden">
+<div class="flex flex-1 ">
 
 ### Free
 #### **$0**/mo
