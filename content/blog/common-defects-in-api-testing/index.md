@@ -6,7 +6,7 @@ categories:
   - API Testing
 ---
 
-![common defects in api testing](how-to-identify-and-fix-them.png)
+![common defects in api testing](common-defects-in-api-testing.png)
 
 > Technology, like art, is a soaring exercise of the human imagination.  
 > - Daniel Bell
@@ -66,7 +66,7 @@ Imagine playing a game where sometimes, when you lose, you get a detailed explan
 
 Inconsistent error handling refers to the irregular or varied ways in which a system, such as an API, responds to different errors or issues. Instead of providing uniform and descriptive error messages, an API with inconsistent error handling might return vague messages, differing formats, or even fail silently without any indication of the problem. This unpredictability can be confusing for developers, making it challenging to diagnose and address issues. Such inconsistency can stem from a lack of standardization in the development process, oversight, or even changes introduced over multiple iterations without proper documentation.
 
-![how to ientify and fix api testing common defect](common-defects-in-api-testing.png)
+![how to identify and fix api common defects](how-to-identify-and-fix.png)
 
 ## How to Identify and Fix Them
 
