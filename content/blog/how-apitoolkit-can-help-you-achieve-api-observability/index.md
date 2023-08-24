@@ -1,9 +1,9 @@
 ---
 title: "How APIToolkit Can Help You Achieve API Observability Across Your Entire API Lifecycle "
-date: 2022-12-04T08:00:00+00:00
+date: 2022-24-08T08:00:00+00:00
 author: jessica
 categories:
-  - APIs
+  - APIs Observability
 --- 
 
 ![api observability](api-observability.png)
@@ -38,7 +38,7 @@ As for the maintenance stage, it's a never-ending cycle. The API needs to evolve
 
 ![api dashboard](apitoolkit-dashboard.png)
 
-### Key Features of APIToolkit:
+### Key Features of APIToolkit
 
 Design & Mocking: APIToolkit provides an intuitive interface to design your API endpoints, set expected behaviours, and mock responses. This ensures that even in the design phase, you're building with observability in mind.
 Real-time Monitoring: Track API requests, response times, error rates, and more. APIToolkit's dashboard offers a holistic view of your API's health at a glance.
