@@ -1,6 +1,6 @@
 ---
 title: "How APIToolkit Can Help You Achieve API Observability Across Your Entire API Lifecycle "
-date: 2023-24-08T08:00:00+00:00
+date: 2023-08-24T08:00:00+00:00
 author: jessica
 categories:
   - APIs Observability
