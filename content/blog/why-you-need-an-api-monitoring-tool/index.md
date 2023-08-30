@@ -31,7 +31,7 @@ Feel free to join the community or book a call with Anthony to chat about your e
 ![APIToolkit Log Explorer](./api-query.png)
 Image source: [APIToolkit](https://apitoolkit.io)'s Log Explorer feature
 
-To keep our users informed in real time, we offer live auto-generated API documentation, contract monitoring and alerts. This ensures you’re notified of any changes to your APIs. New fields, new endpoints, empty fields, changes in field types, etc.
+To keep our users informed in real time, we offer [live auto-generated API documentation](https://apitoolkit.io/api-documentation-and-developer-portals/), contract monitoring and alerts. This ensures you’re notified of any changes to your APIs. New fields, new endpoints, empty fields, changes in field types, etc.
 
 Our plug & play integration also lets you view your live API shapes, fields, etc., and generate Swagger docs at anytime via your live traffic.
 
@@ -58,7 +58,7 @@ Utilize a variety of parameters to segment and aggregate API calls at scale
 
 ![API Anomalies Dashboard](./api-anomalies-dashboard.png)
 
-Our powerful Anomaly Detector tool monitors your API endpoints traffic and reports any form of changes to you. It metoculously monitors your endpoints, tracking activities and alerting you about any alteration or changes – your watchman during the day and at night.
+Our powerful [Anomaly Detector tool](https://apitoolkit.io/api-anomalies-validation-and-checks/) monitors your API endpoints traffic and reports any form of changes to you. It metoculously monitors your endpoints, tracking activities and alerting you about any alteration or changes – your watchman during the day and at night.
 
 Examples of an anomaly could be that a new endpoint was created, a new field was added to the endpoints, a field is behaving differently from how it used to, an endpoint speed has suddenly dropped, a sudden drop in your traffic, etc. Basically, any form of changes to your endpoints that returns an unfamiliar response will be tracked and reported by our powerful Anomaly Detector tool. It’s now left for you to acknowledge whether the change was sanctioned by you, or you take action.
 
@@ -70,7 +70,7 @@ Generally, we spot errors and address them before your customers do.
 
 ![APIToolkit Dashboard Interface](./api-throughput.png)
 
-In a situation whereby your APIs are experiencing errors, latency, downtime, or anomalies, APIToolkit raises an alarm, alerting you right on time. You can then drill down into the root cause of the issue via our Log Explorer. APIToolkit empowers you with the tools to track and resolve errors and bugs before your customers notice them.
+In a situation whereby your APIs are experiencing errors, latency, downtime, or anomalies, [APIToolkit raises an alarm](https://apitoolkit.io/api-performance-monitoring-and-compliance/), alerting you right on time. You can then drill down into the root cause of the issue via our Log Explorer. APIToolkit empowers you with the tools to track and resolve errors and bugs before your customers notice them.
 
 ## 6. Refactor and Migrate Safely
 You no longer have to break your APIs to refactor them. Catch bugs and changes due to refactorings or migrations faster than your customers. Stay on top of your game with one dashboard that provides you with the analytics you need for seamless service.
