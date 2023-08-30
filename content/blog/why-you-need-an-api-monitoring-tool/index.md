@@ -12,7 +12,7 @@ categoties:
 
 Your website is a dynamic entity. A lot happens on a daily basis; hundreds or more [API](https://apitoolkit.io/blog/best-api-monitoring-and-observability-tools/) requests are sent regularly which makes monitoring the integrity of each call a demanding task.
 
-Developers may choose to ignore APIs that are provided by reputable companies. However, data shows that even the most reputable developer playgrounds like [Discord](https://www.reddit.com/r/discordapp/comments/1642251/discord_server_outage/) and Slack have experienced [downtime](https://apitoolkit.io/blog/api-downtime/) due to APIs breaking. No one’s immune to downtime.
+Developers may choose to ignore APIs that are provided by reputable companies. However, data shows that even the most reputable developer playgrounds like [Discord](https://www.reddit.com/r/discordapp/comments/1642251/discord_server_outage/) and Slack have experienced [downtime](https://apitoolkit.io/blog/api-downtime/) due to APIs breaking. The truth is, no one’s immune to downtime.
 
 The good news is that a Plug-and-play [API observability and monitoring](https://apitoolkit.io/blog/api-documentation-and-observability-the-truth-you-must-know/) tool like APIToolkit can show your data in real time and alert you the second something breaks. This ensures you stay on top of your processes.
 
