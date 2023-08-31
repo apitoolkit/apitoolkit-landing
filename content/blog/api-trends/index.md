@@ -11,17 +11,19 @@ categories:
 
 According to [Google](https://cloud.google.com/blog/products/api-management/7-ideas-for-the-future-of-apis), APIs are now the “crown jewels” of modern software development, providing the connective tissue that powers nearly every [digital product](https://apitoolkit.io/blog/api-as-a-product/) available today.
 
-What do developers do with APIs these days? Find out in this breakdown of the relevant trends in API use in 2023
+But what do developers do with APIs these days? Find out in this breakdown of the relevant trends in API use in 2023.
 
-What is the future of APIs? Where are we headed in this burgeoning intersystem communications industry that has brought us closer and helped us work more efficiently than any innovation since the invention of the world wide web? 
+What is the future of APIs? Where are we headed in this burgeoning intersystem communications industry that has brought us closer and helped us work more efficiently than any innovation since the invention of the world wide web?
 
 I'll tell you this for free; as much as we've progressed in the use and development of APIs, there's still so much untapped potential. 
 
 A 2021 [State of the API Report by Postman](https://www.postman.com/state-of-api/the-future-of-apis/), revealed that organizations will keep on investing in APIs as an essential part of their business strategies.
 
-What's more, according to the majority of respondents (94%) in that study, the investments in APIs will grow or stay the same for the next year. There's no sign of slowing down. 
+What's more, according to the majority of respondents (94%) in that study, the investments in APIs will grow or stay the same for the next year. There's no sign of slowing down.
 
-To help you make the best choices going forward, I've curated a list of the most relevant API trends you should know about
+According to a [MuleSoft survey](https://www.mulesoft.com/resources/api/what-is-an-api), 90% of executives say that APIs are mission-critical to their businesses.
+
+To help you make the best choices going forward, I've curated a list of the most relevant API trends you should know about.
 
 ## Must-Know API Trends in 2023
 - API analytics and monitoring platforms
@@ -78,6 +80,8 @@ A prime AI/ML API example worthy of note is Amazon Machine API. This API helps u
 
 The API is built on the Amazon cloud platform and so it allows users to choose from many pre-trained AI services for forecasting, computer vision, language, and other capabilities.
 
+Read: [Key Benefits of API Integration for Developers (with Statistics)](https://apitoolkit.io/blog/benefits-of-api-integration/)
+
 Read: [How to Write API Docuentation: 10 Essential Guidelines](https://apitoolkit.io/blog/how-to-write-api-docs/)
 
 ## 5. Improvement in API Security Standards
@@ -112,8 +116,6 @@ Allied Market Research predicts that the market share of microservices will incr
 
 API management will become extremely important. API management solutions will help businesses secure their APIs, monitor their usage, and improve their performance.
 
-[Serverless computing](https://www.ibm.com/topics/serverless) is a popular trend in the cloud computing space. In 2023, we can expect to see more APIs that support serverless architecture. This will make it easier for businesses to develop and deploy APIs without having to worry about managing servers.
-
 Read: [Key Benefits of API Integration for Developers](https://apitoolkit.io/blog/benefits-of-api-integration/)
 
 ## Final Thoughts
@@ -123,6 +125,8 @@ It doesn't matter the industry, many teams and companies are trending towards ad
 To leverage new opportunities, companies should embrace an API management platform that can safely consume available external AI and ML APIs. This requires advanced API security features, solid analytics, and a convenient interface to manage the lifecycle.
 
 **Also Read**:
+
+[Web API Performance Best Practices: the Ultimate Guide](https://apitoolkit.io/blog/web-api-performance/)
 
 [Ultimate Guide to API Testing Automation](https://apitoolkit.io/blog/api-testing-automation)
 
