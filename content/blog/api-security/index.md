@@ -33,7 +33,7 @@ Throttling, on the other hand, limits the rate at which requests are processed b
 
 ### B. Implement Secure Authentication Mechanisms
 
-Authentication is the process of verifying the identity of the user or client that is requesting access to the web API. A secure authentication mechanism should ensure that only authorized users or clients can access the web API, and that their credentials are protected from interception or tampering.
+Authentication is the process of verifying the identity of the user or client that is requesting access to the web API. A secure authentication mechanism should ensure that only authorized users or clients can access the web API, and that their credentials are protected.
 
 Here are a few recommended mechanisms:
 
