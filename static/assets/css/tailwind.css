@@ -3,18 +3,39 @@
 @tailwind utilities;
 
 @layer base {
-html, body {
-  font-size: 16px;
-}
+  html, body {
+    font-size: 16px;
+  }
 
-.text-blue-title {
-   color: #353f5f;
-    /* @aply text-sky-700; */
-}
+  .text-blue-title {
+     color: #353f5f;
+      /* @aply text-sky-700; */
+  }
 
-.text-2xs {
-  font-size: 0.464rem;
-}
+  .text-2xs {
+    font-size: 0.464rem;
+  }
+    .pricing-card {
+      @apply border border-gray-100 ;
+    }
+    .pricing-card .flex-1 {
+      @apply p-3 flex-col  place-content-around;
+    }
+    .pricing-card .flex-1 > h3 {
+      @apply text-3xl font-medium pb-3;
+    }
+    .pricing-card .flex-1 > h4 > strong {
+      @apply text-4xl font-medium;
+    }
+    .pricing-card h3, .pricing-card h4, .pricing-card strong  {
+      color: currentColor;
+    }
+    .pricing-card h4  {
+      @apply font-medium;
+    }
+    .pricing-card  .price-range {
+      @apply w-full h-1 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700;
+    }
 }
 
 @layer base {
@@ -111,34 +132,12 @@ html, body {
       background-color: hsl(33deg 100% 88%);
     }
 
-    .pricing-card {
-      @apply border border-gray-100 ;
-    }
-    .pricing-card .flex-1 {
-      @apply p-3 flex flex-col  place-content-around;
-    }
-    .pricing-card .flex-1 > h3 {
-      @apply text-3xl font-medium pb-3;
-    }
-    .pricing-card .flex-1 > h4 > strong {
-      @apply text-4xl font-medium;
-    }
-    .pricing-card h3, .pricing-card h4, .pricing-card strong  {
-      color: currentColor;
-    }
-    .pricing-card h4  {
-      @apply font-medium;
-    }
-    .pricing-card  .price-range {
-      @apply w-full h-1 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700;
-    }
-
   .home-feature-section ul {
       @apply list-disc space-y-1;
   }
   
   .showcase1-buttons {
-      @apply cursor-pointer inline-block border border-blue-900 text-blue-900 px-3 py-1 text-sm rounded-lg;
+      @apply drop-shadow-lg cursor-pointer inline-block border-2 border-blue-900 text-blue-900 px-2 sm:px-5 py-1 sm:py-2 rounded-lg text-center;
     }
   .showcase1-buttons-active {
     @apply bg-blue-900 text-white;

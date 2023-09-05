@@ -32,6 +32,16 @@ post = "/:filename/"
 [markup.goldmark.renderer]
 unsafehtml=true
 unsafe=true
+hardWraps = true 
+
+[markup.goldmark.parser]
+autoHeadingID = true
+autoHeadingIDType = "github"
+wrapStandAloneImageWithinParagraph = true
+[markup.goldmark.parser.attribute]
+block = true 
+title = true
+
 
 [sitemap]
 theme="apitoolkit" 

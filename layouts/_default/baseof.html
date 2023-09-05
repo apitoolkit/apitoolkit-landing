@@ -2,10 +2,12 @@
 <html prefix="og: http://ogp.me/ns#" lang="{{ .Language }}">
 {{- partial "head.html" . -}}
 
-<body class="relative pt-6">
+<body class="relative ">
   {{- partial "header.html" . -}}
-  <div class="text-center z-10  sticky top-0 py-2 bg-white">
-    <nav class="inline-block  w-full md:max-w-5xl px-2 md:px-0">
+{{ with .Params.HideNav }}
+{{else}}
+  <div class="text-center z-10  sticky top-0 py-3 bg-white">
+    <nav class="inline-block  w-full md:max-w-6xl px-2 md:px-0">
       <div class="flex flex-row justify-between items-center content-between">
         <a href="/" class="inline-block">
           <img src="/assets/img/logo-full.svg" alt="APItoolkit logo" class="h-6 hidden sm:inline-block"/>
@@ -26,6 +28,7 @@
       </div>
     </nav>
   </div>
+  {{end}}
 
   <div id="content">{{- block "main" . }}{{- end }}</div>
 
@@ -43,8 +46,7 @@
   </script>
 
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11285541899">
-</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11285541899"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -53,16 +55,19 @@
   gtag('config', 'AW-11285541899');
 </script>
 
-  <script>
-    // Set the options globally
-    // to make LazyLoad self-initialize
-    window.lazyLoadOptions = {
-      // Your custom settings go here
-    };
-  </script>
-  <script async src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.4/dist/lazyload.min.js"></script>
-</body>
+<script>
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    // Your custom settings go here
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.4/dist/lazyload.min.js"></script>
 
+<script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="9e7374e9-5572-4131-b1fa-86164ffeca01";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+</body>
 </html>
+
+
 
 

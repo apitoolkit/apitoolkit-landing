@@ -1,6 +1,6 @@
 ---
 title: "Generating Golang API Doc with Swagger"
-date: 2022-12-04T08:00:00+00:00
+date: 2023-09-01T08:00:00+00:00
 author: jessica
 categories:
   - APIs

@@ -4,30 +4,38 @@ date: 2022-03-23
 publishdate: 2022-03-24
 layout: baseonly
 ---
+
+
+
 <section class="text-center pt-5">
+
+<p class="text-sm leading-6 text-white bg-black rounder py-4 py-3 rounded-xl">
+    <strong class="font-bold text-white text-lg">Limited Time Offer:&nbsp; </strong>
+    Use Voucher <strong class="text-white font-bold text-lg">SUMMER23</strong> for 25% off on all plans forever. Offer only valid til 30th August.
+</p>
+
+
 Trust your APIs, and only pay for what you use as you grow.
 <br/>
 14 days free trial included with all plans
 
 <div class="flex flex-col sm:flex-row text-sm bg-white drop-shadow-xl pricing-card mt-8  divide-y sm:divide-x-none  divide-x border-2">
 
-<div class="flex-1">
+<div class="flex flex-1 ">
 
 ### Free
 #### **$0**/mo
 <br/>
 
-**20,000** Reqs / mo <small>included</small><br/>
+**20,000** Reqs / mo <small>included</small>
 
-1 Team Member <br/>
-Last *14 days Data Retained<br/>
-<br/>
-<br/>
+1 Team Member 
+Last *14 days Data Retained
 
 <a class="blue-button" href="https://app.apitoolkit.io/p/new?plan=free&annual">Get Started</a>
-
 </div>
-<div class="flex-1">
+
+<div class="flex flex-1">
 
 ### Hobby
 #### <strong>$<span id="hobby-price">10</span></strong>/mo
@@ -56,7 +64,7 @@ Custom API request validations<br/>
 
 
 </div>
-<div class="flex-1 border sm:border-t-8 border-t-amber-500 bg-amber-100 text-black">
+<div class="flex flex-1 border sm:border-t-8 border-t-amber-500 bg-amber-100 text-black">
 
 ### Startup
 #### <strong class="">*$<span id="startup-price">50</span></strong>/mo
@@ -86,7 +94,7 @@ Custom API request validations<br/>
 
 
 </div>
-<div class="flex-1">
+<div class="flex flex-1">
 
 ### Growth
 #### <strong>$<span id="growth-price">250</span></strong>/mo
@@ -147,7 +155,7 @@ Custom Team members<br/>
 Custom Data Retention<br/>
 </div>
 <div class="flex items-center ">
-<a class="blue-button bg-orange-x-dark" href="https://app.apitoolkit.io/p/new?plan=enterprise&annual">Contact Sales</a>
+<a class="blue-button bg-orange-x-dark" href="mailto:hello@apitoolkit.io">Contact Sales</a>
 </div>
 </div>
 

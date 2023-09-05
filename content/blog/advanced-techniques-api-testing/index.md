@@ -41,7 +41,7 @@ Mock data is a type of synthetic test data that simulates the responses or behav
 
 Mock data can be created using different techniques, such as:
 
-**Stubbing**: This is a technique where the API responses are hardcoded or predefined based on certain criteria or conditions. Stubbing can be done at the code level or using tools that intercept and modify API requests and responses.
+**Stubbing**: This is a technique where the API responses are hardcoded or predefined based on certain criteria or conditions. Stubbing can be done at the code level or using tools that identify and modify API requests and responses which are in flight.
 
 **Mocking**: This is a technique where the [API responses](https://apitoolkit.io/blog/web-api-performance/) are dynamically generated or customized based on certain rules or logic. Mocking can be done using frameworks or tools that create and run mock servers that mimic the real APIs.
 
