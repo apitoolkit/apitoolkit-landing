@@ -61,7 +61,7 @@ With notion, you have the choice of either creating a template from scratch or u
 If creating a custom template from scratch seems like a daunting task, or if you're short on time, Notion's extensive library of pre-designed templates is a fantastic alternative. Templates are essential in Notion since they streamline your approach and allow you to establish a unique platform for each team member. These templates are not only professionally designed but also cover a wide range of use-cases. Here's how you can use an existing template for your documentation:
 
 1. **Access Template Gallery**: On the getting stated page, you'll find an option that says `Templates`. Click on it to open Notion's Template Gallery.
-   ![Getting a new template](getting-a-template.png)
+   ![Getting a new template](getting-started.png)
 2. **Search and Filter**: Use the search bar or filter options to narrow down templates that are most relevant to your documentation needs. You can sort by categories like `Doc`, `Engineering`, `Personal`, and more. I'll choose  a doc because I'm writing a documentation, and docs have different styles to pick from, such as technical specs, architecture overviews, product specs, and so on. All of these may appear similar, but there is a variation in layout, and this is the primary focus.
 3. **Preview Templates**: Click on the template template to see a detailed view. This will give you an idea of the template's layout and features.
 4. **Select a Template**: Once you've found a template that suits your needs, click on `Get Template` to select it.
