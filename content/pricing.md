@@ -1,19 +1,11 @@
 ---
-title: Pay as you grow 
+title: Pay as you grow
 date: 2022-03-23
 publishdate: 2022-03-24
 layout: baseonly
 ---
 
-
-
 <section class="text-center pt-5">
-
-<p class="text-sm leading-6 text-white bg-black rounder py-4 py-3 rounded-xl">
-    <strong class="font-bold text-white text-lg">Limited Time Offer:&nbsp; </strong>
-    Use Voucher <strong class="text-white font-bold text-lg">SUMMER23</strong> for 25% off on all plans forever. Offer only valid til 30th August.
-</p>
-
 
 Trust your APIs, and only pay for what you use as you grow.
 <br/>
@@ -24,21 +16,26 @@ Trust your APIs, and only pay for what you use as you grow.
 <div class="flex flex-1 ">
 
 ### Free
+
 #### **$0**/mo
+
 <br/>
 
 **20,000** Reqs / mo <small>included</small>
 
-1 Team Member 
-Last *14 days Data Retained
+1 Team Member
+Last \*14 days Data Retained
 
 <a class="blue-button" href="https://app.apitoolkit.io/p/new?plan=free&annual">Get Started</a>
+
 </div>
 
 <div class="flex flex-1">
 
 ### Hobby
+
 #### <strong>$<span id="hobby-price">10</span></strong>/mo
+
 <div class="px-3 py-5 hidden">
 <input type="range" value="0" 
     for="hobby-price"
@@ -56,18 +53,19 @@ $1 per extra 10,000 reqs <br/>
 
 2 weeks free trial <br/>
 3 Team Member <br/>
-Last *7 days Data Retained<br/>
+Last \*7 days Data Retained<br/>
 API test pipelines<br/>
 Custom API request validations<br/>
 
 <a class="blue-button" href="https://app.apitoolkit.io/p/new?plan=startup&annual">Get Started</a>
 
-
 </div>
 <div class="flex flex-1 border sm:border-t-8 border-t-amber-500 bg-amber-100 text-black">
 
 ### Startup
-#### <strong class="">*$<span id="startup-price">50</span></strong>/mo
+
+#### <strong class="">\*$<span id="startup-price">50</span></strong>/mo
+
 <div class="px-3 py-5 hidden">
 <input type="range" value="0" 
     for="startup-price"
@@ -85,19 +83,20 @@ $1 per extra 10,000 reqs <br/>
 
 2 weeks free trial <br/>
 5 Team Members <br/>
-Last *14 days Data Retained<br/>
+Last \*14 days Data Retained<br/>
 Popular option<br/>
 API test pipelines<br/>
 Custom API request validations<br/>
 
 <a class="blue-button" href="https://app.apitoolkit.io/p/new?plan=startup&annual">Get Started</a>
 
-
 </div>
 <div class="flex flex-1">
 
 ### Growth
+
 #### <strong>$<span id="growth-price">250</span></strong>/mo
+
 <div class="px-3 py-5 hidden">
   <input type="range" value="0" 
     for="growth-price"
@@ -115,7 +114,7 @@ $1 per extra 12,000 reqs <br/>
 
 2 weeks free trial <br/>
 10 Team members <br/>
-Last *14 days Data Retained <br/>
+Last \*14 days Data Retained <br/>
 API test pipelines<br/>
 Custom API request validations<br/>
 
@@ -138,11 +137,10 @@ Custom API request validations<br/>
 <!-- </div> -->
 </div>
 
-
 <div class="mt-10 flex-1 bg-blue-x-light text-white flex gap-5 py-5 content-around justify-around">
 <div class=" items-center text-white ">
 
-### <span class="text-white">Enterprise</span> 
+### <span class="text-white">Enterprise</span>
 
 </div>
 <div class="flex items-center">
@@ -165,7 +163,8 @@ Custom Data Retention<br/>
 <div class="our_container w-full">
 
 ## Frequently asked Questions
-#### Some questions others have asked 
+
+#### Some questions others have asked
 
 <br/>
 
@@ -198,7 +197,6 @@ Custom Data Retention<br/>
 </div>
 <br/>
 <a class="showcase1-buttons showcase1-buttons-active " href="/faq">See all questions</a>
-
 
 </div>
 </section>
