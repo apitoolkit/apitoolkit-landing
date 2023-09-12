@@ -1,16 +1,16 @@
 ---
-title: The API Developer's Toolbox 
+title: The API Developer's Toolbox
 date: 2022-03-23
 publishdate: 2022-03-24
-description: "Build and maintain your APIs with Less downtimes, Fewer support tickets, Faster time to resolution and always up to date insights into your APIs"
-hidenav: true 
+description: 'Build and maintain your APIs with Less downtimes, Fewer support tickets, Faster time to resolution and always up to date insights into your APIs'
+hidenav: true
 showcase:
-    - title: Monitor
-      video: 
-    - title: Document 
-      video:
-
+  - title: Monitor
+    video:
+  - title: Document
+    video:
 ---
+
 <script src="https://cdn.jsdelivr.net/npm/jarallax@2/dist/jarallax.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
@@ -51,7 +51,21 @@ background-repeat: repeat;
 </style>
 
 <br/>
-<div class=" sticky top-0 z-10 ">
+<div class="sticky top-0 z-10 ">
+    <div id="banner" tabindex="-1" style="display:none;"
+      class="flex z-50 justify-center gap-32 px-4 w-full py-1 bg-blue-900 sm:items-center">
+      <p class="text-sm font-light text-white">
+        ✨ Get 50% discount off our paid plans. Offer valid till September 20 ✨
+      </p>
+      <button data-collapse-toggle="banner" type="button" onclick="closeBanner()"
+        class="flex items-center text-white hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 dark:hover:bg-gray-600 dark:hover:text-white">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd"
+            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+    </div>
     <div class="border border-gray-200 drop-shadow py-3 px-3 md:max-w-6xl inline-block w-full bg-white rounded-xl">
         {{< nav >}}
     </div>
@@ -69,10 +83,11 @@ background-repeat: repeat;
     <div class="jarallax" data-jarallax data-speed="-1">
     {{< bee >}}
 
-[✨ Read the latest updates  🚀](/blog/updates-october-2022/)
+[✨ Read the latest updates 🚀](/blog/updates-october-2022/)
 {class="inline-block bg-blue-900/90 text-white px-5 py-1 text-xs rounded-2xl"}
 
 # <span class="inline-block">How Tech Teams manage <span class="decoration-amber-300 underline underline-offset-4">Reliable APIs!</span> { class="pt-2 text-blue-title leading-relaxed xtracking-tight text-3xl sm:text-5xl drop-shadow-lg"}
+
 --
 
 **Reduce** customer **Bug & Support Tickets**. Increase team **velocity**
@@ -123,7 +138,6 @@ The single platform for the entire API lifecycle: <strong id="header-typewriter"
   </div>
 </section>
 
-
 <div>
     <div class="our_container pb-12 text-center pt-24 sm:pt-0">
         <strong class="pb-4 block"> Loved By Engineers at these companies and more:</strong>
@@ -146,7 +160,6 @@ The single platform for the entire API lifecycle: <strong id="header-typewriter"
 ###### WHY APITOOLKIT?
 ## Empower <span class="bg-amber-300 px-2 rounded-md"><strong class="drop-shadow-md">Developer</strong></span> teams to build <span class="bg-amber-300 px-2 rounded-md inline-block"><strong class="drop-shadow-md">Happier Customer</strong></span> **experiences**.
 
-
 <br/>
 <br/>
 <div class="text-base sm:text-lg" data-hs="fade up">
@@ -159,8 +172,8 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
 <br/>
 </div>
 
-
 ### Many features and more...
+
 {class="mt-12 sm:mt-24"}
 
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-8 text-lg">
@@ -191,7 +204,7 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
 
 <!-- <div class="col-span-4 flex items-center justify-center "> -->
 <!--   <div class="backdrop-opacity-5 backdrop-invert-0 bg-white/50 xgradient1 p-5 md:max-w-3xl rounded-xl drop-shadow w-full" id="intro-video"> -->
-<!--     <!-- <div  class="w-full" style="position: relative; padding-bottom: 65.77344701583435%; height: 0;"><iframe class="rounded-lg border-4 border-gray-200 " src="https://www.loom.com/embed/24ea3ae9600544d68f1001af3f4feac2?hide_title=true&hide_owner=true&hideEmbedTopBar=true" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div> --> 
+<!--     <!-- <div  class="w-full" style="position: relative; padding-bottom: 65.77344701583435%; height: 0;"><iframe class="rounded-lg border-4 border-gray-200 " src="https://www.loom.com/embed/24ea3ae9600544d68f1001af3f4feac2?hide_title=true&hide_owner=true&hideEmbedTopBar=true" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div> -->
 <!--     <div class=""> -->
 <!--         <video class="lazy w-full" loop autoplay> -->
 <!--             <source data-src='/assets/video/APIToolkitDashboardTrimmed.mp4' type='video/mp4'> -->
@@ -203,7 +216,6 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
 <!-- </div> -->
 <!-- </div> -->
 </div>
-
 
 <div class="md:max-w-4xl text-left px-2   text-base sm:text-lg" >
 <!-- Michael Okoh  Thepeer Testimonial -->
@@ -242,11 +254,11 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
 
 </div>
 
-
 <section class="pt-40 px-2 sm:px-0">
 <div data-hs="fade down" >
 
-## Your workflow <span class="bg-amber-300 px-2 rounded-md"><strong class="drop-shadow-md">before</strong></span> APIToolkit 
+## Your workflow <span class="bg-amber-300 px-2 rounded-md"><strong class="drop-shadow-md">before</strong></span> APIToolkit
+
 </div>
 <p class="pt-3 text-lg m-w-prose" data-hs="zoom up"> Not having enough details to discover issues, investigate bugs, and test to ensure bugs don't get reintroduced.</p>
 <br/>
@@ -337,7 +349,6 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
 
 </div>
 
-
 <div data-hs="fade down " class="px-2 sm:px-0">
 
 ## Your Team's workflow <span class="bg-amber-300 px-2 rounded-md"><strong class="drop-shadow-md">with APIToolkit </strong></span>
@@ -345,22 +356,23 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
 <p data-hs="fade up"  class="pt-3 text-lg max-w-3xl inline-block"> You now have enough tools and insight about your APIs and payloads, to discover issues, investigate bugs, and test to ensure bugs don't get reintroduced.</p>
 </div>
 
-
 <br/><br/><br/><br/><br/><br/>
 
 <div class="benefit-section px-2 sm:px-0">
 
 #### <span class="bg-amber-300 px-2 rounded-md"><strong class="drop-shadow-md">Always up to date Documentation</strong></span>
+
 ### Collaborate with your team/our AI,<br/>to build your OpenAPI Spec/Docs
+
 <p data-hs="fade up" class="pt-3 prose m-w-prose">Design your APIs with <strong>always up to date</strong> API Docs; Manually written by you, or <strong>auto-generated</strong> by APIToolkit AI based off your <strong>live traffic</strong>, or both. 
 </p>
 
 <div class="home-feature-section pt-5 pb-24  flex flex-col sm:flex-row odd:flex-col-reverse sm:odd:flex-row  gap-5 x:sm:gap-8 justify-center ">
 <div  class="flex-1  home-feature-text-box text-base">
 
-- Auto generated OpenAPI/Swagger from live traffic 
+- Auto generated OpenAPI/Swagger from live traffic
 - Manually edit swagger or upload from your CI
-- Collaborate on the swagger specs with your team 
+- Collaborate on the swagger specs with your team
 - APIToolkit learns expected service payloads from the swagger.
 
 <br/>
@@ -382,12 +394,12 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
     <!-- <img src="/assets/img/svgs/right-arrow-svgrepo-com.svg" class="w-24 rotate-90 inline-block mr-20"/> -->
 </div>
 
-
-
 <div class="benefit-section px-2 sm:px-0">
 
 #### <span class="bg-amber-300 px-2 rounded-md"><strong class="drop-shadow-md">Performance monitoring & error tracking</strong></span>
-### Monitor Performance and Error Rates 
+
+### Monitor Performance and Error Rates
+
 <p class="pt-3 prose m-w-prose">Be sure that your service is performing within <strong>expected performance</strong> metrics. Run realistic benchmarks across endpoints to test their limits.
 </p>
 
@@ -417,11 +429,12 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
     <!-- <img src="/assets/img/svgs/right-arrow-svgrepo-com.svg" class="w-24 rotate-90 inline-block mr-20"/> -->
 </div>
 
-
 <div class="benefit-section px-2 sm:px-0">
 
 #### <span class="bg-amber-300 px-2 rounded-md"><strong class="drop-shadow-md">Anomaly Detection, Monitors & Validation</strong></span>
+
 ### Detect bugs and issues via our Anomaly Detection,<br/>your Custom monitors & payload Validation.
+
 <p class="pt-3 prose m-w-prose">There's a bug/issue. But the Anomaly detector or Custom monitors or Custom payload validators caught them <strong>before your customers even noticed</strong>.
 </p>
 
@@ -429,7 +442,7 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
 <div  class="flex-1  home-feature-text-box text-base">
 
 - Live traffic validated against latest OpenAPI spec
-- Your custom API Tests executed on schedule 
+- Your custom API Tests executed on schedule
 - Your validators executed against every payload
 
 <br/>
@@ -450,11 +463,12 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
     <!-- <img src="/assets/img/svgs/right-arrow-svgrepo-com.svg" class="w-24 rotate-90 inline-block mr-20"/> -->
 </div>
 
-
 <div class="benefit-section px-2 sm:px-0">
 
 #### <span class="bg-amber-300 px-2 rounded-md"><strong class="drop-shadow-md">Alerting and Incident Workflows</strong></span>
+
 ### The right people must know that there is an issue.
+
 <p class="pt-3 prose m-w-prose">You don't want noise, nor do you want the detected issues to go unnoticed. So the alerts are <strong>routed to the right people</strong>, and trivial issues are delivered in the daily or weekly reports.
 </p>
 
@@ -462,7 +476,7 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
 <div  class="flex-1  home-feature-text-box text-base">
 
 - Connect your on-call tracking system for emergencies
-- Setup slack and email or pagerduty, etc 
+- Setup slack and email or pagerduty, etc
 - Detailed reports for retrospectives and planning.
 
 <br/>
@@ -484,19 +498,20 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
     <!-- <img src="/assets/img/svgs/right-arrow-svgrepo-com.svg" class="w-24 rotate-90 inline-block mr-20"/> -->
 </div>
 
-
 <div class="benefit-section px-2 sm:px-0">
 
 #### <span class="bg-amber-300 px-2 rounded-md"><strong class="drop-shadow-md">Query, Analyze and Visualize API Payloads</strong></span>
+
 ### Investigate the bug by exploring live requests and responses from your server.
+
 <p class="pt-3 prose m-w-prose"><strong>Investigate the bug</strong> or other issue using the Log Explorer. Query, <strong>analyze and visualize</strong> real time requests and responses going through your server.
 </p>
 
 <div class="home-feature-section pt-5 pb-24  flex flex-col sm:flex-row odd:flex-col-reverse sm:odd:flex-row  gap-5 x:sm:gap-8 justify-center ">
 <div  class="flex-1  home-feature-text-box text-base">
 
-- During API incidents Query and analyze failing API requests and responses 
-- Analyze or Chart against fields within your API requests and responses 
+- During API incidents Query and analyze failing API requests and responses
+- Analyze or Chart against fields within your API requests and responses
 - Calculate aggregates from fields in your API Data without going to your database
 
 <br/>
@@ -517,11 +532,12 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
     <!-- <img src="/assets/img/svgs/right-arrow-svgrepo-com.svg" class="w-24 rotate-90 inline-block mr-20"/> -->
 </div>
 
-
 <div class="benefit-section px-2 sm:px-0">
 
 #### <span class="bg-amber-300 px-2 rounded-md"><strong class="drop-shadow-md">Schedule API Tests against your APIs at interval</strong></span>
+
 ### Write API Tests to ensure the bug is never reintroduced.
+
 <p class="pt-3 prose m-w-prose">Bug is fixed, so now you utiilize the API workflows and tester to <strong>write test cases</strong> for this scenario, so it never happens again. 
 Use the APItoolkit test workflow UI builder to easily create these tests. Your tests can be <strong>scheduled</strong> to run against production at any <strong>interval</strong> you prefer.
 (Coming soon)
@@ -531,7 +547,7 @@ Use the APItoolkit test workflow UI builder to easily create these tests. Your t
 <div  class="flex-1  home-feature-text-box text-base">
 
 - Connect your on-call tracking system for emergencies
-- Setup slack and email or pagerduty, etc 
+- Setup slack and email or pagerduty, etc
 - Detailed reports for retrospectives and planning.
 
 <br/>
@@ -550,11 +566,11 @@ Use the APItoolkit test workflow UI builder to easily create these tests. Your t
     <!-- <img src="/assets/img/svgs/right-arrow-svgrepo-com.svg" class="w-24 rotate-90 inline-block mr-20"/> -->
 </div>
 
-
 <div  class="p-5 md:p-16 bg-amber-50/50 border border-amber-50 rounded-lg space-y-2">
 
 ##### <span class="bg-amber-300 px-1  font-bold">Peace of Mind</span>
-## Now your customers are happy and don't even know that there was an issue 
+
+## Now your customers are happy and don't even know that there was an issue
 
 <br/><br/>
 <a href="https://app.apitoolkit.io" data-hs="fade up" class="drop-shadow hover:drop-shadow-lg transition-all rounded-md hover:bg-yellow-300 bg-amber-300 text-black border border-amber-400 font-semibold inline-block px-4 py-2 mt-2 sm:mt-0 hs-init hs-inview">
@@ -569,6 +585,7 @@ Get Started for Free
 <section class="my-24">
 
 #### Wall of <span class="bg-amber-300 px-1 font-bold">**LOVE**</span>
+
 ### Loved by Devs and Engineering teams
 
 <br/>
@@ -577,8 +594,8 @@ Get Started for Free
 <iframe height="800px" id="testimonialto-apitoolkit-light-animated" src="https://embed-v2.testimonial.to/w/apitoolkit?animated=off&theme=light&shadowColor=f78da740" frameborder="0" scrolling="no" width="100%"></iframe>
 </section>
 
-
 {{% container %}}
+
   <section class="pt-20 sm:pt-36">
     <!-- integrations -->
     <div class="flex flex-row gap-2 md:gap-10 flex-wrap text-xs sm:text-base">
@@ -597,9 +614,6 @@ Get Started for Free
   <section class="mt-48 mb-28">
     <!-- Founders note -->
 
-
-
-
   <br/>
   <div
     class="fade-in-section px-4 sm:px-12 py-8 bg-amber-300 border border-gray-200 text-black filter drop-shadow-xl text-sm font-medium rounded-sm monospace"
@@ -607,21 +621,22 @@ Get Started for Free
     <div class="pt-2 space-y-4 leading-5 text-xs sm:columns-2 gap-8 ">
 
 ## Founders Note
+
 #### ( Why we are solving API reliability )
 
-Picture this: I joined a food delivery company, all excited and ready to tackle challenges. 
-One day, we migrated a service from PHP to Golang, following the swagger docs diligently. 
+Picture this: I joined a food delivery company, all excited and ready to tackle challenges.
+One day, we migrated a service from PHP to Golang, following the swagger docs diligently.
 We made sure the responses matched, tested everything, and launched with confidence.
 
-But oh boy, did things go haywire! Our order monitoring charts went berserk within minutes. 
+But oh boy, did things go haywire! Our order monitoring charts went berserk within minutes.
 A whopping 20k orders vanished into thin air. Panic ensued. What on earth happened?
 
-Turns out, in a few countries we operated in, a crucial field required by the apps mysteriously disappeared. 
+Turns out, in a few countries we operated in, a crucial field required by the apps mysteriously disappeared.
 No one saw it coming because it wasn't mentioned in the inherited documentation. It only affected specific countries that weren't part of our manual tests.
 
 We swiftly fixed the issue and reverted to the old system. But here's the kicker: I wished we had a magical tool that could have caught this problem way sooner.
 
-Fast forward to today, and guess what? We've created that tool! We want to hear your own epic tales of API chaos and help you bid them farewell. 
+Fast forward to today, and guess what? We've created that tool! We want to hear your own epic tales of API chaos and help you bid them farewell.
 Let's make sure those stories become relics of the past together.
 
 Join us on this exciting journey!
@@ -646,7 +661,9 @@ Join us on this exciting journey!
 <div class="our_container w-full">
 
 ## Frequently asked Questions
-#### Some questions others have asked 
+
+#### Some questions others have asked
+
 <br/><br/><br/>
 
 <div class="text-left space-y-4 prose"  data-hs="fade up">
@@ -685,11 +702,11 @@ Join us on this exciting journey!
     {{% container %}}
 <div class="space-y-5 py-16 sm:py-36 max-w-prose sm:text-lg ">
 
-  ## APIToolkit is built by <span class="bg-amber-300 px-1 font-bold text-black inline-block ">Developers for Developers</span>. To solve pain points we've all faced.
+## APIToolkit is built by <span class="bg-amber-300 px-1 font-bold text-black inline-block ">Developers for Developers</span>. To solve pain points we've all faced.
 
-  We’re engineers at our core, who are very close to the problems we are
-  solving. So, we encourage you to be a part of this community
-  evolving solutions to solve API documentation, management and observability.
+We’re engineers at our core, who are very close to the problems we are
+solving. So, we encourage you to be a part of this community
+evolving solutions to solve API documentation, management and observability.
 
   <div class="flex flex-row items-center pt-8">
     <a
@@ -710,10 +727,8 @@ Join us on this exciting journey!
     {{% /container%}}
   </section>
 
-
-
-
 {{< rawhtml >}}
+
 <section class="flex flex-row justify-center">
   <div
     class="our_container space-y-5 py-36 flex flex-col sm:flex-row items-center"
@@ -784,6 +799,7 @@ for (var i = 0; i < targets.length; i++) {
     });
   observer.observe(targets[i]);
 }
+
 </script>
 <script>
 const path = anime.path('#path');
