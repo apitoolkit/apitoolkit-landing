@@ -2314,6 +2314,18 @@ img {
   margin-bottom: 1.5rem;
 }
 
+.-mt-14 {
+  margin-top: -3.5rem;
+}
+
+.-mt-10 {
+  margin-top: -2.5rem;
+}
+
+.-mt-8 {
+  margin-top: -2rem;
+}
+
 .block {
   display: block;
 }
@@ -2963,6 +2975,10 @@ img {
 .py-24 {
   padding-top: 6rem;
   padding-bottom: 6rem;
+}
+
+.pt-14 {
+  padding-top: 3.5rem;
 }
 
 .pt-24 {
