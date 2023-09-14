@@ -7,6 +7,11 @@ layout: baseonly
 
 <section class="text-center pt-5">
 
+<p class="text-sm leading-6 text-white bg-black rounder py-4 py-3 rounded-xl">
+    <strong class="font-bold text-white text-lg">Limited Time Offer:&nbsp; </strong>
+    Use Voucher <strong class="text-white font-bold text-lg">APITOOLKIT50</strong> for 50% off on all plans forever. Offer only valid till 20th September.
+</p>
+
 Trust your APIs, and only pay for what you use as you grow.
 <br/>
 14 days free trial included with all plans
