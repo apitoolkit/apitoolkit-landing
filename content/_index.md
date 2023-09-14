@@ -50,7 +50,6 @@ background-repeat: repeat;
 }
 </style>
 
-<br/>
 <div class="sticky top-0 z-10 ">
     <div id="banner" tabindex="-1" style="display:none;"
       class="flex z-50 justify-center gap-32 px-4 w-full py-1 bg-blue-900 sm:items-center">
@@ -66,6 +65,7 @@ background-repeat: repeat;
         </svg>
       </button>
     </div>
+    <br/>
     <div class="border border-gray-200 drop-shadow py-3 px-3 md:max-w-6xl inline-block w-full bg-white rounded-xl">
         {{< nav >}}
     </div>
