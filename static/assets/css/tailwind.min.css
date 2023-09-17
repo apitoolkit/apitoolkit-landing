@@ -2242,6 +2242,14 @@ img {
   margin-bottom: 0.75rem;
 }
 
+.mt-8 {
+  margin-top: 2rem;
+}
+
+.-mt-8 {
+  margin-top: -2rem;
+}
+
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -2286,10 +2294,6 @@ img {
   margin-top: 7rem;
 }
 
-.mt-8 {
-  margin-top: 2rem;
-}
-
 .mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -2312,18 +2316,6 @@ img {
 
 .mb-6 {
   margin-bottom: 1.5rem;
-}
-
-.-mt-14 {
-  margin-top: -3.5rem;
-}
-
-.-mt-10 {
-  margin-top: -2.5rem;
-}
-
-.-mt-8 {
-  margin-top: -2rem;
 }
 
 .block {
@@ -2975,10 +2967,6 @@ img {
 .py-24 {
   padding-top: 6rem;
   padding-bottom: 6rem;
-}
-
-.pt-14 {
-  padding-top: 3.5rem;
 }
 
 .pt-24 {

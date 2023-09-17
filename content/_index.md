@@ -53,9 +53,12 @@ background-repeat: repeat;
 <div class="sticky top-0 z-10 mt-8">
     <div id="banner" tabindex="-1" style="display:none;"
       class="flex z-50 -mt-8 justify-center gap-32 px-4 w-full py-1 bg-blue-900 sm:items-center">
-      <p class="text-sm font-light text-white">
-        ✨ Get 50% discount off our paid plans. Offer valid till September 20 ✨
-      </p>
+      <div class="flex gap-4 items-center">
+        <p class="text-sm font-light text-white">
+          ✨ Get 50% discount off our paid plans. Offer valid till September 30 ✨
+        </p>
+        <a href="/pricing" class="underline font-bold text-white">get started</a>
+      </div>
       <button data-collapse-toggle="banner" type="button" onclick="closeBanner()"
         class="flex items-center text-white hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 dark:hover:bg-gray-600 dark:hover:text-white">
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -68,6 +71,7 @@ background-repeat: repeat;
     <div class="border border-gray-200 drop-shadow py-3 px-3 md:max-w-6xl inline-block w-full bg-white rounded-xl">
         {{< nav >}}
     </div>
+
 </div>
 
 <!-- Blurred bg image generated from: https://fffuel.co/bbblurry/ -->
