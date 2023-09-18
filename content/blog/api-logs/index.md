@@ -7,7 +7,7 @@ categories:
   - API Management
 ---
 
-![API Logs](./api-logs.png)
+![API Logs](./api-a-logs.png)
 
 [APIs](https://apitoolkit.io/blog/best-api-monitoring-and-observability-tools/) (Application Programming Interfaces) play a vital role in modern software development. They facilitate communication and data exchange between different applications. APIs have become the backbone of many digital services, enabling seamless integration and enhancing the functionality of various software systems.
 
