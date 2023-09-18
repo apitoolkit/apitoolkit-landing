@@ -7,9 +7,9 @@ categories:
   - APIs
 ---
 
-![OpenAPI Specification Swagger](./open-api-swagger-doc.png)
+![OpenAPI Specification Swagger](./open-api-swagger_png.png)
 
-As a developer who works with APIs, you should be familiar with OpenAPI (Swagger) Specification. But what is it exactly, and why should you use it in your API development? In this blog, we will answer these questions and show you how OpenAPI can help you create better APIs faster and easier.
+As a developer who works with APIs, you must be familiar with OpenAPI (Swagger) Specification. But what is it exactly, and why should you use it in your API development? In this blog, we will answer these questions and show you how OpenAPI can help you create better APIs faster and easier.
 
 ## Introduction
 

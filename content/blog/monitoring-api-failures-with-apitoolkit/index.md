@@ -7,7 +7,7 @@ categories:
   - API Management
 ---
 
-![APIToolkit](./api-toolkit_png.png)
+![APIToolkit](./1-api-toolkit_png.png)
 
 In our rapidly evolving digital landscape, having efficient endpoint troubleshooting capabilities is essential for any organization relying on [APIs](https://apitoolkit.io/blog/the-ultimate-api-management-strategy/). The ability to quickly identify and resolve failures can ensure smooth operations and a seamless user experience. Enter [APIToolkit](https://apitoolkit.io), a comprehensive application performance monitoring tool that offers powerful features for monitoring and analyzing API failures. In this guide, we will explore how APIToolkit can streamline your endpoint troubleshooting process and help uncover the root cause of failures. Additionally, we will discuss the importance of real-time performance monitoring and comprehensive error tracking and analysis. Let's dive in!
 
@@ -31,7 +31,7 @@ Similarly, the 5xx codes represent server errors, indicating issues with the ser
 
 [APIToolkit](https://apitoolkit.io) goes beyond simply providing visibility into the occurrence of these error codes. It allows you to drill down into the specific endpoints that are experiencing the most failures, enabling you to focus your troubleshooting efforts where they are needed the most. Identifying the root cause of these failures can help you implement targeted fixes and optimizations to improve the overall stability and performance of your API.
 
-![API Anomalies](./api-anomalies-dashboard)
+![API Anomalies](./api-anomalies-dashboard.png)
 API Anomalies Dashboard on APIToolkit
 
 Furthermore, APIToolkit provides real-time insights into [key metrics](https://apitoolkit.io/api-logs-and-metrics/) such as response times, error rates, and throughput. This granular level of monitoring allows you to detect any anomalies or performance degradation in your API endpoints. Addressing these issues means that you can prevent potential failures and ensure a seamless user experience.
