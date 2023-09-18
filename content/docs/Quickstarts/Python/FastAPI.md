@@ -138,6 +138,8 @@ The APIToolkit FastAPI SDK offers a range of configuration options to tailor its
    redact_response_body=["$.api_key", "$.user.social_security_number"]
    ```
 
+4. **`debug`**: Set this to `True` to enable debug logging.
+
 ## Redacting Sensitive Information
 
 Protecting sensitive information is a critical aspect of any application. The APIToolkit FastAPI SDK offers several options to redact sensitive data from your API requests and responses. This section provides an in-depth guide on how to utilize these features.

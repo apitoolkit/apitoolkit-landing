@@ -1,5 +1,5 @@
 ---
-title: Golang
+title: Flask
 date: 2023-09-18
 publishdate: 2023-09-18
 weight: 20
@@ -8,33 +8,20 @@ menu:
     weight: 20
 ---
 
-
 The APIToolkit Flask SDK is designed to seamlessly integrate Flask applications with APIToolkit's monitoring and analytics services. With this SDK, you can effortlessly collect and analyze key metrics from your Flask application.
 
-## Installation
-
-### Prerequisites
-
-1. **Python Version**: Make sure Python 3.6 or higher is installed.
-  
-2. **Virtual Environment**: It's advisable to use a Python virtual environment for better dependency management.
-
-3. **Flask**: If Flask is not already installed, you can install it with:
-    ```bash
-    pip install Flask
-    ```
-
-### Installation Steps
+### Installation
 
 1. **Install via pip**: Use pip to install the APIToolkit Flask SDK.
-    ```bash
-    pip install apitoolkit-flask
-    ```
+
+   ```bash
+   pip install apitoolkit-flask
+   ```
 
 2. **Verify Installation**: You can verify the SDK installation by importing it in a Python shell.
-    ```python
-    import apitoolkit_flask
-    ```
+   ```python
+   import apitoolkit_flask
+   ```
 
 ### Troubleshooting
 
@@ -51,25 +38,41 @@ The APIToolkit Flask SDK is designed to seamlessly integrate Flask applications 
 1. **Locate Main File**: Navigate to the main Python file where your Flask application is defined.
 
 2. **Import SDK**: Import the APIToolkit Flask SDK.
-    ```python
-    from apitoolkit_flask import APIToolkit
-    ```
+   ```python
+   from apitoolkit_flask import APIToolkit
+   ```
 
 ### Initialization
 
-1. **Create Flask App**: If you haven't already, instantiate your Flask application.
+Initialize the APIToolkit SDK with your Flask app and API key.
 
-    ```python
-    from Flask import Flask
-    app = Flask(__name__)
-    ```
+```python
+from Flask import Flask
+from apitoolkit_flask import APIToolkit
 
-2. **Initialize SDK**: Initialize the APIToolkit SDK with your Flask app and API key.
+app = Flask(__name__)
 
-    ```python
-    apitoolkit_client = APIToolkit(api_key='YOUR_API_KEY', flask_app=app)
-    ```
+apitoolkit_client = APIToolkit(api_key='YOUR_API_KEY')
 
+# register before_request function
+@app.before_request
+def before_request():
+    apitoolkit.beforeRequest()
+
+# register after_request function
+@app.after_request
+def after_request(response):
+    apitoolkit.afterRequest(response)
+    return response
+
+# rest of your app
+@app.route('/hello/<name>', methods=['GET', 'POST'])
+def sample_route(name):
+    return {"Hello": "Hello " + name}
+
+app.run(debug=True)
+
+```
 
 ## Configuration Options
 
@@ -79,55 +82,31 @@ Customizing the APIToolkit Flask SDK to your specific needs is straightforward. 
 
 1. **`api_key`**: Your unique API key provided by APIToolkit, essential for authentication.
 
-    ```python
-    api_key="YOUR_API_KEY"
-    ```
-
-2. **`flask_app`**: The Flask application instance that the SDK will monitor.
-
-    ```python
-    flask_app=app
-    ```
+   ```python
+   api_key="YOUR_API_KEY"
+   ```
 
 ### Optional Parameters
 
 1. **`redact_headers`**: A list of HTTP header names you wish to redact from the data sent to APIToolkit.
 
-    ```python
-    redact_headers=["Authorization", "Cookie"]
-    ```
+   ```python
+   redact_headers=["Authorization", "Cookie"]
+   ```
 
 2. **`redact_request_body`**: A list of JSONPath expressions for specifying which fields in the request body should be redacted.
 
-    ```python
-    redact_request_body=["$.user.password", "$.creditCard.number"]
-    ```
+   ```python
+   redact_request_body=["$.user.password", "$.creditCard.number"]
+   ```
 
 3. **`redact_response_body`**: Similar to `redact_request_body`, but for the response body.
 
-    ```python
-    redact_response_body=["$.api_key", "$.user.social_security_number"]
-    ```
+   ```python
+   redact_response_body=["$.api_key", "$.user.social_security_number"]
+   ```
 
-### Example Configuration
-
-Here's how you might set these options when initializing the SDK:
-
-```python
-from Flask import Flask
-from apitoolkit_flask import APIToolkit
-
-app = Flask(__name__)
-
-# Initialize SDK with options
-apitoolkit_client = APIToolkit(
-    api_key="YOUR_API_KEY",
-    flask_app=app,
-    redact_headers=["Authorization", "Cookie"],
-    redact_request_body=["$.user.password"],
-    redact_response_body=["$.api_key"]
-)
-```
+4. **`debug`**: A boolean value that enables debug mode.
 
 ## Redacting Sensitive Information
 
@@ -163,15 +142,31 @@ app = Flask(__name__)
 # Initialize APIToolkit with redaction options
 apitoolkit_client = APIToolkit(
     api_key="YOUR_API_KEY",
-    flask_app=app,
     redact_headers=["Authorization", "X-Secret-Token"],
     redact_request_body=["$.password", "$.user.credit_card"],
     redact_response_body=["$.token", "$.user.ssn"]
 )
+
+# register before_request function
+@app.before_request
+def before_request():
+    apitoolkit.beforeRequest()
+
+# register after_request function
+@app.after_request
+def after_request(response):
+    apitoolkit.afterRequest(response)
+    return response
+
+# rest of your app
+@app.route('/hello/<name>', methods=['GET', 'POST'])
+def sample_route(name):
+    return {"Hello": "Hello " + name}
+
+app.run(debug=True)
 ```
 
 By incorporating these redaction options, you can ensure that sensitive data is protected before it leaves your server.
-
 
 ## Conclusion
 
