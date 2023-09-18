@@ -7,7 +7,7 @@ categories:
   - API Management
 ---
 
-![API Logs](./api-logs.png)
+![Database Monitoring](./1-database-monitoring_png.png)
 
 ## Introduction
 
@@ -72,7 +72,7 @@ Response time is one of the most important metrics for measuring database perfor
 
 To [monitor response time](https://apitoolkit.io/api-performance-monitoring-and-compliance/), DBAs and developers can use tools such as query analyzers or performance analyzers that can capture and display the execution time of each query. They can also use tools such as alerting systems that can notify them when the response time exceeds a certain threshold.
 
-![APIToolkit Query Analyzer](./api-query.png)
+![APIToolkit Query Analyzer](./api-query.png) Image source: APIToolkit Query Analyzer
 
 ### Throughput
 
