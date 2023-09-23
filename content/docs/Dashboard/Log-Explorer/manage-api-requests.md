@@ -7,6 +7,7 @@ menu:
   main:
     weight: 30
 ---
+
 <video src="logs.mp4" controls title="API Request"></video>
 
 ## Overview
@@ -28,11 +29,13 @@ When you access your project's dashboard, you'll find a dedicated `API Requests`
 ### Viewing Request Details
 
 For a more in-depth look at any API request:
+
 1. Locate the request you're interested in.
 2. Click on its endpoint name.
-This action will open a new page showing granular details of the request, including headers, body, response data, and more.
+   This action will open a new page showing granular details of the request, including headers, body, response data, and more.
 
 ## Sharing a Request
+
 Sharing an API request with team members or stakeholders is a breeze with APIToolkit. Follow the steps below to share specific request information:
 
 ### Steps to Share
@@ -45,20 +48,21 @@ Sharing an API request with team members or stakeholders is a breeze with APIToo
 A dialog box will appear, providing you with a unique URL for the selected request.
 
 ### URL Expiry Options
+
 When sharing a request, you have the flexibility to set an expiration time for the URL. You can choose from the following options:
 
 When sharing, you can set the URL to expire in:
 
 - 1 Hour
+- 8 Hours
 - 1 Day
-- 1 Week
-- 1 Month
 
 **Note**: By default, the expiry is set to 1 hour to maintain security and data integrity.
 
 Click `Copy URL` to copy the link to your clipboard, and you're ready to share it!
 
 ## Similar Requests
+
 Finding similar API requests can help you identify patterns, debug issues, or understand usage trends. APIToolkit makes this process straightforward.
 
 ### How to Find Similar Requests
