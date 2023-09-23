@@ -1,5 +1,5 @@
 ---
-title: Djang0
+title: Django
 date: 2023-09-17
 publishdate: 2023-09-17
 weight: 20
@@ -15,25 +15,21 @@ The APIToolkit Django SDK is a specialized library designed to facilitate the in
 ### Prerequisites
 
 1. **Python Version**: Ensure that Python 3.6 or higher is installed.
-  
+
 2. **Virtual Environment (Optional)**: Consider using a Python virtual environment for dependency isolation.
-  
+
 3. **Django**: Ensure Django is installed. If not, you can install it with:
-    ```bash
-    pip install django
-    ```
+   ```bash
+   pip install django
+   ```
 
 ### Installation Steps
 
 1. **Install via pip**: Install the APIToolkit Django SDK package using pip.
-    ```bash
-    pip install apitoolkit-django
-    ```
 
-2. **Verify Installation**: Verify the SDK installation by importing it in a Python shell.
-    ```python
-    import apitoolkit_django
-    ```
+   ```bash
+   pip install apitoolkit-django
+   ```
 
 ### Troubleshooting
 
@@ -45,40 +41,21 @@ The APIToolkit Django SDK is a specialized library designed to facilitate the in
 
 ## Usage
 
-### Importing the SDK
+1. **Add Middleware**: Add APIToolkit's middleware to the `MIDDLEWARE` list in `settings.py`.
 
-1. **Navigate to Django Settings**: Open the `settings.py` file of your Django project.
+   ```python
+   MIDDLEWARE = [
+       # ...
+       'apitoolkit-django.APIToolkit',
+       # ...
+   ]
+   ```
 
-2. **Import SDK**: Import the APIToolkit Django SDK.
-    ```python
-    import apitoolkit_django
-    ```
+2. **API Key**: Add your APIToolkit API key to `settings.py`.
 
-### Initialization
-
-1. **Add to Installed Apps**: Add `apitoolkit_django` to the `INSTALLED_APPS` list in `settings.py`.
-
-2. **Add Middleware**: Add APIToolkit's middleware to the `MIDDLEWARE` list in `settings.py`.
-
-    ```python
-    MIDDLEWARE = [
-        # ...
-        'apitoolkit_django.middleware.APIToolkitMiddleware',
-        # ...
-    ]
-    ```
-
-3. **API Key**: Add your APIToolkit API key to `settings.py`.
-
-    ```python
-    APITOOLKIT_API_KEY = 'YOUR_API_KEY'
-    ```
-
-4. **Initialize SDK**: Initialize the SDK in your `wsgi.py` or `asgi.py` file.
-
-    ```python
-    apitoolkit_django.init(api_key=settings.APITOOLKIT_API_KEY)
-    ```
+   ```python
+   APITOOLKIT_KEY = 'YOUR_API_KEY'
+   ```
 
 ---
 
@@ -116,7 +93,26 @@ APITOOLKIT_REDACT_RESPONSE_BODY = ['$.token', '$.user.ssn']
 
 By utilizing these redaction options, you can ensure that sensitive data is adequately protected and never leaves your server.
 
+It is important to note that while the `APITOOLKIT_REDACT_HEADERS` config field accepts a list of headers(case insensitive),
+the `APITOOLKIT_REDACT_REQ_BODY` and `APITOOLKIT_REDACT_RES_BODY` expect a list of JSONPath strings as arguments.
+
+The choice of JSONPath was selected to allow you have great flexibility in descibing which fields within your responses are sensitive.
+Also note that these list of items to be redacted will be aplied to all endpoint requests and responses on your server.
+To learn more about jsonpath to help form your queries, please take a look at this cheatsheet:
+[https://lzone.de/cheat-sheet/JSONPath](https://lzone.de/cheat-sheet/JSONPath)
+
 ---
 
+## Degugging
+
+You can add `APITOOLKIT_DEBUG` to your app settings file and set it to `True` to enable debug logging from the SDK. This will print out logs for each request/response captured by the middleware. APITOOLKIT_DEBUG defaults to `False`.
+
+Eg:
+
+```python
+APITOOLKIT_DEBUG = True
+```
+
 ## Conclusion
+
 Integrating APIToolkit into your Django project provides you with powerful tools for API observability and monitoring. In this guide, we walked through the steps to set up a Django project, integrate APIToolkit, and make monitored API calls. We also discussed best practices for handling responses and errors. By following these steps, you can build a more robust, scalable, and maintainable application. APIToolkit's features will help you keep a close eye on your API interactions, ensuring optimal performance and quick troubleshooting.
