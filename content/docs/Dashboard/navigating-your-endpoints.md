@@ -7,7 +7,7 @@ menu:
   main:
     weight: 30
 ---
-<video src="endpoints.mp4" controls title="EndPoints"></video>
+<video src="../endpoints.mp4"  controls title="EndPoints"></video>
 
 In API management, endpoints are the gateways to functionality. They allow different software applications to communicate with each other. On our platform, endpoints are neatly organized into three main categories for ease of navigation and management: Active, Inbox, and Archived. Here's a step-by-step guide to help you understand and navigate these categories:
 
@@ -24,8 +24,8 @@ In API management, endpoints are the gateways to functionality. They allow diffe
 To examine the requests made to a specific endpoint:
 
 1. Navigate to the `Endpoints` tab.
-2. Locate the endpoint of interest.
-3. Click on `View Requests` next to the endpoint or use the dropdown menu at the top-right corner of the endpoint listing.
+2. Locate the endpoint of choice.
+3. Then go ahead and click on it.
 
 By doing so, you can see a detailed list of all API requests made to that particular endpoint.
 
