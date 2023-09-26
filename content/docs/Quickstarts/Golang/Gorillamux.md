@@ -1,5 +1,5 @@
 ---
-title: Golang
+title: Go Gorilla Mux
 date: 2022-09-24
 publishdate: 2022-09-24
 weight: 20
@@ -73,20 +73,19 @@ import (
 func main() {
 	ctx := context.Background()
 
-	// Initialize the client using your apitoolkit.io generated apikey
+	// Initialize the client using your generated apikey
 	apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "<APIKEY>"})
 	if err != nil {
 		panic(err)
 	}
 
 	r := mux.NewRouter()
-
-	// Register with the corresponding middleware of your choice.
-	// For gorilla/mux, you'd typically wrap your handlers with the middleware.
-	r.HandleFunc("/{slug}/test", apitoolkitClient.Middleware(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+	// Register middleware
+	r.Use(apitoolkitClient.GorillaMuxMiddleware)
+	r.HandleFunc("/{slug}/test",func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusOK)
 		w.Write([]byte("ok"))
-	})))
+	})
 
 	http.ListenAndServe(":8080", r)
 }
@@ -125,7 +124,7 @@ package main
 import (
 	"net/http"
 	"github.com/gorilla/mux"
-	"apitoolkit"  // Assuming the APIToolkit package is imported like this
+	apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
 
 func main() {
@@ -138,16 +137,15 @@ func main() {
         APIKey: "<APIKEY>",
     }
 
-	// Initialize the client using your apitoolkit.io generated API key
+	// Initialize the APIToolkit client using your generated API key
 	apitoolkitClient, _ := apitoolkit.NewClient(apitoolkitCfg)
 
-	// Assuming APIToolkit provides middleware for Gorilla Mux. Replace with the correct function if different.
-	r.Use(apitoolkitClient.GorillaMiddleware)
+	r.Use(apitoolkitClient.GorillaMuxMiddleware)
 
 	r.HandleFunc("/:slug/test", func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("ok"))
 	}).Methods("POST")
-	
+
 	http.Handle("/", r)
 	http.ListenAndServe(":8080", r)
 }
@@ -156,6 +154,62 @@ func main() {
 It's pivotal to note that while the `RedactHeaders` config field will take the header names (which are case insensitive), `RedactRequestBody` and `RedactResponseBody` work with JSONPath strings.
 
 Using JSONPath allows for flexibility when determining which fields in your responses are sensitive. This configuration is global and impacts all endpoint requests and responses. To get a better grasp of JSONPath and how to draft these queries, look into: [JSONPath Cheatsheet](https://lzone.de/cheat-sheet/JSONPath)
+
+## Outgoing Requests
+
+```go
+    ctx := context.Background()
+    HTTPClient := http.DefaultClient
+    HTTPClient.Transport = apitoolkitClient.WrapRoundTripper(
+        ctx, HTTPClient.Transport,
+        WithRedactHeaders([]string{}),
+    )
+
+```
+
+The code above shows how to use the custom roundtripper to replace the transport in the default http client.
+The resulting HTTP client can be used for any purpose, but will send a copy of all incoming and outgoing requests
+to the apitoolkit servers. So to allow monitoring outgoing request from your servers use the `HTTPClient` to make http requests.
+
+## Report Errors
+
+If you've used sentry, or bugsnag, or rollbar, then you're already familiar with this usecase.
+But you can report an error to apitoolkit. A difference, is that errors are always associated with a parent request, and helps you query and associate the errors which occured while serving a given customer request. To request errors to APIToolkit use call the `ReportError` method of `apitoolkit` not the client returned by `apitoolkit.NewClient` with the request context and the error to report
+Example:
+
+**Gorilla mux**
+
+```go
+import (
+   //... other imports
+  	apitoolkit "github.com/apitoolkit/apitoolkit-go"
+)
+
+func main() {
+	r := mux.NewRouter()
+	ctx := context.Background()
+
+	apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "<API_KEY>"})
+	if err != nil {
+		panic(err)
+	}
+	r.Use(apitoolkitClient.GorillaMuxMiddleware)
+	r.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		_, err := os.Open("non-existing-file.json")
+		if err != nil {
+			// Report the error to apitoolkit
+			apitoolkit.ReportError(r.Context(), err)
+		}
+		fmt.Fprintln(w, "Hello, World!")
+	})
+
+	server := &http.Server{Addr: ":8080", Handler: r}
+	err = server.ListenAndServe()
+	if err != nil {
+		fmt.Println(err)
+	}
+}
+```
 
 ## Next Steps
 
