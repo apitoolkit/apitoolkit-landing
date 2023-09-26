@@ -3,7 +3,7 @@ title: "Improving User Experience: Best Practices for Implementing Skip Links in
 date: 2023-09-21T12:36:58+02:00
 author: jessica
 categories:
-  - API Debugging
+  - API SDKs
 ---
 ![Improving User Experience](improve-user-experience.png)
 

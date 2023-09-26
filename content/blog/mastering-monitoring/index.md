@@ -3,7 +3,7 @@ title: "Mastering Database Monitoring: Unlocking Key Insights into Performance"
 date: 2023-09-22T12:36:58+02:00
 author: jessica
 categories:
-  - API Debugging
+  - API Monitoring
 ---
 
 ![Mastering database monitoring](mastering-database-monitoring.png)

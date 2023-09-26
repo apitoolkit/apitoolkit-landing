@@ -3,7 +3,7 @@ title: "The Importance of Streamlining Navigation with Skip Links for API Produc
 date: 2023-09-244T12:36:58+02:00
 author: jessica
 categories:
-  - API PRoduct 
+  - API Product 
 ---
 
 ![Strealing Navigation Skiplinks](streamling-navigation-skiplinks.png)

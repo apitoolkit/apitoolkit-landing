@@ -3,7 +3,7 @@ title: "Efficient End Point Troubleshooting: A Guide to Monitoring API Failures 
 date: 2023-09-23T12:36:58+02:00
 author: jessica
 categories:
-  - API Debugging
+  - API Failures
 ---
 
 ![Efficient Endpoint](efficient-endpoint.png)
