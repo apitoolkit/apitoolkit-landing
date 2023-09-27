@@ -21,7 +21,7 @@ A service level agreement (SLA) is a formal contract between an API provider and
 
 SLAs are crucial for API providers and consumers because they establish trust and accountability between them. They also help avoid misunderstandings and disputes by clarifying the expectations and requirements of each side. Moreover, SLAs can help improve customer satisfaction and retention by ensuring that the API meets or exceeds their needs and expectations.
 
-Some of the common SLA metrics for APIs are:
+Some common SLA metrics for APIs are:
 
 - **Response time**: The amount of time it takes for an API to return a response to a request. It measures the speed and efficiency of the API.
 - **Availability**: The percentage of time that an API is operational and accessible. It measures the uptime and reliability of the API.
