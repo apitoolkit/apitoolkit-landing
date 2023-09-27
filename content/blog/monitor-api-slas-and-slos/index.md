@@ -1,6 +1,6 @@
 ---
 title: "How to Define and Monitor API Service Level Agreements (SLAs) and Objectives (SLOs)"
-date: 2023-09-17T12:36:58+02:00
+date: 2023-09-26T12:36:58+02:00
 author: collins
 description: SLAs and SLOs are two key concepts in API management that help define and monitor the expected level of service for an API.
 categories:
@@ -35,7 +35,7 @@ SLOs contribute to a better understanding of system performance by providing qua
 
 ## Setting Smart SLO Goals
 
-To set SMART SLOs, we need to consider the following aspects:
+To set SMART SLOs, we have to consider the following aspects:
 
 - **Specificity**: We need to define SLO objectives clearly and unambiguously, using precise terms and numbers. For example, instead of saying "the API should be fast", we can say "the average response time of the API should be less than 500 milliseconds".
 - **Measuring**: We need to choose appropriate metrics that can accurately capture and reflect the SLO objectives. For example, if we want to measure availability, we can use metrics such as uptime percentage or downtime duration.

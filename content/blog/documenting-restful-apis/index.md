@@ -1,6 +1,6 @@
 ---
 title: "Boost Your Coding Efficiency: 6 Expert Tips for Documenting RESTful APIs"
-date: 2023-02-24T08:38:58+02:00
+date: 2023-09-26T08:38:58+02:00
 author: collins
 description: One of the most important aspects of creating user-friendly static REST API documentation is ensuring that the navigation is intuitive and easy to use
 categories:
