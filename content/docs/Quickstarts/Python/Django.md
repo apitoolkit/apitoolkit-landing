@@ -67,7 +67,5 @@ You can add `APITOOLKIT_DEBUG` to your app settings file and set it to `True` to
 Eg:
 
 ```python
-
 APITOOLKIT_DEBUG = True
-
 ```
