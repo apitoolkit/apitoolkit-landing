@@ -1,6 +1,6 @@
 ---
 title: "Boost Your Coding Efficiency: 6 Expert Tips for Documenting RESTful APIs"
-date: 2023-02-24T08:38:58+02:00
+date: 2023-09-26T08:38:58+02:00
 author: collins
 description: One of the most important aspects of creating user-friendly static REST API documentation is ensuring that the navigation is intuitive and easy to use
 categories:
@@ -17,7 +17,7 @@ When it comes to coding efficiency, there are several areas that developers can 
 
 One of the first steps to boosting your coding efficiency is to implement productivity hacks. These are techniques or tools that can save you time and effort in your coding tasks. For example, using code snippets or templates can help you quickly generate commonly used code segments without having to rewrite them from scratch each time.
 
-Another productivity hack is to use a text expander tool that allows you to create shortcuts for frequently typed code snippets. This can dramatically speed up your coding process by reducing the time it takes to type repetitive code.
+Another productivity hack is using a text expander tool that allows you to create shortcuts for frequently typed code snippets. This can dramatically speed up your coding process by reducing the time it takes to type repetitive code.
 
 Additionally, consider using version control systems like Git to track changes in your code and collaborate with other developers. These systems provide a streamlined way to manage code revisions and ensure that everyone on your team is working with the latest version.
 
