@@ -1,0 +1,196 @@
+---
+title: Go Native
+date: 2023-09-28
+publishdate: 2023-09-28
+weight: 20
+menu:
+  main:
+    weight: 20
+---
+
+## How to Integrate with Golang Native:
+
+While frameworks like Echo provide a structured way to build web applications in Go, there's an undeniable charm in using Go's native net/http package. It's simple, powerful, and gives you a closer feel of the language's capabilities. In this guide, we'll explore how to integrate APIToolkit with Go's native HTTP package, ensuring you can monitor and manage your APIs seamlessly.
+
+### Setting Up APIToolkit
+
+**1. Create an Account or Sign In to APIToolkit to Generate Key**
+
+- Visit the [API dashboard](https://app.apitoolkit.io) and sign up or sign in.
+  ![sign up/sign in](./signin.png)
+- Follow the steps to [create a project](/docs/dashboard/creating-a-project/).
+
+- [Generate an API key](/docs/dashboard/generating-api-keys) for your project. Don't forget to describe your project briefly and save your key securely.
+  ![api key generation](./api-key-generation.png)
+
+### Integrating with Go's Native HTTP Package
+
+Assuming you have Go set up:
+
+a. Create a new Go file, for instance, `main.go`.
+
+b. Set up your basic HTTP server:
+
+```go
+package main
+
+import (
+	"net/http"
+)
+
+func main() {
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte("Hello, World!"))
+	})
+
+	http.ListenAndServe(":8080", nil)
+}
+```
+
+c. Integrate with APIToolkit:
+
+```go
+package main
+
+import (
+	"net/http"
+	"context"
+	apitoolkit "github.com/apitoolkit/apitoolkit-go"
+)
+
+func main() {
+	// Initialize APIToolkit client with your generated API key
+	ctx := context.Background()
+	apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "YOUR_GENERATED_API_KEY"})
+	if err != nil {
+		panic(err)
+	}
+
+	http.Handle("/", apitoolkitClient.Middleware(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte("Hello, World!"))
+	})))
+
+	http.ListenAndServe(":8080", nil)
+}
+```
+
+Replace `"YOUR_GENERATED_API_KEY"` with your actual API key.
+
+### Redacting Sensitive Information
+
+APIToolkit provides a convenient dashboard for marking fields as redacted. However, for an added layer of security, you can perform this redaction natively within your Go application. This ensures that sensitive data never leaves your server, offering a robust safeguard for data privacy. Here's a native approach to redacting sensitive fields using Go and APIToolkit:
+
+---
+
+Consider the following request body:
+
+```json
+{
+  "user": {
+    "id": 123456789,
+    "name": "John Doe",
+    "password": "secretpassword123",
+    "creditCard": {
+      "number": "1234567890123456",
+      "expiry": "12/25"
+    }
+  }
+}
+```
+
+To redact the `password` and `number` fields from the credit card, you can set up the `apitoolkit` configuration struct like this:
+
+```go
+package main
+
+import (
+	"net/http"
+	apitoolkit "github.com/apitoolkit/apitoolkit-go"
+)
+
+func main() {
+
+	apitoolkitCfg := apitoolkit.Config{
+        RedactHeaders: []string{"Content-Type", "Authorization", "Cookies"}, // Redacting both request and response headers
+        RedactRequestBody: []string{"$.user.password", "$.user.creditCard.number"}, // Redacting both request and response body
+        RedactResponseBody: []string{"$.message.error"}, // Redacting only response body
+        APIKey: "<APIKEY>", // Your API key
+    }
+	ctx := context.Background()
+	apitoolkitClient, _ := apitoolkit.NewClient(ctx,apitoolkitCfg)
+
+	http.HandleFunc("/:slug/test", apitoolkitClient.Middleware(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte("Hello, World!"))
+	})))
+
+	http.ListenAndServe(":8080", nil)
+}
+```
+
+It's crucial to note that while the `RedactHeaders` config field accepts header names (case insensitive), `RedactRequestBody` and `RedactResponseBody` utilize JSONPath strings.
+
+JSONPath offers a flexible method to pinpoint sensitive fields in your responses. This configuration will be applied across all endpoint requests and responses. For a deeper dive into JSONPath and its query crafting, refer to: [JSONPath Cheatsheet](https://lzone.de/cheat-sheet/JSONPath).
+
+## Outgoing Requests
+
+```go
+    ctx := context.Background()
+    HTTPClient := http.DefaultClient
+    HTTPClient.Transport = apitoolkitClient.WrapRoundTripper(
+        ctx, HTTPClient.Transport,
+        WithRedactHeaders([]string{}),
+    )
+
+```
+
+The code above shows how to use the custom roundtripper to replace the transport in the default http client.
+The resulting HTTP client can be used for any purpose, but will send a copy of all incoming and outgoing requests
+to the apitoolkit servers. So to allow monitoring outgoing request from your servers use the `HTTPClient` to make http requests.
+
+## Report Errors
+
+If you've used sentry, or bugsnag, or rollbar, then you're already familiar with this usecase.
+But you can report an error to apitoolkit. A difference, is that errors are always associated with a parent request, and helps you query and associate the errors which occured while serving a given customer request. To request errors to APIToolkit use call the `ReportError` method of `apitoolkit` not the client returned by `apitoolkit.NewClient` with the request context and the error to report
+Examples:
+
+**Native Go**
+
+```go
+package main
+
+import (
+	"fmt"
+	"net/http"
+	apitoolkit "github.com/apitoolkit/apitoolkit-go"
+)
+
+func main() {
+	ctx := context.Background()
+	apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "<API_KEY>"})
+	if err != nil {
+		panic(err)
+	}
+
+	helloHandler := func(w http.ResponseWriter, r *http.Request) {
+		file, err := os.Open("non-existing-file.txt")
+		if err!= nil {
+			// Report the error to apitoolkit
+			apitoolkit.ReportError(r.Context(), err)
+		}
+		fmt.Fprintln(w, "{\"Hello\": \"World!\"}")
+	}
+
+	http.Handle("/", apitoolkitClient.Middleware(http.HandlerFunc(helloHandler)))
+
+	if err := http.ListenAndServe(":8089", nil); err != nil {
+		fmt.Println("Server error:", err)
+	}
+}
+
+```
+
+### Wrapping Up
+
+- Deploy your application and send test HTTP requests.
+- Check the APIToolkit dashboard to ensure your requests are being processed.
+- Revel in the simplicity of Go's native integration and the power of APIToolkit!
