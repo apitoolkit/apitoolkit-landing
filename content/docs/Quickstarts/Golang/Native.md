@@ -17,12 +17,12 @@ While frameworks like Echo provide a structured way to build web applications in
 **1. Create an Account or Sign In to APIToolkit to Generate Key**
 
 - Visit the [API dashboard](https://app.apitoolkit.io) and sign up or sign in.
-  ![sign up/sign in](signin.png)
+  ![sign up/sign in](/signin.png)
   
 - Follow the steps to [create a project](/docs/dashboard/creating-a-project/).
 
 - [Generate an API key](/docs/dashboard/generating-api-keys) for your project. Don't forget to describe your project briefly and save your key securely.
-  ![api key generation](api-key-generation.png)
+  ![api key generation](/api-key-generation.png)
 
 ### Integrating with Go's Native HTTP Package
 
