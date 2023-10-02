@@ -27,16 +27,16 @@ Upon entering the dashboard, users are met with three primary categories:
 **The Significance of Each Category**
 
 1. **Inbox:** Acting as the immediate notification center, the Inbox is crucial for real-time monitoring. Immediate visibility into changes and errors ensures timely interventions, reducing the risk of larger disruptions or prolonged downtime.
-   
-![inbox](imbox.png)
+
+![inbox](../imbox.png)
 
 2. **Acknowledged:** This category reinforces collaboration and communication within the development team. By marking an issue as acknowledged, it signals to other team members that it's being addressed, reducing redundancy in error resolution efforts.
-   
-![acknowledge](acknowledge.png)
+
+![acknowledge](../acknowledge.png)
 
 3. **Archived:** By moving outdated or resolved issues to the archive, teams can maintain a cleaner workspace. However, the archive also serves as a historical record, allowing teams to revisit past issues if similar patterns arise in the future.
-   
-![Archived](archived.png)
+
+![Archived](../archived.png)
 In essence, the "Changes & Errors" dashboard isn’t merely about tracking; it's about actionability. By categorizing and clearly presenting data, APIToolkit empowers developers to respond proactively, ensuring the API's continuous stability and growth.
 
 ## **Inbox, Acknowledged, and Archived: The Three Pillars**
@@ -45,15 +45,17 @@ As APIs adapt to shifting requirements and advancements, they inevitably experie
 
 **Understanding Each Category**
 
-* **Inbox:** 
+- **Inbox:**
+
   - **Definition:** The 'Inbox' is akin to a real-time alert system. It brings to light new developments, alterations, or issues that arise within the API structure.
   - **Significance:** Having a live feed of changes ensures that developers are not caught off-guard. It aids in preemptively identifying issues before they escalate or have widespread effects.
 
-* **Acknowledged:** 
+- **Acknowledged:**
+
   - **Definition:** Once a change or error is reviewed and deemed significant or requiring attention, it's marked as 'Acknowledged.' This category acts as an interim between the detection (Inbox) and resolution (Archived) stages.
   - **Significance:** Marking an item as acknowledged serves a dual purpose. Firstly, it signifies that the team is aware of the matter and is potentially addressing it. Secondly, it ensures clarity and reduces overlap in tasks among team members.
 
-* **Archived:** 
+- **Archived:**
   - **Definition:** After resolving an issue or when a change becomes outdated, it's moved to the 'Archived' section. This area acts as a repository for past events and actions.
   - **Significance:** While the primary purpose of this section is to declutter the active dashboard, it's equally valuable for retrospective analysis. It allows teams to understand historical patterns, learn from past incidents, and even anticipate future challenges.
 
@@ -73,24 +75,21 @@ With APIs serving as a bridge between disparate systems, understanding the anato
 
 **Understanding New, Updated, and Deleted Fields**
 
-![fields](new-fields.png)
+![fields](../new-fields.png)
 
 Each request made to an API carries a specific structure or 'shape' comprising various fields. Recognizing changes to this shape can hint at potential issues or improvements:
 
-* **New Fields:** The introduction of new fields might indicate an enhancement or addition of functionalities. For developers, it's essential to ensure that these new fields are integrated seamlessly without breaking existing functionalities.
-  
-* **Updated Fields:** Modifications to existing fields might mean changes in data types, validation rules, or data sources. Such changes require rigorous testing to ensure data integrity and application stability.
-  
-* **Deleted Fields:** The removal of fields can be due to deprecation or optimization. It's critical to verify that no existing functionalities rely on these removed fields to prevent unexpected errors or failures.
+- **New Fields:** The introduction of new fields might indicate an enhancement or addition of functionalities. For developers, it's essential to ensure that these new fields are integrated seamlessly without breaking existing functionalities.
+- **Updated Fields:** Modifications to existing fields might mean changes in data types, validation rules, or data sources. Such changes require rigorous testing to ensure data integrity and application stability.
+- **Deleted Fields:** The removal of fields can be due to deprecation or optimization. It's critical to verify that no existing functionalities rely on these removed fields to prevent unexpected errors or failures.
 
 **A Look at the Introduction of New Endpoints**
 
 Endpoints in an API correspond to specific functionalities. When new endpoints appear on the dashboard:
 
-* **Identification:** A new endpoint suggests the introduction of a new feature or functionality. It is crucial to ensure this endpoint is documented, tested, and optimized for performance.
-  
-* **Ongoing Monitoring:** Even after the initial setup, continuous monitoring of these endpoints ensures they function as intended, and any anomalies are promptly addressed.
-**Graphical Representations: Visualizing Data Over Time**
+- **Identification:** A new endpoint suggests the introduction of a new feature or functionality. It is crucial to ensure this endpoint is documented, tested, and optimized for performance.
+- **Ongoing Monitoring:** Even after the initial setup, continuous monitoring of these endpoints ensures they function as intended, and any anomalies are promptly addressed.
+  **Graphical Representations: Visualizing Data Over Time**
 
 APIs, with their myriad of endpoints, responses, and interactions, produce a plethora of data. This data can become overwhelming if not organized and presented in an easily digestible manner. That’s where graphical representations come into play. By visualizing data over time, developers can gain insights into the health, performance, and areas of improvement for their APIs.
 
@@ -110,15 +109,16 @@ APIs, with their myriad of endpoints, responses, and interactions, produce a ple
 
 API throughput is a crucial metric that illustrates the amount of data processed by an API over a given period. In the context of APIToolkit, two key timeframes are presented: a 24-hour (24h) view and a two-week (14d) view. Each offers distinct insights.
 
-* **24h Throughput: The Day's Pulse**
-  * **Immediate Feedback:** This view provides insights into the API's most recent performance, highlighting issues or peaks that might have occurred in the last day.
-  * **Response Time:** A closer look at the 24h graph can help assess if there were any sudden spikes in response times or errors.
-  * **Post-deployment Monitoring:** After introducing a new feature or update, monitoring the 24h graph can help identify any immediate glitches or issues.
+- **24h Throughput: The Day's Pulse**
 
-* **14d Throughput: A Broader Perspective**
-  * **Consistency Check:** A two-week overview can help ascertain the consistency of the API’s performance. Any inconsistencies can be analyzed further to pinpoint their causes.
-  * **Weekly Patterns:** Often, user behavior shows weekly patterns (like increased activity on weekends). The 14d graph is ideal for recognizing such patterns.
-  * **Impact of External Factors:** Over a span of two weeks, external factors like marketing campaigns, global events, or server downtimes can impact API traffic. This view helps correlate API performance with such events.
+  - **Immediate Feedback:** This view provides insights into the API's most recent performance, highlighting issues or peaks that might have occurred in the last day.
+  - **Response Time:** A closer look at the 24h graph can help assess if there were any sudden spikes in response times or errors.
+  - **Post-deployment Monitoring:** After introducing a new feature or update, monitoring the 24h graph can help identify any immediate glitches or issues.
+
+- **14d Throughput: A Broader Perspective**
+  - **Consistency Check:** A two-week overview can help ascertain the consistency of the API’s performance. Any inconsistencies can be analyzed further to pinpoint their causes.
+  - **Weekly Patterns:** Often, user behavior shows weekly patterns (like increased activity on weekends). The 14d graph is ideal for recognizing such patterns.
+  - **Impact of External Factors:** Over a span of two weeks, external factors like marketing campaigns, global events, or server downtimes can impact API traffic. This view helps correlate API performance with such events.
 
 Graphical representations aren't just about plotting data points on a graph. They're about providing actionable insights, telling a story of the API's journey, its highs and lows, and ultimately, guiding the way forward. With tools like APIToolkit, developers have at their disposal powerful visual aids that not only simplify data interpretation but also empower them to make informed decisions. In essence, these throughput graphs are more than just visual representations; they are crucial tools in understanding an API's health and efficiency. By regularly monitoring both the short-term (24h) and long-term (14d) perspectives, developers can gain a holistic understanding, ensuring optimal performance and proactive management of potential issues.
 
