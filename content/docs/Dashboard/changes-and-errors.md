@@ -28,15 +28,16 @@ Upon entering the dashboard, users are met with three primary categories:
 
 1. **Inbox:** Acting as the immediate notification center, the Inbox is crucial for real-time monitoring. Immediate visibility into changes and errors ensures timely interventions, reducing the risk of larger disruptions or prolonged downtime.
    
-![inbox](/imbox.png)
+![inbox](../Dashboard/imbox.png)
 
 2. **Acknowledged:** This category reinforces collaboration and communication within the development team. By marking an issue as acknowledged, it signals to other team members that it's being addressed, reducing redundancy in error resolution efforts.
    
-![acknowledge](/acknowledge.png)
+![acknowledge](../Dashboard/acknowledge.png)
 
 3. **Archived:** By moving outdated or resolved issues to the archive, teams can maintain a cleaner workspace. However, the archive also serves as a historical record, allowing teams to revisit past issues if similar patterns arise in the future.
    
-![Archived](/archived.png)
+![Archved](../Dashboard/archived.png)
+
 In essence, the "Changes & Errors" dashboard isn’t merely about tracking; it's about actionability. By categorizing and clearly presenting data, APIToolkit empowers developers to respond proactively, ensuring the API's continuous stability and growth.
 
 ## **Inbox, Acknowledged, and Archived: The Three Pillars**
@@ -73,7 +74,7 @@ With APIs serving as a bridge between disparate systems, understanding the anato
 
 **Understanding New, Updated, and Deleted Fields**
 
-![fields](/new-fields.png)
+![fields](../Dashboard/new-fields.png)
 
 Each request made to an API carries a specific structure or 'shape' comprising various fields. Recognizing changes to this shape can hint at potential issues or improvements:
 
