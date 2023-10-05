@@ -39,7 +39,7 @@ Last \*14 days Data Retained
 
 ### Hobby
 
-#### <strong>$<span id="hobby-price">10</span></strong>/mo
+#### <strong>$<span id="hobby-price">20</span></strong>/mo
 
 <div class="px-3 py-5 hidden">
 <input type="range" value="0" 
