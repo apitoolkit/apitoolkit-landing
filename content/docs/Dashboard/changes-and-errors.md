@@ -37,6 +37,7 @@ Upon entering the dashboard, users are met with three primary categories:
 3. **Archived:** By moving outdated or resolved issues to the archive, teams can maintain a cleaner workspace. However, the archive also serves as a historical record, allowing teams to revisit past issues if similar patterns arise in the future.
 
 ![Archived](../archived.png)
+
 In essence, the "Changes & Errors" dashboard isn’t merely about tracking; it's about actionability. By categorizing and clearly presenting data, APIToolkit empowers developers to respond proactively, ensuring the API's continuous stability and growth.
 
 ## **Inbox, Acknowledged, and Archived: The Three Pillars**
