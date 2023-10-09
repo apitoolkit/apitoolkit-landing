@@ -43,23 +43,25 @@ import (
   	// Import the apitoolkit golang sdk
     "context"
   	apitoolkit "github.com/apitoolkit/apitoolkit-go"
+    "github.com/gin-gonic/gin"
 )
-
+	
 func main() {
-    ctx := context.Background()
 
-  	// Initialize the client using your apitoolkit.io generated apikey
-  	apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "<APIKEY>"})
-    ...
+	// Initialize the client using your apitoolkit.io generated apikey
+	apitoolkitClient, err := apitoolkit.NewClient(context.Background(), apitoolkit.Config{APIKey: "w/JOLZAZOX0zz9BDhaZsT20b9DnGRoCeuLPk1LhXpD0CpNmV"})
+	if err != nil {
+		panic(err)
+	}
 
-  	router := gin.New()
+	router := gin.New()
 
-  	// Register with the corresponding middleware of your choice. For Gin router, we use the GinMiddleware method.
-  	router.Use(apitoolkitClient.GinMiddleware)
+	// Register with the corresponding middleware of your choice. For Gin router, we use the GinMiddleware method.
+	router.Use(apitoolkitClient.GinMiddleware)
 
-  	// Register your handlers as usual and run the gin server as usual.
-  	router.POST("/:slug/test", func(c *gin.Context) {c.Text(200, "ok")})
- 	...
+	// Register your handlers as usual and run the gin server as usual.
+	router.POST("/:slug/test", func(c *gin.Context) { c.String(200, "ok") })
+
 }
 ```
 
@@ -168,5 +170,4 @@ func main() {
 
 1. Deploy your application or send test http requests to your service
 2. Check API log explorer or Endpoints pages on the APIToolkit dashboard to see if your test request was processed correctly
-   ![Endpoint-after-integration](/endpoint-screenshot.png)
 3. Enjoy having our API comanage your backends and APIs with you.
