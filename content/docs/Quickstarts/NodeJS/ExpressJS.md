@@ -7,36 +7,38 @@ menu:
   main:
     weight: 1
 ---
-The NODEJS SDK integration guide for APIToolkit. It monitors incoming traffic, gathers the requests and sends the request to the apitoolkit servers.
+## Easy Steps to Set Up APIToolkit with Your Node.js Project
 
-### Installation
+APIToolkit helps keep an eye on the data traffic coming into your project. It's like a security camera for your project's data requests, making sure everything's recorded and sent safely to APIToolkit's servers.
 
-Run the following command to install the package from your projects root:
+Getting Started:
+
+1. Putting Things Together:
+   - First, open your project and initialize APIToolkit by running this command:
 
 ```sh
 npm install apitoolkit-express
 ```
-### Project setup
 
-Intialize apitoolkit into your project is as simple as :
+  - Now, let's set up APIToolkit in your project. It's as easy as adding these lines:
 
 ```js
 import APIToolkit from 'apitoolkit-express';
 const apitoolkitClient = await APIToolkit.NewClient({ apiKey: '<API-KEY>' });
 ```
-where ```<API-KEY>``` is the API key which can be generated from your  [apitoolkit.io](apitoolkit.io) accoun
 
-Next, you can use the apitoolkit middleware for your respective routing library.
+Replace ```<API-KEY>```  with your unique key from your [APIToolkit account](apitoolkit.io)
 
-Eg, for express JS, your final code would look like:
+2. Connecting APIToolkit to Your Project:
+   - If you're using Express.js, start by adding the following line to integrate the 'apitoolkit' middleware
 
 ```js
 app.use(apitoolkitClient.expressMiddleware);
 ```
+Here, 'app' is your Express.js setup.
 
-where app is your express js instance.
-
-Your final could might look something like this:
+3. Example of a Basic Setup
+   - Here's how your code might look with everything in place:
 
 ```js
 import express from 'express';
