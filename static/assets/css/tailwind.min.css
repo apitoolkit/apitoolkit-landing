@@ -2493,6 +2493,14 @@ img {
   top: 2rem;
 }
 
+.top-10 {
+  top: 2.5rem;
+}
+
+.top-12 {
+  top: 3rem;
+}
+
 .isolate {
   isolation: isolate;
 }
@@ -2732,6 +2740,10 @@ img {
 
 .w-\[300px\] {
   width: 300px;
+}
+
+.w-\[100vw\] {
+  width: 100vw;
 }
 
 .max-w-2xl {
@@ -3038,6 +3050,10 @@ img {
 
 .border-b-2 {
   border-bottom-width: 2px;
+}
+
+.border-b {
+  border-bottom-width: 1px;
 }
 
 .border-gray-200 {

@@ -2,7 +2,7 @@
 <html prefix="og: http://ogp.me/ns#" lang="{{ .Language }}">
 {{- partial "head.html" . -}}
 
-<body class="relative ">
+<body class="relative w-full">
   {{- partial "header.html" . -}}
   {{ with .Params.HideNav }}
   {{else}}
@@ -24,8 +24,8 @@
         </svg>
       </button>
     </div>
-    <nav class="inline-block  w-full md:max-w-6xl px-2 py-2 md:px-0">
-      <div class="flex flex-row justify-between items-center content-between">
+    <nav class="inline-block w-full px-2 py-4 border-b md:px-0">
+      <div class="flex flex-row justify-between items-center md:max-w-6xl mx-auto content-between">
         <a href="/" class="inline-block">
           <img src="/assets/img/logo-full.svg" alt="APItoolkit logo" class="h-6 hidden sm:inline-block" />
           <img src="/assets/img/logo-mini.svg" alt="APItoolkit logo" class="h-5 sm:hidden" />
@@ -34,8 +34,8 @@
           <button type="button" class="hidden bg-gray-200 px-3 py-2 rounded-full">
             Sign in
           </button>
-          <a href="/blog/" class="">blog</a>
-          <a href="/pricing/" class="">pricing</a>
+          <a href="/blog/" class="">Blog</a>
+          <a href="/pricing/" class="">Pricing</a>
           <a href="/docs/" class="">Docs</a>
           <a href="https://app.apitoolkit.io"
             class="border border-amber-400 hover:bg-yellow-300 bg-amber-300 text-black  px-2 sm:px-3 py-1 sm:py-2 rounded-full inline-block">
