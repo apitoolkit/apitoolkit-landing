@@ -7,36 +7,38 @@ menu:
   main:
     weight: 1
 ---
-The NODEJS SDK integration guide for APIToolkit. It monitors incoming traffic, gathers the requests and sends the request to the apitoolkit servers.
+
+The Express SDK integration guide for APIToolkit. It monitors incoming traffic, gathers the requests and sends the request to the apitoolkit servers.
 
 ### Installation
 
-Run the following command to install the package from your projects root:
+Run the following command to install the express SDK:
 
 ```sh
 npm install apitoolkit-express
 ```
-### Project setup
 
-Intialize apitoolkit into your project is as simple as :
+### Setup
+
+1. After installation, you can then set up APIToolkit in your project like so:
 
 ```js
 import APIToolkit from 'apitoolkit-express';
 const apitoolkitClient = await APIToolkit.NewClient({ apiKey: '<API-KEY>' });
 ```
-where ```<API-KEY>``` is the API key which can be generated from your  [apitoolkit.io](apitoolkit.io) accoun
 
-Next, you can use the apitoolkit middleware for your respective routing library.
+Replace `<API-KEY>` with your unique key from your [APIToolkit account](apitoolkit.io)
 
-Eg, for express JS, your final code would look like:
+2. After setting up APIToolkit, you can then register the express middleware to monitor incoming traffic and send the request to the APIToolkit servers.
 
 ```js
 app.use(apitoolkitClient.expressMiddleware);
 ```
 
-where app is your express js instance.
+Here, 'app' is the express app object.
 
-Your final could might look something like this:
+3. Example of a Basic Setup
+   - Here's how your code might look with everything in place:
 
 ```js
 import express from 'express';
@@ -128,3 +130,75 @@ app.listen(3000, () => {
 ```
 
 By executing this procedure, APIToolkit gains access to non-redacted fields and files, thereby enhancing the precision of monitoring and documentation processes. This method ensures that all necessary data is accessible and correctly relayed to APIToolkit for thorough analysis and documentation.
+
+## Using apitoolkit to observe an axios based outgoing request
+
+Simply wrap your axios instance with the APIToolkit observeAvios function.
+
+```typescript
+import { observeAxios } from 'apitoolkit/axios';
+
+const response = await observeAxios(axios).get(`${baseURL}/user_list/active`);
+```
+
+If you're making requests to endpoints which have variable urlPaths, you should include a wildcard url of the path, so that apitoolkit groups the endpoints correctly for you on the dashboardL:
+
+```typescript
+import { observeAxios } from 'apitoolkit/axios';
+
+const response = await observeAxios(axios, '/users/{user_id}').get(
+  `${baseURL}/users/user1234`
+);
+```
+
+There are other optional arguments you could pass on to the observeAxios function, eg:
+
+```typescript
+import { observeAxios } from 'apitoolkit/axios';
+
+const redactHeadersList = ['Content-Type', 'Authorization'];
+const redactRequestBodyList = ['$.body.bla.bla'];
+const redactResponseBodyList = undefined;
+const response = await observeAxios(
+  axios,
+  '/users/{user_id}',
+  redactHeadersList,
+  redactRequestBodyList,
+  redactResponseBodyList
+).get(`${baseURL}/users/user1234`);
+```
+
+Note that you can ignore any of these arguments except the first argument which is the axios instance to observe.
+For the other arguments, you can either skip them if at the end, or use undefined as a placeholder.
+
+## Reporting errors to APIToolkit
+
+APIToolkit detects a lot of API issues automatically, but it's also valuable to report and track errors. This helps you associate more details about the backend with a given failing request.
+If you've used sentry, or rollback, or bugsnag, then you're likely aware of this functionality.
+
+Within the context of a web request, reporting error is as simple as calling the apitoolkit ReportError function.
+
+```typescript
+import { ReportError } from 'apitoolkit';
+
+try {
+  const response = await observeAxios(axios).get(`${baseURL}/ping`);
+} catch (error) {
+  ReportError(error);
+}
+```
+
+This works automatically from within a web request which is wrapped by the apitoolkit middleware. But if called from a background job, ReportError will not know how to actually Report the Error.
+In that case, you can call ReportError, but on the apitoolkit client, instead.
+
+```js
+import APIToolkit from 'apitoolkit-express';
+
+const apitoolkitClient = await APIToolkit.NewClient({ apiKey: '<API-KEY>' });
+
+try {
+  const response = await observeAxios(axios).get(`${baseURL}/ping`);
+} catch (error) {
+  apitoolkitClient.ReportError(error);
+}
+```

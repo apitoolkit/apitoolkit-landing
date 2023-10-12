@@ -8,7 +8,7 @@ menu:
     weight: 20
 ---
 
-To integrate golang web services with API Toolkit, an SDK called the golang client for API Toolkit is utilized. It keeps track of incoming traffic, aggregates the requests, and then delivers them to the apitoolkit servers. We'll concentrate on providing a step-by-step instruction for integrating an API toolkit into our Golang web service in this tutorial.
+Integrating your Golang web services with API Toolkit doesn't have to be complicated. With the golang client for API Toolkit, you're not just hooking up systems; you're empowering your web service to handle data efficiently, enhance security, and provide real-time insights.
 
 ## Design decisions:
 
@@ -28,7 +28,7 @@ To integrate golang web services with API Toolkit, an SDK called the golang clie
 
 ## Installation
 
-Run the following command to install the package into your Go application
+First, run this command:
 
 ```
 go get github.com/apitoolkit/apitoolkit-go
@@ -43,32 +43,33 @@ import (
   	// Import the apitoolkit golang sdk
     "context"
   	apitoolkit "github.com/apitoolkit/apitoolkit-go"
+    "github.com/gin-gonic/gin"
 )
 
 func main() {
-    ctx := context.Background()
 
-  	// Initialize the client using your apitoolkit.io generated apikey
-  	apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "<APIKEY>"})
-    ...
+	// Initialize the client using your apitoolkit.io generated apikey
+	apitoolkitClient, err := apitoolkit.NewClient(context.Background(), apitoolkit.Config{APIKey: "YOUR GENERATED API KEY"})
+	if err != nil {
+		panic(err)
+	}
 
-  	router := gin.New()
+	router := gin.New()
 
-  	// Register with the corresponding middleware of your choice. For Gin router, we use the GinMiddleware method.
-  	router.Use(apitoolkitClient.GinMiddleware)
+	// Register with the corresponding middleware of your choice. For Gin router, we use the GinMiddleware method.
+	router.Use(apitoolkitClient.GinMiddleware)
 
-  	// Register your handlers as usual and run the gin server as usual.
-  	router.POST("/:slug/test", func(c *gin.Context) {c.Text(200, "ok")})
- 	...
+	// Register your handlers as usual and run the gin server as usual.
+	router.POST("/:slug/test", func(c *gin.Context) { c.String(200, "ok") })
+
 }
 ```
 
 ## Redacting Sensitive Fields
 
-While it's possible to mark a field as redacted from the API Toolkit dashboard, this client also supports redacting at the client side. Client-side redacting means that those fields would never leave your servers at all. So you feel safer that your sensitive data only stays on your servers.
+Some information is best kept private. You can hide sensitive data fields directly in your dashboard, but for an extra layer of security, our client supports redaction right on your servers. This means sensitive data like passwords or credit card numbers never leave your premises. To mark fields that should be redacted, Add them to the `apitoolkit` config struct. Here's how you do it:
 
-To mark fields that should be redacted, Add them to the `apitoolkit` config struct.
-For instance to redact the `password` and credit card `number` fields from a request body like this:
+Imagine you have a request that looks like this:
 
 ```json
 {
@@ -84,7 +85,7 @@ For instance to redact the `password` and credit card `number` fields from a req
 }
 ```
 
-Add `$.user.password` and `$.user.creditCard.number` to the `RedactRequestBody` list like so:
+You might not wnat to trust us with John Doe's password or credit card number, right? So, you'll tell apitoolkit to hide these details. Add `$.user.password` and `$.user.creditCard.number` the `RedactRequestBody` array, like this:
 
 ```go
 func main() {
@@ -102,8 +103,8 @@ func main() {
     // Register with the corresponding middleware of your choice. For Gin router, we use the GinMiddleware method.
     router.Use(apitoolkitClient.GinMiddleware)
     // Register your handlers as usual and run the gin server as usual.
-    router.POST("/:slug/test", func(c *gin.Context) {c.Text(200, "ok")})
-    ...
+    router.POST("/:slug/test", func(c *gin.Context) {c.String(200, "ok")})
+    router.Run(":8080")
 }
 ```
 
