@@ -19,12 +19,12 @@ Integrating your Golang web services with API Toolkit doesn't have to be complic
 
 ## Setting It Up Is Easy:
 
-1. **Get Started on the Dashboard**: Simply (https://app.apitoolkit.io) to your control center.
-   ![Sign up / Sign in](./signin.png)
-2. **Create Your Project**: Here’s how to (/docs/dashboard/creating-a-project/)  
-3. **Secure Your Access**: Generate your (/docs/dashboard/generating-api-keys) and keep it safe. It's the key to your kingdom! And to prevent losing your key after it has been generated, remember to make a copy of it.
-   ![API key generation](./api-key-generation.png)
-4. Installl APItoolkit and initialize the middleware with the APItoolkit API key you generated above within 3 lines of Go code:
+1. Sign up / Sign in to the [API dashboard](https://app.apitoolkit.io)
+   ![Sign up / Sign in](/signin.png)
+2. [Create a project](/docs/dashboard/creating-a-project/)
+3. [Generate an API key for your project](/docs/dashboard/generating-api-keys), and include a brief description of your work. And to prevent losing your key after it has been generated, remember to make a copy of it.
+   ![API key generation](/api-keys-generation.png)
+4. Installl APItoolkit and initialize the middleware with the APItoolkit API key you generated above. Integrating only takes 3 lines of Go code:
 
 ## Installation
 
@@ -45,7 +45,7 @@ import (
   	apitoolkit "github.com/apitoolkit/apitoolkit-go"
     "github.com/gin-gonic/gin"
 )
-	
+
 func main() {
 
 	// Initialize the client using your apitoolkit.io generated apikey
