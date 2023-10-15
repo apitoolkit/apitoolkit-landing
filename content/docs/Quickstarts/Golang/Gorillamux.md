@@ -20,10 +20,10 @@ To integrate APIToolkit with golang web services, we employ an SDK named the gol
 **Create an Account or Sign In to APIToolkit to Generate Key**
 
 1. Sign up / Sign in to the [API dashboard](https://app.apitoolkit.io)
-   ![sign up/sign in](/signin.png)
+   ![sign up/sign in](/docs/Quickstarts/Golang/signin.png)
 2. [Create a project](/docs/dashboard/creating-a-project/)
 3. [Generate an API key for your project](/docs/dashboard/generating-api-keys), and include a brief description of your work. And to prevent losing your key after it has been generated, remember to make a copy of it.
-   ![api key generation](/api-keys-generation.png)
+   ![api key generation](/docs/Quickstarts/Golang/api-key-generation.png)
 
 **Integrate with Gorilla Mux in Go**
 

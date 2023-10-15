@@ -20,10 +20,10 @@ Integrating your Golang web services with API Toolkit doesn't have to be complic
 ## How to Integrate with Golang Gin router:
 
 1. Sign up / Sign in to the [API dashboard](https://app.apitoolkit.io)
-   ![Sign up / Sign in](/signin.png)
+   ![sign up/sign in](/docs/Quickstarts/Golang/signin.png)
 2. [Create a project](/docs/dashboard/creating-a-project/)
 3. [Generate an API key for your project](/docs/dashboard/generating-api-keys), and include a brief description of your work. And to prevent losing your key after it has been generated, remember to make a copy of it.
-   ![API key generation](/api-keys-generation.png)
+   ![api key generation](/docs/Quickstarts/Golang/api-key-generation.png)
 4. Installl APItoolkit and initialize the middleware with the APItoolkit API key you generated above. Integrating only takes 3 lines of Go code:
 
 ## Installation
