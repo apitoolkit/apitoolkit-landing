@@ -10,7 +10,7 @@ menu:
 
 APIToolkit is not just a monitoring solution but a robust platform that enhances every aspect of your API lifecycle. From real-time performance analytics to direct API testing, our toolkit is designed to simplify, secure, and streamline your API processes.
 
-Concerned about privacy? You'll be pleased to know that we're taking data security to the next level. Stay tuned for our upcoming feature that enables end-to-end encryption, safeguarding the data transition between your servers and ours.
+Concerned about privacy? You'll be pleased to know that we're taking data security to the next level. Stay tuned for our upcoming feature that enables end-to-end encryption, safeguarding the data transition between your servers and ours. Here's how we're changing the game:
 
 ### 1. Simplify Server Integration
 Embark on your APIToolkit experience by implementing our server SDK or API gateway plugin. This initial step sets the stage for comprehensive API monitoring and real-time usage analytics, crucial for maintaining optimal performance.
@@ -20,8 +20,6 @@ Positioned strategically between your traffic flow and end-user interactions, AP
 
 ### 3. Develop In-depth User/Company Insights
 Dive deeper into understanding your audience with detailed user and company profiles. These insights are more than just data — they're the building blocks for improved service, personalized user experiences, and targeted solutions.
-
-[View Billing Setup](#)
 
 ## Expanding Your API Horizons with APIToolkit
 ### Real-time Monitoring & Analytics
