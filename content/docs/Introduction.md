@@ -41,17 +41,6 @@ Dive deeper into understanding your audience with detailed user and company prof
 - **Payload Validation & Anomaly Detection:** Safeguard your APIs by detecting and addressing payload anomalies and potential security breaches.
 - **API Static Analysis & Linter:** Ensure your API code adheres to best practices, improving maintainability and reducing potential vulnerabilities.
 
-<<<<<<< HEAD
-=======
-### How to integrate
-
-Integrating is very simple and in 3 steps
-
-1. Signup for apitoolkit and [generate an api key](/docs/dashboard/generating-api-keys/)
-2. Integrate the SDK for the programming language/tech stack you use. [More on this here](/docs/quickstarts/).
-3. Visit the APIToolkit dashboard and confirm that data is being sent correctly to the APIToolkit via the [log explorer](/docs/dashboard/log-explorer/)
-
->>>>>>> ba62f22c8904f5c2718db6546e7454dea701568f
 ## Integration in a Snap: How to Get Started
 
 Ready to revolutionize how you handle your APIs? Follow these three simple steps to integrate APIToolkit:
