@@ -19,14 +19,16 @@ Fill in the project's title and description to give it a clear identity.
 ![Title and description](../title-and-description.png)
 
 To optimize your experience with us:
-   - Select your desired framework.
-![desired framework](../desired-framework.png)
 
-   - Specify the feature you're keen on.
-![specify the feature](../further-project-details.png)
+- Select your desired framework.
+  ![desired framework](../desired-framework.png)
 
-   - Choose your preferred data location.
+- Specify the feature you're keen on.
+  ![specify the feature](../further-project-details.png)
 
-Upon completing these steps, your APIToolkit dashboard will be fully set up and operational.
+- Choose your preferred data location.
+
+Upon completing these steps, we'll redirection your to the onboarding page with a default APIKEY automatically generated for you.
+Use the code example for your tech stack and integrate it into your project before you can start using the APIToolkit dashboard.
 ![Welcome on board](../welcome-on-board.png)
 Congratulations, and welcome aboard!
