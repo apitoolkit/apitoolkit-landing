@@ -13,20 +13,20 @@ Embarking on your APIToolkit journey? Whether you're just starting out or are an
 Here, let's go:
 
 To create a project, you start by logging into the APIToolkit dashbboard
-![sign in/ sign up](../Dashboard/log-in.png)
+![sign in/ sign up](../log-in.png)
 
 Fill in the project's title and description to give it a clear identity.
-![Title and description](../Dashboard/title-and-description.png)
+![Title and description](../title-and-description.png)
 
 To optimize your experience with us:
    - Select your desired framework.
-![desired framework](../Dashboard/desired-framework.png)
+![desired framework](../desired-framework.png)
 
    - Specify the feature you're keen on.
-![specify the feature](../Dashboard/further-project-details.png)
+![specify the feature](../further-project-details.png)
 
    - Choose your preferred data location.
 
 Upon completing these steps, your APIToolkit dashboard will be fully set up and operational.
-![Welcome on board](../Dashboard/welcome-on-board.png)
+![Welcome on board](../welcome-on-board.png)
 Congratulations, and welcome aboard!
