@@ -2,7 +2,7 @@
 {{ $sidebarCacheLimit := cond (isset .Site.Params.ui "sidebar_cache_limit") .Site.Params.ui.sidebar_cache_limit 2000 -}}
 {{ $shouldDelayActive := ge (len .Site.Pages) $sidebarCacheLimit -}}
 <div id="td-sidebar-menu" class="p-2  {{ if $shouldDelayActive }} hidden{{ end }}">
-  <form class="py-5 flex ">
+  <!-- <form class="py-5 flex ">
     <div class="md:block mt-1 relative flex grow items-center">
       <input placeholder="quick search" type="text" name="search" id="search"
         class="border border-slate-200 shadow-sm p-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full pr-12 sm:text-sm rounded-md">
@@ -14,7 +14,7 @@
     </div>
     <a class="inline-block md:hidden  cursor-pointer p-2 px-3 hover:bg-blue-200"
       _="on click toggle .hidden on #td-section-nav">☰</a>
-  </form>
+  </form> -->
 
   <nav
     class="pt-5 hidden md:block collapse td-sidebar-nav{{ if .Site.Params.ui.sidebar_menu_foldable }} foldable-nav{{ end }}"
