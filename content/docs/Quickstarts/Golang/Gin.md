@@ -17,14 +17,14 @@ Integrating your Golang web services with API Toolkit doesn't have to be complic
   1. APIToolkit to perform all kinds of analysis and anomaly detection and monitoring on your APIs in real time.
   2. Users to explore their API live, via the api log explorer.
 
-## Setting It Up Is Easy:
+## How to Integrate with Golang Gin router:
 
-1. **Get Started on the Dashboard**: Simply (https://app.apitoolkit.io) to your control center.
-   ![Sign up / Sign in](./signin.png)
-2. **Create Your Project**: Here’s how to (/docs/dashboard/creating-a-project/)  
-3. **Secure Your Access**: Generate your (/docs/dashboard/generating-api-keys) and keep it safe. It's the key to your kingdom! And to prevent losing your key after it has been generated, remember to make a copy of it.
-   ![API key generation](./api-key-generation.png)
-4. Installl APItoolkit and initialize the middleware with the APItoolkit API key you generated above within 3 lines of Go code:
+1. Sign up / Sign in to the [API dashboard](https://app.apitoolkit.io)
+   ![sign up/sign in](/docs/Quickstarts/Golang/signin.png)
+2. [Create a project](/docs/dashboard/creating-a-project/)
+3. [Generate an API key for your project](/docs/dashboard/generating-api-keys), and include a brief description of your work. And to prevent losing your key after it has been generated, remember to make a copy of it.
+   ![api key generation](/docs/Quickstarts/Golang/api-key-generation.png)
+4. Installl APItoolkit and initialize the middleware with the APItoolkit API key you generated above. Integrating only takes 3 lines of Go code:
 
 ## Installation
 
@@ -45,7 +45,7 @@ import (
   	apitoolkit "github.com/apitoolkit/apitoolkit-go"
     "github.com/gin-gonic/gin"
 )
-	
+
 func main() {
 
 	// Initialize the client using your apitoolkit.io generated apikey
@@ -85,7 +85,7 @@ Imagine you have a request that looks like this:
 }
 ```
 
-You don't want everyone seeing John Doe's password or credit card number, right? So, you'll tell apitoolkit to hide these details. Add `$.user.password` and `$.user.creditCard.number` to a special list called `RedactRequestBody`, like this:
+You might not wnat to trust us with John Doe's password or credit card number, right? So, you'll tell apitoolkit to hide these details. Add `$.user.password` and `$.user.creditCard.number` the `RedactRequestBody` array, like this:
 
 ```go
 func main() {
@@ -103,8 +103,8 @@ func main() {
     // Register with the corresponding middleware of your choice. For Gin router, we use the GinMiddleware method.
     router.Use(apitoolkitClient.GinMiddleware)
     // Register your handlers as usual and run the gin server as usual.
-    router.POST("/:slug/test", func(c *gin.Context) {c.Text(200, "ok")})
-    ...
+    router.POST("/:slug/test", func(c *gin.Context) {c.String(200, "ok")})
+    router.Run(":8080")
 }
 ```
 
@@ -169,4 +169,5 @@ func main() {
 
 1. Deploy your application or send test http requests to your service
 2. Check API log explorer or Endpoints pages on the APIToolkit dashboard to see if your test request was processed correctly
+   ![Endpoint-after-integration](/endpoint-screenshot.png)
 3. Enjoy having our API comanage your backends and APIs with you.
