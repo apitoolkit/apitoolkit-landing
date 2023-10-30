@@ -46,14 +46,15 @@ Dive deeper into understanding your audience with detailed user and company prof
 Ready to revolutionize how you handle your APIs? Follow these three simple steps to integrate APIToolkit:
 
 1. **Sign Up & Secure Your API Key:**
-
    - Embark on your journey with APIToolkit by [signing up](https://app.apitoolkit.io/) and generating your unique API key. It's your first step towards enhanced API management.
+![signin](../log-in.png)
 
 2. **Seamless SDK Integration:**
-
    - Whether you're a Python maestro, a Go aficionado, or your talents lie elsewhere, integrating the APIToolkit SDK with your tech stack is a breeze. Need more guidance? Find detailed instructions [here](/docs/quickstarts/).
+![quickstart](../quickstart.png)
 
 3. **Dive into the Dashboard:**
    - Your command center awaits! Access the APIToolkit dashboard and head over to the [log explorer](/docs/dashboard/log-explorer/) to confirm that your data is journeying smoothly from your servers to ours.
+![dashboard](../welcome-on-board.png)
 
 Voila! You're all set to explore the vast capabilities of APIToolkit. Navigate through insightful analytics, set up alerts, and never miss a beat with your API performance.
