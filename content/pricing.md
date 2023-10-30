@@ -18,22 +18,22 @@ Trust your APIs, and only pay for what you use as you grow.
 
 <div class="flex flex-col sm:flex-row text-sm bg-white drop-shadow-xl pricing-card mt-8  divide-y sm:divide-x-none  divide-x border-2">
 
-<div class="flex flex-1 ">
+<!-- <div class="flex flex-1 "> -->
 
-### Free
+<!-- ### Free -->
 
-#### **$0**/mo
+<!-- #### **$0**/mo -->
 
-<br/>
+<!-- <br/> -->
 
-**20,000** Reqs / mo <small>included</small>
+<!-- **20,000** Reqs / mo <small>included</small> -->
 
-1 Team Member
-Last \*14 days Data Retained
+<!-- 1 Team Member -->
+<!-- Last \*14 days Data Retained -->
 
-<a class="blue-button" href="https://app.apitoolkit.io/p/new?plan=free&annual">Get Started</a>
+<!-- <a class="blue-button" href="https://app.apitoolkit.io/p/new?plan=free&annual">Get Started</a> -->
 
-</div>
+<!-- </div> -->
 
 <div class="flex flex-1">
 
