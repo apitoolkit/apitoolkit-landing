@@ -13,9 +13,11 @@ Embarking on your APIToolkit journey? Whether you're just starting out or are an
 Here, let's go:
 
 To create a project, you start by logging into the APIToolkit dashbboard
+
 ![sign in/ sign up](../log-in.png)
 
 Fill in the project's title and description to give it a clear identity.
+
 ![Title and description](../title-and-description.png)
 
 To optimize your experience with us:
@@ -28,7 +30,8 @@ To optimize your experience with us:
 
 - Choose your preferred data location.
 
-Upon completing these steps, we'll redirection your to the onboarding page with a default APIKEY automatically generated for you.
-Use the code example for your tech stack and integrate it into your project before you can start using the APIToolkit dashboard.
+Upon completing these steps, we'll redirect you to the onboarding page with a default APIKEY automatically generated for you. Use the code example from the [quickstart](https://apitoolkit.io/docs/quickstarts/)and integrate it into your project before you can start using the APIToolkit dashboard.
+
 ![Welcome on board](../welcome-on-board.png)
+
 Congratulations, and welcome aboard!
