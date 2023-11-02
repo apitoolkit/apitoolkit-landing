@@ -8,12 +8,12 @@ menu:
     weight: 1
 ---
 
-The APIToolkit integration guide for ExpressJS and CommonJS provides a streamlined process to capture incoming traffic data. It collects request information and efficiently forwards it to the APIToolkit servers.
+The APIToolkit integration guide for ExpressJS provides a streamlined process to capture incoming traffic data. It collects request information and efficiently forwards it to the APIToolkit servers.
 
-## Integrating with CommonJS
+## Integrating in an ExpressJS server
 
 1. **Install the necessary packages**:
-   
+
    Use npm or yarn to install `express` and `apitoolkit-express`.
 
    ```bash
@@ -22,58 +22,53 @@ The APIToolkit integration guide for ExpressJS and CommonJS provides a streamlin
 
 2. **Setup your server**:
 
+   **ESM example**
+
+   ```javascript
+   import express from 'express';
+   import { APIToolkit } from 'apitoolkit-express';
+
+   const app = express();
+   const port = 3000;
+
+   const apitoolkitClient = await APIToolkit.NewClient({ apiKey: '<API-KEY>' });
+   app.use(apitoolkitClient.expressMiddleware);
+
+   app.get('/', (req, res) => {
+     res.json({ hello: 'Hello world!' });
+   });
+
+   app.listen(port, () => {
+     console.log(`Example app listening on port ${port}`);
+   });
+   ```
+
+   **CommonJs Example**
+
    ```javascript
    const express = require('express');
    const APIToolkit = require('apitoolkit-express').default;
-   
+
    const app = express();
    const port = 3000;
 
    (async function () {
-       const apitoolkitClient = await APIToolkit.NewClient({ apiKey: 'YOUR_API_KEY' });
-       app.use(apitoolkitClient.expressMiddleware);
+     const apitoolkitClient = await APIToolkit.NewClient({
+       apiKey: '<API_KEY>',
+     });
+     app.use(apitoolkitClient.expressMiddleware);
 
-       app.get('/', (req, res) => {
-           res.send('Hello World!');
-       });
+     app.get('/', (req, res) => {
+       res.json({ hello: 'Hello world!' });
+     });
 
-       app.listen(port, () => {
-           console.log(`Example app listening on port ${port}`);
-       });
+     app.listen(port, () => {
+       console.log(`Example app listening on port ${port}`);
+     });
    })();
    ```
 
    **Note**: Replace `<API-KEY>` with your unique key from your [APIToolkit account](apitoolkit.io)
-
-## Integrating with ESM
-
-1. **Install the necessary packages**:
-
-   Again, use npm or yarn to install `express` and `apitoolkit-express`.
-
-   ```bash
-   npm install express apitoolkit-express
-   ```
-
-2. **Setup your server**:
-
-```js
-import express from 'express';
-import { APIToolkit } from 'apitoolkit-express';
-
-const app = express();
-const port = 3000;
-
-const initializeClient = APIToolkit.NewClient({ apiKey: '<API-KEY>' });
-let client = await initializeClient; app.use(client.expressMiddleware);
-
-app.get('/', (req, res) => {
-});
-
-app.listen(port, () => {
-   console.log(`Example app listening on port ${port}`);
-});
-```
 
 ## Redacting Sensitive Fields and Headers
 
@@ -83,7 +78,7 @@ To mark fields that should be redacted, simply add them to the apitoolkit config
 
 ```js
 import express from 'express';
-import APIToolkit from 'apitoolkit-express';
+import { APIToolkit } from 'apitoolkit-express';
 const app = express();
 const port = 3000;
 
@@ -118,7 +113,7 @@ For instance:
 
 ```js
 import express from 'express';
-import APIToolkit from 'apitoolkit-express';
+import { APIToolkit } from 'apitoolkit-express';
 import formidable from 'formidable';
 
 const app = express();
@@ -208,7 +203,7 @@ This works automatically from within a web request which is wrapped by the apito
 In that case, you can call ReportError, but on the apitoolkit client, instead.
 
 ```js
-import APIToolkit from 'apitoolkit-express';
+import { APIToolkit } from 'apitoolkit-express';
 
 const apitoolkitClient = await APIToolkit.NewClient({ apiKey: '<API-KEY>' });
 
