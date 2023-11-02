@@ -8,58 +8,74 @@ menu:
     weight: 1
 ---
 
-The Express SDK integration guide for APIToolkit. It monitors incoming traffic, gathers the requests and sends the request to the apitoolkit servers.
+The APIToolkit integration guide for ExpressJS and CommonJS provides a streamlined process to capture incoming traffic data. It collects request information and efficiently forwards it to the APIToolkit servers.
 
-### Installation
+## Integrating with CommonJS
 
-Run the following command to install the express SDK:
+1. **Install the necessary packages**:
+   
+   Use npm or yarn to install `express` and `apitoolkit-express`.
 
-```sh
-npm install apitoolkit-express
-```
+   ```bash
+   npm install express apitoolkit-express
+   ```
 
-### Setup
+2. **Setup your server**:
 
-1. After installation, you can then set up APIToolkit in your project like so:
+   ```javascript
+   const express = require('express');
+   const APIToolkit = require('apitoolkit-express').default;
+   
+   const app = express();
+   const port = 3000;
 
-```js
-import APIToolkit from 'apitoolkit-express';
-const apitoolkitClient = await APIToolkit.NewClient({ apiKey: '<API-KEY>' });
-```
+   (async function () {
+       const apitoolkitClient = await APIToolkit.NewClient({ apiKey: 'YOUR_API_KEY' });
+       app.use(apitoolkitClient.expressMiddleware);
 
-Replace `<API-KEY>` with your unique key from your [APIToolkit account](apitoolkit.io)
+       app.get('/', (req, res) => {
+           res.send('Hello World!');
+       });
 
-2. After setting up APIToolkit, you can then register the express middleware to monitor incoming traffic and send the request to the APIToolkit servers.
+       app.listen(port, () => {
+           console.log(`Example app listening on port ${port}`);
+       });
+   })();
+   ```
 
-```js
-app.use(apitoolkitClient.expressMiddleware);
-```
+   **Note**: Replace `<API-KEY>` with your unique key from your [APIToolkit account](apitoolkit.io)
 
-Here, 'app' is the express app object.
+## Integrating with ESM
 
-3. Example of a Basic Setup
-   - Here's how your code might look with everything in place:
+1. **Install the necessary packages**:
+
+   Again, use npm or yarn to install `express` and `apitoolkit-express`.
+
+   ```bash
+   npm install express apitoolkit-express
+   ```
+
+2. **Setup your server**:
 
 ```js
 import express from 'express';
-import APIToolkit from 'apitoolkit-express';
+import { APIToolkit } from 'apitoolkit-express';
 
 const app = express();
 const port = 3000;
 
-const apitoolkitClient = await APIToolkit.NewClient({ apiKey: '<API-KEY>' });
-app.use(apitoolkitClient.expressMiddleware);
+const initializeClient = APIToolkit.NewClient({ apiKey: '<API-KEY>' });
+let client = await initializeClient; app.use(client.expressMiddleware);
 
 app.get('/', (req, res) => {
-  res.send('Hello World!');
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+   console.log(`Example app listening on port ${port}`);
 });
 ```
 
-## Redacting Senstive Fields and Headers
+## Redacting Sensitive Fields and Headers
 
 While it's possible to mark a field as redacted from the apitoolkit dashboard, this client also supports redacting at the client side. Client side redacting means that those fields would never leave your servers at all. So you feel safer that your sensitive data only stays on your servers.
 
@@ -90,7 +106,7 @@ app.listen(port, () => {
 
 It is important to note that while the `redactHeaders` config field accepts a list of headers(case insensitive), the `redactRequestBody` and `redactResponseBody` expect a list of JSONPath strings as arguments.
 
-The choice of JSONPath was selected to allow you have great flexibility in descibing which fields within your responses are sensitive. Also note that these list of items to be redacted will be aplied to all endpoint requests and responses on your server. To learn more about jsonpath to help form your queries, please take a look at this cheatsheet: https://lzone.de/cheat-sheet/JSONPath
+The choice of JSONPath was selected to allow you have great flexibility in describing which fields within your responses are sensitive. Also note that these list of items to be redacted will be applied to all endpoint requests and responses on your server. To learn more about jsonpath to help form your queries, please take a look at this [cheat-sheet.](https://lzone.de/cheat-sheet/JSONPath)
 
 ## Handling File Uploads with Formidable
 
