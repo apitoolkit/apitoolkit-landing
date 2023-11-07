@@ -8,9 +8,15 @@ menu:
     weight: 20
 ---
 
-API Toolkit is a powerful tool that sits in front of your application, capturing and recording all incoming traffic to the API. With API Toolkit, developers can gain valuable insights into the API usage and diagnose potential issues effectively. However, it is essential to ensure the privacy and security of sensitive information transmitted through the API.
+APIToolkit is a powerful tool that sits in front of your application, capturing and recording all incoming traffic to the API. With APIToolkit, developers can gain valuable insights into the API usage and diagnose potential issues effectively. However, it is essential to ensure the privacy and security of sensitive information transmitted through the API.
 
-To address this concern, On top of autoamtically redacting sensitive fields API Toolkit also offers a robust mechanism for redacting specific fields from the captured traffic using JSONPath on your APIToolkit dashboard (you can also redact fields using any of our SDKs). This means that sensitive data, such as passwords and credit card details, can be selectively excluded from the recorded information, enhancing the overall data protection and compliance measures.
+## Ensuring Data Privacy and Security
+
+The value of the API Toolkit extends far beyond its capacity for intricate diagnostics; its critical function in safeguarding data confidentiality and security is paramount. Acknowledging the delicate essence of data managed through APIs, the API Toolkit is equipped with a dual-layered defense system for data protection:
+
+1. **Inherent Redaction:** The API Toolkit is designed with an intrinsic feature that automatically conceals recognized sensitive fields, thereby fortifying them against potential compromise.
+
+2. **Configurable Field Redaction:** Advancing its security capabilities, the toolkit also enables tailored field redaction. By utilizing JSONPath expressions, either through the API Toolkit dashboard or any associated SDK, users can define and omit specific sensitive fields. This function is vital for the meticulous exclusion of sensitive data such as passwords, personal identification numbers, and credit card information, ensuring these details are systematically removed from any logged traffic.
 
 ## Redacted Field Value: JSONPath
 
@@ -34,26 +40,23 @@ To redact a specific field, you need to specify the JSONPath expression represen
 
 To redact the password field, you would use the following JSONPath expression: `$.user.password`. Similarly, to redact the number field within the creditCard object, you would use `$.user.creditCard.number`. By specifying these JSONPath expressions, API Toolkit will exclude these fields from the captured traffic, ensuring sensitive information remains protected.
 
-## Redacting Fields On The Dashboard: Step-by-Step Guide
+## SDK-Specific Redaction Guides
 
-Now that we understand the basic concept of using JSONPath to redact fields, let's go through a step-by-step guide on how to achieve this in API Toolkit. After Identify the sensitive fields Follow these steps to redact them on the APIToolkit dashboard.
+API Toolkit supports a variety of development environments. For detailed instructions on implementing field redaction within your chosen framework, please refer to the SDK-specific guides below:
 
-1. After Identify the sensitive fields, Login to your APIToolkit dashboard and click on `Redacted fields` on the side menu.
-   ![Redacted field nav](../redacted_field.png)
-
-2. Identify JSONPath expressions: Use JSONPath expressions to identify the specific fields you want to redact. Refer to the JSON structure of your API payload and craft the JSONPath expression accordingly.
-
-3. Click `Add new field`: Click the `Add new field` button and enter the JSONPath expression in the field path input box. you can also add optional description of the redacted field as well.
-   ![Add new field](../add_redacted_field.png)
-
-4. Click `Submit`: After submitting successfully, the specified field would be redacted and excluded from all captured traffic moving forward.
-   ![Submit](../field_path.png)
-
-5. Add as many fields as you want: You can add as many sensitive fields as required by repeating steps 2 to 4. This ensures all sensitive data remains protected while still capturing useful insights from the API traffic.
-   ![Submitted](../field_path_submitted.png)
-
-By following these steps, you can effectively redact sensitive fields and those fields never leave your servers, enhancing data privacy and compliance within your application.
+- **.NET SDK**: [Redaction Guide for .NET](../Quickstarts/DotNet/DotNetCore.md)
+- **Echo SDK**: [Redaction Guide for Echo](../Quickstarts/Golang/Echo.md)
+- **Gin SDK**: [Redaction Guide for Gin](../Quickstarts/Golang/Gin.md)
+- **Gorilla SDK**: [Redaction Guide for Gorilla](../Quickstarts/Golang/Gorillamux.md)
+- **Express.js SDK**: [Redaction Guide for Express.js](../Quickstarts/NodeJS/ExpressJS.md)
+- **Fastify SDK**: [Redaction Guide for Fastify](../Quickstarts/NodeJS/Fastify.md)
+- **NestJS SDK**: [Redaction Guide for NestJS](../Quickstarts/NodeJS/NestJs.md)
+- **Laravel SDK**: [Redaction Guide for Laravel](../Quickstarts/PHP/Laravel.md)
+- **Symfony SDK**: [Redaction Guide for Symfony](../Quickstarts/PHP/Symfony.md)
+- **Django SDK**: [Redaction Guide for Django](../Quickstarts/Python/Django.md)
+- **FastAPI SDK**: [Redaction Guide for FastAPI](../Quickstarts/Python/FastAPI.md)
+- **Flask SDK**: [Redaction Guide for Flask](../Quickstarts/Python/Flask.md)
 
 ## Conclusion
 
-Data security and privacy are crucial considerations when working with APIs. API Toolkit provides a powerful solution for capturing and analyzing API traffic, but it's essential to protect sensitive information. Redacting fields using JSONPath expressions enables you to selectively exclude sensitive data from the captured traffic, ensuring confidentiality and compliance.
+Data security and privacy are crucial considerations when working with APIs. APIToolkit's sophisticated traffic capturing abilities, combined with its powerful field redaction features, offer a double-edged sword against data vulnerability. By using JSONPath for strategic data exclusion, API Toolkit not only simplifies compliance but also cements your commitment to preserving user confidentiality.
