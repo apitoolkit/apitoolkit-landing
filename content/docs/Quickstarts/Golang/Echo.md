@@ -116,7 +116,7 @@ package main
 import (
 	"github.com/labstack/echo/v4"
 	"net/http"
-	"apitoolkit"  // Assuming the APIToolkit package is imported as such
+	"apitoolkit-go"
 )
 
 func main() {
@@ -149,19 +149,44 @@ JSONPath provides a flexible way to define sensitive fields in your responses. T
 
 ## Outgoing Requests
 
-```go
-    ctx := context.Background()
-    HTTPClient := http.DefaultClient
-    HTTPClient.Transport = apitoolkitClient.WrapRoundTripper(
-        ctx, HTTPClient.Transport,
-        WithRedactHeaders([]string{}),
-    )
+To monitor outgoing HTTP requests from your Go application, you can replace the default HTTP client transport with a custom roundtripper. This allows you to capture and send copies of all incoming and outgoing requests to an apitoolkit server for monitoring and analysis.
 
+### Example
+
+```go
+package main
+
+import (
+    "github.com/labstack/echo/v4"
+    "net/http"
+    apitoolkit "github.com/apitoolkit/apitoolkit-go"
+)
+
+func main() {
+    router := echo.New()
+    router.Use(client.EchoMiddleware)
+
+    router.POST("/:slug/test", func(c echo.Context) (err error) {
+        // Create a new HTTP client
+        HTTPClient := http.DefaultClient
+
+        // Replace the transport with the custom roundtripper
+        HTTPClient.Transport = client.WrapRoundTripper(
+            c.Request().Context(),
+            HTTPClient.Transport,
+            WithRedactHeaders([]string{}),
+        )
+
+        // Make an outgoing HTTP request using the modified HTTPClient
+        _, _ = HTTPClient.Get("http://localhost:3000/monitored-outgoing-request")
+
+        // Respond to the request
+        c.String(http.StatusOK, "ok")
+    })
+}
 ```
 
-The code above shows how to use the custom roundtripper to replace the transport in the default http client.
-The resulting HTTP client can be used for any purpose, but will send a copy of all incoming and outgoing requests
-to the apitoolkit servers. So to allow monitoring outgoing request from your servers use the `HTTPClient` to make http requests.
+The provided code demonstrates how to set up the custom roundtripper to replace the default HTTP client's transport. The resulting HTTP client, `HTTPClient`, is configured to send copies of all incoming and outgoing requests to the apitoolkit servers. You can use this modified HTTP client for any HTTP requests you need to make from your server, ensuring they are monitored by apitoolkit.
 
 ## Report Errors
 
