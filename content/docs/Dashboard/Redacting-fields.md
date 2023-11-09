@@ -57,6 +57,9 @@ API Toolkit supports a variety of development environments. For detailed instruc
 - **FastAPI SDK**: [Redaction Guide for FastAPI](../Quickstarts/Python/FastAPI.md)
 - **Flask SDK**: [Redaction Guide for Flask](../Quickstarts/Python/Flask.md)
 
+Here is a screenshot of a redacted field on our Log Explorer
+![redacted field](redacted-field.png)
+
 ## Conclusion
 
 Data security and privacy are crucial considerations when working with APIs. APIToolkit's sophisticated traffic capturing abilities, combined with its powerful field redaction features, offer a double-edged sword against data vulnerability. By using JSONPath for strategic data exclusion, API Toolkit not only simplifies compliance but also cements your commitment to preserving user confidentiality.
