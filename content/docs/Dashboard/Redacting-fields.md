@@ -12,15 +12,15 @@ APIToolkit is a powerful tool that sits in front of your application, capturing 
 
 ## Ensuring Data Privacy and Security
 
-The value of the API Toolkit extends far beyond its capacity for intricate diagnostics; its critical function in safeguarding data confidentiality and security is paramount. Acknowledging the delicate essence of data managed through APIs, the API Toolkit is equipped with a dual-layered defense system for data protection:
+The value of the APIToolkit extends far beyond its capacity for intricate diagnostics; its critical function in safeguarding data confidentiality and security is paramount. Acknowledging the delicate essence of data managed through APIs, the APIToolkit is equipped with a dual-layered defense system for data protection:
 
-1. **Inherent Redaction:** The API Toolkit is designed with an intrinsic feature that automatically conceals recognized sensitive fields, thereby fortifying them against potential compromise.
+1. **Inherent Redaction:** APIToolkit is designed with an intrinsic feature that automatically conceals recognized sensitive fields, thereby fortifying them against potential compromise.
 
 2. **Configurable Field Redaction:** Advancing its security capabilities, the toolkit also enables tailored field redaction. By utilizing JSONPath expressions, either through the API Toolkit dashboard or any associated SDK, users can define and omit specific sensitive fields. This function is vital for the meticulous exclusion of sensitive data such as passwords, personal identification numbers, and credit card information, ensuring these details are systematically removed from any logged traffic.
 
 ## Redacted Field Value: JSONPath
 
-API Toolkit leverages JSONPath, a widely adopted query language, to specify the fields that need to be redacted. JSONPath allows you to navigate and query the JSON data structure effectively, enabling precise control over which fields should be redacted. [learn more about JSONPath](https://lzone.de/cheat-sheet/JSONPath). Redacting means that those fields would never leave your servers at all. So you feel safer that your sensitive data only stays on your servers.
+APIToolkit leverages JSONPath, a widely adopted query language, to specify the fields that need to be redacted. JSONPath allows you to navigate and query the JSON data structure effectively, enabling precise control over which fields should be redacted. [learn more about JSONPath](https://lzone.de/cheat-sheet/JSONPath). Redacting means that those fields would never leave your servers at all. So you feel safer that your sensitive data only stays on your servers.
 
 To redact a specific field, you need to specify the JSONPath expression representing that field. For example, consider a JSON object representing a user's data:
 
@@ -42,7 +42,7 @@ To redact the password field, you would use the following JSONPath expression: `
 
 ## SDK-Specific Redaction Guides
 
-API Toolkit supports a variety of development environments. For detailed instructions on implementing field redaction within your chosen framework, please refer to the SDK-specific guides below:
+APIToolkit supports a variety of development environments. For detailed instructions on implementing field redaction within your chosen framework, please refer to the SDK-specific guides below:
 
 - **.NET SDK**: [Redaction Guide for .NET](https://apitoolkit.io/docs/quickstarts/dotnet/dotnetcore/)
 - **Echo SDK**: [Redaction Guide for Echo](https://apitoolkit.io/docs/quickstarts/golang/echo/)
