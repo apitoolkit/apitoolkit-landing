@@ -57,7 +57,7 @@ API Toolkit supports a variety of development environments. For detailed instruc
 - **FastAPI SDK**: [Redaction Guide for FastAPI](../Quickstarts/Python/FastAPI.md)
 - **Flask SDK**: [Redaction Guide for Flask](../Quickstarts/Python/Flask.md)
 
-Here is a screenshot of a redacted field on our Log Explorer
+Here is a screenshot of a redacted field on our Log Explorer.
 ![redacted field](redacted-field.png)
 
 ## Conclusion
