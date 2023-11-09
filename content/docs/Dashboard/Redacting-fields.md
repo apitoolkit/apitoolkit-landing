@@ -20,7 +20,7 @@ The value of the API Toolkit extends far beyond its capacity for intricate diagn
 
 ## Redacted Field Value: JSONPath
 
-API Toolkit leverages JSONPath, a widely adopted query language, to specify the fields that need to be redacted. JSONPath allows you to navigate and query the JSON data structure effectively, enabling precise control over which fields should be redacted. [lean more about JSONPath](https://lzone.de/cheat-sheet/JSONPath). Redacting means that those fields would never leave your servers at all. So you feel safer that your sensitive data only stays on your servers.
+API Toolkit leverages JSONPath, a widely adopted query language, to specify the fields that need to be redacted. JSONPath allows you to navigate and query the JSON data structure effectively, enabling precise control over which fields should be redacted. [learn more about JSONPath](https://lzone.de/cheat-sheet/JSONPath). Redacting means that those fields would never leave your servers at all. So you feel safer that your sensitive data only stays on your servers.
 
 To redact a specific field, you need to specify the JSONPath expression representing that field. For example, consider a JSON object representing a user's data:
 
