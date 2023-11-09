@@ -7,7 +7,7 @@ categories:
   - API Log Explorer
 ---
 
-![API Log Explorer](api-log-explorer.png)
+![api log explorer](log-explorer.png)
 
 The user experience (UX) has predominantly been associated with what happens on the frontend: the user interfaces, the responsiveness of a web page, and the visual feedback from a mobile app. However, as digital ecosystems have grown more complex, there’s been a significant paradigm shift towards understanding that what occurs behind the scenes (the backend) is just as critical to the user’s experience. This realization has brought [API](https://apitoolkit.io/blog/api-logs/) (Application Programming Interface) monitoring into the spotlight, revealing its undebated influence on UX.
 

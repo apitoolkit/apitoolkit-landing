@@ -44,21 +44,21 @@ To redact the password field, you would use the following JSONPath expression: `
 
 API Toolkit supports a variety of development environments. For detailed instructions on implementing field redaction within your chosen framework, please refer to the SDK-specific guides below:
 
-- **.NET SDK**: [Redaction Guide for .NET](../Quickstarts/DotNet/DotNetCore.md)
-- **Echo SDK**: [Redaction Guide for Echo](../Quickstarts/Golang/Echo.md)
-- **Gin SDK**: [Redaction Guide for Gin](../Quickstarts/Golang/Gin.md)
-- **Gorilla SDK**: [Redaction Guide for Gorilla](../Quickstarts/Golang/Gorillamux.md)
+- **.NET SDK**: [Redaction Guide for .NET](https://apitoolkit.io/docs/quickstarts/dotnet/dotnetcore/)
+- **Echo SDK**: [Redaction Guide for Echo](https://apitoolkit.io/docs/quickstarts/golang/echo/)
+- **Gin SDK**: [Redaction Guide for Gin](https://apitoolkit.io/docs/quickstarts/golang/gin/)
+- **Gorilla SDK**: [Redaction Guide for Gorilla](https://apitoolkit.io/docs/quickstarts/golang/gorillamux/)
 - **Express.js SDK**: [Redaction Guide for Express.js](../Quickstarts/NodeJS/ExpressJS.md)
-- **Fastify SDK**: [Redaction Guide for Fastify](../Quickstarts/NodeJS/Fastify.md)
-- **NestJS SDK**: [Redaction Guide for NestJS](../Quickstarts/NodeJS/NestJs.md)
-- **Laravel SDK**: [Redaction Guide for Laravel](../Quickstarts/PHP/Laravel.md)
-- **Symfony SDK**: [Redaction Guide for Symfony](../Quickstarts/PHP/Symfony.md)
-- **Django SDK**: [Redaction Guide for Django](../Quickstarts/Python/Django.md)
-- **FastAPI SDK**: [Redaction Guide for FastAPI](../Quickstarts/Python/FastAPI.md)
-- **Flask SDK**: [Redaction Guide for Flask](../Quickstarts/Python/Flask.md)
+- **Fastify SDK**: [Redaction Guide for Fastify](https://apitoolkit.io/docs/quickstarts/nodejs/fastify/)
+- **NestJS SDK**: [Redaction Guide for NestJS](https://apitoolkit.io/docs/quickstarts/nodejs/nestjs/)
+- **Laravel SDK**: [Redaction Guide for Laravel](https://apitoolkit.io/docs/quickstarts/php/laravel/)
+- **Symfony SDK**: [Redaction Guide for Symfony](https://apitoolkit.io/docs/quickstarts/php/symfony/)
+- **Django SDK**: [Redaction Guide for Django](https://apitoolkit.io/docs/quickstarts/python/django/)
+- **FastAPI SDK**: [Redaction Guide for FastAPI](https://apitoolkit.io/docs/quickstarts/python/fastapi/)
+- **Flask SDK**: [Redaction Guide for Flask](https://apitoolkit.io/docs/quickstarts/python/flask/)
 
 Here is a screenshot of a redacted field on our Log Explorer
-![redacted field](redacted-field.png)
+![the redactedted field](the-redacted-field.png)
 
 ## Conclusion
 
