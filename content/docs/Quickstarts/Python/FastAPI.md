@@ -102,3 +102,57 @@ The choice of JSONPath was selected to allow you have great flexibility in desci
 Also note that these list of items to be redacted will be aplied to all endpoint requests and responses on your server.
 To learn more about jsonpath to help form your queries, please take a look at this cheatsheet:
 [https://lzone.de/cheat-sheet/JSONPath](https://lzone.de/cheat-sheet/JSONPath)
+
+## Tags and Service Versions
+
+Enhance your request monitoring in APIToolkit by including tags and specifying service versions in the APIToolkit class constructor.
+
+#### Example
+
+```python
+apitoolkit = APIToolkit(api_key="<API_KEY>", debug=True, service_version="3.0.0", tags=["prod", "eu"])
+```
+
+# Outgoing Requests
+
+Efficiently monitor outgoing HTTP requests from your FastAPI application using the `observe_request` function from the `apitoolkit_fastapi` module. This function allows you to capture and forward copies of both incoming and outgoing requests to an APIToolkit server for thorough monitoring and analysis.
+
+### Example
+
+```python
+from fastapi import FastAPI, Request
+from apitoolkit_fastapi import observe_request, report_error
+
+app = FastAPI()
+
+@app.get('/sample/{subject}')
+async def sample_route(subject: str, request: Request):
+    # Observe the request and send it to the APIToolkit server
+    resp = observe_request(request).get("https://jsonplaceholder.typicode.com/todos/2")
+    return resp.read()
+```
+
+The `observe_request` function wraps an HTTPX client, allowing you to use it seamlessly for any request, just like you would with HTTPX.
+
+# Error Reporting
+
+If you're familiar with sentry, bugsnag, or rollbar, you'll easily grasp this use case. However, with APIToolkit, errors are always linked to a parent request, enabling you to query and associate errors that occurred while serving a specific customer request. To report errors to APIToolkit, utilize the `report_error` function from the `apitoolkit_fastapi` module. You can report as many errors as needed during a single request.
+
+### Example
+
+```python
+from fastapi import FastAPI, Request
+from apitoolkit_fastapi import observe_request, report_error
+
+app = FastAPI()
+
+@app.get('/sample/{subject}')
+async def sample_route(subject: str, request: Request):
+    try:
+        resp = observe_request(request).get("https://jsonplaceholder.typicode.com/todos/2")
+        return resp.read()
+    except Exception as e:
+        # Report the error to APIToolkit
+        report_error(request, e)
+        return "Something went wrong"
+```
