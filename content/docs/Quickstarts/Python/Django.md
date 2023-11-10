@@ -69,3 +69,56 @@ Eg:
 ```python
 APITOOLKIT_DEBUG = True
 ```
+
+## Tags and Service versions
+
+You can also add tags and service versions in your requests monitoring by adding them in your `settings.py` file
+
+#### Example
+
+```python
+APITOOLKIT_TAGS = ["PROD", "EU"]
+APITTOLKIT_SERVICE_VERSION = "2.0.0"
+```
+
+# Outgoing Requests
+
+To monitor outgoing HTTP requests from your Django application, you can use the `observe_request` function from the `apitoolkit_django` module. This allows you to capture and send copies of all incoming and outgoing requests to an apitoolkit server for monitoring and analysis.
+
+### Example
+
+```python
+from django.http import JsonResponse
+from apitoolkit_django import observe_request, report_error
+
+
+def hello_world(request, name):
+    resp = observe_request(request).get(
+        "https://jsonplaceholder.typicode.com/todos/2")
+    resp.read()
+    return JsonResponse({"data": resp.read()})
+```
+
+The `observe_request` function wraps an httpx client and you can use it just like you would normally use httpx for any request you need.
+
+# Error Reporting
+
+If you’ve used sentry, or bugsnag, or rollbar, then you’re already familiar with this usecase.
+But you can report an error to apitoolkit. A difference, is that errors are always associated with a parent request, and helps you query and associate the errors which occured while serving a given customer request. To request errors to APIToolkit use the `report_error` function from the `apitoolkit_django` module to report an error you can report as many errors you want during a request
+
+### Example
+
+```python
+from django.http import JsonResponse
+from apitoolkit_django import observe_request, report_error
+
+def hello_world(request, name):
+    try:
+        resp = observe_request(request).get(
+            "https://jsonplaceholder.typicode.com/todos/2")
+        resp.read()
+        return JsonResponse({"hello": "world"})
+    except Exception as e:
+        report_error(request, e)
+        return JsonResponse({"Error": "Something went wrong"})
+```
