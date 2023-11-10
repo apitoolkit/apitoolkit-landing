@@ -117,7 +117,7 @@ API log explorers have emerged as a critical component in the modern technology 
 
 [Try APIToolkit for Free](apitoolkit.io)
 
-## Keep Reading 
+## Keep Reading
 
 [Ultimate Guide to API Testing Automation](https://apitoolkit.io/blog/api-testing-automation)
 

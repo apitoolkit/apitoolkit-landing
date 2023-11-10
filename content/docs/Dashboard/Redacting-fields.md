@@ -38,7 +38,7 @@ To redact a specific field, you need to specify the JSONPath expression represen
 }
 ```
 
-To redact the password field, you would use the following JSONPath expression: `$.user.password`. Similarly, to redact the number field within the creditCard object, you would use `$.user.creditCard.number`. By specifying these JSONPath expressions, API Toolkit will exclude these fields from the captured traffic, ensuring sensitive information remains protected.
+To redact the password field, you would use the following JSONPath expression: `$.user.password`. Similarly, to redact the number field within the creditCard object, you would use `$.user.creditCard.number`. By specifying these JSONPath expressions, APIToolkit will exclude these fields from the captured traffic, ensuring sensitive information remains protected.
 
 ## SDK-Specific Redaction Guides
 
@@ -62,4 +62,4 @@ Here is a screenshot of a redacted field on our Log Explorer
 
 ## Conclusion
 
-Data security and privacy are crucial considerations when working with APIs. APIToolkit's sophisticated traffic capturing abilities, combined with its powerful field redaction features, offer a double-edged sword against data vulnerability. By using JSONPath for strategic data exclusion, API Toolkit not only simplifies compliance but also cements your commitment to preserving user confidentiality.
+Data security and privacy are crucial considerations when working with APIs. APIToolkit's sophisticated traffic capturing abilities, combined with its powerful field redaction features, offer a double-edged sword against data vulnerability. By using JSONPath for strategic data exclusion, APIToolkit not only simplifies compliance but also cements your commitment to preserving user confidentiality.
