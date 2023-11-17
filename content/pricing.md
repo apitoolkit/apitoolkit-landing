@@ -7,10 +7,10 @@ layout: baseonly
 
 <section class="text-center pt-5">
 
-<!-- <p class="text-sm leading-6 text-white bg-black rounder py-4 py-3 rounded-xl">
+<p class="text-sm leading-6 text-white bg-black rounder py-4 py-3 rounded-xl">
     <strong class="font-bold text-white text-lg">Limited Time Offer:&nbsp; </strong>
     Use Voucher <strong class="text-white font-bold text-lg">APITOOLKIT50</strong> for 50% off on all plans forever. Offer only valid till 30th September.
-</p> -->
+</p>
 
 Trust your APIs, and only pay for what you use as you grow.
 <br/>
@@ -18,22 +18,22 @@ Trust your APIs, and only pay for what you use as you grow.
 
 <div class="flex flex-col sm:flex-row text-sm bg-white drop-shadow-xl pricing-card mt-8  divide-y sm:divide-x-none  divide-x border-2">
 
-<!-- <div class="flex flex-1 "> -->
+<div class="flex flex-1 ">
 
-<!-- ### Free -->
+### Free
 
-<!-- #### **$0**/mo -->
+#### **$0**/mo
 
-<!-- <br/> -->
+<br/>
 
-<!-- **20,000** Reqs / mo <small>included</small> -->
+**20,000** Reqs / mo <small>included</small>
 
-<!-- 1 Team Member -->
-<!-- Last \*14 days Data Retained -->
+1 Team Member
+Last \*14 days Data Retained
 
-<!-- <a class="blue-button" href="https://app.apitoolkit.io/p/new?plan=free&annual">Get Started</a> -->
+<a class="blue-button" href="https://app.apitoolkit.io/p/new?plan=free&annual">Get Started</a>
 
-<!-- </div> -->
+</div>
 
 <div class="flex flex-1">
 
