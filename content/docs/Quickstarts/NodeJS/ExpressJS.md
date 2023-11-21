@@ -147,7 +147,7 @@ By executing this procedure, APIToolkit gains access to non-redacted fields and 
 Simply wrap your axios instance with the APIToolkit observeAvios function.
 
 ```typescript
-import { observeAxios } from 'apitoolkit/axios';
+import { observeAxios } from 'apitoolkit-express/axios';
 
 const response = await observeAxios(axios).get(`${baseURL}/user_list/active`);
 ```
@@ -155,7 +155,7 @@ const response = await observeAxios(axios).get(`${baseURL}/user_list/active`);
 If you're making requests to endpoints which have variable urlPaths, you should include a wildcard url of the path, so that apitoolkit groups the endpoints correctly for you on the dashboardL:
 
 ```typescript
-import { observeAxios } from 'apitoolkit/axios';
+import { observeAxios } from 'apitoolkit-express/axios';
 
 const response = await observeAxios(axios, '/users/{user_id}').get(
   `${baseURL}/users/user1234`
@@ -165,7 +165,7 @@ const response = await observeAxios(axios, '/users/{user_id}').get(
 There are other optional arguments you could pass on to the observeAxios function, eg:
 
 ```typescript
-import { observeAxios } from 'apitoolkit/axios';
+import { observeAxios } from 'apitoolkit-express/axios';
 
 const redactHeadersList = ['Content-Type', 'Authorization'];
 const redactRequestBodyList = ['$.body.bla.bla'];
@@ -190,7 +190,8 @@ If you've used sentry, or rollback, or bugsnag, then you're likely aware of this
 Within the context of a web request, reporting error is as simple as calling the apitoolkit ReportError function.
 
 ```typescript
-import { ReportError } from 'apitoolkit';
+import { ReportError } from 'apitoolkit-express';
+import {observeAxios} from 'apitoolkit-express/axios';
 
 try {
   const response = await observeAxios(axios).get(`${baseURL}/ping`);
@@ -204,6 +205,7 @@ In that case, you can call ReportError, but on the apitoolkit client, instead.
 
 ```js
 import { APIToolkit } from 'apitoolkit-express';
+import {observeAxios} from 'apitoolkit-express/axios';
 
 const apitoolkitClient = await APIToolkit.NewClient({ apiKey: '<API-KEY>' });
 
