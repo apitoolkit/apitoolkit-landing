@@ -8,19 +8,22 @@ menu:
     weight: 30
 ---
 
+<video src="logs.mp4" controls title="log query"></video>
+
 This document describes at a high level, the log query language used to query and filter API request and response data.
 
 ## Overview
 
 ![Log Query Box](../log_query_box.png "Log Query Box")
 
-You can use the Log Query Language in the Logs Explorer of the Apitoolkit dashboard. You can use the language to query data, group data and even create metrics based of request/response data which match the queries. 
+The Log Query Language in the APIToolkit Dashboard is a robust tool designed for querying and filtering API request and response data. It allows users to perform detailed queries, group data, and create metrics based on specific criteria in the request/response logs.
 
-A query is a boolean expression that specifies a subset of all the request/response log entries. The queries always revolve around fields in the log entries, and follow a simple grammer:
-- Simple restriction eg `method="GET"`
-- Conjunctive restriction eg `method="GET" AND status_code=404`
-- Disjunctive restriction eg `method="GET" OR method="PUT"`
-- Complex conjunctive/disjunctive expression eg `method="GET" AND (response_body.value="value" OR status_code=302)`
+A query is a boolean expression that specifies a subset of all the request/response log entries. Queries can range from simple restrictions to complex conjunctive/disjunctive expressions. Examples include:
+
+- Simple restriction: `method="GET"`
+- Conjunctive restriction: `method="GET" AND status_code=404`
+- Disjunctive restriction: `method="GET" OR method="PUT"`
+- Complex conjunctive/disjunctive expression: `method="GET" AND (response_body.value="value" OR status_code=302)`
 
 ## Syntax notation
 
@@ -60,19 +63,19 @@ It is usually of the shape `[FIELD_PATH] [OPERATOR] [VALUE]`
 
 The field identifier defines the path from the log entry root to the relevant field. It's syntax is mildly inspired by the [jq syntax](https://jqplay.org/)
 
+Field path identifiers define the path from the log entry root to the relevant field, inspired by the [`jq` syntax](https://jqplay.org/). For instance, `status_code` or `query_param.key` for nested fields. For nested fields within arrays, use `[]`, e.g., `response_body.addresses.[].street_number`.
+
 ![Log Entry](../log_entry.png "Log Entry")
 
 The field paths must always reference the fields in the log entry. Eg in the example above, I could reference the status_code via `status_code`. I could reference nested fields in objects by using a `.` as the separator. Eg for the `key` field in `query_param`, I could do `query_param.key` eg 
 ```
 query_param.key = ""
 ```
-
 For nested fields with arrays, we can use `[]` as a special character to signify that that section of the field path is an array or list.  Eg
 ```
 response_body.addresses.[].street_number = 20
 ```
 This example above assumes that there is an addresses array and in that array each item is a object with a field `street_number`, and we want the results where that `street_number` is 20
-
 
 #### Default field path identifiers
 
@@ -91,4 +94,6 @@ These are fields which are always available and are usually at the root of the l
 - `request_body`: Usually an object representing the parsed request json (or text) for that given request. You can use this as part of your log queries.
 - `response_body`: Usually an object representing the parsed response json (or text) for that given response. You can use this as part of your log queries.
 
+### Using the Log Query Language
 
+When using the Log Query Language in the Logs Explorer, you can effectively query and analyze your API traffic, gaining insights into usage patterns, troubleshooting issues, and understanding user interactions with your API.

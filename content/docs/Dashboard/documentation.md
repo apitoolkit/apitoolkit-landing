@@ -11,7 +11,7 @@ menu:
 Our API documentation provides a comprehensive overview of all the functionalities and endpoints available in our API. To access this information, follow these simple steps:
 
 ## Step 1: Sign Up
-![Sign up](../sign-up.png)
+![Sign in](../Sign-up.png)
 
 Before accessing the documentation, you need to have an account with us.
 1. Go to the [Sign Up](https://app.apitoolkit.io/)
