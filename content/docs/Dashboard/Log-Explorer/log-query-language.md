@@ -8,7 +8,7 @@ menu:
     weight: 30
 ---
 
-<video src="logs.mp4" controls title="log query"></video>
+<video src="../logs.mp4" controls title="log query"></video>
 
 This document describes at a high level, the log query language used to query and filter API request and response data.
 
