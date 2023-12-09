@@ -26,22 +26,25 @@ npm install apitoolkit-adonis
 
 ### Project setup
 
-After installing the `apitoolkit-adonis` SDK, add it to your global middlewares list in the `start/kernel.(js,ts)` file
+After installing the `apitoolkit-adonis` SDK, run the following command to configure it in your adonis project
+
+```bash
+node ace configure apitoolkit-adonis
+```
+
+Then add `@ioc:APIToolkit` to your global middlewares list in the `start/kernel.ts` file
 
 ```js
-
 Server.middleware.register([
     () => import('@ioc:Adonis/Core/BodyParser'),
-    () => import("apitoolkit-adonis")
+    () => import("@ioc:APIToolkit")
 ])
-
 ```
 
 ### Configuration
 
-To configure the sdk first 
-create an `apitoolkit.(js,ts)` file in the `/conf` directory
-and export an object with the following properties
+To configure the sdk first create an `apitoolkit.ts` file in the `/conf` directory
+and export a `apitoolkitConfig` object with the following properties
 
 - **apiKey**: `required` This API key can be generated from your [APIToolkit acount](https://app.apitoolkit.io)
 - **redactHeaders**: `optional` This is an array of request and response headers that should be omited by APIToolkit
@@ -54,7 +57,7 @@ and export an object with the following properties
 To configure, the default export of `/conf/apitoolkit` should contain all necessary properties eg:
 
 ```js
-export default {
+export const apitoolkitConfig = {
     apiKey: "<YOUR_API_KEY>",
 }
 ```
@@ -68,7 +71,7 @@ While it's possible to mark a field as redacted from the apitoolkit dashboard, t
 To mark fields that should be redacted, simply add them to the `conf/apitoolkit.(js,ts)` default export object. Eg:
 
 ```js
-export default {
+export const apitoolkitConfig = {
     apiKey: "<YOUR_API_KEY>",
     redactHeaders: ["Content-Type", "Authorization", "Cookies"], // Specified headers will be redacted
     redactRequestBody: ["$.credit-card.cvv", "$.credit-card.name"], // Specified request bodies fields will be redacted
