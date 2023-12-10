@@ -90,7 +90,7 @@ Simply wrap your axios instance with the APIToolkit observeAxios function.
 
 ```typescript
 import Route from '@ioc:Adonis/Core/Route'
-import { observeAxios } from "apitoolkit-adonis/axios";
+import { observeAxios } from "apitoolkit-adonis";
 
 const redactHeadersList = ["Content-Type", "Authorization"];
 const redactRequestBodyList = ["$.body.user.name"];
@@ -108,7 +108,7 @@ Route.get('/observer', async () => {
 If you're making requests to endpoints which have variable urlPaths, you should include a wildcard url of the path, so that apitoolkit groups the endpoints correctly for you on the dashboard:
 
 ```typescript
-import { observeAxios } from "apitoolkit-adonis/axios";
+import { observeAxios } from "apitoolkit-adonis";
 
 const response = await observeAxios(axios, "/users/{user_id}").get(
   `${baseURL}/users/user1234`,
@@ -119,7 +119,7 @@ There are other optional arguments you could pass on to the observeAxios functio
 
 ```typescript
 import Route from '@ioc:Adonis/Core/Route'
-import { observeAxios } from "apitoolkit-adonis/axios";
+import { observeAxios } from "apitoolkit-adonis";
 
 const redactHeadersList = ["Content-Type", "Authorization"];
 const redactRequestBodyList = ["$.body.user.password"];
