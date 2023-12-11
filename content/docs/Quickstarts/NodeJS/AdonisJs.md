@@ -1,7 +1,7 @@
 ---
 title: Adonis Js
-date: 2022-03-23
-publishdate: 2022-03-24
+date: 2023-12-11
+publishdate: 2023-12-11
 weight: 1
 menu:
   main:
@@ -91,6 +91,7 @@ Simply wrap your axios instance with the APIToolkit observeAxios function.
 ```typescript
 import Route from '@ioc:Adonis/Core/Route'
 import { observeAxios } from "apitoolkit-adonis";
+import axios from "axios"
 
 const redactHeadersList = ["Content-Type", "Authorization"];
 const redactRequestBodyList = ["$.body.user.name"];
@@ -109,6 +110,7 @@ If you're making requests to endpoints which have variable urlPaths, you should 
 
 ```typescript
 import { observeAxios } from "apitoolkit-adonis";
+import axios from "axios"
 
 const response = await observeAxios(axios, "/users/{user_id}").get(
   `${baseURL}/users/user1234`,
@@ -152,6 +154,7 @@ Within the context of a web request, reporting error is as simple as calling the
 
 ```typescript
 import Route from '@ioc:Adonis/Core/Route'
+import axios from "axios"
 import { ReportError } from "apitoolkit-adonis";
 
 Route.get('/observer', async () => {
