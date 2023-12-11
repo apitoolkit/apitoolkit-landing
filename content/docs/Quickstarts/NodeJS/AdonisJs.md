@@ -24,7 +24,7 @@ npm install apitoolkit-adonis
 
 ```
 
-### Project setup
+### Configure the adonis package using ace
 
 After installing the `apitoolkit-adonis` SDK, run the following command to configure it in your adonis project
 
@@ -32,13 +32,17 @@ After installing the `apitoolkit-adonis` SDK, run the following command to confi
 node ace configure apitoolkit-adonis
 ```
 
+### Register the middleware
+
 Then add `@ioc:APIToolkit` to your global middlewares list in the `start/kernel.ts` file
 
 ```js
+
 Server.middleware.register([
     () => import('@ioc:Adonis/Core/BodyParser'),
     () => import("@ioc:APIToolkit")
 ])
+
 ```
 
 ### Configuration
