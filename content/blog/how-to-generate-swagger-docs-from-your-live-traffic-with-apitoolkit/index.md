@@ -6,7 +6,7 @@ categories:
   - API Failures
 ---
 
-![Alt text](How%20to%20Generate%20Swagger%20Docs%20from%20your%20Live%20traffic%20with%20Apitoolkit%20a%20heading.png)
+![Alt text](How%20to%20Generate%20Swagger%20Docs%20from%20your%20Live%20traffic%20with%20Apitoolkit%20a%20heading(1).png)
 
 # How to Generate Swagger Docs from your Live traffic with Apitoolkit
 
