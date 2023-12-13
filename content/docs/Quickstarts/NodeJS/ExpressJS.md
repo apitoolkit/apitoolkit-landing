@@ -31,7 +31,7 @@ The APIToolkit integration guide for ExpressJS provides a streamlined process to
    const app = express();
    const port = 3000;
 
-   const apitoolkitClient = await APIToolkit.NewClient({ apiKey: '<API-KEY>' });
+   const apitoolkitClient = APIToolkit.NewClient({ apiKey: '<API-KEY>' });
    app.use(apitoolkitClient.expressMiddleware);
 
    app.get('/', (req, res) => {
@@ -52,20 +52,19 @@ The APIToolkit integration guide for ExpressJS provides a streamlined process to
    const app = express();
    const port = 3000;
 
-   (async function () {
-     const apitoolkitClient = await APIToolkit.NewClient({
-       apiKey: '<API_KEY>',
-     });
-     app.use(apitoolkitClient.expressMiddleware);
+   const apitoolkitClient = APIToolkit.NewClient({
+     apiKey: '<API_KEY>',
+   });
 
-     app.get('/', (req, res) => {
-       res.json({ hello: 'Hello world!' });
-     });
+   app.use(apitoolkitClient.expressMiddleware);
 
-     app.listen(port, () => {
-       console.log(`Example app listening on port ${port}`);
-     });
-   })();
+   app.get('/', (req, res) => {
+     res.json({ hello: 'Hello world!' });
+   });
+
+   app.listen(port, () => {
+     console.log(`Example app listening on port ${port}`);
+   });
    ```
 
    **Note**: Replace `<API-KEY>` with your unique key from your [APIToolkit account](apitoolkit.io)
@@ -117,7 +116,7 @@ import { APIToolkit } from 'apitoolkit-express';
 import formidable from 'formidable';
 
 const app = express();
-const client = await APIToolkit.NewClient({
+const client = APIToolkit.NewClient({
   apiKey: '<API_KEY>',
 });
 
@@ -147,7 +146,8 @@ By executing this procedure, APIToolkit gains access to non-redacted fields and 
 Simply wrap your axios instance with the APIToolkit observeAvios function.
 
 ```typescript
-import { observeAxios } from 'apitoolkit-express/axios';
+import { observeAxios } from 'apitoolkit-express';
+import axios from "axios"
 
 const response = await observeAxios(axios).get(`${baseURL}/user_list/active`);
 ```
@@ -155,7 +155,8 @@ const response = await observeAxios(axios).get(`${baseURL}/user_list/active`);
 If you're making requests to endpoints which have variable urlPaths, you should include a wildcard url of the path, so that apitoolkit groups the endpoints correctly for you on the dashboardL:
 
 ```typescript
-import { observeAxios } from 'apitoolkit-express/axios';
+import { observeAxios } from 'apitoolkit-express';
+import axios from "axios"
 
 const response = await observeAxios(axios, '/users/{user_id}').get(
   `${baseURL}/users/user1234`
@@ -165,7 +166,8 @@ const response = await observeAxios(axios, '/users/{user_id}').get(
 There are other optional arguments you could pass on to the observeAxios function, eg:
 
 ```typescript
-import { observeAxios } from 'apitoolkit-express/axios';
+import { observeAxios } from 'apitoolkit-express';
+import axios from "axios"
 
 const redactHeadersList = ['Content-Type', 'Authorization'];
 const redactRequestBodyList = ['$.body.bla.bla'];
@@ -190,8 +192,7 @@ If you've used sentry, or rollback, or bugsnag, then you're likely aware of this
 Within the context of a web request, reporting error is as simple as calling the apitoolkit ReportError function.
 
 ```typescript
-import { ReportError } from 'apitoolkit-express';
-import {observeAxios} from 'apitoolkit-express/axios';
+import { ReportError, observeAxios } from 'apitoolkit-express';
 
 try {
   const response = await observeAxios(axios).get(`${baseURL}/ping`);
@@ -204,10 +205,9 @@ This works automatically from within a web request which is wrapped by the apito
 In that case, you can call ReportError, but on the apitoolkit client, instead.
 
 ```js
-import { APIToolkit } from 'apitoolkit-express';
-import {observeAxios} from 'apitoolkit-express/axios';
+import { APIToolkit, observeAxios } from 'apitoolkit-express';
 
-const apitoolkitClient = await APIToolkit.NewClient({ apiKey: '<API-KEY>' });
+const apitoolkitClient = APIToolkit.NewClient({ apiKey: '<API-KEY>' });
 
 try {
   const response = await observeAxios(axios).get(`${baseURL}/ping`);
