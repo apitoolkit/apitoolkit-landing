@@ -54,7 +54,7 @@ Follow this instruction to generate swagger documentation from your live traffic
 ### General overview on how to generate swagger docs from live traffic using APItoolki.
 
 1. To create a new project on APItoolkit.io, you can use the following steps: 
- * Go to the APItoolkit.io website. 
+ * Go to the [APItoolkit.io](https://apitoolkit.io/). 
  * Click on get started
  * Click on the "Create a Project" button. 
  * Enter a name for your project and desciption
