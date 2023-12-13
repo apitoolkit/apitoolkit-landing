@@ -48,8 +48,8 @@ APIToolkit is a web service development platform that enables developers to desi
 Follow this instruction to generate swagger documentation from your live traffic using APItoolkit. In this article I will be using flask for the process
 ### Prerequisites
 
-1. Create an account with APItoolkit. If you do not have an account use [this link](#) to create or login into your account.
-2. Connect your API to APItoolkit. Read more on how to do this [here](#).
+1. Create an account with APItoolkit. If you do not have an account use [this link](https://app.apitoolkit.io/) to create or login into your account.
+2. Connect your API to APItoolkit.
 
 ### General overview on how to generate swagger docs from live traffic using APItoolki.
 
