@@ -3,7 +3,7 @@ title: "How to Generate Swagger Docs from your Live traffic with Apitoolkit"
 date: 2023-12-13T08:20:58+00:00
 author: Elliot
 categories:
-  - API Failures
+  - API Documentation
 ---
 
 ![Alt text](How%20to%20Generate%20Swagger%20Docs%20from%20your%20Live%20traffic%20with%20Apitoolkit%20a%20heading.png)
