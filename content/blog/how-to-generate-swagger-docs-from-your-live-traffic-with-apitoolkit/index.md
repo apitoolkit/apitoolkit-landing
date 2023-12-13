@@ -1,3 +1,13 @@
+---
+title: "How to Generate Swagger Docs from your Live traffic with Apitoolkit"
+date: 2023-12-13T08:20:58+00:00
+author: Elliot
+categories:
+  - API Failures
+---
+
+![Alt text](How%20to%20Generate%20Swagger%20Docs%20from%20your%20Live%20traffic%20with%20Apitoolkit%20a%20heading.png)
+
 # How to Generate Swagger Docs from your Live traffic with Apitoolkit
 
 Creating clear, and useful documentation is one of the toughest challenges developers face. We pour endless energy into crafting beautiful code, architecting complex systems, and engineering revolutionary products. Yet all that effort is wasted if no one understands how to properly interact with what we build. As the saying goes, "Confusion is the enemy of utilization".
@@ -7,6 +17,8 @@ The problem becomes amplified in the technical domain of APIs. How do we documen
 ## What is Swagger?
 
 Swagger is a collection of open-source tools that helps software developers design, build, document, and consume REST APIs. It's like having a Swiss Army Knife for your API development, allowing you to plan your API with OpenAPI, collaborate with your team, generate code automatically, test your API easily, and create beautiful and interactive documentation.
+
+![Alt text](unnamed.png)
 
 But wait, let's clarify the difference between Swagger and OpenAPI. OpenAPI is a formal specification used by Swagger, while Swagger is the tool for using the OpenAPI specification.
 
@@ -21,32 +33,108 @@ Swagger document details the available API endpoints, their parameters, data typ
 - **Enhanced collaboration:** Automatic documentation ensures everyone is on the same page and facilitates smoother communication between developers.
 - **Simplified API testing:** By understanding the API structure, developers can more easily write effective test cases and ensure your API is functioning properly.
 
-## What is APIToolkit and what can it do?
+## What is APIToolkit and how can it help you??
 
-APIToolkit is a powerful platform that automates the entire API documentation process. By analyzing your live API traffic, APIToolkit automatically generates accurate and up-to-date Swagger Docs, so you can spend less time writing and more time building great APIs. APIToolkit also offers advanced features like anomaly detection, mocking and testing, making it the perfect tool for any developer who wants to streamline their API workflow.
+APIToolkit is a web service development platform that enables developers to design, build, test, and deploy APIs in a simplified and efficient manner. By providing a range of tools and services, APIToolkit aims to make API development more accessible and convenient for businesses and developers alike.
 
-Whether you're working with SOAP or REST APIs, APIToolkit can help you generate comprehensive and easy-to-understand documentation. And because your docs are always up-to-date with your live traffic, you can be confident that developers are using the most accurate information available.
+ By analyzing your live API traffic, APIToolkit automatically generates accurate and up-to-date Swagger Docs, so you can spend less time writing and more time building great APIs. APIToolkit also offers advanced features like anomaly detection, mocking and testing, making it the perfect tool for any developer who wants to streamline their API workflow.
+
+ ![Alt text](Apitoolkit.png)
+
+ Since APIToolkit is a library that allows you to generate swagger documentation for your live APIs directly from the running application without any additional setup or configuration 
 
 ## How to generate Swagger Docs from Live Traffic using APItoolkit
 
-Follow this instruction to generate swagger documentation from your live traffic using APItoolkit.
-
+Follow this instruction to generate swagger documentation from your live traffic using APItoolkit. In this article I will be using flask for the process
 ### Prerequisites
 
 1. Create an account with APItoolkit. If you do not have an account use [this link](#) to create or login into your account.
 2. Connect your API to APItoolkit. Read more on how to do this [here](#).
 
+### General overview on how to generate swagger docs from live traffic using APItoolki.
+
+1. To create a new project on APItoolkit.io, you can use the following steps: 
+ * Go to the APItoolkit.io website. 
+ * Click on get started
+ * Click on the "Create a Project" button. 
+ * Enter a name for your project and desciption
+ * Click on the "Create Project" button. 
+
+ 2. Configure your project settings in APItoolkit by visiting the project's settings page. Here, you can specify the base URL of your API and provide other necessary information.
+
+ 3. Connect your API to APItoolkit by following the provided instructions. This can be done by installing the APItoolkit agent on your server and configuring it to send data to the APItoolkit platform.
+
+ 4. Once the APItoolkit agent is connected and properly configured, APItoolkit will begin collecting data from the live traffic of your API.
+
+ 5. Monitor the data collection and the generation of the swagger document by visiting the "Dashboard" section in your APItoolkit project.
+
+6. To access the generated swagger document, visit the "Documentation" section in your APItoolkit project.
+
+7. If you want to download the generated swagger document for offline use, click on the "Download" button in the "Documentation" section.
+
+
 ### Configure live traffic monitoring
 
-**Steps:**
 
+
+**Step1:**
 1. Log in to your APItoolkit account.
 2. Create a new project or open an existing one.
-3. Click on the "Live Traffic" tab.
-4. Enable the "Record Traffic" option. This will start capturing all API requests and responses that come through your API.
-5. Wait for a sufficient amount of data to be collected. This will ensure your Swagger Docs are comprehensive and accurate.
-6. Click on the "Generate Specs" button. APItoolkit will analyze the captured traffic and automatically generate Swagger Docs based on the observed requests and responses.
-7. Review and edit the generated Swagger Docs. APItoolkit will create a basic OpenAPI/Swagger spec, but you may need to make adjustments to account for specific aspects of your API.
+
+**Step2:**
+1. Ensure you have Python installed.
+
+**Step3**
+This is a sample flask project to deomonstrate how to generate live traffice using APItoolkit.
+``````python
+from flask import Flask
+from flask_restful import Api
+from apitoolkit.flask import swagger
+
+app = Flask(__name__)
+api = Api(app)
+
+@app.route("/")
+def hello_world():
+    return "Hello, world!"
+
+@api.route("/api/v1/users")
+class UserList(Resource):
+    def get(self):
+        return {"users": [{"name": "John Doe"}, {"name": "Jane Doe"}]}
+
+@swagger.doc(
+    tags=["users"],
+    description="Operations on users",
+    responses={
+        200: {"description": "A list of users"},
+        404: {"description": "The user was not found"},
+    },
+)
+class User(Resource):
+    def get(self, user_id):
+        return {"user": {"id": user_id, "name": "John Doe"}}
+
+if __name__ == "__main__":
+    app.run(debug=True)
+``````
+
+This sample application defines two routes: 
+ 
+*  / : This route returns a simple "Hello, world!" message. 
+*  /api/v1/users : This route returns a list of users. 
+ 
+The  swagger  decorator is used to generate Swagger Docs for the API. The Swagger Docs will be  available at the following URL:
+
+``````url
+http://localhost:5000/api/v1/swagger.json
+``````
+
+**OR**
+
+You can access the generated swagger document, visit the "Documentation" section in your APItoolkit project.
+
+Review and edit the generated Swagger Docs. APItoolkit will create a basic OpenAPI/Swagger spec, but you may need to make adjustments to account for specific aspects of your API.
 
 ### Benefits of using APIToolkit for Swagger Docs Generation
 
