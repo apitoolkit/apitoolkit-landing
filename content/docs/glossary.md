@@ -10,27 +10,24 @@ menu:
 
 An API Glossary is crucial for anyone involved in API development and usage, providing a unified reference point that demystifies complex jargon. It's particularly beneficial in bridging the knowledge gap between technical and non-technical team members, fostering clearer communication and smoother collaboration. This shared understanding not only educates but also streamlines workflows, making the glossary an essential tool in any API-related project.
 
-## Table of Contents
-
-- [Table of Contents](#table-of-contents)
-  - [A](#a)
-  - [C](#c)
-  - [D](#d)
-  - [E](#e)
-  - [G](#g)
-  - [H](#h)
-  - [I](#i)
-  - [J](#j)
-  - [L](#l)
-  - [M](#m)
-  - [O](#o)
-  - [P](#p)
-  - [Q](#q)
-  - [R](#r)
-  - [S](#s)
-  - [T](#t)
-  - [W](#w)
-  - [X](#x)
+- [A](#a)
+- [C](#c)
+- [D](#d)
+- [E](#e)
+- [G](#g)
+- [H](#h)
+- [I](#i)
+- [J](#j)
+- [L](#l)
+- [M](#m)
+- [O](#o)
+- [P](#p)
+- [Q](#q)
+- [R](#r)
+- [S](#s)
+- [T](#t)
+- [W](#w)
+- [X](#x)
 
 ### A
 
@@ -190,4 +187,10 @@ An API Glossary is crucial for anyone involved in API development and usage, pro
 
 | Term | Detailed Definition |
 | ---- | ------------------- |
+| X-API-Key  | A common header for passing an API key in HTTP requests. |
+| X.509 Certificates | This is used in APIs, especially those with HTTPS, for encrypting data and establishing a secure connection. |
 | XML | XML (Extensible Markup Language) is a markup language that defines a set of rules for encoding documents in a format that is both human-readable and machine-readable. XML is widely used for storing and transporting data. |
+| XPath (XML Path Language) | A language for selecting nodes from an XML document, used in APIs for XML data processing. |
+| XSS (Cross-Site Scripting) | A security vulnerability in web applications allowing attackers to inject client-side scripts into pages viewed by others. Relevant in web API security.|
+
+Thank you for exploring our comprehensive API Glossary. We hope this resource has been valuable in enhancing your understanding of API-related terms and concepts. Remember, the world of APIs is constantly evolving, and staying informed is key to leveraging their full potential. If you have suggestions, questions, or need further clarification on any terms, please don't hesitate to reach out to us. We're committed to continually updating this glossary to keep it as current and useful as possible.
