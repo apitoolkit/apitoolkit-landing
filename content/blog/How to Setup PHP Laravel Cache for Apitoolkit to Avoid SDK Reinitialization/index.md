@@ -32,7 +32,7 @@ Apitoolkit streamlines working with third-party APIs by providing a simple inter
 
 Laravel supports various high-speed caching backends to store data for reuse. Memcached and Redis are two popular options, offering blazing fast lookup compared to the file system. The key idea is to cache Apitoolkit’s initialized SDKs using a time-to-live value. Now instead of reinitializing every time, the cached SDK is retrieved, eliminating redundant connections. Keys uniquely identify cache records, while time-to-live values indicate when stale records should be purged. Together, [**Apitoolkit and Laravel**](https://apitoolkit.io/docs/quickstarts/php/laravel/) caching provide a streamlined yet speedy API access pattern, leveraging simplicity without sacrificing performance.
 
-### Consider this when Implementing Laravel Caching for Apitoolkit
+## Consider this when Implementing Laravel Caching for Apitoolkit
 
 **A. Choosing the Right Caching Mechanism**
 
