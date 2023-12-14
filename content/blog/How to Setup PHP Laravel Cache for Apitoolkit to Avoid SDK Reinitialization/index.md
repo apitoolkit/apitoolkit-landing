@@ -1,14 +1,12 @@
 ---
-title: "Generating Golang API Doc with Swagger"
-date: 2023-09-01T08:00:00+00:00
-author: jessica
+title: "How to Setup PHP Laravel Cache for Apitoolkit to Avoid SDK Reinitialization"
+date: 2023-12-04T10:30:00+00:00
+author: Elliot
 categories:
-  - APIs
+  - SDK
 --- 
 
-![goswagger](Add%20a%20heading.png)
-
-# How to Setup PHP Laravel Cache for Apitoolkit to Avoid SDK Reinitialization
+![How to Setup PHP Laravel Cache for Apitoolkit to Avoid SDK Reinitialization](Add%20a%20heading.png)
 
 Laravel caching can significantly boost performance for Apitoolkit projects by eliminating repetitive and costly SDK reinitialization. Without caching, the SDK connects from scratch on every request - an inefficient process that hampers speed. Implementing caching allows you to store and reuse SDK connections, circumventing reinitialization entirely.
 
@@ -172,10 +170,10 @@ To optimize cache performance, consider the following:
 - **Regular monitoring:** Continuously monitor the performance of your caching system and make adjustments as necessary. This may involve fine-tuning cache configurations, identifying and addressing bottlenecks, or upgrading hardware.
 
 **Q:How much performance improvement can I expect by caching Apitoolkit SDK connections in Laravel?**
-A: The text mentions up to 80-90% reduction in response times by eliminating redundant SDK initialization. However, the actual improvement will depend on your specific application and API usage patterns.
+A:It reduces the response times by eliminating  about 0-90% redundant SDK initialization. However, the actual improvement will depend on your specific application and API usage patterns.
 
 **Q: What are the different caching mechanisms I can use with Apitoolkit in Laravel?**
-A: The text recommends Memcached and Redis for high-performance caching, while file caching is mentioned as a simpler option for smaller projects. Choosing the best option depends on factors like API call frequency, expected cache size, and budget.
+A: It is recommended to use Memcached and Redis for high-performance caching, while file caching is mentioned as a simpler option for smaller projects. Choosing the best option depends on factors like API call frequency, expected cache size, and budget.
 
 # Frequently questions and answers
 
