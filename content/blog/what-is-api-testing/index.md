@@ -8,7 +8,6 @@ categories:
 
 ![A phone and a laptop showing code](./image3.jpg "Photo by <a href='https://unsplash.com/@f12r?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Fahim Muntashir</a> on <a href='https://unsplash.com/s/photos/api?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Unsplash</a>")
 
-
 If you’re reading this, then I’m going to assume you already know what an API is. But, for the sake of those who may not know, I’ll touch on the fundamentals a bit.
 
 ## What Is an API (Application Programming Interface)?
