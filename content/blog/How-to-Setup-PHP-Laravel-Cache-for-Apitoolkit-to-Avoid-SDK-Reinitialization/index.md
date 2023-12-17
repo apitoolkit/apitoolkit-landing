@@ -1,10 +1,10 @@
 ---
-title: "PHP Laravel Cache Setup for Apitoolkit to Avoid SDK Reinit
+title: "PHP Laravel Cache Setup for Apitoolkit to Avoid SDK Reinit"
 date: 2023-12-04T10:30:00+00:00
 author: elliot
 categories:
   - SDK
---- 
+---
 
 ![PHP Laravel Cache Setup for Apitoolkit to Avoid SDK Reinit](Add%20a%20heading.png) 
 
