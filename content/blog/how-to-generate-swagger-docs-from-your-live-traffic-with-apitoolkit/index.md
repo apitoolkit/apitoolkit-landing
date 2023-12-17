@@ -8,8 +8,6 @@ categories:
 
 ![How to Generate Swagger Docs from your Live traffic with Apitoolkit](How%20to%20Generate%20Swagger%20Docs%20from%20your%20Live%20traffic%20with%20Apitoolkit%20a%20heading(1).png)
 
-# How to Generate Swagger Docs from your Live traffic with Apitoolkit
-
 Creating clear, and useful documentation is one of the toughest challenges developers face. We pour endless energy into crafting beautiful code, architecting complex systems, and engineering revolutionary products. Yet all that effort is wasted if no one understands how to properly interact with what we build. As the saying goes, "Confusion is the enemy of utilization".
 
 The problem becomes amplified in the technical domain of APIs. How do we document web services in a way that is readable? How can we describe intricate API capabilities to promote accurate usage? What does excellent API documentation even look like?
