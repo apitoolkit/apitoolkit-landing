@@ -1,7 +1,7 @@
 ---
 title: "How to Setup PHP Laravel Cache for Apitoolkit to Avoid SDK Reinitialization"
 date: 2023-12-04T10:30:00+00:00
-author: Elliot
+author: elliot
 categories:
   - SDK
 --- 
