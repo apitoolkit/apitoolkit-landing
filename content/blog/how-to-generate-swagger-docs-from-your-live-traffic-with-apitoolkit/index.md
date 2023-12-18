@@ -1,5 +1,5 @@
 ---
-title: "Generate Swagger Docs & Forget Manual Work: Use Apitoolkit's Live Traffic Magic"
+title: "Generate Swagger Docs Easily with Apitoolkit's Live Traffic Magic"
 date: 2023-12-13T08:20:58+00:00
 author: elliot
 description: "By analyzing your live API traffic, APIToolkit automatically generates accurate and up-to-date Swagger Docs, so you can spend less time writing and more time building great APIs."
