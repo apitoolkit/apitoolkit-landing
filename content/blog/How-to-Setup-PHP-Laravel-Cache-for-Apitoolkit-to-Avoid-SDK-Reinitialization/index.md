@@ -2,6 +2,7 @@
 title: "PHP Laravel Cache Setup for Apitoolkit to Avoid SDK Reinit"
 date: 2023-12-04T10:30:00+00:00
 author: elliot
+description: "Laravel supports various high-speed caching backends to store data for reuse. Memcached and Redis are two popular options, offering blazing fast lookup compared to the file system. The key idea is to cache Apitoolkit’s initialized SDKs using a time-to-live value."
 categories:
   - SDK
 ---
