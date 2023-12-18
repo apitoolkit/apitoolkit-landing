@@ -148,7 +148,7 @@ php artisan cache:clear
 ```````
 
 
-**How to Test and Optimize Laravel Caching When using APItoolkit**
+## How to Test and Optimize Laravel Caching When using APItoolkit
 
 A. Benchmarking Performance
 
@@ -176,7 +176,7 @@ To optimize cache performance, consider the following:
 
 - **Regular monitoring:** Continuously monitor the performance of your caching system and make adjustments as necessary. This may involve fine-tuning cache configurations, identifying and addressing bottlenecks, or upgrading hardware.
 
-# Frequently questions and answers
+### Frequently questions and answers
 
 **Q:How much performance improvement can I expect by caching Apitoolkit SDK connections in Laravel?**
 A:It reduces the response times by eliminating  about 0-90% redundant SDK initialization. However, the actual improvement will depend on your specific application and API usage patterns.
@@ -207,3 +207,15 @@ A: Problem with  data invalidation this can be solve my monitoring cache perform
 Caching is a powerful tool that can be used to improve the performance of your Laravel applications. By caching the initialized Apitoolkit SDK instance, you can avoid unnecessary initialization and setup steps, which can lead to significant performance gains.
 
 If you are looking for ways to improve the performance of your Laravel applications, I encourage you to implement caching. There are many different caching mechanisms available, so you can choose the one that best suits your needs.
+
+**Also Read**
+
+[Writing API Documentation - Best Practices and Mistakes to Avoid](https://apitoolkit.io/blog/writing-api-documentation/)
+	
+[Best API Monitoring and Observability Tools in 2023](https://apitoolkit.io/blog/best-api-monitoring-and-observability-tools/)
+	
+[How to Generate Automated API Documentation](https://apitoolkit.io/blog/writing-api-documentation/)
+	
+[API Monitoring and Documentation: The Truth You Must Know](https://apitoolkit.io/blog/api-documentation-and-observability-the-truth-you-must-know/)
+	
+
