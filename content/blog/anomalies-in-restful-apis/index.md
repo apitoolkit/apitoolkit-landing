@@ -1,5 +1,5 @@
 ---
-title: "API Management: How to Tackle Anomalies in RESTful APIs (the Right Way)"
+title: "How to Tackle Anomalies in RESTful APIs (the Right Way)"
 date: 2023-06-01T18:01:58+02:00
 author: collins
 description: "The right strategies you can use to tackle API anomalies in RESTful APIs."
