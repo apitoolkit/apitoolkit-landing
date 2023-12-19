@@ -1,8 +1,8 @@
 ---
-title: "API Testing Requirements: What You Need to Know Before You Start"
+title: "What You Need to Know Before You Start API Testing"
 date: 2023-08-13T01:33:53+02:00
 author: jessica
-description: "API testing is not just a procedural step in software development; it’s a crucial measure that ensures data consistency, optimal performance, and robust security, all of which are essential for delivering a reliable and efficient user experience."
+description: "API testing is not just a procedural step in software development; it’s a crucial measure that ensures data consistency, optimal performance, and robust security"
 categories: 
   - API Testing 
 ---
