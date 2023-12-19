@@ -1,5 +1,5 @@
 ---
-title: "API Observability Best Practices: How to Collect, Analyze, and Visualize Your API Telemetry Data"
+title: "How to Collect, Analyze, and Visualize Your API Telemetry Data(API Observability)"
 date: 2023-08-18T12:36:58+02:00
 author: collins
 description: API observability is a critical component of managing and maintaining successful APIs.
@@ -94,7 +94,7 @@ Image Source: APIToolkit's dashboard displaying latency distribution
 
 * **New Relic:** New Relic offers a range of monitoring and observability solutions, including tools specifically designed for API telemetry data collection. It provides detailed insights into the performance and behavior of your API.
 
-In addition to these observability platforms, cloud service providers like AWS and Google Cloud also offer services that enable you to collect and analyze telemetry data within their respective environments. For example, AWS CloudWatch and Google Cloud's Stackdriver provide monitoring and logging capabilities that integrate seamlessly with their cloud infrastructure. However, a tool like [APIToolkit](https://apitoolkit) gives you more granular insight into your APIs and backend services.
+In addition to these observability platforms, cloud service providers like AWS and Google Cloud also offer services that enable you to collect and analyze telemetry data within their respective environments. For example, AWS CloudWatch and Google Cloud's Stackdriver provide monitoring and logging capabilities that integrate seamlessly with their cloud infrastructure. However, a tool like [APIToolkit](https://apitoolkit,io) gives you more granular insight into your APIs and backend services.
 
 By leveraging these tools and services, you can gain valuable insights into the performance, behavior, and usage of your API. This data can help you make informed decisions, optimize your API's performance, and ensure a seamless experience for your users.
 
