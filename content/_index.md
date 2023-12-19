@@ -257,100 +257,6 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
 
 </div>
 
-<section class="pt-40 px-2 sm:px-0">
-<div data-hs="fade down" >
-
-## Your workflow <span class="bg-amber-300 px-2 rounded-md"><strong class="drop-shadow-md">before</strong></span> APIToolkit
-
-</div>
-<p class="pt-3 text-lg m-w-prose" data-hs="zoom up"> Not having enough details to discover issues, investigate bugs, and test to ensure bugs don't get reintroduced.</p>
-<br/>
-
-<div class="py-8 text-lg sm:hidden">
-    <ul class="customer-old-workflow flex flex-row flex-wrap gap-4 gap-y-10 justify-items-stretch items-stretch">
-     <li data-hs="fade right" class="flex-1">Build & Deploy <strong class="bg-amber-300 px-2 rounded-md inline-block">new features</strong></li>
-     <li data-hs="fade right" class="flex-shrink-0 "><img src="/assets/img/svgs/right-arrow-svgrepo-com.svg" class="w-12"/></li>
-     <li data-hs="fade right" class="flex-1">Deployment introduces <strong class="bg-amber-300 px-2 rounded-md">BUGS</strong> </li>
-     <!-- <li data-hs="fade right" class="flex-shrink-0 "><img src="/assets/img/svgs/right-arrow-svgrepo-com.svg" class="w-12"/></li> -->
-     <li data-hs="fade right" class="flex-1">Users Discover Bugs, <strong class="bg-amber-300 px-2 rounded-md">Frustrated</strong> & some leave</li>
-     <li data-hs="fade right" class="flex-shrink-0 "><img src="/assets/img/svgs/right-arrow-svgrepo-com.svg" class="w-12"/></li>
-     <li data-hs="fade right" class="flex-1">Some users complain, but only give <strong class="bg-amber-300 px-2 rounded-md">vague</strong> pointers.</li>
-
-<li data-hs="fade left" class="flex-1">Spend weeks <strong class="bg-amber-300 px-2 rounded-md">guessing & failing</strong> to reproduce bug. </li>
-<li data-hs="fade right" class="flex-shrink-0 "><img src="/assets/img/svgs/right-arrow-svgrepo-com.svg" class="w-12"/></li>
-<li data-hs="fade left" class="flex-1">Guess incorrectly and <strong class="bg-amber-300 px-2 rounded-md">fix wrong Bug</strong>, or only a symptom.</li>
-
-<li data-hs="fade left" class="flex-1">Deploy changes and maybe introduce <strong class="bg-amber-300 px-2 rounded-md">new bugs</strong> </li>
-<li data-hs="fade right" class="flex-shrink-0 "><img src="/assets/img/svgs/right-arrow-svgrepo-com.svg" class="w-12"/></li>
-<li data-hs="fade left" class="flex-1"><strong class="bg-amber-300 px-2 rounded-md">Cycle Repeats.</strong></li>
-    </ul>
-    <br/>
-    <br/><br/><br/>
-</div>
-<!-- desktop version --> 
-<div class="py-8 text-lg hidden sm:block">
-    <ul class="customer-old-workflow flex flex-row gap-5 justify-items-stretch items-stretch">
-     <li data-hs="fade right" class="flex-1">Build & Deploy <strong class="bg-amber-300 px-2 rounded-md inline-block">new features</strong></li>
-     <li data-hs="fade right" class="flex-shrink-0 "><img src="/assets/img/svgs/right-arrow-svgrepo-com.svg" class="w-12"/></li>
-     <li data-hs="fade right" class="flex-1">Deployment introduces <strong class="bg-amber-300 px-2 rounded-md">BUGS</strong> </li>
-     <li data-hs="fade right" class="flex-shrink-0 "><img src="/assets/img/svgs/right-arrow-svgrepo-com.svg" class="w-12"/></li>
-     <li data-hs="fade right" class="flex-1">Users Discover Bugs, <strong class="bg-amber-300 px-2 rounded-md">Frustrated</strong> & some leave</li>
-     <li data-hs="fade right" class="flex-shrink-0 "><img src="/assets/img/svgs/right-arrow-svgrepo-com.svg" class="w-12"/></li>
-     <li data-hs="fade right" class="flex-1">Some users complain, but only give <strong class="bg-amber-300 px-2 rounded-md">vague</strong> pointers.</li>
-    </ul>
-    <div class="py-8 text-right">
-        <img src="/assets/img/svgs/right-arrow-svgrepo-com.svg" class="w-12 rotate-90 inline-block mr-20"/>
-    </div>
-    <ul class="customer-old-workflow flex flex-row gap-5 justify-items-stretch items-stretch">
-     <li data-hs="fade left" class="flex-1"><strong class="bg-amber-300 px-2 rounded-md">Cycle Repeats.</strong></li>
-     <li data-hs="fade left" class="flex-shrink-0 "><img src="/assets/img/svgs/right-arrow-svgrepo-com-left_.svg" class="w-12"/></li>
-     <li data-hs="fade left" class="flex-1">Deploy changes and maybe introduce <strong class="bg-amber-300 px-2 rounded-md">new bugs</strong> </li>
-     <li data-hs="fade left" class="flex-shrink-0 "><img src="/assets/img/svgs/right-arrow-svgrepo-com-left_.svg" class="w-12"/></li>
-     <li data-hs="fade left" class="flex-1">Guess incorrectly and <strong class="bg-amber-300 px-2 rounded-md">fix wrong Bug</strong>, or only a symptom.</li>
-     <li data-hs="fade left" class="flex-shrink-0 "><img src="/assets/img/svgs/right-arrow-svgrepo-com-left_.svg" class="w-12"/></li>
-     <li data-hs="fade left" class="flex-1">Spend weeks <strong class="bg-amber-300 px-2 rounded-md">guessing & failing</strong> to reproduce bug. </li>
-    </ul>
-    <br/>
-    <br/><br/><br/>
-</div>
-
-</section>
-
-<div class="md:max-w-4xl text-left px-2 pb-40  text-base sm:text-lg " >
-<!-- Eze SundayLoPeer.com Testimonial -->
-<section class="bg-white px-6 py-20 lg:px-8 flex flex-col justify-center ">
-  <figure class="mx-auto max-w-2xl">
-    <p class="sr-only">5 out of 5 stars</p>
-    <div data-hs="fade up" class="flex gap-x-1 text-indigo-600">
-      <svg class="h-5 w-5 flex-none" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-        <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
-      </svg>
-      <svg class="h-5 w-5 flex-none" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-        <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
-      </svg>
-      <svg class="h-5 w-5 flex-none" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-        <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
-      </svg>
-      <svg class="h-5 w-5 flex-none" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-        <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
-      </svg>
-      <svg class="h-5 w-5 flex-none" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-        <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
-      </svg>
-    </div>
-    <blockquote data-hs="fade up"  class="mt-10 text-xl font-semibold leading-8 tracking-tight text-gray-900 sm:text-2xl sm:leading-9">
-      <p>“Our workflow has not been the same since APIToolkit. We love the reports!”</p>
-    </blockquote>
-    <figcaption class="mt-10 flex items-center gap-x-6">
-      <div data-hs="fade right" class="text-sm leading-6">
-        <div class="font-semibold text-gray-900">Eze Sunday</div>
-        <div class="mt-0.5 text-gray-600">CTO @ LoPeer.com</div>
-      </div>
-    </figcaption>
-  </figure>
-</section>
-
-</div>
 
 <div data-hs="fade down " class="px-2 sm:px-0">
 
@@ -460,6 +366,46 @@ With <strong>daily & weekly reports</strong> on everything going on in your serv
     </div>
 </div>
 </div>
+
+
+<div class="md:max-w-4xl text-left px-2 pb-40  text-base sm:text-lg " >
+<!-- Eze SundayLoPeer.com Testimonial -->
+<section class="bg-white px-6 py-20 lg:px-8 flex flex-col justify-center ">
+  <figure class="mx-auto max-w-2xl">
+    <p class="sr-only">5 out of 5 stars</p>
+    <div data-hs="fade up" class="flex gap-x-1 text-indigo-600">
+      <svg class="h-5 w-5 flex-none" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+      </svg>
+      <svg class="h-5 w-5 flex-none" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+      </svg>
+      <svg class="h-5 w-5 flex-none" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+      </svg>
+      <svg class="h-5 w-5 flex-none" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+      </svg>
+      <svg class="h-5 w-5 flex-none" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+      </svg>
+    </div>
+    <blockquote data-hs="fade up"  class="mt-10 text-xl font-semibold leading-8 tracking-tight text-gray-900 sm:text-2xl sm:leading-9">
+      <p>“Our workflow has not been the same since APIToolkit. We love the reports!”</p>
+    </blockquote>
+    <figcaption class="mt-10 flex items-center gap-x-6">
+      <div data-hs="fade right" class="text-sm leading-6">
+        <div class="font-semibold text-gray-900">Eze Sunday</div>
+        <div class="mt-0.5 text-gray-600">CTO @ LoPeer.com</div>
+      </div>
+    </figcaption>
+  </figure>
+</section>
+
+</div>
+
+
+
 
 <div class="py-8 text-center" data-hs="fade down slow">
     <img src="/assets/img/svgs/3d-turn-right-arrow-svgrepo-com.svg" class="w-24 inline-block mr-20" />

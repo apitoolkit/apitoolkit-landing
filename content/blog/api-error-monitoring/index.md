@@ -1,7 +1,8 @@
 ---
-title: 'API Error Monitoring: How to Prevent Outages and Improve Performance'
+title: 'How to Prevent API Outages to Improve Performance'
 date: 2023-10-12T08:00:00+00:00
 author: jessica
+description: "APIs, by their very nature, are interfaces that allow software components to communicate. However, like any other form of communication, there’s room for misinterpretation, delays, and outright failures."
 categories:
   - API Errors
 ---
