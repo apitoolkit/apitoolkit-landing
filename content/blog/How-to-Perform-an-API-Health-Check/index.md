@@ -101,7 +101,7 @@ Data Integrity — Comparing the format, schema, and values of API responses aga
 
 
 ## Tools and Resources for API Health Checks
-[Apitoolkit](https://apitoolkit.io/)- An advanced API monitoring,teasting, and observability platform providing [debugging], [automated testing](https://apitoolkit.io/blog/api-testing-automation/), [performance monitoring](https://apitoolkit.io/blog/api-logs-and-metrics/), and more. APIToolkit act as a quality assurance for your API lifecycle. With the engaging community, developers get help easily whenever they get stack.
+[Apitoolkit](https://apitoolkit.io/)- An advanced API monitoring,teasting, and observability platform providing debugging, [automated testing](https://apitoolkit.io/blog/api-testing-automation/), [performance monitoring](https://apitoolkit.io/blog/api-logs-and-metrics/), and more. APIToolkit act as a quality assurance for your API lifecycle. With the engaging community, developers get help easily whenever they get stack.
 
 [Postman](https://www.postman.com/) - A powerful tool that allows you to interact with APIs from the comfort of your own workspace, making it easier to design, share, test, and
 
