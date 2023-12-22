@@ -56,14 +56,17 @@ In addition to monitoring availability and speed, comprehensive API health check
 For example, a shopping application experienced periodic outages on peak traffic days, like Black Friday. Implementing load testing and monitoring as part of an API health check regimen exposed the capacity limits. By provisioning additional infrastructure, the engineering team was able to reinforce the APIs against demand surges. Health checks provided the insight needed to address the issue preemptively.
 
 ## Types of API Health Checks
-**Basic Health Checks**
+
+**1. Basic Health Checks**
+
 Availability Check — This test pings the API endpoint URL and validates that the expected HTTP response code is returned. Common expected codes are 200 OK for a successful response, or 401 Unauthorized for endpoints requiring authentication. Failure to receive the expected response code indicates an issue.
 
 Response Time Check — This test measures the time between sending a request and receiving a response from the API. Tracking this metric over time reveals performance regressions. Sudden spikes in response latency can indicate problems.
 
 Status Code Validation—This check confirms the API returns the correct HTTP status codes for different request scenarios. For example, a 400 Bad Request for a malformed request, or 404 Not Found for a non-existent resource. Validating proper status codes checks that error handling is working correctly.
 
-**Advanced Health Checks**
+**2. Advanced Health Checks**
+
 Database Connectivity—This test validates that the API is able to establish a connection with its database(s) and execute sample queries to retrieve data. Failure to connect or errors when querying signal a concern with the database backend.
 
 External Service Validation — If the API depends on any external services like payment gateways or weather data, additional tests can validate these integrations. For example, submitting an API request that triggers a call to a payment provider and confirming the external service responds correctly.
@@ -72,7 +75,7 @@ Resource Utilization — Monitoring memory usage, CPU, network I/O and other ser
 
 Data Integrity — Comparing the format, schema, and values of API responses against expected baselines verifies data quality. For example, confirming field types, validating formats of identifiers, and checking expected API key usage. This can catch data corruption issues.
 
-##How to Perform API Health Checks
+## How to Perform API Health Checks
 
 **Understand the API's purpose and usage:** By understanding the functionality and the potential impact of a failure on the API. This knowledge will guide your health check process.
 
@@ -97,7 +100,7 @@ Data Integrity — Comparing the format, schema, and values of API responses aga
 **Schedule recurring health checks:** Regularly perform API health checks to maintain the integrity and performance of the API.
 
 
-##Tools and Resources for API Health Checks
+## Tools and Resources for API Health Checks
 [Apitoolkit](https://apitoolkit.io/)- An advanced API monitoring,teasting, and observability platform providing [debugging], [automated testing](https://apitoolkit.io/blog/api-testing-automation/), [performance monitoring](https://apitoolkit.io/blog/api-logs-and-metrics/), and more. APIToolkit act as a quality assurance for your API lifecycle. With the engaging community, developers get help easily whenever they get stack.
 
 [Postman](https://www.postman.com/) - A powerful tool that allows you to interact with APIs from the comfort of your own workspace, making it easier to design, share, test, and
@@ -108,7 +111,8 @@ Data Integrity — Comparing the format, schema, and values of API responses aga
 
 [New Relic](https://newrelic.com/) - An observability platform that can monitor API performance via agents and instrumented code. Provides monitoring dashboards and alerting.
 
-##API Health Check Best Practices
+## API Health Check Best Practices
+
 Automate checks - Manual testing alone is not sustainable long-term. Prioritize setting up automated checks using CI/CD pipelines, scripts, monitoring tools, etc. This allows recurring tests without ongoing engineer effort.
 
 Monitor key metrics - Track key performance indicators (KPIs) like uptime, response time, error rates, resource utilization. Metrics expose potential problems and performance trends.
@@ -122,20 +126,22 @@ Check from different regions - Rotate tests across geographic regions to detect 
 Establish alerting thresholds - Configure alerts like Slack or SMS notifications for metric thresholds that indicate health degradation. Rapid response accelerates diagnosis and remediation.
 
 Document thoroughly - Maintain updated API documentation like OpenAPI Specification so developers understand proper API usage.
-##Frequently Asked Questions
-**Why is an API Health Check Necessary?**
+
+## Frequently Asked Questions
+
+**Why is an API Health Check Necessary?** <br>
 **A:** API health checks are essential for quickly detecting issues before they cascade into outages. Unhealthy APIs directly impact user experiences and business operations. Proactively monitoring API health with [APIToolkit](https://apitoolkit.io/) minimizes disruptions and provides warnings to address degradations.
 
-**When is the Best Time to Get an API Health Check?**
+**When is the Best Time to Get an API Health Check?**  <br>
 **A:** Ideally health checks should be implemented early during API development and expanded throughout the API lifecycle. Checking health frequently during initial development catches bugs. Ongoing production monitoring surfaces emergent issues over time and use. 
 
-**How Often Should You Perform an API Health Check**
+**How Often Should You Perform an API Health Check**  <br>
 **A:** Most experts recommend scheduling automated API health checks to run continuously at regular intervals like every 5 minutes. Frequent checks allow rapid detection and response. Checks may also be triggered by events like new deployments.
 
-**What are the Key Components to Consider in an API Health Check?**
+**What are the Key Components to Consider in an API Health Check?**  <br>
 **A:** Some key components include: availability, response time, error rate tracking, status code validation, data validation, security posture, resource utilization, integrations. Consider the critical business and technical requirements for the API.
 
-**How Can You Automate API Health Checks for Efficient Monitoring?**
+**How Can You Automate API Health Checks for Efficient Monitoring?**  <br>
 **A:** Options include integrating checks into CI/CD pipelines, building a scheduled health check script, employing an API monitoring tool, and using standalone system monitoring tools. The method depends on the tech stack and architecture. Automate as much as possible.
 
 ## Conclusion
