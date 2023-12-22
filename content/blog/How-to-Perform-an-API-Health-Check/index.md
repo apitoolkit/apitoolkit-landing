@@ -113,19 +113,19 @@ Data Integrity — Comparing the format, schema, and values of API responses aga
 
 ## API Health Check Best Practices
 
-Automate checks - Manual testing alone is not sustainable long-term. Prioritize setting up automated checks using CI/CD pipelines, scripts, monitoring tools, etc. This allows recurring tests without ongoing engineer effort.
+**Automate checks**- Manual testing alone is not sustainable long-term. Prioritize setting up automated checks using CI/CD pipelines, scripts, monitoring tools, etc. This allows recurring tests without ongoing engineer effort.
 
-Monitor key metrics - Track key performance indicators (KPIs) like uptime, response time, error rates, resource utilization. Metrics expose potential problems and performance trends.
+**Monitor key metrics** - Track key performance indicators (KPIs) like uptime, response time, error rates, resource utilization. Metrics expose potential problems and performance trends.
 
-Validate comprehensively - Move beyond basic ping tests. Validate API functionality, business logic, edge cases, and negative scenarios. Employ simulators to mimic real-world load.
+**Validate comprehensively** - Move beyond basic ping tests. Validate API functionality, business logic, edge cases, and negative scenarios. Employ simulators to mimic real-world load.
 
-Implement robust error handling - Handle and log errors gracefully. Do not expose stack traces to callers. Use error monitoring tools like Sentry to understand failures.
+**Implement robust error handling** - Handle and log errors gracefully. Do not expose stack traces to callers. Use error monitoring tools like Sentry to understand failures.
 
-Check from different regions - Rotate tests across geographic regions to detect localization and CDN issues. APIs should perform consistently globally.
+**Check from different regions** - Rotate tests across geographic regions to detect localization and CDN issues. APIs should perform consistently globally.
 
-Establish alerting thresholds - Configure alerts like Slack or SMS notifications for metric thresholds that indicate health degradation. Rapid response accelerates diagnosis and remediation.
+**Establish alerting thresholds** - Configure alerts like Slack or SMS notifications for metric thresholds that indicate health degradation. Rapid response accelerates diagnosis and remediation.
 
-Document thoroughly - Maintain updated API documentation like OpenAPI Specification so developers understand proper API usage.
+**Document thoroughly** - Maintain updated API documentation like OpenAPI Specification so developers understand proper API usage.
 
 ## Frequently Asked Questions
 
