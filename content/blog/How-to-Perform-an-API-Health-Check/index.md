@@ -138,7 +138,7 @@ Document thoroughly - Maintain updated API documentation like OpenAPI Specificat
 **How Can You Automate API Health Checks for Efficient Monitoring?**
 **A:** Options include integrating checks into CI/CD pipelines, building a scheduled health check script, employing an API monitoring tool, and using standalone system monitoring tools. The method depends on the tech stack and architecture. Automate as much as possible.
 
-##Conclusion
+## Conclusion
 As APIs continue to proliferate as the technical backbone of applications, prioritizing API health has become a critical practice. Unhealthy APIs directly translate into degraded end user experiences, lost revenue, and other business impacts. Implementing robust API health checks is essential for any organization relying on APIs in a production environment. With a rigorous health check methodology in place, your engineering teams can be confident that their APIs are running smoothly and reaching their full potential.
 
 
