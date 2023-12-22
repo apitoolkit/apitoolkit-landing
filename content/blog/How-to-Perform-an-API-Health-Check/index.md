@@ -129,19 +129,19 @@ Data Integrity — Comparing the format, schema, and values of API responses aga
 
 ## Frequently Asked Questions
 
-**Why is an API Health Check Necessary?** <br>
+**Why is an API Health Check Necessary?** 
 **A:** API health checks are essential for quickly detecting issues before they cascade into outages. Unhealthy APIs directly impact user experiences and business operations. Proactively monitoring API health with [APIToolkit](https://apitoolkit.io/) minimizes disruptions and provides warnings to address degradations.
 
-**When is the Best Time to Get an API Health Check?**  <br>
+**When is the Best Time to Get an API Health Check?** 
 **A:** Ideally health checks should be implemented early during API development and expanded throughout the API lifecycle. Checking health frequently during initial development catches bugs. Ongoing production monitoring surfaces emergent issues over time and use. 
 
-**How Often Should You Perform an API Health Check**  <br>
+**How Often Should You Perform an API Health Check**  
 **A:** Most experts recommend scheduling automated API health checks to run continuously at regular intervals like every 5 minutes. Frequent checks allow rapid detection and response. Checks may also be triggered by events like new deployments.
 
-**What are the Key Components to Consider in an API Health Check?**  <br>
+**What are the Key Components to Consider in an API Health Check?**  
 **A:** Some key components include: availability, response time, error rate tracking, status code validation, data validation, security posture, resource utilization, integrations. Consider the critical business and technical requirements for the API.
 
-**How Can You Automate API Health Checks for Efficient Monitoring?**  <br>
+**How Can You Automate API Health Checks for Efficient Monitoring?**  
 **A:** Options include integrating checks into CI/CD pipelines, building a scheduled health check script, employing an API monitoring tool, and using standalone system monitoring tools. The method depends on the tech stack and architecture. Automate as much as possible.
 
 ## Conclusion
