@@ -651,7 +651,7 @@ Join us on this exciting journey!
     {{% container %}}
 <div class="space-y-5 py-16 sm:py-36 max-w-prose sm:text-lg ">
 
-## APIToolkit is built by <span class="bg-amber-300 px-1 font-bold text-black inline-block ">Developers and for Developers</span>. To solve pain points we've all faced.
+## APIToolkit is built by <span class="bg-amber-300 px-1 font-bold text-black inline-block ">Developers and for Developers</span>To solve the common API frustrations we've all experienced.
 
 We’re engineers at our core, who are very close to the problems we are
 solving. So, we encourage you to be a part of this community
