@@ -654,8 +654,8 @@ Join us on this exciting journey!
 ## APIToolkit is built by <span class="bg-amber-300 px-1 font-bold text-black inline-block ">Developers and for Developers</span>To solve pains we’ve all faced.
 
 We’re engineers at our core, who are very close to the problems we are
-solving. So, we encourage you to be a part of this community
-evolving solutions to solve API documentation, management and observability.
+solving. So, we encourage you to be a part of this community creating
+solutions to solve API documentation, management and observability.
 
   <div class="flex flex-row items-center pt-8">
     <a
