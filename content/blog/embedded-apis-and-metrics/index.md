@@ -55,13 +55,11 @@ Monitoring and analyzing embedded API logs is critical due to their integrated n
 
 7. **Documentation and Historical Reference**: Embedded API logs offer a historical view of how the API has interacted within the larger system over time, aiding in strategic planning and post-incident analysis.
 
-In essence, embedded API logs provide a more comprehensive and integrated view of an API's operation within a larger system. They are crucial for maintaining the health, security, and efficiency of the system as a whole. By effectively monitoring and analyzing these logs, developers and system administrators can ensure that the APIs, and consequently the entire system, operate optimally and align with user needs and security standards.
-
 ## Understanding API Metrics in an Embedded System
 
 ![Embedded API Metrics](embedded-api-metrics.png)
 
-In an embedded system, API metrics serve as crucial indicators of the system's [performance](https://apitoolkit.io/blog/metrics-that-matter/), health, and user interaction. These metrics are particularly significant due to the integrated nature of embedded systems, where APIs often interact closely with hardware components and other software layers. Understanding and effectively monitoring these metrics is key to ensuring the system operates efficiently and meets its intended functional requirements.
+In an embedded system, API metrics serve as crucial indicators of the system's [performance](https://apitoolkit.io/blog/metrics-that-matter/), health, and user interaction. These metrics are particularly significant due to the integrated nature of embedded systems, where APIs often interact closely with hardware components and other software layers. By closely tracking these metrics, engineers and developers can gain a comprehensive understanding of the [API's performance](https://apitoolkit.io/blog/metrics-that-matter/) within the embedded system. Understanding and effectively monitoring these metrics is key to ensuring the system operates efficiently and meets its intended functional requirements.
 
 ### Key API Metrics in Embedded Systems
 
@@ -80,12 +78,6 @@ In an embedded system, API metrics serve as crucial indicators of the system's [
 7. **User Interaction Metrics**: In user-facing embedded systems, metrics like interface response times, user command processing, and user satisfaction levels are important to gauge the effectiveness of the API in facilitating user interactions.
 
 8. **Network Performance Metrics**: For embedded systems connected to a network, metrics related to network performance, such as bandwidth usage, network errors, and connection stability, are important.
-
-9. **Security Metrics**: Given the often critical nature of embedded systems, metrics that monitor security aspects like access attempts, authentication successes/failures, and encryption status are essential.
-
-10. **Device-Specific Metrics**: Depending on the nature of the embedded system, device-specific metrics, such as sensor readings accuracy, actuator response times, or power consumption, might be monitored.
-
-By closely tracking these metrics, engineers and developers can gain a comprehensive understanding of the [API's performance](https://apitoolkit.io/blog/metrics-that-matter/) within the embedded system. This understanding is crucial for troubleshooting, optimizing system resources, enhancing user experience, and ensuring the overall reliability and security of the system. In the context of embedded systems, where APIs often play a pivotal role in the system’s functionality, effective metric [monitoring](https://apitoolkit.io/blog/the-most-important-metric/) can significantly impact the success and longevity of the system.
 
 ## The Role of Charts in API Data Representation
 
@@ -112,6 +104,7 @@ The selection of the right chart type is essential for effectively conveying the
 8. **Gauges and Meters**: For real-time monitoring of key performance indicators (KPIs), gauges and meters provide an immediate visual cue, such as current API response time or throughput rate.
 
 By strategically incorporating these various types of charts into applications or dashboards, organizations can greatly improve their ability to monitor, analyze, and make informed decisions based on API data. Each chart type provides a unique perspective on the data, enabling a more comprehensive and nuanced understanding of API performance and user interactions.
+
 ## Developing Effective Embedded Dashboards
 
 Embedded dashboards are invaluable tools in the realm of data analysis and presentation, serving as centralized platforms for aggregating and displaying data from various sources, particularly embedded APIs. These dashboards are designed to provide a comprehensive overview of key metrics and data points, aiding in effective decision-making and performance monitoring. To achieve this, an effective embedded dashboard integrates several critical components:
