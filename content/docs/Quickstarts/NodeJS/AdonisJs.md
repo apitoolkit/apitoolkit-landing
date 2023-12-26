@@ -111,8 +111,7 @@ queries, please take a look at thes JSONPATH resources:
 
 ## Using apitoolkit to observe an axios based outgoing request
 
-To monitor outgoing request, you need to first enable asyncLocalStorage in your adonisjs project.
-by setting useAsyncLocalStorage to true in your `config/app.ts` file.
+To monitor outgoing request, you need to first enable asyncLocalStorage in your adonisjs project by setting useAsyncLocalStorage to true in your `config/app.ts` file.
 
 ```ts
 export const http: ServerConfig = {
