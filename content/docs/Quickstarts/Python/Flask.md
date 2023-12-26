@@ -151,7 +151,6 @@ async def sample_route(subject):
 ```
 
 The `observe_request` function wraps an HTTPX client, allowing you to use it seamlessly for any request, just like you would with HTTPX.
-
 ## Error Reporting
 
 If you're familiar with sentry, bugsnag, or rollbar, you'll easily grasp this use case. However, with APIToolkit, errors are always linked to a parent request, enabling you to query and associate errors that occurred while serving a specific customer request. To report errors to APIToolkit, utilize the `report_error` function from the `apitoolkit_flask` module. You can report as many errors as needed during a request.
