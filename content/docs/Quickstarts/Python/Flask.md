@@ -120,8 +120,9 @@ the `redact_request_body` and `redact_response_body` expect a list of JSONPath s
 
 The choice of JSONPath was selected to allow you have great flexibility in descibing which fields within your responses are sensitive.
 Also note that these list of items to be redacted will be aplied to all endpoint requests and responses on your server.
-To learn more about jsonpath to help form your queries, please take a look at this cheatsheet:
-[https://lzone.de/cheat-sheet/JSONPath](https://lzone.de/cheat-sheet/JSONPath)
+To learn more about jsonpath to help form your queries,please take a look at thes JSONPATH resources:
+1. [Query expressions for JSONPATH](https://ietf-wg-jsonpath.github.io/draft-ietf-jsonpath-base/draft-ietf-jsonpath-base.html)
+2. [JSONPATH Cheet Sheet](https://lzone.de/cheat-sheet/JSONPath)
 
 ## Tags and Service Versions
 
