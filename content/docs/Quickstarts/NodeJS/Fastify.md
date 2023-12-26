@@ -141,7 +141,7 @@ fastify.listen({ port: 3000 }, function (err, address) {
 
 ## Using apitoolkit to observe an axios based outgoing request
 
-Simply wrap your axios instance with the APIToolkit observeAvios function.
+Simply wrap your axios instance with the APIToolkit observeAxios function.
 
 ```typescript
 import APIToolkit, { observeAxios } from "apitoolkit-fastify";
