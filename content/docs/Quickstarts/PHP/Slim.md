@@ -207,7 +207,5 @@ $app->get('/', function (Request $request, Response $response) {
 
 $app->run();
 ```
-You can report as many errors as you want for each request!
+You can report as many errors as you want for each request.
 
-And that's it!
-Happy hacking.
