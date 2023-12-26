@@ -12,7 +12,6 @@ menu:
 
 The API Toolkit django client is an sdk used to integrate django web applications with APIToolkit.
 It monitors incoming traffic, gathers the requests and sends the request to the apitoolkit servers.
-
 ## How to Integrate:
 
 First install the apitoolkit django sdk:
@@ -57,8 +56,9 @@ the `APITOOLKIT_REDACT_REQ_BODY` and `APITOOLKIT_REDACT_RES_BODY` expect a list 
 
 The choice of JSONPath was selected to allow you have great flexibility in descibing which fields within your responses are sensitive.
 Also note that these list of items to be redacted will be aplied to all endpoint requests and responses on your server.
-To learn more about jsonpath to help form your queries, please take a look at this cheatsheet:
-[https://lzone.de/cheat-sheet/JSONPath](https://lzone.de/cheat-sheet/JSONPath)
+To learn more about jsonpath to help form your queries,please take a look at thes JSONPATH resources:
+1. [Query expressions for JSONPATH](https://ietf-wg-jsonpath.github.io/draft-ietf-jsonpath-base/draft-ietf-jsonpath-base.html)
+2. [JSONPATH Cheet Sheet](https://lzone.de/cheat-sheet/JSONPath)
 
 ## Degugging
 
