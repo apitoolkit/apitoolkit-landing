@@ -64,7 +64,7 @@ To learn more about jsonpath to help form your queries,please take a look at the
 
 You can add `APITOOLKIT_DEBUG` to your app settings file and set it to `True` to enable debug logging from the SDK. This will print out logs for each request/response captured by the middleware. APITOOLKIT_DEBUG defaults to `False`.
 
-Eg:
+#### Example
 
 ```python
 APITOOLKIT_DEBUG = True
