@@ -100,14 +100,10 @@ def hello_world(request, name):
 ```
 
 The `observe_request` function wraps an httpx client and you can use it just like you would normally use httpx for any request you need.
-
 ## Error Reporting
-
 If you’ve used sentry, or bugsnag, or rollbar, then you’re already familiar with this usecase.
 But you can report an error to apitoolkit. A difference, is that errors are always associated with a parent request, and helps you query and associate the errors which occured while serving a given customer request. To request errors to APIToolkit use the `report_error` function from the `apitoolkit_django` module to report an error you can report as many errors you want during a request
-
 ### Example
-
 ```python
 from django.http import JsonResponse
 from apitoolkit_django import observe_request, report_error
