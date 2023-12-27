@@ -10,8 +10,9 @@
   {{- partial "nav.html" . -}}
 
   <div class="w-full" id="content">{{- block "main" . }}{{- end }}</div>
-
+  {{ if ne .Permalink "http://localhost:1313/docs/" }}
   {{- partial "footer.html" . -}}
+  {{ end }}
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-FZERLHDJ7J"></script>
   <script>

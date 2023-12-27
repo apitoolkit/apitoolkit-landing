@@ -70,7 +70,7 @@ video:
             you provide & APIs you
             depend on
           </div>
-          <p class="max-w-[480px] text-gray-600"></p>
+          <p class="max-w-[480px] text-gray-600" id="header-typewriter"></p>
         </div>
         <div class="w-full rounded-t-2xl light-shadow border-gray-100 px-10 pt-8">
           <div class="flex flex-col gap-16">
@@ -1890,21 +1890,6 @@ video:
     .start();
 </script>
 
-<script>
-  const targets = document.querySelectorAll(".home-feature-image-div, .fade-in-section");
-  for (var i = 0; i < targets.length; i++) {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-        }
-        if (!entry.isIntersecting) entry.target.classList.remove("is-visible");
-      });
-    });
-    observer.observe(targets[i]);
-  }
-
-</script>
 
 <script>
 
@@ -1982,20 +1967,4 @@ video:
 
     animateMarquee()
   }
-</script>
-<script>
-  const path = anime.path('#path');
-
-  anime({
-    targets: '#bee',
-    translateX: path('x'),
-    translateY: path('y'),
-    rotate: path('angle'),
-    loop: true,
-    duration: 12500,
-    easing: 'linear'
-  });
-
-
-  const scroll = new HumbleScroll({})
 </script>
