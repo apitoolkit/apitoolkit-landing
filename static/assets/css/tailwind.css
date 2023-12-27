@@ -6,7 +6,38 @@
   html,
   body {
     font-size: 16px;
-    font-family: 'Inter', sans-serif;
+  }
+
+  .text-blue-title {
+    color: #353f5f;
+    /* @aply text-sky-700; */
+  }
+
+  .text-2xs {
+    font-size: 0.464rem;
+  }
+  .pricing-card {
+    @apply border border-gray-100;
+  }
+  .pricing-card .flex-1 {
+    @apply p-3 flex-col  place-content-around;
+  }
+  .pricing-card .flex-1 > h3 {
+    @apply text-3xl font-medium pb-3;
+  }
+  .pricing-card .flex-1 > h4 > strong {
+    @apply text-4xl font-medium;
+  }
+  .pricing-card h3,
+  .pricing-card h4,
+  .pricing-card strong {
+    color: currentColor;
+  }
+  .pricing-card h4 {
+    @apply font-medium;
+  }
+  .pricing-card .price-range {
+    @apply w-full h-1 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700;
   }
 }
 
@@ -29,78 +60,193 @@
 }
 
 @layer components {
-  .width-control {
-    width: min(100vw, 1100px);
-    padding-inline: 8px;
+  .our_container {
+    @apply md:max-w-4xl inline-block text-left px-4;
+  }
+  .feature_img {
+    @apply w-32 sm:w-64 col-span-2;
   }
 
-  .section-line {
+  .blue-button {
+    @apply drop-shadow  rounded-md bg-blue-900 hover:bg-blue-800 border-blue-900 text-xs text-white inline-block px-4 py-2 mt-2 sm:mt-0 no-underline;
+  }
+
+  .home-feature-image-div {
+    @apply flex flex-1 aspect-[4/3] prose prose-2xl;
+    @apply justify-center items-center px-5 pb-5 rounded-xl;
+    background: #eb3349; /* fallback for old browsers */
+    /* background: -webkit-linear-gradient(to right, #F45C43, #EB3349);  /* Chrome 10-25, Safari 5.1-6 */
+    /* background: linear-gradient(to right, #F45C43, #EB3349); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /* background: linear-gradient(to right, rgba(169,208,113,0.05), rgba(136,173,215,0.15));  */
+    background: url('/assets/img/blob-landing-center4.svg');
+    flex: 1.6;
+  }
+
+  .home-feature-image-div img {
+    @apply rounded-lg drop-shadow-xl border-4 border-gray-200;
+  }
+
+  .home-feature-image-div video {
+    @apply rounded-lg drop-shadow-xl border-4 border-gray-200;
+  }
+
+  .home-feature-section p {
+    @apply py-3;
+  }
+  .home-feature-text-box {
+    @apply pr-4 max-w-prose;
+  }
+
+  .gradient1 {
+    background: #eb3349; /* fallback for old browsers */
+    /* background: -webkit-linear-gradient(to right, #F45C43, #EB3349);  /* Chrome 10-25, Safari 5.1-6 */
+    /* background: linear-gradient(to right, #F45C43, #EB3349); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background: linear-gradient(
-      180deg,
-      rgba(236, 237, 240, 0),
-      #ecedf0 19.27%,
-      #ecedf0 79.17%,
-      rgba(236, 237, 240, 0)
+      to right,
+      rgba(169, 208, 113, 0.05),
+      rgba(136, 173, 215, 0.15)
     );
-    overflow: hidden;
-    position: relative;
   }
 
-  .section-line::after {
-    animation: movingline 6s ease infinite forwards;
-    background: linear-gradient(180deg, #dde9ff, #266df0 86.46%, #dde9ff);
-    content: ' ';
-    display: block;
-    height: 0;
-    position: absolute;
-    top: -10%;
-    width: 1px;
+  .bg-gradient-yellow {
+    background: hsla(38, 81%, 52%, 1);
+
+    background: #0f0c29; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #24243e,
+      #302b63,
+      #0f0c29
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #24243e,
+      #302b63,
+      #0f0c29
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
 
-  @keyframes movingline {
-    0% {
-      height: 500px;
-      top: -100%;
-    }
-    50%,
-    100% {
-      height: 0px;
-      top: 100%;
-    }
+  /* https://coolors.co/palette/dc562e-001d3d-003566-ffc300-ffd60a */
+  .bg-yellow-x-dark {
+    background-color: hsla(46, 100%, 50%, 1);
+  }
+  .bg-yellow-x-light {
+    background-color: hsla(50, 100%, 52%, 1);
+  }
+  .text-blue-x-dark {
+    color: hsla(211, 100%, 1%, 1);
+  }
+  .bg-blue-x-dark {
+    background-color: hsla(211, 100%, 1%, 1);
+  }
+  .bg-blue-x-light {
+    background-color: hsla(209, 100%, 20%, 1);
+  }
+  .bg-orange-x-dark {
+    background-color: hsla(14, 71%, 52%, 1);
+  }
+  .bg-bisque-x {
+    background-color: hsl(33deg 100% 88%);
   }
 
-  .light-shadow {
-    box-shadow: 0 0 0 0.5px #e4e5e9, 0 0 0 1px #e4e5e999, 0 0 0 3.5px #f9f9fb,
-      0 0 0 4px #f3f4f7;
+  .home-feature-section ul {
+    @apply list-disc space-y-1;
   }
 
-  .dark-shadow {
-    box-shadow: 0 0 0 1px #3d414980, 0 0 0 3px #25272bcc, 0 0 0 4px #2d2f36cc;
+  .showcase1-buttons {
+    @apply drop-shadow-lg cursor-pointer inline-block border-2 border-blue-900 text-blue-900 px-2 sm:px-5 py-1 sm:py-2 rounded-lg text-center;
   }
-  .ripple {
-    background: radial-gradient(white, #266df0);
-    animation: ripple 3s ease-out var(--animation-delay) infinite;
+  .showcase1-buttons-active {
+    @apply bg-blue-900 text-white;
   }
 
-  @keyframes ripple {
-    0% {
-      width: 0;
-      height: 0;
-    }
-
-    80% {
-      width: 120px;
-      height: 120px;
-    }
-    100% {
-      opacity: 0;
-    }
+  .benefit-section {
+    @apply text-left;
   }
 }
+
+.ul-1 {
+  @apply pl-3 pb-1 space-y-1;
+}
+.ul-2 {
+  @apply pl-5 pb-1 space-y-1;
+}
+.ul-3 {
+  @apply pl-7 pb-1 space-y-1;
+}
+
 .active-tab {
   @apply text-gray-700;
 }
 
 * {
   min-width: 0;
+}
+
+.width-control {
+  width: min(100vw, 1100px);
+  padding-inline: 8px;
+}
+
+.section-line {
+  background: linear-gradient(
+    180deg,
+    rgba(236, 237, 240, 0),
+    #ecedf0 19.27%,
+    #ecedf0 79.17%,
+    rgba(236, 237, 240, 0)
+  );
+  overflow: hidden;
+  position: relative;
+}
+
+.section-line::after {
+  animation: movingline 6s ease infinite forwards;
+  background: linear-gradient(180deg, #dde9ff, #266df0 86.46%, #dde9ff);
+  content: ' ';
+  display: block;
+  height: 0;
+  position: absolute;
+  top: -10%;
+  width: 1px;
+}
+
+@keyframes movingline {
+  0% {
+    height: 500px;
+    top: -100%;
+  }
+  50%,
+  100% {
+    height: 0px;
+    top: 100%;
+  }
+}
+
+.light-shadow {
+  box-shadow: 0 0 0 0.5px #e4e5e9, 0 0 0 1px #e4e5e999, 0 0 0 3.5px #f9f9fb,
+    0 0 0 4px #f3f4f7;
+}
+
+.dark-shadow {
+  box-shadow: 0 0 0 1px #3d414980, 0 0 0 3px #25272bcc, 0 0 0 4px #2d2f36cc;
+}
+.ripple {
+  background: radial-gradient(white, #266df0);
+  animation: ripple 3s ease-out var(--animation-delay) infinite;
+}
+
+@keyframes ripple {
+  0% {
+    width: 0;
+    height: 0;
+  }
+
+  80% {
+    width: 120px;
+    height: 120px;
+  }
+  100% {
+    opacity: 0;
+  }
 }
