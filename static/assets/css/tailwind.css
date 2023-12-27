@@ -184,7 +184,7 @@
 }
 
 .width-control {
-  width: min(100vw, 1100px);
+  width: min(100vw, 1200px);
   padding-inline: 8px;
 }
 
