@@ -2,50 +2,12 @@
 <html prefix="og: http://ogp.me/ns#" lang="{{ .Language }}">
 {{- partial "head.html" . -}}
 
-<body class="relative w-full">
+<body class="relative w-full" onscroll="scrollfunc(this)">
   {{- partial "header.html" . -}}
   {{ with .Params.HideNav }}
   {{else}}
-  <div class="text-center z-10  sticky top-0 bg-white">
-    <!-- <div id="banner" tabindex="-1" style="display: none;"
-      class="flex z-50 justify-center gap-32 mb-2  px-4 w-full py-1 bg-blue-900 sm:items-center">
-      <div class="flex gap-4 items-center">
-        <p class="text-sm font-light text-white">
-          ✨ Get 50% discount off our paid plans. Offer valid till September 30 ✨
-        </p>
-        <a href="/pricing" class="underline font-bold text-white">get started</a>
-      </div>
-      <button data-collapse-toggle="banner" type="button" onclick="closeBanner()"
-        class="flex items-center text-white hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 dark:hover:bg-gray-600 dark:hover:text-white">
-        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd"
-            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-            clip-rule="evenodd"></path>
-        </svg>
-      </button>
-    </div> -->
-    <nav class="inline-block w-full px-2 py-4 border-b md:px-0">
-      <div class="flex flex-row justify-between items-center md:max-w-6xl mx-auto content-between">
-        <a href="/" class="inline-block">
-          <img src="/assets/img/logo-full.svg" alt="APItoolkit logo" class="h-6 hidden sm:inline-block" />
-          <img src="/assets/img/logo-mini.svg" alt="APItoolkit logo" class="h-5 sm:hidden" />
-        </a>
-        <div class="text-xs space-x-1 sm:space-x-5 ">
-          <button type="button" class="hidden bg-gray-200 px-3 py-2 rounded-full">
-            Sign in
-          </button>
-          <a href="/blog/" class="">Blog</a>
-          <a href="/pricing/" class="">Pricing</a>
-          <a href="/docs/" class="">Docs</a>
-          <a href="https://app.apitoolkit.io"
-            class="border border-amber-400 hover:bg-yellow-300 bg-amber-300 text-black  px-2 sm:px-3 py-1 sm:py-2 rounded-full inline-block">
-            Get Started
-          </a>
-        </div>
-      </div>
-    </nav>
-  </div>
   {{end}}
+  {{- partial "nav.html" . -}}
 
   <div id="content">{{- block "main" . }}{{- end }}</div>
 
@@ -73,19 +35,52 @@
   </script>
 
   <script>
-    function checkLocalStorage() {
-      const closeBannerSep = localStorage.getItem('close_banner_sep');
-      if (!closeBannerSep) {
-        document.getElementById('banner').style.display = 'flex';
+    function scrollfunc(e) {
+      const h = document.querySelector("#header")
+      if (e.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        h.classList.add("border-b")
+      } else {
+        h.classList.remove("border-b")
+      }
+    }
+    function toggleFaq(e) {
+      e.currentTarget.nextElementSibling.classList.toggle('hidden')
+      e.currentTarget.firstElementChild.classList.toggle('rotate-90')
+    }
+    function switchTab(e, imageId) {
+      const tabs = document.querySelectorAll(".tab-button")
+      const images = document.querySelectorAll('.tab-image')
+      tabs.forEach(tab => {
+        tab.classList.remove("active-tab")
+      })
+      images.forEach(image => {
+        image.classList.add('hidden')
+      })
+      e.currentTarget.classList.add("active-tab")
+      document.getElementById(imageId).classList.remove('hidden')
+    }
+
+    function toggleMenu(e) {
+      const hum = document.querySelector("#hamburger")
+      const cross = document.querySelector("#cross")
+      const menu = document.querySelector("#menu")
+      if (cross.classList.contains("hidden")) {
+        cross.classList.remove('hidden')
+        hum.classList.add("hidden")
+        menu.classList.remove('hidden')
+      } else {
+        hum.classList.remove("hidden")
+        cross.classList.add("hidden")
+        menu.classList.add('hidden')
       }
     }
 
-    function closeBanner() {
-      document.getElementById('banner').style.display = 'none';
-      localStorage.setItem('close_banner_sep', 'hidden');
+    function showOptions(e) {
+      e.currentTarget.nextElementSibling.classList.toggle("h-0")
+      e.currentTarget.nextElementSibling.classList.toggle("h-[300px]")
+      e.currentTarget.lastElementChild.classList.toggle("-rotate-180")
     }
 
-    checkLocalStorage()
     // Set the options globally
     // to make LazyLoad self-initialize
     window.lazyLoadOptions = {
