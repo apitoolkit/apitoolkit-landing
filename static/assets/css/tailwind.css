@@ -68,6 +68,25 @@
     width: min(100vw, 1100px);
     padding-inline: 8px;
   }
+  .ripple {
+    background: radial-gradient(white, #266df0);
+    animation: ripple 3s ease-out var(--animation-delay) infinite;
+  }
+
+  @keyframes ripple {
+    0% {
+      width: 0;
+      height: 0;
+    }
+
+    80% {
+      width: 120px;
+      height: 120px;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
   .feature_img {
     @apply w-32 sm:w-64 col-span-2;
   }
