@@ -10,7 +10,8 @@
   {{- partial "nav.html" . -}}
 
   <div class="w-full" id="content">{{- block "main" . }}{{- end }}</div>
-  {{ if ne .Permalink "http://localhost:1313/docs/" }}
+  {{ $url := .RelPermalink }}
+  {{ if not (strings.HasPrefix $url "/docs/")}}
   {{- partial "footer.html" . -}}
   {{ end }}
   <!-- Global site tag (gtag.js) - Google Analytics -->
