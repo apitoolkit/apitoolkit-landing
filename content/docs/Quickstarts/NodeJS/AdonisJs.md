@@ -1,6 +1,7 @@
 ---
 title: Adonis Js
 date: 2023-12-11
+toc: true
 publishdate: 2023-12-11
 weight: 1
 menu:

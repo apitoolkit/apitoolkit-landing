@@ -3,6 +3,7 @@ title: Django
 date: 2023-09-17
 publishdate: 2023-09-17
 weight: 20
+toc: true
 menu:
   main:
     weight: 20

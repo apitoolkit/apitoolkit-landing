@@ -3,6 +3,7 @@ title: PHP (Slim)
 date: 2023-12-11
 publishdate: 2023-12-11
 weight: 1
+toc: true
 menu:
   main:
     weight: 1

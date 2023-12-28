@@ -1,6 +1,7 @@
 ---
 title: FastAPI
 date: 2023-09-16
+toc: true
 publishdate: 2023-09-16
 weight: 20
 menu:

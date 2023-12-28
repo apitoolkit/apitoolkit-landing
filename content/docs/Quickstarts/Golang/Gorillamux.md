@@ -3,6 +3,7 @@ title: Go Gorilla Mux
 date: 2022-09-24
 publishdate: 2022-09-24
 weight: 20
+toc: true
 menu:
   main:
     weight: 20

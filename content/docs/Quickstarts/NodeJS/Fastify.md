@@ -3,6 +3,7 @@ title: Fastify Js
 date: 2023-07-06
 publishdate: 2023-07-06
 weight: 1
+toc: true
 menu:
   main:
     weight: 1

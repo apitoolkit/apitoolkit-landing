@@ -3,6 +3,7 @@ title: Flask
 date: 2023-09-18
 publishdate: 2023-09-18
 weight: 20
+toc: true
 menu:
   main:
     weight: 20

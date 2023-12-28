@@ -3,6 +3,7 @@ title: Go Native
 date: 2023-09-28
 publishdate: 2023-09-28
 weight: 20
+toc: true
 menu:
   main:
     weight: 20
