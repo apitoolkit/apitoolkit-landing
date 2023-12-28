@@ -343,7 +343,7 @@ In [API development](https://apitoolkit.io), comprehensive documentation is a ne
 
 - - -
 
-Keep Reading
+**Keep Reading**
 
 [API observability and testing as a service](https://apitoolkit.io)
 
