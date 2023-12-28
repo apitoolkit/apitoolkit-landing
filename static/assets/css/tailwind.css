@@ -250,3 +250,18 @@
     opacity: 0;
   }
 }
+
+.toc {
+  background-color: #f5f5f5;
+  padding: 10px;
+}
+
+/* Styling for TOC items */
+.toc a {
+  color: #333;
+}
+
+/* Styling for active TOC item */
+.toc .active {
+  font-weight: bold;
+}

@@ -2402,6 +2402,10 @@ img {
   top: 35px;
 }
 
+.top-\[70px\] {
+  top: 70px;
+}
+
 .top-\[73px\] {
   top: 73px;
 }
@@ -2660,6 +2664,11 @@ img {
 
 .h-full {
   height: 100%;
+}
+
+.h-max {
+  height: -moz-max-content;
+  height: max-content;
 }
 
 .w-1\/2 {
@@ -3273,6 +3282,11 @@ img {
   background-color: rgb(202 138 4 / var(--tw-bg-opacity));
 }
 
+.bg-red-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+}
+
 .bg-opacity-15 {
   --tw-bg-opacity: 0.15;
 }
@@ -3860,6 +3874,11 @@ img {
   color: rgb(71 85 105 / var(--tw-text-opacity));
 }
 
+.text-slate-800 {
+  --tw-text-opacity: 1;
+  color: rgb(30 41 59 / var(--tw-text-opacity));
+}
+
 .text-slate-900 {
   --tw-text-opacity: 1;
   color: rgb(15 23 42 / var(--tw-text-opacity));
@@ -4116,6 +4135,23 @@ img {
   100% {
     opacity: 0;
   }
+}
+
+.toc {
+  background-color: #f5f5f5;
+  padding: 10px;
+}
+
+/* Styling for TOC items */
+
+.toc a {
+  color: #333;
+}
+
+/* Styling for active TOC item */
+
+.toc .active {
+  font-weight: bold;
 }
 
 .\*\:flex > * {
@@ -4689,6 +4725,10 @@ img {
 
   .lg\:pt-24 {
     padding-top: 6rem;
+  }
+
+  .lg\:pr-0 {
+    padding-right: 0px;
   }
 }
 
