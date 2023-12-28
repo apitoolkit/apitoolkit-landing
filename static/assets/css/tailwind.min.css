@@ -2446,6 +2446,10 @@ img {
   grid-column: span 3 / span 3;
 }
 
+.float-right {
+  float: right;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -2560,6 +2564,10 @@ img {
 
 .mt-auto {
   margin-top: auto;
+}
+
+.mr-10 {
+  margin-right: 2.5rem;
 }
 
 .box-border {
@@ -3109,6 +3117,10 @@ img {
 .divide-gray-200 > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-divide-opacity));
+}
+
+.self-end {
+  align-self: flex-end;
 }
 
 .overflow-hidden {
