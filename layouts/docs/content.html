@@ -1,9 +1,14 @@
 <section class="w-full relative" style="max-width: min(100%,1300px); margin-inline: auto;">
-  <aside class="fixed w-[250px] z-50 h-[calc(100vh-70px)] border-r-2 bg-white overflow-y-scroll text-slate-600 text-md">
-    {{- partial "sidebar-tree.html" . -}}
+  <button id="menu-toggler" onclick="toggleDocMenu(event)" class="md:hidden">menu</button>
+  <aside id="doc-aside" onclick="toggleDocMenu(event)"
+    class="fixed hidden w-full top-0 md:top-[75px] h-[100vh] bg-black bg-opacity-20 md:w-[250px] md:block z-50 md:h-[calc(100vh-70px)] md:bg-opacity-100 md:bg-white  text-slate-600 text-md">
+    <div
+      class="-translate-x-24 duration-300 bg-white md:-translate-x-0 w-[min(90%,300px)] md:w-full h-full overflow-y-auto">
+      {{- partial "sidebar-tree.html" . -}}
+    </div>
   </aside>
-  <main class="p-5 ml-[250px] w-[calc(100%-250px)] flex justify-between gap-5 lg:p-8 lg:pr-0">
-    <div class="td-content prose max-w-[730px] prose-slate py-5">
+  <main class="p-5 md:ml-[250px] w-full md:w-[calc(100%-250px)] flex justify-between gap-5 lg:p-8 lg:pr-0">
+    <div class="prose mx-auto md:mx-0 prose-slate py-5">
       <h1>{{ .Title }}</h1>
       {{ with .Params.description }}<div class="lead">{{ . | markdownify }}</div>{{ end }}
       <header class="article-meta">
@@ -25,13 +30,24 @@
       {{/* partial "page-meta-lastmod.html" . */}}
     </div>
     {{- if .Params.toc }}
-    <div class="sticky top-[70px] h-max right-0 w-[250px] z-50 py-10 text-slate-600 text-md">
+    <div class="sticky top-[70px] h-max right-0 w-[250px] hidden md:block z-50 py-10 text-slate-600 text-md">
       <span class="text-slate-800 font-semibold">
         On This Page</span>
       {{- .TableOfContents }}
     </div>
     {{- end }}
   </main>
+  <script>
+    function toggleDocMenu(e) {
+      if (event.target.id === "menu-toggler" || event.target.id === "doc-aside") {
+        const aside = document.querySelector("#doc-aside")
+        aside.classList.toggle("hidden")
+        setTimeout(() => {
+          aside.firstElementChild.classList.toggle("-translate-x-24")
+        }, 10)
+      }
+    }
+  </script>
   <!-- <aside class="w-1/6 xhidden">
     {{/* partial "page-meta-links.html" . */}}
     {{/* partial "toc.html" . */}}

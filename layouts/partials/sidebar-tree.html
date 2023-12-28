@@ -16,7 +16,7 @@
       _="on click toggle .hidden on #td-section-nav">☰</a>
   </form> -->
 
-  <nav class="py-5 hidden md:block  td-sidebar-nav{{ if .Site.Params.ui.sidebar_menu_foldable }} foldable-nav{{ end }}"
+  <nav class="py-5 md:block  td-sidebar-nav{{ if .Site.Params.ui.sidebar_menu_foldable }} foldable-nav{{ end }}"
     id="td-section-nav">
     {{ if (gt (len .Site.Home.Translations) 0) -}}
     <div class="nav-item dropdown block lg:hidden">
