@@ -170,6 +170,8 @@ Generating Swagger Docs from live traffic with APIToolkit offers a powerful and 
 
 [PHP Laravel Cache Setup for Apitoolkit to Avoid SDK Reinit](https://apitoolkit.io/blog/how-to-setup-php-laravel-cache-for-apitoolkit-to-avoid-sdk-reinitialization/)
 	
-[From Data to Decisions: Leveraging API Logs for Strategic Insights with APIToolkit](https://apitoolkit.io/blog/leveraging-api-logs/)
-	
-[Enhancing Customer Experience Through API Log Insights](https://apitoolkit.io/blog/enhancing-customer-experience/)
+[Generating Golang API Doc with Swagger](https://apitoolkit.io/blog/generating-golangdoc/)
+
+[Monitoring API Failures with APIToolkit: A Guide to Efficient Endpoint Troubleshooting](https://apitoolkit.io/blog/monitoring-api-failures-with-apitoolkit/)
+
+[Unlocking the Advantages of OpenAPI (Swagger) Specification for API Development](https://apitoolkit.io/blog/open-api-swagger-specification-for-api-development/imdex/)
