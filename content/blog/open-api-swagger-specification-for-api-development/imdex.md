@@ -171,11 +171,8 @@ The OpenAPI Specification is a powerful and versatile way to describe your API i
 
 [Best API Monitoring and Observability Tools in 2023](https://apitoolkit.io/blog/best-api-monitoring-and-observability-tools/) 
 
-[Ultimate Guide to API Testing Automation](https://apitoolkit.io/blog/api-testing-automation/) 
+[Generate Swagger Docs Easily with Apitoolkit's Live Traffic](https://apitoolkit.io/blog/how-to-generate-swagger-docs-from-your-live-traffic-with-apitoolkit/)
 
-[Web API Performance Best Practices - the Ultimate Guide](https://apitoolkit.io/blog/web-api-performance/)
+[Generating Golang API Doc with Swagger](https://apitoolkit.io/blog/generating-golangdoc/)
 
-[How to Analyze API Logs and Metrics for Better Performance](https://apitoolkit.io/blog/api-logs-and-metrics/)
-
-[API Documentation and Monitoring: the Truth You Must Know](https://apitoolkit.io/blog/api-documentation-and-observability-the-truth-you-must-know/)
 
