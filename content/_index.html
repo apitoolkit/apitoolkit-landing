@@ -70,7 +70,7 @@ video:
             you provide & APIs you
             depend on
           </div>
-          <p class="max-w-[480px] text-gray-600" id="header-typewriter"></p>
+          <p class="max-w-[480px] text-gray-600"></p>
         </div>
         <div class="w-full rounded-t-2xl light-shadow border-gray-100 px-10 pt-8">
           <div class="flex flex-col gap-16">
@@ -1870,22 +1870,16 @@ video:
     loop: true,
     delay: 135,
   });
-
+  console.log(app, typewriter)
   typewriter
     .pauseFor(500)
-    .typeString('Monitoring.')
+    .typeString('For frustrated API developers')
     .pauseFor(300)
-    .deleteChars(11)
-    .typeString('Documentation.')
+    .deleteChars(10)
+    .typeString('consumers')
     .pauseFor(300)
-    .deleteChars(14)
-    .typeString('Specification.')
-    .pauseFor(300)
-    .deleteChars(14)
-    .typeString('Testing.')
-    .pauseFor(300)
-    .deleteChars(8)
-    .typeString('Debugging.')
+    .deleteChars(13)
+    .typeString('customer support teams')
     .pauseFor(300)
     .start();
 </script>
