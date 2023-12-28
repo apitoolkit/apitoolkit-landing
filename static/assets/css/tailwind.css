@@ -251,17 +251,17 @@
   }
 }
 
-.toc {
-  background-color: #f5f5f5;
-  padding: 10px;
+#TableOfContents {
+  @apply py-4;
+}
+#TableOfContents ul {
+  @apply flex flex-col gap-2 text-sm;
 }
 
-/* Styling for TOC items */
-.toc a {
+#TableOfContents a {
   color: #333;
 }
 
-/* Styling for active TOC item */
-.toc .active {
-  font-weight: bold;
+#TableOfContents li:hover {
+  text-decoration: underline;
 }

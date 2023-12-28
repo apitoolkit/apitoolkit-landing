@@ -2804,6 +2804,30 @@ img {
   max-width: 65ch;
 }
 
+.max-w-\[700px\] {
+  max-width: 700px;
+}
+
+.max-w-\[750px\] {
+  max-width: 750px;
+}
+
+.max-w-\[780px\] {
+  max-width: 780px;
+}
+
+.max-w-\[760px\] {
+  max-width: 760px;
+}
+
+.max-w-\[770px\] {
+  max-width: 770px;
+}
+
+.max-w-\[730px\] {
+  max-width: 730px;
+}
+
 .flex-shrink-0 {
   flex-shrink: 0;
 }
@@ -3280,11 +3304,6 @@ img {
 .bg-yellow-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(202 138 4 / var(--tw-bg-opacity));
-}
-
-.bg-red-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-15 {
@@ -4137,21 +4156,25 @@ img {
   }
 }
 
-.toc {
-  background-color: #f5f5f5;
-  padding: 10px;
+#TableOfContents {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
-/* Styling for TOC items */
+#TableOfContents ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
 
-.toc a {
+#TableOfContents a {
   color: #333;
 }
 
-/* Styling for active TOC item */
-
-.toc .active {
-  font-weight: bold;
+#TableOfContents li:hover {
+  text-decoration: underline;
 }
 
 .\*\:flex > * {
@@ -4723,12 +4746,12 @@ img {
     padding-bottom: 7rem;
   }
 
-  .lg\:pt-24 {
-    padding-top: 6rem;
-  }
-
   .lg\:pr-0 {
     padding-right: 0px;
+  }
+
+  .lg\:pt-24 {
+    padding-top: 6rem;
   }
 }
 

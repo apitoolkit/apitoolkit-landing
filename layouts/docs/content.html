@@ -2,8 +2,8 @@
   <aside class="fixed w-[250px] z-50 h-[calc(100vh-70px)] border-r-2 bg-white overflow-y-scroll text-slate-600 text-md">
     {{- partial "sidebar-tree.html" . -}}
   </aside>
-  <main class="p-5 ml-[250px] w-[calc(100%-250px)] flex justify-between lg:p-8 lg:pr-0">
-    <div class="td-content prose  prose-slate py-5">
+  <main class="p-5 ml-[250px] w-[calc(100%-250px)] flex justify-between gap-5 lg:p-8 lg:pr-0">
+    <div class="td-content prose max-w-[730px] prose-slate py-5">
       <h1>{{ .Title }}</h1>
       {{ with .Params.description }}<div class="lead">{{ . | markdownify }}</div>{{ end }}
       <header class="article-meta">
@@ -32,7 +32,6 @@
     </div>
     {{- end }}
   </main>
-
   <!-- <aside class="w-1/6 xhidden">
     {{/* partial "page-meta-links.html" . */}}
     {{/* partial "toc.html" . */}}
