@@ -2691,6 +2691,10 @@ img {
   height: 50px;
 }
 
+.h-\[210px\] {
+  height: 210px;
+}
+
 .w-1\/2 {
   width: 50%;
 }
@@ -4447,6 +4451,14 @@ img {
 
 .group:hover .group-hover\:h-\[300px\] {
   height: 300px;
+}
+
+.group:hover .group-hover\:h-\[200px\] {
+  height: 200px;
+}
+
+.group:hover .group-hover\:h-\[210px\] {
+  height: 210px;
 }
 
 .group:hover .group-hover\:translate-x-\[3px\] {
