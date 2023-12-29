@@ -26,7 +26,7 @@
     </div>
   </aside>
   <main class="p-5 md:ml-[250px] w-full md:w-[calc(100%-250px)] flex justify-between gap-5 lg:p-8 lg:pr-0">
-    <div class="prose mx-auto md:mx-0 prose-slate py-5">
+    <div class="prose w-full mx-auto md:mx-0 prose-slate py-5">
       <h1>{{ .Title }}</h1>
       {{ with .Params.description }}<div class="lead">{{ . | markdownify }}</div>{{ end }}
       <header class="article-meta">
