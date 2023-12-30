@@ -243,7 +243,7 @@ video:
               id="requests-apitoolkit-container">
               <div class="w-full h-full">
                 <div
-                  class="*:p-3 *:size-64 *:rounded-xl text-gray-600 *:border *:bg-white *:light-shadow text-sm h-full w-max flex items-center *:shrink-0 flex-nowrap gap-10 -translate-x-[100%]"
+                  class="*:p-3 *:size-64 *:rounded-xl text-gray-600  *:overflow-y-auto *:border *:bg-white *:light-shadow text-sm h-full w-max flex items-center *:shrink-0 flex-nowrap gap-10 -translate-x-[100%]"
                   id="apitoolkit-container">
                   <div class="light-shadow"></div>
                   <div class="light-shadow"></div>
@@ -255,6 +255,35 @@ video:
                   <div class="light-shadow"></div>
 
                   <div class="light-shadow">
+                    <div class="flex items-center">
+                      <div class="inline-block font-bold text-blue-700 space-x-1 mb-3">
+                        <img src="./assets/img/svgs/shape.svg" class="inline w-4 h-4">
+                        <span>New Request Shape</span>
+                      </div>
+                    </div>
+                    <p class="flex items-center"> in
+                      <span class="ml-1 font-bold text-blue-500 mr-2 text-sm">POST</span>
+                      <span class="">/user</span>
+                    </p>
+
+                    <span class="text-sm text-gray-500 fontp-semibold">shape</span>
+                    <div class="w-full mb-1 bg-gray-100 overflow-hidden text-xs p-2 rounded-lg">
+                      <pre><code>{
+ "name": String,
+ "bio": String,
+ "password": String,
+ "age": Int
+}</code></pre>
+                    </div>
+                    <span class="text-sm text-gray-500 fontp-semibold">New fields (1)</span>
+                    <div class="w-full mb-1 bg-gray-100 overflow-hidden text-xs p-2 rounded-lg">
+                      <pre><code>{
+ "age": Int
+}</code></pre>
+                    </div>
+                  </div>
+
+                  <div class="light-shadow">
                     <p class="flex items-center mb-1.5"><span class="font-bold text-blue-500 mr-2">POST</span><span
                         class="">/user</span>
                     </p>
@@ -264,7 +293,6 @@ video:
  "name": "Jon Doe",
  "bio": "A place holder user",
  "password": "[CLIENT REDACTED]",
- "amountSpent": 2000
 }</code></pre>
                     </div>
                     <span class="font-medium text-xs text-blue-500">Above is what gets saved by APItoolkit</span>
@@ -284,7 +312,6 @@ video:
                     <div class="mt-2">
                       <span class="text-sm text-gray-500 font-semibold">Events</span>
                       <div class="text-sm">
-                        <!-- <img src="./assets/img/svgs/calendar.svg"> -->
                         <span class="text-xs">25,000</span>
                       </div>
                     </div>
@@ -292,14 +319,12 @@ video:
                       <div>
                         <span class="text-sm text-gray-500 font-semibold">First seen</span>
                         <div class="text-sm">
-                          <!-- <img src="./assets/img/svgs/calendar.svg"> -->
                           <span class="text-xs">Dec 10, 2023 17:36</span>
                         </div>
                       </div>
                       <div>
                         <span class="text-sm text-gray-500 font-semibold">Last seen</span>
                         <div class="text-sm">
-                          <!-- <img src="./assets/img/svgs/calendar.svg"> -->
                           <span class="text-xs">Now</span>
                         </div>
                       </div>
@@ -330,6 +355,7 @@ video:
                   <div class="light-shadow"></div>
                   <div class="light-shadow"></div>
                   <div class="light-shadow"></div>
+
                   <div class="light-shadow">
                     <p class="flex items-center mb-1.5"><span class="font-bold text-blue-500 mr-2">POST</span><span
                         class="">/user</span>
@@ -340,7 +366,23 @@ video:
  "name": "Jon Doe",
  "bio": "A place holder user",
  "password": "fakepass",
- "amountSpent": 2000
+ "age": 25
+}</code></pre>
+                    </div>
+                    <span class="text-sm block">redact password</span>
+                    <span class="bg-gray-100 rounded-lg text-xs">redactRequestBody = ["$.password"]</span>
+                  </div>
+
+                  <div class="light-shadow">
+                    <p class="flex items-center mb-1.5"><span class="font-bold text-blue-500 mr-2">POST</span><span
+                        class="">/user</span>
+                    </p>
+                    <span class="">request body</span>
+                    <div class="w-full mb-1 bg-gray-100 overflow-hidden text-xs p-2 rounded-lg">
+                      <pre><code>{
+ "name": "Jon Doe",
+ "bio": "A place holder user",
+ "password": "fakepass",
 }</code></pre>
                     </div>
                     <span class="text-sm block">redact password</span>
@@ -357,7 +399,6 @@ video:
  "name": "Jon Doe",
  "bio": "A place holder user",
  "password": "fakepass",
- "amountSpent": 2000
 }</code></pre>
                     </div>
                   </div>

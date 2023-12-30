@@ -2574,6 +2574,10 @@ img {
   margin-top: auto;
 }
 
+.ml-1 {
+  margin-left: 0.25rem;
+}
+
 .box-border {
   box-sizing: border-box;
 }
@@ -4199,6 +4203,10 @@ img {
 
 .\*\:shrink-0 > * {
   flex-shrink: 0;
+}
+
+.\*\:overflow-y-auto > * {
+  overflow-y: auto;
 }
 
 .\*\:rounded-xl > * {
