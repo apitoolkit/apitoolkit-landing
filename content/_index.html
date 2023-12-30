@@ -243,39 +243,85 @@ video:
               id="requests-apitoolkit-container">
               <div class="w-full h-full">
                 <div
-                  class="*:flex *:flex-col *:gap-2 *:p-4 *:size-60 *:rounded-xl *:border *:border-blue-500 *:bg-white *:light-shadow text-sm h-full w-max flex items-center *:shrink-0 flex-nowrap gap-10 -translate-x-[100%]"
+                  class="*:p-3 *:size-64 *:rounded-xl text-gray-600 *:border *:bg-white *:light-shadow text-sm h-full w-max flex items-center *:shrink-0 flex-nowrap gap-10 -translate-x-[100%]"
                   id="apitoolkit-container">
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div>
-                    <span class="text-blue-500 w-max border border-blue-500 px-3 rounded-xl">Alert</span>
-                    <p class="flex">New Endpoint Detected</p>
+                  <div class="light-shadow"></div>
+                  <div class="light-shadow"></div>
+                  <div class="light-shadow"></div>
+                  <div class="light-shadow"></div>
+                  <div class="light-shadow"></div>
+                  <div class="light-shadow"></div>
+                  <div class="light-shadow"></div>
+                  <div class="light-shadow"></div>
+
+                  <div class="light-shadow">
+                    <p class="flex items-center mb-1.5"><span class="font-bold text-blue-500 mr-2">POST</span><span
+                        class="">/user</span>
+                    </p>
+                    <span class="">request body</span>
+                    <div class="w-full mb-1 bg-gray-100 overflow-hidden text-xs p-2 rounded-lg">
+                      <pre><code>{
+ "name": "Jon Doe",
+ "bio": "A place holder user",
+ "password": "[CLIENT REDACTED]",
+ "amountSpent": 2000
+}</code></pre>
+                    </div>
+                    <span class="font-medium text-xs text-blue-500">Above is what gets saved by APItoolkit</span>
+                  </div>
+
+
+                  <div class="light-shadow">
+                    <p class="flex text-blue-500 font-bold">New Endpoint</p>
+                    <p class="flex items-center">
+                      <span class="font-bold text-blue-500 mr-2">POST</span>
+                      <span class="">/user</span>
+                    </p>
                   </div>
                 </div>
               </div>
               <div class="absolute top-0 left-0 w-1/2 h-full">
                 <div
-                  class="*:p-4 *:size-60 *:rounded-xl *:border *:bg-white text-sm text-gray-600 h-full w-max flex items-center *:shrink-0 flex-nowrap gap-10 -translate-x-[100%]"
+                  class="*:p-3 *:size-64 *:rounded-xl *:border *:bg-white text-sm text-gray-600 h-full w-max flex items-center *:shrink-0 flex-nowrap gap-10 -translate-x-[100%]"
                   id="requests-container">
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div></div>
-                  <div class="">
-                    <p class="flex items-center"><span class="font-bold text-blue-500 mr-2">POST</span><span
-                        class="">/user</span></p>
+                  <div class="light-shadow"></div>
+                  <div class="light-shadow"></div>
+                  <div class="light-shadow"></div>
+                  <div class="light-shadow"></div>
+                  <div class="light-shadow"></div>
+                  <div class="light-shadow"></div>
+                  <div class="light-shadow"></div>
+                  <div class="light-shadow"></div>
+                  <div class="light-shadow">
+                    <p class="flex items-center mb-1.5"><span class="font-bold text-blue-500 mr-2">POST</span><span
+                        class="">/user</span>
+                    </p>
+                    <span class="">request body</span>
+                    <div class="w-full mb-1 bg-gray-100 overflow-hidden text-xs p-2 rounded-lg">
+                      <pre><code>{
+ "name": "Jon Doe",
+ "bio": "A place holder user",
+ "password": "fakepass",
+ "amountSpent": 2000
+}</code></pre>
+                    </div>
+                    <span class="text-sm block">redact password</span>
+                    <span class="bg-gray-100 rounded-lg text-xs">redactRequestBody = ["$.password"]</span>
+                  </div>
+
+                  <div class="light-shadow">
+                    <p class="flex items-center mb-1.5"><span class="font-bold text-blue-500 mr-2">POST</span><span
+                        class="">/user</span>
+                    </p>
+                    <span class="">request body</span>
+                    <div class="w-full bg-gray-100 overflow-hidden text-xs p-2 rounded-lg">
+                      <pre><code>{
+ "name": "Jon Doe",
+ "bio": "A place holder user",
+ "password": "fakepass",
+ "amountSpent": 2000
+}</code></pre>
+                    </div>
                   </div>
                 </div>
               </div>
