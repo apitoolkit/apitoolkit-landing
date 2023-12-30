@@ -1,6 +1,7 @@
 ---
 title: "User-Centric API Documentation: How to Cater to Different User Personas"
 date: 2023-09-05T08:05:56+02:00
+description: Recognizing and catering to these distinct personas ensures that each user finds the information they need quickly and efficiently
 author: jessica
 categories: 
   - API Documentation
@@ -159,6 +160,6 @@ So, whether you're a developer seeking technical depth, a business analyst looki
 
 [How to Write API Documentation: 10 Essential Guidelines](https://apitoolkit.io/blog/how-to-write-api-docs/)
 
-[How to Tackle Anomalies in RESTful APIs (the Right Way)](https://apitoolkit.io/blog/anomalies-in-restful-apis/)
+[Detecting API Documentation Errors: What You Should Know](https://apitoolkit.io/blog/detecting-api-documentation-errors/)
 
-[How to Analyze API Logs and Metrics for Better Performance](https://apitoolkit.io/blog/api-logs-and-metrics/)
+[ API Documentation Trends to Watch: What's new and exciting ](https://apitoolkit.io/blog/api-documentation-trends-to-watch/)
