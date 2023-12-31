@@ -1,4 +1,4 @@
-<section class="w-full relative" style="max-width: min(100%,1300px); margin-inline: auto;">
+<section class="w-full relative" style="max-width: min(100%,1200px); margin-inline: auto;">
   <button id="menu-toggler" onclick="toggleDocMenu(event)" class="md:hidden">
     <svg class="text-black-500 h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
       <path stroke="currentColor" id="hamburger" stroke-linejoin="round" stroke-width="1.2" d="M15 6H3M15 12H3"
@@ -25,7 +25,7 @@
       {{- partial "sidebar-tree.html" . -}}
     </div>
   </aside>
-  <main class="p-5 md:ml-[250px] w-full md:w-[calc(100%-250px)] flex justify-between gap-5 lg:p-8 lg:pr-0">
+  <main class="p-5 md:ml-[250px] w-full md:w-[calc(100%-250px)] flex justify-between gap-5 lg:p-4 lg:pr-0">
     <div class="prose w-full mx-auto md:mx-0 prose-slate py-5">
       <h1>{{ .Title }}</h1>
       {{ with .Params.description }}<div class="lead">{{ . | markdownify }}</div>{{ end }}
