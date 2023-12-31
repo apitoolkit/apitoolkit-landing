@@ -61,7 +61,9 @@
 
 @layer components {
   .our_container {
-    @apply md:max-w-4xl inline-block text-left px-4;
+    width: min(100vw, 1200px);
+    padding-inline: 8px;
+    @apply text-left;
   }
   .feature_img {
     @apply w-32 sm:w-64 col-span-2;
