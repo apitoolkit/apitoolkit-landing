@@ -2423,6 +2423,10 @@ img {
   z-index: 50;
 }
 
+.z-20 {
+  z-index: 20;
+}
+
 .order-1 {
   order: 1;
 }
@@ -2437,6 +2441,10 @@ img {
 
 .col-span-3 {
   grid-column: span 3 / span 3;
+}
+
+.m-0 {
+  margin: 0px;
 }
 
 .mx-auto {
@@ -2686,6 +2694,10 @@ img {
 .h-max {
   height: -moz-max-content;
   height: max-content;
+}
+
+.h-14 {
+  height: 3.5rem;
 }
 
 .w-1\/2 {
@@ -3289,6 +3301,11 @@ img {
 .bg-yellow-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(202 138 4 / var(--tw-bg-opacity));
+}
+
+.bg-red-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-15 {

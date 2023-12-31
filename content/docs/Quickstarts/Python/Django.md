@@ -4,6 +4,7 @@ date: 2023-09-17
 publishdate: 2023-09-17
 weight: 20
 toc: true
+imageurl: /assets/img/framework-logos/django-logo.png
 menu:
   main:
     weight: 20

@@ -4,6 +4,7 @@ date: 2023-09-18
 publishdate: 2023-09-18
 weight: 20
 toc: true
+imageurl: /assets/img/framework-logos/flask-logo.png
 menu:
   main:
     weight: 20

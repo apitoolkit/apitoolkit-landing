@@ -4,6 +4,7 @@ date: 2023-09-16
 toc: true
 publishdate: 2023-09-16
 weight: 20
+imageurl: /assets/img/framework-logos/fastapi-logo.png
 menu:
   main:
     weight: 20

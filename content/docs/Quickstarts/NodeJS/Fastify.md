@@ -4,6 +4,8 @@ date: 2023-07-06
 publishdate: 2023-07-06
 weight: 1
 toc: true
+imageurl: /assets/img/framework-logos/fastify-logo.png
+
 menu:
   main:
     weight: 1

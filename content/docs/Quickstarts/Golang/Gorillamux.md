@@ -4,6 +4,7 @@ date: 2022-09-24
 publishdate: 2022-09-24
 weight: 20
 toc: true
+imageurl: /assets/img/framework-logos/mux-logo.png
 menu:
   main:
     weight: 20

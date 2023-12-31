@@ -3,6 +3,7 @@ title: PHP (Laravel)
 date: 2022-03-23
 publishdate: 2022-03-24
 toc: true
+imageurl: /assets/img/framework-logos/laravel-logo.png
 weight: 1
 menu:
   main:

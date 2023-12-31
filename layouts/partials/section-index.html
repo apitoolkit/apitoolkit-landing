@@ -25,14 +25,17 @@
         {{ range $pages }}
         {{ $manualLink := cond (isset .Params "manuallink") .Params.manualLink ( cond (isset .Params "manuallinkrelref")
         (relref . .Params.manualLinkRelref) .RelPermalink) }}
-        <li class=""><a href="{{ $manualLink }}" {{ with .Params.manualLinkTitle }} title="{{ . }}" {{ end}}{{ with
+        <li>
+            <a href="{{ $manualLink }}" {{ with .Params.manualLinkTitle }} title="{{ . }}" {{ end}}{{ with
                 .Params.manualLinkTarget }} target="{{ . }}" {{ if eq . "_blank" }} rel="noopener" {{ end }}{{ end }}
-                class="flex p-2 items-center gap-2 h-full rounded-2xl border hover:border-gray-700"
-                style="text-decoration: none;"><img alt="" loading="lazy" class="flex-shrink-0"
-                    src="https://a.storyblok.com/f/234930/40x40/54b3d32dca/help-group-reference.svg">
+                class="flex p-4 items-center gap-2 h-max rounded-2xl border hover:border-gray-700"
+                style="text-decoration: none;">
+                <img alt="" loading="lazy" class="flex-shrink-0 h-12 m-0" {{if .Params.imageurl}}
+                    src="{{ .Params.imageurl}}" {{else}} src="/assets/img/box-grid.svg" {{end}}>
                 <span class="font-semibold text-gray-700">{{- .Title -}}</span>
-                <span class="text-gray-500 mt-2">{{ .Description | markdownify }}</span>
-            </a></li>
+                <span class="text-gray-500">{{ .Description | markdownify }}</span>
+            </a>
+        </li>
         {{ end }}
     </ul>
     {{ end }}
