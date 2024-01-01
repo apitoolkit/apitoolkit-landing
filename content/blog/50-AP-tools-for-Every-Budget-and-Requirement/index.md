@@ -41,33 +41,32 @@ Compare pricing models and factors in hidden costs like training and support. Ch
 
 ###  Apitoolkit
 
-Apitoolkit provides automated API mocking, docs, and testing.
-
  1. Features: Monitor Errors & Performance, Debug Errors and See request happening live, Generate Swagger From live traffic or manually upload swagger, Payload Validation & Anomaly Detector, API Static Analysis & Linter, Live API tester	
  2.  Pricing: Free tier. Pay as you grow
  3.  Support: Email, chat, forum and 24/7 support
  4.  Community: Small but active user community
 
+Try [Apitoolkit](https://apitoolkit.eu.auth0.com/u/login?state=hKFo2SBvSnZMUXhDV3JsaF9fNEZBWW1INXZnRjkwYXF0NjVDcKFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIDNtNWpYZ3Jycnh6RmpxN0JvejBpWWg0cTBpOGNkdk1Io2NpZNkgQ0NoZnE2bGVSR2RuOWhhSFdzS0Q5RHRtbVl2RDlYYUM)
+
 ### 2.Postman
-Postman simplifies API development with testing and docs generation.
 
 1. Features: Collections, environments, mock servers, monitoring
 2. Pricing: Free tier. Team plans start at $8 per month.
 3. Support: Email, chat, 24/5 support
 4. Community: Active community forums and content
 
-### 3. ReadMe
+Try [Postman](https://www.postman.com/)
 
-ReadMe provides beautiful API reference docs tuned for developers.
+### 3. ReadMe
 
 1. Features: Custom styling, code samples, SDK generation
 2. Pricing: Free for open source. $50+/month for commercials.
 3. Support: In-app messaging, email, chat.
 4. Community: Public API showcase, blog, and social media engagement.
 
-### 4. Swagger UI
+Try [ReadMe](https://readme.com/)
 
-Swagger UI is the free, open source tool for visualizing OpenAPI specs.
+### 4. Swagger UI
 
 1.Features: Reference docs, UI interaction, mock generation
 2. Pricing: 100% free and open source
@@ -75,7 +74,6 @@ Swagger UI is the free, open source tool for visualizing OpenAPI specs.
 4. Community: Very large as a popular OSS project
 
 ### Document360
-Document360 focuses on beautiful API documentation experiences.
 
  1. Features: Custom themes, SEO optimization, content management
  2. Pricing: Free trial, then $39 - $249/month
@@ -84,16 +82,12 @@ Document360 focuses on beautiful API documentation experiences.
 
 ### 6. Apiary
 
-Apiary provides API design, documentation, mocking, and automation.
-
  1.Features: Interactive docs, API blueprints, automated testing
  2. Pricing: Free for individuals. Team plans start at $39/month.
  3. Support: Email, forum
  4. Community: Events, case studies, blog
 
 ### 7. DapperDox
-
-DapperDox auto-generates documentation from source code comments.
 
 1. Features: Comment-driven docs, multiple output formats, custom templates
 2. Pricing: Free for open source. Paid plans start at $14/month.
@@ -111,16 +105,12 @@ Redocly provides tools for OpenAPI spec-based API development.
 
 ### 9. OpenAPI Generator
 
-OpenAPI Generator auto-generates API client libraries and server stubs from OpenAPI specs.
-
 1. Features: Code generation, validation, integrations
 2. Pricing: 100% open source
 3. Support: GitHub issues, Stack Overflow, Slack
 4. Community: Large open source community
 
 ### 10.Stoplight
-
-Stoplight offers robust API design collaboration for enterprise teams.
 
 1. Features: Visual modeling, mocks, testing, permissions
 2. Pricing: Starts at $479/month. Enterprise pricing available.
