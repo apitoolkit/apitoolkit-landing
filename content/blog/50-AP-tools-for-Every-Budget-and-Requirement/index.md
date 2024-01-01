@@ -39,14 +39,14 @@ Compare pricing models and factors in hidden costs like training and support. Ch
 
 ## 1. API Design & Documentation Tools
 
-### Swagger UI
+###  Apitoolkit
 
-Swagger UI is the free, open source tool for visualizing OpenAPI specs.
+Apitoolkit provides automated API mocking, docs, and testing.
 
-1.Features: Reference docs, UI interaction, mock generation
-2. Pricing: 100% free and open source
-3. Support: GitHub issues and community forums
-4. Community: Very large as a popular OSS project
+ 1. Features: Monitor Errors & Performance, Debug Errors and See request happening live, Generate Swagger From live traffic or manually upload swagger, Payload Validation & Anomaly Detector, API Static Analysis & Linter, Live API tester	
+ 2.  Pricing: Free tier. Pay as you grow
+ 3.  Support: Email, chat, forum and 24/7 support
+ 4.  Community: Small but active user community
 
 ### 2.Postman
 Postman simplifies API development with testing and docs generation.
@@ -65,14 +65,14 @@ ReadMe provides beautiful API reference docs tuned for developers.
 3. Support: In-app messaging, email, chat.
 4. Community: Public API showcase, blog, and social media engagement.
 
-### 4. Stoplight
+### 4. Swagger UI
 
-Stoplight offers robust API design collaboration for enterprise teams.
+Swagger UI is the free, open source tool for visualizing OpenAPI specs.
 
-1. Features: Visual modeling, mocks, testing, permissions
-2. Pricing: Starts at $479/month. Enterprise pricing available.
-3. Support: Email, chat, phone, 24/5 technical support
-4. Community: Forum, Slack channel, events and webinars
+1.Features: Reference docs, UI interaction, mock generation
+2. Pricing: 100% free and open source
+3. Support: GitHub issues and community forums
+4. Community: Very large as a popular OSS project
 
 ### Document360
 Document360 focuses on beautiful API documentation experiences.
@@ -118,15 +118,14 @@ OpenAPI Generator auto-generates API client libraries and server stubs from Open
 3. Support: GitHub issues, Stack Overflow, Slack
 4. Community: Large open source community
 
-### 10. Apitoolkit
+### 10.Stoplight
 
-Apitoolkit.io provides automated API mocking, docs, and testing.
+Stoplight offers robust API design collaboration for enterprise teams.
 
- 1. Features: Monitor Errors & Performance, Debug Errors and See request happening live, Generate Swagger From live traffic or manually upload swagger, Payload Validation & Anomaly Detector, API Static Analysis & Linter, Live API tester	
- 2.  Pricing: Free tier. Pay as you grow
- 3.  Support: Email, chat, forum and 24/7 support
- 4.  Community: Small but active user community
-
+1. Features: Visual modeling, mocks, testing, permissions
+2. Pricing: Starts at $479/month. Enterprise pricing available.
+3. Support: Email, chat, phone, 24/5 technical support
+4. Community: Forum, Slack channel, events and webinars
 
 ## 2. API Client Libraries & SDKs
 
@@ -144,7 +143,7 @@ Apitoolkit.io provides automated API mocking, docs, and testing.
 3. Support: GitHub issues, Slack community
 4. Requirements: OpenAPI spec, customization for specific SDK needs
 
-### 13. Apitoolkit.io
+### 13. Apitoolkit
 
 1. Features: Auto-generated SDKs for JavaScript, Python, PHP, Java
 2. Pricing: Free and Pay as you grow
@@ -274,7 +273,7 @@ Apitoolkit.io provides automated API mocking, docs, and testing.
 4. Requirements: Moderate technical knowledge for API integration and configuration.
 5. Budget: High (custom pricing based on usage and features
     
-### 30. apitoolkit
+### 30. Apitoolkit
 
 1. Features: Monitor Errors & Performance, Debug Errors and See request happening live, Generate Swagger From live traffic or manually upload swagger, Payload Validation & Anomaly Detector, API Static Analysis & Linter, Live API tester	
 2. Pricing: Free and Pay as you grow.
@@ -358,10 +357,10 @@ Apitoolkit.io provides automated API mocking, docs, and testing.
 
 ### 40. Apitoolkit
 
-1. Features: Lightweight, self-hosted API management platform with a focus on developer experience. Offers API documentation, versioning, and authentication.
-2. Pricing: Open-source core available for free, Pro edition with additional features requires paid license.
+1. Features: Lightweight, self-hosted API management platform with a focus on developer experience. Monitor Errors & Performance, Debug Errors and See request happening live, Generate Swagger From live traffic or manually upload swagger,and many more.
+2. Pricing: Free tier and Pay as your grow
 3. Support: Free community support forums, paid Pro edition support available.
-4. Community: Growing community around apitoolkit.io, good documentation and tutorials.
+4. Community: Growing community around apitoolkit, good documentation and tutorials.
 5. Requirements: Technical expertise for self-hosting and management. Cost-effective solution for small teams and individual developers.
 
 ### 5. API Security Tools
@@ -378,8 +377,8 @@ Apitoolkit.io provides automated API mocking, docs, and testing.
   1. Features: API behavior analysis, bot detection, anomaly detection, and real-time threat mitigation.
   2. Pricing: Freemium model with limited features. Paid plans start at $4,995/month.
   3. Support: Dedicated customer support and technical advisors.
-  4.  Community: Smaller community of enterprise users.
-  5.   Best for: Organizations with high-value APIs and a large budget for proactive security.
+  4. Community: Smaller community of enterprise users.
+  5. Best for: Organizations with high-value APIs and a large budget for proactive security.
 
    ### 43. Noname Security
 
@@ -455,7 +454,7 @@ Apitoolkit.io provides automated API mocking, docs, and testing.
     
  **Are there any free or open-source API tools available?**
     
- Yes! Many excellent free and open-source API tools are available, such as Swagger UI, Postman, OpenAPI Generator, and Apitoolkit.io. These tools offer basic functionalities and can be a great starting point for developers on a budget.
+ Yes! Many excellent free and open-source API tools are available, such as Swagger UI, Postman, OpenAPI Generator, and Apitoolkit. These tools offer basic functionalities and can be a great starting point for developers on a budget.
     
     
  **Can I get started with APIs without spending any money?**
