@@ -245,13 +245,39 @@ video:
                 <div
                   class="*:p-3 *:size-64 *:rounded-xl text-gray-600  *:overflow-y-auto *:border *:bg-white *:light-shadow text-sm h-full w-max flex items-center *:shrink-0 flex-nowrap gap-10 -translate-x-[100%]"
                   id="apitoolkit-container">
+                  <!-- <div class="light-shadow"></div>
                   <div class="light-shadow"></div>
                   <div class="light-shadow"></div>
                   <div class="light-shadow"></div>
                   <div class="light-shadow"></div>
-                  <div class="light-shadow"></div>
-                  <div class="light-shadow"></div>
-                  <div class="light-shadow"></div>
+                  <div class="light-shadow"></div> -->
+
+                  <div class="light-shadow">
+                    <div class="flex items-center">
+                      <div class="inline-block font-bold text-blue-700 space-x-1 mb-3">
+                        <img src="./assets/img/svgs/shape.svg" class="inline w-4 h-4">
+                        <span>Field Monitor Alert</span>
+                      </div>
+                    </div>
+                    <div class="w-full mb-1 bg-gray-100 overflow-hidden text-xs p-2 rounded-lg">
+                      <pre><code>amount = 100000 </code></pre>
+                    </div>
+                    <p class="flex items-center"> in
+                      <span class="ml-1 font-bold text-blue-500 mr-2 text-sm">POST</span>
+                      <span class="">/send-funds</span>
+                    </p>
+                    <span class="text-sm text-gray-500 fontp-semibold">Payload</span>
+                    <div class="w-full mb-1 bg-gray-100 overflow-hidden text-xs p-2 rounded-lg">
+                      <pre><code>{
+ "amount": 10000,
+ "currency": "USD",
+ "reference": "For school fees"
+ "recepient": "recepient_id"
+}</code></pre>
+                    </div>
+                  </div>
+
+
 
                   <div class="light-shadow">
                     <div class="flex items-center">
@@ -276,14 +302,11 @@ video:
                     </div>
                     <span class="text-sm text-gray-500 fontp-semibold">Modified field format</span>
                     <div class="w-full mb-1 bg-gray-100 overflow-hidden text-xs p-2 rounded-lg">
-                      <pre><code>{
- "age": String
-}</code></pre>
+                      <pre><code>{"age": String}</code></pre>
                     </div>
                     <span class="text-sm text-gray-500 fontp-semibold">Previous formats</span>
                     <div class="w-full mb-1 bg-gray-100 overflow-hidden text-xs p-2 rounded-lg">
-                      <pre><code>[Int]
-</code></pre>
+                      <pre><code>[Int]</code></pre>
                     </div>
                   </div>
 
@@ -310,9 +333,7 @@ video:
                     </div>
                     <span class="text-sm text-gray-500 fontp-semibold">New fields (1)</span>
                     <div class="w-full mb-1 bg-gray-100 overflow-hidden text-xs p-2 rounded-lg">
-                      <pre><code>{
- "age": Int
-}</code></pre>
+                      <pre><code>{"age": Int}</code></pre>
                     </div>
                   </div>
 
@@ -380,13 +401,28 @@ video:
                 <div
                   class="*:p-3 *:size-64 *:rounded-xl *:border *:bg-white text-sm text-gray-600 h-full w-max flex items-center *:shrink-0 flex-nowrap gap-10 -translate-x-[100%]"
                   id="requests-container">
+                  <!-- <div class="light-shadow"></div>
                   <div class="light-shadow"></div>
                   <div class="light-shadow"></div>
                   <div class="light-shadow"></div>
                   <div class="light-shadow"></div>
-                  <div class="light-shadow"></div>
-                  <div class="light-shadow"></div>
-                  <div class="light-shadow"></div>
+                  <div class="light-shadow"></div> -->
+
+                  <div class="light-shadow">
+                    <p class="flex items-center mb-1.5"><span class="font-bold text-blue-500 mr-2">POST</span><span
+                        class="">/send-funds</span>
+                    </p>
+                    <span class="">request body</span>
+                    <div class="w-full mb-1 bg-gray-100 overflow-hidden text-xs p-2 rounded-lg">
+                      <pre><code>{
+ "amount": 10000,
+ "currency": "USD",
+ "reference": "For school fees"
+ "recepient": "recepient_id"
+}</code></pre>
+                    </div>
+                    <p>eg: Monitor amount field for all values greater 5000</p>
+                  </div>
 
                   <div class="light-shadow">
                     <p class="flex items-center mb-1.5"><span class="font-bold text-blue-500 mr-2">POST</span><span
@@ -1718,7 +1754,7 @@ video:
               class="rounded-[20px] overflow-hidden w-full p-[24px] flex flex-col gap-[16px] flex-shrink-0 hover:[--iconColor:#266DF0] bg-[#26282D] dark-shadow border border-transparent box-border transition-colors">
               <div class="flex flex-row items-center gap-[10px]"><img
                   src="https://firebasestorage.googleapis.com/v0/b/testimonialto.appspot.com/o/twitter-profile-image%2Fchangelog-90286855?alt=media&token=6c192f5a-bd29-4e3c-8265-44f22dcd1569"
-                  alt="Sebastiaan Debrouwere" loading="lazy" class="rounded-full w-[34px] h-[34px]">
+                  alt="" loading="lazy" class="rounded-full w-[34px] h-[34px]">
                 <div class="flex flex-col gap-[2px]">
                   <p class="text-[currentColor]">Changelog</p>
                   <p class="text-[#505967]">@changelog</p>
@@ -1757,7 +1793,7 @@ video:
               class="rounded-[20px] overflow-hidden w-full p-[24px] flex flex-col gap-[16px] flex-shrink-0 hover:[--iconColor:#266DF0] bg-[#26282D] dark-shadow border border-transparent box-border transition-colors">
               <div class="flex flex-row items-center gap-[10px]"><img
                   src="https://firebasestorage.googleapis.com/v0/b/testimonialto.appspot.com/o/twitter-profile-image%2Fchangelog-90286855?alt=media&token=6c192f5a-bd29-4e3c-8265-44f22dcd1569"
-                  alt="Sebastiaan Debrouwere" loading="lazy" class="rounded-full w-[34px] h-[34px]">
+                  alt="" loading="lazy" class="rounded-full w-[34px] h-[34px]">
                 <div class="flex flex-col gap-[2px]">
                   <p class="text-[currentColor]">Changelog</p>
                   <p class="text-[#505967]">@changelog</p>
@@ -1795,7 +1831,7 @@ video:
               class="rounded-[20px] overflow-hidden w-full p-[24px] flex flex-col gap-[16px] flex-shrink-0 hover:[--iconColor:#266DF0] bg-[#26282D] dark-shadow border border-transparent box-border transition-colors">
               <div class="flex flex-row items-center gap-[10px]"><img
                   src="https://firebasestorage.googleapis.com/v0/b/testimonialto.appspot.com/o/twitter-profile-image%2Fcollseo-1518927530732015616?alt=media&token=817fb740-20b2-420b-9a92-d974391816a9"
-                  alt="Sebastiaan Debrouwere" loading="lazy" class="rounded-full w-[34px] h-[34px]">
+                  alt="" loading="lazy" class="rounded-full w-[34px] h-[34px]">
                 <div class="flex flex-col gap-[2px]">
                   <p class="text-[currentColor]">Tech Guy</p>
                   <p class="text-[#505967]">@collseo</p>
