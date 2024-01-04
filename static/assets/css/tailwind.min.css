@@ -2655,10 +2655,6 @@ img {
   height: 20rem;
 }
 
-.h-96 {
-  height: 24rem;
-}
-
 .h-\[100vh\] {
   height: 100vh;
 }
@@ -4956,12 +4952,12 @@ img {
     display: none;
   }
 
-  .md\:h-\[calc\(100vh-70px\)\] {
-    height: calc(100vh - 70px);
-  }
-
   .md\:h-96 {
     height: 24rem;
+  }
+
+  .md\:h-\[calc\(100vh-70px\)\] {
+    height: calc(100vh - 70px);
   }
 
   .md\:w-0 {
