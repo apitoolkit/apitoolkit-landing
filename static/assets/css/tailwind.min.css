@@ -2805,6 +2805,10 @@ img {
   min-width: 0px;
 }
 
+.min-w-52 {
+  min-width: 13rem;
+}
+
 .max-w-4xl {
   max-width: 56rem;
 }

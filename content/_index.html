@@ -74,11 +74,12 @@ video:
         </div>
         <div class="w-full rounded-t-2xl light-shadow border-gray-100 px-10 pt-8">
           <div class="flex flex-col gap-16">
-            <div class="flex gap-2  overflow-x-auto *:min-w-52">
-              <button class="flex flex-col gap-2 text-left  text-gray-400 tab-button active-tab"
+            <div class="flex gap-4 overflow-x-auto">
+              <button class="flex flex-col gap-2 text-left min-w-52 text-gray-400 tab-button active-tab"
                 onclick="switchTab(event, 'observe')">
                 <span class="font-bold text-[18px] flex items-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
+                  <svg class="shrink-0" xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20"
+                    fill="none">
                     <path
                       d="M10.5014 2.31665H8.46568C6.56551 2.31666 5.61542 2.31666 4.88964 2.68645C4.25124 3.01174 3.7322 3.53078 3.40691 4.16919C3.03711 4.89496 3.03711 5.84505 3.03711 7.74523V11.8166C3.03711 13.7168 3.03711 14.6668 3.40691 15.3926C3.7322 16.031 4.25124 16.5501 4.88965 16.8753C5.61542 17.2451 6.56551 17.2451 8.46569 17.2451H10.5014M10.5014 2.31665H12.5371C14.4372 2.31665 15.3873 2.31665 16.1131 2.68645C16.7515 3.01174 17.2706 3.53078 17.5958 4.16919C17.9656 4.89496 17.9656 5.84505 17.9656 7.74522V11.8166C17.9656 13.7167 17.9656 14.6668 17.5958 15.3926C17.2706 16.031 16.7515 16.5501 16.1131 16.8753C15.3873 17.2451 14.4373 17.2451 12.5371 17.2451H10.5014M10.5014 2.31665V17.2451"
                       stroke="currentColor" stroke-width="1.49286" stroke-linecap="round" stroke-linejoin="round" />
@@ -92,10 +93,11 @@ video:
                 <span class="text-sm">Watch Errors, Performance, and any numbers that matter over
                   time.</span>
               </button>
-              <button class="flex flex-col gap-2 text-left text-gray-400 tab-button"
+              <button class="flex flex-col min-w-52 gap-2 text-left text-gray-400 tab-button"
                 onclick="switchTab(event,'anomalies')">
                 <span class="font-bold text-[18px] flex items-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
+                  <svg class="shrink-0" xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20"
+                    fill="none">
                     <g clip-path="url(#clip0_532_2983)">
                       <mask id="mask0_532_2983" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0"
                         width="20" height="20">
@@ -123,10 +125,11 @@ video:
                   provide or depend on.</span>
               </button>
 
-              <button class="flex flex-col gap-2 text-left text-gray-400 tab-button"
+              <button class="flex flex-col min-w-52 gap-2 text-left text-gray-400 tab-button"
                 onclick="switchTab(event,'errors')">
                 <span class="font-bold text-[18px] flex items-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="19" height="20" viewBox="0 0 19 20" fill="none">
+                  <svg class="shrink-0" xmlns="http://www.w3.org/2000/svg" width="19" height="20" viewBox="0 0 19 20"
+                    fill="none">
                     <path
                       d="M6.34225 17.4142C6.34225 14.5065 7.90966 11.8862 10.8173 11.8862C7.90966 11.8862 6.34225 9.2658 6.34225 6.35815C6.34225 9.2658 4.77485 11.8862 1.86719 11.8862C4.77485 11.8862 6.34225 14.5065 6.34225 17.4142Z"
                       stroke="currentColor" stroke-width="1.49286" stroke-linecap="round" stroke-linejoin="round" />
@@ -140,10 +143,11 @@ video:
                   calls to
                   integrations.</span>
               </button>
-              <button class="flex flex-col gap-2 text-left  text-gray-400 tab-button"
+              <button class="flex flex-col min-w-52 gap-2 text-left  text-gray-400 tab-button"
                 onclick="switchTab(event,'monitors')">
                 <span class="font-bold text-[18px] flex items-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
+                  <svg class="shrink-0" xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20"
+                    fill="none">
                     <path
                       d="M14.8209 2.31543H6.67802C4.80419 2.31543 3.28516 3.83446 3.28516 5.70829V13.8512C3.28516 15.725 4.80419 17.244 6.67802 17.244H14.8209C16.6947 17.244 18.2138 15.725 18.2138 13.8512V5.70829C18.2138 3.83446 16.6947 2.31543 14.8209 2.31543Z"
                       stroke="currentColor" stroke-width="1.49286" stroke-linecap="round" stroke-linejoin="round" />
