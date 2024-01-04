@@ -3126,6 +3126,10 @@ img {
   overflow: hidden;
 }
 
+.overflow-x-auto {
+  overflow-x: auto;
+}
+
 .overflow-y-auto {
   overflow-y: auto;
 }
@@ -4282,6 +4286,30 @@ img {
   height: 16rem;
 }
 
+.\*\:min-w-96 > * {
+  min-width: 24rem;
+}
+
+.\*\:min-w-80 > * {
+  min-width: 20rem;
+}
+
+.\*\:min-w-72 > * {
+  min-width: 18rem;
+}
+
+.\*\:min-w-64 > * {
+  min-width: 16rem;
+}
+
+.\*\:min-w-56 > * {
+  min-width: 14rem;
+}
+
+.\*\:min-w-52 > * {
+  min-width: 13rem;
+}
+
 .\*\:shrink-0 > * {
   flex-shrink: 0;
 }
@@ -4956,6 +4984,10 @@ img {
     height: calc(100vh - 70px);
   }
 
+  .md\:h-\[500px\] {
+    height: 500px;
+  }
+
   .md\:w-0 {
     width: 0px;
   }
@@ -5000,6 +5032,10 @@ img {
 
   .md\:grid-cols-5 {
     grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .md\:flex-row {
