@@ -32,8 +32,7 @@ API documentation serves as the instruction manual for developers, providing ess
 
 When choosing an API documentation tool, there are several key factors to consider:
 
-- Ease of Use: The tool should be intuitive and easy to navigate, allowing for quick document creation and updates.
-- Interactivity: Features like "Try it out" buttons, which allow users to make API calls within the documentation, can enhance the user experience.
+- User Experience: The tool should be intuitive and easy to navigate, allowing for quick document creation and updates. Features like "Try it out" buttons, which allow users to make API calls within the documentation, can enhance the user experience.
 - Collaboration: Look for tools that enable multiple team members to collaborate in real-time, providing features like version control and comments.
 - Customization: The ability to customize the look and feel of the documentation to align with your brand can be a significant advantage.
 - Integration: Compatibility with existing systems or the ability to export documentation in various formats can be crucial for many organizations.
