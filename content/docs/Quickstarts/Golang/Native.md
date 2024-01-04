@@ -3,6 +3,8 @@ title: Go Native
 date: 2023-09-28
 publishdate: 2023-09-28
 weight: 20
+toc: true
+imageurl: /assets/img/framework-logos/go-logo.png
 menu:
   main:
     weight: 20

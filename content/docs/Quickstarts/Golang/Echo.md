@@ -2,6 +2,7 @@
 title: Go Echo
 date: 2023-09-25
 publishdate: 2022-09-25
+toc: true
 weight: 20
 menu:
   main:
