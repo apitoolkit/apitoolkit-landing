@@ -1,6 +1,6 @@
 ---
 title: "How to Implement Error Monitoring in Golang"
-date: 2024-01-04T0*:30:00+00:00
+date: 2024-01-04T0:30:00+00:00
 description: Go's approach to error handling stands out for its emphasis on explicitness and value-based management. Unlike languages that rely on exceptions,
 author: elliot
 categories:
