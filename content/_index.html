@@ -1954,32 +1954,11 @@ video:
     let isDragging = false
 
 
+
     function animateMarquee() {
       currentPosition++;
       let movedOut = false
-      Array.from(incomingReqeusts.children).forEach(child => {
-        const bounds = child.getBoundingClientRect();
-        if (bounds.x > mainContBounds.x + mainContBounds.width) {
-          movedOut = true
-          incomingReqeusts.removeChild(child)
-          const firstChild = incomingReqeusts.firstElementChild
-          incomingReqeusts.insertBefore(child, firstChild)
-        }
-      })
-
-      Array.from(apitoolkit.children).forEach(child => {
-        const bounds = child.getBoundingClientRect();
-        if (bounds.x > mainContBounds.x + mainContBounds.width) {
-          let movedOut = true
-          apitoolkit.removeChild(child)
-          const firstChild = apitoolkit.firstElementChild
-          apitoolkit.insertBefore(child, firstChild)
-        }
-      })
-      if (movedOut) {
-        currentPosition -= 296
-        movedOut = false
-      }
+      checkItemOut()
       apitoolkit.style.transform = `translateX(${currentPosition}px)`;
       incomingReqeusts.style.transform = `translateX(${currentPosition}px)`;
       animationId = requestAnimationFrame(animateMarquee);
@@ -2015,37 +1994,57 @@ video:
       if (isDragging) {
         diff = event.pageX - startX
         startX = event.pageX
-        let movedOut = false
-        Array.from(incomingReqeusts.children).forEach(child => {
-          const bounds = child.getBoundingClientRect();
-          if (bounds.x > mainContBounds.x + mainContBounds.width) {
-            movedOut = true
-            incomingReqeusts.removeChild(child)
-            const firstChild = incomingReqeusts.firstElementChild
-            incomingReqeusts.insertBefore(child, firstChild)
-          }
-        })
-
-        Array.from(apitoolkit.children).forEach(child => {
-          const bounds = child.getBoundingClientRect();
-          if (bounds.x > mainContBounds.x + mainContBounds.width) {
-            let movedOut = true
-            apitoolkit.removeChild(child)
-            const firstChild = apitoolkit.firstElementChild
-            apitoolkit.insertBefore(child, firstChild)
-          }
-        })
-        if (movedOut) {
-          currentPosition -= 296
-          movedOut = false
-        }
-
+        checkItemOut()
         currentPosition += diff
         apitoolkit.style.transform = `translateX(${currentPosition}px)`;
         incomingReqeusts.style.transform = `translateX(${currentPosition}px)`;
 
       }
     });
+
+    function checkItemOut() {
+      let movedOut = false
+
+      // Remove child nodes that are too far
+      // such that mouse moving the items backward will not likely bring back into view
+      // say 3000px deep
+      const offsetLimit = 3000
+
+      Array.from(incomingReqeusts.children).forEach(child => {
+        const bounds = child.getBoundingClientRect();
+        if (child.getAttribute("replaced")) {
+          if (bounds.x > mainContBounds.x + mainContBounds.width + offsetLimit) {
+            incomingReqeusts.removeChild(child)
+          }
+        }
+        if (bounds.x > mainContBounds.x + mainContBounds.width && !child.getAttribute("replaced")) {
+          movedOut = true
+          const clone = child.cloneNode(true)
+          child.setAttribute("replaced", "true")
+          const firstChild = incomingReqeusts.firstElementChild
+          incomingReqeusts.insertBefore(clone, firstChild)
+        }
+      })
+
+      Array.from(apitoolkit.children).forEach(child => {
+        const bounds = child.getBoundingClientRect();
+        if (child.getAttribute("replaced")) {
+          if (bounds.x > mainContBounds.x + mainContBounds.width + offsetLimit) {
+            apitoolkit.removeChild(child)
+          }
+        }
+        if (bounds.x > mainContBounds.x + mainContBounds.width && !child.getAttribute("replaced")) {
+          let movedOut = true
+          const clone = child.cloneNode(true)
+          child.setAttribute("replaced", "true")
+          const firstChild = apitoolkit.firstElementChild
+          apitoolkit.insertBefore(clone, firstChild)
+        }
+      })
+      if (movedOut) {
+        currentPosition -= 296
+      }
+    }
 
     animateMarquee()
   }
