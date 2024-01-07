@@ -249,147 +249,6 @@ video:
                 <div
                   class="*:select-none *:p-3 *:size-64 *:rounded-xl text-gray-600  *:overflow-y-auto *:border *:bg-white *:light-shadow text-sm h-full w-max flex items-center *:shrink-0 flex-nowrap gap-10"
                   id="apitoolkit-container">
-                  <div class="light-shadow">
-                    <div class="flex items-center">
-                      <div class="inline-block font-bold text-blue-700 space-x-1 mb-3">
-                        <img src="./assets/img/svgs/shape.svg" class="inline w-4 h-4">
-                        <span>Field Monitor Alert</span>
-                      </div>
-                    </div>
-                    <div class="w-full mb-1 bg-gray-100 overflow-hidden text-xs p-2 rounded-lg">
-                      <pre><code>amount = 100000 </code></pre>
-                    </div>
-                    <p class="flex items-center"> in
-                      <span class="ml-1 font-bold text-blue-500 mr-2 text-sm">POST</span>
-                      <span class="">/send-funds</span>
-                    </p>
-                    <span class="text-sm text-gray-500 fontp-semibold">Payload</span>
-                    <div class="w-full mb-1 bg-gray-100 overflow-hidden text-xs p-2 rounded-lg">
-                      <pre><code>{
- "amount": 10000,
- "currency": "USD",
- "reference": "For school fees"
- "recepient": "recepient_id"
-}</code></pre>
-                    </div>
-                  </div>
-
-                  <div class="light-shadow">
-                    <div class="flex items-center">
-                      <div class="inline-block font-bold text-blue-700 space-x-1 mb-3">
-                        <img src="./assets/img/svgs/shape.svg" class="inline w-4 h-4">
-                        <span>New Request Shape</span>
-                      </div>
-                    </div>
-                    <p class="flex items-center"> in
-                      <span class="ml-1 font-bold text-blue-500 mr-2 text-sm">POST</span>
-                      <span class="">/user</span>
-                    </p>
-
-                    <span class="text-sm text-gray-500 fontp-semibold">shape</span>
-                    <div class="w-full mb-1 bg-gray-100 overflow-hidden text-xs p-2 rounded-lg">
-                      <pre><code>{
- "name": String,
- "bio": String,
- "password": String,
- "age": String
-}</code></pre>
-                    </div>
-                    <span class="text-sm text-gray-500 fontp-semibold">Modified field format</span>
-                    <div class="w-full mb-1 bg-gray-100 overflow-hidden text-xs p-2 rounded-lg">
-                      <pre><code>{"age": String}</code></pre>
-                    </div>
-                    <span class="text-sm text-gray-500 fontp-semibold">Previous formats</span>
-                    <div class="w-full mb-1 bg-gray-100 overflow-hidden text-xs p-2 rounded-lg">
-                      <pre><code>[Int]</code></pre>
-                    </div>
-                  </div>
-
-                  <div class="light-shadow">
-                    <div class="flex items-center">
-                      <div class="inline-block font-bold text-blue-700 space-x-1 mb-3">
-                        <img src="./assets/img/svgs/shape.svg" class="inline w-4 h-4">
-                        <span>New Request Shape</span>
-                      </div>
-                    </div>
-                    <p class="flex items-center"> in
-                      <span class="ml-1 font-bold text-blue-500 mr-2 text-sm">POST</span>
-                      <span class="">/user</span>
-                    </p>
-
-                    <span class="text-sm text-gray-500 fontp-semibold">shape</span>
-                    <div class="w-full mb-1 bg-gray-100 overflow-hidden text-xs p-2 rounded-lg">
-                      <pre><code>{
- "name": String,
- "bio": String,
- "password": String,
- "age": Int
-}</code></pre>
-                    </div>
-                    <span class="text-sm text-gray-500 fontp-semibold">New fields (1)</span>
-                    <div class="w-full mb-1 bg-gray-100 overflow-hidden text-xs p-2 rounded-lg">
-                      <pre><code>{"age": Int}</code></pre>
-                    </div>
-                  </div>
-
-                  <div class="light-shadow">
-                    <p class="flex items-center mb-1.5"><span class="font-bold text-blue-500 mr-2">POST</span><span
-                        class="">/user</span>
-                    </p>
-                    <span class="">request body</span>
-                    <div class="w-full mb-1 bg-gray-100 overflow-hidden text-xs p-2 rounded-lg">
-                      <pre><code>{
- "name": "Jon Doe",
- "bio": "A place holder user",
- "password": "[CLIENT REDACTED]",
-}</code></pre>
-                    </div>
-                    <span class="font-medium text-xs text-blue-500">Above is what gets saved by APItoolkit</span>
-                  </div>
-
-                  <div class="light-shadow">
-                    <div class="flex items-center">
-                      <div class="inline-block font-bold text-blue-700 space-x-1 mb-3">
-                        <img src="./assets/img/endpoint.svg" class="inline w-4 h-4">
-                        <span>New Endpoint</span>
-                      </div>
-                    </div>
-                    <p class="flex items-center">
-                      <span class="font-bold text-blue-500 mr-2 text-sm">POST</span>
-                      <span class="">/user</span>
-                    </p>
-                    <div class="mt-2">
-                      <span class="text-sm text-gray-500 font-semibold">Events</span>
-                      <div class="text-sm">
-                        <span class="text-xs">25,000</span>
-                      </div>
-                    </div>
-                    <div class="flex mt-2 gap-3 w-full">
-                      <div>
-                        <span class="text-sm text-gray-500 font-semibold">First seen</span>
-                        <div class="text-sm">
-                          <span class="text-xs">Dec 10, 2023 17:36</span>
-                        </div>
-                      </div>
-                      <div>
-                        <span class="text-sm text-gray-500 font-semibold">Last seen</span>
-                        <div class="text-sm">
-                          <span class="text-xs">Now</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="w-full flex items-center gap-4 mt-4 overflow-y-auto">
-                      <span
-                        class="inline-block xchild-hover cursor-pointer py-1 px-2 rounded border border-gray-200 text-xs hover:shadow shadow-blue-100">
-                        Archive
-                      </span>
-                      <span
-                        class="inline-block child-hover cursor-pointer py-1 px-2 rounded border border-gray-200 text-xs hover:shadow shadow-blue-100 "
-                        data-tippy-content="acknowlege anomaly"
-                        data-hx-get="/p/6d06b402-a667-4878-b12a-8621b8c6f37d/anomalies/d81f4f47-2d7b-4892-925f-0dc5d53aa329/acknowlege"
-                        data-hx-swap="outerHTML">✓ Acknowlege</span>
-                    </div>
-                  </div>
 
                   <div class="light-shadow">
                     <div class="flex items-center">
@@ -538,82 +397,6 @@ video:
                 <div
                   class="*:select-none *:p-3 *:size-64 *:rounded-xl *:border *:bg-white text-sm text-gray-600 h-full w-max flex items-center *:shrink-0 flex-nowrap gap-10"
                   id="requests-container">
-                  <div class="light-shadow">
-                    <p class="flex items-center mb-1.5"><span class="font-bold text-blue-500 mr-2">POST</span><span
-                        class="">/send-funds</span>
-                    </p>
-                    <span class="">request body</span>
-                    <div class="w-full mb-1 bg-gray-100 overflow-hidden text-xs p-2 rounded-lg">
-                      <pre><code>{
- "amount": 10000,
- "currency": "USD",
- "reference": "For school fees"
- "recepient": "recepient_id"
-}</code></pre>
-                    </div>
-                    <p>eg: Monitor amount field for all values greater 5000</p>
-                  </div>
-
-                  <div class="light-shadow">
-                    <p class="flex items-center mb-1.5"><span class="font-bold text-blue-500 mr-2">POST</span><span
-                        class="">/user</span>
-                    </p>
-                    <span class="">request body</span>
-                    <div class="w-full mb-1 bg-gray-100 overflow-hidden text-xs p-2 rounded-lg">
-                      <pre><code>{
- "name": "Jane Doe",
- "bio": "A place holder user",
- "password": "fakepass",
- "age": "5 months"
-}</code></pre>
-                    </div>
-                  </div>
-
-                  <div class="light-shadow">
-                    <p class="flex items-center mb-1.5"><span class="font-bold text-blue-500 mr-2">POST</span><span
-                        class="">/user</span>
-                    </p>
-                    <span class="">request body</span>
-                    <div class="w-full mb-1 bg-gray-100 overflow-hidden text-xs p-2 rounded-lg">
-                      <pre><code>{
- "name": "Jon Doe",
- "bio": "A place holder user",
- "password": "fakepass",
- "age": 25
-}</code></pre>
-                    </div>
-                  </div>
-
-                  <div class="light-shadow">
-                    <p class="flex items-center mb-1.5"><span class="font-bold text-blue-500 mr-2">POST</span><span
-                        class="">/user</span>
-                    </p>
-                    <span class="">request body</span>
-                    <div class="w-full mb-1 bg-gray-100 overflow-hidden text-xs p-2 rounded-lg">
-                      <pre><code>{
- "name": "Jon Doe",
- "bio": "A place holder user",
- "password": "fakepass",
-}</code></pre>
-                    </div>
-                    <span class="text-sm block">redact password</span>
-                    <span class="bg-gray-100 rounded-lg text-xs">redactRequestBody = ["$.password"]</span>
-                  </div>
-
-                  <div class="light-shadow">
-                    <p class="flex items-center mb-1.5"><span class="font-bold text-blue-500 mr-2">POST</span><span
-                        class="">/user</span>
-                    </p>
-                    <span class="">request body</span>
-                    <div class="w-full bg-gray-100 overflow-hidden text-xs p-2 rounded-lg">
-                      <pre><code>{
- "name": "Jon Doe",
- "bio": "A place holder user",
- "password": "fakepass",
-}</code></pre>
-                    </div>
-                  </div>
-
                   <div class="light-shadow">
                     <p class="flex items-center mb-1.5"><span class="font-bold text-blue-500 mr-2">POST</span><span
                         class="">/send-funds</span>
@@ -2160,34 +1943,19 @@ video:
     const apitoolkit = document.querySelector("#apitoolkit-container")
     const contentWidth = window.getComputedStyle(apitoolkit).width;
     const containerWidth = parseInt(window.getComputedStyle(mainContainer).width.replace("px", ""));
+    const mainContBounds = mainContainer.getBoundingClientRect()
     const startPos = -1 * parseInt(contentWidth.replace("px", ""));
     let currentPosition = startPos;
     let animationId;
     let startX = 0;
     let isDragging = false
 
-    // Array.from(incomingReqeusts.children).forEach(child => {
-    //   const bounds = child.getBoundingClientRect();
-    //   if (bounds.x > mainContBounds.x + mainContBounds.width) {
-    //     const firstChild = incomingReqeusts.firstElementChild
-    //     incomingReqeusts.insertBefore(firstChild, child)
-    //   }
-    // })
-
-    // Array.from(apitoolkit.children).forEach(child => {
-    //   const bounds = child.getBoundingClientRect();
-    //   if (bounds.x > mainContBounds.x + mainContBounds.width) {
-    //     const firstChild = apitoolkit.firstElementChild
-    //     apitoolkit.insertBefore(firstChild, child)
-    //   }
-    // })
 
 
     function animateMarquee() {
       currentPosition++;
-      if (currentPosition > containerWidth) {
-        currentPosition = startPos;
-      }
+      let movedOut = false
+      checkItemOut()
       apitoolkit.style.transform = `translateX(${currentPosition}px)`;
       incomingReqeusts.style.transform = `translateX(${currentPosition}px)`;
       animationId = requestAnimationFrame(animateMarquee);
@@ -2223,12 +1991,57 @@ video:
       if (isDragging) {
         diff = event.pageX - startX
         startX = event.pageX
+        checkItemOut()
         currentPosition += diff
         apitoolkit.style.transform = `translateX(${currentPosition}px)`;
         incomingReqeusts.style.transform = `translateX(${currentPosition}px)`;
 
       }
     });
+
+    function checkItemOut() {
+      let movedOut = false
+
+      // Remove child nodes that are too far
+      // such that mouse moving the items backward will not likely bring back into view
+      // say 3000px deep
+      const offsetLimit = 3000
+
+      Array.from(incomingReqeusts.children).forEach(child => {
+        const bounds = child.getBoundingClientRect();
+        if (child.getAttribute("replaced")) {
+          if (bounds.x > mainContBounds.x + mainContBounds.width + offsetLimit) {
+            incomingReqeusts.removeChild(child)
+          }
+        }
+        if (bounds.x > mainContBounds.x + mainContBounds.width && !child.getAttribute("replaced")) {
+          movedOut = true
+          const clone = child.cloneNode(true)
+          child.setAttribute("replaced", "true")
+          const firstChild = incomingReqeusts.firstElementChild
+          incomingReqeusts.insertBefore(clone, firstChild)
+        }
+      })
+
+      Array.from(apitoolkit.children).forEach(child => {
+        const bounds = child.getBoundingClientRect();
+        if (child.getAttribute("replaced")) {
+          if (bounds.x > mainContBounds.x + mainContBounds.width + offsetLimit) {
+            apitoolkit.removeChild(child)
+          }
+        }
+        if (bounds.x > mainContBounds.x + mainContBounds.width && !child.getAttribute("replaced")) {
+          let movedOut = true
+          const clone = child.cloneNode(true)
+          child.setAttribute("replaced", "true")
+          const firstChild = apitoolkit.firstElementChild
+          apitoolkit.insertBefore(clone, firstChild)
+        }
+      })
+      if (movedOut) {
+        currentPosition -= 296
+      }
+    }
 
     animateMarquee()
   }
