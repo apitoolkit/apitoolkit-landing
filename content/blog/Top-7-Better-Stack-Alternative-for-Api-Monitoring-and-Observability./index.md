@@ -241,7 +241,8 @@ Sumo Logic takes a unique approach to API monitoring, focusing on centralized lo
 **Pricing**
 
  Customized plans based on data ingestion volume and features, starting at $125/month. Free trial available.
-##Frequently Asked Questions
+ 
+## Frequently Asked Questions
 
 **Q1. Which "Better Stack alternative" is the best for me?**
 
