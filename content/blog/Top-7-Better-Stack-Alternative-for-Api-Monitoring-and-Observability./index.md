@@ -23,7 +23,7 @@ Fortunately, the software landscape has evolved, offering a plethora of **"Bette
 #### Top 7 Better Stack Alternatives for Api Monitoring and Observability.
 Let’s delve deep into the best 7 Better Stack Alternatives for API Monitoring and Observability.
 
-## APIToolkit
+## 1. APIToolkit
 ![APIToolkit](./APIToolkit.png)
 APItoolKit stands out as a frontrunner in API monitoring and observability, offering a user-friendly and comprehensive solution that surpasses the limitations of Better Stack. APItoolkit don’t only monitors but also observed, detect anomalies, generate upto date api documentation and specs, automatic changelogs, error analytics, and powerful weekly report on the state of your apis.
 
