@@ -26,7 +26,7 @@ Let’s delve deep into the best 7 Better Stack Alternatives for API Monitoring 
 ![APIToolkit](./APIToolkit.png)
 APItoolKit stands out as a frontrunner in API monitoring and observability, offering a user-friendly and comprehensive solution that surpasses the limitations of Better Stack. APItoolkit don’t only monitors but also observed, detect anomalies, generate upto date api documentation and specs, automatic changelogs, error analytics, and powerful weekly report on the state of your apis.
 
-Don't take our word for it. See how APItoolKit has empowered companies like Platnova and Thepeer to achieve unprecedented API performance and reliability. In Platnova's case, APItoolKit helped them reduce API latency by 30%, while in Thepeer we helped them make a drop in rewrite of our PHP service in Golang. Fixing all bugs without customers noticing any changes.
+Don't take our word for it. See how APItoolKit has empowered companies like Platnova and Thepeer to achieve unprecedented API performance and reliability. In [Platnova's case](https://platnova.com/), APItoolKit helped them reduce API latency by 30%, while in [Thepeer](https://thepeer.co/) we helped them make a drop in rewrite of our PHP service in Golang. Fixing all bugs without customers noticing any changes.
 
 **Key Features**
 * **AI-Powered Insights**
