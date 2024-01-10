@@ -7,7 +7,7 @@ categories:
   - API
 --- 
 
-![ALT](./50%20APi%20tools%20for%20Every%20Budget%20and%20Requirement.png)
+![APi tools](./50%20APi%20tools%20for%20Every%20Budget%20and%20Requirement.png)
 
 
 APIs (application programming interfaces) play a critical role in software development today. They allow different systems and applications to communicate with each other by defining how one application can request and receive data from another.
@@ -396,7 +396,7 @@ Redocly provides tools for OpenAPI spec-based API development.
 4. Community: Smaller community of enterprise users.
 5. Best for: Highly sensitive APIs and organizations with strict security compliance requirements.
    
-### 47.   ImmuniWeb
+### 47. ImmuniWeb
 
 1.  Features: Manual and automated API security testing, fuzzing, and source code analysis.
 2.  Pricing: Project-based pricing starting at $500.
@@ -404,7 +404,7 @@ Redocly provides tools for OpenAPI spec-based API development.
 4.  Community: Smaller community of security professionals and researchers.
 5.  Best for: Organizations focused on in-depth API security testing and compliance.
 
-### 48.    Traceable AI
+### 48. Traceable AI
 1. Features: Anomaly detection, user activity monitoring, and API threat intelligence.
 2. Pricing: Freemium model with limited features. Paid plans start at $499/month.
 3. Support: Dedicated customer support and knowledge base.
