@@ -101,7 +101,6 @@ Get started today and create documentation that developers will appreciate!
 
 **Also Read**:
 
-
 [Generating Golang API Doc with Swagger](https://apitoolkit.io/blog/generating-golangdoc/)
 
 [How to Generate Automated API Documentation](https://apitoolkit.io/blog/how-to-generate-automated-api-documentation/)
@@ -111,4 +110,3 @@ Get started today and create documentation that developers will appreciate!
 [API Documentation Trends to Watch: What's New and Exciting](https://apitoolkit.io/blog/api-documentation-trends-to-watch/)
 
 [How to Measure the Effectiveness of Your API Documentation with Analytics](https://apitoolkit.io/blog/api-documentation-with-analytics/)
-
