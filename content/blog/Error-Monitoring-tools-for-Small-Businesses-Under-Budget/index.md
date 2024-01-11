@@ -1,7 +1,7 @@
 ---
 title: "Error Monitoring tools for Small Businesses Under Budget"
 date: 2024-01-11T06:44:56+02:00
-description:"Error monitoring software is a tool that allows developers and businesses to keep a close eye on the health and performance of their applications, websites, and technical infrastructure"
+description: "Error monitoring software is a tool that allows developers and businesses to keep a close eye on the health and performance of their applications, websites, and technical infrastructure"
 author: elliot
 categories:
   - Error Monitoring tools
