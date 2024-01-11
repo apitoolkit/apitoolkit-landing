@@ -8,7 +8,8 @@ categories:
 ---
 
 ![Alt text](./Error%20Monitoring%20tools%20for%20Small%20Businesses%20Under%20Budget.png)
-Remember the Twitter outage? Millions left hanging, businesses stalled, and a hefty dose of FOMO swirling the internet. While a bird-sized now called "X" social media giant might have the resources to weather such glitches, for small businesses, even minor errors can turn into existential tremors.
+Error monitoring software are the most under appreciated  tools in the technology world. A tool that allow you know when,how,and why you system might be encoutering failurs.Remember the Twitter outage? if not thousands millions was left hanging, and businesses went offt. While twitter now called "X" might have the resources to know these glitches before they happen they still did not get it easy, imagine the same situation on a small businesses.
+
 
 That's where error monitoring comes in, your key observer. Think of it as a look out for your website, app, or system constantly on the look for suspicious activity before they unleash chaos on your customers. 
 
