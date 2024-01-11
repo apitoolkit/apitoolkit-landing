@@ -41,7 +41,7 @@ Be sure that your service is performing within expected performance metrics. Run
 
 <br/>
 
-Your Open API specification would be used to track a large class of errors [Anomaly detection](/api-documentation-and-developer-portals) on your Backend service. You can [learn more about it here](https://apitoolkit.io/api-documentation-and-developer-portals).
+Your Open API specification would be used to track a large class of errors [Anomaly detection](https://apitoolkit.io/blog/anomalies-in-restful-apis/) on your Backend service. You can [learn more about it here](https://apitoolkit.io/docs/).
 
 
 <div class="flex">
