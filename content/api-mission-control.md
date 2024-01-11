@@ -19,6 +19,8 @@ Built-in mocking enables you to simulate API responses. Return static or dynamic
 Integrate APIToolkit with your CI/CD pipelines for automated testing and simulation. Run regression tests to prevent introducing breaking changes. Use mocks during development when dependent services are unavailable.
 
 In a nutshell, you get a live and in-depth view of your API. View your endpoints, fields, and even export your API as swagger if you like. The always up-to-date documentation feature is generated automatically from your live traffic.
+
 Explore our [documentation](https://apitoolkit.io/docs/) and [blogs](https://apitoolkit.io/blog/) 
+
 
 
