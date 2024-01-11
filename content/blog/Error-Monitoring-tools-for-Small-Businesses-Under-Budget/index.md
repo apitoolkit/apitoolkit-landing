@@ -62,7 +62,7 @@ Robust error monitoring provides shared visibility for your entire team. The dat
 By tightening your error monitoring practices, you significantly decrease downtime risks that can impact revenue and reputation. This is especially important for customer-facing web apps and services.
 
 
-##Things to Consider When Choosing Error Monitoring Software
+## Things to Consider When Choosing Error Monitoring Software
 
 **1. Identifying your Use Cases**
 
