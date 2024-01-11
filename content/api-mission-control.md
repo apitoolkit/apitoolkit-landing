@@ -10,9 +10,9 @@ hide-date: true
 
 APIToolkit is equipped with the most advanced technology to give you a detailed insight into everything happening around your API. From the list of all your endpoints to metrics, documentation, etc., we have got you covered.
 
-With APIToolkit's dashboard, you can get a high-level overview of your API's performance and usage. Monitor metrics like request volume, response times, error rates and more in real-time. Set alerts to be notified immediately if something needs your attention. Drill down to view detailed analytics on each endpoint.
+Get a live dashboard monitoring all API activity. Track performance metrics, errors, traffic volumes and more. Configure alerts to pinpoint issues needing attention.
 
-The interactive API explorer allows you to easily test endpoints right from the dashboard. See how an endpoint responds with sample payloads. No need to switch contexts to a separate testing tool.
+The interactive explorer lets you test endpoints right from the dashboard. See responses with sample payloads. No need to switch contexts to a separate testing tool.
 
 Built-in mocking enables you to simulate API responses. Return static or dynamic mock data with custom status codes, headers, and delays. Great for developing against APIs that are still under construction.
 
