@@ -1,9 +1,9 @@
 ---
 title: "Error Monitoring for Startups: Why it's Essential for Early-stage Companies "
-date: 2023-11-30T01:21:39+02:00
+date: 2024-01-09T01:21:39+02:00
 author: jessica
 categories:
-  - APIs Logs Insight
+  - Error Monitoring
 ---
 
 ![Error Monitoring for Startups](error-monitoring-for-startups.png)
