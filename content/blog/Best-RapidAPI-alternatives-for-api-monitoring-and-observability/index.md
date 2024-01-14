@@ -13,7 +13,7 @@ To address this issue, we present here top 7 alternatives to RapidAPI which are 
 
 ![.Api monitoring](./what-to-monitor.avif)
 
-### What is API Monitoring and API Observabilityyy
+### What is API Monitoring and API Observability
 
 ### API Monitoring
 API monitoring refers to tracking and analyzing the performance and behavior of an API in real time. This includes metrics like response times, error rates, request volumes, and more. The goal of API monitoring is to identify issues early (before they become critical) by providing valuable insights into how your API behaves under different conditions.
