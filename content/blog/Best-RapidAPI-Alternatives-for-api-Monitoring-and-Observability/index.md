@@ -44,7 +44,7 @@ Additionally, While RapidAPI provides some great features such as documentation,
 ### APItoolkit
 [API Toolkit](https://www.apitoolkit.io/) provides monitoring,observability, and analytics capabilities similar to those offered by RapidAPI. It offers real-time logs, request/response details, error tracking, and customizable alerts. 
 
-Additionally, it offers an HTTP proxy service which can be used as a reverse proxy or as part of a load balancing setup. The free tier includes up to 3 projects with limited features but enough for small projects. For larger applications, you may need to upgrade to a paid plan.
+Additionally, it offers an HTTP proxy service which can be used as a reverse proxy or as part of a load balancing setup. The free tier includes up to countless projects with limited features but enough for small projects. For larger applications, you may need to pay as you grow. [Check our pricing page](https://apitoolkit.io/pricing/)
 
 ![API Toolkit Dashboard Screenshot](./APIToolkit.png)
 ### Features
