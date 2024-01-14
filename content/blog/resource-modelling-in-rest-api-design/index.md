@@ -1,6 +1,7 @@
 ---
 title: "Resource Modeling in Rest API Design"
 date: 2023-09-01T08:05:56+02:00
+description: Resource modeling enables you to strategically organize your API's data.
 author: jessica
 categories: 
   - APIs

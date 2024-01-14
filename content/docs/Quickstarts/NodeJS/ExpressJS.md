@@ -2,7 +2,9 @@
 title: Express Js
 date: 2022-03-23
 publishdate: 2022-03-24
+imageurl: /assets/img/framework-logos/express-logo.png
 weight: 1
+toc: true
 menu:
   main:
     weight: 1

@@ -2,6 +2,9 @@
 title: Nest Js
 date: 2023-07-06
 publishdate: 2023-07-06
+toc: true
+imageurl: /assets/img/framework-logos/nestjs-logo.png
+
 weight: 1
 menu:
   main:
@@ -60,7 +63,7 @@ import { APIToolkit } from 'apitoolkit-express';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
-  const apiToolkitClient = await APIToolkit.NewClient({ apikey: '<API-KEY>' });
+  const apiToolkitClient = APIToolkit.NewClient({ apikey: '<API-KEY>' });
   const app = await NestFactory.create(AppModule);
   app.use(apiToolkitClient.expressMiddleware);
   await app.listen(3000);
@@ -86,8 +89,8 @@ Initialize APIToolkit into your project by following these steps:
 Import the required dependencies:
 
 ```javascript
-import  APIToolkit  from apitoolkit-fastify
-import { NestFactory } from '@nestjs/core'
+import  APIToolkit  from 'apitoolkit-fastify';
+import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 ```
 
@@ -100,7 +103,7 @@ async function bootstrap() {
     AppModule,
     new FastifyAdapter(fastifyInstance)
   );
-  const apiToolkitClient = await APIToolkit.NewClient({
+  const apiToolkitClient = APIToolkit.NewClient({
     apiKey: '<YOUR API KEY>',
     fastify: fastifyInstance,
   });
@@ -221,3 +224,13 @@ It is important to note that while the RedactHeaders config field accepts a list
 The choice of JSONPath was selected to allow you to have great flexibility in describing which fields within your responses are sensitive. Also, note that this list of items to be redacted will be applied to all endpoint requests and responses on your server. To learn more about JSONPath to help form your queries, please take a look at this cheatsheet: [JSONPath Cheatsheet](https://lzone.de/cheat-sheet/JSONPath)
 
 Hopefully, this documentation has everything you need to get APIToolkit app and runing in both your fastify and express based Nest.js application.
+
+## Using apitoolkit to observe an axios based outgoing request
+
+[Learn how to observe requests with express adapter ](/docs/quickstarts/nodejs/expressjs#using-apitoolkit-to-observe-an-axios-based-outgoing-request).
+[Learn hot to observe requests with fastify adapter](/docs/quickstarts/nodejs/fastify#using-apitoolkit-to-observe-an-axios-based-outgoing-request).
+
+## Reporting errors to APIToolkit
+
+[Reporting errors using express adapter](/docs/quickstarts/nodejs/expressjs#reporting-errors-to-apitoolkit).
+[Reporting errors using fastify adapter](/docs/quickstarts/nodejs/fastify#reporting-errors-to-apitoolkit).

@@ -2,6 +2,8 @@
 title: PHP (Laravel)
 date: 2022-03-23
 publishdate: 2022-03-24
+toc: true
+imageurl: /assets/img/framework-logos/laravel-logo.png
 weight: 1
 menu:
   main:
@@ -30,9 +32,58 @@ Register the middleware in the `app/Http/Kernel.php` file under the correct midd
 
 ```php
 <?php
-	@@ -83,4 +86,6 @@ Route::get('/', function () {
+    namespace App\Http;
+
+    use Illuminate\Foundation\Http\Kernel as HttpKernel;
+
+    class Kernel extends HttpKernel
+    {
+        ...
+        /**
+         * The application's route middleware groups.
+         *
+         * @var array
+         */
+        protected $middlewareGroups = [
+            ...
+            'api' => [
+                ...
+                \APIToolkit\Http\Middleware\APIToolkit::class,
+                ...
+            ],
+        ];
+        ...
+    }
+```
+
+Alternatively, if you want to monitor specific routes, you can register the middleware, like this:
+
+```php 
+<?php
+    /**
+     * The application's route middleware.
+     *
+     * These middleware may be assigned to groups or used individually.
+     *
+     * @var array
+     */
+    protected $routeMiddleware = [
+        ...
+        'apitoolkit' => \APIToolkit\Http\Middleware\APIToolkit::class,
+    ];
+```
+
+Then you can use the apitoolkit middleware in your routes:
+
+```php
+<?php
+    Route::get('/', function () {
+        return response()->json([
+            'message' => 'Welcome to your new application!'
+        ]);
+    })->middleware('apitoolkit');
 ```
 
 ## Requirements
 
-- For laravel, apitoolkit uses the cache to prevent reinitializing the sdk with each request. So make sure you have laravel cache setup for your service
+- For laravel, apitoolkit uses the cache to prevent reinitializing the sdk with each request. So make sure you have laravel cache setup for your service. Read on [ PHP Laravel Cache Setup for Apitoolkit to Avoid SDK Reinit](https://apitoolkit.io/blog/how-to-setup-php-laravel-cache-for-apitoolkit-to-avoid-sdk-reinitialization/).

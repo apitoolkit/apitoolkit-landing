@@ -2,6 +2,7 @@
 title: Redacting Fields
 date: 2023-07-03
 publishdate: 2023-07-03
+toc: true
 weight: 10
 menu:
   main:

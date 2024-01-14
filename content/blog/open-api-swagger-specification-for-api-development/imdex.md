@@ -7,11 +7,9 @@ categories:
   - APIs
 ---
 
-![open api](open-api-swagger.png)
+![open api](https://i.vimeocdn.com/video/1612232233-22bc379057273e0f49ad289a08a4e94c50f9fe589f5332fc88bbaf0295c892b6-d_640?f=webp)
 
 As a developer who works with APIs, you must be familiar with OpenAPI (Swagger) Specification. But what is it exactly, and why should you use it in your API development? In this blog, we will answer these questions and show you how OpenAPI can help you create better APIs faster and easier.
-
-## Introduction
 
 OpenAPI (Swagger) [Specification](https://apitoolkit.io/blog/api-documentation-vs-api-specification/) is a standard format for describing [RESTful APIs](https://apitoolkit.io/blog/everything-about-rest-apis/) ina YAML or JSON file. It allows you to define the structure, parameters, responses, and security of your API in a human- and machine-readable way. By using OpenAPI, you can benefit from various tools and features that can improve your API development process.
 
@@ -173,11 +171,8 @@ The OpenAPI Specification is a powerful and versatile way to describe your API i
 
 [Best API Monitoring and Observability Tools in 2023](https://apitoolkit.io/blog/best-api-monitoring-and-observability-tools/) 
 
-[Ultimate Guide to API Testing Automation](https://apitoolkit.io/blog/api-testing-automation/) 
+[Generate Swagger Docs Easily with Apitoolkit's Live Traffic](https://apitoolkit.io/blog/how-to-generate-swagger-docs-from-your-live-traffic-with-apitoolkit/)
 
-[Web API Performance Best Practices - the Ultimate Guide](https://apitoolkit.io/blog/web-api-performance/)
+[Generating Golang API Doc with Swagger](https://apitoolkit.io/blog/generating-golangdoc/)
 
-[How to Analyze API Logs and Metrics for Better Performance](https://apitoolkit.io/blog/api-logs-and-metrics/)
-
-[API Documentation and Monitoring: the Truth You Must Know](https://apitoolkit.io/blog/api-documentation-and-observability-the-truth-you-must-know/)
 

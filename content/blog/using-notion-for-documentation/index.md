@@ -8,7 +8,7 @@ categories:
 
 ![how to use notion for documentation](how-to-use-notion-for-documentation.png)
 
-*(Updated)*
+**(Updated)**
 ---
 In an age where information is abundant and projects are increasingly complex, effective [documentation ](https://apitoolkit.io/blog/how-to-write-api-docs/)has become a cornerstone of successful ventures. Whether you're a software developer jotting down lines of code, a project manager outlining workflows, or a content creator organizing your thoughts, having a reliable and efficient system for documentation is essential. This is where Notion comes in.
 
