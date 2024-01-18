@@ -1,6 +1,7 @@
 ---
 title: "How to choose the right Error monitoring software for your brand"
 date: 2024-01-18T06:44:56+02:00
+description: "Creating useful systems or software is a fun and a rewarding thing to do but how do you ensure that your system is properly monitored and well observed?"
 author: elliot
 categories:
   - API
