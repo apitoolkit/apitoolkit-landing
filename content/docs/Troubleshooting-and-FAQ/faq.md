@@ -38,7 +38,7 @@ menu:
 
 ### Q7: I need assistance with a specific integration scenario not covered in the documentation. What should I do?
 
-**A:** If you encounter a unique integration scenario that is not addressed in our documentation, we recommend reaching out to our support team for personalized assistance. Provide detailed information about your specific use case, and we'll work with you to find a solution tailored to your requirements.
+**A:** If you encounter a unique integration scenario that is not addressed in our documentation, we recommend reaching out to our [support team](hello@apitoolkit.io) for personalized assistance. Provide detailed information about your specific use case, and we'll work with you to find a solution tailored to your requirements.
 
 ### Q8: Will the SDKs slow down my backend?
 **A:** It depends. Most SDKs stream data asynchronously via google pubsub streaming, so your requests will see almost zero change in performance. Except if you use PHP. Because PHP doesn't support async workflows by default. But if you have the GRPC extension installed in your PHP environment, the GRPC extension is used by pubsub to stream data asynchronously like in other languages. Otherwise, you pay a very tiny performance hit to send data to google pubsub. But this performance hit is rarely noticable and usually under 5ms added to every request.
