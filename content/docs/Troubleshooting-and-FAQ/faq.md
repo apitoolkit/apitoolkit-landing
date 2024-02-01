@@ -20,7 +20,7 @@ menu:
 
 ### Q3: Is APIToolkit suitable for my project's tech stack?
 
-**A:** APIToolkit is versatile and compatible with a wide range of programming languages and frameworks. Whether you're using JavaScript, Python, Go, or other languages, you can integrate APIToolkit into your project.
+**A:** APIToolkit is versatile and compatible with a wide range of [programming languages and frameworks](https://apitoolkit.io/docs/quickstarts/). Whether you're using JavaScript, Python, Go, or other languages, you can integrate APIToolkit into your project.
 
 ## Integration Questions
 
