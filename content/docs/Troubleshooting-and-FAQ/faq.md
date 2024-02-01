@@ -51,7 +51,7 @@ menu:
 
 ### Q10: I'm having difficulties understanding the API documentation. What should I do?
 
-**A:** If you find the API documentation challenging to understand, we recommend taking a step-by-step approach. Start with our Getting Started guide to build a foundational understanding. If you have specific questions or need clarification on certain topics, don't hesitate to reach out to our support team for assistance.
+**A:** If you find the API documentation challenging to understand, we recommend taking a step-by-step approach. Start with our [Getting Started](https://apitoolkit.io/docs/getstarted/) guide to build a foundational understanding. If you have specific questions or need clarification on certain topics, don't hesitate to reach out to our support team for assistance.
 
 ### Q11: I'm encountering unexpected responses from the API. How can I troubleshoot this?
 
