@@ -91,12 +91,13 @@ Route::get('/', function () {
 ### Configuration Options
 
 Other optional environment variables to configure APIToolkit with
-`APITOOLKIT_TAGS`:**_array_** A list of tags for your services
-`APITOOLKIT_SERVICE_VERSION`: **_string_** The version of your application.
-`APITOOLKIT_REDACT_HEADERS`:**_array_** A list of headers to be redacted.
-`APITOOLKIT_REDACT_REQUEST_BODY`: **_array_** A list of request body fields (jsonpaths) to be redacted
-`APITOOLKIT_REDACT_RESPONSE_BODY`: **_array_** A list of response body fields (jsonpaths) to be redacted
-`APITOOLKIT_DEBUG`: **_boolean_** Set to true to enable debug
+
+`APITOOLKIT_TAGS`:_array_ A list of tags for your services
+`APITOOLKIT_SERVICE_VERSION`: _string_ The version of your application.
+`APITOOLKIT_REDACT_HEADERS`:_array_ A list of headers to be redacted.
+`APITOOLKIT_REDACT_REQUEST_BODY`: _array_ A list of request body fields (jsonpaths) to be redacted
+`APITOOLKIT_REDACT_RESPONSE_BODY`: _array_ A list of response body fields (jsonpaths) to be redacted
+`APITOOLKIT_DEBUG`: _boolean_ Set to true to enable debug
 
 ## Observing Outgoing Requests with Guzzle in APIToolkit-Slim SDK
 
