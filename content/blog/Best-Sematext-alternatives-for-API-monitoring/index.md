@@ -51,8 +51,6 @@ And let's not forget the UI slowdown under data pressure and the Logsene search 
 * UI slowdown under data pressure
 * inactive apps vanish after 31 days
 
-
-
 ## 7 Best Sematext alternatives for API monitoring
 1. ### APItoolkit
 ![APItoolkit](./APIToolkit.png)
@@ -262,3 +260,13 @@ apitoolkit.io often provides a free trial period, allowing users to explore its 
 
 ### Conclusion
 In conclusion, apitoolkit proves itself as a robust alternative to Sematext for API monitoring, offering a user-friendly interface, powerful monitoring capabilities, and flexible pricing plans. Its emphasis on simplicity, coupled with advanced features like real-time monitoring and customizable alerting, positions it as a formidable contender in the API monitoring landscape.
+
+**Keep Reading**
+
+[Understanding the Distinction: Synthetic API Monitoring vs API Real User Monitoring ](https://apitoolkit.io/blog/understanding-the-distinction/)
+
+[Best API Monitoring and Observability Tools in 2023 ](https://apitoolkit.io/blog/best-api-monitoring-and-observability-tools/)
+
+[API Monitoring and Documentation: The Truth You Must Know](https://apitoolkit.io/blog/api-documentation-and-observability-the-truth-you-must-know/)
+
+[Mastering API Debugging and Monitoring: Best Practices for Seamless Integration](https://apitoolkit.io/blog/mastering-api-debugging/)
