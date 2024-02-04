@@ -20,13 +20,13 @@ menu:
 
 ### Q3: Is APIToolkit suitable for my project's tech stack?
 
-**A:** APIToolkit is versatile and compatible with a wide range of programming languages and frameworks. Whether you're using JavaScript, Python, Go, or other languages, you can integrate APIToolkit into your project.
+**A:** APIToolkit is versatile and compatible with a wide range of [programming languages and frameworks](https://apitoolkit.io/docs/quickstarts/). Whether you're using JavaScript, Python, Go, or other languages, you can integrate APIToolkit into your project.
 
 ## Integration Questions
 
 ### Q4: What programming languages are supported?
 
-**A:** Some services like the API testing does not need any SDK integration. But we have SDKs for multiple languages: Golang, PHP, C#, Java, etc. If we don't support your language or framework, please drop a message. We can create one on demand quite quickly.
+**A:** Some services like the API testing does not need any SDK integration. But we have SDKs for multiple languages: Golang, PHP, C#, Java, etc. If we don't support your language or framework, please [drop a message](hello@apitoolkit.io). We can create one on demand quite quickly.
 
 ### Q5: How can I integrate APIToolkit with my application?
 
@@ -51,7 +51,7 @@ menu:
 
 ### Q10: I'm having difficulties understanding the API documentation. What should I do?
 
-**A:** If you find the API documentation challenging to understand, we recommend taking a step-by-step approach. Start with our Getting Started guide to build a foundational understanding. If you have specific questions or need clarification on certain topics, don't hesitate to reach out to our support team for assistance.
+**A:** If you find the API documentation challenging to understand, we recommend taking a step-by-step approach. Start with our [Getting Started](https://apitoolkit.io/docs/getstarted/) guide to build a foundational understanding. If you have specific questions or need clarification on certain topics, don't hesitate to reach out to our support team for assistance.
 
 ### Q11: I'm encountering unexpected responses from the API. How can I troubleshoot this?
 
