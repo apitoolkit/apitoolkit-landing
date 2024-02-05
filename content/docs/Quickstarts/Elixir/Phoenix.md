@@ -80,7 +80,7 @@ def handle_errors(conn, err) do
 end
 ```
 
-You can also report errors manually by calling `report_error` from anywhere within a controller, also passing it the connection and the error.
+You can also report errors manually by calling `report_error` from anywhere within a controller, also passing it the connection and the error and `__STACKTRACE__`.
 
 Example:
 
@@ -94,7 +94,7 @@ defmodule HelloWeb.PageController do
       raise("Oops, something went wrong")
     rescue
       err ->
-        report_error(conn, err)
+        report_error(conn, err, __STACKTRACE__)
     end
 
     json(conn, %{message: "Hello, world!"})
