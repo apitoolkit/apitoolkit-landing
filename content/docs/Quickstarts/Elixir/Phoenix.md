@@ -31,7 +31,7 @@ Import and initialize the `ApitoolkitPhoenix` Plug in your `router.ex` file.
 defmodule HelloWeb.Router do
   use HelloWeb, :router
   use Plug.ErrorHandler
-  import HelloWeb.Plugs.Locale
+  import APIToolkitPhoenix
 
   pipeline :api do
     plug :accepts, ["json"]
@@ -52,7 +52,7 @@ Some information is best kept private. Our Phoenix client supports redaction rig
 defmodule HelloWeb.Router do
   use HelloWeb, :router
   use Plug.ErrorHandler
-  import HelloWeb.Plugs.Locale
+  import APIToolkitPhoenix
 
   pipeline :api do
     plug :accepts, ["json"]
@@ -87,7 +87,7 @@ Example:
 ```elixir
 defmodule HelloWeb.PageController do
   use HelloWeb, :controller
-  import HelloWeb.Plugs.Locale
+  import APIToolkitPhoenix
 
   def home(conn, _params) do
     try do
