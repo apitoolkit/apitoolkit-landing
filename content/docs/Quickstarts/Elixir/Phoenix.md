@@ -13,7 +13,7 @@ APIToolkit SDK for Elixir Phoenix.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed by adding `apitoolkit_phoenix` to your list of dependencies in `mix.exs`:
+Install the SDK by adding `apitoolkit_phoenix` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
@@ -39,6 +39,9 @@ defmodule HelloWeb.Router do
     plug APIToolkitPhoenix,
       config: %{
         api_key: "<YOUR_API_KEY>",
+        # we need this to get route_info
+        # eg: get matched route pattern
+        router: HelloWeb.Router # replace with your Router module
       }
   end
 end
@@ -66,6 +69,11 @@ defmodule HelloWeb.Router do
 end
 ```
 
+## Redacting Request and Response bodies
+
+The phoenix sdk doesn't support redacting request and response bodies yet. You can however redact request and response bodies from you APIToolkit dashboard
+by going to app.apitoolkit.io/p/<YOUR_PROJECT_ID>/redacted_fields
+
 ## Reporting Errors
 
 If you’ve used Sentry, Bugsnag, or Rollbar, then you’re already familiar with this use case. But you can report an error to APIToolkit. A difference is that errors are always associated with a parent request, helping you query and associate the errors which occurred while serving a given customer request. To report errors to APIToolkit, use the `report_error` method of the `APIToolkitPhoenix` module.
@@ -80,7 +88,7 @@ def handle_errors(conn, err) do
 end
 ```
 
-You can also report errors manually by calling `report_error` from anywhere within a controller, also passing it the connection and the error and `__STACKTRACE__`.
+You can also report errors manually by calling `report_error` from anywhere within a controller, also passing it the connection, the error and `__STACKTRACE__`.
 
 Example:
 
