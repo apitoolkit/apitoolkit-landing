@@ -60,16 +60,14 @@ defmodule HelloWeb.Router do
     plug ApitoolkitPhoenix,
       config: %{
         api_key: "<YOUR_API_KEY>",
-        redact_headers: ["accept-language", "cookie", "x-csrf-token"]
+        redact_headers: ["accept-language", "cookie", "x-csrf-token"] # list of headers to be redacted
+        redact_request_body: [".user.password", ".user.credit_card"] # list of json paths to redact from request body
+        redact_response_body: [".users[*].email"] # list of json paths to redact from response body
+
       }
   end
 end
 ```
-
-## Redacting Request and Response bodies
-
-The phoenix sdk doesn't support redacting request and response bodies yet. You can however redact request and response bodies from you APIToolkit dashboard
-by going to app.apitoolkit.io/p/<YOUR_PROJECT_ID>/redacted_fields
 
 ## Reporting Errors
 
