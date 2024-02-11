@@ -124,7 +124,7 @@ In conclusion, while Treblle has laid a strong foundation in API monitoring, API
 
 [APIToolkit: Top Atatus Alternative for API Monitoring](https://apitoolkit.io/blog/apitoolkit-top-atatus-alternative/)
 
-[API Documentation vs Specification: What It Means for You](https://apitoolkit.io/blog/api-documentation-vs-api-specification/)v 
+[API Documentation vs Specification: What It Means for You](https://apitoolkit.io/blog/api-documentation-vs-api-specification/)
 
 [How to Analyze API Logs and Metrics for Better Performance (Ultimate Guide)](https://apitoolkit.io/blog/api-logs-and-metrics/)
 
