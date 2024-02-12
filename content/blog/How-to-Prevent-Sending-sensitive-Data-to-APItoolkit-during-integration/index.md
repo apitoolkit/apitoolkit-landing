@@ -81,11 +81,9 @@ def encrypt_data(data):
 If sensitive data is accidentally sent during integration, there is no consequence. However, clients may feel uncomfortable with APIToolkit having access to these details. It's crucial to prioritize data security to maintain trust and uphold ethical standards.
 
 **2. Are there any trade-offs or limitations to using our redaction features?**
-
 There are no trade-offs or limitations associated with using our redaction features. The redaction features, including built-in redaction and custom control using JSONPath expressions, provide a secure way to mask sensitive information without compromising the integrity or functionality of the integration.
 
 **3. Is there a way our clients can effectively test and verify that sensitive data is being redacted properly?**
-
 Yes, clients can effectively test and verify the redaction of sensitive data. When fields are redacted, they appear as "[CLIENT_REDACTED]" in the log explorer. 
 
 
