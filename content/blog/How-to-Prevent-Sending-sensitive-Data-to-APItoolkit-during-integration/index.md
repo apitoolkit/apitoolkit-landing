@@ -22,7 +22,7 @@ Data security is the practices and technologies that safeguard data from unautho
 
 ## How to Prevent Sensitive Data Exposure(A Multi-Layered Approach)
 
-We understand the importance of safeguarding sensitive data, especially while using our service for API traffic capture. In this guide, we will walk you through several effective techniques to protect critical information and maintain proper API security.
+We understand the importance of safeguarding sensitive data, especially while using our service for API traffic capture. In this section, we will walk you through several effective techniques to protect critical information and maintain proper API security.
 
 #### 1.  Data Masking by Shield Confidential Fields
 
