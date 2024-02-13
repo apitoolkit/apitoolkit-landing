@@ -11,12 +11,11 @@ categories:
 The growth of API-driven development opens up huge possibilities, but with great power comes big responsibility, especially for data safety. While many tools have different features, at APIToolkit, keeping data safe is our top priority and the most important thing we do.
 
 ## Why Protect Sensitive Data in APIToolkit
-Data protection should be the number one concern for every organization. At apitoolkit, data security is our top priority. We offer data redaction features that our clients can use to anonymize their sensitive information. To maintain trust, we do not allow client data to leave their servers without being properly redacted.
+Data protection should be the number one concern for every organization. At apitoolkit, data security is our top priority. We offer data [redaction features](https://apitoolkit.io/docs/dashboard/redacting-fields/) that our clients can use to anonymize their sensitive information. To maintain trust, we do not allow client data to leave their servers without being properly redacted.
 
 ## What is Data Security
 Data security is the practices and technologies that safeguard data from unauthorized access, use, or disclosure. These measures ensure the confidentiality, integrity, and availability of data. 
 ### Prerequisites
-
 * Sign up for an APItoolkit account and get an API key
 * Successfully integrate APIToolkit into your system
 
@@ -67,7 +66,7 @@ def encrypt_data(data):
 ```
 #### 4. Validation and Verifying Effectiveness
 
- Data protection shouldn't be left to chance. We have incorporated unit tests that regularly verify if redacted fields, excluded routes, and encrypted data are handled correctly as intended, giving you peace of mind about your security measures.
+Data protection shouldn't be left to chance. We have incorporated unit tests that regularly verify if redacted fields, excluded routes, and encrypted data are handled correctly as intended, giving you peace of mind about your security measures.
 
  ```python
  def test_password_redacted():
