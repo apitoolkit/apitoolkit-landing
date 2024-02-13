@@ -67,6 +67,7 @@ While it's possible to mark a field as redacted from the apitoolkit dashboard, t
 Client side redacting means that those fields would never leave your servers at all. So you feel safer that your sensitive data only stays on your servers.
 
 To mark fields that should be redacted, simply add them to the apitoolkit config struct.
+
 #### Example
 
 ```python
@@ -79,7 +80,7 @@ app = FastAPI()
 redact_res = ["$.api_key", "$.password"]
 # A list of fields to redact from request body
 redact_req = ["$.credit-card.cvv", "$.credit-card.name"]
-# A list of fields to redact from request and repsonse headers
+# A list of fields to redact from request and response headers
 redact_headers = ["Authorization", "Cookie"]
 
 # Initialize apitoolkit
@@ -98,11 +99,12 @@ def read_root():
 It is important to note that while the `redact_headers` config field accepts a list of headers(case insensitive),
 the `redact_request_body` and `redact_response_body` expect a list of JSONPath strings as arguments.
 
-The choice of JSONPath was selected to allow you have great flexibility in descibing which fields within your responses are sensitive.
-Also note that these list of items to be redacted will be aplied to all endpoint requests and responses on your server.
-To learn more about jsonpath to help form your queries,please take a look at thes JSONPATH resources:
+The choice of JSONPath was selected to allow you have great flexibility in describing which fields within your responses are sensitive.
+Also note that these list of items to be redacted will be applied to all endpoint requests and responses on your server.
+To learn more about jsonpath to help form your queries,please take a look at these JSONPATH resources:
+
 1. [Query expressions for JSONPATH](https://ietf-wg-jsonpath.github.io/draft-ietf-jsonpath-base/draft-ietf-jsonpath-base.html)
-2. [JSONPATH Cheet Sheet](https://lzone.de/cheat-sheet/JSONPath)
+2. [JSONPATH Cheat Sheet](https://lzone.de/cheat-sheet/JSONPath)
 
 ## Tags and Service Versions
 

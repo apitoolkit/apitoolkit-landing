@@ -229,7 +229,6 @@ As your business requirements change and new features or functionalities are add
 
 - **Adopt a documentation strategy for your APIs**. Documentation provides a clear and comprehensive description of your APIs' features, functionalities, parameters, responses, errors, etc. Documentation helps your clients or consumers understand and use your APIs effectively and efficiently. You can use different formats and tools for documentation, such as Swagger, [APIToolkit](https://apitoolkit.io), Postman, Markdown, etc. You should also update your documentation regularly and consistently with your API changes or updates.
 
-
 ## Conclusion
 
 By following a good REST API workflow, you can create RESTful APIs that are reliable, secure, scalable, and user-friendly. You can also improve your productivity, quality, and collaboration as a developer or consumer of RESTful APIs.
