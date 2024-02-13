@@ -1,7 +1,9 @@
 ---
 title: Adonis Js
 date: 2023-12-11
+toc: true
 publishdate: 2023-12-11
+imageurl: /assets/img/framework-logos/adonis-logo.png
 weight: 1
 menu:
   main:

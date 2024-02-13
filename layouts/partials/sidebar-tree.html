@@ -16,8 +16,7 @@
       _="on click toggle .hidden on #td-section-nav">☰</a>
   </form> -->
 
-  <nav
-    class="pt-5 hidden md:block collapse td-sidebar-nav{{ if .Site.Params.ui.sidebar_menu_foldable }} foldable-nav{{ end }}"
+  <nav class="md:block  td-sidebar-nav{{ if .Site.Params.ui.sidebar_menu_foldable }} foldable-nav{{ end }}"
     id="td-section-nav">
     {{ if (gt (len .Site.Home.Translations) 0) -}}
     <div class="nav-item dropdown block lg:hidden">
@@ -29,7 +28,7 @@
     {{ $ulShow := cond (isset .Site.Params.ui "ul_show") .Site.Params.ui.ul_show 1 -}}
     {{ $sidebarMenuTruncate := cond (isset .Site.Params.ui "sidebar_menu_truncate")
     .Site.Params.ui.sidebar_menu_truncate 50 -}}
-    <ul class="ul-{{ $ulNr }} space-y-1">
+    <ul class="ul-{{ $ulNr }} space-y-4">
       {{ template "section-tree-nav-section" (dict "page" . "section" $navRoot "shouldDelayActive" $shouldDelayActive
       "sidebarMenuTruncate" $sidebarMenuTruncate "ulNr" $ulNr "ulShow" (add $ulShow 1)) }}
     </ul>
@@ -59,7 +58,7 @@ $shouldDelayActive) (eq $s.Parent $p)) (not $p.Site.Params.ui.sidebar_menu_compa
 (relref $s $s.Params.manualLinkRelref) $s.RelPermalink) -}}
 {{ $manualLinkTitle := cond (isset $s.Params "manuallinktitle") $s.Params.manualLinkTitle $s.Title -}}
 <li
-  class="{{ if $withChild }} with-child{{ else }} text-slate-600 {{ end }}{{ if $activePath }} text-slate-900x {{ end }}{{ if (not (or $show $p.Site.Params.ui.sidebar_menu_foldable )) }} collapse{{ end }}"
+  class="{{ if $withChild }} with-child{{ else }} text-slate-600 {{ end }}{{ if $activePath }} text-slate-900 {{ end }}{{ if (not (or $show $p.Site.Params.ui.sidebar_menu_foldable )) }} collapse{{ end }}"
   id="{{ $mid }}-li">
   {{ if (and $p.Site.Params.ui.sidebar_menu_foldable (ge $ulNr 1)) -}}
   <input type="checkbox" id="{{ $mid }}-check" {{ if $activePath}} checked{{ end }} />
@@ -72,13 +71,13 @@ $shouldDelayActive) (eq $s.Parent $p)) (not $p.Site.Params.ui.sidebar_menu_compa
   {{ else -}}
   <a href="{{ $manualLink }}" {{ if ne $s.LinkTitle $manualLinkTitle }} title="{{ $manualLinkTitle }}" {{ end }}{{ with
     $s.Params.manualLinkTarget }} target="{{ . }}" {{ if eq . "_blank" }} rel="noopener" {{ end }}{{ end }}
-    class="hover:text-slate-800 hover:underline align-left pl-0{{ if $active}} active{{ end }} td-sidebar-link{{ if $s.IsPage }} td-sidebar-link__page{{ else }} td-sidebar-link__section{{ end }}{{ if $treeRoot }} tree-root{{ end }}"
+    class="hover:text-slate-800 {{if $withChild}}font-semibold{{end}} hover:underline align-left pl-0{{ if $active}} active{{ end }} td-sidebar-link{{ if $s.IsPage }} td-sidebar-link__page{{ else }} td-sidebar-link__section{{ end }}{{ if $treeRoot }} tree-root{{ end }}"
     id="{{ $mid }}">{{ with $s.Params.Icon}}<i class="{{ . }}"></i>{{ end }}<span
       class="{{ if $active }} font-semibold {{ end }}">{{ $s.LinkTitle }}</span></a>
   {{- end }}
   {{- if $withChild }}
   {{- $ulNr := add $ulNr 1 }}
-  <ul class="ul-{{ $ulNr }}{{ if (gt $ulNr 1)}} foldable{{end}}">
+  <ul class="ul-{{ $ulNr }}{{ if (gt $ulNr 1)}} foldable{{end}} flex flex-col gap-2 py-2 text-sm">
     {{ range $pages -}}
     {{ if (not (and (eq $s $p.Site.Home) (eq .Params.toc_root true))) -}}
     {{ template "section-tree-nav-section" (dict "page" $p "section" . "shouldDelayActive" $shouldDelayActive

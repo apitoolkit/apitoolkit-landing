@@ -3,6 +3,8 @@ title: Flask
 date: 2023-09-18
 publishdate: 2023-09-18
 weight: 20
+toc: true
+imageurl: /assets/img/framework-logos/flask-logo.png
 menu:
   main:
     weight: 20
@@ -118,9 +120,12 @@ app.run(debug=True)
 It is important to note that while the `redact_headers` config field accepts a list of headers(case insensitive),
 the `redact_request_body` and `redact_response_body` expect a list of JSONPath strings as arguments.
 
-The choice of JSONPath was selected to allow you have great flexibility in describing which fields within your responses are sensitive.
-Also note that these list of items to be redacted will be applied to all endpoint requests and responses on your server.
-To learn more about jsonpath to help form your queries,please take a look at these JSONPATH resources:
+The choice of JSONPath was selected to allow you have great flexibility in descibing which fields within your responses are sensitive.
+
+Also note that these list of items to be redacted will be aplied to all endpoint requests and responses on your server.
+
+To learn more about jsonpath, please take a look at these resources:
+
 1. [Query expressions for JSONPATH](https://ietf-wg-jsonpath.github.io/draft-ietf-jsonpath-base/draft-ietf-jsonpath-base.html)
 2. [JSONPATH Cheat Sheet](https://lzone.de/cheat-sheet/JSONPath)
 

@@ -2,6 +2,9 @@
 title: Nest Js
 date: 2023-07-06
 publishdate: 2023-07-06
+toc: true
+imageurl: /assets/img/framework-logos/nestjs-logo.png
+
 weight: 1
 menu:
   main:
