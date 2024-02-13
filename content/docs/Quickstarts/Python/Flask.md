@@ -121,6 +121,7 @@ It is important to note that while the `redact_headers` config field accepts a l
 the `redact_request_body` and `redact_response_body` expect a list of JSONPath strings as arguments.
 
 The choice of JSONPath was selected to allow you have great flexibility in descibing which fields within your responses are sensitive.
+
 Also note that these list of items to be redacted will be aplied to all endpoint requests and responses on your server.
 
 To learn more about jsonpath, please take a look at these resources:
