@@ -8,10 +8,10 @@ categories:
 ---
 ![How to Prevent Sending sensitive Data to APItoolkit during integration](./How%20to%20Prevent%20Sending%20sensitive%20Data%20to%20APItoolkit%20during%20integration.png)
 
-The rise of API-driven development brings immense power and flexibility, but also significant security risks. In this scenario, tools like APIToolkit, with our fast traffic capturing features, can inadvertently expose sensitive data if not handled properly. This post aims to properly guide you to shield your sensitive information and maintain airtight API security.
+The growth of API-driven development opens up huge possibilities, but with great power comes big responsibility, especially for data safety. While many tools have different features, at APIToolkit, keeping data safe is our top priority and the most important thing we do.
 
 ## Why Protect Sensitive Data in APIToolkit
-Imagine unauthorized access to user names, passwords, or financial information captured in API traffic. The consequences can be severe, ranging from privacy breaches and identity theft to financial losses and reputational damage. Protecting sensitive data is not just an option, it's an imperative for ethical and secure API practices.
+Data protection should be the number one concern for every organization. At apitoolkit, data security is our top priority. We offer data redaction features that our clients can use to anonymize their sensitive information. To maintain trust, we do not allow client data to leave their servers without being properly redacted.
 
 ## What is Data Security
 Data security is the practices and technologies that safeguard data from unauthorized access, use, or disclosure. These measures ensure the confidentiality, integrity, and availability of data. 
@@ -85,7 +85,6 @@ There are no trade-offs or limitations associated with using our redaction featu
 
 **3. Is there a way our clients can effectively test and verify that sensitive data is being redacted properly?**
 Yes, clients can effectively test and verify the redaction of sensitive data. When fields are redacted, they appear as "[CLIENT_REDACTED]" in the log explorer. 
-
 
 ## Conclusion
 By implementing these techniques, you gain peace of mind knowing your sensitive data is shielded within APIToolkit's captured traffic. Remember, API security is an ongoing journey. Stay informed, utilize these tools effectively, and prioritize data protection for a secure and trustworthy API ecosystem.
