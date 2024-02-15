@@ -102,7 +102,7 @@ app.listen(port, () => {
 
 It is important to note that while the `redactHeaders` config field accepts a list of headers(case insensitive), the `redactRequestBody` and `redactResponseBody` expect a list of JSONPath strings as arguments.
 
-The choice of JSONPath was selected to allow you have great flexibility in describing which fields within your responses are sensitive. Also note that these list of items to be redacted will be applied to all endpoint requests and responses on your server. To learn more about jsonpath to help form your queries, please take a look at this [cheat-sheet.](https://lzone.de/cheat-sheet/JSONPath)
+The choice of JSONPath was selected to allow you have great flexibility in describing which fields within your responses are sensitive. Also note that these list of items to be redacted will be applied to all endpoint requests and responses on your server. To learn more about jsonpath, please take a look at this [cheat-sheet.](https://lzone.de/cheat-sheet/JSONPath)
 
 ## Handling File Uploads with Formidable
 
