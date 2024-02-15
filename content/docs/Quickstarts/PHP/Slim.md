@@ -56,7 +56,6 @@ The middleware supports several configuration options during initialization:
 - `$serviceVersion`: Specify the service version in the logs.
 - `$tags`: An array of custom tags to include in the logs.
 
-
 ### Redaction
 
 Sensitive information in headers, request bodies, and response bodies can be redacted using the specified configuration options. Redacted fields are replaced with `[CLIENT_REDACTED]`.
@@ -209,4 +208,3 @@ $app->get('/', function (Request $request, Response $response) {
 $app->run();
 ```
 You can report as many errors as you want for each request.
-

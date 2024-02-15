@@ -56,11 +56,11 @@ APITOOLKIT_REDACT_RES_BODY = ["$.credentials", "$.social_security_number"]
 It is important to note that while the `APITOOLKIT_REDACT_HEADERS` config field accepts a list of headers(case insensitive),
 the `APITOOLKIT_REDACT_REQ_BODY` and `APITOOLKIT_REDACT_RES_BODY` expect a list of JSONPath strings as arguments.
 
-The choice of JSONPath was selected to allow you have great flexibility in descibing which fields within your responses are sensitive.
-Also note that these list of items to be redacted will be aplied to all endpoint requests and responses on your server.
-To learn more about jsonpath to help form your queries,please take a look at thes JSONPATH resources:
+The choice of JSONPath was selected to allow you have great flexibility in describing which fields within your responses are sensitive.
+Also note that these list of items to be redacted will be applied to all endpoint requests and responses on your server.
+To learn more about jsonpath, please take a look at these JSONPATH resources:
 1. [Query expressions for JSONPATH](https://ietf-wg-jsonpath.github.io/draft-ietf-jsonpath-base/draft-ietf-jsonpath-base.html)
-2. [JSONPATH Cheet Sheet](https://lzone.de/cheat-sheet/JSONPath)
+2. [JSONPATH Cheat Sheet](https://lzone.de/cheat-sheet/JSONPath)
 
 ## Degugging
 
@@ -102,10 +102,13 @@ def hello_world(request, name):
 ```
 
 The `observe_request` function wraps an httpx client and you can use it just like you would normally use httpx for any request you need.
+
 ## Error Reporting
-If you’ve used sentry, or bugsnag, or rollbar, then you’re already familiar with this usecase.
+If you’ve used sentry, or bugsnag, or rollbar, then you’re already familiar with this use case.
 But you can report an error to apitoolkit. A difference, is that errors are always associated with a parent request, and helps you query and associate the errors which occured while serving a given customer request. To request errors to APIToolkit use the `report_error` function from the `apitoolkit_django` module to report an error you can report as many errors you want during a request
+
 ### Example
+
 ```python
 from django.http import JsonResponse
 from apitoolkit_django import observe_request, report_error

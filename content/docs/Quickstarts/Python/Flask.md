@@ -95,7 +95,7 @@ app = Flask(__name__)
 redact_res = ["$.api_key", "$.password"]
 # A list of fields to redact from request body
 redact_req = ["$.credit-card.cvv", "$.credit-card.name"]
-# A list of fields to redact from request and repsonse headers
+# A list of fields to redact from request and response headers
 redact_headers = ["Authorization", "Cookie"]
 
 apitoolkit = APIToolkit(api_key="<API_KEY>", debug=True,redact_response_body=redact_res, redact_request_body=redact_req,redact_headers=redact_headers)
@@ -125,8 +125,9 @@ The choice of JSONPath was selected to allow you have great flexibility in desci
 Also note that these list of items to be redacted will be aplied to all endpoint requests and responses on your server.
 
 To learn more about jsonpath, please take a look at these resources:
+
 1. [Query expressions for JSONPATH](https://ietf-wg-jsonpath.github.io/draft-ietf-jsonpath-base/draft-ietf-jsonpath-base.html)
-2. [JSONPATH Cheet Sheet](https://lzone.de/cheat-sheet/JSONPath)
+2. [JSONPATH Cheat Sheet](https://lzone.de/cheat-sheet/JSONPath)
 
 ## Tags and Service Versions
 
