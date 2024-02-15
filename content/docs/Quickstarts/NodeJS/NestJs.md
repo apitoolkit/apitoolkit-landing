@@ -72,7 +72,7 @@ async function bootstrap() {
 bootstrap();
 ```
 
-# Integrating APIToolkit into Nest.js (Fastify)
+## Integrating APIToolkit into Nest.js (Fastify)
 
 ### Installation
 
@@ -225,12 +225,12 @@ The choice of JSONPath was selected to allow you to have great flexibility in de
 
 Hopefully, this documentation has everything you need to get APIToolkit app and runing in both your fastify and express based Nest.js application.
 
-## Using apitoolkit to observe an axios based outgoing request
+### Using apitoolkit to observe an axios based outgoing request
 
 [Learn how to observe requests with express adapter ](/docs/quickstarts/nodejs/expressjs#using-apitoolkit-to-observe-an-axios-based-outgoing-request).
 [Learn hot to observe requests with fastify adapter](/docs/quickstarts/nodejs/fastify#using-apitoolkit-to-observe-an-axios-based-outgoing-request).
 
-## Reporting errors to APIToolkit
+### Reporting errors to APIToolkit
 
 [Reporting errors using express adapter](/docs/quickstarts/nodejs/expressjs#reporting-errors-to-apitoolkit).
 [Reporting errors using fastify adapter](/docs/quickstarts/nodejs/fastify#reporting-errors-to-apitoolkit).
