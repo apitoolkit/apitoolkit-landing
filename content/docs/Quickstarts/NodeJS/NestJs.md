@@ -17,7 +17,7 @@ APIToolkit provides SDKs for both Express and Fastify, enabling developers to ea
 
 In the following sections, we will walk you through the process of integrating APIToolkit's Express SDK and Fastify SDK into your Nest.js application, starting with Express and then proceeding with Fastify.
 
-# Integrating APIToolkit into Nest.js (Express Platform or Default)
+## Integrating APIToolkit into Nest.js (Express Platform or Default)
 
 ### Installation
 
