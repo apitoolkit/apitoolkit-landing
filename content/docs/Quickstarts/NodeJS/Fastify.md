@@ -115,8 +115,11 @@ To redact specific fields in the request and response bodies, provide an array o
 Examples of valid jsonpaths would be:
 `$.store.book`: Will replace the books field inside the store object with the string [CLIENT_REDACTED]
 `$.store.books[*].author`: Will redact the author field in all the objects in the books list, inside the store object.
-To learn more about jsonpath to help form your queries [read this](https://support.smartbear.com/alertsite/docs/monitors/api/endpoint/jsonpath.html).
 
+To learn more about jsonpath, please take a look at these resources:
+1. [Query expressions for JSONPATH](https://ietf-wg-jsonpath.github.io/draft-ietf-jsonpath-base/draft-ietf-jsonpath-base.html)
+2. [JSONPATH Cheet Sheet](https://lzone.de/cheat-sheet/JSONPath)
+ 
 ```javascript
 import APIToolkit from 'apitoolkit-fastify';
 import Fastify from 'fastify';
