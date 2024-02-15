@@ -177,8 +177,7 @@ The provided code demonstrates how to set up the custom roundtripper to replace 
 
 ## Report Errors
 
-If you've used sentry, or bugsnag, or rollbar, then you're already familiar with this usecase.
-But you can report an error to apitoolkit. A difference, is that errors are always associated with a parent request, and helps you query and associate the errors which occured while serving a given customer request. To request errors to APIToolkit use call the `ReportError` method of `apitoolkit` not the client returned by `apitoolkit.NewClient` with the request context and the error to report
+If you've used sentry, or bugsnag, or rollbar, then you're already familiar with this usecase.But you can report an error to apitoolkit. A difference, is that errors are always associated with a parent request, and helps you query and associate the errors which occured while serving a given customer request. To request errors to APIToolkit use call the `ReportError` method of `apitoolkit` not the client returned by `apitoolkit.NewClient` with the request context and the error to report
 Examples:
 
 **Native Go**
