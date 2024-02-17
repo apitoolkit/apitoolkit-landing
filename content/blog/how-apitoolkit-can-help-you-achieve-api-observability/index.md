@@ -56,9 +56,13 @@ As for the maintenance stage, it's a never-ending cycle. The API needs to evolve
 ### Key Features of APIToolkit
 
 Design & Mocking: APIToolkit provides an intuitive interface to design your API endpoints, set expected behaviours, and mock responses. This ensures that even in the design phase, you're building with observability in mind.
+
 Real-time Monitoring: Track API requests, response times, error rates, and more. APIToolkit's dashboard offers a holistic view of your API's health at a glance.
+
 Deep Dive Analytics: Dive deep into individual API calls, exploring request/response payloads, headers, and performance metrics. This granularity helps in pinpointing issues and understanding usage patterns.
+
 Alerts & Notifications: Set thresholds for various metrics, and receive instant notifications when anomalies occur. This proactive approach ensures that issues are addressed before they escalate.
+
 End-to-End Tracing: Understand the journey of an API call across microservices, databases, and other dependencies. This tracing capability is crucial for microservices architectures where pinpointing bottlenecks can be challenging.
 
 ## The Role of APIToolkit in Enhancing API Observability
