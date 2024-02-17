@@ -15,7 +15,7 @@ API observability is a critical component of managing and maintaining successful
 
 API observability refers to the ability to gain insights into the behavior of your APIs by collecting and analyzing telemetry data. It involves monitoring key API metrics, such as response times, error rates, and throughput, to ensure the smooth operation of your APIs.
 
-When it comes to building and maintaining APIs, observability plays a crucial role in ensuring their reliability and performance. By implementing a comprehensive observability strategy, you can effectively monitor and analyze the behavior of your APIs, enabling you to proactively identify and address any issues or anomalies before they impact your users.
+When it comes to [building and maintaining APIs](https://apitoolkit.io/blog/how-apitoolkit-can-help-you-achieve-api-observability/), observability plays a crucial role in ensuring their reliability and performance. By implementing a comprehensive [observability strategy](https://apitoolkit.io/blog/how-api-observability-can-boost-your-business-performance/), you can effectively monitor and analyze the behavior of your APIs, enabling you to proactively identify and address any issues or anomalies before they impact your users.
 
 But why is API observability so important? Let's delve deeper into its significance.
 
