@@ -23,15 +23,15 @@ But why is API observability so important? Let's delve deeper into its significa
 
 Having a comprehensive observability strategy for your APIs is crucial for several reasons.
 
-** 1. Proactive Issue Identification:** Implementing API observability allows for the proactive identification and addressing of issues or anomalies before they impact users. Monitoring key metrics like response times, error rates, and throughput helps detect deviations from normal behavior, enabling timely actions to mitigate disruptions and maintain a seamless user experience.
+**1. Proactive Issue Identification:** Implementing API observability allows for the proactive identification and addressing of issues or anomalies before they impact users. Monitoring key metrics like response times, error rates, and throughput helps detect deviations from normal behavior, enabling timely actions to mitigate disruptions and maintain a seamless user experience.
 
-** 2. Usage Pattern Understanding:** API observability assists in understanding the usage patterns of APIs. Analyzing telemetry data provides valuable insights into how users utilize APIs, enabling informed decisions on scaling and resource allocation. For example, observing a sudden surge in API traffic during specific hours allows for allocating additional resources to ensure optimal performance and user satisfaction.
+**2. Usage Pattern Understanding:** API observability assists in understanding the usage patterns of APIs. Analyzing telemetry data provides valuable insights into how users utilize APIs, enabling informed decisions on scaling and resource allocation. For example, observing a sudden surge in API traffic during specific hours allows for allocating additional resources to ensure optimal performance and user satisfaction.
 
-** 3. Debugging and Troubleshooting:** API observability offers valuable data for debugging and troubleshooting. In the event of an incident or error, detailed telemetry data facilitates quick diagnosis of the root cause and resolution. This reduces the time to resolution, minimizes impact on users, and improves overall system reliability.
+**3. Debugging and Troubleshooting:** API observability offers valuable data for debugging and troubleshooting. In the event of an incident or error, detailed telemetry data facilitates quick diagnosis of the root cause and resolution. This reduces the time to resolution, minimizes impact on users, and improves overall system reliability.
 
-** 4. Actionable Insights:** API observability goes beyond mere metric monitoring and data collection. It focuses on gaining actionable insights to drive improvements in API performance, reliability, and scalability.
+**4. Actionable Insights:** API observability goes beyond mere metric monitoring and data collection. It focuses on gaining actionable insights to drive improvements in API performance, reliability, and scalability.
 
-** 5. Essential Strategy:** Implementing a robust API observability strategy is crucial for organizations relying on APIs to deliver services. Monitoring and analyzing key metrics, understanding usage patterns, and leveraging telemetry data for debugging and troubleshooting ensure the smooth operation of APIs, providing an exceptional user experience.
+**5. Essential Strategy:** Implementing a robust API observability strategy is crucial for organizations relying on APIs to deliver services. Monitoring and analyzing key metrics, understanding usage patterns, and leveraging telemetry data for debugging and troubleshooting ensure the smooth operation of APIs, providing an exceptional user experience.
 
 ## Best Practices for API Observability
 
