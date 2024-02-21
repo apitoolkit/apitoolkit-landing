@@ -89,7 +89,7 @@ In conclusion, documenting RESTful APIs is a critical aspect of coding efficienc
 
 [How to Generate Automated API Documentation](https://apitoolkit.io/blog/how-to-generate-automated-api-documentation/)
 
-[Top 8 API Documentation Tools for Debvelopers (2023)](https://apitoolkit.io/blog/top-8-api-documentation-tools-for-developers/)
+[Top 8 API Documentation Tools for Developers (2024)](https://apitoolkit.io/blog/top-8-api-documentation-tools-for-developers/)
 
 [API Documentation Trends to Watch: What's New and Exciting](https://apitoolkit.io/blog/api-documentation-trends-to-watch/)
 
