@@ -2,9 +2,9 @@
 title: "API Monitoring and Documentation: The Truth You Must Know"
 date: 2023-02-15T18:36:58+02:00
 author: collins
-description: "API Monitoring and Documentation: The Truth You Must Know"
+description: "Discover the importance of API Monitoring and Documentation. Learn key concepts, and tools for optimizing your API strategy"
 categories:
-  - API Observability
+  - API Monitoring
 --- 
 
 ![API Connectivity around a Chain of Programs](./apiblogcover.jpg)
@@ -220,7 +220,7 @@ Read: [Must-Know API Trends](https://apitoolkit.io/blog/api-trends/)
 1. **[Netflix](https://www.netflix.com/)**
 2. **[Dropbox](https://www.dropbox.com/home)**:
 3. **[Twilio](https://www.twilio.com/)**
-4.  **[PayPal](https://www.paypal.com/)**
+4. **[PayPal](https://www.paypal.com/)**
 5. **[Amazon](https://www.amazon.com/)**
 6. **[Uber](https://www.uber.com/)**
 7. **[Slack](https://slack.com/)**
@@ -240,6 +240,7 @@ Therefore, whether you are making an API connection, building a new API, or look
 [Try APIToolkit for Free](apitoolkit.io)
 
 **Also Read**
+
 [Ultimate Guide to API Testing Automation](https://apitoolkit.io/blog/api-testing-automation)
 
 [Fintech API: Unlocking the Secret to Its Rapid Growth in the Financial Sector](https://apitoolkit.io/blog/fintech-api/)
