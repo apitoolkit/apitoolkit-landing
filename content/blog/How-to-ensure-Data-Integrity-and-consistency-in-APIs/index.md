@@ -2,7 +2,7 @@
 title: "How to ensure Data Integrity and consistency in APIs"
 date: 2024-02-24T04:20:58+00:00
 author: elliot
-description: "The main purpose of API health checks is to ensure the reliability, stability, and robustness of APIs. "
+description: "Compromised data integrity within APIs can lead to a domino effect of operational errors, misinformed decisions, and, in the worst-case scenario, security breaches"
 categories:
   - API Documentation
 ---
