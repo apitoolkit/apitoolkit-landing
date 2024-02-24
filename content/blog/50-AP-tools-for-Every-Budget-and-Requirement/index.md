@@ -7,7 +7,7 @@ categories:
   - API
 --- 
 
-![APi tools](./50%20APi%20tools%20for%20Every%20Budget%20and%20Requirement.png)
+![APi tools](./cover.png)
 
 
 APIs (application programming interfaces) play a critical role in software development today. They allow different systems and applications to communicate with each other by defining how one application can request and receive data from another.
