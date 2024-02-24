@@ -4,7 +4,7 @@ date: 2024-02-24T04:20:58+00:00
 author: elliot
 description: "Compromised data integrity within APIs can lead to a domino effect of operational errors, misinformed decisions, and, in the worst-case scenario, security breaches"
 categories:
-  - API Documentation
+  - API
 ---
 ![How to ensure Data Integrity and consistency in APIs](./How%20to%20ensure%20Data%20Integrity%20and%20consistency%20in%20APIs.png)
 APIs allow different software programs to share information smoothly. But if the data passed through APIs is incorrect, inconsistent, or corrupted, the integration between programs will break down. The smooth exchange of data that APIs promise can quickly turn into a glitchy mess. This article explores best practices for how you ensure complete, accurate, and consistent data flows through APIs.
