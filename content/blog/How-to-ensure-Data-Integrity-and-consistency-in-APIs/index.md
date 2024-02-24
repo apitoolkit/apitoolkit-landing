@@ -18,7 +18,7 @@ APIs allow different software programs to share information smoothly. But if the
 
 ## The Consequences of Compromised Data Integrity
 
-Compromised data integrity within APIs can lead to a domino effect of operational errors, misinformed decisions, and, in the worst-case scenario, security breaches. Picture a case study where a financial application processes inaccurate transaction data due to a lack of integrity checks or a [healthcare system](https://apitoolkit.io/blog/how-to-perform-an-api-health-check/)misinterpreting patient records, potentially leading to life-threatening errors. These examples underscore the urgency of implementing robust measures to safeguard data integrity in APIs.
+Compromised data integrity within APIs can lead to a domino effect of operational errors, misinformed decisions, and, in the worst-case scenario, security breaches. Picture a case study where a financial application processes inaccurate transaction data due to a lack of integrity checks or a [healthcare system](https://apitoolkit.io/blog/how-to-perform-an-api-health-check/) misinterpreting patient records, potentially leading to life-threatening errors. These examples underscore the urgency of implementing robust measures to safeguard data integrity in APIs.
 
 ## Differences Data Validation from Data Verification
 
