@@ -33,6 +33,9 @@ The APIToolkit integration guide for ExpressJS provides a streamlined process to
    const app = express();
    const port = 3000;
 
+   app.use(express.json());
+   app.use(express.urlencoded({ extended: true }));
+
    const apitoolkitClient = APIToolkit.NewClient({ apiKey: '<API-KEY>' });
    app.use(apitoolkitClient.expressMiddleware);
 
@@ -57,6 +60,9 @@ The APIToolkit integration guide for ExpressJS provides a streamlined process to
    const apitoolkitClient = APIToolkit.NewClient({
      apiKey: '<API_KEY>',
    });
+
+   app.use(express.json());
+   app.use(express.urlencoded({ extended: true }));
 
    app.use(apitoolkitClient.expressMiddleware);
 
@@ -89,6 +95,10 @@ const apitoolkitClient = await APIToolkit.NewClient({
   redactRequestBody: ['$.credit-card.cvv', '$.credit-card.name'], // Specified request bodies fields will be redacted
   redactResponseBody: ['$.message.error'], // Specified response body fields will be redacted
 });
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 app.use(apitoolkitClient.expressMiddleware);
 
 app.get('/', (req, res) => {
@@ -121,6 +131,9 @@ const app = express();
 const client = APIToolkit.NewClient({
   apiKey: '<API_KEY>',
 });
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.use(client.expressMiddleware);
 
