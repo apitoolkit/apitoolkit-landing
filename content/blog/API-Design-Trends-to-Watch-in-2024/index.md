@@ -11,7 +11,7 @@ The API economy is booming. APIs are now asserting digital transformation. In ba
 
 Across industries, organizations are racing to become more API-driven to boost productivity and enable digital-first business models. As a result, API design practices are rapidly evolving to meet the demands of powering enterprise-scale digital ecosystems.
 
-![ALT](./Add%20a%20subheading.png)
+![api trends 2024](./Add%20a%20subheading.png)
 
 In this post, we will distill the most impactful API design trends that are shaping development across sectors. Mastering these trends will future-proof your skills to meet the API needs of any industry.
 
