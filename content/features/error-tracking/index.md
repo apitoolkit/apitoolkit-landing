@@ -62,7 +62,7 @@ Don't just track errors and stack traces, but also record the incoming and outgo
 <div class="grid grid-cols-5 gap-8 justify-center items-center">
     <div class="space-y-3 col-span-2">
 
-### Track breaking changes in your APIs & Thirdparty Integrations. {.leading-tight} 
+### Track breaking changes in your APIs & Third party Integrations. {.leading-tight} 
 
 Catch breaking changes in your APIs and in any third party APIs you depend on. No other platform can detect arbitrary breaking changes in your APIs or any APIs you call.
 {.text-lg}
