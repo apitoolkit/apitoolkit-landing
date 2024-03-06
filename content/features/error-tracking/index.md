@@ -107,8 +107,8 @@ Integrate Alerts into your current workflow through slack, email, teams, pagerdu
             We support 10+ web frameworks (if we don't support your framework, let us know so we create an SDK for your
             ASAP)
           </p>
-          <div class="flex w-full mt-8">
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 items-center h-max mt-4">
+          <div class="flex flex-col md:flex-row w-full mt-8">
+            <div class="flex overflow-x-auto flex-nowrap [&>*]:shrink-0 md:grid md:grid-cols-3 lg:grid-cols-4 gap-4 items-center h-max mt-4">
               <button class="border shadow rounded-lg p-4 w-28 h-28 int_active int_btn" id="express_btn" title="expressjs"
                 onclick="integrationTabs(event)">
                 <svg viewBox="0 0 128 128"><path
@@ -181,7 +181,7 @@ Integrate Alerts into your current workflow through slack, email, teams, pagerdu
                 <img src="/assets/img/framework-logos/go-logo.png" alt="" class="w-full" />
               </button>
             </div>
-            <div class="flex flex-col w-1/2 px-8 m-0 py-0">
+            <div class="flex flex-col w-full md:w-1/2 px-8 m-0 py-0">
               <!-- express -->
               <div id="express_btn_content" class="int_content">
                 <h4 class="text-[#2E3238]">Express js</h4>
