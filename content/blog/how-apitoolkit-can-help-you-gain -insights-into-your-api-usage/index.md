@@ -64,7 +64,7 @@ Feature: [APIToolkit](https://apitoolkit.io/) provides real-time monitoring and 
 
 Real-World Scenario: Imagine you're running an e-commerce platform. During a flash sale, you notice that the checkout API is experiencing delays. Real-time monitoring allows you to pinpoint the issue immediately, ensuring a smooth experience for your customers and preventing potential revenue loss.
 
-### 2. Distributed Tracing
+### 2.Outgoing Request Monitoring
 Feature: With its distributed tracing capabilities, APIToolkit can follow an API call through multiple services and databases, providing a complete picture of its journey.
 
 Real-World Scenario: In a microservices architecture, a single user action can trigger multiple API calls across various services. When something goes wrong, pinpointing the issue can be like finding a needle in a haystack. Distributed tracing simplifies this by providing a visual map of the API call's path, making it easier to identify bottlenecks or failures.
