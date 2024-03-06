@@ -108,7 +108,7 @@ Integrate Alerts into your current workflow through slack, email, teams, pagerdu
             ASAP)
           </p>
           <div class="flex flex-col md:flex-row w-full mt-8">
-            <div class="flex overflow-x-auto flex-nowrap [&>*]:shrink-0 md:grid md:grid-cols-3 lg:grid-cols-4 gap-4 items-center h-max mt-4">
+            <div class="flex overflow-x-auto md:p-4 flex-nowrap [&>*]:shrink-0 md:grid md:grid-cols-3 lg:grid-cols-4 gap-4 items-center h-max mt-4">
               <button class="border shadow rounded-lg p-4 w-28 h-28 int_active int_btn" id="express_btn" title="expressjs"
                 onclick="integrationTabs(event)">
                 <svg viewBox="0 0 128 128"><path
@@ -148,10 +148,6 @@ Integrate Alerts into your current workflow through slack, email, teams, pagerdu
                 onclick="integrationTabs(event)">
                 <img src="/assets/img/framework-logos/gin-logo.png" alt="" class="w-full" />
               </button>
-              <button class="border shadow rounded-lg p-4 w-28 h-28 int_btn flex just-center items-center" id="fiber_btn"
-                onclick="integrationTabs(event)">
-                <img src="/assets/img/framework-logos/fiber-logo.png" alt="" class="w-full" />
-              </button>
               <button class="border shadow rounded-lg p-4 w-28 h-28 int_btn flex just-center items-center" id="adonis_btn"
                 onclick="integrationTabs(event)">
                 <img src="/assets/img/framework-logos/adonis-logo.png" alt="" class="w-full" />
@@ -172,14 +168,13 @@ Integrate Alerts into your current workflow through slack, email, teams, pagerdu
                 onclick="integrationTabs(event)">
                 <img src="/assets/img/framework-logos/symfony-logo.png" alt="" class="w-full" />
               </button>
-              <button class="border shadow rounded-lg p-4 w-28 h-28 int_btn flex just-center items-center" id="slim_btn"
-                onclick="integrationTabs(event)">
-                <img src="/assets/img/framework-logos/slim-logo.png" alt="" class="w-full" />
-              </button>
               <button class="border shadow rounded-lg p-4 w-28 h-28 int_btn flex just-center items-center" id="go_btn"
                 onclick="integrationTabs(event)">
                 <img src="/assets/img/framework-logos/go-logo.png" alt="" class="w-full" />
               </button>
+              <a href="/docs/quickstarts" class="border text-center shadow text-base font-normal rounded-lg p-4 w-28 h-28 int_btn flex just-center items-center">
+                <span>View all SDKs</span>
+              </a>
             </div>
             <div class="flex flex-col w-full md:w-1/2 px-8 m-0 py-0">
               <!-- express -->
@@ -196,19 +191,19 @@ Integrate Alerts into your current workflow through slack, email, teams, pagerdu
                 <div class="mt-2">
                   <h5 class="text-base text-[#2E3238] font-medium mb-1">Integrate</h5>
                   <pre class="p-0 m-0 w-full"><div class="w-full overflow-x-scroll px-4 pb-4 text-sm hljs language-javascript atom-one-dark code_example">
-  import express from 'express';
-  import { APIToolkit } from 'apitoolkit-express';
-  const app = express();
-  const apitoolkitClient = APIToolkit.NewClient({ apiKey: '&lt;API-KEY&gt;' });
+import express from 'express';
+import { APIToolkit } from 'apitoolkit-express';
+const app = express();
+const apitoolkitClient = APIToolkit.NewClient({ apiKey: '&lt;API-KEY&gt;' });
   
-  app.use(apitoolkitClient.expressMiddleware)
-  // All controllers should live here
-  app.get("/", (req, res) => {
-  });
-  // ...
-  // The error handler must be before any other error middleware
-  // and after all controllers
-  app.use(apitoolkitClient.errorHandler)
+app.use(apitoolkitClient.expressMiddleware)
+// All controllers should live here
+app.get("/", (req, res) => {
+});
+// ...
+// The error handler must be before any other error middleware
+// and after all controllers
+app.use(apitoolkitClient.errorHandler)
   <div></pre>
                 </div>
               </div>
@@ -282,12 +277,380 @@ protected $middlewareGroups = [
 
   </div>
 </div>
-              <!--end div for code examples container-->
+
+<!-- dot net-->
+<div id="net_btn_content" class="int_content hidden">
+  <h4 class="text-[#2E3238]">.NET</h4>
+  <p class="text-sm text-gray-600 font-normal">Quickly integrate APIToolkit into your .NET application
+  </p>
+  <div class="flex flex-col gap-1 mt-2">
+    <h5 class="text-base text-[#2E3238] font-medium">Installation</h5>
+    <div class="bg-slate-700 text-white rounded-lg px-4 py-2 text-sm font-normal">
+      dotnet add package ApiToolkit.Net
+    </div>
+  </div>
+  <div class="mt-2">
+    <h5 class="text-base text-[#2E3238] font-medium mb-1">Integrate</h5>
+    <pre class="p-0 m-0 w-full"><div class="w-full overflow-x-scroll px-4 pb-4 text-sm hljs atom-one-dark code_example">var config = new Config
+{
+    Debug = true, # Set debug flags to false in production
+    ApiKey = "{Your_APIKey}"
+};
+var client = await APIToolkit.NewClientAsync(config);
+# Register the middleware to use the initialized client
+app.Use(async (context, next) =>
+{
+    var apiToolkit = new APIToolkit(next, client);
+    await apiToolkit.InvokeAsync(context);
+});<div></pre>
+
+  </div>
+</div>
+
+<!-- django -->
+
+<div id="django_btn_content" class="int_content hidden">
+  <h4 class="text-[#2E3238]">Django</h4>
+  <p class="text-sm text-gray-600 font-normal">Quickly integrate APIToolkit into your Django application
+  </p>
+  <div class="flex flex-col gap-1 mt-2">
+    <h5 class="text-base text-[#2E3238] font-medium">Installation</h5>
+    <div class="bg-slate-700 text-white rounded-lg px-4 py-2 text-sm font-normal">
+      pip install apitoolkit-django
+    </div>
+    <h5 class="text-base text-[#2E3238] font-normal">Add APIKEY to settings.py</h5>
+    <div class="bg-slate-700 text-white rounded-lg px-4 py-2 text-sm font-normal">
+      APITOOLKIT_KEY = "&lt;YOUR_API_KEY&gt;"
+    </div>
+
+  </div>
+  <div class="mt-2">
+    <h5 class="text-base text-[#2E3238] font-medium mb-1">Integrate</h5>
+    <pre class="p-0 m-0 w-full"><div class="w-full overflow-x-scroll px-4 pb-4 text-sm language-python hljs atom-one-dark code_example">
+MIDDLEWARE = [
+    ...,
+    'apitoolkit_django.APIToolkit',
+    ...,
+]<div></pre>
+
+  </div>
+</div>
+
+<!-- fast api -->
+
+<div id="fast_btn_content" class="int_content hidden">
+  <h4 class="text-[#2E3238]">FastAPI</h4>
+  <p class="text-sm text-gray-600 font-normal">Quickly integrate APIToolkit into your fastapi application
+  </p>
+  <div class="flex flex-col gap-1 mt-2">
+    <h5 class="text-base text-[#2E3238] font-medium">Installation</h5>
+    <div class="bg-slate-700 text-white rounded-lg px-4 py-2 text-sm font-normal">
+     pip install apitoolkit-fastapi
+    </div>
+
+  </div>
+  <div class="mt-2">
+    <h5 class="text-base text-[#2E3238] font-medium mb-1">Integrate</h5>
+    <pre class="p-0 m-0 w-full"><div class="w-full overflow-x-scroll language-python px-4 pb-4 text-sm hljs atom-one-dark code_example">
+from fastapi import FastAPI
+from apitoolkit_fastapi import APIToolkit
+
+app = FastAPI()
+
+apitoolkit = APIToolkit(api_key='<API_KEY goes here>')
+
+app.middleware('http')(apitoolkit.middleware)<div></pre>
+
+  </div>
+</div>
+
+<!-- flask -->
+
+<div id="flask_btn_content" class="int_content hidden">
+  <h4 class="text-[#2E3238]">Flask</h4>
+  <p class="text-sm text-gray-600 font-normal">Quickly integrate APIToolkit into your flask application
+  </p>
+  <div class="flex flex-col gap-1 mt-2">
+    <h5 class="text-base text-[#2E3238] font-medium">Installation</h5>
+    <div class="bg-slate-700 text-white rounded-lg px-4 py-2 text-sm font-normal">
+      pip install apitoolkit-flask
+    </div>
+  </div>
+  <div class="mt-2">
+    <h5 class="text-base text-[#2E3238] font-medium mb-1">Integrate</h5>
+    <pre class="p-0 m-0 w-full"><div class="w-full overflow-x-scroll px-4 pb-4 language-python text-sm hljs atom-one-dark code_example">
+from flask import Flask
+from apitoolkit_flask import APIToolkit
+
+app = Flask(__name__)
+
+apitoolkit = APIToolkit(api_key="&lt;API_KEY&gt;", debug=True)
+
+@app.before_request
+def before_request():
+      apitoolkit.beforeRequest()
+
+@app.after_request
+def after_request(response):
+      apitoolkit.afterRequest(response)
+      return response
+<div></pre>
+
+  </div>
+</div>
+
+
+<!-- go gin -->
+<div id="gin_btn_content" class="int_content hidden">
+  <h4 class="text-[#2E3238]">Gin</h4>
+  <p class="text-sm text-gray-600 font-normal">Quickly integrate APIToolkit into your gin application
+  </p>
+  <div class="flex flex-col gap-1 mt-2">
+    <h5 class="text-base text-[#2E3238] font-medium">Installation</h5>
+    <div class="bg-slate-700 text-white rounded-lg px-4 py-2 text-sm font-normal">
+      go get github.com/apitoolkit/apitoolkit-go
+    </div>
+  </div>
+  <div class="mt-2">
+    <h5 class="text-base text-[#2E3238] font-medium mb-1">Integrate</h5>
+    <pre class="p-0 m-0 w-full"><div class="w-full overflow-x-scroll px-4 pb-4 language-go text-sm hljs atom-one-dark code_example">
+package main
+
+import (
+    "context"
+  	apitoolkit "github.com/apitoolkit/apitoolkit-go"
+    "github.com/gin-gonic/gin"
+)
+
+func main() {
+
+	// Initialize the client using your apitoolkit.io generated apikey
+	apitoolkitClient, err := apitoolkit.NewClient(context.Background(), apitoolkit.Config{APIKey: "YOUR GENERATED API KEY"})
+	if err != nil {
+		panic(err)
+	}
+
+	router := gin.New()
+
+	// Register with the corresponding middleware of your choice. For Gin router, we use the GinMiddleware method.
+	router.Use(apitoolkitClient.GinMiddleware)
+
+
+}<div></pre>
+
+  </div>
+</div>
+
+<!-- adonis -->
+<div id="adonis_btn_content" class="int_content hidden">
+  <h4 class="text-[#2E3238]">Adonis JS</h4>
+  <p class="text-sm text-gray-600 font-normal">Quickly integrate APIToolkit into your adonis js application
+  </p>
+  <div class="flex flex-col gap-1 mt-2">
+    <h5 class="text-base text-[#2E3238] font-medium">Installation</h5>
+    <div class="bg-slate-700 text-white rounded-lg px-4 py-2 text-sm font-normal">
+      npm install apitoolkit-adonis
+    </div>
+    <h5 class="text-base text-[#2E3238] font-normal">Configer the package</h5>
+    <div class="bg-slate-700 text-white rounded-lg px-4 py-2 text-sm font-normal">
+      node ace configure apitoolkit-adonis
+    </div>
+    <h5 class="text-base text-[#2E3238] font-normal">Set APIKEY in <i>/conf/apitoolkit</i></h5>
+        <pre class="p-0 m-0 w-full"><div class="w-full overflow-x-scroll px-4 pb-4 language-javascript text-sm hljs atom-one-dark code_example">
+export const apitoolkitConfig = {
+  apiKey: "<YOUR_API_KEY>",
+};<div></pre>
+
+  </div>
+  <div class="mt-2">
+    <h5 class="text-base text-[#2E3238] font-medium mb-1">Integrate</h5>
+    <pre class="p-0 m-0 w-full"><div class="w-full overflow-x-scroll px-4 pb-4 language-javascript text-sm hljs atom-one-dark code_example">
+Server.middleware.register([
+  () => import("@ioc:Adonis/Core/BodyParser"),
+  () => import("@ioc:APIToolkit"),
+]);<div></pre>
+  </div>
+</div>
+
+
+<!-- fastify -->
+<div id="fastify_btn_content" class="int_content hidden">
+  <h4 class="text-[#2E3238]">Fastify JS</h4>
+  <p class="text-sm text-gray-600 font-normal">Quickly integrate APIToolkit into your Fastify js application
+  </p>
+  <div class="flex flex-col gap-1 mt-2">
+    <h5 class="text-base text-[#2E3238] font-medium">Installation</h5>
+    <div class="bg-slate-700 text-white rounded-lg px-4 py-2 text-sm font-normal">
+      npm install apitoolkit-fastify
+    </div>
+  </div>
+  <div class="mt-2">
+    <h5 class="text-base text-[#2E3238] font-medium mb-1">Integrate</h5>
+    <pre class="p-0 m-0 w-full"><div class="w-full overflow-x-scroll px-4 pb-4 language-javascript text-sm hljs atom-one-dark code_example">
+import APIToolkit from 'apitoolkit-fastify';
+import Fastify from 'fastify';
+
+const fastify = Fastify();
+
+// Create and initialize an instance of the APIToolkit
+const apittoolkitClient = APIToolkit.NewClient({
+  apiKey: 'YOUR_API_KEY',
+  fastify,
+});
+apitoolkitClient.init();
+
+<div></pre>
+  </div>
+</div>
+
+
+<!-- nestjs -->
+<div id="nestjs_btn_content" class="int_content hidden">
+  <h4 class="text-[#2E3238]">Nest JS</h4>
+  <p class="text-sm text-gray-600 font-normal">Quickly integrate APIToolkit into your nest application
+  </p>
+  <div class="flex flex-col gap-1 mt-2">
+    <h5 class="text-base text-[#2E3238] font-medium">Installation</h5>
+    <div class="bg-slate-700 text-white rounded-lg px-4 py-2 text-sm font-normal">
+      npm install apitoolkit-express
+    </div>
+  </div>
+  <div class="mt-2">
+    <h5 class="text-base text-[#2E3238] font-medium mb-1">Integrate</h5>
+    <pre class="p-0 m-0 w-full"><div class="w-full overflow-x-scroll px-4 pb-4 language-javascript text-sm hljs atom-one-dark code_example">
+import { NestFactory } from '@nestjs/core';
+import { APIToolkit } from 'apitoolkit-express';
+import { AppModule } from './app.module';
+//
+async function bootstrap() {
+  const apiToolkitClient = APIToolkit.NewClient({
+    apikey: '<API-KEY>',
+  });
+  const app = await NestFactory.create(AppModule);
+  app.use(apiToolkitClient.expressMiddleware);
+  await app.listen(3000);
+}
+//
+bootstrap();
+<div></pre>
+  </div>
+</div>
+
+<!-- mux -->
+<div id="mux_btn_content" class="int_content hidden">
+  <h4 class="text-[#2E3238]">Gorilla</h4>
+  <p class="text-sm text-gray-600 font-normal">Quickly integrate APIToolkit into your Gorilla Mux application
+  </p>
+  <div class="flex flex-col gap-1 mt-2">
+    <h5 class="text-base text-[#2E3238] font-medium">Installation</h5>
+    <div class="bg-slate-700 text-white rounded-lg px-4 py-2 text-sm font-normal">
+      go get -u github.com/gorilla/mux
+    </div>
+  </div>
+  <div class="mt-2">
+    <h5 class="text-base text-[#2E3238] font-medium mb-1">Integrate</h5>
+    <pre class="p-0 m-0 w-full"><div class="w-full overflow-x-scroll px-4 pb-4 language-go text-sm hljs atom-one-dark code_example">
+package main
+
+import (
+	"context"
+	"net/http"
+	"github.com/gorilla/mux"
+	apitoolkit "github.com/apitoolkit/apitoolkit-go"
+)
+
+func main() {
+	ctx := context.Background()
+
+	// Initialize the client using your generated apikey
+	apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "<APIKEY>"})
+	if err != nil {
+		panic(err)
+	}
+
+	r := mux.NewRouter()
+	// Register middleware
+	r.Use(apitoolkitClient.GorillaMuxMiddleware)
+}<div></pre>
+  </div>
+</div>
+
+<!-- symfony -->
+
+<div id="symfony_btn_content" class="int_content hidden">
+  <h4 class="text-[#2E3238]">Symfony</h4>
+  <p class="text-sm text-gray-600 font-normal">Quickly integrate APIToolkit into your Symfony application
+  </p>
+  <div class="flex flex-col gap-1 mt-2">
+    <h5 class="text-base text-[#2E3238] font-medium">Installation</h5>
+    <div class="bg-slate-700 text-white rounded-lg px-4 py-2 text-sm font-normal">
+      composer require apitoolkit/apitoolkit-symfony
+    </div>
+    <h5 class="text-base text-[#2E3238] font-normal">Set the <strong>APITOOLKIT_KEY</strong> environment variable to your API key in your .env file.</h5>
+    <div class="bg-slate-700 text-white rounded-lg px-4 py-2 text-sm font-normal">
+      APITOOLKIT_KEY=xxxxxx-xxxxx-xxxxxx-xxxxxx-xxxxxx
+    </div>
+
+  </div>
+  <div class="mt-2">
+    <h5 class="text-base text-[#2E3238] font-medium mb-1">Integrate (services.yaml)</h5>
+    <pre class="p-0 m-0 w-full"><div class="w-full overflow-x-scroll px-4 pb-4 language-php text-sm hljs atom-one-dark code_example">
+services:
+  APIToolkit\EventSubscriber\APIToolkitService:
+    arguments:
+      $apiKey: '%env(APITOOLKIT_KEY)%'
+    # Optional:  if you want to cache login result add this cache poll instance via setter injection
+    calls:
+      - setCachePool: ['@PutYourCachePoolServiceHere']
+    tags:
+      - { name: 'kernel.event_subscriber' }
+      <div></pre>
+      
+  </div>
+</div>
+
+<!-- go native -->
+<div id="go_btn_content" class="int_content hidden">
+  <h4 class="text-[#2E3238]">Go Native</h4>
+  <p class="text-sm text-gray-600 font-normal">Quickly integrate APIToolkit into your native Go application
+  </p>
+  <div class="flex flex-col gap-1 mt-2">
+    <h5 class="text-base text-[#2E3238] font-medium">Installation</h5>
+    <div class="bg-slate-700 text-white rounded-lg px-4 py-2 text-sm font-normal">
+      go get -u github.com/apitoolkit/apitoolkit-go
+    </div>
+  </div>
+  <div class="mt-2">
+    <h5 class="text-base text-[#2E3238] font-medium mb-1">Integrate</h5>
+    <pre class="p-0 m-0 w-full"><div class="w-full overflow-x-scroll px-4 pb-4 language-go text-sm hljs atom-one-dark code_example">
+package main
+
+import (
+	"net/http"
+	"context"
+	apitoolkit "github.com/apitoolkit/apitoolkit-go"
+)
+
+func main() {
+	// Initialize APIToolkit client with your generated API key
+	ctx := context.Background()
+	apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "YOUR_GENERATED_API_KEY"})
+	if err != nil {
+		panic(err)
+	}
+
+	http.Handle("/", apitoolkitClient.Middleware(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte("Hello, World!"))
+	})))
+
+	http.ListenAndServe(":8080", nil)
+}<div></pre>
+  </div>
+</div>
+<!--end div for code examples container-->
             </div>
           </div>
-
   </section>
-
 </section>
 <script>
     function integrationTabs(event) {
