@@ -38,8 +38,8 @@ Optimize what truly matters to your business. From identifying trends to making 
 <section  class="py-28 text-center text-center w-full max-w-full aspect-auto" >
 <div class="max-w-6xl inline-block text-left  text-xl sm:text-2xl prose prose-lg space-y-16">
 
-<div class="grid grid-cols-5 gap-8 justify-center items-center">
-    <img src="./dashboard.png" class="w-full col-span-3 drop-shadow-lg border border-gray-200 rounded-md"/> 
+<div class="grid px-6 grid-cols-1 md:px-2 md:grid-cols-5 gap-8 justify-center items-center">
+    <img src="./dashboard.png" class="w-full order-last md:order-first col-span-3 drop-shadow-lg border border-gray-200 rounded-md"/> 
     <div class="space-y-3 col-span-2">
 
 ### Get a peak understanding on how your APIs affect your workflow {.leading-tight}
@@ -60,7 +60,7 @@ No more waiting for problems to snowball. Identify and fix issues as they happen
 </div>
 </div>
 
-<div class="grid grid-cols-5 gap-8 justify-center items-center">
+<div class="grid px-6 grid-cols-1 md:px-2 md:grid-cols-5 gap-8 justify-center items-center">
     <div class="space-y-3 col-span-2">
 
 ### Context-Rich Data on your API Anomalies {.leading-tight}
@@ -81,8 +81,8 @@ Experiencing zero downtime of your APIs is possible. Having instant insights int
 <img src="./anomalies.jpg" class="w-full col-span-3 drop-shadow-lg border border-gray-200 rounded-md"/> 
 </div>
 
-<div class="grid grid-cols-5 gap-8 justify-center items-center">
-    <img src="./realtime-logs.png" class="w-full col-span-3 drop-shadow-lg border border-gray-200 rounded-md"> 
+<div class="grid px-6 grid-cols-1 md:px-2 md:grid-cols-5 gap-8 justify-center items-center">
+    <img src="./realtime-logs.png" class="w-full order-last md:order-first col-span-3 drop-shadow-lg border border-gray-200 rounded-md"> 
     <div class="space-y-3 col-span-2">
 
 ### Get to know which API your customers use most {.leading-tight}
@@ -102,8 +102,8 @@ Focusing on the APIs that drive the most customer engagement, you can ensure tha
 </div>
 </div>
 
-<div class="grid grid-cols-5 gap-8 justify-center items-center">
-    <img src="./realtime-logs.png" class="w-full col-span-3 drop-shadow-lg border border-gray-200 rounded-md"> 
+<div class="grid px-6 grid-cols-1 md:px-2 md:grid-cols-5 gap-8 justify-center items-center">
+    <img src="./realtime-logs.png" class="w-full order-last col-span-3 drop-shadow-lg border border-gray-200 rounded-md"> 
     <div class="space-y-3 col-span-2">
 
 ### Performance Analytics for Product Quality {.leading-tight}

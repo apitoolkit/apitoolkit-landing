@@ -33,12 +33,12 @@ Error monitoring is not enough. Catch breaking changes in your APIs and third pa
 </div>
 </section>
 
-<section  class="py-28 text-center text-center w-full max-w-full aspect-auto" >
+<section  class="py-28  text-center w-full max-w-full aspect-auto" >
 <div class="max-w-6xl inline-block text-left  text-xl sm:text-2xl prose prose-lg space-y-16">
 
-<div class="grid grid-cols-5 gap-8 justify-center items-center">
-    <img src="log_explorer_error.png" class="w-full col-span-3 drop-shadow-lg border border-gray-200 rounded-md"/> 
-    <div class="space-y-3 col-span-2">
+<div class="grid grid-cols-1  md:grid-cols-5 gap-8 px-6 md:px-2 justify-center items-center">
+    <img src="log_explorer_error.png" class="w-full order-last md:order-first col-span-3 drop-shadow-lg border border-gray-200 rounded-md"/> 
+    <div class="space-y-3 col-span-2 order-first md:order-last">
 
 ### Trace Errors back to the Root Cause {.leading-tight}
 
@@ -58,7 +58,7 @@ Don't just track errors and stack traces, but also record the incoming and outgo
 </div>
 </div>
 
-<div class="grid grid-cols-5 gap-8 justify-center items-center">
+<div class="grid grid-cols-1 px-6 md:px-2 md:grid-cols-5 gap-8 justify-center items-center">
     <div class="space-y-3 col-span-2">
 
 ### Track breaking changes in your APIs & Third party Integrations. {.leading-tight}
@@ -79,9 +79,9 @@ Catch breaking changes in your APIs and in any third party APIs you depend on. N
 <img src="changes_details.png" class="w-full col-span-3 drop-shadow-lg border border-gray-200 rounded-md"/> 
 </div>
 
-<div class="grid grid-cols-5 gap-8 justify-center items-center">
+<div class="grid px-6 grid-cols-1 md:px-2 md:grid-cols-5 gap-8 justify-center items-center">
     <img src="apitoolkit_slack.png" class="w-full col-span-3 drop-shadow-lg border border-gray-200 rounded-md"/> 
-    <div class="space-y-3 col-span-2">
+    <div class="space-y-3 col-span-2 order-first md:order-last">
 
 ### Get instant Alert and Notifications on the Go {.leading-tight}
 
@@ -97,7 +97,7 @@ Integrate Alerts into your current workflow through slack, email, teams, pagerdu
     Get a demo &nbsp;
     </a>
 </div>
-
+</div>
 </div>
   <section class="width-control mx-auto w-full">
     <div class="flex flex-col gap-2 w-full">
@@ -108,7 +108,7 @@ Integrate Alerts into your current workflow through slack, email, teams, pagerdu
             ASAP)
           </p>
           <div class="flex flex-col md:flex-row w-full mt-8">
-            <div class="flex overflow-x-auto md:p-4 flex-nowrap [&>*]:shrink-0 md:grid md:grid-cols-3 lg:grid-cols-4 gap-4 items-center h-max mt-4">
+            <div class="flex overflow-x-auto p-4 flex-nowrap [&>*]:shrink-0 md:grid md:grid-cols-3 lg:grid-cols-4 gap-4 items-center h-max mt-4">
               <button class="border shadow rounded-lg p-4 w-28 h-28 int_active int_btn" id="express_btn" title="expressjs"
                 onclick="integrationTabs(event)">
                 <svg viewBox="0 0 128 128"><path
