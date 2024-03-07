@@ -104,7 +104,7 @@ Integrate Alerts into your current workflow through slack, email, teams, pagerdu
       <h3 class="text-[#2E3238] self-center text-2xl md:text-[49px] font-bold leading-[1.14] mb-[0] tracking-tight">
         Integrate APIToolkit<h3>
           <p class="text-gray-600 mx-auto text-center text-base font-normal max-w-2xl">
-            We support 10+ web frameworks (if we don't support your framework, let us know so we create an SDK for your
+            We support 14+ web frameworks (if we don't support your framework, email <span class="text-blue-500 italic">hello@apitoolkit.io</span> and we'll create an SDK for you
             ASAP)
           </p>
           <div class="flex flex-col md:flex-row w-full mt-8">
@@ -382,23 +382,23 @@ app.middleware('http')(apitoolkit.middleware)<div></pre>
 from flask import Flask
 from apitoolkit_flask import APIToolkit
 
-app = Flask(__name__)
+app = Flask(**name**)
 
 apitoolkit = APIToolkit(api_key="&lt;API_KEY&gt;", debug=True)
 
 @app.before_request
 def before_request():
-      apitoolkit.beforeRequest()
+apitoolkit.beforeRequest()
 
 @app.after_request
 def after_request(response):
-      apitoolkit.afterRequest(response)
-      return response
+apitoolkit.afterRequest(response)
+return response
+
 <div></pre>
 
   </div>
 </div>
-
 
 <!-- go gin -->
 <div id="gin_btn_content" class="int_content hidden">
@@ -417,24 +417,23 @@ def after_request(response):
 package main
 
 import (
-    "context"
-  	apitoolkit "github.com/apitoolkit/apitoolkit-go"
-    "github.com/gin-gonic/gin"
+"context"
+apitoolkit "github.com/apitoolkit/apitoolkit-go"
+"github.com/gin-gonic/gin"
 )
 
 func main() {
 
-	// Initialize the client using your apitoolkit.io generated apikey
-	apitoolkitClient, err := apitoolkit.NewClient(context.Background(), apitoolkit.Config{APIKey: "YOUR GENERATED API KEY"})
-	if err != nil {
-		panic(err)
-	}
+    // Initialize the client using your apitoolkit.io generated apikey
+    apitoolkitClient, err := apitoolkit.NewClient(context.Background(), apitoolkit.Config{APIKey: "YOUR GENERATED API KEY"})
+    if err != nil {
+    	panic(err)
+    }
 
-	router := gin.New()
+    router := gin.New()
 
-	// Register with the corresponding middleware of your choice. For Gin router, we use the GinMiddleware method.
-	router.Use(apitoolkitClient.GinMiddleware)
-
+    // Register with the corresponding middleware of your choice. For Gin router, we use the GinMiddleware method.
+    router.Use(apitoolkitClient.GinMiddleware)
 
 }<div></pre>
 
@@ -472,7 +471,6 @@ Server.middleware.register([
   </div>
 </div>
 
-
 <!-- fastify -->
 <div id="fastify_btn_content" class="int_content hidden">
   <h4 class="text-[#2E3238]">Fastify JS</h4>
@@ -494,15 +492,14 @@ const fastify = Fastify();
 
 // Create and initialize an instance of the APIToolkit
 const apittoolkitClient = APIToolkit.NewClient({
-  apiKey: 'YOUR_API_KEY',
-  fastify,
+apiKey: 'YOUR_API_KEY',
+fastify,
 });
 apitoolkitClient.init();
 
 <div></pre>
   </div>
 </div>
-
 
 <!-- nestjs -->
 <div id="nestjs_btn_content" class="int_content hidden">
@@ -553,25 +550,27 @@ bootstrap();
 package main
 
 import (
-	"context"
-	"net/http"
-	"github.com/gorilla/mux"
-	apitoolkit "github.com/apitoolkit/apitoolkit-go"
+"context"
+"net/http"
+"github.com/gorilla/mux"
+apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
 
 func main() {
-	ctx := context.Background()
+ctx := context.Background()
 
-	// Initialize the client using your generated apikey
-	apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "<APIKEY>"})
-	if err != nil {
-		panic(err)
-	}
+    // Initialize the client using your generated apikey
+    apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "<APIKEY>"})
+    if err != nil {
+    	panic(err)
+    }
 
-	r := mux.NewRouter()
-	// Register middleware
-	r.Use(apitoolkitClient.GorillaMuxMiddleware)
+    r := mux.NewRouter()
+    // Register middleware
+    r.Use(apitoolkitClient.GorillaMuxMiddleware)
+
 }<div></pre>
+
   </div>
 </div>
 
@@ -626,25 +625,27 @@ services:
 package main
 
 import (
-	"net/http"
-	"context"
-	apitoolkit "github.com/apitoolkit/apitoolkit-go"
+"net/http"
+"context"
+apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
 
 func main() {
-	// Initialize APIToolkit client with your generated API key
-	ctx := context.Background()
-	apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "YOUR_GENERATED_API_KEY"})
-	if err != nil {
-		panic(err)
-	}
+// Initialize APIToolkit client with your generated API key
+ctx := context.Background()
+apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "YOUR_GENERATED_API_KEY"})
+if err != nil {
+panic(err)
+}
 
-	http.Handle("/", apitoolkitClient.Middleware(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("Hello, World!"))
-	})))
+    http.Handle("/", apitoolkitClient.Middleware(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+    	w.Write([]byte("Hello, World!"))
+    })))
 
-	http.ListenAndServe(":8080", nil)
+    http.ListenAndServe(":8080", nil)
+
 }<div></pre>
+
   </div>
 </div>
 <!--end div for code examples container-->
