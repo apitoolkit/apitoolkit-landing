@@ -4,6 +4,7 @@ date: 2022-03-23
 hide-date: true
 layout: blank
 ---
+
 <section  class="mt-28 text-center home-feature-image-div text-center w-full max-w-full aspect-auto" >
 <div class="max-w-4xl inline-block text-left  text-xl sm:text-2xl">
 
@@ -76,7 +77,7 @@ Experiencing zero downtime of your APIs is possible. Having instant insights int
     </a>
 </div>
 </div>
-<img src="./anomalies" class="w-full col-span-3 drop-shadow-lg border border-gray-200 rounded-md"/> 
+<img src="./anomalies.jpg" class="w-full col-span-3 drop-shadow-lg border border-gray-200 rounded-md"/> 
 </div>
 
 
@@ -113,7 +114,7 @@ By monitoring these parameters, you can identify areas where your APIs can be im
     </a>
 </div>
 <div class="grid grid-cols-5 gap-8 justify-center items-center">
-    <img src="./realtime-logs.png" class="w-full col-span-3 drop-shadow-lg border border-gray-200 rounded-md"> 
+    <img src="" class="w-full col-span-3 drop-shadow-lg border border-gray-200 rounded-md"> 
     <div class="space-y-3 col-span-2">
 </div>
 </div>
