@@ -76,7 +76,7 @@ Experiencing zero downtime of your APIs is possible. Having instant insights int
     </a>
 </div>
 </div>
-<img src="./anomalies" class="w-full col-span-3 drop-shadow-lg border border-gray-200 rounded-md"/> 
+<img src="./anomalies.jpg" class="w-full col-span-3 drop-shadow-lg border border-gray-200 rounded-md"/> 
 </div>
 
 
