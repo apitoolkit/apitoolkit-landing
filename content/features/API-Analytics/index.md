@@ -11,6 +11,7 @@ layout: blank
 ###### <span class="bg-amber-300 px-2 rounded-md"><strong class="drop-shadow-md">Gain Insights, Optimize Your Product</strong></span>
 
 ### API Analytics {.mt-2}
+
 Optimize what truly matters to your business. From identifying trends to making inform decisions.
 
 <div class="space-y-2 text-sm sm:pt-1 not-prose" id="waitlist-form-1">
@@ -22,7 +23,6 @@ Optimize what truly matters to your business. From identifying trends to making 
     Get a demo &nbsp;
     </a>
 </div>
-
 
 <!-- <video class="w-full max-w-4xl" loop autoplay muted playsinline> -->
 <!--     <source src='/assets/video/log_explorer.mp4' type='video/mp4'> -->
@@ -38,13 +38,13 @@ Optimize what truly matters to your business. From identifying trends to making 
 <section  class="py-28 text-center text-center w-full max-w-full aspect-auto" >
 <div class="max-w-6xl inline-block text-left  text-xl sm:text-2xl prose prose-lg space-y-16">
 
-
 <div class="grid grid-cols-5 gap-8 justify-center items-center">
     <img src="./dashboard.png" class="w-full col-span-3 drop-shadow-lg border border-gray-200 rounded-md"/> 
     <div class="space-y-3 col-span-2">
 
-### Get a peak understanding on how your APIs affect your workflow {.leading-tight} 
-No more waiting for problems to snowball. Identify and fix issues as they happen, ensuring flawless performance and a seamless user experience. 
+### Get a peak understanding on how your APIs affect your workflow {.leading-tight}
+
+No more waiting for problems to snowball. Identify and fix issues as they happen, ensuring flawless performance and a seamless user experience.
 {.text-lg}
 
 <div class="space-y-2 text-sm sm:pt-1 not-prose" id="waitlist-form-1">
@@ -63,7 +63,8 @@ No more waiting for problems to snowball. Identify and fix issues as they happen
 <div class="grid grid-cols-5 gap-8 justify-center items-center">
     <div class="space-y-3 col-span-2">
 
-### Context-Rich Data on your API Anomalies {.leading-tight} 
+### Context-Rich Data on your API Anomalies {.leading-tight}
+
 Experiencing zero downtime of your APIs is possible. Having instant insights into errors, latency, and unexpected behavior, can identify and resolve issues in a in real-time.
 {.text-lg}
 
@@ -80,13 +81,13 @@ Experiencing zero downtime of your APIs is possible. Having instant insights int
 <img src="./anomalies.jpg" class="w-full col-span-3 drop-shadow-lg border border-gray-200 rounded-md"/> 
 </div>
 
-
 <div class="grid grid-cols-5 gap-8 justify-center items-center">
     <img src="./realtime-logs.png" class="w-full col-span-3 drop-shadow-lg border border-gray-200 rounded-md"> 
     <div class="space-y-3 col-span-2">
 
-### Get to know which API your customers use most {.leading-tight} 
-Focusing on the APIs that drive the most customer engagement, you can ensure that your resources are directed towards maximizing user experience and satisfaction. 
+### Get to know which API your customers use most {.leading-tight}
+
+Focusing on the APIs that drive the most customer engagement, you can ensure that your resources are directed towards maximizing user experience and satisfaction.
 {.text-lg}
 
 <div class="space-y-2 text-sm sm:pt-1 not-prose" id="waitlist-form-1">
@@ -98,8 +99,15 @@ Focusing on the APIs that drive the most customer engagement, you can ensure tha
     Get a demo &nbsp;
     </a>
 </div>
+</div>
+</div>
 
-### Performance Analytics for Product Quality {.leading-tight} 
+<div class="grid grid-cols-5 gap-8 justify-center items-center">
+    <img src="./realtime-logs.png" class="w-full col-span-3 drop-shadow-lg border border-gray-200 rounded-md"> 
+    <div class="space-y-3 col-span-2">
+
+### Performance Analytics for Product Quality {.leading-tight}
+
 Analyzing metrics such as response times, uptime, and error rates.
 By monitoring these parameters, you can identify areas where your APIs can be improved and ensure they consistently deliver the expected level of quality and performance.
 {.text-lg}
@@ -112,10 +120,6 @@ By monitoring these parameters, you can identify areas where your APIs can be im
     <a href="https://calendar.app.google/1a4HG5GZYv1sjjZG6" target="_blank" class="drop-shadow rounded-md border border-gray-200 bg-gray-100 hover:bg-gray-200 text-xs text-gray-900 inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0 hs-init hs-inview">
     Get a demo &nbsp;
     </a>
-</div>
-<div class="grid grid-cols-5 gap-8 justify-center items-center">
-    <img src="" class="w-full col-span-3 drop-shadow-lg border border-gray-200 rounded-md"> 
-    <div class="space-y-3 col-span-2">
 </div>
 </div>
 </div>

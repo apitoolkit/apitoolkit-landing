@@ -24,7 +24,6 @@ Stop API issues before they stop your customers. Achieve real-time API Observabi
     </a>
 </div>
 
-
 <!-- <video class="w-full max-w-4xl" loop autoplay muted playsinline> -->
 <!--     <source src='/assets/video/log_explorer.mp4' type='video/mp4'> -->
 <!--     Your browser does not support the video tag. -->
@@ -39,13 +38,13 @@ Stop API issues before they stop your customers. Achieve real-time API Observabi
 <section  class="py-28 text-center text-center w-full max-w-full aspect-auto" >
 <div class="max-w-6xl inline-block text-left  text-xl sm:text-2xl prose prose-lg space-y-16">
 
-
 <div class="grid grid-cols-5 gap-8 justify-center items-center">
     <img src="./dash.jpg" class="w-full col-span-3 drop-shadow-lg border border-gray-200 rounded-md"/> 
     <div class="space-y-3 col-span-2">
 
-### Real-time Insights, Real-time Fixes {.leading-tight} 
-No more waiting for problems to snowball. Identify and fix issues as they happen, ensuring flawless performance and a seamless user experience. 
+### Real-time Insights, Real-time Fixes {.leading-tight}
+
+No more waiting for problems to snowball. Identify and fix issues as they happen, ensuring flawless performance and a seamless user experience.
 {.text-lg}
 
 <div class="space-y-2 text-sm sm:pt-1 not-prose" id="waitlist-form-1">
@@ -64,7 +63,7 @@ No more waiting for problems to snowball. Identify and fix issues as they happen
 <div class="grid grid-cols-5 gap-8 justify-center items-center">
     <div class="space-y-3 col-span-2">
 
-### Trace Every Request with Outgoing Request Monitoring {.leading-tight} 
+### Trace Every Request with Outgoing Request Monitoring {.leading-tight}
 
 Effortlessly capture the entire request-response chain, allowing you to reproduce complex issues with ease and get to the bottom of them fast.
 {.text-lg}
@@ -82,12 +81,11 @@ Effortlessly capture the entire request-response chain, allowing you to reproduc
 <img src="./outgoing request.jpeg" class="w-full col-span-3 drop-shadow-lg border border-gray-200 rounded-md"/> 
 </div>
 
-
 <div class="grid grid-cols-5 gap-8 justify-center items-center">
     <img src="./LOG.jpg" class="w-full col-span-3 drop-shadow-lg border border-gray-200 rounded-md"/> 
     <div class="space-y-3 col-span-2">
 
-### Error Tracking and Logging for your APIs {.leading-tight} 
+### Error Tracking and Logging for your APIs {.leading-tight}
 
 Catch errors from any source, whether it's the API itself, a dependent service, or an underlying infrastructure component. Track them back to the specific request that triggered the issue.
 {.text-lg}
@@ -104,7 +102,5 @@ Catch errors from any source, whether it's the API itself, a dependent service, 
 
 </div>
 </div>
-
-
 </div>
 </section>
