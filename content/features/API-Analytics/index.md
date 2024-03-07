@@ -11,7 +11,7 @@ layout: blank
 ###### <span class="bg-amber-300 px-2 rounded-md"><strong class="drop-shadow-md">Gain Insights, Optimize Your Product</strong></span>
 
 ### API Analytics {.mt-2}
-Optimize what truly matters to your business, achieving peak performance and gaining valuable insights. From identifying trends to seamlessly solving problems.
+Optimize what truly matters to your business. From identifying trends to making inform decisions.
 
 <div class="space-y-2 text-sm sm:pt-1 not-prose" id="waitlist-form-1">
     <a href="https://app.apitoolkit.io" class="drop-shadow hover:drop-shadow-lg transition-all rounded-md hover:bg-yellow-300 bg-amber-300 text-black border border-amber-400 font-semibold inline-block px-4 py-2 mt-2 sm:mt-0 hs-init hs-inview">
