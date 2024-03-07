@@ -114,7 +114,7 @@ By monitoring these parameters, you can identify areas where your APIs can be im
     </a>
 </div>
 <div class="grid grid-cols-5 gap-8 justify-center items-center">
-    <img src="" class="w-full col-span-3 drop-shadow-lg border border-gray-200 rounded-md"> 
+    <img src="./dashboard.png" class="w-full col-span-3 drop-shadow-lg border border-gray-200 rounded-md"> 
     <div class="space-y-3 col-span-2">
 </div>
 </div>
