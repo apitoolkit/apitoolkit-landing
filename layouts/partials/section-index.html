@@ -21,14 +21,14 @@
     {{ else }}
     {{/* Otherwise we show a nice formatted list of subpages with page descriptions */}}
     <hr class="panel-line">
-    <ul class="grid grid-cols-2 gap-2" style="list-style: none;">
+    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2" style="list-style: none;">
         {{ range $pages }}
         {{ $manualLink := cond (isset .Params "manuallink") .Params.manualLink ( cond (isset .Params "manuallinkrelref")
         (relref . .Params.manualLinkRelref) .RelPermalink) }}
         <li>
             <a href="{{ $manualLink }}" {{ with .Params.manualLinkTitle }} title="{{ . }}" {{ end}}{{ with
                 .Params.manualLinkTarget }} target="{{ . }}" {{ if eq . "_blank" }} rel="noopener" {{ end }}{{ end }}
-                class="flex p-4 items-center gap-2 h-max rounded-2xl border hover:border-gray-700"
+                class="flex flex-col p-4 items-center gap-2 h-max rounded-2xl border hover:border-gray-700"
                 style="text-decoration: none;">
                 <img alt="" loading="lazy" class="flex-shrink-0 h-12 m-0" {{if .Params.imageurl}}
                     src="{{ .Params.imageurl}}" {{else}} src="/assets/img/box-grid.svg" {{end}}>
