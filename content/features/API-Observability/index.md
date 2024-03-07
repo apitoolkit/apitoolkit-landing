@@ -10,9 +10,9 @@ layout: blank
 
 ###### <span class="bg-amber-300 px-2 rounded-md"><strong class="drop-shadow-md">Full Observability, Zero Disruptions</strong></span>
 
-### See Clearly, Fix Quickly. Observe and Fix any API issues in Real-time. {.mt-2}
+### See Clearly, Fix Quickly. Observe and Fix any API issues in Real Time. {.mt-2}
 
-Stop API issues before they stop your customers. Achieve real-time API Observability to pinpoint issues, understand root causes, and fix problems in a real-time
+Stop API issues before they stop your customers. Achieve real-time API Observability to pinpoint issues, understand root causes, and fix problems in real-time
 
 <div class="space-y-2 text-sm sm:pt-1 not-prose" id="waitlist-form-1">
     <a href="https://app.apitoolkit.io" class="drop-shadow hover:drop-shadow-lg transition-all rounded-md hover:bg-yellow-300 bg-amber-300 text-black border border-amber-400 font-semibold inline-block px-4 py-2 mt-2 sm:mt-0 hs-init hs-inview">
