@@ -5,7 +5,7 @@ hide-date: true
 layout: blank
 ---
 
-<section  class="mt-28 text-center home-feature-image-div text-center w-full max-w-full aspect-auto" >
+<section  class="mt-28 text-center home-feature-image-div w-full max-w-full aspect-auto" >
 <div class="max-w-4xl inline-block text-left  text-xl sm:text-2xl">
 
 ###### <span class="bg-amber-300 px-2 rounded-md"><strong class="drop-shadow-md">Full Observability, Zero Disruptions</strong></span>
@@ -35,11 +35,11 @@ Stop API issues before they stop your customers. Achieve real-time API Observabi
 </div>
 </section>
 
-<section  class="py-28 text-center text-center w-full max-w-full aspect-auto" >
+<section  class="py-28 text-center w-full max-w-full aspect-auto" >
 <div class="max-w-6xl inline-block text-left  text-xl sm:text-2xl prose prose-lg space-y-16">
 
-<div class="grid grid-cols-5 gap-8 justify-center items-center">
-    <img src="./dash.jpg" class="w-full col-span-3 drop-shadow-lg border border-gray-200 rounded-md"/> 
+<div class="grid px-6 grid-cols-1 md:px-2 md:grid-cols-5  gap-8 justify-center items-center">
+    <img src="./dash.jpg" class="w-full order-last md:order-first col-span-3 drop-shadow-lg border border-gray-200 rounded-md"/> 
     <div class="space-y-3 col-span-2">
 
 ### Real-time Insights, Real-time Fixes {.leading-tight}
@@ -60,7 +60,7 @@ No more waiting for problems to snowball. Identify and fix issues as they happen
 </div>
 </div>
 
-<div class="grid grid-cols-5 gap-8 justify-center items-center">
+<div class="grid px-6 grid-cols-1 md:px-2 md:grid-cols-5 gap-8 justify-center items-center">
     <div class="space-y-3 col-span-2">
 
 ### Trace Every Request with Outgoing Request Monitoring {.leading-tight}
@@ -81,8 +81,8 @@ Effortlessly capture the entire request-response chain, allowing you to reproduc
 <img src="./outgoing request.jpeg" class="w-full col-span-3 drop-shadow-lg border border-gray-200 rounded-md"/> 
 </div>
 
-<div class="grid grid-cols-5 gap-8 justify-center items-center">
-    <img src="./LOG.jpg" class="w-full col-span-3 drop-shadow-lg border border-gray-200 rounded-md"/> 
+<div class="grid px-6 grid-cols-1 md:px-2 md:grid-cols-5 gap-8 justify-center items-center">
+    <img src="./LOG.jpg" class="w-full order-last md:order-first col-span-3 drop-shadow-lg border border-gray-200 rounded-md"/> 
     <div class="space-y-3 col-span-2">
 
 ### Error Tracking and Logging for your APIs {.leading-tight}
