@@ -652,6 +652,7 @@ panic(err)
             </div>
           </div>
   </section>
+  {{% demo %}}
 </section>
 <script>
     function integrationTabs(event) {
