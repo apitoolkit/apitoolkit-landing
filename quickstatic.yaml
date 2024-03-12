@@ -1,0 +1,14 @@
+base_url: "https://example.org"
+title: Example site
+theme: default
+
+layouts:
+  "./blog/**/index.md": default/blog-single.liquid
+  "./features/**/index.md": default/features-single.liquid
+  "./**/*.md": default/index.liquid
+
+ignore:
+  - "./node_modules/**"
+  - ".git"
+
+blabla: blbla 

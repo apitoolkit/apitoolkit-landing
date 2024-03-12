@@ -2,7 +2,6 @@
 title: API Documentation and Developer Portals 
 date: 2022-03-23
 hide-date: true
-layout: blank 
 ---
 
 <section class="mt-28 text-center">
