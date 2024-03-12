@@ -12,6 +12,7 @@ video:
 video:
 ---
 
+``` =html
 <script src="https://cdn.jsdelivr.net/npm/jarallax@2/dist/jarallax.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
   integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q=="
@@ -41,9 +42,11 @@ video:
     z-index: -1;
   }
 </style>
+```
 
-{{% hero %}}
+{% render "default/markdown/hero-section", this:this %}
 
+```
 <main>
   <section class="width-control mx-auto mt-[54px] pb-16 relative">
     <div class="h-full w-[1px] absolute z-10 left-[20px] top-[35px]">
@@ -2050,3 +2053,4 @@ video:
     animateMarquee()
   }
 </script>
+```

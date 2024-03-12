@@ -32,6 +32,7 @@ Years later, this is that tool, and we would love to listen to
 similar stories you've experienced, and help make such stories a
 thing of the past.
 
+``` =html
   <p class="text-xs text-right">
     Anthony (<a
       href="https://twitter.com/tonialaribe"
@@ -43,7 +44,7 @@ thing of the past.
       >@smilecs</a
     >)
   </p>
-
+```
 
 
 ## APIToolkit is built by real engineers to solve problems that have cost them a lot in the past.
@@ -64,5 +65,5 @@ observability.
 APIToolkit is a product of Past 3 Technologies, a software consulting firm based out of Berlin, Germany.
 
 hello@past3.tech
-Past 3 Technologies UG <br/>
+Past 3 Technologies UG \
 Gruntaler Str. 10553 Berlin, Germany

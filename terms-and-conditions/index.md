@@ -2,7 +2,6 @@
 title: Terms and Conditions of Service 
 date: 2022-08-21
 ---
-<br/>
 
 ### OVERVIEW
 

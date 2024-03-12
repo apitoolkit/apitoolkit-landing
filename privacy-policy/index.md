@@ -1,9 +1,7 @@
 ---
 title: Privacy Policy
 date: 2022-08-21
-<!-- layout: baseonly -->
 ---
-<br/>
 
 At apitoolkit.io, accessible from https://apitoolkit.io, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by apitoolkit.io and how we use it.
 

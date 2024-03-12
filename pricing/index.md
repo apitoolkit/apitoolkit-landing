@@ -1,10 +1,10 @@
 ---
-title:
+title: pricing
 date: 2022-03-23
 publishdate: 2022-03-24
-layout: baseonly
 ---
 
+``` =html
 <div class="w-full">
     <header class="w-full mt-32">
         <div class="width-control  mx-auto px-2">
@@ -283,3 +283,4 @@ layout: baseonly
         </section>
     </div>
 </div>
+```
