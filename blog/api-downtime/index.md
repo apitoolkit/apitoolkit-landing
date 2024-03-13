@@ -8,6 +8,8 @@ categories:
   - API Management
 ---
 
+# How to Resolve API Downtime Issues Before It Escalates
+
 ![A Representation of API Downtime on a Laptop Device](./api_downtime.png)
 
 Imagine waking up to an API outage that has cost your business $100,000 in just five hours. That, my friend, can be so heart-rending. Truth is, APIs are great, but APIs can fail. And this, without warning. In this blog post, we’ll explore incident recovery and how to solve API downtime issues before they escalate.

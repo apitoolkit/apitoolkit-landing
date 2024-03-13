@@ -1,5 +1,5 @@
 ---
-title: "APIs and Web Services"
+title: APIs and Web Services
 featured_image: image1.jpg
 date: 2022-05-20T07:34:16+02:00
 author: irhose
@@ -7,6 +7,8 @@ description: "What are the differences between APIs and Web services? When shoul
 categories:
   - APIs
 ---
+
+# APIs and Web Services
 
 ![Oriental battle](./image1.jpg)
 

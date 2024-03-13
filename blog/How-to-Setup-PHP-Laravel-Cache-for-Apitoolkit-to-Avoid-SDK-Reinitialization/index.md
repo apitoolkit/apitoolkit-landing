@@ -8,6 +8,8 @@ categories:
   - SDK
 ---
 
+# PHP Laravel Cache Setup for Apitoolkit to Avoid SDK Reinit
+
 ![PHP Laravel Cache Setup for Apitoolkit to Avoid SDK Reinit](Add%20a%20heading.png) 
 
 Laravel caching can significantly boost performance for Apitoolkit projects by eliminating repetitive and costly SDK reinitialization. Without caching, the SDK connects from scratch on every request - an inefficient process that hampers speed. Implementing caching allows you to store and reuse SDK connections, circumventing reinitialization entirely.

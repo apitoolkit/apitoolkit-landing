@@ -8,6 +8,8 @@ categories:
   - API Monitoring
 --- 
 
+# API Monitoring and Documentation: The Truth You Must Know
+
 ![API Connectivity around a Chain of Programs](./apiblogcover.jpg)
 
 Connectivity is one fantastic thing that has put the world at our fingertips, and technology has made this even easier with the use of APIs. The technology stack behind API monitoring and documentation has ensured secure and reliable connectivity across a vast chain of programs. APIs have made lives more manageable.

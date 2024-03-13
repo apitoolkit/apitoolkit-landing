@@ -7,6 +7,9 @@ author: jessica
 categories: 
   - API Documentation
 ---
+
+# User-Centric API Documentation: How to Cater to Different User Personas
+
 ![User-Centric API Documentation](usercentric-api-doc.png)
 
 In the world of programming, APIs help different software systems communicate effectively. But what good is a powerful API if its documentation doesn't speak to the varied needs of its users? The concept of "User-Centric [API Documentation](https://apitoolkit.io/blog/how-to-generate-automated-api-documentation/),"is  an innovative change aimed at adapting API guides to suit different user personas. This guide explores how to make API instructions more user-friendly for developers, a Quality Assurance (QA) tester, and business analysts. By focusing on understanding users' needs and improving how APIs are explained, we can make projects run smoother and tasks easier to handle.

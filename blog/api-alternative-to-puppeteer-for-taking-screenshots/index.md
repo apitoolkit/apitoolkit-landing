@@ -7,6 +7,9 @@ feature_image: screenshotone.png
 categories:
   - APIs
 ---
+
+# API alternative to Puppeteer for taking screenshots
+
 <a href="screenshotone.png" class="block rounded-md border border-black"><img src="screenshotone.png" alt="ScreenshotOne" /></a>
 
 The [API](https://apitoolkit.io/blog/api-documentation-and-observability-the-truth-you-must-know/) market is booming. Every day you can see more and more APIs you can build your services upon. And many APIs have good open-source alternatives. You can host the alternative and have all control over it. But is it practical for you? Does it save time, money and energy? The most scarce resources we have. 

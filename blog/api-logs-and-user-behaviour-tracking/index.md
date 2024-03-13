@@ -1,5 +1,5 @@
 ---
-title: "Bridging the Gap Between API Logs and User Behavior Tracking"
+title: Bridging the Gap Between API Logs and User Behavior Tracking
 featured_image: bridging-the-gap.png
 date: 2023-11-22T12:36:58+02:00
 author: jessica
@@ -7,6 +7,8 @@ description: Explore the integration of API logs and user behavior tracking to e
 categories:
   - API Log Explorer
 ---
+
+# Bridging the Gap Between API Logs and User Behavior Tracking
 
 ![Bridging the Gap](bridging-the-gap.png)
 

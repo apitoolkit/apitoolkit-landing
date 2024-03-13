@@ -10,6 +10,8 @@ menu:
     weight: 1
 ---
 
+# PHP (Symfony) Integration guide
+
 A PHP/Symfony SDK Wrapper for APIToolkit. It monitors incoming traffic, gathers the requests and sends the request to the apitoolkit. The SDK simply registers and event listener and consumes this information via the events.
 
 ## Installation

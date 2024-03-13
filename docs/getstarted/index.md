@@ -8,6 +8,8 @@ menu:
     weight: 1
 ---
 
+# Get Started
+
 APIToolkit is not just a monitoring solution but a robust platform that enhances every aspect of your API lifecycle. From real-time performance analytics to direct API testing, our toolkit is designed to simplify, secure, and streamline your API processes.
 
 Concerned about privacy? You'll be pleased to know that we're taking data security to the next level. Stay tuned for our upcoming feature that enables end-to-end encryption, safeguarding the data transition between your servers and ours. Here's how we're changing the game:

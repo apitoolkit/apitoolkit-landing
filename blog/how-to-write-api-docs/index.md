@@ -7,6 +7,8 @@ categories:
   - API Documentation
 ---
 
+# How to Write API Documentation: 14 Essential Guidelines
+
 ![Laptop, notepad, two phones and other items on a wooden table](./image1.jpg)
 
 Documentation is often the cornerstone of understanding in the world of programming, and APIs are no exception. Without well-structured documentation, an API can be as indecipherable as a foreign language. Crafting user-friendly API documentation, though challenging, is attainable with the right approach and can greatly enhance the usability of an API.

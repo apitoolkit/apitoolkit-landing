@@ -7,6 +7,9 @@ author: elliot
 categories:
   - Data Redacting
 ---
+
+# How to Prevent Sending sensitive Data to APItoolkit during integration
+
 ![How to Prevent Sending sensitive Data to APItoolkit during integration](./How%20to%20Prevent%20Sending%20sensitive%20Data%20to%20APItoolkit%20during%20integration.png)
 
 The growth of API-driven development opens up huge possibilities, but with great power comes big responsibility, especially for data safety. While many tools have different features, at APIToolkit, keeping data safe is our top priority and the most important thing we do.

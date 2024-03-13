@@ -1,11 +1,13 @@
 ---
-title: "10 Must-Know API trends in 2024"
+title: 10 Must-Know API trends in 2024
 featured_image: image1.jpg
 date: 2023-02-05T01:33:53+02:00
 author: collins
 categories:
   - APIs
 ---
+
+# 10 Must-Know API trends in 2024
 
 ![API Trends](./image1.jpg)
 

@@ -8,6 +8,8 @@ categories:
   - APIs
 ---
 
+# The Rise of API-as-a-Product: How Companies are Leveraging APIs to Drive Revenue
+
 ![API as a product](./api-as-a-product.jpg)
 Image source: Getty Images
 

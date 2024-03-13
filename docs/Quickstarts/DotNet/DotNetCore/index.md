@@ -1,5 +1,5 @@
 ---
-title: .Net
+title: .Net Core
 date: 2022-03-23
 publishdate: 2022-03-24
 weight: 20
@@ -9,6 +9,8 @@ menu:
   main:
     weight: 20
 ---
+
+# .Net SDK integration
 
 To integrate .Net web services with API Toolkit, an SDK called the `ApiToolkit.Net` client for API Toolkit is utilized. It keeps track of incoming traffic, aggregates the requests, and then delivers them to the apitoolkit servers.
 We'll concentrate on providing a step-by-step instruction for integrating an API toolkit into our Golang web service in this tutorial.

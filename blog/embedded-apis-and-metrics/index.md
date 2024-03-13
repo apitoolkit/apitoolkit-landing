@@ -1,5 +1,5 @@
 ---
-title: 'A Guide to Embedded API Logs and Metrics'
+title: A Guide to Embedded API Logs and Metrics
 featured_image: embedded-api.png
 date: 2023-12-19T12:36:58+02:00
 author: jessica
@@ -7,6 +7,8 @@ description: Discover key strategies for embedded API efficiency in our guide. L
 categories:
   - API Logs and Metrics
 ---
+
+# A Guide to Embedded API Logs and Metrics
 
 ![Embedded API](embedded-api.png)
 

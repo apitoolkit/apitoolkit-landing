@@ -8,6 +8,8 @@ categories:
   - API Documentation
 ---
 
+# Generate Swagger Docs Easily with Apitoolkit's Live Traffic
+
 ![How to Generate Swagger Docs from your Live traffic with Apitoolkit](How%20to%20Generate%20Swagger%20Docs%20from%20your%20Live%20traffic%20with%20Apitoolkit%20a%20heading(1).png)
 
 Creating clear, and useful documentation is one of the toughest challenges developers face. We pour endless energy into crafting beautiful code, architecting complex systems, and engineering revolutionary products. Yet all that effort is wasted if no one understands how to properly interact with what we build. As the saying goes, "Confusion is the enemy of utilization".

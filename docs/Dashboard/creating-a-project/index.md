@@ -9,6 +9,8 @@ menu:
     weight: 10
 ---
 
+# Creating A Project
+
 Embarking on your APIToolkit journey? Whether you're just starting out or are an existing user, this guide will walk you through the process of creating a new project and setting up your dashboard for seamless integration.
 
 Here, let's go:

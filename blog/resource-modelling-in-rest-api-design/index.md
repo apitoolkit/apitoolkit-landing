@@ -8,6 +8,8 @@ categories:
   - APIs
 ---
 
+# Resource Modeling in Rest API Design
+
 ![Resource-modeling](./api-modeling.jpg)
 
 In the world of API development, effective management and organization of resources are paramount. Resource modeling serves as the architectural backbone of [REST APIs](https://apitoolkit.io/blog/rest-api-is-the-future/), offering a framework for visualizing and planning your API data. This comprehensive guide aims to demystify the complexities of resource modeling in REST APIs, providing actionable insights for designing robust, readable, and efficient resource models.

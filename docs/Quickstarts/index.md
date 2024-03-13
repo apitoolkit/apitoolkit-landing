@@ -8,4 +8,6 @@ menu:
     weight: 10
 ---
 
+# Quickstart guides
+
 Select your preferred tech stack for APIToolkit integration.

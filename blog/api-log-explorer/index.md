@@ -8,7 +8,7 @@ categories:
   - API Log Explorer
 ---
 
-
+# How to use API Log Explorer to Monitor Backend and User Insights
 
 ![api log explorer](log-explorer.png)
 

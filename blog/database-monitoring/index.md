@@ -8,6 +8,8 @@ categories:
   - API Management
 ---
 
+# Mastering Database Monitoring: Unlocking Key Insights into Performance.
+
 ![Database Monitoring](./1-database-monitoring_png.png)
 
 ## Introduction

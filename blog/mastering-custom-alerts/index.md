@@ -7,6 +7,8 @@ categories:
   - Custom Alerts
 ---
 
+# Managing Custom Alerts and Notifications Using the API
+
 ![Managing Custom Alerts](managing-custom-alerts.png)
 
 For any app to be really useful, it needs to be able to send you little nudges like reminders or updates, right when you need them. That's where the API comes in, kind of like a behind-the-scenes messenger that helps different parts of the app chat with each other and get those messages out to you.

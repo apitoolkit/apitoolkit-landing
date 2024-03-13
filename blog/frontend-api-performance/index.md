@@ -8,6 +8,8 @@ categories:
   - API Management
 ---
 
+# How to Analyze and Address Frontend API Performance Problems
+
 ![Frontend API Performance](./frontend-api-performance_png.png)
 
 If you are developing a web application that relies on APIs to fetch data from the backend, you may encounter performance issues that affect the user experience. For example, your app may take too long to load, display outdated or inconsistent data, or fail to handle errors gracefully. These are frontend API Performance Problems.

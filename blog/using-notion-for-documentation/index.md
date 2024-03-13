@@ -7,6 +7,8 @@ categories:
   - APIs
 ---
 
+# How to Use Notion for Documentation
+
 ![how to use notion for documentation](how-to-use-notion-for-documentation.png)
 
 **(Updated)**

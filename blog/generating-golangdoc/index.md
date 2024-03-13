@@ -8,6 +8,8 @@ categories:
   - APIs
 --- 
 
+# Generating Golang API Doc with Swagger
+
 ![goswagger](generating-golang-api-with-go-swagger.png)
 
 Imagine you're a skilled developer who's just put the final touches on an API – a tool that lets different software talk to each other. This is a big deal because it opens up new possibilities for how programs can work together. But here's the thing: you can't just stop here. You now have to help other developers understand how to use your API to build their own software. This is where documentation comes in – it's like a guidebook that explains how everything works. As you dive deep down, you start thinking about different ways to make this documentation process smoother. There are tools like [APIToolkit](https://apitoolkit.io), Go-Swagger, Docusaurus, and Postman that promise to make things easier by organizing and explaining all the technical details.
@@ -344,7 +346,7 @@ In [API development](https://apitoolkit.io), comprehensive documentation is a ne
 
 - - -
 
-**Keep Reading**
+### **Keep Reading**
 
 [API observability and testing as a service](https://apitoolkit.io)
 

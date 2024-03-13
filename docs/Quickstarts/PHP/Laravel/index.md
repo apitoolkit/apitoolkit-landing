@@ -10,6 +10,8 @@ menu:
     weight: 1
 ---
 
+# PHP Laravel Integration guide
+
 A PHP/Laravel SDK Wrapper for APIToolkit. It monitors incoming traffic, gathers the requests and sends the request to the apitoolkit servers.
 
 ## Installation

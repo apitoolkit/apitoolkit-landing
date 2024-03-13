@@ -12,6 +12,8 @@ tags:
   - observability
 ---
 
+# API Observability and Monitoring: What’s the Difference?
+
 ![Camera charcoal painting pointing downwards](image1.jpg)
 
 This is where we like to play—the not so clearly defined border of [API observability and API monitoring](https://apitoolkit.io/blog/best-api-monitoring-and-observability-tools/). It’s why our [tool](https://apitoolkit.io/blog/why-you-need-an-api-monitoring-tool/) was built. We wanted to help startup teams with the heavy-lifting.

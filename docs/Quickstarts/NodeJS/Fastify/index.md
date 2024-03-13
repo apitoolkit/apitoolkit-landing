@@ -11,6 +11,8 @@ menu:
     weight: 1
 ---
 
+# Fastify JS integration guide
+
 The APIToolkit Fastify SDK is a library that enables seamless integration of Fastify applications with APIToolkit's monitorin. By utilizing this SDK, you can effortlessly collect and publish relevant data about incoming requests and outgoing responses to APIToolkit's servers.
 
 ## Installation

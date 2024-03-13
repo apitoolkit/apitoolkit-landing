@@ -7,16 +7,20 @@ categories:
   - Testing
 ---
 
+# What is API Testing and Why Should You Do It?
+
 ![A phone and a laptop showing code](./image3.jpg "Photo by <a href='https://unsplash.com/@f12r?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Fahim Muntashir</a> on <a href='https://unsplash.com/s/photos/api?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Unsplash</a>")
 
 If you’re reading this, then I’m going to assume you already know what an API is. But, for the sake of those who may not know, I’ll touch on the fundamentals a bit.
 
 ## What Is an API (Application Programming Interface)?
+
 An API is a software interface that allows data exchange and communication between two separate software applications. One system executes the API, while another performs its functions and subroutines. The API specifies the data formats, methods, and requests that can be made between two software systems.
 
 APIs are the reason why you can log in to your Twitter account using your Google account credentials. What happens, in very simple terms, is that Twitter sends a request to Google via APIs to fetch your data and voila, you’re in!
 
 ## What Is API Testing?
+
 API testing is the practice of validating the integrity and [functionality of APIs](https://apitoolkit.io/blog/api-documentation-and-observability-the-truth-you-must-know/) by sending requests across system software and evaluating system responses. In API testing special software is used to send calls to the API eing tested while the responses are noted and analyzed. 
 
 API testing works on the [business logic](https://www.investopedia.com/terms/b/businesslogic.asp#:~:text=Business%20logic%20is%20the%20custom,constrains%20how%20a%20business%20operates) layer of a codebase, so any anomalies detected could lead to astronomical effects
@@ -25,6 +29,7 @@ One could say that APIs make up the background framework of the internet as we k
 Read: [Best API Monitoring and Observability Tool in 2023](https://apitoolkit.io/blog/best-api-monitoring-and-observability-tools/)
 
 ## Why Should You Test APIs?
+
 API testing is crucial now more than ever because APIs serve as the primary link to business logic. Perhaps, the most important reason for API testing is that as a system scales, changes are made across the codebase. API regression tests can help to detect whether a system upgrade results in a break in [API interfaces](https://apitoolkit.io/blog/the-ultimate-api-management-strategy/). 
 
 Such a break could have catastrophic results for web apps that rely on those APIs.
@@ -105,6 +110,7 @@ Close collaboration between developers and testers promotes a shared understandi
 Read: [Top 7 Reasons Why Your Team Needs an API Monitoring ](https://apitoolkit.io/blog/why-you-need-an-api-monitoring-tool/)
 
 ## API Testing Tools
+
 API testing can be done with a variety of automated tools.
 
 - **APIToolkit**: APIToolkit possesses all the tool you need to design, TEST, and monitor your APIs. It's the one-stop toolbox for [API developers](https://apitoolkit.io/blog/top-8-api-documentation-tools-for-developers/) utilizing a variety of tech stack.
@@ -121,6 +127,7 @@ API testing can be done with a variety of automated tools.
 Read: [How to Generate Autoated API Documentation](https://apitoolkit.io/blog/how-to-generate-automated-api-documentation/)
 
 ## What Are API Test Cases Based on?
+
 QA teams are usually in charge of API testing. It’s normal to see them follow a predefined strategy to conduct the API testing after the build is ready. This testing may not necessarily include the source code. The API testing approach helps to better understand the functionalities, security and testing techniques, input parameters, and the execution of test cases.
 
 API test cases are based on the following considerations
@@ -136,6 +143,7 @@ Modify certain resources: API calls that modify resources should be checked by a
 Read: [How to Write API Documentation: 10 Essential Guidelines](https://apitoolkit.io/blog/how-to-write-api-docs/)
 
 ## Key Takeaways 
+
 - APIs are software interfaces that allow data exchange and interaction between two different software applications.
 
 - The purpose of API testing is to validate the integrity and functionality of APIs by sending requests across various systems and evaluating system responses.
@@ -147,6 +155,7 @@ Read: [How to Write API Documentation: 10 Essential Guidelines](https://apitoolk
 - Develop API testing standards for your organization and train developers on prioritization.
 
 ## Final Thoughts on API Testing 
+
 API testing represents the most fundamental measure in maintaining the seamless operation of application systems.
 
 When APIs are not tested thoroughly, it leads to problems in the API and calling applications. Suffice it to say that API testing is indispensable in software engineering. A break in an API calling system for a few seconds could have huge financial consequences.

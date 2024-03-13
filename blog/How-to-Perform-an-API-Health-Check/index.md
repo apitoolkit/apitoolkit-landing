@@ -8,6 +8,8 @@ categories:
   - API Documentation
 ---
 
+# How to Perform an API Health Check
+
 ![How to perform an API Health check](./How%20to%20Perform%20an%20API%20Health%20Check.png)
 
 APIs are a big part of most software apps today as they form the communications links and bonds between different parts of a software program. They do a lot of key jobs behind the scenes. But even well-built APIs can have problems from time to time. Issues like slowdowns, errors, or downtime can break parts of an app. If APIs are not checked regularly, these issues can create big headaches for users. 

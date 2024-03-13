@@ -8,6 +8,8 @@ categories:
   - API
 ---
 
+# Unlocking the Mystery: What Are REST APIs?
+
 ![What are REST APIs](./what-are-rest-apis.png)
 
 _Delve into the intricate world of REST APIs, exploring their role in modern computing and unraveling the complexities behind their design. What are REST APIs? Discover the answer and much more in this detailed exploration._

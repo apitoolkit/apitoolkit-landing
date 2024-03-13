@@ -7,6 +7,8 @@ categories:
   - APIs
 ---
 
+# Everything You Need to Know About SOAP API
+
 ![Caramel bars](./image1.jpg)
 
 A review of the principal points to note about SOAP API

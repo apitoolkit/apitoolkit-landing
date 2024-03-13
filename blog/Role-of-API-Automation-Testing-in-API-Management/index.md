@@ -8,6 +8,7 @@ categories:
   - API Automation Testing
 ---
 
+# Role of API Automation Testing in API Management
 
 Manual testing alone often proves inadequate for meeting most challenges as APIs rapidly evolve. This is where automated API testing comes into play as a transformative solution. In this blog, we will explore the fundamentals of API testing, distinctions from API management, and most importantly, the immense value delivered through API test automation. 
 

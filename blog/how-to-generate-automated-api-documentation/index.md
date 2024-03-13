@@ -8,6 +8,8 @@ categories:
   - API Documentation
 --- 
 
+# How to Generate Automated API Documentation
+
 ![Lato and Notebook on a Worksace](./latop-and-notebook.jpg)
 
 Hey there! Let's talk about API documentation.

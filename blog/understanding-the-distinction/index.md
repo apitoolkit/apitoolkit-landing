@@ -8,6 +8,8 @@ categories:
   - API Monitoring
 ---
 
+# Understanding the Distinction: Synthetic API Monitoring vs API Real User Monitoring
+
 ![Synthetic API vs API Real User Monitoring](synthetic-api-vs-api-real-user-monitoring.png)
 
 Performance and dependability of Application Programming Interfaces (APIs) are essential for any business. [API monitoring](https://apitoolkit.io/blog/best-api-monitoring-and-observability-tools/) plays a vital role in maintaining the seamless functioning of applications and delivering exceptional user experiences. However, there are two different approaches to API monitoring: Synthetic API Monitoring and API Real User [Monitoring](https://apitoolkit.io/blog/best-api-monitoring-and-observability-tools/) (RUM).

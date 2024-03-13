@@ -8,6 +8,8 @@ categories:
 description: "Discover the incredible advantages of REST APIs compared to RPC and GraphQL. Learn how REST APIs are shaping the future of web development, offering flexibility, scalability, and ease of use. Find out why embracing REST APIs is essential for your business success."
 ---
 
+# REST APIs are the Future: Compared to RPC, GraphQL, etc
+
 ![REST is the future](./scalability.png)
 
 In recent years there has been a lot of hype around new technologies such as GraphQL and RPCs. These technologies are supposed to replace REST as the defacto transports. They all come with a lot of advantages or so it seems. But I argue that they are and remain the future. And in most of the cases, the benefits which the new technologies offer, could equaly be gotten from REST APIs as well, with a little bit of creativity.

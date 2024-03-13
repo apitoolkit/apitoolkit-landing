@@ -7,6 +7,8 @@ categories:
   - API Monitoring
 ---
 
+# Unified Monitoring: Real User Monitoring vs Synthethic Monitoring
+
 ![rum vs synthethic](rum-vs-synthetic.png)
 
 Businesses and organizations are always pushing to provide top-notch user experiences. Be it through an engaging website, a mobile app, or an intricate cloud solution, maintaining high-quality performance is crucial. This demand has led to the development of various tools and strategies designed to identify problems, enhance performance, and keep users happy.

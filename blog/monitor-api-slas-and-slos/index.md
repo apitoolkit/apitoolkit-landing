@@ -8,6 +8,8 @@ categories:
   - API Management
 ---
 
+# How to Define and Monitor API Service Level Agreements (SLAs) and Objectives (SLOs)
+
 ![API SLAs and SLOs](./api-slas-and-slos_png.png)
 
 ## Introduction

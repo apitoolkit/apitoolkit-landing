@@ -6,7 +6,11 @@ author: jessica
 categories:
   - APIs
 ---
+
+# The Four Pillars of API Observability
+
 ![the four pillars of api observability](the-four-pillars-of-api-observability.png)
+
 > "In a world that's becoming more connected, APIs are the unsung heroes. Observing them closely is like understanding the pulse of your digital entity."
 > - Jane Doe, Senior API Strategist
 

@@ -8,6 +8,8 @@ categories:
   - API Management
 ---
 
+# How Good is Your REST API Workflow?
+
 ![API Workflow](./api-workflow_png.png)
 
 As a developer who works with web applications, chances are you have encountered [REST APIs](https://apitoolkit.io/blog/what-are-rest-apis/). REST stands for Representational State Transfer, and it is a software architectural style that defines how web services communicate with each other. A REST API is an application programming interface that follows the REST principles and allows clients to access and manipulate data on a server.

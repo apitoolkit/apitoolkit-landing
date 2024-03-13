@@ -10,6 +10,8 @@ menu:
     weight: 1
 ---
 
+# Adonis JS Integration Guide
+
 The APIToolkit integration guide for AdonisJS provides a streamlined process to
 capture incoming traffic data. It collects request information and efficiently
 forwards it to the APIToolkit servers.

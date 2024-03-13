@@ -8,6 +8,8 @@ menu:
     weight: 1
 ---
 
+# API Glossary
+
 An API Glossary is crucial for anyone involved in API development and usage, providing a unified reference point that demystifies complex jargon. It's particularly beneficial in bridging the knowledge gap between technical and non-technical team members, fostering clearer communication and smoother collaboration. This shared understanding not only educates but also streamlines workflows, making the glossary an essential tool in any API-related project.
 
 - [A](#a)

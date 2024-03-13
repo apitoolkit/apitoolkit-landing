@@ -8,6 +8,8 @@ categories:
   - APIs
 ---
 
+# How to Measure the Effectiveness of Your API Documentation with Analytics
+
 ![API Documentation and Analytics](./api-documentation-analytics.png)
 
 [API documentation](https://apitoolkit.io/blog/how-to-generate-automated-api-documentation/) is a crucial component of any software development project that involves using or creating APIs. APIs, or application programming interfaces, are sets of rules and protocols that allow different applications to communicate and exchange data. API documentation provides the necessary information for developers to understand how to use and integrate an API in their own projects.

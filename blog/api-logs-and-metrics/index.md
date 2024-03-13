@@ -1,5 +1,5 @@
 ---
-title: "How to Analyze API Logs and Metrics for Better Performance"
+title: How to Analyze API Logs and Metrics for Better Performance
 featured_image: api-logs-metrics.png
 date: 2023-06-16T12:36:58+02:00
 author: collins
@@ -7,6 +7,8 @@ description: API logs and metrics are two types of data that can help developers
 categories:
   - API Management
 ---
+
+# How to Analyze API Logs and Metrics for Better Performance
 
 ![An interconnected network of APs](./api-logs-metrics.png)
 

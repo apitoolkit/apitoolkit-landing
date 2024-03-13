@@ -8,6 +8,8 @@ categories:
   - Newsletter 
 ---
 
+# Newsletter 10/22: Documentation matters?
+
 Most of us learn the value of documentation the hard way by finding it to be lacking just when we need it most. Both project developers and software users benefit from projects that have thorough documentation. Though documenting can be a really tasking process, it is something that should always be done well. I mean, what is a developer journey without proper documentation? Poor developer productivity, project scalability, user adoption, and accessibility are all problems that arise in projects with insufficient documentation. In other words, poor documentation ends a project. There is only a limit to how far you can go with no documentation.
 
 <!-- We discovered the effectiveness of documentation in predicting teams' adoption of technical practices. The technological capabilities of the system, including observability, continuous testing, and deployment automation, are expected to advance as a result of these practices. -->
@@ -113,6 +115,7 @@ At APIToolkit, we care about our users and developers, we concentrated on making
 
 
 ## What else is going on at the moment with APIToolkit?
+
 A lot actually. We're currently working a lot on our data visualization approach and charts, as well as how we express and present API anomalies. But more on this in the next weeks. 
 
 We're also going to launch APItoolkit this November, and finally step out of the Beta. If you'll like to get onboarded into APItoolkit before then (and benefit from our early user advantages), please feel free to reach out.

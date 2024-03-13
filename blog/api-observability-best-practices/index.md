@@ -8,6 +8,8 @@ categories:
   - API Observability
 ---
 
+# How to Collect, Analyze, and Visualize Your API Telemetry Data
+
 ![API Observability Best Pactices](./api-observability-open-telemetry.png)
 
 API observability is a critical component of managing and maintaining successful APIs. It allows you to gain insights into the performance, availability, and overall health of your APIs. In this article, we will explore the best practices for collecting, analyzing, and visualizing your API telemetry data to ensure optimal API performance and user experience.

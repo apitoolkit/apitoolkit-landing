@@ -7,6 +7,9 @@ description: "The distinction between API documentation and specification lies i
 categories:
   - API Documentation
 ---
+
+# API Documentation vs API Specification - What it means for you
+
 ![API documentation](./document.jpeg)
 
 **When it comes to APIs, there are two terms that are often used interchangeably: API documentation and API specification. However, they are not the same thing. Understanding the difference between these two terms is important for developers and businesses alike. In this post, we'll explore the definitions of API documentation and API specification, and why they are both important for successful API development.**

@@ -9,6 +9,8 @@ description: "Dive deep into the distinctions between Load Testing and Stress Te
 
 ---
 
+# Load Testing vs Stress Testing: What's the Difference and Why It Matters?
+
 ![Load testing vs stress testing](./api-load-testing-stress-testing.png)
 
 ## Introduction

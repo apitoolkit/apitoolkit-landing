@@ -8,6 +8,8 @@ categories:
   - API Observability
 ---
 
+# The Importance of API Observability in Software Development
+
 ![API Observability](./api-observability-title.png)
 
 ## Introduction to API Observability

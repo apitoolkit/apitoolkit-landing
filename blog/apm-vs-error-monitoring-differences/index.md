@@ -8,6 +8,8 @@ categories:
   - Error Monitoring
 ---
 
+# Application Performance Monitoring (APM) vs. Error Monitoring: What's the Difference?
+
 ![APM VS Error Monitoring](apm-vs-errormonitoring.png)
 
 Did you know that according to a recent survey, 88% of users are less likely to return to a website after a bad experience? This just goes to show you how important monitoring is in ensuring your software performs flawlessly, keeping users satisfied and coming back for more.

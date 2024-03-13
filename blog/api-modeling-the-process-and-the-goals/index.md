@@ -7,6 +7,9 @@ categories:
   - APIs
 author: jessica
 ---
+
+# API Modeling - The Process And Goals
+
 ![API modeling](./api-modelling.jpg)
 
 In today's interconnected world, [application programming interfaces (APIs)](https://apitoolkit.io/blog/api-documentation-and-observability-the-truth-you-must-know/) have become the backbone of modern software development. APIs enable different software systems to communicate and share data seamlessly, unlocking endless possibilities for innovation and integration. As the demand for robust and efficient APIs continues to grow, the practice of API modelling has emerged as a crucial discipline in designing and implementing successful API architectures.

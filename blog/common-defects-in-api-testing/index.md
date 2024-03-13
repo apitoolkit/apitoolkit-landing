@@ -7,6 +7,8 @@ categories:
   - API Testing
 ---
 
+# Common Defects in API Testing: How to Identify and Fix Them
+
 ![common defects in api testing](common-defects-in-api-testing.png)
 
 > Technology, like art, is a soaring exercise of the human imagination.  

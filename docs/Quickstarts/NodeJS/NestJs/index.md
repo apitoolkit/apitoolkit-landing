@@ -11,6 +11,8 @@ menu:
     weight: 1
 ---
 
+# Nest JS integration guide
+
 Nest.js is a powerful framework for building scalable and efficient server-side applications with TypeScript. It is known for its modular architecture, dependency injection, and support for various HTTP platforms. Nest.js allows you to choose between two popular HTTP platforms: Express and Fastify. It provides seamless integration with both platforms, allowing developers to take advantage of the features offered by each.
 
 APIToolkit provides SDKs for both Express and Fastify, enabling developers to easily integrate their APIs into Nest.js applications. These SDKs offer a simplified and efficient way to send data to APIToolkit's servers.

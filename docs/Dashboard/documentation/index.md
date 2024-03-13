@@ -9,6 +9,8 @@ menu:
     weight: 30
 ---
 
+# How to View Your API Documentation
+
 Our API documentation provides a comprehensive overview of all the functionalities and endpoints available in our API. To access this information, follow these simple steps:
 
 ## Step 1: Sign Up

@@ -8,6 +8,8 @@ categories:
   - API Observability
 --- 
 
+# How to Troubleshoot and Debug Your APIs with API Observability Tools
+
 ![How to troubleshoot and debug with API Observability tools](how-to-troubleshoot-and-debug-with-api-observability-tools.png)
 
 Imagine you're hosting a grand party at your home. You've invited friends, family, and colleagues. The music is great, and the food is delicious. But, suddenly, the music stops, and the lights go out. Panic sets in. You rush to the control room (or the fuse box in most homes), trying to figure out what went wrong. Is it the speakers? The playlist? Or did someone trip over a wire?

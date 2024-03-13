@@ -8,6 +8,8 @@ menu:
     weight: 30
 ---
 
+# Frequently Asked Questions (FAQ)
+
 ## General Questions
 
 ### Q1: What is APIToolkit?

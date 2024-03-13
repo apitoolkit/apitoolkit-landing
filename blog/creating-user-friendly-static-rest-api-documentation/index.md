@@ -1,5 +1,5 @@
 ---
-title: "7 Tips for Creating User-Friendly Static REST API Documentation"
+title: 7 Tips for Creating User-Friendly Static REST API Documentation
 featured_image: rest-api-documentation_png.png
 date: 2023-09-24T11:36:58+02:00
 author: collins
@@ -7,6 +7,8 @@ description: One of the most important aspects of creating user-friendly static 
 categories:
   - API Management
 ---
+
+# 7 Tips for Creating User-Friendly Static REST API Documentation
 
 ![REST API Documentation](./rest-api-documentation_png.png)
 

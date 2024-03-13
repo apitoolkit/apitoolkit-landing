@@ -8,6 +8,9 @@ menu:
   main:
     weight: 30
 ---
+
+# Navigating Your Endpoints
+
 ```=html
 <video src="../endpoints.mp4"  controls title="EndPoints"></video>
 ```

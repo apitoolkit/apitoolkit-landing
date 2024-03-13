@@ -8,6 +8,8 @@ categories:
   - APIs
 ---
 
+# What Are The Principal Types of Web-Based APIs?
+
 ![A dog wearing glasses and using an ipad](./image1.jpg)
 
 In today's vastly interconnected digital landscape, [Application Programming Interfaces (APIs)](https://apitoolkit.io/blog/api-documentation-and-observability-the-truth-you-must-know/) play a pivotal role in enabling seamless communication and data exchange between different software applications. Think of them as a bridge, enabling [developers](https://apitoolkit.io/blog/top-8-api-documentation-tools-for-developers/) to access the resources and functionalities of other systems, opening up a vast array of opportunities for innovation and integration. APIs have reshaped how different sectors, including finance, healthcare, and retail, approach innovation and customer engagement, making them indispensable in the journey towards digital transformation.
@@ -31,6 +33,7 @@ Read: [Best API Monitoring and Observability Tools in 2023](https://apitoolkit.i
 ## What are the Principal Types of APIs?
 
 There are four main types of APIs for the web:
+
 - Open/Public
 - Partner
 - Internal/Private

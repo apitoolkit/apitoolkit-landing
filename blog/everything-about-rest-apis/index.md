@@ -7,6 +7,8 @@ categories:
   - APIs
 ---
 
+# What You Need to Know About REST APIs
+
 ![sleeping cat](./image1.jpg)
 
 A concise review of the basics of REST APIs
@@ -67,6 +69,7 @@ JSON is popular because it’s readable by both humans and machines—and it is 
 **The Data**: A REST API request also consists of data (also referred to as a “body”) that usually works with the POST, PUT, and PATCH HTTP commands and contains the information and representation of the resource that will be created.
 
 ## Conclusion
+
 Although flexibility is a big advantage of REST API design, that same flexibility makes it easy to design an API that’s broken or performs poorly. For this reason, professional developers have supportive communities where they share best practices for building with REST. 
 
 Finally, to be sure you’re building APIs that won’t break, you can compare [API observability tools here](https://apitoolkit.io/blog/best-api-monitoring-and-observability-tools/).

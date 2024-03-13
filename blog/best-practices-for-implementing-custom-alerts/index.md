@@ -1,11 +1,13 @@
 ---
-title: 'Best Practices for Implementing Custom Alerts in API Management'
+title: Best Practices for Implementing Custom Alerts in API Management
 featured_image: best-practices-for-implementing-custom-alerts.png
 date: 2024-02-06T10:48:25+01:00
 author: 'jessica'
 category:
   - 'Custom Alerts'
 ---
+
+# Best Practices for Implementing Custom Alerts in API Management
 
 ![Best practices for implementing custom alerts](best-practices-for-implementing-custom-alerts.png)
 

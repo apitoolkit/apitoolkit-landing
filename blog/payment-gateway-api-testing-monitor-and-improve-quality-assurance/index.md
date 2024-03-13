@@ -8,6 +8,8 @@ categories:
   - APIs
 ---
 
+# Payment Gateway API Testing: How to Monitor and Improve Quality Assurance
+
 ![Payment Gateway API](./payment-gateway-api_png.png)
 
 Payment gateway API testing is a crucial aspect of ensuring the smooth and secure operation of an online payment system. The truth is, thoroughly testing the API (Application Programming Interface) can help businesses identify and address any issues before they become a problem for users.

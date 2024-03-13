@@ -10,6 +10,8 @@ menu:
     weight: 20
 ---
 
+# FastAPI integration guide
+
 The API Toolkit FastAPI client is an sdk used to integrate FastAPI web services with APIToolkit.
 It monitors incoming traffic, gathers the requests and sends the request to the apitoolkit servers.
 

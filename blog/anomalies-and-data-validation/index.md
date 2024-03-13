@@ -7,6 +7,8 @@ categories:
   - APIs
 --- 
 
+# Anomalies Detection And Data Validation Of API Projects
+
 ![Anomalies](anomalies.jpeg)
 
 In high-performance software systems, swiftly detecting performance anomalies and taking corrective or preventive actions are crucial. With the advent of the API Economy, API gateways have become key components of enterprise integration architectures. Detecting performance anomalies in such high-functioning API-Gateway systems is, therefore, critical.

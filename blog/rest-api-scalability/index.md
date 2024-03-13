@@ -8,6 +8,8 @@ categories:
   - API
 ---
 
+# REST APIs and Their Scalability Feature
+
 ![scalability](./scalability.jpeg)
 
 Scalability has become a buzzword in the software industry, often touted as the golden standard for any system worth its salt. But what exactly does it mean, and how does it relate to REST APIs? 

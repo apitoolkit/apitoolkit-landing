@@ -1,13 +1,17 @@
 ---
 title: "How to choose the right Error monitoring software for your brand"
-featured_image: How%20to%20choose%20the%20right%20Error%20monitoring%20software%20for%20your%20brand.png
+featured_image: image.png 
 date: 2024-01-18T06:44:56+02:00
 description: "Creating useful systems or software is a fun and a rewarding thing to do but how do you ensure that your system is properly monitored and well observed?"
 author: elliot
 categories:
   - API
 ---
-![How to choose the right Error monitoring software for your brand](./How%20to%20choose%20the%20right%20Error%20monitoring%20software%20for%20your%20brand.png)
+
+# How to choose the right Error monitoring software for your brand
+
+![How to choose the right Error monitoring software for your brand](./image.png)
+
 Creating useful systems or software is a fun and a rewarding thing to do but how do you ensure that your system is properly monitored and well observed?
 When it comes to error monitoring, having a robust system in place is crucial. Not only does it help you identify and fix errors quickly but also helps prevent them from occurring in the first place by identifying potential issues before they become critical problems. 
 
