@@ -1,5 +1,6 @@
 ---
 title: "API Uptime for API monitoring and incident management"
+featured_image: API%20Uptime%20for%20API%20monitoring%20and%20incident%20management.png
 date: 2024-01-31T06:44:56+02:00
 author: elliot
 categories:

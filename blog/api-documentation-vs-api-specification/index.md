@@ -1,5 +1,6 @@
 ---
 title: "API Documentation vs API Specification - What it means for you"
+featured_image: document.jpeg
 date: 2023-09-28T08:05:56+02:00
 author: jessica
 description: "The distinction between API documentation and specification lies in their target audience and their usage.."

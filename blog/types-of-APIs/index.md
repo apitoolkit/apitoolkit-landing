@@ -1,5 +1,6 @@
 ---
 title: "What Are The Principal Types of Web-Based APIs?"
+featured_image: image1.jpg
 description: "APIs are amazing means of communication between software systems. Learn about the different types of APIs used on the web"
 author: irhose
 date: 2022-05-21T07:25:03+02:00

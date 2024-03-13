@@ -1,5 +1,6 @@
 ---
 title: "Fintech API: Unlocking the Secrets to its Rapid Growth in the Financial Sector"
+featured_image: fintechapimarket.jpg
 date: 2023-04-18T18:36:58+02:00
 author: collins
 description: "Unlocking the secrets to the rapid growth of fintech API in the financial sector"

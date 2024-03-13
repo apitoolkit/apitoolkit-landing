@@ -1,5 +1,6 @@
 ---
 title: "What You Need to Know Before You Start API Testing"
+featured_image: api-testing.jpg
 date: 2023-08-13T01:33:53+02:00
 author: jessica
 description: "API testing is not just a procedural step in software development; it’s a crucial measure that ensures data consistency, optimal performance, and robust security"

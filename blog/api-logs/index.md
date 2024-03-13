@@ -1,5 +1,6 @@
 ---
 title: "How to Uncover Actionable Insights from Your API Logs"
+featured_image: api-a-logs.png
 date: 2023-09-17T16:36:58+02:00
 author: collins
 description: API logs contain a wealth of information that can be valuable for troubleshooting, performance optimization, and security analysis.

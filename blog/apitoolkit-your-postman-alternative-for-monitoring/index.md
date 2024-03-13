@@ -1,5 +1,6 @@
 ---
 title: "APIToolkit: Your Postman Alternative for API Monitoring"
+featured_image: postman-alternative.png
 date: 2024-01-08T07:34:16+02:00
 author: jessica
 categories:

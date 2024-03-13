@@ -1,5 +1,6 @@
 ---
 title: "Metrics that Matter: Key Performance Indicators in API Logs"
+featured_image: kpis.png
 date: 2023-12-04T09:21:39+02:00
 author: jessica 
 description: Explore key KPIs in API log analysis for improved performance and system health. Essential insights for effective API monitoring and management

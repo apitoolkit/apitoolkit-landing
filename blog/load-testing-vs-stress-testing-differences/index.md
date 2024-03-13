@@ -1,5 +1,6 @@
 ---
 title: "Load Testing vs Stress Testing: What's the Difference and Why It Matters?"
+featured_image: api-load-testing-stress-testing.png
 date: 2023-08-10T09:00:09+02:00
 author: anthony 
 categories:

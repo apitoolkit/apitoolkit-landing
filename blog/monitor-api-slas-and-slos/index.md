@@ -1,5 +1,6 @@
 ---
 title: "How to Define and Monitor API Service Level Agreements (SLAs) and Objectives (SLOs)"
+featured_image: api-slas-and-slos_png.png
 date: 2023-09-26T12:36:58+02:00
 author: collins
 description: SLAs and SLOs are two key concepts in API management that help define and monitor the expected level of service for an API.

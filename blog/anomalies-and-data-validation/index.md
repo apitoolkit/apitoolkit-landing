@@ -1,5 +1,6 @@
 ---
-title: "Anomalies Detection And Data Validation Of API Projects"
+title: Anomalies Detection And Data Validation Of API Projects
+featured_image: anomalies.jpeg
 date: 2022-12-05T08:00:00+00:00
 author: jessica
 categories:

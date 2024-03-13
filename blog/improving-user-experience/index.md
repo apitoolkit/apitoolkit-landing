@@ -1,5 +1,6 @@
 ---
 title: "Improving User Experience: Best Practices for Implementing Skip Links in API SDKs"
+featured_image: improve-user-experience.png
 date: 2023-09-21T12:36:58+02:00
 author: jessica
 categories:

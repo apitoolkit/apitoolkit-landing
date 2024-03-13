@@ -1,5 +1,6 @@
 ---
 title: "Newsletter 11/11: API Metrics and Montoring"
+featured_image: monitoring.webp
 description: "The true value of any API is its ecosystem value"
 author: anthony 
 date: 2022-11-11T07:25:03+02:00

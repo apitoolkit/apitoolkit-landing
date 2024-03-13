@@ -1,5 +1,6 @@
 ---
 title: "API Monitoring and Documentation: The Truth You Must Know"
+featured_image: apiblogcover.jpg
 date: 2023-02-15T18:36:58+02:00
 author: collins
 description: "Discover the importance of API Monitoring and Documentation. Learn key concepts, and tools for optimizing your API strategy"

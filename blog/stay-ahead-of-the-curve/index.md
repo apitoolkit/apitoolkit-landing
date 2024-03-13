@@ -1,5 +1,6 @@
 ---
 title: "Staying Ahead of the Curve: Automated Alerts in API Log Monitoring"
+featured_image: stay-alert.png
 date: 2023-12-08T01:36:58+02:00
 author: jessica
 description: Master API log monitoring with our guide on Automated Alerts. Learn to enhance system efficiency and proactively tackle tech challenges.

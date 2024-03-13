@@ -1,5 +1,6 @@
 ---
 title: "How to Use Notion for Documentation"
+featured_image: how-to-use-notion-for-documentation.png
 date: 2023-08-24T08:05:56+02:00
 author: jessica
 categories: 

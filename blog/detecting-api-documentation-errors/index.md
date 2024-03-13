@@ -1,5 +1,6 @@
 ---
 title: "Detecting API Documentation Errors: What You Should Know"
+featured_image: detecting-api-documentation-errors.png
 date: 2023-09-08T12:36:58+02:00
 author: jessica
 categories:

@@ -1,5 +1,6 @@
 ---
 title: "Optimizing API Management in Production: A Comprehensive Guide"
+featured_image: optimizing-api-management-in-prod.png
 date: 2023-09-12T12:36:58+02:00
 description: API management plays a critical role in the success of any production environment.
 author: jessica

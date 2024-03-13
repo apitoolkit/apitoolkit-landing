@@ -1,5 +1,6 @@
 ---
 title: "Identifying the Root Cause of Application Errors: A Guide to Error Monitoring"
+featured_image: error-monitoring_png.png
 date: 2023-09-26T12:39:58+02:00
 author: collins
 description: Errors can affect the functionality, performance, and security of your application, as well as the satisfaction and loyalty of your users.

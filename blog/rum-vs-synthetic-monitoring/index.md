@@ -1,5 +1,6 @@
 ---
 title: "Unified Monitoring: Real User Monitoring vs Synthethic Monitoring"
+featured_image: rum-vs-synthetic.png
 date: 2023-10-05T12:36:58+02:00
 author: jessica
 categories:

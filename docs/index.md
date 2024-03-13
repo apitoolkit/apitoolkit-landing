@@ -7,8 +7,8 @@ menu:
     weight: 20
 ---
 
-{{% pageinfo %}}
+pageinfo
 APIToolkit Usage Documentation.
-{{% /pageinfo %}}
+ /pageinfo 
 
 Here you will find articles which describe how to use the various sections of apitoolkit.

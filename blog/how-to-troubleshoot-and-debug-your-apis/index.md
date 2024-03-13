@@ -1,5 +1,6 @@
 ---
 title: "How to Troubleshoot and Debug Your APIs with API Observability Tools"
+featured_image: how-to-troubleshoot-and-debug-with-api-observability-tools.png
 date: 2023-08-18T18:36:58+02:00
 author: jessica
 description: "Here is how to Troubleshoot and Debug Your APIs using APIToolkit"

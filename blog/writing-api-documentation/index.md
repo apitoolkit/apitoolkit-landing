@@ -1,5 +1,6 @@
 ---
 title: "Writing API Documentation - Best Practices and Mistakes to Avoid"
+featured_image: best-practices.webp
 date: 2022-10-07T12:55:31+02:00
 author: jessica
 categories:

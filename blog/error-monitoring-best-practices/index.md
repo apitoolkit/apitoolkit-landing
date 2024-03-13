@@ -1,5 +1,6 @@
 ---
 title: "Error Monitoring: How to Get the Most Out of Your Error Monitoring Solution"
+featured_image: error-monitoring.png
 date: 2024-01-06T01:21:39+02:00
 author: jessica
 categories:

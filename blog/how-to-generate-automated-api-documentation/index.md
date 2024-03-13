@@ -1,5 +1,6 @@
 ---
 title: "How to Generate Automated API Documentation"
+featured_image: latop-and-notebook.jpg
 date: 2023-03-17T18:36:58+02:00
 author: collins
 description: "Find Out how to Generate Automated API Documentation with APIToolkit"

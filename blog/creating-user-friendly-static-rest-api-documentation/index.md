@@ -1,5 +1,6 @@
 ---
 title: "7 Tips for Creating User-Friendly Static REST API Documentation"
+featured_image: rest-api-documentation_png.png
 date: 2023-09-24T11:36:58+02:00
 author: collins
 description: One of the most important aspects of creating user-friendly static REST API documentation is ensuring that the navigation is intuitive and easy to use

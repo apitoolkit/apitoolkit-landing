@@ -1,5 +1,6 @@
 ---
 title: "Unlocking the Mystery: What Are REST APIs?"
+featured_image: what-are-rest-apis.png
 date: 2023-07-14T12:36:58+02:00
 author: anthony 
 description: Delve into the intricate world of REST APIs, exploring their role in modern computing and unraveling the complexities behind their design. What are REST APIs? Discover the answer and much more in this detailed exploration.

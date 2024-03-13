@@ -1,5 +1,6 @@
 ---
 title: 'Error Monitoring for Developers: How to Write Better Code and Improve Your Debugging Skills'
+featured_image: error-monitoring-for-developers.png
 date: 2024-01-20T12:36:58+02:00
 author: jessica
 description: Explore the essential role of error monitoring in software development. Learn strategies to enhance coding and debugging skills, ensuring high-quality, reliable software.

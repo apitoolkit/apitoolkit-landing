@@ -1,5 +1,6 @@
 ---
 title: "8 Essential Best Practices for Writing API Documentation | Simplify Your API Guides"
+featured_image: best-practices-for-writing-api-docs.png
 date: 2024-02-20T12:36:58+02:00
 author: jessica
 description: Discover the top 8 best practices for writing API documentation that developers love. Simplify your API guides with clear, concise, and effective strategies.

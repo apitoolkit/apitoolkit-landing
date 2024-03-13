@@ -1,5 +1,6 @@
 ---
 title: "Mastering Database Monitoring: Unlocking Key Insights into Performance."
+featured_image: 1-database-monitoring_png.png
 date: 2023-09-17T12:36:58+02:00
 author: collins
 description: Database monitoring is the process of observing and measuring the behavior and performance of a database system.

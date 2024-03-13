@@ -1,5 +1,6 @@
 ---
 title: "How to Optimize Security for Web API Performance in 2024"
+featured_image: apitoolkitblog.png
 date: 2023-07-10T12:36:58+02:00
 author: collins
 description: Web API performance is crucial for delivering a fast and reliable user experience.

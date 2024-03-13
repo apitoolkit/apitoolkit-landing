@@ -1,5 +1,6 @@
 ---
 title: "How Custom Alerts Boost API Performance for Businesses and Developers"
+featured_image: How%20Custom%20Alerts%20Boost.png
 date: 2024-02-22T08:00:00+00:00
 description: " Unlike generic monitoring tools, custom alerts allow users to set specific criteria for monitoring, ensuring a more accurate and targeted approach to performance monitoring."
 author: elliot

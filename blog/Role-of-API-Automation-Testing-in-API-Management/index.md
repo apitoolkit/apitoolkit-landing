@@ -1,5 +1,6 @@
 ---
 title: "Role of API Automation Testing in API Management"
+featured_image: 1703340140659.jpeg
 date: 2024-02-28T04:20:58+00:00
 author: elliot
 description: "API management streamlines consuming and interacting with APIs for both internal and external audiences. For API providers, management solutions enhance oversight, foster adoption and deliver business insights."

@@ -1,5 +1,6 @@
 ---
 title: 'Error Monitoring for DevOps Teams: How to Integrate Error Monitoring into Your DevOps Workflow'
+featured_image: error-monitoring-for-devops.png
 date: 2024-01-15T12:36:58+02:00
 author: jessica
 description: Discover the importance of integrating error monitoring in DevOps, a key strategy for enhancing software quality and efficiency.

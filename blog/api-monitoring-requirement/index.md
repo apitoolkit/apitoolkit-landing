@@ -1,5 +1,6 @@
 ---
 title: "API Monitoring Requirements: How to Maintain Reliable APIs"
+featured_image: api-monitoring.png
 date: 2024-02-23T08:05:56+02:00
 author: jessica
 categories:

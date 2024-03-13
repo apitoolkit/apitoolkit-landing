@@ -1,5 +1,6 @@
 ---
 title: "Everything You Need to Know About SOAP API"
+featured_image: image1.jpg
 date: 2022-06-03T00:35:25+02:00
 author: irhose
 categories:

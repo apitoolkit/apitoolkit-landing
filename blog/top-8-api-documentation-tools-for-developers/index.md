@@ -1,5 +1,6 @@
 ---
 title: "Top 8 API Documentation Tools for Developers for 2024"
+featured_image: tools.jpg
 date: 2023-08-28T08:05:56+02:00
 author: jessica
 categories: 

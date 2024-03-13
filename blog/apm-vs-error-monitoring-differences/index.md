@@ -1,5 +1,6 @@
 ---
 title: "Application Performance Monitoring (APM) vs. Error Monitoring: What's the Difference?"
+featured_image: apm-vs-errormonitoring.png
 date: 2024-02-26T08:05:56+02:00
 author: jessica
 description: Explore the crucial distinctions between Application Performance Monitoring (APM) and Error Monitoring to optimize your software's efficiency and reliability.

@@ -1,5 +1,6 @@
 ---
 title: "The Key Metrics to Measure Developer Success for Your API Platform"
+featured_image: metrics.png
 date: 2023-09-13T12:36:58+02:00
 author: jessica
 categories:

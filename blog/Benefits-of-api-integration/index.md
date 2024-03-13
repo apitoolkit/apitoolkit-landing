@@ -1,5 +1,6 @@
 ---
 title: "Key Benefits of API Integration for Developers (with Statistics)"
+featured_image: api-example.jpg
 date: 2023-10-25T10:48:25+01:00
 author: jessica 
 categories: 

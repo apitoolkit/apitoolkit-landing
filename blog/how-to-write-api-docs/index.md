@@ -1,5 +1,6 @@
 ---
 title: "How to Write API Documentation: 14 Essential Guidelines"
+featured_image: image1.jpg
 date: 2022-05-04T20:00:09+02:00
 author: irhose
 categories:

@@ -1,5 +1,6 @@
 ---
 title: "The Importance of Streamlining Navigation with Skip Links for API Product Managers and Growth Teams"
+featured_image: streamling-navigation-skiplinks.png
 date: 2023-09-24T12:36:58+02:00
 author: jessica
 categories:

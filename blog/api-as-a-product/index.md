@@ -1,5 +1,6 @@
 ---
 title: "The Rise of API-as-a-Product: How Companies are Leveraging APIs to Drive Revenue"
+featured_image: api-as-a-product.jpg
 date: 2023-04-18T18:36:58+02:00
 author: collins
 description: "Companies of all sizes are leveraging API-as-a-product to generate revenue"

@@ -1,5 +1,6 @@
 ---
 title: "Error Monitoring tools for Small Businesses Under Budget"
+featured_image: Error%20Monitoring%20tools%20for%20Small%20Businesses%20Under%20Budget.png
 date: 2024-01-11T06:44:56+02:00
 author: elliot
 categories:

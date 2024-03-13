@@ -1,5 +1,6 @@
 ---
 title: "Efficient Data Retrieval and Filtering for Web API Performance"
+featured_image: api-data-retrieval-filtering.png
 date: 2023-07-06T12:36:58+02:00
 author: collins
 description: To avoid these issues, web API developers need to implement some strategies for efficient data retrieval and filtering.

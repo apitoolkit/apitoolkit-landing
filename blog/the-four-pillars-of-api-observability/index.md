@@ -1,5 +1,6 @@
 ---
 title: "The Four Pillars of API Observability"
+featured_image: the-four-pillars-of-api-observability.png
 date: 2023-08-17T08:05:56+02:00
 author: jessica
 categories:

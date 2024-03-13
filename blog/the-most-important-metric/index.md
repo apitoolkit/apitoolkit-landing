@@ -1,5 +1,6 @@
 ---
 title: "The Most Important Metrics for API Performance Monitoring"
+featured_image: metrics.png
 date: 2023-10-01T12:36:58+02:00
 author: jessica
 categories:

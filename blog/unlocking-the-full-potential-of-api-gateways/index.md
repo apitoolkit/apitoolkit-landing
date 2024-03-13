@@ -1,5 +1,6 @@
 ---
 title: "Unlocking the Full Potential of API Gateways: A Comprehensive Guide to API Management, Analytics, and Monitoring"
+featured_image: api-gateways.png
 date: 2023-09-15T12:36:58+02:00
 author: jessica
 categories:

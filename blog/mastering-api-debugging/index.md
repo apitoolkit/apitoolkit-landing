@@ -1,5 +1,6 @@
 ---
 title: "Mastering API Debugging and Monitoring: Best Practices for Seamless Integration"
+featured_image: debugging.png
 date: 2023-09-14T12:36:58+02:00
 author: jessica
 categories:

@@ -1,5 +1,6 @@
 ---
 title: "How to Perform an API Health Check"
+featured_image: How%20to%20Perform%20an%20API%20Health%20Check.png
 date: 2023-12-22T04:20:58+00:00
 author: elliot
 description: "The main purpose of API health checks is to ensure the reliability, stability, and robustness of APIs. "

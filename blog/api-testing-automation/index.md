@@ -1,5 +1,6 @@
 ---
 title: 'Ultimate Guide to API Testing Automation'
+featured_image: api-test-automation_png.png
 date: 2023-08-05T12:36:58+02:00
 author: collins
 description: API testing is the process of verifying that an API (Application Programming Interface) works as expected and meets the requirements of its consumers.

@@ -1,5 +1,6 @@
 ---
 title: "What is API Testing and Why Should You Do It?"
+featured_image: image3.jpg
 date: 2022-04-22T12:55:31+02:00
 author: irhose
 categories:

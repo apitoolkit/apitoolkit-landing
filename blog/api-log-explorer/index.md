@@ -1,5 +1,6 @@
 ---
 title: "How to use API Log Explorer to Monitor Backend and User Insights"
+featured_image: log-explorer.png
 date: 2023-11-08T12:36:58+02:00
 author: jessica
 description: Discover how API log explorers are elevating backend monitoring with real-time insights into user interactions and system performance.

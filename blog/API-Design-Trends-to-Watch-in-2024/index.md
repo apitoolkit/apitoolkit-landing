@@ -1,5 +1,6 @@
 ---
 title: "API Trends to Watch in 2024"
+featured_image: Add%20a%20subheading.png
 date: 2024-02-29T04:20:58+00:00
 author: elliot
 description: "APIs are driving omnichannel experiences and supply chain agility. The public sector is leveraging APIs to bridge siloed legacy systems"

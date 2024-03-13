@@ -1,5 +1,6 @@
 ---
 title: "Monitoring API Failures with APIToolkit: A Guide to Efficient Endpoint Troubleshooting"
+featured_image: 1-api-toolkit_png.png
 date: 2023-09-17T16:36:58+02:00
 author: collins
 description: With APITookit, you can efficiently identify and diagnose failing endpoints, minimizing downtime and ensuring a seamless user experience.

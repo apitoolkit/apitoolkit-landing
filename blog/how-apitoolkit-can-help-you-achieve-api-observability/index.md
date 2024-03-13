@@ -1,5 +1,6 @@
 ---
 title: "How APIToolkit Can Help You Achieve API Observability Across Your Entire API Lifecycle "
+featured_image: api-observability.png
 date: 2023-08-24T08:00:00+00:00
 description: "Keeping a close eye on API health, performance, and usage through collecting and examining relevant data is called API observability."
 author: jessica

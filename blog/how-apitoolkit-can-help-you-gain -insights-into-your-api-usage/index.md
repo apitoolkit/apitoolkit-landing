@@ -1,5 +1,6 @@
 ---
 title: "How APIToolkit Can Help You Gain Insights Into Your API Usage and Behaviour with API Observability"
+featured_image: how-to-gain-insights.png
 date: 2023-08-28T08:00:00+00:00
 description: Api observability isn't just about knowing whether your API is up or down; it's about gaining a 360-degree view of its operations. 
 author: jessica

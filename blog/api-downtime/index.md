@@ -1,5 +1,6 @@
 ---
 title: "How to Resolve API Downtime Issues Before It Escalates"
+featured_image: api_downtime.png
 date: 2023-11-10T18:36:58+02:00
 author: collins
 description: While APIs remain the backbone of modern digital businesses, they are vulnerable to downtime.

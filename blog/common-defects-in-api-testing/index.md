@@ -1,5 +1,6 @@
 ---
 title: "Common Defects in API Testing: How to Identify and Fix Them"
+featured_image: common-defects-in-api-testing.png
 date: 2023-08-22T12:36:58+02:00
 author: jessica
 categories:

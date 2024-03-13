@@ -1,5 +1,6 @@
 ---
 title: "How to ensure Data Integrity and consistency in APIs"
+featured_image: How%20to%20ensure%20Data%20Integrity%20and%20consistency%20in%20APIs.png
 date: 2024-02-24T04:20:58+00:00
 author: elliot
 description: "Compromised data integrity within APIs can lead to a domino effect of operational errors, misinformed decisions, and, in the worst-case scenario, security breaches"

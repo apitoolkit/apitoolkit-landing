@@ -1,5 +1,6 @@
 ---
 title: "How API Observability Can Boost Your Business Performance and Customer Satisfaction"
+featured_image: api-observability-boost-business-performance.png
 date: 2023-08-24T15:36:58+02:00
 author: collins
 description: In the tech ecosystem, API observability can help you improve your business performance and customer satisfaction.

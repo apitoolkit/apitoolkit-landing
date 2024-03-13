@@ -1,5 +1,6 @@
 ---
 title: "How to Collect, Analyze, and Visualize Your API Telemetry Data"
+featured_image: api-observability-open-telemetry.png
 date: 2023-08-18T12:36:58+02:00
 author: collins
 description: API observability is a critical component of managing and maintaining successful APIs.

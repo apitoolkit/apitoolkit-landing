@@ -1,5 +1,6 @@
 ---
 title: "APIToolkit: Treblle Alternative for API Monitoring and Observability"
+featured_image: treblle-alternative.png
 date: 2024-01-25T12:36:58+02:00
 author: jessica
 description: Explore the transformation in API monitoring with APIToolkit, an innovative alternative to Treblle, and discover its role in advancing software development practices.

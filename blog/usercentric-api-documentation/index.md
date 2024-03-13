@@ -1,5 +1,6 @@
 ---
 title: "User-Centric API Documentation: How to Cater to Different User Personas"
+featured_image: usercentric-api-doc.png
 date: 2023-09-05T08:05:56+02:00
 description: Recognizing and catering to these distinct personas ensures that each user finds the information they need quickly and efficiently
 author: jessica

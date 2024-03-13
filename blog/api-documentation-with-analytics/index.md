@@ -1,5 +1,6 @@
 ---
 title: "How to Measure the Effectiveness of Your API Documentation with Analytics"
+featured_image: api-documentation-analytics.png
 date: 2023-09-04T18:36:58+02:00
 author: collins
 description: By using analytics tools, you can measure the effectiveness of your API documentation and identify areas of improvement.

@@ -1,5 +1,6 @@
 ---
 title: "Newsletter 10/22: Documentation matters?"
+featured_image: docs-screenshot.png
 description: "APIs are amazing means of communication between software systems. Learn about the different types of APIs used on the web"
 author: anthony 
 date: 2022-10-22T07:25:03+02:00

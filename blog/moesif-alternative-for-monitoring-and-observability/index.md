@@ -1,5 +1,6 @@
 ---
 title: "APIToolkit: Best Moesif Alternative for API Monitoring and Observability"
+featured_image: moesif-alternative.png
 date: 2024-01-12T12:36:58+02:00
 author: jessica
 categories:

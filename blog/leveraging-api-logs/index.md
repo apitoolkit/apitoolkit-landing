@@ -1,5 +1,6 @@
 ---
 title: "From Data to Decisions: Leveraging API Logs for Strategic Insights with APIToolkit"
+featured_image: data-and-decision.png
 date: 2023-11-30T01:36:58+02:00
 author: jessica
 description: Understanding the transformative impact of API analytics on business strategy and operational efficiency.

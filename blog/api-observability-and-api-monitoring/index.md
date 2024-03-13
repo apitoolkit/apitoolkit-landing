@@ -1,5 +1,6 @@
 ---
 title: "API Observability and Monitoring: What’s the Difference?"
+featured_image: image1.jpg
 date: 2022-06-08T09:35:51+02:00
 description: "Learn the key aspects of API observability and API monitoring"
 author: irhose

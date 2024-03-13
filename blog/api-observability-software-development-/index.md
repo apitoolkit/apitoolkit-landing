@@ -1,5 +1,6 @@
 ---
 title: "The Importance of API Observability in Software Development"
+featured_image: api-observability-title.png
 date: 2023-07-15T12:36:58+02:00
 author: collins
 description: API observability is essential for any organization that relies on APIs to deliver value to its customers or stakeholders.

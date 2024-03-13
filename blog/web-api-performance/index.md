@@ -1,5 +1,6 @@
 ---
 title: "Web API Performance Best Practices: the Ultimate Guide"
+featured_image: web-api-performance.png
 date: 2023-11-07T12:36:58+02:00
 author: collins
 description: It is crucial for web developers to optimize their web APIs for performance and follow the best practices that can help them achieve high-performance.

@@ -1,5 +1,6 @@
 ---
 title: "Enhancing Customer Experience Through API Log Insights"
+featured_image: customer-experience.png
 date: 2023-11-30T01:21:39+02:00
 author: jessica
 categories:

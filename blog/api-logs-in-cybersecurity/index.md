@@ -1,5 +1,6 @@
 ---
 title: "API Logs: Your First Line of Defense in Cybersecurity"
+featured_image: logs.png
 date: 2023-11-15T07:34:16+02:00
 author: jessica
 categories:

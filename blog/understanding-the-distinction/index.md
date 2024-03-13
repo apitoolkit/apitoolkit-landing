@@ -1,5 +1,6 @@
 ---
 title: "Understanding the Distinction: Synthetic API Monitoring vs API Real User Monitoring"
+featured_image: synthetic-api-vs-api-real-user-monitoring.png
 date: 2023-09-15T12:36:58+02:00
 description: Real User Monitoring (RUM) provides insights into how users interact with APIs in real-world scenarios.
 author: jessica

@@ -1,6 +1,7 @@
 ---
 title: "50 APi tools for Every Budget and Requirement"
 date: 2024-01-01T11:10:00+00:00
+featured_image: cover.png
 description: "From cost-effective solutions to high-end offerings, explore our curated list of 50 API tools designed to meet any budget and requirement."
 author: elliot
 categories:

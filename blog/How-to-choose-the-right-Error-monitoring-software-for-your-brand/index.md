@@ -1,5 +1,6 @@
 ---
 title: "How to choose the right Error monitoring software for your brand"
+featured_image: How%20to%20choose%20the%20right%20Error%20monitoring%20software%20for%20your%20brand.png
 date: 2024-01-18T06:44:56+02:00
 description: "Creating useful systems or software is a fun and a rewarding thing to do but how do you ensure that your system is properly monitored and well observed?"
 author: elliot

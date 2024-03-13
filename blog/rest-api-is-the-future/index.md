@@ -1,5 +1,6 @@
 ---
 title: "REST APIs are the Future: Compared to RPC, GraphQL, etc"
+featured_image: scalability.png
 date: 2023-08-05T08:05:56+02:00
 author: anthony 
 categories: 

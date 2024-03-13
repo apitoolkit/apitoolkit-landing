@@ -1,5 +1,6 @@
 ---
 title: "Maximizing Your API Performance with Effective Monitoring Strategies"
+featured_image: flamegraph.png
 date: 2023-07-17T09:21:39+02:00
 author: anthony 
 categories:

@@ -1,5 +1,6 @@
 ---
 title: "Error Monitoring for Startups: Why it's Essential for Early-stage Companies "
+featured_images: error-monitoring-for-startups.png
 date: 2024-01-09T01:21:39+02:00
 author: jessica
 categories:

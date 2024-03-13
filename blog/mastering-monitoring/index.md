@@ -1,5 +1,6 @@
 ---
 title: "Mastering Database Monitoring: Unlocking Key Insights into Performance"
+featured_image: mastering-database-monitoring.png
 date: 2023-09-22T12:36:58+02:00
 author: jessica
 categories:

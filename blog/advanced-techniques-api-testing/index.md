@@ -1,5 +1,6 @@
 ---
-title: "Advanced Techniques in API Testing Automation"
+title: Advanced Techniques in API Testing Automation
+featured_image: api-testing-techniques.png
 date: 2023-08-09T12:36:58+02:00
 author: collins
 description: One of the key aspects of API testing is managing the test data that is used to validate the functionality, performance, and security of the APIs.

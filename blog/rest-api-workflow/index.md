@@ -1,5 +1,6 @@
 ---
 title: "How Good is Your REST API Workflow?"
+featured_image: api-workflow_png.png
 date: 2023-07-21T12:36:58+02:00
 author: collins
 description: A well-optimized REST API workflow can make your development process more efficient, reliable, and scalable.

@@ -1,5 +1,6 @@
 ---
 title: "Best API Monitoring and Observability Tools in 2024"
+featured_image: image6.jpg
 date: 2023-01-02T18:36:58+02:00
 author: collins
 description: Find out what the best API observability tools are to keep your APIs functioning optimally

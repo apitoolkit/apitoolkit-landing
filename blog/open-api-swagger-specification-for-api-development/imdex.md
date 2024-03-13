@@ -1,5 +1,6 @@
 ---
 title: "Unlocking the Advantages of OpenAPI (Swagger) Specification for API Development"
+featured_image: open-api-swagger.png
 date: 2023-09-17T15:36:58+02:00
 author: collins
 description: OpenAPI (Swagger) Specification is a standard format for describing RESTful APIs ina YAML or JSON file.

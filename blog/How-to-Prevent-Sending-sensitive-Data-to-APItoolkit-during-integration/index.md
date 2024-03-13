@@ -1,5 +1,6 @@
 ---
 title: "How to Prevent Sending sensitive Data to APItoolkit during integration"
+featured_image: How%20to%20Prevent%20Sending%20sensitive%20Data%20to%20APItoolkit%20during%20integration.png
 date: 2024-02-12T06:44:56+02:00
 description: "By implementing these techniques, you gain peace of mind knowing your sensitive data is shielded within APIToolkit's captured traffic."
 author: elliot

@@ -1,5 +1,6 @@
 ---
 title: Top 8 Reasons Why Your Team Should Use A Plug & Play API Monitoring Tool — APIToolkit.io
+featured_image: image1.jpg
 seo_title: Why Developers Need the Plug-and-play API Observability and Monitoring Tool—APIToolkit
 date: 2022-05-07T16:02:02+02:00
 author: irhose

@@ -1,5 +1,6 @@
 ---
 title: "Efficient End Point Troubleshooting: A Guide to Monitoring API Failures with APIToolkit"
+featured_image: efficient-endpoint.png
 date: 2023-09-23T12:36:58+02:00
 author: jessica
 categories:

@@ -1,5 +1,6 @@
 ---
 title: "What You Need to Know About REST APIs"
+featured_image: image1.jpg
 date: 2022-06-04T01:21:39+02:00
 author: irhose
 categories:

@@ -1,5 +1,6 @@
 ---
 title: "Managing Custom Alerts and Notifications Using the API"
+featured_image: managing-custom-alerts.png
 date: 2024-02-13T12:36:58+02:00
 author: jessica
 categories:
