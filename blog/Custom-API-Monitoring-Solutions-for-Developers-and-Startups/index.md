@@ -1,6 +1,6 @@
 ---
 title: "Custom API Monitoring Solutions for Developers and Startups"
-featured_image: Key%20Features%20of%20Custom%20API%20Monitoring%20Solution(2).png
+featured_image: Custom-API-Monitoring-Solution_2.png
 date: 2024-02-17T06:44:56+02:00
 description: "Custom API monitoring solutions represent a specialized approach to overseeing and optimizing the performance of application programming interfaces (APIs)"
 author: elliot
@@ -8,7 +8,8 @@ categories:
   - Custom API Monitoring
 ---
 
-![alt](./Key%20Features%20of%20Custom%20API%20Monitoring%20Solution(2).png)
+![alt](./Custom-API-Monitoring-Solution_2.png)
+
 APIs are the building blocks of modern software applications. Yet for many developers and startups, ensuring APIs are running smoothly can be a major challenge. According to the [latest research](https://www.pingdom.com/outages/average-cost-of-downtime-per-industry/#:~:text=In%20the%20IT%20industry%2C%C2%A0downtime%20is%20typically%20calculated%20at%20about%20%245%2C600%20per%20minute.%20Depending%20on%20the%20company%E2%80%99s%20size%2C%20the%20full%20range%20of%20its%20lost%20revenue%20spans%20from%20%24145%2C000%20to%20%24450%2C000%20per%20hour.), companies lose an average of $260,000 for every hour of downtime, where "Downtime Cost = Minutes of Downtime x Cost per Minute". Without robust monitoring, poor API performance can lead to lost revenue, disappointed users, and damaged reputations.
 
 [Generic monitoring tools](https://www.researchgate.net/profile/Javier-Finat/publication/221583175/figure/fig1/AS:669984384639007@1536748133739/Deployment-diagram-of-the-generic-monitoring-system.png) often fall short in providing the level of customized insight developers need into the health of intricate, business-critical APIs. When Peter's startup AppCloud experienced multiple API-related outages, he knew their basic status checks were not cutting it. "Our APIs are the heart of our product. Downtime wasn't just preventing users from accessing our app - it was destroying our credibility and bottom line."
@@ -22,7 +23,9 @@ Custom API monitoring solutions represent a specialized approach to overseeing a
 
 ## Key Features of Custom API Monitoring Solution
 Generic monitoring tools offer a one-size-fits-all approach, often leaving developers and startups frustrated with limitations and inflexibility. 
-![Alt](./Key%20Features%20of%20Custom%20API%20Monitoring%20Solution(1).png)
+
+![Alt](./Custom-API-Monitoring-Solution.png)
+
 Custom solutions bridge that gap, empowering you to gain granular insights and control over your APIs, tailored to your specific needs and challenges. Here's a closer look at the key features that set custom solutions apart:
 
 **1. Hyper-focused Metrics**

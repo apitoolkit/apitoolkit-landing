@@ -59,7 +59,7 @@ APIToolkit supports a variety of development environments. For detailed instruct
 - **Flask SDK**: [Redaction Guide for Flask](https://apitoolkit.io/docs/quickstarts/python/flask/)
 
 Here is a screenshot of a redacted field on our Log Explorer
-![the redactedted field](../the-redacted-field.png)
+![the redactedted field](the-redacted-field.png)
 
 ## Conclusion
 

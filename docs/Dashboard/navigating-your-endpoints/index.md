@@ -8,7 +8,9 @@ menu:
   main:
     weight: 30
 ---
+```=html
 <video src="../endpoints.mp4"  controls title="EndPoints"></video>
+```
 
 In API management, endpoints are the gateways to functionality. They allow different software applications to communicate with each other. On our platform, endpoints are neatly organized into three main categories for ease of navigation and management: Active, Inbox, and Archived. Here's a step-by-step guide to help you understand and navigate these categories:
 

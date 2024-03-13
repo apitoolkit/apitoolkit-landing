@@ -1,0 +1,88 @@
+{% render "default/components/head", this:this %}
+{% render "default/components/nav", this:this %}
+<main>
+<section class="w-full relative" style="max-width: min(100%,1200px); margin-inline: auto;">
+  <button id="menu-toggler" onclick="toggleDocMenu(event)"
+    class="fixed shadow bg-white rounded-3xl -translate-x-3 pl-3 pr-0 py-2 left-0 md:hidden">
+    <svg height="15px" width="20px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 185.343 185.343" xml:space="preserve" fill="#000000">
+      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+      <g id="SVGRepo_iconCarrier">
+        <g>
+          <g>
+            <path style="fill:#010002;"
+              d="M51.707,185.343c-2.741,0-5.493-1.044-7.593-3.149c-4.194-4.194-4.194-10.981,0-15.175 l74.352-74.347L44.114,18.32c-4.194-4.194-4.194-10.987,0-15.175c4.194-4.194,10.987-4.194,15.18,0l81.934,81.934 c4.194,4.194,4.194,10.987,0,15.175l-81.934,81.939C57.201,184.293,54.454,185.343,51.707,185.343z">
+            </path>
+          </g>
+        </g>
+      </g>
+    </svg> </button>
+  <aside id="doc-aside" onclick="toggleDocMenu(event)"
+    class="fixed hidden w-full top-0 md:top-[75px] h-[100vh] bg-black bg-opacity-20 md:w-[250px] md:block z-50 md:z-20 md:h-[calc(100vh-70px)] md:bg-opacity-100 md:bg-white  text-slate-600 text-md">
+    <div
+      class="-translate-x-24 py-5  duration-300 bg-white md:-translate-x-0 w-[min(90%,300px)] md:w-full h-full overflow-y-auto">
+      <svg id="close-doc-menu" onclick="toggleDocMenu(event)" class="md:hidden ml-auto mr-10 text-black-500 h-6 w-6"
+        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
+        <path stroke="currentColor" id="hamburger" stroke-linejoin="round" stroke-width="1.2" d="M15 6H3M15 12H3"
+          class="hidden">
+        </path>
+        <path stroke="currentColor" id="cross" class="" stroke-linecap="round" stroke-linejoin="round"
+          stroke-width="1.1" d="m12.5 5.5-7 7m7 0-7-7">
+        </path>
+      </svg>
+      {% comment %}
+      {{- partial "sidebar-tree.html" . -}}
+      {% endcomment %}
+    </div>
+  </aside>
+  <main class="p-5 md:ml-[250px] w-full md:w-[calc(100%-250px)] flex justify-between gap-5 lg:p-4 lg:pr-0">
+    <div class="prose w-full mx-auto md:mx-0 prose-slate py-5">
+      <h1>{{ this.frontmatter.title }}</h1>
+      {% if this.frontmatter.description %}
+        <div class="lead">{{  this.frontmatter.description }}</div>
+      {% endif %}
+      <header class="article-meta">
+        {% comment %}
+        {{ partial "taxonomy_terms_article_wrapper.html" . }}
+        {{ if (and (not .Params.hide_readingtime) (.Site.Params.ui.readingtime.enable)) }}
+        {{ partial "reading-time.html" . }}
+        {{ end }}
+        {% endcomment %}
+      </header>
+      {{ this.html }}
+      {{ partial "section-index.html" . }}
+    </div>
+    {% comment %}
+    {{- if .Params.toc }}
+    <div class="sticky top-[70px] h-max right-0 w-[250px] hidden md:block z-50 py-10 text-slate-600 text-md">
+      <span class="text-slate-800 font-semibold">
+        On This Page</span>
+      {{- .TableOfContents }}
+    </div>
+    {{- end }}
+    {% endcomment %}
+  </main>
+  <script>
+    function toggleDocMenu(e) {
+      e.stopPropagation()
+      const targetId = e.currentTarget.id
+      if (targetId === "menu-toggler" || targetId === "doc-aside" || targetId === "close-doc-menu") {
+        const aside = document.querySelector("#doc-aside")
+        aside.classList.toggle("hidden")
+        setTimeout(() => {
+          aside.firstElementChild.classList.toggle("-translate-x-24")
+        }, 10)
+      }
+    }
+  </script>
+  {% comment %}
+  <!-- <aside class="w-1/6 xhidden">
+    {{/* partial "page-meta-links.html" . */}}
+    {{/* partial "toc.html" . */}}
+    {{/* partial "taxonomy_terms_clouds.html" . */}}
+  </aside> -->
+  {% endcomment %}
+</section>
+</main>
+{% render "default/components/foot", this:this %}

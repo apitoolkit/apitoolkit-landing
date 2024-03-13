@@ -54,6 +54,15 @@
                   class="mt-2 inline-block text-sm font-medium text-blue-900 hover:text-indigo-900">
                   Read full article
                 </a>
+                {% if post.frontmatter.author %}
+                  {% assign author = config.raw.authors[post.frontmatter.author] %}
+                  <div class="pt-6 space-x-2 ">
+                    <img class="w-5 h-5 rounded-full inline-block" src='{{author.picture}}' />
+                    <span class="text-xs font-normal inline-block text-stone-700">By 
+                        <span class="underline">{{author.name}}</span>
+                    <span>
+                  </div>
+                {% endif %}
               </div>
             </div>
           {% endfor %}

@@ -14,4 +14,25 @@ ignore:
   - "./node_modules/**"
   - ".git"
 
+
+authors:
+  anthony:
+    name: "Anthony Alaribe"
+    picture: "https://avatars.githubusercontent.com/u/6564482?v=4"
+  irhose:
+    name: "Irhose Apori"
+    picture: "https://pbs.twimg.com/profile_images/1656791975088013312/W3q8KAJE_400x400.jpg"
+  jessica:
+    name: "Jessica Ofem"
+    picture: "https://avatars.githubusercontent.com/u/42941436?v=4"
+  dmytro:
+    name: "Dmytro Krasun"
+    picture: "https://pbs.twimg.com/profile_images/1678311781280759808/mDjAfPfC_400x400.jpg"
+  collins:
+    name: "Collins Offiong"
+    picture: "https://avatars.githubusercontent.com/u/93836558?v=4"
+  elliot:
+    name: "Elliot Brenya Sarfo"
+    picture: "https://avatars.githubusercontent.com/u/66503402?v=4"
+
 blabla: blbla 
