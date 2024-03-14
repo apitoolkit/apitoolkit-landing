@@ -1,15 +1,10 @@
 ---
-title: The API Developer's Toolbox
+title: "The API Developer's Toolbox"
 date: 2022-03-23
 publishdate: 2022-03-24
-description: 'Build and maintain your APIs with Less downtimes, Fewer support tickets, Faster time to resolution and
-always up to date insights into your APIs'
+description: "Build and maintain your APIs with Less downtimes, Fewer support tickets, Faster time to resolution and
+always up to date insights into your APIs"
 hidenav: true
-showcase:
-- title: Monitor
-video:
-- title: Document
-video:
 ---
 
 ``` =html

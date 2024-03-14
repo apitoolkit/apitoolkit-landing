@@ -1,6 +1,6 @@
-base_url: "https://example.org"
-title: Example site
-theme: default
+base_url: "https://apitoolkit.io"
+title: APIToolkit 
+description: AI tools for Automatic API Monitoring, Documentation and more
 
 layouts:
   "./blog/**/index.md": default/blog-single.liquid
@@ -10,6 +10,7 @@ layouts:
   "./docs/**/index.md": default/docs.liquid
   "./*/index.md": default/prose.liquid
   "./**/*.md": default/index.liquid
+  "./**/*.liquid": default/empty.liquid
 
 ignore:
   - "./node_modules/**"
