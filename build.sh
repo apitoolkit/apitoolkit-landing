@@ -37,4 +37,4 @@ fi
 chmod +x $BINARY_NAME
 
 # Run the binary to generate the static site
-./$BINARY_NAME buld --dir .
+./$BINARY_NAME build
