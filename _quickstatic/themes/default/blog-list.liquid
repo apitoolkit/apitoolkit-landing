@@ -1,0 +1,77 @@
+{% render "default/components/head", this:this %}
+{% render "default/components/nav", this:this %}
+
+<main class="text-center">
+  <section class="width-control mx-auto text-left w-full">
+    <div class="bg-white pt-16 pb-20 lg:pt-24 lg:pb-28">
+      <div class="relative mx-auto divide-y-2 divide-gray-200">
+        <div>
+          <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl lg:text-6xl">
+            The APIToolkit Blog
+          </h2>
+          <h5 class="pt-2 pb-5">Sharing knowlege about building & maintaining impeccable APIs.</h5>
+        </div>
+        <div>
+          <div class="mt-6   md:gap-4">
+            <p class="pl-2 sm:pl-3 pb-3 sm:text-lg text-gray-700 ">
+              Get articles and updates in your inbox on what we learn while
+              building APIToolkit.
+            </p>
+            <script async data-uid="15d365ef1d" src="https://apitoolkit.ck.page/15d365ef1d/index.js"></script>
+          </div>
+        </div>
+        <section class="mt-6 pt-10 ">
+          {% if this.frontmatter.title != "Blog" and this.frontmatter.title != "" %}
+          <h3 class="font-black pb-3"> ❯ &nbsp; {{ this.frontmatter.title }}</h3>
+          {% endif %}
+
+          <div class="grid gap-16 md:grid-cols-2 md:gap-x-9 md:gap-y-12">
+          {% assign blog_posts = file_list | where_glob: 'file_path', "./blog/*/index.md" %}
+          {% for post in blog_posts %}
+            <div
+              class="flex flex-col content-between justify-between border border-stone-200 p-2 md:p-6 rounded-xl bg-white hover:drop-shadow-2xl shadow-slate-200 transition duration-300 ease-in-out">
+              <div>
+                {% if post.frontmatter.date %}
+                <time class="text-xs text-gray-600" datetime='{{ post.frontmatter.date  | date: "2006-01-02"}}'>
+                  {{ post.frontmatter.date  | date: "2006-01-02"}}
+                </time>
+                {% endif %}
+                <a href="{{post.permalink}}" class="mt-2 block">
+                  <img data-src="{% if post.frontmatter.featured_image %}{{post.permalink}}{{post.frontmatter.featured_image}}{% endif %}" class="lazy aspect-[7/3] rounded-md object-cover border border-slate-100" />
+                </a>
+                {% if post.frontmatter.categories %}
+                  {% for category in post.frontmatter.categories %}
+                  <a href="/categories/{{category | slugify}}"
+                    class="inline-block  text-xs pt-4 text-blue-900 hover:scale-x-105 ">{{category}}
+                    &nbsp; ❯</a>
+                  {% endfor %}
+                {% endif %}
+                <a href="{{post.permalink}}" class="">
+                  <h6 class="text-xl font-bold text-gray-900 pt-3">{{post.frontmatter.title}}</h6>
+                  <p class="mt-3 leading-relaxed">{{post.markdown_body | truncatewords: 30, "..." }}</p>
+                </a>
+                <a href="{{post.permalink}}"
+                  class="mt-2 inline-block text-sm font-medium text-blue-900 hover:text-indigo-900">
+                  Read full article
+                </a>
+                {% if post.frontmatter.author %}
+                  {% assign author = config.raw.authors[post.frontmatter.author] %}
+                  <div class="pt-6 space-x-2 ">
+                    <img class="w-5 h-5 rounded-full inline-block" src='{{author.picture}}' />
+                    <span class="text-xs font-normal inline-block text-stone-700">By 
+                        <span class="underline">{{author.name}}</span>
+                    <span>
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+          </div>
+
+        </section>
+      </div>
+    </div>
+  </section>
+</main>
+
+{% render "default/components/foot", this:this %}
