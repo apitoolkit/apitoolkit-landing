@@ -22,9 +22,9 @@
     <script defer src="/assets/deps/htmx/preload.js"></script>
   </head>
   <body data-theme="emerald" hx-boost="true" hx-ext="preload" class="">
-    <section class="sticky top-0 w-full bg-base-100 z-10 divide-y divide-y-gray-100 border-b border-b-gray-100">
+    <section class="sticky top-0 w-full bg-base-100 z-10 divide-y divide-y-gray-100 border-b-2 border-b-gray-100">
       <section class="text-center ">
-        <div class="max-w-7xl w-full py-3 text-left inline-flex justify-between items-center">
+        <div class="max-w-7xl w-full py-4 text-left inline-flex justify-between items-center">
           <a href="/" class="px-1 py-1"><img class="h-6 " src="/assets/brand/logo_full_color.svg" /></a>
           <div class="flex gap-4 items-center">
             <a href="/">Back to Website</a>
@@ -43,7 +43,7 @@
           {% if this.frontmatter.title == "Home" %}
             {% assign is_active = true %}
           {% endif %}
-          <a class="flex gap-3 border-b {%if is_active %}border-b-secondary{%else%}border-b-transparent{% endif %} py-2 px-1 items-center" href="/docs/" preload="preload:init">
+          <a class="flex gap-3 border-b-2 {%if is_active %}border-b-secondary{%else%}border-b-transparent{% endif %} py-2 px-1 items-center" href="/docs/" preload="preload:init">
             <i class="fa-regular fa-house w-5 h-5 {% if is_active %}text-secondary{%endif%}"></i>
             <span>Home</a>
           </a>
@@ -57,7 +57,7 @@
             {% if starts_with_check[0] == blank %}
               {% assign is_active = true %}
             {% endif %}
-            <a class="flex gap-3 border-b {% if is_active %}border-b-secondary{%else%}border-b-transparent{% endif %} py-2 px-1 items-center" href="{{page.permalink}}" preload="preload:init">
+            <a class="flex gap-3 border-b-2 {% if is_active %}border-b-secondary{%else%}border-b-transparent{% endif %} py-2 px-1 items-center" href="{{page.permalink}}" preload="preload:init">
             <i class="fa-regular fa-{% if page.frontmatter.fa-logo %}{{page.frontmatter.fa-logo}}{%else%}star{%endif%} w-5 h-5 {% if is_active %}text-secondary{%endif%}"></i>
               <span>{% if page.frontmatter.title %}{{page.frontmatter.title}}{% endif %}</a>
             </a>
