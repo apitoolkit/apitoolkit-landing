@@ -14,10 +14,10 @@ Echo is an efficient web framework for Go, boasting both high performance and ad
 **Create an Account or Sign In to APIToolkit to Generate Key**
 
 1. Sign up / Sign in to the [API dashboard](https://app.apitoolkit.io)
-   ![sign up/sign in](/docs/Quickstarts/Golang/signin.png)
-2. [Create a project](/docs/dashboard/creating-a-project/)
-3. [Generate an API key for your project](/docs/dashboard/generating-api-keys), and include a brief description of your work. And to prevent losing your key after it has been generated, remember to make a copy of it.
-   ![api key generation](/docs/Quickstarts/Golang/api-key-generation.png)
+   ![sign up/sign in](/docs/get-started/Quickstarts/Golang/signin.png)
+2. [Create a project](/docs/documentation/dashboard/creating-a-project/)
+3. [Generate an API key for your project](/docs/documentation/dashboard/generating-api-keys), and include a brief description of your work. And to prevent losing your key after it has been generated, remember to make a copy of it.
+   ![api key generation](/docs/get-started/Quickstarts/Golang/api-key-generation.png)
 
 **Integrate with Go's Echo Framework**
 

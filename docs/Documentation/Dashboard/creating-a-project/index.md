@@ -33,7 +33,7 @@ To optimize your experience with us:
 
 - Choose your preferred data location.
 
-Upon completing these steps, we'll redirect you to the onboarding page with a default APIKEY automatically generated for you. Use the code example from the [quickstart](https://apitoolkit.io/docs/quickstarts/)and integrate it into your project before you can start using the APIToolkit dashboard.
+Upon completing these steps, we'll redirect you to the onboarding page with a default APIKEY automatically generated for you. Use the code example from the [quickstart](https://apitoolkit.io/docs/get-started/quickstarts/)and integrate it into your project before you can start using the APIToolkit dashboard.
 
 ![Welcome on board](welcome-on-board.png)
 

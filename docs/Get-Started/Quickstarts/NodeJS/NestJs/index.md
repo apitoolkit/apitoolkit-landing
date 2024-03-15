@@ -151,7 +151,7 @@ async function bootstrap() {
 bootstrap();
 ```
 
-In this Fastify integration, the APIToolkit Fastify SDK allows you to seamlessly integrate your APIToolkit into your fastify based NestJs app. Don't forget to replace `<API-KEY>` with your actual API key obtained from your APIToolkit dashboard [learn how](https://apitoolkit.io/docs/dashboard/generating-api-keys/).
+In this Fastify integration, the APIToolkit Fastify SDK allows you to seamlessly integrate your APIToolkit into your fastify based NestJs app. Don't forget to replace `<API-KEY>` with your actual API key obtained from your APIToolkit dashboard [learn how](https://apitoolkit.io/docs/get-started/dashboard/generating-api-keys/).
 
 Now you have successfully integrated APIToolkit's Fastify SDK into your Nest.js application.
 
@@ -229,10 +229,10 @@ Hopefully, this documentation has everything you need to get APIToolkit app and 
 
 ### Using apitoolkit to observe an axios based outgoing request
 
-[Learn how to observe requests with express adapter ](/docs/quickstarts/nodejs/expressjs#using-apitoolkit-to-observe-an-axios-based-outgoing-request).
-[Learn hot to observe requests with fastify adapter](/docs/quickstarts/nodejs/fastify#using-apitoolkit-to-observe-an-axios-based-outgoing-request).
+[Learn how to observe requests with express adapter ](/docs/get-started/quickstarts/nodejs/expressjs#using-apitoolkit-to-observe-an-axios-based-outgoing-request).
+[Learn hot to observe requests with fastify adapter](/docs/get-started/quickstarts/nodejs/fastify#using-apitoolkit-to-observe-an-axios-based-outgoing-request).
 
 ### Reporting errors to APIToolkit
 
-[Reporting errors using express adapter](/docs/quickstarts/nodejs/expressjs#reporting-errors-to-apitoolkit).
-[Reporting errors using fastify adapter](/docs/quickstarts/nodejs/fastify#reporting-errors-to-apitoolkit).
+[Reporting errors using express adapter](/docs/get-started/quickstarts/nodejs/expressjs#reporting-errors-to-apitoolkit).
+[Reporting errors using fastify adapter](/docs/get-started/quickstarts/nodejs/fastify#reporting-errors-to-apitoolkit).

@@ -51,7 +51,7 @@ Ready to revolutionize how you handle your APIs? Follow these three simple steps
 ![login image](log-in-3.png)
 
 2. **Seamless SDK Integration:**
-   - Whether you're a Python maestro, a Go aficionado, or your talents lie elsewhere, integrating the APIToolkit SDK with your tech stack is a breeze. Need more guidance? Find detailed instructions [here](/docs/quickstarts/).
+   - Whether you're a Python maestro, a Go aficionado, or your talents lie elsewhere, integrating the APIToolkit SDK with your tech stack is a breeze. Need more guidance? Find detailed instructions [here](/docs/get-started/quickstarts/).
 
 ![quickstart](quickstart.png)
 

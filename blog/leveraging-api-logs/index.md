@@ -35,7 +35,7 @@ Efficient collection of API logs with APIToolkit involves a straightforward setu
 
 1. **Getting Started with APIToolkit**: Begin by [signing up for APIToolkit](https://app.apitoolkit.io/). During the registration process, you will generate your unique API key, marking your first step towards advanced API management. Once registered, select a plan that fits your business needs and set up your workspace, naming it and adding team members for collaborative monitoring.
 
-2. **Seamless SDK Integration**: No matter your programming language - Python, Go, or others - integrating the APIToolkit SDK into your tech stack is simple. Embed a code snippet or middleware into your API codebase for a seamless integration. For detailed instructions and support, visit the [APIToolkit Quickstart Guide](https://apitoolkit.io/docs/quickstarts/). This step is crucial for tailoring APIToolkit to work harmoniously with your existing systems.
+2. **Seamless SDK Integration**: No matter your programming language - Python, Go, or others - integrating the APIToolkit SDK into your tech stack is simple. Embed a code snippet or middleware into your API codebase for a seamless integration. For detailed instructions and support, visit the [APIToolkit Quickstart Guide](https://apitoolkit.io/docs/get-started/quickstarts/). This step is crucial for tailoring APIToolkit to work harmoniously with your existing systems.
 
 3. **Customizing Data Collection**: Customize what data you collect from your APIs, such as headers, payloads, and more. Apply filters to your data collection process to exclude any sensitive or irrelevant information, ensuring that you're gathering only the most pertinent data for your needs.
 

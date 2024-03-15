@@ -22,7 +22,7 @@ menu:
 
 ### Q3: Is APIToolkit suitable for my project's tech stack?
 
-**A:** APIToolkit is versatile and compatible with a wide range of [programming languages and frameworks](https://apitoolkit.io/docs/quickstarts/). Whether you're using JavaScript, Python, Go, or other languages, you can integrate APIToolkit into your project.
+**A:** APIToolkit is versatile and compatible with a wide range of [programming languages and frameworks](https://apitoolkit.io/docs/get-started/quickstarts/). Whether you're using JavaScript, Python, Go, or other languages, you can integrate APIToolkit into your project.
 
 ## Integration Questions
 
@@ -32,7 +32,7 @@ menu:
 
 ### Q5: How can I integrate APIToolkit with my application?
 
-**A:** We provide comprehensive integration guides for various technologies and frameworks. Check out our [Integration Guides](/docs/quickstarts/) for step-by-step instructions tailored to your specific tech stack.
+**A:** We provide comprehensive integration guides for various technologies and frameworks. Check out our [Integration Guides](/docs/get-started/quickstarts/) for step-by-step instructions tailored to your specific tech stack.
 
 ### Q6: What is the purpose of the APIToolkit dashboard?
 
@@ -49,11 +49,11 @@ menu:
 
 ### Q9: I'm encountering errors during integration. What should I do?
 
-**A:** If you're facing integration errors, consult our [Troubleshooting Guide](/docs/troubleshooting-and-faq/troubleshooting-errors/) for detailed steps to diagnose and resolve common integration issues.
+**A:** If you're facing integration errors, consult our [Troubleshooting Guide](/docs/get-started/troubleshooting-and-faq/troubleshooting-errors/) for detailed steps to diagnose and resolve common integration issues.
 
 ### Q10: I'm having difficulties understanding the API documentation. What should I do?
 
-**A:** If you find the API documentation challenging to understand, we recommend taking a step-by-step approach. Start with our [Getting Started](https://apitoolkit.io/docs/getstarted/) guide to build a foundational understanding. If you have specific questions or need clarification on certain topics, don't hesitate to reach out to our support team for assistance.
+**A:** If you find the API documentation challenging to understand, we recommend taking a step-by-step approach. Start with our [Getting Started](https://apitoolkit.io/docs/get-started/) guide to build a foundational understanding. If you have specific questions or need clarification on certain topics, don't hesitate to reach out to our support team for assistance.
 
 ### Q11: I'm encountering unexpected responses from the API. How can I troubleshoot this?
 

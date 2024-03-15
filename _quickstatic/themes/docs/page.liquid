@@ -86,7 +86,7 @@
                     {% capture glob_pattern2 %}.{{ pgL1.permalink }}*/index.md{% endcapture %}
                     {% assign pages2 = file_list | where_glob: 'file_path', glob_pattern2 %}
                     {% if pages2.size > 0 %}
-                    <ul class="pl-5 space-y-1 pt-2">
+                    <ul class="pl-5 space-y-2 pt-2">
                       {% for pgL2 in pages2 %}
                       <li><a href="{{pgL2.permalink}}"
                          class="hover:text-secondary {% if pgL2.permalink==this.permalink %}text-secondary{%endif%}"

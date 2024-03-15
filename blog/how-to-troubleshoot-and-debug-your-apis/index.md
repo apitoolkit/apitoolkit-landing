@@ -67,7 +67,7 @@ In the world of digital transformation, APIs power a significant chunk of the mo
 1. Sign in to the [APIToolkit](https://app.apitoolkit.io/) dashboard.
 2. Click on 'Sign Up' and enter your details.
    ![Sign in page](signin-page.png)
-3. Once logged in, go ahead and integrate your APIs into APIToolkit using these [docs](https://apitoolkit.io/docs/quickstarts/)
+3. Once logged in, go ahead and integrate your APIs into APIToolkit using these [docs](https://apitoolkit.io/docs/get-started/quickstarts/)
 4. Follow the prompts to connect your API to APIToolkit.
    ![Dashboard](dashboard.png)
 5. Now your page is automatically configured with specific endpoints, setting rate limits, and more. All incoming requests are monitored for anomalies, new endpoints, slow end points and more.
