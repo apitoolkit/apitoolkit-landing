@@ -1,11 +1,9 @@
 ---
 title: Get Started
 date: 2022-03-23
+fa-logo: circle-play 
 publishdate: 2022-03-24
 weight: 1
-menu:
-  main:
-    weight: 1
 ---
 
 # Get Started

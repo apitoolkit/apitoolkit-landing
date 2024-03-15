@@ -1,9 +1,10 @@
 {
   "dependencies": {
     "prettier": "^3.2.5",
-    "tailwindcss": "^3.4.0"
+    "tailwindcss": "^3.4.1"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.10"
+    "@tailwindcss/typography": "^0.5.10",
+    "daisyui": "^4.7.3"
   }
 }

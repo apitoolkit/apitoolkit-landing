@@ -1,0 +1,127 @@
+<!DOCTYPE lang="en">
+<html>
+  <head>
+    <link rel="canonical" href="https://apitoolkit.io">
+    <meta property="og:title" content="{% if this.frontmatter.title %}{{this.frontmatter.title}}{% endif %}">
+    <meta property="og:description" content="{% if this.frontmatter.description %}{{this.frontmatter.description}}{% endif %}">
+    <meta property="og:image" content="{% if this.frontmatter.featured_image%}{{this.frontmatter.featured_image}}{% endif %}">
+    <meta property="og:type" content="{% if this.frontmatter.og_type %}{{this.frontmatter.og_type}}{% else %}article{% endif %}">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="QuickStatic">
+    <!-- This documentation site was built with QuickStatic, https://github.com/tonyalaribe/quickstatic -->
+
+    <title>{% if this.frontmatter.title %}{{this.frontmatter.title}}{% endif %}</title>
+    <meta name="description" content="{% if this.frontmatter.description %}{{this.frontmatter.description}}{% endif %}">
+
+    <link rel="stylesheet" href="/assets/css/tailwind.min.css">
+    <script defer src="https://kit.fontawesome.com/32c218ff10.js" crossorigin="anonymous"></script>
+    <script defer src="/assets/deps/htmx/htmx.min.js"></script>
+    <script defer src="/assets/deps/htmx/preload.js"></script>
+  </head>
+  <body data-theme="emerald" hx-boost="true" hx-ext="preload" class="flex flex-col h-full overflow-hidden divide-y divide-y-gray-100">
+    <section class="text-center">
+      <div class="max-w-7xl w-full py-3 text-left inline-flex justify-between items-center">
+        <a href="/" class="px-1 py-1"><img class="h-6 " src="/assets/brand/logo_full_color.svg" /></a>
+        <div class="flex gap-4 items-center">
+          <a>Back to Website</a>
+          <a class="btn btn-sm btn-secondary">Sign Up</a>
+
+          <label class="input input-sm bg-slate-50 input-bordered flex items-center gap-2">
+            <i class="fa-solid fa-magnifying-glass w-4 h-4 opacity-70"></i>
+            <input type="text" class="grow" placeholder="Search" />
+            <kbd class="kbd kbd-sm">⌘K</kbd>
+          </label>
+        </div>
+      </div>
+    </section>
+    <section class="text-center ">
+      <div class="max-w-7xl w-full text-left inline-flex gap-4 text-md ">
+        {% if this.frontmatter.title == "Home" %}
+          {% assign is_active = true %}
+        {% endif %}
+        <a class="flex gap-3 border-b {%if is_active %}border-b-secondary{%else%}border-b-transparent{% endif %} py-2 px-1 items-center" href="/docs/" preload="preload:init">
+          <i class="fa-regular fa-house w-5 h-5 {% if is_active %}text-secondary{%endif%}"></i>
+          <span>Home</a>
+        </a>
+        {% assign pages = file_list | where_glob: 'file_path', "./docs/*/index.md" %}
+        {% assign pages = pages | sort: "frontmatter.menu_weight" | reverse %}
+        {% for page in pages %}
+          {% capture parent_doc_prefix%}{{page.file_path | remove: "index.md"}}{%endcapture%}
+          {% capture permalink_file_mode %}.{{this.permalink}}{% endcapture %}
+          {% assign starts_with_check = permalink_file_mode | split:parent_doc_prefix %}
+          {% assign is_active = false %}
+          {% if starts_with_check[0] == blank %}
+            {% assign is_active = true %}
+          {% endif %}
+          <a class="flex gap-3 border-b {% if is_active %}border-b-secondary{%else%}border-b-transparent{% endif %} py-2 px-1 items-center" href="{{page.permalink}}" preload="preload:init">
+          <i class="fa-regular fa-{% if page.frontmatter.fa-logo %}{{page.frontmatter.fa-logo}}{%else%}star{%endif%} w-5 h-5 {% if is_active %}text-secondary{%endif%}"></i>
+            <span>{% if page.frontmatter.title %}{{page.frontmatter.title}}{% endif %}</a>
+          </a>
+        {% endfor %}
+      </div>
+    </section>
+    <section class="text-center  grow h-full">
+      <div class="max-w-7xl w-full h-full text-left inline-flex divide-x divide-x-gray-100">
+        {% unless this.frontmatter.hide_file_tree %}
+        <div class="w-64 py-16 pr-5 overflow-y-scroll leading-relaxed">
+          <nav class="space-y-8 text-sm">
+            {% assign parts = this.permalink | split: '/' %}
+            {% assign parent_doc_section = parts[2] %}
+            {% capture glob_pattern %}./docs/{{ parent_doc_section }}/*/index.md{% endcapture %}
+            {% assign pages = file_list | where_glob: 'file_path', glob_pattern %}
+            {% for page in pages %}
+            <section class="pl-1">
+              <a class="block font-semibold pb-3" href="{{page.permalink}}">{{page.frontmatter.title}}</a>
+              {% capture glob_pattern %}.{{ page.permalink }}*/index.md{% endcapture %}
+              {% assign pages1 = file_list | where_glob: 'file_path', glob_pattern %}
+              {% if pages1.size >0 %}
+              <ul class="space-y-2">
+                {% for pgL1 in pages1 %}
+                  <li><a href="{{pgL1.permalink}}"
+                         class="hover:text-secondary {% if pgL1.permalink==this.permalink %}text-secondary{%endif%}"
+                         >{{pgL1.frontmatter.title}}</a>
+                    {% capture glob_pattern2 %}.{{ pgL1.permalink }}*/index.md{% endcapture %}
+                    {% assign pages2 = file_list | where_glob: 'file_path', glob_pattern2 %}
+                    {% if pages2.size > 0 %}
+                    <ul class="pl-5 space-y-1 pt-2">
+                      {% for pgL2 in pages2 %}
+                      <li><a href="{{pgL2.permalink}}"
+                         class="hover:text-secondary {% if pgL2.permalink==this.permalink %}text-secondary{%endif%}"
+                         >{{pgL2.frontmatter.title}}</a>
+                      </li>
+                      {% endfor %}
+                    </ul>
+                    {% endif %}
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+            </section>
+            {% endfor %}
+          </nav>
+        </div>
+        {% endunless %}
+        <div class="flex-1 grow flex h-full overflow-y-scroll relative">
+          <div class="text-center flex-1 grow p-20 pb-28 ">
+            <article class="inline-block text-left pb-40 prose prose-slate dark:prose-invert prose-headings:font-medium prose-a:text-secondary prose-a:underline prose-a:underline-offset-1  
+                            prose-img:w-full prose-img:rounded-md  prose-p:leading-relaxed
+                            before:prose-li:bg-secondary 
+                            before:prose-li:text-secondary
+                                   prose-strong:font-medium prose-secondary w-full {%if this.frontmatter.page_full_width%}max-w-none {%endif%}">
+              {{this.content}} 
+            </article>
+          </div>
+          {% unless this.frontmatter.hide_toc %}
+          <div class="w-48 sticky top-0 text-sm py-20">
+            <strong class="block font-medium">On this page </strong>
+
+          </div>
+        {% endunless %}
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

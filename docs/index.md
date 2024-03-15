@@ -1,14 +1,12 @@
 ---
-title: "Documentation"
+title: Home
 linkTitle: "Documentation"
-weight: 20
-menu:
-  main:
-    weight: 20
+menu_weight: 20
+hide_file_tree: true
+hide_toc: true
+page_full_width: true
 ---
 
-pageinfo
-APIToolkit Usage Documentation.
- /pageinfo 
+# APIToolkit Usage Documentation.
 
 Here you will find articles which describe how to use the various sections of apitoolkit.

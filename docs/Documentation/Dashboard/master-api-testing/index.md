@@ -83,15 +83,10 @@ With this setup, APIToolkit watches over the `/products` endpoint, ensuring that
 ## Tips for Maximizing Your API Testing with APIToolkit
 
 1. **Keep a Close Eye on Performance Metrics:** APIToolkit doesn't just let you set up tests; it gives you a treasure trove of performance data. Make it a habit to regularly check in on these metrics. Look for trends, like increasing response times or spikes in error rates. Catching these early can save you a ton of headache down the line.
-
 2. **Set Up Alerts for Instant Notifications:** One of the coolest features of APIToolkit is its alerting capabilities. Don't sleep on this! Set up alerts for key metrics like error rates, response times, and status code changes. This way, you get a heads-up the moment something's amiss, allowing you to jump into action ASAP.
-
 3. **Dive Into Detailed Request and Response Logs:** APIToolkit keeps detailed logs of all your API traffic, which is like gold for troubleshooting. When something goes wrong, dive into these logs. They'll give you the full story behind each request and response, helping you pinpoint exactly where things went sideways.
-
 4. **Use Scenario Testing to Simulate Real-World Use:** Don't just test your APIs in a vacuum. Use APIToolkit's scenario testing to simulate real-world usage. This can help you uncover issues that might only crop up under specific conditions, ensuring your APIs can handle whatever comes their way.
-
 5. **Collaborate and Share Insights:** API testing isn't a solo sport. Share your APIToolkit dashboards and insights with your team. Collaborating can lead to new ideas for improving performance and reliability, and it keeps everyone in the loop on how your APIs are doing.
-
 6. **Embrace Continuous Testing:** Finally, make API testing with APIToolkit a part of your continuous integration/continuous deployment (CI/CD) pipeline. This way, you're not just testing periodically; you're ensuring your APIs are constantly being checked every time you deploy new code. It's the ultimate way to maintain high standards of quality and reliability.
 
 ## Conclusion
