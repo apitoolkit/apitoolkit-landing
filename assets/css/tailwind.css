@@ -254,18 +254,3 @@
     opacity: 0;
   }
 }
-
-#TableOfContents {
-  @apply py-4;
-}
-#TableOfContents ul {
-  @apply flex flex-col gap-2 text-sm;
-}
-
-#TableOfContents a {
-  color: #333;
-}
-
-#TableOfContents li:hover {
-  text-decoration: underline;
-}

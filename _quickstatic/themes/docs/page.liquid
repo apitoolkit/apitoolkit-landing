@@ -66,10 +66,10 @@
       </section>
     </section>
     <section class="text-center  ">
-      <div class="max-w-7xl w-full text-left inline-flex divide-x divide-x-gray-100 ">
+      <div class="max-w-7xl w-full text-left inline-flex ">
         {% unless this.frontmatter.hide_file_tree %}
         <div class="w-64 leading-relaxed">
-          <nav class="w-64 space-y-8 text-sm my-28 py-16 pr-5  fixed top-0">
+          <nav class="w-64 space-y-8 text-sm my-48 pr-5  fixed top-0">
             {% assign parts = this.permalink | split: '/' %}
             {% assign parent_doc_section = parts[2] %}
             {% capture glob_pattern %}./docs/{{ parent_doc_section }}/*/index.md{% endcapture %}
@@ -106,24 +106,99 @@
           </nav>
         </div>
         {% endunless %}
-        <div class="flex-1 grow flex overflow-y-scroll relative min-h-screen">
+        <div class="flex-1 grow flex relative min-h-screen  border-l-2 border-l-gray-100">
           <div class="text-center flex-1 grow p-20 pb-28 ">
-            <article class="inline-block text-left pb-40 prose prose-slate dark:prose-invert prose-headings:font-medium prose-a:text-secondary prose-a:underline prose-a:underline-offset-1  
+            <article class="inline-block text-left pb-40 prose prose-slate dark:prose-invert prose-headings:font-medium prose-a:text-secondary prose-a:underline prose-a:underline-offset-4  
                             prose-img:w-full prose-img:rounded-md  prose-p:leading-relaxed
-                            before:prose-li:bg-secondary 
-                            before:prose-li:text-secondary
-                                   prose-strong:font-medium prose-secondary w-full {%if this.frontmatter.page_full_width%}max-w-none {%endif%}">
+                            prose-headings:scroll-mt-40
+                            before:prose-li:bg-secondary before:prose-li:text-secondary
+                            prose-strong:font-medium prose-secondary w-full {%if this.frontmatter.page_full_width%}max-w-none {%endif%}"
+                      id="mainArticle">
               {{this.content}} 
             </article>
           </div>
-          {% unless this.frontmatter.hide_toc %}
-          <div class="w-48 sticky top-0 text-sm py-20">
-            <strong class="block font-medium">On this page </strong>
-
-          </div>
-        {% endunless %}
         </div>
+        {% unless this.frontmatter.hide_toc %}
+        <section class="w-56">
+          <div class="w-56 my-48  fixed top-0 text-sm space-y-4">
+            <strong class="block font-medium">On this page </strong>
+            <ul class="space-y-2 border-l " id="tableOfContents">
+            {% for toc in this.toc %}
+              <li class="hover:underline underline-offset-4 pl-{{toc.level | times: 3}}"><a href="#{{toc.id}}">{{toc.title}}</a></li>
+            {% endfor %}
+            </ul>
+          </div>
+        </section>
+        {% endunless %}
       </div>
     </section>
+  <script>
+    function init(){
+{% comment %} document.addEventListener("DOMContentLoaded", function() { {% endcomment %}
+  // Select all headers
+  const headers = document.querySelectorAll('#mainArticle h1, #mainArticle h2, #mainArticle h3, #mainArticle h4,#mainArticle h5,#mainArticle h6');
+  headers.forEach(header => {
+    const hashtag = document.createElement('a');
+    hashtag.classList.add('header-link');
+    hashtag.textContent = '🔗 ';
+    hashtag.href='#'+header.id;
+    header.insertBefore(hashtag, header.firstChild);
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        document.querySelectorAll('#tableOfContents a').forEach(link => {
+          if (link.getAttribute('href').substring(1) === entry.target.id) {
+            document.querySelectorAll('#tableOfContents a').forEach(function(element) {
+              element.classList.remove('text-secondary');
+            });
+            link.classList.add('text-secondary');
+          }
+        });
+      }
+    });
+  }, {
+    rootMargin: "0px",
+    threshold: 0.0001,
+  });
+
+  // Observe all headings within the article
+  document.querySelectorAll('#mainArticle h1, #mainArticle h2, #mainArticle h3, #mainArticle h4, #mainArticle h5, #mainArticle h6').forEach(heading => {
+    observer.observe(heading);
+  });
+  {% comment %} }); {% endcomment %}
+}
+    init()
+  </script>
+  <style>
+
+h1, h2, h3, h4, h5, h6 {
+  position: relative;
+  cursor: pointer;
+}
+
+.header-link {
+  position: absolute;
+  left: -20;
+  top: 5px;
+  display: none;
+  text-decoration: none;
+  color: #737373;
+  cursor: pointer;
+  font-size: .7rem;
+  padding-right: 20px;
+}
+
+h1:hover .header-link,
+h2:hover .header-link,
+h3:hover .header-link,
+h4:hover .header-link,
+h5:hover .header-link,
+h6:hover .header-link,
+.header-link:hover {
+  display: inline;
+}
+          </style>
   </body>
 </html>
