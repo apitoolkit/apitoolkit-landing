@@ -68,7 +68,7 @@
     <section class="text-center  ">
       <div class="max-w-7xl w-full text-left inline-flex ">
         {% unless this.frontmatter.hide_file_tree %}
-        <div class="w-64 leading-relaxed">
+        <div class="w-64 leading-relaxed border-r-2 border-r-gray-100">
           <nav class="w-64 space-y-8 text-sm my-48 pr-5  fixed top-0">
             {% assign parts = this.permalink | split: '/' %}
             {% assign parent_doc_section = parts[2] %}
@@ -106,7 +106,7 @@
           </nav>
         </div>
         {% endunless %}
-        <div class="flex-1 grow flex relative min-h-screen  border-l-2 border-l-gray-100">
+        <div class="flex-1 grow flex relative min-h-screen  ">
           <div class="text-center flex-1 grow p-20 pb-28 ">
             <article class="inline-block text-left pb-40 prose prose-slate dark:prose-invert prose-headings:font-medium prose-a:text-secondary prose-a:underline prose-a:underline-offset-4  
                             prose-img:w-full prose-img:rounded-md  prose-p:leading-relaxed

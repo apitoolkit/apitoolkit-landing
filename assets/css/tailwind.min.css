@@ -6862,6 +6862,10 @@ details.collapse summary::-webkit-details-marker {
   border-top-width: 1px;
 }
 
+.border-r-2 {
+  border-right-width: 2px;
+}
+
 .border-double {
   border-style: double;
 }
@@ -6941,6 +6945,11 @@ details.collapse summary::-webkit-details-marker {
 .border-l-gray-100 {
   --tw-border-opacity: 1;
   border-left-color: rgb(243 244 246 / var(--tw-border-opacity));
+}
+
+.border-r-gray-100 {
+  --tw-border-opacity: 1;
+  border-right-color: rgb(243 244 246 / var(--tw-border-opacity));
 }
 
 .border-opacity-0 {
