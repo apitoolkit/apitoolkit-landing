@@ -20,27 +20,34 @@
     <script defer src="https://kit.fontawesome.com/32c218ff10.js" crossorigin="anonymous"></script>
     <script defer src="/assets/deps/htmx/htmx.min.js"></script>
     <script defer src="/assets/deps/htmx/preload.js"></script>
+    <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+    <script defer src="/pagefind/pagefind-ui.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            new PagefindUI({ element: "#search", showSubResults: true });
+        });
+    </script>
     <style>
-        h1, h2, h3, h4, h5, h6 {
-          position: relative;
-          cursor: pointer;
-        }
-        .header-link {
-          position: absolute;
-          left: -20;
-          top: 5px;
-          display: none;
-          text-decoration: none;
-          color: #737373;
-          cursor: pointer;
-          font-size: .7rem;
-          padding-right: 20px;
-        }
-        h1:hover .header-link,h2:hover .header-link,h3:hover .header-link,h4:hover .header-link,h5:hover .header-link,h6:hover .header-link,
-        .header-link:hover {
-          display: inline;
-        }
-      </style>
+      h1, h2, h3, h4, h5, h6 {
+        position: relative;
+        cursor: pointer;
+      }
+      .header-link {
+        position: absolute;
+        left: -20;
+        top: 5px;
+        display: none;
+        text-decoration: none;
+        color: #737373;
+        cursor: pointer;
+        font-size: .7rem;
+        padding-right: 20px;
+      }
+      h1:hover .header-link,h2:hover .header-link,h3:hover .header-link,h4:hover .header-link,h5:hover .header-link,h6:hover .header-link,
+      .header-link:hover {
+        display: inline;
+      }
+    </style>
   </head>
   <body data-theme="emerald" hx-boost="true" hx-ext="preload" class="" preload>
     <section class="sticky top-0 w-full bg-base-100 z-10 divide-y divide-y-gray-100 border-b-2 border-b-gray-100">
@@ -49,16 +56,22 @@
           <a href="/" class="px-1 py-1"><img class="h-6 " src="/assets/brand/logo_full_color.svg" /></a>
           <div class="flex gap-4 items-center">
             <a href="/" class="hidden sm:inline-block">Back to Website</a>
-            <label class="sm:hidden">
+            <a class="cursor-pointer sm:hidden" onClick="search_modal.showModal()">
               <i class="fa-solid fa-magnifying-glass w-4 h-4 opacity-70"></i>
-            </label>
+            </a>
             <a href="app.apitoolkit.io" class="btn btn-sm btn-secondary">Sign Up</a>
 
-            <label class="input input-sm bg-slate-50 input-bordered hidden sm:flex items-center gap-2">
+            <a class="input input-sm bg-slate-50 input-bordered hidden sm:flex items-center gap-2" onClick="search_modal.showModal()">
               <i class="fa-solid fa-magnifying-glass w-4 h-4 opacity-70"></i>
-              <input type="text" class="grow" placeholder="Search" />
+              <span class="grow px-3" >Search</span>
               <kbd class="kbd kbd-sm">⌘K</kbd>
-            </label>
+            </a>
+            <dialog id="search_modal" class="modal modal-top justify-center" hx-boost="false">
+              <div id="search" class="modal-box max-w-xl w-full"></div>
+              <form method="dialog" class="modal-backdrop mt-24">
+                <button>close</button>
+              </form>
+            </dialog>
           </div>
         </div>
       </section>
@@ -86,7 +99,6 @@
         <div class="text-md sm:hidden text-left flex items-center ">
           <label for="mobile-menu-drawer" class="px-5 py-3"><i class="fa-regular fa-bars"></i> </label>
           <a class="py-2">{{this.frontmatter.title}}</i> </a>
-
         </div>
       </section>
     </section>
@@ -182,41 +194,39 @@
     </section>
   <script>
     function init(){
-{% comment %} document.addEventListener("DOMContentLoaded", function() { {% endcomment %}
-  // Select all headers
-  const headers = document.querySelectorAll('#mainArticle h1, #mainArticle h2, #mainArticle h3, #mainArticle h4,#mainArticle h5,#mainArticle h6');
-  headers.forEach(header => {
-    const hashtag = document.createElement('a');
-    hashtag.classList.add('header-link');
-    hashtag.textContent = '🔗 ';
-    hashtag.href='#'+header.id;
-    header.insertBefore(hashtag, header.firstChild);
-  });
+      // Select all headers
+      const headers = document.querySelectorAll('#mainArticle h1, #mainArticle h2, #mainArticle h3, #mainArticle h4,#mainArticle h5,#mainArticle h6');
+      headers.forEach(header => {
+        const hashtag = document.createElement('a');
+        hashtag.classList.add('header-link');
+        hashtag.textContent = '🔗 ';
+        hashtag.href='#'+header.id;
+        header.insertBefore(hashtag, header.firstChild);
+      });
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        document.querySelectorAll('#tableOfContents a').forEach(link => {
-          if (link.getAttribute('href').substring(1) === entry.target.id) {
-            document.querySelectorAll('#tableOfContents a').forEach(function(element) {
-              element.classList.remove('text-secondary');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            document.querySelectorAll('#tableOfContents a').forEach(link => {
+              if (link.getAttribute('href').substring(1) === entry.target.id) {
+                document.querySelectorAll('#tableOfContents a').forEach(function(element) {
+                  element.classList.remove('text-secondary');
+                });
+                link.classList.add('text-secondary');
+              }
             });
-            link.classList.add('text-secondary');
           }
         });
-      }
-    });
-  }, {
-    rootMargin: "0px",
-    threshold: 0.0001,
-  });
+      }, {
+        rootMargin: "0px",
+        threshold: 0.0001,
+      });
 
-  // Observe all headings within the article
-  document.querySelectorAll('#mainArticle h1, #mainArticle h2, #mainArticle h3, #mainArticle h4, #mainArticle h5, #mainArticle h6').forEach(heading => {
-    observer.observe(heading);
-  });
-  {% comment %} }); {% endcomment %}
-}
+      // Observe all headings within the article
+      document.querySelectorAll('#mainArticle h1, #mainArticle h2, #mainArticle h3, #mainArticle h4, #mainArticle h5, #mainArticle h6').forEach(heading => {
+        observer.observe(heading);
+      });
+    }
     init()
   </script>
   </body>
