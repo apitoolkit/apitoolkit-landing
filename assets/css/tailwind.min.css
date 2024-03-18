@@ -6716,6 +6716,10 @@ html:has(.drawer-open.drawer-open) {
   max-width: 36rem;
 }
 
+.max-w-md {
+  max-width: 28rem;
+}
+
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -7854,6 +7858,10 @@ html:has(.drawer-open.drawer-open) {
   padding-top: 1.25rem;
 }
 
+.pb-12 {
+  padding-bottom: 3rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -7945,6 +7953,11 @@ html:has(.drawer-open.drawer-open) {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
 }
 
 .font-black {

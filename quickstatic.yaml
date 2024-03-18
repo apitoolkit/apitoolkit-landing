@@ -38,4 +38,79 @@ authors:
     name: "Elliot Brenya Sarfo"
     picture: "https://avatars.githubusercontent.com/u/66503402?v=4"
 
-blabla: blbla 
+
+apitoolkit_supported_frameworks:
+  - id: express_btn
+    title: expressjs
+    img_src: /assets/img/framework-logos/express-logo.png
+    alt: Express JS logo
+
+  - id: phoenix_btn
+    title: phoenix
+    img_src: /assets/img/framework-logos/phoenix.png
+    alt: Phoenix Web Framework logo
+
+  - id: laravel_btn
+    title: Laravel
+    img_src: /assets/img/framework-logos/laravel-logo.png
+    alt: Laravel logo
+
+  - id: net_btn
+    title: dot net
+    img_src: /assets/img/framework-logos/net-logo.png
+    alt: Dot NET logo
+
+  - id: django_btn
+    title: django
+    img_src: /assets/img/framework-logos/django-logo.png
+    alt: Django logo
+
+  - id: fast_btn
+    title: fastapi
+    img_src: /assets/img/framework-logos/fastapi-logo.png
+    alt: FastAPI logo
+
+  - id: flask_btn
+    title: flask
+    img_src: /assets/img/framework-logos/flask-logo.png
+    alt: Flask logo
+
+  - id: gin_btn
+    title: gin
+    img_src: /assets/img/framework-logos/gin-logo.png
+    alt: Gin logo
+
+  - id: adonis_btn
+    title: adonis
+    img_src: /assets/img/framework-logos/adonis-logo.png
+    alt: Adonis JS logo
+
+  - id: fastify_btn
+    title: fastify
+    img_src: /assets/img/framework-logos/fastify-logo.png
+    alt: Fastify logo
+
+  - id: nestjs_btn
+    title: nestjs
+    img_src: /assets/img/framework-logos/nestjs-logo.png
+    alt: NestJS logo
+
+  - id: mux_btn
+    title: mux
+    img_src: /assets/img/framework-logos/mux-logo.png
+    alt: Mux logo
+
+  - id: symfony_btn
+    title: symfony
+    img_src: /assets/img/framework-logos/symfony-logo.png
+    alt: Symfony logo
+
+  - id: go_btn
+    title: go
+    img_src: /assets/img/framework-logos/go-logo.png
+    alt: Go logo
+
+  - id: view_all
+    title: View all SDKs
+    href: /docs/get-started/quickstarts
+    alt: View all SDKs
