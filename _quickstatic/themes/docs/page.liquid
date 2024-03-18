@@ -1,9 +1,9 @@
-<!DOCTYPE lang="en">
+<!DOCTYPE html lang="en">
 <html>
   <head>
     <link rel="canonical" href="https://apitoolkit.io">
     <meta property="og:title" content="{% if this.frontmatter.title %}{{this.frontmatter.title}}{% endif %}">
-    <meta property="og:description" content="{% if this.frontmatter.description %}{{this.frontmatter.description}}{% endif %}">
+    <meta property="og:description" content="{{ this.content | strip_html | truncatewords: 20 }}">
     <meta property="og:image" content="{% if this.frontmatter.featured_image%}{{this.frontmatter.featured_image}}{% endif %}">
     <meta property="og:type" content="{% if this.frontmatter.og_type %}{{this.frontmatter.og_type}}{% else %}article{% endif %}">
 
@@ -14,23 +14,47 @@
     <!-- This documentation site was built with QuickStatic, https://github.com/tonyalaribe/quickstatic -->
 
     <title>{% if this.frontmatter.title %}{{this.frontmatter.title}}{% endif %}</title>
-    <meta name="description" content="{% if this.frontmatter.description %}{{this.frontmatter.description}}{% endif %}">
+    <meta name="description" content="{{ this.content | strip_html | truncatewords: 20 }}">
 
     <link rel="stylesheet" href="/assets/css/tailwind.min.css">
     <script defer src="https://kit.fontawesome.com/32c218ff10.js" crossorigin="anonymous"></script>
     <script defer src="/assets/deps/htmx/htmx.min.js"></script>
     <script defer src="/assets/deps/htmx/preload.js"></script>
+    <style>
+        h1, h2, h3, h4, h5, h6 {
+          position: relative;
+          cursor: pointer;
+        }
+        .header-link {
+          position: absolute;
+          left: -20;
+          top: 5px;
+          display: none;
+          text-decoration: none;
+          color: #737373;
+          cursor: pointer;
+          font-size: .7rem;
+          padding-right: 20px;
+        }
+        h1:hover .header-link,h2:hover .header-link,h3:hover .header-link,h4:hover .header-link,h5:hover .header-link,h6:hover .header-link,
+        .header-link:hover {
+          display: inline;
+        }
+      </style>
   </head>
   <body data-theme="emerald" hx-boost="true" hx-ext="preload" class="" preload>
     <section class="sticky top-0 w-full bg-base-100 z-10 divide-y divide-y-gray-100 border-b-2 border-b-gray-100">
       <section class="text-center ">
-        <div class="max-w-7xl w-full py-4 text-left inline-flex justify-between items-center">
+        <div class="max-w-7xl w-full py-4 px-5 sm:px-0 text-left inline-flex justify-between items-center">
           <a href="/" class="px-1 py-1"><img class="h-6 " src="/assets/brand/logo_full_color.svg" /></a>
           <div class="flex gap-4 items-center">
-            <a href="/">Back to Website</a>
+            <a href="/" class="hidden sm:inline-block">Back to Website</a>
+            <label class="sm:hidden">
+              <i class="fa-solid fa-magnifying-glass w-4 h-4 opacity-70"></i>
+            </label>
             <a href="app.apitoolkit.io" class="btn btn-sm btn-secondary">Sign Up</a>
 
-            <label class="input input-sm bg-slate-50 input-bordered flex items-center gap-2">
+            <label class="input input-sm bg-slate-50 input-bordered hidden sm:flex items-center gap-2">
               <i class="fa-solid fa-magnifying-glass w-4 h-4 opacity-70"></i>
               <input type="text" class="grow" placeholder="Search" />
               <kbd class="kbd kbd-sm">⌘K</kbd>
@@ -38,76 +62,100 @@
           </div>
         </div>
       </section>
-      <section class="text-center ">
-        <div class="max-w-7xl w-full text-left inline-flex gap-4 text-md ">
-          {% if this.frontmatter.title == "Home" %}
-            {% assign is_active = true %}
-          {% endif %}
-          <a class="flex gap-3 border-b-2 {%if is_active %}border-b-secondary{%else%}border-b-transparent{% endif %} py-2 px-1 items-center" href="/docs/" preload="preload:init">
-            <i class="fa-regular fa-house w-5 h-5 {% if is_active %}text-secondary{%endif%}"></i>
-            <span>Home</a>
-          </a>
-          {% assign pages = file_list | where_glob: 'file_path', "./docs/*/index.md" %}
-          {% assign pages = pages | sort: "frontmatter.menu_weight" | reverse %}
-          {% for page in pages %}
-            {% capture parent_doc_prefix%}{{page.file_path | remove: "index.md"}}{%endcapture%}
-            {% capture permalink_file_mode %}.{{this.permalink}}{% endcapture %}
-            {% assign starts_with_check = permalink_file_mode | split:parent_doc_prefix %}
-            {% assign is_active = false %}
-            {% if starts_with_check[0] == blank %}
-              {% assign is_active = true %}
-            {% endif %}
-            <a class="flex gap-3 border-b-2 {% if is_active %}border-b-secondary{%else%}border-b-transparent{% endif %} py-2 px-1 items-center" href="{{page.permalink}}" preload="preload:init">
-            <i class="fa-regular fa-{% if page.frontmatter.fa-logo %}{{page.frontmatter.fa-logo}}{%else%}star{%endif%} w-5 h-5 {% if is_active %}text-secondary{%endif%}"></i>
-              <span>{% if page.frontmatter.title %}{{page.frontmatter.title}}{% endif %}</a>
+    
+      <section class="text-center">
+        <div class="max-w-7xl w-full text-left gap-4 text-md hidden sm:inline-flex">
+          {% capture root_menu_items %}
+            {% assign is_home = this.frontmatter.title | equals: "Home" %}
+            <a class="flex gap-3 sm:border-b-2  {{ is_home | ternary: 'sm:border-b-secondary text-secondary sm:text-current ', 'border-b-transparent' }} py-2 px-1 items-center" href="/docs/" preload="preload:init">
+              <i class="fa-regular fa-house w-5 h-5 {{ is_home | ternary: 'text-secondary', '' }}"></i>
+              <span>Home</span>
             </a>
-          {% endfor %}
+            {% assign pages = file_list | where_glob: 'file_path', "./docs/*/index.md" | sort: "frontmatter.menu_weight" | reverse %}
+            {% for page in pages %}
+              {% assign parent_doc_prefix = page.file_path | remove: "index.md" %}
+              {% assign is_active = this.permalink | starts_with: parent_doc_prefix %}
+              <a class="flex gap-3 sm:border-b-2 {{ is_active | ternary: 'sm:border-b-secondary text-secondary sm:text-current', 'border-b-transparent' }} py-2 px-1 items-center" href="{{ page.permalink }}" preload="preload:init">
+                <i class="fa-regular fa-{{ page.frontmatter.fa-logo | default: 'star' }} w-5 h-5 {{ is_active | ternary: 'text-secondary', '' }}"></i>
+                <span>{{ page.frontmatter.title | default: 'Untitled' }}</span>
+              </a>
+            {% endfor %}
+          {% endcapture %}
+          {{ root_menu_items }}
+        </div>
+        <div class="text-md sm:hidden text-left flex items-center ">
+          <label for="mobile-menu-drawer" class="px-5 py-3"><i class="fa-regular fa-bars"></i> </label>
+          <a class="py-2">{{this.frontmatter.title}}</i> </a>
+
         </div>
       </section>
     </section>
     <section class="text-center  ">
       <div class="max-w-7xl w-full text-left inline-flex ">
-        {% unless this.frontmatter.hide_file_tree %}
-        <div class="w-64 leading-relaxed border-r-2 border-r-gray-100">
-          <nav class="w-64 space-y-8 text-sm my-48 pr-5  fixed top-0">
-            {% assign parts = this.permalink | split: '/' %}
-            {% assign parent_doc_section = parts[2] %}
-            {% capture glob_pattern %}./docs/{{ parent_doc_section }}/*/index.md{% endcapture %}
-            {% assign pages = file_list | where_glob: 'file_path', glob_pattern %}
-            {% for page in pages %}
+        <!-- Placed here to be situated infront of the conditional below, since the conditional clause does't affect mobile --> 
+        {% capture main_menu_items %}
+          {% assign parts = this.permalink | split: '/' %}
+          {% assign parent_doc_section = parts[2] %}
+          {% capture glob_pattern %}./docs/{{ parent_doc_section }}/*/index.md{% endcapture %}
+          {% assign pages = file_list | where_glob: 'file_path', glob_pattern %}
+          {% for page in pages %}
             <section class="pl-1">
-              <a class="block font-semibold pb-3" href="{{page.permalink}}">{{page.frontmatter.title}}</a>
-              {% capture glob_pattern %}.{{ page.permalink }}*/index.md{% endcapture %}
-              {% assign pages1 = file_list | where_glob: 'file_path', glob_pattern %}
-              {% if pages1.size >0 %}
-              <ul class="space-y-2">
-                {% for pgL1 in pages1 %}
-                  <li><a href="{{pgL1.permalink}}"
-                         class="hover:text-secondary {% if pgL1.permalink==this.permalink %}text-secondary{%endif%}"
-                         >{{pgL1.frontmatter.title}}</a>
-                    {% capture glob_pattern2 %}.{{ pgL1.permalink }}*/index.md{% endcapture %}
-                    {% assign pages2 = file_list | where_glob: 'file_path', glob_pattern2 %}
-                    {% if pages2.size > 0 %}
-                    <ul class="pl-5 space-y-2 pt-2">
-                      {% for pgL2 in pages2 %}
-                      <li><a href="{{pgL2.permalink}}"
-                         class="hover:text-secondary {% if pgL2.permalink==this.permalink %}text-secondary{%endif%}"
-                         >{{pgL2.frontmatter.title}}</a>
-                      </li>
-                      {% endfor %}
-                    </ul>
-                    {% endif %}
-                  </li>
-                {% endfor %}
-              </ul>
-            {% endif %}
+              <a class="block font-semibold pb-3" href="{{ page.permalink }}">{{ page.frontmatter.title }}</a>
+              {% capture glob_pattern1 %}.{{ page.permalink }}*/index.md{% endcapture %}
+              {% assign subpages = file_list | where_glob: 'file_path', glob_pattern1 %}
+              {% if subpages.size > 0 %}
+                <ul class="space-y-2">
+                  {% for subpage in subpages %}
+                    <li>
+                      {% assign is_active_page = subpage.permalink |  equals: this.permalink %}
+                      <a href="{{ subpage.permalink }}" class="hover:text-secondary {{ is_active_page | ternary: 'text-secondary', '' }}">{{ subpage.frontmatter.title }}</a>
+                      {% capture glob_pattern2 %}.{{ subpage.permalink }}*/index.md{% endcapture %}
+                      {% assign subsubpages = file_list | where_glob: 'file_path', glob_pattern2 %}
+                      {% if subsubpages.size > 0 %}
+                        <ul class="pl-5 space-y-2 pt-2">
+                          {% for subsubpage in subsubpages %}
+                            <li>
+                              {% assign is_active_subpage = subsubpage.permalink |  equals: this.permalink %}
+                              <a href="{{ subsubpage.permalink }}" class="hover:text-secondary {{ is_active_subpage | ternary: 'text-secondary', '' }}">{{ subsubpage.frontmatter.title }}</a>
+                            </li>
+                          {% endfor %}
+                        </ul>
+                      {% endif %}
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
             </section>
-            {% endfor %}
+          {% endfor %}
+        {% endcapture %}
+        {% unless this.frontmatter.hide_file_tree %}
+        <div class="w-64 leading-relaxed border-r-2 border-r-gray-100 hidden sm:block ">
+          <nav class="w-64 space-y-8 text-sm my-48 pr-5 fixed top-0">
+          {{  main_menu_items }}
           </nav>
         </div>
         {% endunless %}
+        <!-- Navigation drawer used on Mbile only -->
+        <div class="drawer fixed top-0 z-50">
+          <input id="mobile-menu-drawer" type="checkbox" class="drawer-toggle"/>
+          <div class="drawer-side">
+            <label for="mobile-menu-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+            <div class="p-5 w-80 min-h-full bg-base-100 text-base-content clear-both">
+              <label for="mobile-menu-drawer" class="p-5 float-right"><i class="fa-regular fa-xmark"></i></label>
+              <div class="space-y-5 pt-5">
+                <section>
+                  {{ root_menu_items }}
+                </section>
+                <section class="py-5">
+                  {{  main_menu_items }}
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+        
         <div class="flex-1 grow flex relative min-h-screen  ">
-          <div class="text-center flex-1 grow p-20 pb-28 ">
+          <div class="text-center flex-1 grow p-5 pt-12 sm:p-20 sm:pb-28 ">
             <article class="inline-block text-left pb-40 prose prose-slate dark:prose-invert prose-headings:font-medium prose-a:text-secondary prose-a:underline prose-a:underline-offset-4  
                             prose-img:w-full prose-img:rounded-md  prose-p:leading-relaxed
                             prose-headings:scroll-mt-40
@@ -119,7 +167,7 @@
           </div>
         </div>
         {% unless this.frontmatter.hide_toc %}
-        <section class="w-56">
+        <section class="w-56 hidden sm:block ">
           <div class="w-56 my-48  fixed top-0 text-sm space-y-4">
             <strong class="block font-medium">On this page </strong>
             <ul class="space-y-2 border-l " id="tableOfContents">
@@ -171,34 +219,5 @@
 }
     init()
   </script>
-  <style>
-
-h1, h2, h3, h4, h5, h6 {
-  position: relative;
-  cursor: pointer;
-}
-
-.header-link {
-  position: absolute;
-  left: -20;
-  top: 5px;
-  display: none;
-  text-decoration: none;
-  color: #737373;
-  cursor: pointer;
-  font-size: .7rem;
-  padding-right: 20px;
-}
-
-h1:hover .header-link,
-h2:hover .header-link,
-h3:hover .header-link,
-h4:hover .header-link,
-h5:hover .header-link,
-h6:hover .header-link,
-.header-link:hover {
-  display: inline;
-}
-          </style>
   </body>
 </html>

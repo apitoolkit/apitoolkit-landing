@@ -15,7 +15,7 @@ module.exports = {
   // daisyUI config (optional - here are the default values)
   daisyui: {
     // themes: true, // false: only light + dark | true: all themes | array: specific themes like this ["light", "dark", "cupcake"]
-    theme: true, 
+    theme: ["emerald"], 
     // darkTheme: "dark", // name of one of the included themes for dark mode
     darkTheme: false,
     base: true, // applies background color and foreground color for root element by default
