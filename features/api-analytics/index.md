@@ -25,7 +25,7 @@ Optimize what truly matters to your business. From identifying trends to making 
 </div>
 </section>
 <section  class="py-28 text-center text-center w-full max-w-full aspect-auto" >
-<div class="max-w-6xl inline-block text-left  text-xl sm:text-2xl prose prose-lg space-y-16">
+<div class="max-w-6xl inline-block text-left  text-xl sm:text-2xl prose prose-lg prose-pre:p-0 space-y-16">
 ```
 
 {class="grid px-6 grid-cols-1 md:px-2 md:grid-cols-5 gap-8 justify-center items-center"}

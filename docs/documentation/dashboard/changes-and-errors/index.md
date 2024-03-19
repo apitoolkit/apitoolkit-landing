@@ -13,11 +13,11 @@ menu:
 
 APIToolkit is essential for API development, offering tools for monitoring, adjusting to changes, and error handling, crucial for the reliability and stability of APIs. Its "Changes & Errors" feature gives developers real-time insights and control, helping to maintain functionality and improve user experience. We'll further examine this feature's importance in API management.
 
-## **Overview of the "Changes & Errors" Dashboard**
+## Overview of the "Changes & Errors" Dashboard
 
 APIs, by their nature, are dynamic and continuously evolving entities. As they adapt to new requirements or functionalities, tracking these changes becomes essential. APIToolkit’s "Changes & Errors" dashboard emerges as an intuitive interface, tailored to give developers a comprehensive overview of their API's evolution and health at a glance.
 
-**Understanding the Layout and Main Categories**
+## Understanding the Layout and Main Categories
 
 Upon entering the dashboard, users are met with three primary categories:
 
@@ -45,7 +45,7 @@ In essence, the "Changes & Errors" dashboard isn’t merely about tracking; it's
 
 As APIs adapt to shifting requirements and advancements, they inevitably experience various changes. Without diligent oversight and management of these changes, there can be unintended ripple effects that impact both the developer's workflow and the user experience. The "Changes & Errors" dashboard in APIToolkit, with its three central categories – Inbox, Acknowledged, and Archived – offers a structured framework to navigate this ever-evolving terrain.
 
-**Understanding Each Category**
+### Understanding Each Category
 
 - **Inbox:**
 
@@ -61,7 +61,7 @@ As APIs adapt to shifting requirements and advancements, they inevitably experie
   - **Definition:** After resolving an issue or when a change becomes outdated, it's moved to the 'Archived' section. This area acts as a repository for past events and actions.
   - **Significance:** While the primary purpose of this section is to declutter the active dashboard, it's equally valuable for retrospective analysis. It allows teams to understand historical patterns, learn from past incidents, and even anticipate future challenges.
 
-**The Lifecycle of an API Change or Error**
+### The Lifecycle of an API Change or Error
 
 From detection to resolution, here's a typical lifecycle:
 
@@ -71,11 +71,11 @@ From detection to resolution, here's a typical lifecycle:
 4. **Action & Resolution:** The team works on the necessary fixes, adaptations, or improvements.
 5. **Archival:** Once addressed, the item is moved to 'Archived,' signaling its resolution or deeming it no longer active.
 
-## **Navigating through Request Shapes & Endpoints**
+## Navigating through Request Shapes & Endpoints
 
 With APIs serving as a bridge between disparate systems, understanding the anatomy of requests becomes crucial. In APIToolkit's "Changes & Errors" dashboard, particular emphasis is placed on 'Request Shapes' and 'Endpoints.' These offer insights into how data is being exchanged, any modifications therein, and the overall health of various API endpoints.
 
-**Understanding New, Updated, and Deleted Fields**
+### Understanding New, Updated, and Deleted Fields
 
 ![fields](new-fields.png)
 
@@ -85,7 +85,7 @@ Each request made to an API carries a specific structure or 'shape' comprising v
 - **Updated Fields:** Modifications to existing fields might mean changes in data types, validation rules, or data sources. Such changes require rigorous testing to ensure data integrity and application stability.
 - **Deleted Fields:** The removal of fields can be due to deprecation or optimization. It's critical to verify that no existing functionalities rely on these removed fields to prevent unexpected errors or failures.
 
-**A Look at the Introduction of New Endpoints**
+### A Look at the Introduction of New Endpoints
 
 Endpoints in an API correspond to specific functionalities. When new endpoints appear on the dashboard:
 
@@ -107,7 +107,7 @@ APIs, with their myriad of endpoints, responses, and interactions, produce a ple
 
 5. **Historical Comparison:** Understanding the past performance of the API provides a benchmark. Any deviation from this trend can be a red flag, prompting immediate investigation.
 
-## **Understanding Throughput Graphs: The 24h and 14d Perspective**
+## Understanding Throughput Graphs: The 24h and 14d Perspective
 
 API throughput is a crucial metric that illustrates the amount of data processed by an API over a given period. In the context of APIToolkit, two key timeframes are presented: a 24-hour (24h) view and a two-week (14d) view. Each offers distinct insights.
 
@@ -128,7 +128,7 @@ Graphical representations aren't just about plotting data points on a graph. The
 
 The dynamism inherent in APIs, especially in fast-evolving environments, necessitates a proactive and efficient approach to their monitoring and management. The introduction of unforeseen changes or errors can disrupt user experience, harm your brand reputation, and even result in significant financial losses. Leveraging APIToolkit, with its comprehensive suite of tools, can significantly streamline this process. Below are best practices to ensure that your API environment not only remains robust but also evolves smoothly.
 
-**Tips for Efficient Monitoring and Management**
+### **Tips for Efficient Monitoring and Management**
 
 1. Establish a routine of consistently reviewing APIToolkit's "Changes & Errors" dashboard to promptly spot and rectify issues. 
 2. Set up APIToolkit’s alert system to receive immediate notifications for critical changes or errors, keeping you informed at all times. 
@@ -138,7 +138,7 @@ The dynamism inherent in APIs, especially in fast-evolving environments, necessi
 6. Keep thorough documentation of all changes, errors, and actions taken for historical reference and team training. 
 7. Integrate APIToolkit with other platforms like Slack, JIRA, or your email service to enhance monitoring and never miss an important alert.
 
-**Ensuring Smooth Evolution of Your API Environment**
+### **Ensuring Smooth Evolution of Your API Environment**
 
 1. **Versioning:** Use versioning for significant updates to allow for backward compatibility and user continuity.
 
@@ -153,4 +153,3 @@ The dynamism inherent in APIs, especially in fast-evolving environments, necessi
 ## **Conclusion**
 
 APIs are crucial for modern software, requiring diligent management to ensure they function optimally. APIToolkit provides a comprehensive set of tools for monitoring and managing APIs, aiding developers in maintaining API health and facilitating evolution without compromising reliability. Best practices and a proactive approach to API management can greatly enhance both developer and end-user experiences, ensuring APIs continue to meet the demands of a dynamic digital landscape.
-

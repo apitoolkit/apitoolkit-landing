@@ -26,13 +26,11 @@ Error monitoring is not enough. Catch breaking changes in your APIs and third pa
     </div>
 </section>
 <section  class="py-28  text-center w-full max-w-full aspect-auto" >
-    <div class="max-w-6xl inline-block text-left  text-xl sm:text-2xl prose prose-lg space-y-16">
+    <div class="max-w-6xl inline-block text-left  text-xl sm:text-2xl prose prose-lg prose-pre:p-0 space-y-16">
 ```
-
-
 {class="grid grid-cols-1  md:grid-cols-5 gap-8 px-6 md:px-2 justify-center items-center"}
 :::
-{.order-last .md:order-first .col-span-3}
+{class="order-last md:order-first col-span-3"}
 ![](log_explorer_error.png){class="w-full drop-shadow-lg border border-gray-200 rounded-md"}
 
 {class="space-y-3 col-span-2 order-first md:order-last"}
@@ -68,7 +66,7 @@ Catch breaking changes in your APIs and in any third party APIs you depend on. N
 ::::
 
 {.col-span-3}
-![](./changes_details.png){class="w-full  drop-shadow-lg border border-gray-200 rounded-md"} 
+![](changes_details.png){class="w-full  drop-shadow-lg border border-gray-200 rounded-md"} 
 :::
 
 {class="grid px-6 grid-cols-1 md:px-2 md:grid-cols-5 gap-8 justify-center items-center"}
@@ -93,6 +91,7 @@ Integrate Alerts into your current workflow through slack, email, teams, pagerdu
 
 {% render "default/markdown/feature-overview.liquid", this:this %}
 {% render "default/markdown/integration-footer.liquid", config:config %}
+
 
 ``` =html
 </div>

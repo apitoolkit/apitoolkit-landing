@@ -189,9 +189,6 @@
   width: min(100vw, 1200px);
   padding-inline: 8px;
 }
-.int_active {
-  @apply border border-green-500 ring
-}
 .section-line {
   background: linear-gradient(
     180deg,

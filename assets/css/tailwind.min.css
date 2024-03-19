@@ -6160,10 +6160,6 @@ html:has(.drawer-toggle:checked) {
   margin-bottom: 1.5rem;
 }
 
-.mb-\[0\] {
-  margin-bottom: 0;
-}
-
 .mb-auto {
   margin-bottom: auto;
 }
@@ -6344,10 +6340,6 @@ html:has(.drawer-toggle:checked) {
   height: 6rem;
 }
 
-.h-28 {
-  height: 7rem;
-}
-
 .h-4 {
   height: 1rem;
 }
@@ -6384,11 +6376,6 @@ html:has(.drawer-toggle:checked) {
   height: 100%;
 }
 
-.h-max {
-  height: -moz-max-content;
-  height: max-content;
-}
-
 .max-h-96 {
   max-height: 24rem;
 }
@@ -6415,10 +6402,6 @@ html:has(.drawer-toggle:checked) {
 
 .w-2 {
   width: 0.5rem;
-}
-
-.w-28 {
-  width: 7rem;
 }
 
 .w-4 {
@@ -6516,10 +6499,6 @@ html:has(.drawer-toggle:checked) {
 
 .min-w-0 {
   min-width: 0px;
-}
-
-.max-w-2xl {
-  max-width: 42rem;
 }
 
 .max-w-3xl {
@@ -6741,6 +6720,10 @@ html:has(.drawer-toggle:checked) {
 
 .grid-cols-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-cols-5 {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
 .flex-row {
@@ -6999,10 +6982,6 @@ html:has(.drawer-toggle:checked) {
 
 .overflow-y-clip {
   overflow-y: clip;
-}
-
-.overflow-x-scroll {
-  overflow-x: scroll;
 }
 
 .truncate {
@@ -7279,11 +7258,6 @@ html:has(.drawer-toggle:checked) {
 .bg-slate-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(248 250 252 / var(--tw-bg-opacity));
-}
-
-.bg-slate-700 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(51 65 85 / var(--tw-bg-opacity));
 }
 
 .bg-stone-200 {
@@ -7619,10 +7593,6 @@ html:has(.drawer-toggle:checked) {
   padding-bottom: 0.75rem;
 }
 
-.pb-4 {
-  padding-bottom: 1rem;
-}
-
 .pb-40 {
   padding-bottom: 10rem;
 }
@@ -7745,11 +7715,6 @@ html:has(.drawer-toggle:checked) {
 
 .font-sans {
   font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
-
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
 }
 
 .text-3xl {
@@ -8269,15 +8234,6 @@ html:has(.drawer-toggle:checked) {
 .width-control {
   width: min(100vw, 1200px);
   padding-inline: 8px;
-}
-
-.int_active {
-  border-width: 1px;
-  --tw-border-opacity: 1;
-  border-color: rgb(34 197 94 / var(--tw-border-opacity));
-  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
 }
 
 .section-line {
@@ -8912,6 +8868,14 @@ html:has(.drawer-toggle:checked) {
   font-weight: 500;
 }
 
+.prose-pre\:p-0 :is(:where(pre):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  padding: 0px;
+}
+
+.prose-pre\:pl-0 :is(:where(pre):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  padding-left: 0px;
+}
+
 .before\:prose-li\:bg-secondary :is(:where(li):not(:where([class~="not-prose"],[class~="not-prose"] *)))::before {
   content: var(--tw-content);
   --tw-bg-opacity: 1;
@@ -8961,12 +8925,30 @@ html:has(.drawer-toggle:checked) {
     display: none;
   }
 
+  .sm\:w-1\/2 {
+    width: 50%;
+  }
+
+  .sm\:w-\[110\%\] {
+    width: 110%;
+  }
+
   .sm\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .sm\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
   .sm\:flex-row {
     flex-direction: row;
+  }
+
+  .sm\:space-x-8 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(2rem * var(--tw-space-x-reverse));
+    margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
   .sm\:border-b-2 {
@@ -9081,10 +9063,6 @@ html:has(.drawer-toggle:checked) {
     width: 0px;
   }
 
-  .md\:w-1\/2 {
-    width: 50%;
-  }
-
   .md\:w-\[40\%\] {
     width: 40%;
   }
@@ -9100,10 +9078,6 @@ html:has(.drawer-toggle:checked) {
 
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .md\:grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .md\:grid-cols-4 {
