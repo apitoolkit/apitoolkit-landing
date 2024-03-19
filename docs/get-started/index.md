@@ -9,8 +9,11 @@ weight: 1
 # Get Started
 
 **To get you started, you might find some of these links useful** 
+
 * No account yet? You can sign up for one at [apitoolkit.io](https://apitoolkit.io/)
+  
 * Stuck? Feel free to [Contact Support.](hello@apitoolkit.io)
+  
 * Installing the APItoolkit yourself? Check out our Quickstart page.  
 
 This guide will walk you through the initial setup process for APItoolkit.  
