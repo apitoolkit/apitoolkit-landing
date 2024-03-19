@@ -51,11 +51,17 @@ func main() {
 ```
 
 d. Integrate with APITOOLKIT
+
 To integrate with APITOOLKIT, follow these steps:
+
 - Import necessary packages and initialize the APITOOLKIT client with your API key.
+  
 - Register APITOOLKIT middleware with Gorilla Mux router.
+  
 - Implement your routes, ensuring that APITOOLKIT middleware is applied.
-Let's go ahead and write the code to initialize `apitoolkit` with `gorilla/mux`:
+  
+Let's go ahead and write the code to initialize `apitoolkit` with `gorilla/mux`
+
 ```go
 package main
 
