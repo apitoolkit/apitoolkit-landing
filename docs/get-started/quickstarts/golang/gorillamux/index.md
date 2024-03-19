@@ -20,9 +20,9 @@ This document provides step-by-step instructions for integrating your Go applica
 
 **Integrate with Gorilla Mux in Go**
 
-Assuming you've already set up Go and wish to integrate with Gorilla Mux:
+Assuming you've already set up Go and wish to integrate with Gorilla Mux
 
-a. Install necessary packages:
+a. Install necessary packages
 
 ```bash
 go get -u github.com/gorilla/mux
@@ -30,7 +30,7 @@ go get -u github.com/gorilla/mux
 
 b. Create a new Go file, for instance, `main.go`
 
-c. Set up your Gorilla Mux router:
+c.In your main.go file, initialize Gorilla Mux router and define your routes as needed. Below is a basic setup example
 
 ```go
 package main
@@ -50,9 +50,12 @@ func main() {
 }
 ```
 
-d. Integrate with APITOOLKIT:
+d. Integrate with APITOOLKIT
+To integrate with APITOOLKIT, follow these steps:
+- Import necessary packages and initialize the APITOOLKIT client with your API key.
+- Register APITOOLKIT middleware with Gorilla Mux router.
+- Implement your routes, ensuring that APITOOLKIT middleware is applied.
 Let's go ahead and write the code to initialize `apitoolkit` with `gorilla/mux`:
-
 ```go
 package main
 
@@ -144,15 +147,19 @@ func main() {
 }
 ```
 
-It's pivotal to note that while the `RedactHeaders` config field will take the header names (which are case insensitive), `RedactRequestBody` and `RedactResponseBody` work with JSONPath strings.
+It's important to note that while the `RedactHeaders` config field will take the header names (which are case insensitive), `RedactRequestBody` and `RedactResponseBody` work with JSONPath strings.
 
-Using JSONPath allows for flexibility when determining which fields in your responses are sensitive. This configuration is global and impacts all endpoint requests and responses. To get a better grasp of JSONPath and how to draft these queries, look into: [JSONPath Cheatsheet](https://lzone.de/cheat-sheet/JSONPath)
+Using JSONPath allows for flexibility when determining which fields in your responses are sensitive. This configuration is global and impacts all endpoint requests and responses. 
+
+To get a better grasp of JSONPath and how to draft these queries, look into: [JSONPath Cheatsheet](https://lzone.de/cheat-sheet/JSONPath)
 
 ## Outgoing Requests
 
-To monitor outgoing HTTP requests from your Go application, you can replace the default HTTP client transport with a custom roundtripper. This allows you to capture and send copies of all incoming and outgoing requests to an apitoolkit server for monitoring and analysis.
+To monitor outgoing HTTP requests from your Go application, you can replace the default HTTP client transport with a custom roundtripper.
 
-### Example
+This allows you to capture and send copies of all incoming and outgoing requests to an apitoolkit server for monitoring and analysis.
+
+Example
 
 ```go
 package main
@@ -187,7 +194,11 @@ func main() {
 }
 ```
 
-The provided code demonstrates how to set up the custom roundtripper to replace the default HTTP client's transport. The resulting HTTP client, `HTTPClient`, is configured to send copies of all incoming and outgoing requests to the apitoolkit servers. You can use this modified HTTP client for any HTTP requests you need to make from your server, ensuring they are monitored by apitoolkit.
+The provided code demonstrates how to set up the custom roundtripper to replace the default HTTP client's transport. 
+
+The resulting HTTP client, `HTTPClient`, is configured to send copies of all incoming and outgoing requests to the apitoolkit servers. 
+
+You can use this modified HTTP client for any HTTP requests you need to make from your server, ensuring they are monitored by apitoolkit.
 
 ## Report Errors
 
@@ -228,9 +239,3 @@ func main() {
 	}
 }
 ```
-
-## Next Steps
-
-1. Deploy your application or initiate test HTTP requests to your service.
-2. Visit the API log explorer or the Endpoints tab on the APIToolkit dashboard. Here, you can confirm if your test request was handled properly.
-3. Enjoy having our API comanage your backends and APIs with you.
