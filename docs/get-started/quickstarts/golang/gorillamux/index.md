@@ -10,7 +10,7 @@ menu:
     weight: 20
 ---
 # Go Gin integration
-This document provides step-by-step instructions for integrating your Go application with Gorilla Mux, a powerful HTTP router and dispatcher for Go, and demonstrates how to further integrate it with APITOOLKIT, a toolkit for building APIs.
+This is how to integrate APItoolkit Go Gorilla Mux SDK into your application. This enhances your application's capabilities in managing routes, middleware, and request handling, ensuring smooth communication between your application components and external APIs.
 
 ### Prerequisites
 
