@@ -9,7 +9,7 @@ menu:
     weight: 20
 ---
 
-APIToolkit SDK for Elixir Phoenix.
+# Elixir Phoenix integration.
 
 ## Installation
 
