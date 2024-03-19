@@ -13,13 +13,11 @@ menu:
 This is how to integrate APItoolkit Go Gorilla Mux SDK into your application. This enhances your application's capabilities in managing routes, middleware, and request handling, ensuring smooth communication between your application components and external APIs.
 
 ### Prerequisites
-
-1. Sign up / Sign in to the [API dashboard](https://app.apitoolkit.io)
-2. [Create a project](/docs/documentation/dashboard/creating-a-project/)
-3. [Generate an API key for your project](/docs/documentation/dashboard/generating-api-keys), and include a brief description of your work. And to prevent losing your key after it has been generated, remember to make a copy of it.
+- Sign up / Sign in to the [API dashboard](https://app.apitoolkit.io)
+- [Create a project](/docs/documentation/dashboard/creating-a-project/)
+- [Generate an API key for your project](/docs/documentation/dashboard/generating-api-keys), and include a brief description of your work. And to prevent losing your key after it has been generated, remember to make a copy of it.
 
 **Integrate with Gorilla Mux in Go**
-
 Assuming you've already set up Go and wish to integrate with Gorilla Mux
 
 a. Install necessary packages
@@ -76,7 +74,7 @@ func main() {
 	ctx := context.Background()
 
 	// Initialize the client using your generated apikey
-	apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "<APIKEY>"})
+	apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: (<APIKEY>)})
 	if err != nil {
 		panic(err)
 	}
