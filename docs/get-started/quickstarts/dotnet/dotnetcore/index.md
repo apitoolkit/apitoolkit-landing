@@ -16,14 +16,14 @@ To integrate .Net web services with API Toolkit, an SDK called the `ApiToolkit.N
 
 It keeps track of incoming traffic, aggregates the requests, and then delivers them to the apitoolkit servers.
 
-## Design decisions:
+## Design decisions
 
 - APItoolkit SDK relies on google cloud pubsub over grpc behind the scenes, to ensure that your traffic is communicated to APIToolkit for processing in the most efficient ways.
 - Processing the live traffic in this way, allows :
   - APIToolkit to perform all kinds of analysis and anomaly detection and monitoring on your APIs in real time.
   - Users to explore their API live, via the api log explorer.
 
-## How to Integrate with a DotNet Web Service:
+## How to Integrate with a DotNet Web Service
 
 - Sign up / Sign in to the [API dashboard](https://app.apitoolkit.io)
    ![Sign up / Sign in](/signin.png)
@@ -31,9 +31,8 @@ It keeps track of incoming traffic, aggregates the requests, and then delivers t
 -  [Create a project](/docs/dashboard/creating-a-project/)
    
 -  [Generate an API key for your project](/docs/dashboard/generating-api-keys), and include a brief description of your work. And to prevent losing your key after it has been generated, remember to make a copy of it.
-   ![API key generation](/api-keys-generation.png)
    
--  Initialize the middleware with the APItoolkit API key you generated above. Integrating only takes 3 lines of Go code:
+-  Initialize the middleware with the APItoolkit API key you generated above. Integrating only takes 3 lines of code:
 
 ## Installation
 
