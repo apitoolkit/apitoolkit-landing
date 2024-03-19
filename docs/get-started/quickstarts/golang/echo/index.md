@@ -8,16 +8,14 @@ menu:
   main:
     weight: 20
 ---
+# Go Echo integration 
+Echo is an efficient web framework for Go, boasting both high performance and adaptability. Its vast array of middleware and plugins facilitate seamless integration into your application, simplifying the enhancement of features and functions. 
 
-Echo is an efficient web framework for Go, boasting both high performance and adaptability. Its vast array of middleware and plugins facilitate seamless integration into your application, simplifying the enhancement of features and functions. To further streamline your development, here's a guide on integrating the Go Echo SDK with APIToolkit.
-
-**Create an Account or Sign In to APIToolkit to Generate Key**
+To further streamline your development, here's a guide on integrating the Go Echo with APIToolkit SDK.
 
 1. Sign up / Sign in to the [API dashboard](https://app.apitoolkit.io)
-   ![sign up/sign in](/docs/get-started/Quickstarts/Golang/signin.png)
 2. [Create a project](/docs/documentation/dashboard/creating-a-project/)
 3. [Generate an API key for your project](/docs/documentation/dashboard/generating-api-keys), and include a brief description of your work. And to prevent losing your key after it has been generated, remember to make a copy of it.
-   ![api key generation](/docs/get-started/Quickstarts/Golang/api-key-generation.png)
 
 **Integrate with Go's Echo Framework**
 
@@ -108,7 +106,6 @@ For instance, if you have a request body like:
   }
 }
 ```
-
 And you wish to redact the `password` and credit card `number` fields, you'd configure the `apitoolkit` config struct as follows:
 
 ```go
@@ -192,8 +189,12 @@ The provided code demonstrates how to set up the custom roundtripper to replace 
 ## Report Errors
 
 If you've used sentry, or bugsnag, or rollbar, then you're already familiar with this usecase.
-But you can report an error to apitoolkit. A difference, is that errors are always associated with a parent request, and helps you query and associate the errors which occured while serving a given customer request. To request errors to APIToolkit use call the `ReportError` method of `apitoolkit` not the client returned by `apitoolkit.NewClient` with the request context and the error to report
-Example:
+
+But you can report an error to apitoolkit. A difference, is that errors are always associated with a parent request, and helps you query and associate the errors which occured while serving a given customer request. 
+
+To request errors to APIToolkit use call the `ReportError` method of `apitoolkit` not the client returned by `apitoolkit.NewClient` with the request context and the error to report.
+
+Example
 
 ```go
 package main
@@ -234,4 +235,3 @@ func hello(c echo.Context) error {
 
 1. Deploy your application or send test HTTP requests to your service.
 2. Head over to the API log explorer or Endpoints section on the APIToolkit dashboard to confirm that your test request has been processed correctly.
-3. Enjoy having our API comanage your backends and APIs with you.
