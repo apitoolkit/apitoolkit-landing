@@ -11,3 +11,5 @@ menu:
 # Quickstart guides
 
 Select your preferred tech stack for APIToolkit integration.
+
+{% render "default/markdown/integration-footer.liquid", config:config %}
