@@ -12,26 +12,28 @@ menu:
 
 # .Net SDK integration
 
-To integrate .Net web services with API Toolkit, an SDK called the `ApiToolkit.Net` client for API Toolkit is utilized. It keeps track of incoming traffic, aggregates the requests, and then delivers them to the apitoolkit servers.
+To integrate .Net web services with API Toolkit, an SDK called the `ApiToolkit.Net` client for API Toolkit is utilized.
+
+It keeps track of incoming traffic, aggregates the requests, and then delivers them to the apitoolkit servers.
 
 ## Design decisions:
 
 - APItoolkit SDK relies on google cloud pubsub over grpc behind the scenes, to ensure that your traffic is communicated to APIToolkit for processing in the most efficient ways.
 - Processing the live traffic in this way, allows :
-  1. APIToolkit to perform all kinds of analysis and anomaly detection and monitoring on your APIs in real time.
-  2. Users to explore their API live, via the api log explorer.
+  - APIToolkit to perform all kinds of analysis and anomaly detection and monitoring on your APIs in real time.
+  - Users to explore their API live, via the api log explorer.
 
 ## How to Integrate with a DotNet Web Service:
 
-1. Sign up / Sign in to the [API dashboard](https://app.apitoolkit.io)
+- Sign up / Sign in to the [API dashboard](https://app.apitoolkit.io)
    ![Sign up / Sign in](/signin.png)
    
-2. [Create a project](/docs/dashboard/creating-a-project/)
+-  [Create a project](/docs/dashboard/creating-a-project/)
    
-3. [Generate an API key for your project](/docs/dashboard/generating-api-keys), and include a brief description of your work. And to prevent losing your key after it has been generated, remember to make a copy of it.
+-  [Generate an API key for your project](/docs/dashboard/generating-api-keys), and include a brief description of your work. And to prevent losing your key after it has been generated, remember to make a copy of it.
    ![API key generation](/api-keys-generation.png)
    
-4. Initialize the middleware with the APItoolkit API key you generated above. Integrating only takes 3 lines of Go code:
+-  Initialize the middleware with the APItoolkit API key you generated above. Integrating only takes 3 lines of Go code:
 
 ## Installation
 
@@ -59,11 +61,13 @@ app.Use(async (context, next) =>
 ```
 
 The field `{Your_APIKey}` should be replaced with the api key which you generated from the apitoolkit dashboard.
-In practice, you would set this field using
 
 ## Redacting/Masking fields
 
-If you have fields which are too sensitive and should not be sent to APIToolkit servers, you can mark those fields to be redacted either via the APIToolkit dashboard, or via this client SDK. Redacting fields via the SDK means that those fields never leave your servers in the first place, compared to redacting it via the APIToolkit dashboard, which would redact the fields on the edge before further processing. But then the data still needs to be transported from your servers before they are redacted.
+If you have fields which are too sensitive and should not be sent to APIToolkit servers, you can mark those fields to be redacted either via the APIToolkit dashboard, or via this client SDK. 
+
+Redacting fields via the SDK means that those fields never leave your servers in the first place, compared to redacting it via the APIToolkit dashboard, which would redact the fields on the edge before further processing. 
+But then the data still needs to be transported from your servers before they are redacted.
 
 To mark a field for redacting via this SDK, you simply need to provide additional arguments to the APIToolkitService with the paths to the fields that should be redacted. There are 3 potential arguments which you can provide to configure what gets redacted.
 
