@@ -13,6 +13,7 @@ Echo is an efficient web framework for Go, boasting both high performance and ad
 
 To further streamline your development, here's a guide on integrating the Go Echo with APIToolkit SDK.
 
+### Prerequisites
 1. Sign up / Sign in to the [API dashboard](https://app.apitoolkit.io)
 2. [Create a project](/docs/documentation/dashboard/creating-a-project/)
 3. [Generate an API key for your project](/docs/documentation/dashboard/generating-api-keys), and include a brief description of your work. And to prevent losing your key after it has been generated, remember to make a copy of it.
