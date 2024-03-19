@@ -10,9 +10,9 @@ weight: 1
 
 **To get you started, you might find some of these links useful**
 
-- No account yet? You can sign up for one at apitoolkit.io
+- No account yet? You can sign up for one at apitoolkit
 
-- Stuck? Feel free to [Contact Support.](mailto:hello@apitoolkit.io)
+- Stuck? Feel free to [Contact Support.](hello@apitoolkit.io)
 
 - Installing the APItoolkit yourself? Check out our Quickstart page.
 
