@@ -176,10 +176,12 @@
                       id="mainArticle">
               {{this.content}} 
             </article>
+            {% unless this.frontmatter.hide_file_tree %}
             <footer class="py-12 text-left space-y-2">
               <h5 class="font-semibold">Need assistance?</h5>
               <p>You can reachout to us at <a href="mailto:hello@apitoolkit.io">hello@apitoolkit.io</a></p>
             </footer>
+            {% endunless %}
           </div>
         </div>
         {% unless this.frontmatter.hide_toc %}
