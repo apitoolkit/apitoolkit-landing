@@ -22,7 +22,6 @@ def deps do
   ]
 end
 ```
-
 Run `mix deps.get` to install the `apitoolkit_phoenix` dependency.
 
 Import and initialize the `ApitoolkitPhoenix` Plug in your `router.ex` file.
@@ -46,7 +45,11 @@ end
 
 ## Redacting Sensitive Data
 
-Some information is best kept private. Our Phoenix client supports redaction right on your servers. This means sensitive data like passwords or credit card numbers never leave your premises. To mark fields that should be redacted, add them to the APIToolkit config map. Here’s how you do it:
+Some information is best kept private. Our Phoenix client supports redaction right on your servers. 
+
+This means sensitive data like passwords or credit card numbers never leave your premises. 
+
+To mark fields that should be redacted, add them to the APIToolkit config map. Here’s how you do it:
 
 ```elixir
 defmodule HelloWeb.Router do
@@ -71,7 +74,11 @@ end
 
 ## Reporting Errors
 
-If you’ve used Sentry, Bugsnag, or Rollbar, then you’re already familiar with this use case. But you can report an error to APIToolkit. A difference is that errors are always associated with a parent request, helping you query and associate the errors which occurred while serving a given customer request. To report errors to APIToolkit, use the `report_error` method of the `ApitoolkitPhoenix` module.
+If you’ve used Sentry, Bugsnag, or Rollbar, then you’re already familiar with this use case. But you can report an error to APIToolkit. 
+
+The difference is that errors are always associated with a parent request, helping you query and associate the errors which occurred while serving a given customer request. 
+
+To report errors to APIToolkit, use the `report_error` method of the `ApitoolkitPhoenix` module.
 
 To automatically report all uncaught exceptions, call the `report_error` function passing it the connection and the error in the `handle_errors` function.
 
@@ -85,7 +92,7 @@ end
 
 You can also report errors manually by calling `report_error` from anywhere within a controller, also passing it the connection, the error and `__STACKTRACE__`.
 
-Example:
+Example
 
 ```elixir
 defmodule HelloWeb.PageController do
