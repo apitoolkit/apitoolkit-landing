@@ -10,13 +10,7 @@ menu:
     weight: 20
 ---
 # Go Gin integration
-
-## Design decisions
-
-- The SDK relies on google cloud pubsub over grpc behind the scenes, to ensure that your traffic is communicated to APIToolkit for processing in the most efficient ways.
-- Processing the live traffic in this way, allows :
-  1. APIToolkit to perform all kinds of analysis and anomaly detection and monitoring on your APIs in real time.
-  2. Users to explore their API live, via the api log explorer.
+To integrate APIToolkit with Go Gin, first install it using the 'go get' command, then initialize the client in the application's main function with the generated API key from apitoolkit.io. 
 
 ## How to Integrate with Golang Gin
 
