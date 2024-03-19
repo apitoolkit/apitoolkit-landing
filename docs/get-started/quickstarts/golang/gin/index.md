@@ -175,7 +175,9 @@ You can use this modified HTTP client for any HTTP requests you need to make fro
 
 If you've used sentry, or bugsnag, or rollbar, then you're already familiar with this usecase. But you can report an error to apitoolkit. 
 
-The difference is that errors are always associated with a parent request, and helps you query and associate the errors which occured while serving a given customer request. To request errors to APIToolkit use call the `ReportError` method of `apitoolkit` not the client returned by `apitoolkit.NewClient` with the request context and the error to report
+The difference is that errors are always associated with a parent request, and helps you query and associate the errors which occured while serving a given customer request.
+
+To request errors to APIToolkit use call the `ReportError` method of `apitoolkit` not the client returned by `apitoolkit.NewClient` with the request context and the error to report
 
 Example
 
