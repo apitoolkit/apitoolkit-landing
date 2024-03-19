@@ -8872,10 +8872,6 @@ html:has(.drawer-toggle:checked) {
   padding: 0px;
 }
 
-.prose-pre\:pl-0 :is(:where(pre):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
-  padding-left: 0px;
-}
-
 .before\:prose-li\:bg-secondary :is(:where(li):not(:where([class~="not-prose"],[class~="not-prose"] *)))::before {
   content: var(--tw-content);
   --tw-bg-opacity: 1;

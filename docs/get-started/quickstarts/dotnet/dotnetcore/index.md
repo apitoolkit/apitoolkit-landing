@@ -39,6 +39,7 @@ Run the following command to install the package into your .NET application:
 ```sh
 dotnet add package ApiToolkit.Net
 ```
+
 Now you can initialize APIToolkit in your application's entry point (eg Program.cs)
 
 ```csharp
@@ -111,6 +112,3 @@ To learn more about jsonpath to help form your queries, please take a look at th
 
 - Deploy your application or send test http requests to your service
 - Check API log explorer or Endpoints pages on the APIToolkit dashboard to see if your test request was processed correctly. 
-
-
-   
