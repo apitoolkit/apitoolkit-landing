@@ -24,7 +24,7 @@ It keeps track of incoming traffic, aggregates the requests, and then delivers t
   1. APIToolkit to perform all kinds of analysis and anomaly detection and monitoring on your APIs in real time.
   2. Users to explore their API live, via the api log explorer.
 
-## How to Integrate with a DotNet Web Service
+### Prerequisites
 
 - Sign up / Sign in to the [API dashboard](https://app.apitoolkit.io)
    
