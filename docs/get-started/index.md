@@ -46,18 +46,18 @@ To get started select your preferred SDk per your chosen tech stack. Check out o
 
 Install the required SDK using a package manager like pip or npm.
 
-``` js
+```JS
 npm install apitoolkit-express
 ```
 **SDK Initialization**
 
 This is how to Initialize apitoolkit into your project
 
-``` js
+```JS
 import { APIToolkit } from 'apitoolkit-express';
 const apitoolkitClient = APIToolkit.NewClient({ apiKey: '<API-KEY>' });
 ```
-Replace <API_KEY> with your unique API key obtained from your dashboard.
+Replace **API_KEY** with your unique API key obtained from your dashboard.
 
 
 
