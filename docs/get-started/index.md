@@ -55,7 +55,7 @@ This is how to Initialize apitoolkit into your project
 
 ```JS
 import { APIToolkit } from 'apitoolkit-express';
-const apitoolkitClient = APIToolkit.NewClient({ apiKey: '<API-KEY>' });
+const apitoolkitClient = APIToolkit.NewClient({ apiKey: (API-KEY) });
 ```
 Replace API_KEY with your unique API key obtained from your dashboard.
 
