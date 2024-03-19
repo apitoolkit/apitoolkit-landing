@@ -8,56 +8,43 @@ weight: 1
 
 # Get Started
 
-APIToolkit is not just a monitoring solution but a robust platform that enhances every aspect of your API lifecycle. From real-time performance analytics to direct API testing, our toolkit is designed to simplify, secure, and streamline your API processes.
+**To get you started, you might find some of these links useful** 
+* No account yet? You can sign up for one at [apitoolkit.io](https://apitoolkit.io/)
+* Stuck? Feel free to [Contact Support.](hello@apitoolkit.io)
+* Installing the APItoolkit yourself? Check out our Quickstart page.  
 
-Concerned about privacy? You'll be pleased to know that we're taking data security to the next level. Stay tuned for our upcoming feature that enables end-to-end encryption, safeguarding the data transition between your servers and ours. Here's how we're changing the game:
+This guide will walk you through the initial setup process for APItoolkit.  
 
-### 1. Simplify Server Integration
+APItoolkit has been designed with simplicity in mind, allowing you to get up and running quickly while providing ample room to scale as your needs grow.
 
-Embark on your APIToolkit experience by implementing our server SDK or API gateway plugin. This initial step sets the stage for comprehensive API monitoring and real-time usage analytics, crucial for maintaining optimal performance.
+**Get started with APItoolkit in three steps**
+* Sign up for an account
+* Install your prefer SDK
+* Configure SDK
 
-### 2. Monitoring API Calls
+## SDKs in APItoolkit
+APItoolkit leverages platform-specific Software Development Kits (SDKs) to capture data from your application. These SDKs provide a critical bridge between your application and APItoolkit, enabling a deeper understanding of your application's behavior and facilitating comprehensive API monitoring.
 
-Positioned strategically between your traffic flow and end-user interactions, APIToolkit vigilantly monitors the data traversing your servers. Our system is not just about tracking; it's built to understand, learn, and promptly detect any incidents or anomalies. Whether you're deep-diving into routine analysis or untangling the complexities of an unexpected incident, our platform equips you with the tools to scrutinize your API requests and responses meticulously.
+Each SDK is designed to seamlessly integrate with its respective development environment. If your development environment utilizes a non-standard tech stack or has highly customized configurations, we recommend contacting our customer support.
 
-### 3. Develop In-depth User/Company Insights
+## Integration
+To integrate APItoolkit into your project it is assumed that you already have an account. 
 
-Dive deeper into understanding your audience with detailed user and company profiles. These insights are more than just data — they're the building blocks for improved service, personalized user experiences, and targeted solutions.
+Go ahead to create a project and get your api key. 
+## Configure SDK
+**SDK Installation**
+To get started select your preferred SDk per your chosen tech stack. Check out our supported tech stack.
 
-## Expanding Your API Horizons with APIToolkit
+Install the required SDK using a package manager like pip or npm.
+```js
+npm install apitoolkit-express
+```
+**SDK Initialization**
+To Initialize apitoolkit into your project
+```js
+import { APIToolkit } from 'apitoolkit-express';
 
-### Real-time Monitoring & Analytics
+const apitoolkitClient = APIToolkit.NewClient({ apiKey: '<API-KEY>' });
+```
+Replace <API_KEY> with your unique API key obtained from your dashboard.
 
-- **Monitor Errors & Performance:** Stay ahead with instant alerts on performance issues or errors, ensuring uninterrupted service quality.
-- **Debugging and Live Traffic Analysis:** Visualize your API requests in real-time, allowing for immediate error debugging and performance optimizations.
-
-### API Documentation & Testing
-
-- **Swagger Generation & Upload:** Generate Swagger documentation directly from live traffic or upload your files effortlessly.
-- **Live API Tester:** Our standout feature enables you to test your APIs directly, ensuring they perform as expected under various conditions.
-
-### Security & Compliance
-
-- **Payload Validation & Anomaly Detection:** Safeguard your APIs by detecting and addressing payload anomalies and potential security breaches.
-- **API Static Analysis & Linter:** Ensure your API code adheres to best practices, improving maintainability and reducing potential vulnerabilities.
-
-## Integration in a Snap: How to Get Started
-
-Ready to revolutionize how you handle your APIs? Follow these three simple steps to integrate APIToolkit:
-
-1. **Sign Up & Secure Your API Key:**
-   - Start your journey with APIToolkit by [signing up](https://app.apitoolkit.io/) and generating your unique API key. It's your first step towards enhanced API management.
-
-![login image](log-in-3.png)
-
-2. **Seamless SDK Integration:**
-   - Whether you're a Python maestro, a Go aficionado, or your talents lie elsewhere, integrating the APIToolkit SDK with your tech stack is a breeze. Need more guidance? Find detailed instructions [here](/docs/get-started/quickstarts/).
-
-![quickstart](quickstart.png)
-
-3. **Dive into the Dashboard:**
-   - Your command center awaits! Access the APIToolkit dashboard and head over to the [log explorer](/docs/dashboard/log-explorer/) to confirm that your data is journeying smoothly from your servers to ours.
-  
-![welcome on board](welcome-on-board-3.png)
-
-Voila! You're all set to explore the vast capabilities of APIToolkit. Navigate through insightful analytics, set up alerts, and never miss a beat with your API performance.
