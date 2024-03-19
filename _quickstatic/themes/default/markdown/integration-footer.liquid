@@ -1,13 +1,15 @@
 ``` =html
   <section class="width-control mx-auto w-full">
     <div class="flex flex-col gap-2 w-full">
-      <h3 class="text-[#2E3238] self-center text-2xl md:text-[49px] font-bold leading-[1.14] mb-[0] tracking-tight">
-        Integrate APIToolkit<h3>
-          <p class="text-gray-600 mx-auto text-center text-base font-normal max-w-2xl">
+        <h3 class="text-[#2E3238] text-2xl md:text-[49px] font-bold leading-[1.14] mb-[0] tracking-tight">
+        Integrate APIToolkit</h3>
+          <div>
+          <p class="inline-block text-gray-600 mx-auto text-base font-normal max-w-2xl">
             We support 14+ web frameworks (if we don't support your framework, email <span class="text-blue-500 italic">hello@apitoolkit.io</span> and we'll create an SDK for you
             ASAP)
           </p>
-          <div class="flex flex-col md:flex-row w-full mt-8">
+          </div>
+          <div class="flex flex-col md:flex-row w-full mt-8 text-left">
             <div class="flex overflow-x-auto p-4 flex-nowrap [&>*]:shrink-0 md:grid md:grid-cols-3 lg:grid-cols-4 gap-4 items-center h-max mt-4">
 
               {% for framework in config.raw.apitoolkit_supported_frameworks %}
