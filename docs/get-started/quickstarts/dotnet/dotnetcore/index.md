@@ -32,7 +32,7 @@ It keeps track of incoming traffic, aggregates the requests, and then delivers t
    
 -  [Generate an API key for your project](/docs/dashboard/generating-api-keys), and include a brief description of your work. And to prevent losing your key after it has been generated, remember to make a copy of it.
    
--  Initialize the middleware with the APItoolkit API key you generated above. Integrating only takes 3 lines of code:
+-  Initialize the middleware with the APItoolkit API key you generated above. Integrating only takes three lines of code:
 
 ## Installation
 
