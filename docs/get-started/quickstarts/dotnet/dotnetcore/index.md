@@ -26,7 +26,6 @@ It keeps track of incoming traffic, aggregates the requests, and then delivers t
 ## How to Integrate with a DotNet Web Service
 
 - Sign up / Sign in to the [API dashboard](https://app.apitoolkit.io)
-   ![Sign up / Sign in](/signin.png)
    
 -  [Create a project](/docs/dashboard/creating-a-project/)
    
