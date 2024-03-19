@@ -36,5 +36,9 @@ fi
 # Make the binary executable
 chmod +x $BINARY_NAME
 
+npm i
+
+make css-prod
+
 # Run the binary to generate the static site
 ./$BINARY_NAME build
