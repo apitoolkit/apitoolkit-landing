@@ -9,11 +9,11 @@ page_full_width: true
 
 ``` =html
 <div class="text-center">
-    <section class="max-w-5xl inline-block">
-        <div class="max-w-3xl inline-block ">
+    <section class="max-w-5xl sm:inline-block">
+        <div class="max-w-3xl sm:inline-block ">
 ```
 
-{class="text-5xl"}
+{class="text-4xl sm:text-5xl"}
 # Welcome to the APIToolkit Documentation 
 
 {.text-lg}
@@ -33,7 +33,7 @@ APItoolkit helps developer teams Build and Manage APis,  find and debug errors, 
 
 
 ``` =html
-<div class="flex text-left">
+<div class="flex text-left py-20">
     <div class="flex-1">
 ```
 
@@ -63,7 +63,7 @@ APItoolkit helps developer teams Build and Manage APis,  find and debug errors, 
 </div>
 ```
 
-
+---
 
 
 {% render "default/markdown/integration-footer.liquid", config:config %}
