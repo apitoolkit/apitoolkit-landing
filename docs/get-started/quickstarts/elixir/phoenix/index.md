@@ -10,6 +10,7 @@ menu:
 ---
 
 # Elixir Phoenix integration.
+To integrate Elixir Phoenix with your project, begin by incorporating the SDK into your dependencies list within the mix.exs file. To do this add the "apitoolkit_phoenix" package to your list of dependencies. 
 
 ## Installation
 
