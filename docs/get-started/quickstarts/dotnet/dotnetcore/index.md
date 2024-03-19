@@ -13,11 +13,10 @@ menu:
 # .Net SDK integration
 
 To integrate .Net web services with API Toolkit, an SDK called the `ApiToolkit.Net` client for API Toolkit is utilized. It keeps track of incoming traffic, aggregates the requests, and then delivers them to the apitoolkit servers.
-We'll concentrate on providing a step-by-step instruction for integrating an API toolkit into our Golang web service in this tutorial.
 
 ## Design decisions:
 
-- The SDK relies on google cloud pubsub over grpc behind the scenes, to ensure that your traffic is communicated to APIToolkit for processing in the most efficient ways.
+- APItoolkit SDK relies on google cloud pubsub over grpc behind the scenes, to ensure that your traffic is communicated to APIToolkit for processing in the most efficient ways.
 - Processing the live traffic in this way, allows :
   1. APIToolkit to perform all kinds of analysis and anomaly detection and monitoring on your APIs in real time.
   2. Users to explore their API live, via the api log explorer.
@@ -26,9 +25,12 @@ We'll concentrate on providing a step-by-step instruction for integrating an API
 
 1. Sign up / Sign in to the [API dashboard](https://app.apitoolkit.io)
    ![Sign up / Sign in](/signin.png)
+   
 2. [Create a project](/docs/dashboard/creating-a-project/)
+   
 3. [Generate an API key for your project](/docs/dashboard/generating-api-keys), and include a brief description of your work. And to prevent losing your key after it has been generated, remember to make a copy of it.
    ![API key generation](/api-keys-generation.png)
+   
 4. Initialize the middleware with the APItoolkit API key you generated above. Integrating only takes 3 lines of Go code:
 
 ## Installation
@@ -38,7 +40,6 @@ Run the following command to install the package into your .NET application:
 ```sh
 dotnet add package ApiToolkit.Net
 ```
-
 Now you can initialize APIToolkit in your application's entry point (eg Program.cs)
 
 ```csharp
@@ -95,16 +96,15 @@ app.Use(async (context, next) =>
 {
     var apiToolkit = new APIToolkit(next, client);
     await apiToolkit.InvokeAsync(context);
-
 ```
 
 It is important to note that while the `RedactHeaders` config field accepts a list of headers(case insensitive),
 the `RedactRequestBody` and `RedactResponseBody` expect a list of JSONPath strings as arguments.
 
-The choice of JSONPath was selected to allow you have great flexibility in describing which fields within your responses are sensitive.
+The choice of JSONPath was selected to allow you have great flexibility in describing which fields within your responses are sensitive. 
 Also note that these list of items to be redacted will be aplied to all endpoint requests and responses on your server.
-To learn more about jsonpath to help form your queries, please take a look at this cheatsheet:
-[https://lzone.de/cheat-sheet/JSONPath](https://lzone.de/cheat-sheet/JSONPath)
+
+To learn more about jsonpath to help form your queries, please take a look at this cheatsheet [https://lzone.de/cheat-sheet/JSONPath](https://lzone.de/cheat-sheet/JSONPath)
 
 ## Next Steps
 
@@ -112,3 +112,6 @@ To learn more about jsonpath to help form your queries, please take a look at th
 2. Check API log explorer or Endpoints pages on the APIToolkit dashboard to see if your test request was processed correctly
    ![Endpoint-after-integration](/endpoint-screenshot.png)
 3. Enjoy having our API comanage your backends and APIs with you.
+
+
+   
