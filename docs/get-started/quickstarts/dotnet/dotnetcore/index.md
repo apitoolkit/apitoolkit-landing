@@ -19,7 +19,8 @@ It keeps track of incoming traffic, aggregates the requests, and then delivers t
 ## Design decisions
 
 - APItoolkit SDK relies on google cloud pubsub over grpc behind the scenes, to ensure that your traffic is communicated to APIToolkit for processing in the most efficient ways.
-- Processing the live traffic in this way, allows :
+- Processing the live traffic in this way, allows:
+  
   1. APIToolkit to perform all kinds of analysis and anomaly detection and monitoring on your APIs in real time.
   2. Users to explore their API live, via the api log explorer.
 
