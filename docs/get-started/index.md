@@ -23,11 +23,11 @@ APItoolkit has been designed with simplicity in mind, allowing you to get up and
 
 **Get started with APItoolkit in three steps**
 
-1. Sign up for an account
+- Sign up for an account
+
+- Install your prefer SDK
   
-2.  Install your prefer SDK
-  
-3. Configure SDK
+- Configure SDK
 
 ## SDKs in APItoolkit
 
@@ -50,9 +50,7 @@ To get started select your preferred SDk per your chosen tech stack. Check out o
 Install the required SDK using a package manager like pip or npm.
 
 ```js
-
 npm install apitoolkit-express
-
 ```
 
 **SDK Initialization**
@@ -60,11 +58,8 @@ npm install apitoolkit-express
 This is how to Initialize apitoolkit into your project
 
 ```js
-
 import { APIToolkit } from 'apitoolkit-express';
 const apitoolkitClient = APIToolkit.NewClient({ apiKey: '<API-KEY>' });
-
 ```
-
 Replace <API_KEY> with your unique API key obtained from your dashboard.
 
