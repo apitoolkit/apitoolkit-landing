@@ -9,23 +9,14 @@ menu:
   main:
     weight: 20
 ---
+# Go Gin integration
+This document provides step-by-step instructions for integrating your Go application with Gorilla Mux, a powerful HTTP router and dispatcher for Go, and demonstrates how to further integrate it with APITOOLKIT, a toolkit for building APIs.
 
-To integrate APIToolkit with golang web services, we employ an SDK named the golang client for APIToolkit. This SDK oversees the incoming traffic, bundles the requests, and then forwards them to the APItoolkit servers. In this guide, we'll delve into a detailed procedure to integrate the APIToolkit within our Go Gorilla mux web service.
-
-## Design Considerations
-
-- Internally, the SDK leverages google cloud pubsub via grpc, ensuring that your data is efficiently relayed to APIToolkit for processing.
-- Managing live traffic in this fashion enables:
-  1. APIToolkit to conduct real-time analysis, anomaly detection, and monitoring of your APIs.
-  2. Users to actively inspect their API through the api log explorer.
-
-**Create an Account or Sign In to APIToolkit to Generate Key**
+### Prerequisites
 
 1. Sign up / Sign in to the [API dashboard](https://app.apitoolkit.io)
-   ![sign up/sign in](/docs/get-started/Quickstarts/Golang/signin.png)
 2. [Create a project](/docs/documentation/dashboard/creating-a-project/)
 3. [Generate an API key for your project](/docs/documentation/dashboard/generating-api-keys), and include a brief description of your work. And to prevent losing your key after it has been generated, remember to make a copy of it.
-   ![api key generation](/docs/get-started/Quickstarts/Golang/api-key-generation.png)
 
 **Integrate with Gorilla Mux in Go**
 
