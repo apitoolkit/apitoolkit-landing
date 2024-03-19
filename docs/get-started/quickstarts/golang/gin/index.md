@@ -66,7 +66,11 @@ Register your application's handlers as usual and run the Gin server
 
 ## Redacting Sensitive Fields
 
-Some information is best kept private. You can hide sensitive data fields directly in your dashboard, but for an extra layer of security, our client supports redaction right on your servers. This means sensitive data like passwords or credit card numbers never leave your premises. To mark fields that should be redacted, Add them to the `apitoolkit` config struct. Here's how you do it:
+Some information is best kept private. You can hide sensitive data fields directly in your dashboard, but for an extra layer of security, our client supports redaction right on your servers. 
+
+This means sensitive data like passwords or credit card numbers never leave your premises. To mark fields that should be redacted, Add them to the `apitoolkit` config struct. 
+
+Here's how you do it:
 
 Imagine you have a request that looks like this:
 
@@ -109,13 +113,17 @@ func main() {
 
 It is important to note that while the `RedactHeaders` config field accepts a list of headers (case insensitive), the `RedactRequestBody` and `RedactResponseBody` expect a list of JSONPath strings as arguments.
 
-The choice of JSONPath was selected to allow you to have great flexibility in describing which fields within your responses are sensitive. Also, note that this list of items to be redacted will be applied to all endpoint requests and responses on your server. To learn more about JSONPath to help form your queries, please take a look at this cheatsheet: [JSONPath Cheatsheet](https://lzone.de/cheat-sheet/JSONPath)
+The choice of JSONPath was selected to allow you to have great flexibility in describing which fields within your responses are sensitive. Also, note that this list of items to be redacted will be applied to all endpoint requests and responses on your server. 
+
+To learn more about JSONPath to help form your queries, please take a look at this cheatsheet: [JSONPath Cheatsheet](https://lzone.de/cheat-sheet/JSONPath)
 
 ## Outgoing Requests
 
-To monitor outgoing HTTP requests from your Go application, you can replace the default HTTP client transport with a custom roundtripper. This allows you to capture and send copies of all incoming and outgoing requests to an apitoolkit server for monitoring and analysis.
+To monitor outgoing HTTP requests from your Go application, you can replace the default HTTP client transport with a custom roundtripper. 
 
-### Example
+This allows you to capture and send copies of all incoming and outgoing requests to an apitoolkit server for monitoring and analysis.
+
+Example
 
 ```go
 package main
@@ -157,13 +165,19 @@ func main() {
 }
 ```
 
-The provided code demonstrates how to set up the custom roundtripper to replace the default HTTP client's transport. The resulting HTTP client, `HTTPClient`, is configured to send copies of all incoming and outgoing requests to the apitoolkit servers. You can use this modified HTTP client for any HTTP requests you need to make from your server, ensuring they are monitored by apitoolkit.
+The provided code demonstrates how to set up the custom roundtripper to replace the default HTTP client's transport.
+
+The resulting HTTP client, `HTTPClient`, is configured to send copies of all incoming and outgoing requests to the apitoolkit servers. 
+
+You can use this modified HTTP client for any HTTP requests you need to make from your server, ensuring they are monitored by apitoolkit.
 
 ## Report Errors
 
-If you've used sentry, or bugsnag, or rollbar, then you're already familiar with this usecase.
-But you can report an error to apitoolkit. A difference, is that errors are always associated with a parent request, and helps you query and associate the errors which occured while serving a given customer request. To request errors to APIToolkit use call the `ReportError` method of `apitoolkit` not the client returned by `apitoolkit.NewClient` with the request context and the error to report
-Example:
+If you've used sentry, or bugsnag, or rollbar, then you're already familiar with this usecase. But you can report an error to apitoolkit. 
+
+The difference is that errors are always associated with a parent request, and helps you query and associate the errors which occured while serving a given customer request. To request errors to APIToolkit use call the `ReportError` method of `apitoolkit` not the client returned by `apitoolkit.NewClient` with the request context and the error to report
+
+Example
 
 ```go
 package main
@@ -195,10 +209,3 @@ func main() {
     r.Run(":8080")
 }
 ```
-
-## Next Steps
-
-1. Deploy your application or send test http requests to your service
-2. Check API log explorer or Endpoints pages on the APIToolkit dashboard to see if your test request was processed correctly
-   ![Endpoint-after-integration](/endpoint-screenshot.png)
-3. Enjoy having our API comanage your backends and APIs with you.
