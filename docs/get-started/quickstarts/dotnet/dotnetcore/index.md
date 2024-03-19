@@ -108,10 +108,8 @@ To learn more about jsonpath to help form your queries, please take a look at th
 
 ## Next Steps
 
-1. Deploy your application or send test http requests to your service
-2. Check API log explorer or Endpoints pages on the APIToolkit dashboard to see if your test request was processed correctly
-   ![Endpoint-after-integration](/endpoint-screenshot.png)
-3. Enjoy having our API comanage your backends and APIs with you.
+- Deploy your application or send test http requests to your service
+- Check API log explorer or Endpoints pages on the APIToolkit dashboard to see if your test request was processed correctly. 
 
 
    
