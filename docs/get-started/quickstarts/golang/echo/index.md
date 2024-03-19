@@ -19,9 +19,9 @@ To further streamline your development, here's a guide on integrating the Go Ech
 
 **Integrate with Go's Echo Framework**
 
-Assuming you have Go and Echo already set up:
+Assuming you have Go and Echo already set up
 
-a. Install necessary packages (if not):
+a. Install necessary packages (if not)
 
 ```go
 go get -u github.com/labstack/echo/v4
@@ -29,7 +29,7 @@ go get -u github.com/labstack/echo/v4
 
 b. Create a new Go file, e.g., `main.go`
 
-c. Begin setting up your Echo server:
+c. Begin setting up your Echo server
 
 ```go
 package main
@@ -47,8 +47,8 @@ func main() {
 }
 ```
 
-d. Integrate with APIToolkit:
-Let's write the code to initialize `apitoolkit` with `echo`:
+d. Integrate with APIToolkit
+Let's write the code to initialize `apitoolkit` with `echo`
 
 ```go
 package main
@@ -149,7 +149,7 @@ JSONPath provides a flexible way to define sensitive fields in your responses. T
 
 To monitor outgoing HTTP requests from your Go application, you can replace the default HTTP client transport with a custom roundtripper. This allows you to capture and send copies of all incoming and outgoing requests to an apitoolkit server for monitoring and analysis.
 
-### Example
+Example
 
 ```go
 package main
@@ -230,8 +230,3 @@ func hello(c echo.Context) error {
 }
 
 ```
-
-## Next Steps
-
-1. Deploy your application or send test HTTP requests to your service.
-2. Head over to the API log explorer or Endpoints section on the APIToolkit dashboard to confirm that your test request has been processed correctly.
