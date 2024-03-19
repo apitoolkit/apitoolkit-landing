@@ -27,7 +27,7 @@ menu:
 
 ## Installation
 
-To install run this command:
+To install run this command
 
 ```go
 go get github.com/apitoolkit/apitoolkit-go
@@ -67,12 +67,8 @@ Register the APIToolkit middleware with your chosen middleware framework. For Gi
 Register your application's handlers as usual and run the Gin server
 
 ```go
-    // Register your handlers as usual and run the Gin server as usual.
     router.POST("/:slug/test", func(c *gin.Context) { c.String(200, "ok") })
-}
 ```
-
-
 
 ## Redacting Sensitive Fields
 
