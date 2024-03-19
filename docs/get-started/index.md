@@ -36,9 +36,7 @@ Each SDK is designed to seamlessly integrate with its respective development env
 
 ## Integration
 
-To integrate APItoolkit into your project it is assumed that you already have an account. 
-
-Go ahead to create a project and get your api key. 
+To integrate APItoolkit into your project it is assumed that you already have an account. If you do not have create one. After, Go ahead to create a project and get your api key. 
 
 ## Configure SDK
 
