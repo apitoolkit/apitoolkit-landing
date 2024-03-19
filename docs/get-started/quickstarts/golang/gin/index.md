@@ -9,63 +9,70 @@ menu:
   main:
     weight: 20
 ---
+# Go Gin integration
 
-Integrating your Golang web services with API Toolkit doesn't have to be complicated. With the golang client for API Toolkit, you're not just hooking up systems; you're empowering your web service to handle data efficiently, enhance security, and provide real-time insights.
-
-## Design decisions:
+## Design decisions
 
 - The SDK relies on google cloud pubsub over grpc behind the scenes, to ensure that your traffic is communicated to APIToolkit for processing in the most efficient ways.
 - Processing the live traffic in this way, allows :
   1. APIToolkit to perform all kinds of analysis and anomaly detection and monitoring on your APIs in real time.
   2. Users to explore their API live, via the api log explorer.
 
-## How to Integrate with Golang Gin router:
+## How to Integrate with Golang Gin
 
 1. Sign up / Sign in to the [API dashboard](https://app.apitoolkit.io)
-   ![sign up/sign in](/docs/get-started/Quickstarts/Golang/signin.png)
 2. [Create a project](/docs/documentation/dashboard/creating-a-project/)
 3. [Generate an API key for your project](/docs/documentation/dashboard/generating-api-keys), and include a brief description of your work. And to prevent losing your key after it has been generated, remember to make a copy of it.
-   ![api key generation](/docs/get-started/Quickstarts/Golang/api-key-generation.png)
 4. Installl APItoolkit and initialize the middleware with the APItoolkit API key you generated above. Integrating only takes 3 lines of Go code:
 
 ## Installation
 
-First, run this command:
+To install run this command:
 
-```
+```go
 go get github.com/apitoolkit/apitoolkit-go
 ```
 
 Now you can initialize APIToolkit in your application’s entry point (eg main.go)
 
+Import the necessary packages into your Go application
+
 ```go
 package main
 
 import (
-  	// Import the apitoolkit golang sdk
     "context"
-  	apitoolkit "github.com/apitoolkit/apitoolkit-go"
+    apitoolkit "github.com/apitoolkit/apitoolkit-go"
     "github.com/gin-gonic/gin"
 )
+```
+In your application's main function, initialize the APIToolkit client using your API key generated from your dashboard
 
+```go
 func main() {
+    apitoolkitClient, err := apitoolkit.NewClient(context.Background(), apitoolkit.Config{APIKey: "YOUR GENERATED API KEY"})
+    if err != nil {
+        panic(err)
+    }
+```
+Create a Gin router instance
+ ```go  
+    router := gin.New()
+```
+Register the APIToolkit middleware with your chosen middleware framework. For Gin router, use the 'GinMiddleware' method
 
-	// Initialize the client using your apitoolkit.io generated apikey
-	apitoolkitClient, err := apitoolkit.NewClient(context.Background(), apitoolkit.Config{APIKey: "YOUR GENERATED API KEY"})
-	if err != nil {
-		panic(err)
-	}
+```go
+    router.Use(apitoolkitClient.GinMiddleware)
+```
+Register your application's handlers as usual and run the Gin server
 
-	router := gin.New()
-
-	// Register with the corresponding middleware of your choice. For Gin router, we use the GinMiddleware method.
-	router.Use(apitoolkitClient.GinMiddleware)
-
-	// Register your handlers as usual and run the gin server as usual.
-	router.POST("/:slug/test", func(c *gin.Context) { c.String(200, "ok") })
-
+```go
+    // Register your handlers as usual and run the Gin server as usual.
+    router.POST("/:slug/test", func(c *gin.Context) { c.String(200, "ok") })
 }
 ```
+
+
 
 ## Redacting Sensitive Fields
 
