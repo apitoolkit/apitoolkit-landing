@@ -21,11 +21,15 @@ This guide will walk you through the initial setup process for APItoolkit.
 APItoolkit has been designed with simplicity in mind, allowing you to get up and running quickly while providing ample room to scale as your needs grow.
 
 **Get started with APItoolkit in three steps**
-* Sign up for an account
-* Install your prefer SDK
-* Configure SDK
+
+1. Sign up for an account
+  
+2.  Install your prefer SDK
+  
+3. Configure SDK
 
 ## SDKs in APItoolkit
+
 APItoolkit leverages platform-specific Software Development Kits (SDKs) to capture data from your application. These SDKs provide a critical bridge between your application and APItoolkit, enabling a deeper understanding of your application's behavior and facilitating comprehensive API monitoring.
 
 Each SDK is designed to seamlessly integrate with its respective development environment. If your development environment utilizes a non-standard tech stack or has highly customized configurations, we recommend contacting our customer support.
@@ -43,16 +47,19 @@ Go ahead to create a project and get your api key.
 To get started select your preferred SDk per your chosen tech stack. Check out our supported tech stack.
 
 Install the required SDK using a package manager like pip or npm.
+
 ```js
 npm install apitoolkit-express
 ```
+
 **SDK Initialization**
 
-To Initialize apitoolkit into your project
+This is how to Initialize apitoolkit into your project
+
 ```js
 import { APIToolkit } from 'apitoolkit-express';
-
 const apitoolkitClient = APIToolkit.NewClient({ apiKey: '<API-KEY>' });
 ```
-Replace <API_KEY> with your unique API key obtained from your dashboard.
+
+eplace <API_KEY> with your unique API key obtained from your dashboard.
 
