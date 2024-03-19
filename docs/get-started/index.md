@@ -28,11 +28,15 @@ APItoolkit leverages platform-specific Software Development Kits (SDKs) to captu
 Each SDK is designed to seamlessly integrate with its respective development environment. If your development environment utilizes a non-standard tech stack or has highly customized configurations, we recommend contacting our customer support.
 
 ## Integration
+
 To integrate APItoolkit into your project it is assumed that you already have an account. 
 
 Go ahead to create a project and get your api key. 
+
 ## Configure SDK
+
 **SDK Installation**
+
 To get started select your preferred SDk per your chosen tech stack. Check out our supported tech stack.
 
 Install the required SDK using a package manager like pip or npm.
@@ -40,6 +44,7 @@ Install the required SDK using a package manager like pip or npm.
 npm install apitoolkit-express
 ```
 **SDK Initialization**
+
 To Initialize apitoolkit into your project
 ```js
 import { APIToolkit } from 'apitoolkit-express';
