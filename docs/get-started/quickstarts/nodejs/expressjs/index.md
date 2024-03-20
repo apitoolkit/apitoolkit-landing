@@ -26,9 +26,9 @@ The APIToolkit integration guide for ExpressJS provides a streamlined process to
 
 2. **Setup your server**:
 
-   **ESM example**
+**ESM example**
 
-   ```javascript
+```javascript
    import express from 'express';
    import { APIToolkit } from 'apitoolkit-express';
 
@@ -48,11 +48,11 @@ The APIToolkit integration guide for ExpressJS provides a streamlined process to
    app.listen(port, () => {
      console.log(`Example app listening on port ${port}`);
    });
-   ```
+```
 
    **CommonJs Example**
 
-   ```javascript
+```javascript
    const express = require('express');
    const APIToolkit = require('apitoolkit-express').default;
 
@@ -75,9 +75,9 @@ The APIToolkit integration guide for ExpressJS provides a streamlined process to
    app.listen(port, () => {
      console.log(`Example app listening on port ${port}`);
    });
-   ```
+```
 
-   **Note**: Replace `<API-KEY>` with your unique key from your [APIToolkit account](apitoolkit.io)
+**Note**: Replace `<API-KEY>` with your unique key from your [APIToolkit account](apitoolkit.io)
 
 ## Redacting Sensitive Fields and Headers
 
