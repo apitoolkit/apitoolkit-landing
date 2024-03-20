@@ -79,7 +79,8 @@
         <div class="max-w-7xl w-full text-left gap-4 text-md hidden sm:inline-flex">
           {% capture root_menu_items %}
             {% assign is_home = this.frontmatter.title | equals: "Home" %}
-            <a class="flex gap-3 sm:border-b-2  {{ is_home | ternary: 'sm:border-b-secondary text-secondary sm:text-current ', 'border-b-transparent' }} py-2 px-1 items-center" href="/docs/" preload="preload:init">
+            <a class="flex gap-3 sm:border-b-2  {{ is_home | ternary: 'sm:border-b-secondary text-secondary sm:text-current ', 'border-b-transparent' }} py-2 px-1 items-center" 
+              href="/docs/" preload="preload:init" title="Documentation Home" aria-label="Documentation Home">
               <i class="fa-regular fa-house w-5 h-5 {{ is_home | ternary: 'text-secondary', '' }}"></i>
               <span>Home</span>
             </a>
