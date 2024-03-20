@@ -89,9 +89,13 @@ Integrate Alerts into your current workflow through slack, email, teams, pagerdu
 ::::
 :::
 
-{% render "default/markdown/feature-overview.liquid", this:this %}
-{% render "default/markdown/integration-footer.liquid", config:config %}
 
+{% render "default/markdown/feature-overview.liquid", this:this %}
+
+{.text-center}
+:::
+{% render "default/markdown/integration-footer.liquid", config:config %}
+:::
 
 ``` =html
 </div>
