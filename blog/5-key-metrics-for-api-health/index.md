@@ -56,6 +56,7 @@ During peak usage periods, surges in traffic can overwhelm the API, leading to p
 The average RPM can vary significantly depending on the industry and API purpose. However, a well-designed API should be able to handle 10,000+ RPM without performance degradation.
 
 ### Latency (Response Time)
+
 ![alt](./apitoolkit-api-response-time.png)
 Latency measures the time it takes for an API to respond to a request. Faster response times translate to a smoother and more enjoyable user experience. Continuously monitoring both average and maximum latency is crucial. 
 
