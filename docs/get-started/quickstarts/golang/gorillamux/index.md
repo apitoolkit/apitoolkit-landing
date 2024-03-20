@@ -10,14 +10,17 @@ menu:
     weight: 20
 ---
 # Go Gorilla Mux integration
-This is how to integrate APItoolkit Go Gorilla Mux SDK into your application. This enhances your application's capabilities in managing routes, middleware, and request handling, ensuring smooth communication between your application components and external APIs.
+
+This is how to integrate APItoolkit Go Gorilla Mux SDK into your application. This helps your application's capabilities in managing routes, middleware, and request handling, ensuring smooth communication between your application components and external APIs.
 
 ### Prerequisites
+
 - Sign up / Sign in to the [API dashboard](https://app.apitoolkit.io)
 - [Create a project](/docs/documentation/dashboard/creating-a-project/)
 - [Generate an API key for your project](/docs/documentation/dashboard/generating-api-keys), and include a brief description of your work. And to prevent losing your key after it has been generated, remember to make a copy of it.
 
 **Integrate with Gorilla Mux in Go**
+
 Assuming you've already set up Go and wish to integrate with Gorilla Mux
 
 a. Install necessary packages
@@ -94,6 +97,7 @@ func main() {
 Replace `"YOUR_GENERATED_API_KEY"` with your actual API key.
 
 **Test the Integration**
+
 This code sets up a basic HTTP server using `gorilla/mux` and integrates the `apitoolkit` middleware. When you run this code and make a request to `http://localhost:8080/{some_slug}/test`, it should go through the `apitoolkit` middleware before responding with "ok".
 
 ## Redacting Sensitive Fields with Gorilla Mux and APIToolkit
