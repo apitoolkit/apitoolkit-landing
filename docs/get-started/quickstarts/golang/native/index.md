@@ -225,9 +225,3 @@ func main() {
 }
 
 ```
-
-### Wrapping Up
-
-- Deploy your application and send test HTTP requests.
-- Check the APIToolkit dashboard to ensure your requests are being processed.
-- Revel in the simplicity of Go's native integration and the power of APIToolkit!
