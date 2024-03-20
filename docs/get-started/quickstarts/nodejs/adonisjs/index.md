@@ -57,17 +57,24 @@ directory and export a `apitoolkitConfig` object with the following properties
 
 - **apiKey**: `required` This API key can be generated from your
   [APIToolkit acount](https://app.apitoolkit.io)
+  
 - **redactHeaders**: `optional` This is an array of request and response headers
   that should be omited by APIToolkit
+  
 - **redactRequestBody**: `optional` An array of request body keypaths to be
   redacted (i.e should not leave your servers)
+  
 - **redactResponseBody**: `optional` An array of reponse body keypaths to be
   redacted
+  
 - **serviceVersion**: `optional` A string service version to help you monitor
   different versions of your deployments
+  
 - **tags**: `optional` An array of tags to be associated with a request
+  
 - **debug**: `optional` A boolean to enable debug mode (ie print debug
   information)
+  
 - **disable**: `optional` A boolean to disable the sdk by setting it to `true`
 
 To configure, the default export of `/conf/apitoolkit` should contain all
@@ -84,7 +91,9 @@ After configuring the sdk, all incoming request will now be send to APIToolkit.
 ## Redacting Senstive Fields and Headers
 
 While it's possible to mark a field as redacted from the apitoolkit dashboard,
-this client also supports redacting at the client side. Client side redacting
+this client also supports redacting at the client side.
+
+Client side redacting
 means that those fields would never leave your servers at all. So you feel safer
 that your sensitive data only stays on your servers.
 
@@ -105,8 +114,9 @@ list of headers(case insensitive), the `redactRequestBody` and
 `redactResponseBody` expect a list of JSONPath strings as arguments.
 
 The choice of JSONPath was selected to allow you have great flexibility in
-descibing which fields within your responses are sensitive. Also note that these
-list of items to be redacted will be aplied to all endpoint requests and
+descibing which fields within your responses are sensitive. 
+
+Also note that these list of items to be redacted will be aplied to all endpoint requests and
 responses on your server. 
 
 To learn more about jsonpath, please take a look at these resources:
@@ -126,7 +136,7 @@ export const http: ServerConfig = {
 ```
 After setting asyncLocalStorage to true, simply wrap your axios instance with the APIToolkit observeAxios function.
 
-```typescript
+```ts
 import Route from '@ioc:Adonis/Core/Route'
 import { observeAxios } from "apitoolkit-adonis"
 import axios from "axios"
@@ -145,7 +155,7 @@ If you're making requests to endpoints which have variable urlPaths, you should
 include a wildcard url of the path, so that apitoolkit groups the endpoints
 correctly for you on the dashboard:
 
-```typescript
+```ts
 import { observeAxios } from "apitoolkit-adonis";
 import axios from "axios";
 
@@ -157,10 +167,12 @@ Route.get('/observer', async () => {
 })
 ```
 
-There are other optional arguments you could pass on to the observeAxios
-function, eg:
+There are other optional arguments you could pass on to the observe Axios
+function. 
 
-```typescript
+Example
+
+```ts
 import Route from "@ioc:Adonis/Core/Route";
 import axios from "axios";
 import { observeAxios } from "apitoolkit-adonis";
@@ -180,19 +192,17 @@ Route.get("/observer", async () => {
 });
 ```
 
-Note that you can ignore any of these arguments except the first argument which
-is the axios instance to observe. For the other arguments, you can either skip
-them if at the end, or use undefined as a placeholder.
+Note that you can ignore any of these arguments except the first argument which is the axios instance to observe. 
+
+For the other arguments, you can either skip them if at the end, or use undefined as a placeholder.
 
 ## Reporting errors to APIToolkit
 
-APIToolkit detects a lot of API issues automatically, but it's also valuable to
-report and track errors. This helps you associate more details about the backend
-with a given failing request. If you've used sentry, or rollback, or bugsnag,
-then you're likely aware of this functionality.
+APIToolkit detects a lot of API issues automatically, but it's also valuable to report and track errors. 
 
-To report errors, you need to first enable asyncLocalStorage in your adonisjs project. 
-by setting useAsyncLocalStorage to true in your config/app.ts file.
+This helps you associate more details about the backend with a given failing request. If you've used sentry, or rollback, or bugsnag, then you're likely aware of this functionality.
+
+To report errors, you need to first enable asyncLocalStorage in your adonisjs project by setting useAsyncLocalStorage to true in your config/app.ts file.
 
 ```ts
 export const http: ServerConfig = {
@@ -203,7 +213,7 @@ export const http: ServerConfig = {
 
 You can then start reporting errors by calling the apitoolkit `reportError`` function.
 
-```typescript
+```ts
 import Route from "@ioc:Adonis/Core/Route";
 import { reportError } from "apitoolkit-adonis";
 
@@ -216,3 +226,5 @@ Route.get("/observer", async () => {
   return { hello: "world" };
 });
 ```
+
+
