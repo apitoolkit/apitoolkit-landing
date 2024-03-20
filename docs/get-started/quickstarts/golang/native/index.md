@@ -10,28 +10,25 @@ menu:
     weight: 20
 ---
 
-## How to Integrate with Golang Native:
+## How to Integrate with Golang Native
 
-While frameworks like Echo provide a structured way to build web applications in Go, there's an undeniable charm in using Go's native net/http package. It's simple, powerful, and gives you a closer feel of the language's capabilities. In this guide, we'll explore how to integrate APIToolkit with Go's native HTTP package, ensuring you can monitor and manage your APIs seamlessly.
+While frameworks like Echo provide a structured way to build web applications in Go, there's an undeniable charm in using Go's native net/http package. 
 
-### Setting Up APIToolkit
+It's simple, powerful, and gives you a closer feel of the language's capabilities.
 
-**1. Create an Account or Sign In to APIToolkit to Generate Key**
+## Prerequisites
 
-- Visit the [API dashboard](https://app.apitoolkit.io) and sign up or sign in.
-  ![sign up/sign in](/docs/get-started/Quickstarts/Golang/signin.png)
-- Follow the steps to [create a project](/docs/documentation/dashboard/creating-a-project/).
-
-- [Generate an API key](/docs/documentation/dashboard/generating-api-keys) for your project. Don't forget to describe your project briefly and save your key securely.
-  ![api key generation](/docs/get-started/Quickstarts/Golang/api-key-generation.png)
+1. Sign up / Sign in to the [API dashboard](https://app.apitoolkit.io)
+2. [Create a project](/docs/documentation/dashboard/creating-a-project/)
+3. [Generate an API key for your project](/docs/documentation/dashboard/generating-api-keys), and include a brief description of your work. And to prevent losing your key after it has been generated, remember to make a copy of it.
 
 ### Integrating with Go's Native HTTP Package
 
-Assuming you have Go set up:
+Assuming you have Go set up
 
 a. Create a new Go file, for instance, `main.go`.
 
-b. Set up your basic HTTP server:
+b. Set up your basic HTTP server
 
 ```go
 package main
@@ -49,7 +46,7 @@ func main() {
 }
 ```
 
-c. Integrate with APIToolkit:
+c. Integrate with APIToolkit
 
 ```go
 package main
@@ -84,7 +81,7 @@ APIToolkit provides a convenient dashboard for marking fields as redacted. Howev
 
 ---
 
-Consider the following request body:
+Consider the following request body
 
 ```json
 {
@@ -132,13 +129,17 @@ func main() {
 
 It's crucial to note that while the `RedactHeaders` config field accepts header names (case insensitive), `RedactRequestBody` and `RedactResponseBody` utilize JSONPath strings.
 
-JSONPath offers a flexible method to pinpoint sensitive fields in your responses. This configuration will be applied across all endpoint requests and responses. For a deeper dive into JSONPath and its query crafting, refer to: [JSONPath Cheatsheet](https://lzone.de/cheat-sheet/JSONPath).
+JSONPath offers a flexible method to pinpoint sensitive fields in your responses. This configuration will be applied across all endpoint requests and responses. 
+
+For a deeper dive into JSONPath and its query crafting, refer to: [JSONPath Cheatsheet](https://lzone.de/cheat-sheet/JSONPath).
 
 ## Outgoing Requests
 
-To monitor outgoing HTTP requests from your Go application, you can replace the default HTTP client transport with a custom roundtripper. This allows you to capture and send copies of all incoming and outgoing requests to an apitoolkit server for monitoring and analysis.
+To monitor outgoing HTTP requests from your Go application, you can replace the default HTTP client transport with a custom roundtripper. 
 
-### Example
+This allows you to capture and send copies of all incoming and outgoing requests to an apitoolkit server for monitoring and analysis.
+
+Example
 
 ```go
 package main
@@ -173,12 +174,21 @@ func main() {
 }
 ```
 
-The provided code demonstrates how to set up the custom roundtripper to replace the default HTTP client's transport. The resulting HTTP client, `HTTPClient`, is configured to send copies of all incoming and outgoing requests to the apitoolkit servers. You can use this modified HTTP client for any HTTP requests you need to make from your server, ensuring they are monitored by apitoolkit.
+The provided code demonstrates how to set up the custom roundtripper to replace the default HTTP client's transport. 
+
+The resulting HTTP client, `HTTPClient`, is configured to send copies of all incoming and outgoing requests to the apitoolkit servers. 
+
+You can use this modified HTTP client for any HTTP requests you need to make from your server, ensuring they are monitored by apitoolkit.
 
 ## Report Errors
 
-If you've used sentry, or bugsnag, or rollbar, then you're already familiar with this usecase.But you can report an error to apitoolkit. A difference, is that errors are always associated with a parent request, and helps you query and associate the errors which occured while serving a given customer request. To request errors to APIToolkit use call the `ReportError` method of `apitoolkit` not the client returned by `apitoolkit.NewClient` with the request context and the error to report
-Examples:
+If you've used sentry, or bugsnag, or rollbar, then you're already familiar with this usecase.But you can report an error to apitoolkit. 
+
+The difference, is that errors are always associated with a parent request, and helps you query and associate the errors which occured while serving a given customer request. 
+
+To request errors to APIToolkit use call the `ReportError` method of `apitoolkit` not the client returned by `apitoolkit.NewClient` with the request context and the error to report
+
+Examples
 
 **Native Go**
 
