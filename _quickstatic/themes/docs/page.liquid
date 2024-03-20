@@ -208,11 +208,6 @@
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/elixir.min.js"></script>
   <script defer type="text/javascript">
     hljs.highlightAll();
-    document.body.addEventListener('htmx:afterSwap', function(event) {
-      window.requestAnimationFrame(() => {
-        hljs.highlightAll();
-      })
-    });
     function init(){
       // Select all headers
       const headers = document.querySelectorAll('#mainArticle h1, #mainArticle h2, #mainArticle h3, #mainArticle h4,#mainArticle h5,#mainArticle h6');
@@ -245,7 +240,13 @@
         observer.observe(heading);
       });
     }
-    init()
+    init();
+     document.body.addEventListener('htmx:afterSwap', function(event) {
+      window.requestAnimationFrame(() => {
+        init();
+        hljs.highlightAll();
+      })
+    });
   </script>
   </body>
 </html>
