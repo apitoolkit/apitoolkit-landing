@@ -206,19 +206,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/elixir.min.js"></script>
   <script defer type="text/javascript">
-    document.addEventListener('DOMContentLoaded', (event) => {
-      const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            hljs.highlightElement(entry.target);
-            observer.unobserve(entry.target);
-          }
-        });
-      }, {rootMargin: '100px'}); // Adjust rootMargin as needed
-
-      document.querySelectorAll('pre code').forEach((block) => {
-        observer.observe(block);
-      });
+    document.body.addEventListener('htmx:afterSwap', function(event) {
+     window.requestAnimationFrame(() => {
+      // Assuming `event.detail.target` contains the new content
+      hljs.highlightBlock(event.detail.target);
+     })
     });
   </script>
   <script>
