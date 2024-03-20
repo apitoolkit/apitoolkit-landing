@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html  lang="en">
+<html lang="en">
   <head>
-    <link rel="canonical" href="https://apitoolkit.io">
+    <link rel="canonical" href="https://apitoolkit.io{{this.permalink}}"/>
     <meta property="og:title" content="{% if this.frontmatter.title %}{{this.frontmatter.title}}{% endif %}">
     <meta property="og:description" content="{{ this.content | strip_html | truncatewords: 20 }}">
     <meta property="og:image" content="{% if this.frontmatter.featured_image%}{{this.frontmatter.featured_image}}{% endif %}">
