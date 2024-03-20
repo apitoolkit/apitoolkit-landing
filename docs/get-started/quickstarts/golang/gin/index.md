@@ -10,9 +10,10 @@ menu:
     weight: 20
 ---
 # Go Gin integration
+
 To integrate APIToolkit with Go Gin, first install it using the 'go get' command, then initialize the client in the application's main function with the generated API key from apitoolkit.io. 
 
-### Prerequisites
+## Prerequisites
 
 1. Sign up / Sign in to the [API dashboard](https://app.apitoolkit.io)
 2. [Create a project](/docs/documentation/dashboard/creating-a-project/)
