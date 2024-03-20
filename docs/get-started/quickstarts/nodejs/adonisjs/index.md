@@ -138,7 +138,8 @@ export const http: ServerConfig = {
 
 After setting asyncLocalStorage to true, simply wrap your axios instance with the APIToolkit observeAxios function.
 
-```js
+```typescript
+
 import Route from '@ioc:Adonis/Core/Route'
 import { observeAxios } from "apitoolkit-adonis"
 import axios from "axios"
@@ -151,6 +152,7 @@ Route.get('/observer', async () => {
     const response = await observeAxios(axios).get(`${baseURL}/user_list/active`);
     return {hello: "hello world"}
 })
+
 ```
 
 If you're making requests to endpoints which have variable urlPaths, you should
