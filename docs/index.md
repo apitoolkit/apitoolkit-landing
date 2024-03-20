@@ -34,7 +34,7 @@ APItoolkit helps developer teams Build and Manage APis,  find and debug errors, 
 ::::::
 {.flex-1}
 ::::
-### How-To's 
+## How-To's 
 
 [Creating a project](/docs/documentation/dashboard/creating-a-project)
 
@@ -44,7 +44,7 @@ APItoolkit helps developer teams Build and Manage APis,  find and debug errors, 
 ::::
 {.flex-1}
 ::::
-### Concepts
+## Concepts
 
 [Log Explorer](/docs/documentation/dashboard/log-explorer)
 

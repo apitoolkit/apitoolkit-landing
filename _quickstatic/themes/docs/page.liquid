@@ -1,4 +1,4 @@
-<!DOCTYPE html lang="en">
+<!DOCTYPE html>
 <html  lang="en">
   <head>
     <link rel="canonical" href="https://apitoolkit.io">
@@ -15,7 +15,6 @@
 
     <title>{% if this.frontmatter.title %}{{this.frontmatter.title}}{% endif %}</title>
     <meta name="description" content="{{ this.content | strip_html | truncatewords: 20 }}">
-
     <link rel="stylesheet" href="/assets/css/tailwind.min.css">
     <script defer src="https://kit.fontawesome.com/32c218ff10.js" crossorigin="anonymous"></script>
     <script defer src="/assets/deps/htmx/htmx.min.js"></script>
@@ -212,8 +211,6 @@
         hljs.highlightAll();
       })
     });
-  </script>
-  <script>
     function init(){
       // Select all headers
       const headers = document.querySelectorAll('#mainArticle h1, #mainArticle h2, #mainArticle h3, #mainArticle h4,#mainArticle h5,#mainArticle h6');
@@ -226,21 +223,19 @@
       });
 
       const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            document.querySelectorAll('#tableOfContents a').forEach(link => {
-              if (link.getAttribute('href').substring(1) === entry.target.id) {
-                document.querySelectorAll('#tableOfContents a').forEach(function(element) {
-                  element.classList.remove('text-secondary');
-                });
-                link.classList.add('text-secondary');
-              }
-            });
-          }
-        });
-      }, {
-        rootMargin: "0px",
-        threshold: 0.0001,
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              document.querySelectorAll('#tableOfContents a').forEach(link => {
+                if (link.getAttribute('href').substring(1) === entry.target.id) {
+                  document.querySelectorAll('#tableOfContents a').forEach(function(element) {
+                    element.classList.remove('text-secondary');
+                  });
+                  link.classList.add('text-secondary');
+                }
+              });
+            }
+          });
+        }, { rootMargin: "0px",threshold: 0.0001,
       });
 
       // Observe all headings within the article
