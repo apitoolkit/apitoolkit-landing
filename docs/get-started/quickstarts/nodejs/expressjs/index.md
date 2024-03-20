@@ -16,7 +16,7 @@ The APIToolkit integration guide for ExpressJS provides a streamlined process to
 
 ## Integrating in an ExpressJS server
 
-1. **Install the necessary packages**:
+1. **Install the necessary packages**
 
    Use npm or yarn to install `express` and `apitoolkit-express`.
 
@@ -24,29 +24,29 @@ The APIToolkit integration guide for ExpressJS provides a streamlined process to
    npm install express apitoolkit-express
    ```
 
-2. **Setup your server**:
+2. **Setup your server**
 
 **ESM example**
 
 ```javascript
-   import express from 'express';
-   import { APIToolkit } from 'apitoolkit-express';
+import express from 'express';
+import { APIToolkit } from 'apitoolkit-express';
 
-   const app = express();
-   const port = 3000;
+ const app = express();
+ const port = 3000;
 
-   app.use(express.json());
-   app.use(express.urlencoded({ extended: true }));
+ app.use(express.json());
+ app.use(express.urlencoded({ extended: true }));
 
-   const apitoolkitClient = APIToolkit.NewClient({ apiKey: '<API-KEY>' });
-   app.use(apitoolkitClient.expressMiddleware);
+const apitoolkitClient = APIToolkit.NewClient({ apiKey: '<API-KEY>' });
+app.use(apitoolkitClient.expressMiddleware);
 
-   app.get('/', (req, res) => {
-     res.json({ hello: 'Hello world!' });
+app.get('/', (req, res) => {
+res.json({ hello: 'Hello world!' });
    });
 
-   app.listen(port, () => {
-     console.log(`Example app listening on port ${port}`);
+ app.listen(port, () => {
+ console.log(`Example app listening on port ${port}`);
    });
 ```
 
