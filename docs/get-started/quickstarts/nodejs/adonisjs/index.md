@@ -129,15 +129,16 @@ To learn more about jsonpath, please take a look at these resources:
 
 To monitor outgoing request, you need to first enable asyncLocalStorage in your adonisjs project by setting useAsyncLocalStorage to true in your `config/app.ts` file.
 
-```ts
+```js
 export const http: ServerConfig = {
   useAsyncLocalStorage: true
   // other configs
 }
 ```
+
 After setting asyncLocalStorage to true, simply wrap your axios instance with the APIToolkit observeAxios function.
 
-```ts
+```js
 import Route from '@ioc:Adonis/Core/Route'
 import { observeAxios } from "apitoolkit-adonis"
 import axios from "axios"
@@ -156,7 +157,7 @@ If you're making requests to endpoints which have variable urlPaths, you should
 include a wildcard url of the path, so that apitoolkit groups the endpoints
 correctly for you on the dashboard:
 
-```ts
+```js
 import { observeAxios } from "apitoolkit-adonis";
 import axios from "axios";
 
@@ -173,7 +174,7 @@ function.
 
 Example
 
-```ts
+```js
 import Route from "@ioc:Adonis/Core/Route";
 import axios from "axios";
 import { observeAxios } from "apitoolkit-adonis";
@@ -205,7 +206,7 @@ This helps you associate more details about the backend with a given failing req
 
 To report errors, you need to first enable asyncLocalStorage in your adonisjs project by setting useAsyncLocalStorage to true in your config/app.ts file.
 
-```ts
+```js
 export const http: ServerConfig = {
   useAsyncLocalStorage: true
   // other configs
@@ -214,7 +215,7 @@ export const http: ServerConfig = {
 
 You can then start reporting errors by calling the apitoolkit `reportError`` function.
 
-```ts
+```js
 import Route from "@ioc:Adonis/Core/Route";
 import { reportError } from "apitoolkit-adonis";
 
