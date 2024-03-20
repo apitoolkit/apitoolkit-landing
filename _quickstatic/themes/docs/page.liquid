@@ -243,8 +243,8 @@
     init();
      document.body.addEventListener('htmx:afterSwap', function(event) {
       window.requestAnimationFrame(() => {
-        init();
         hljs.highlightAll();
+        init();
       })
     });
   </script>
