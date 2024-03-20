@@ -9,11 +9,13 @@ menu:
     weight: 20
 ---
 # Go Echo integration 
+
 Echo is an efficient web framework for Go, boasting both high performance and adaptability. Its vast array of middleware and plugins facilitate seamless integration into your application, simplifying the enhancement of features and functions. 
 
 To further streamline your development, here's a guide on integrating the Go Echo with APIToolkit SDK.
 
 ### Prerequisites
+
 1. Sign up / Sign in to the [API dashboard](https://app.apitoolkit.io)
 2. [Create a project](/docs/documentation/dashboard/creating-a-project/)
 3. [Generate an API key for your project](/docs/documentation/dashboard/generating-api-keys), and include a brief description of your work. And to prevent losing your key after it has been generated, remember to make a copy of it.
@@ -86,11 +88,14 @@ func main() {
 Replace `"YOUR_GENERATED_API_KEY"` with the API key you generated.
 
 **Test the Integration**
+
 Run your Echo server and access the endpoint to see if the integration works.
 
 ## Redacting Sensitive Fields with Go's Echo and APIToolkit
 
-While it's possible to mark fields as redacted directly from the APIToolkit dashboard, this client also offers client-side redacting. By doing this on the client-side, sensitive fields won't leave your server at all, ensuring that your data remains confined to your infrastructure.
+While it's possible to mark fields as redacted directly from the APIToolkit dashboard, this client also offers client-side redacting. 
+
+By doing this on the client-side, sensitive fields won't leave your server at all, ensuring that your data remains confined to your infrastructure.
 
 For instance, if you have a request body like:
 
@@ -144,11 +149,15 @@ func main() {
 
 It's important to emphasize that while the `RedactHeaders` config field accepts header names (case insensitive), `RedactRequestBody` and `RedactResponseBody` expect JSONPath strings.
 
-JSONPath provides a flexible way to define sensitive fields in your responses. This list will be applied across all endpoint requests and responses. For more on JSONPath and how to craft queries, check out: [JSONPath Cheatsheet](https://lzone.de/cheat-sheet/JSONPath)
+JSONPath provides a flexible way to define sensitive fields in your responses. This list will be applied across all endpoint requests and responses.
+
+For more on JSONPath and how to craft queries, check out: [JSONPath Cheatsheet](https://lzone.de/cheat-sheet/JSONPath)
 
 ## Outgoing Requests
 
-To monitor outgoing HTTP requests from your Go application, you can replace the default HTTP client transport with a custom roundtripper. This allows you to capture and send copies of all incoming and outgoing requests to an apitoolkit server for monitoring and analysis.
+To monitor outgoing HTTP requests from your Go application, you can replace the default HTTP client transport with a custom roundtripper.
+
+This allows you to capture and send copies of all incoming and outgoing requests to an apitoolkit server for monitoring and analysis.
 
 Example
 
@@ -185,7 +194,11 @@ func main() {
 }
 ```
 
-The provided code demonstrates how to set up the custom roundtripper to replace the default HTTP client's transport. The resulting HTTP client, `HTTPClient`, is configured to send copies of all incoming and outgoing requests to the apitoolkit servers. You can use this modified HTTP client for any HTTP requests you need to make from your server, ensuring they are monitored by apitoolkit.
+The provided code demonstrates how to set up the custom roundtripper to replace the default HTTP client's transport. 
+
+The resulting HTTP client, `HTTPClient`, is configured to send copies of all incoming and outgoing requests to the apitoolkit servers. 
+
+You can use this modified HTTP client for any HTTP requests you need to make from your server, ensuring they are monitored by apitoolkit.
 
 ## Report Errors
 
