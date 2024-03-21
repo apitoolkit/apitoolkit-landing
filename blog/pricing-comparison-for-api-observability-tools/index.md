@@ -1,6 +1,6 @@
 ---
 title: "Pricing comparison for API observability tools"
-featured_image: 
+featured_image: api%20observability%20tools.jpeg
 date: 2024-03-08T06:44:56+02:00
 description: "with a plethora of API observability tools available, finding the right one can feel like navigating a labyrinth."
 author: elliot
