@@ -20,25 +20,30 @@ But  with a plethora of API observability tools available, finding the right one
 Now that you're convinced API observability is your secret weapon for top-notch APIs, let's tackle the next hurdle: pricing models.  These can vary wildly, so understanding what you're paying for is crucial.  
 
 ### Per User
+
 This model charges based on the number of people accessing the observability platform. 
 **Pros:** Simple to understand and manage costs for small teams.  
 **Cons:** Can get expensive quickly as your team grows, and it might not reflect actual data usage.
 
 ### Per Host
+
 Here, you pay based on the number of servers or containers your APIs run on.  
 **Pros:** Straightforward for organizations with a static infrastructure.  
 **Cons:** Doesn't scale well for cloud-based deployments or applications with variable workloads.  You might end up paying for unused monitoring.
 
 ### Per API Call/Request
+
 This model charges based on the volume of traffic your APIs handle.  
 **Pros:** Scales efficiently with your API usage, ideal for dynamic environments. 
 **Cons:** Can be unpredictable for APIs with fluctuating traffic patterns, leading to potential bill shock.
 
 ### Data Ingestion
+
 This structure charges based on the amount of data your APIs generate (logs, metrics, traces).  Pros: Aligns cost with actual data consumption, offering flexibility.  
 Cons: Requires careful monitoring of data volume to avoid overages.
 
 ## Pricing comparison for API observability tools
+
 | Feature                               | New Relic            | Datadog              | Moesif               | Treblle              | Dreamfactory         | Runscope             | Apimetrics           | Apigee               |
 |---------------------------------------|----------------------|----------------------|----------------------|----------------------|----------------------|----------------------|----------------------|----------------------|
 | Core Observability (Metrics, Tracing, Errors) | Yes                  | Yes                  | Yes                  | Yes                  | Yes                  | Yes                  | Yes                  | Yes                  |
@@ -59,6 +64,7 @@ We provide a comprehensive suite of observability features, including real-time 
 This allows you to ensure your APIs are delivering optimal performance and user experiences. But what truly sets us apart is our pricing structure. Unlike competitors who focus on opaque metrics like users or hosts, we charge based on value metrics. This means you only pay as you grow, making it a perfect fit for organizations of all sizes, from lean startups to sprawling enterprises.
 
 ## Final Note
+
 API observability is not a luxury but a necessity for ensuring the health and performance of your APIs. With the right tool in place, you can gain valuable insights, proactively address issues, and ultimately deliver exceptional user experiences.
 
 
