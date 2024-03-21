@@ -44,13 +44,13 @@ Cons: Requires careful monitoring of data volume to avoid overages.
 
 ## Pricing comparison for API observability tools
 
-| Feature                               | New Relic            | Datadog              | Moesif               | Treblle              | Dreamfactory         | Runscope             | Apimetrics           | Apigee               |
-|---------------------------------------|----------------------|----------------------|----------------------|----------------------|----------------------|----------------------|----------------------|----------------------|
+| Feature                                        | New Relic            | Datadog              | Moesif               | Treblle              | Dreamfactory         | Runscope             | Apimetrics           | Apigee               |
+|-----------------------------------------------|----------------------|----------------------|----------------------|----------------------|----------------------|----------------------|----------------------|----------------------|
 | Core Observability (Metrics, Tracing, Errors) | Yes                  | Yes                  | Yes                  | Yes                  | Yes                  | Yes                  | Yes                  | Yes                  |
 | Advanced Analytics (Alerting, Anomaly Detection) | Yes (Paid Tiers)     | Yes                  | Yes (Limited)        | Yes (Limited)        | Limited              | Yes (Limited)        | Yes                  | Yes                  |
-| API Design & Documentation            | Limited              | Limited              | Yes                  | Yes                  | Yes                  | Limited              | Limited              | Yes                  |
-| Team Collaboration                   | Yes                  | Yes                  | Yes                  | Yes                  | Limited              | Yes                  | Yes                  | Yes                  |
-| Pricing Model                        | Per User/Per Host    | Per Host/Per API Call| Per User/Per API Call| Per User             | Per User/Per API Call| Per User/Per API Call| Per Data Ingestion   | Per User             |
+| API Design & Documentation                    | Limited              | Limited              | Yes                  | Yes                  | Yes                  | Limited              | Limited              | Yes                  |
+| Team Collaboration                            | Yes                  | Yes                  | Yes                  | Yes                  | Limited              | Yes                  | Yes                  | Yes                  |
+| Pricing Model                                 | Per User/Per Host    | Per Host/Per API Call| Per User/Per API Call| Per User             | Per User/Per API Call| Per User/Per API Call| Per Data Ingestion   | Per User             |
 
 
 ## Why Choose APItoolkit
