@@ -41,588 +41,347 @@ hidenav: true
 
 {% render "default/markdown/hero-section", this:this %}
 
-```
+``` =html
+
 <main>
   <section class="width-control mx-auto mt-[54px] pb-16 relative">
     <div class="h-full w-[1px] absolute z-10 left-[20px] top-[35px]">
-      <div class="relative section-line h-full w-full">
-      </div>
+      <div class="relative section-line h-full w-full"></div>
     </div>
     <div class="w-full flex items-start">
-      <div class="mt-1">
-        <svg xmlns="http://www.w3.org/2000/svg" width="39" height="35" viewBox="0 0 39 35" fill="none">
-          <path
-            d="M34.6667 3.28125C36.4609 3.28125 37.9167 4.75098 37.9167 6.5625V28.4375C37.9167 30.249 36.4609 31.7188 34.6667 31.7188H4.33333C2.53906 31.7188 1.08333 30.249 1.08333 28.4375V6.5625C1.08333 4.75098 2.53906 3.28125 4.33333 3.28125H34.6667ZM4.33333 2.1875C1.94323 2.1875 0 4.14941 0 6.5625V28.4375C0 30.8506 1.94323 32.8125 4.33333 32.8125H34.6667C37.0568 32.8125 39 30.8506 39 28.4375V6.5625C39 4.14941 37.0568 2.1875 34.6667 2.1875H4.33333ZM18.9313 10.9375C18.7146 10.9512 18.5318 11.0879 18.4505 11.2861L14.4896 21.7861L11.8219 17.7461C11.7203 17.5957 11.551 17.5 11.3682 17.5H5.41667V8.75C5.41667 8.14844 5.90417 7.65625 6.5 7.65625H32.5C33.0958 7.65625 33.5833 8.14844 33.5833 8.75V26.25C33.5833 26.8516 33.0958 27.3438 32.5 27.3438H6.5C5.90417 27.3438 5.41667 26.8516 5.41667 26.25V18.5938H11.0839L14.1714 23.2695C14.2865 23.4404 14.4828 23.5293 14.6859 23.5088C14.8891 23.4883 15.0583 23.3516 15.1328 23.1602L19.026 12.8379L21.7276 18.2861C21.8224 18.4707 22.0052 18.5869 22.2151 18.5869H27.6318C27.9297 18.5869 28.1734 18.3408 28.1734 18.04C28.1734 17.7393 27.9297 17.4932 27.6318 17.4932H22.5401L19.4391 11.2314C19.3443 11.04 19.1411 10.917 18.9245 10.9307L18.9313 10.9375ZM4.33333 8.75V26.25C4.33333 27.46 5.30156 28.4375 6.5 28.4375H32.5C33.6984 28.4375 34.6667 27.46 34.6667 26.25V8.75C34.6667 7.54004 33.6984 6.5625 32.5 6.5625H6.5C5.30156 6.5625 4.33333 7.54004 4.33333 8.75Z"
-            fill="black" />
-        </svg>
-      </div>
       <div class="w-full flex flex-col gap-10">
-        <div class="flex flex-col gap-2 ml-8">
-          <h2 class="text-[#2E3238] text-4xl md:text-[49px] font-bold leading-[1.14] tracking-tight">Uptime,
-            Performance <br> &
-            Error
-            Monitoring</h2>
-          <div class="mt-16px max-w-[480px] font-medium text-gray-600">
-            You have APIs, but are they working? Realtime observability purpose
-            built for APIs
-            you provide & APIs you
-            depend on
-          </div>
-          <p class="max-w-[480px] text-gray-600"></p>
-        </div>
-        <div class="w-full rounded-t-2xl light-shadow border-gray-100 px-10 pt-8">
-          <div class="flex flex-col gap-16">
-            <div class="flex gap-2 md:grid md:grid-cols-4 md:gap-6 overflow-x-auto *:min-w-52">
-              <button class="flex flex-col gap-2 text-left  text-gray-400 tab-button active-tab"
-                onclick="switchTab(event, 'observe')">
-                <span class="font-bold text-[18px] flex items-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
-                    <path
-                      d="M10.5014 2.31665H8.46568C6.56551 2.31666 5.61542 2.31666 4.88964 2.68645C4.25124 3.01174 3.7322 3.53078 3.40691 4.16919C3.03711 4.89496 3.03711 5.84505 3.03711 7.74523V11.8166C3.03711 13.7168 3.03711 14.6668 3.40691 15.3926C3.7322 16.031 4.25124 16.5501 4.88965 16.8753C5.61542 17.2451 6.56551 17.2451 8.46569 17.2451H10.5014M10.5014 2.31665H12.5371C14.4372 2.31665 15.3873 2.31665 16.1131 2.68645C16.7515 3.01174 17.2706 3.53078 17.5958 4.16919C17.9656 4.89496 17.9656 5.84505 17.9656 7.74522V11.8166C17.9656 13.7167 17.9656 14.6668 17.5958 15.3926C17.2706 16.031 16.7515 16.5501 16.1131 16.8753C15.3873 17.2451 14.4373 17.2451 12.5371 17.2451H10.5014M10.5014 2.31665V17.2451"
-                      stroke="currentColor" stroke-width="1.49286" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M10.4994 11.647H3.03516" stroke="currentColor" stroke-width="1.49286"
-                      stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M17.9642 7.91455H10.5" stroke="currentColor" stroke-width="1.49286" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg>
-                  Observe
-                </span>
-                <span class="text-sm">Watch Errors, Performance, and any numbers that matter over
-                  time.</span>
-              </button>
-              <button class="flex flex-col gap-2 text-left text-gray-400 tab-button"
-                onclick="switchTab(event,'anomalies')">
-                <span class="font-bold text-[18px] flex items-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
-                    <g clip-path="url(#clip0_532_2983)">
-                      <mask id="mask0_532_2983" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0"
-                        width="20" height="20">
-                        <path d="M0.75 19.2803H19.75V0.280273H0.75V19.2803Z" fill="white" />
-                      </mask>
-                      <g mask="url(#mask0_532_2983)">
-                        <path
-                          d="M15.0003 9.74158V7.06605C15.0003 5.16586 15.0003 4.21577 14.6305 3.48999C14.3052 2.85158 13.7862 2.33254 13.1478 2.00725C12.422 1.63745 11.4719 1.63745 9.57169 1.63745H7.31261C5.62284 1.63745 4.77795 1.63745 4.11826 1.93168C3.35392 2.27258 2.74255 2.88396 2.40165 3.6483C2.10742 4.30798 2.10742 5.15287 2.10742 6.84265V9.10174C2.10742 11.0019 2.10742 11.952 2.47722 12.6778C2.80251 13.3162 3.32155 13.8352 3.95995 14.1605C4.68573 14.5303 5.63582 14.5303 7.53599 14.5303H10.2115C11.5108 14.5303 12.1604 14.5303 12.6848 14.3547C13.6943 14.0167 14.4866 13.2243 14.8247 12.2148C15.0003 11.6904 15.0003 11.0408 15.0003 9.74158Z"
-                          stroke="currentColor" stroke-width="1.49286" stroke-linecap="round" stroke-linejoin="round" />
-                        <path
-                          d="M17.7152 6.38721C18.1413 6.95433 18.3938 7.65931 18.3938 8.42327V13.1345C18.3938 13.8008 18.3938 14.134 18.3548 14.4134C18.1038 16.2162 16.6867 17.6333 14.8839 17.8844C14.6045 17.9233 14.2713 17.9233 13.605 17.9233H9.34473C8.46737 17.9233 7.65866 17.6293 7.01172 17.1345"
-                          stroke="currentColor" stroke-width="1.49286" stroke-linecap="round" stroke-linejoin="round" />
-                      </g>
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_532_2983">
-                        <rect width="20" height="19" fill="white" transform="translate(0.25 0.280273)" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                  Anomalies
-                </span>
-                <span class="text-sm">Catch changes in performance, uptime throughput, or schema in APIs
-                  your
-                  provide or depend on.</span>
-              </button>
+```
 
-              <button class="flex flex-col gap-2 text-left text-gray-400 tab-button"
-                onclick="switchTab(event,'errors')">
-                <span class="font-bold text-[18px] flex items-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="19" height="20" viewBox="0 0 19 20" fill="none">
-                    <path
-                      d="M6.34225 17.4142C6.34225 14.5065 7.90966 11.8862 10.8173 11.8862C7.90966 11.8862 6.34225 9.2658 6.34225 6.35815C6.34225 9.2658 4.77485 11.8862 1.86719 11.8862C4.77485 11.8862 6.34225 14.5065 6.34225 17.4142Z"
-                      stroke="currentColor" stroke-width="1.49286" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                      d="M13.7131 8.99045C13.7131 7.24586 15.3906 5.56835 17.1352 5.56835C15.3906 5.56835 13.7131 3.89084 13.7131 2.14624C13.7131 3.89084 12.0355 5.56835 10.291 5.56835C12.0355 5.56835 13.7131 7.24586 13.7131 8.99045Z"
-                      stroke="currentColor" stroke-width="1.49286" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                  Errors and Traces
-                </span>
-                <span class="text-sm">Correlate customer requests to backend errors & downstream api
-                  calls to
-                  integrations.</span>
-              </button>
-              <button class="flex flex-col gap-2 text-left  text-gray-400 tab-button"
-                onclick="switchTab(event,'monitors')">
-                <span class="font-bold text-[18px] flex items-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
-                    <path
-                      d="M14.8209 2.31543H6.67802C4.80419 2.31543 3.28516 3.83446 3.28516 5.70829V13.8512C3.28516 15.725 4.80419 17.244 6.67802 17.244H14.8209C16.6947 17.244 18.2138 15.725 18.2138 13.8512V5.70829C18.2138 3.83446 16.6947 2.31543 14.8209 2.31543Z"
-                      stroke="currentColor" stroke-width="1.49286" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M7.30469 7.48291V13.2247" stroke="currentColor" stroke-width="1.49286"
-                      stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M10.75 6.33496V13.2251" stroke="currentColor" stroke-width="1.49286" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                    <path d="M14.1934 9.77979V13.2249" stroke="currentColor" stroke-width="1.49286"
-                      stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                  Monitors & Alerts
-                </span>
-                <span class="text-sm">Be the first to know when your APIs or APIs you depend on are
-                  slow, down,
-                  or broken.</span>
-              </button>
-            </div>
-            <div class="overflow-y-hidden pt-2 px-2">
-              <div class="w-full max-w-5xl overflow-hidden rounded-t-xl light-shadow  max-h-96 md:h-96">
-                <div class="w-full overflow-hidden rounded-t-xl light-shadow h-full">
-                  <img src="/assets/img/dashboard.png" alt="" class="tab-image" id="observe">
-                  <img src="/assets/img/anomalies.png" alt="" class="tab-image hidden" id="anomalies">
-                  <img src="/assets/img/errors.png" alt="" class="tab-image hidden" id="errors">
-                  <img src="/assets/img/integrations/testing_coming_soon.png" alt="" class="tab-image hidden"
-                    id="monitors">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="flex flex-col w-full gap-3 px-4 py-16 items-center">
-          <img src="/assets/img/love/trojan.jpeg" alt="" class="w-11 h-11 rounded-full">
-          <p class="max-w-[500px] text-gray-600 text-center">
-            “APIToolkit allowed us make a drop in rewrite of our PHP service in Golang. Fixing all bugs without
-            customers noticing
-            any changes.”
-          </p>
-          <div class="text-center">
-            <p>Michael Okoh</p>
-            <p class="mt-[2px] text-sm text-gray-500">CEO @ Thepeer</p>
-          </div>
-        </div>
+{class="flex flex-col gap-2 ml-8"}
+::::::
+
+## Monitoring & Observability
+
+{.max-w-4xl .text-lg .pt-2}
+Gain data-driven insights into your APIs and APIs you depend on. Query user behavior and see all requests made by users or requests you made to third parties.
+
+{.grid .grid-cols-3 .py-8 .gap-5}
+:::
+{.cols-span-1 .space-y-5 .text-lg .font-medium}
+::::
+```=html
+  <label for="" class="rounded-md border border-base-300 ring hover:ring block p-5">
+      API and Endpoint Analytics
+  </label>
+  <label for="" class="rounded-md border border-base-300 block p-5 hover:ring">
+      Log Explorer to query Incoming and Outgoing Requests
+  </label>
+  <label for="" class="rounded-md border border-base-300 block p-5 hover:ring">
+      Performance Analytics 
+  </label>
+  <label for="" class="rounded-md border border-base-300 block p-5 hover:ring">
+      Custom Alerts on API performance and metrics
+  </label>
+```
+::::
+{.col-span-2}
+::::
+![Dashboard Screenshot](/assets/img/dashboard.png){.drop-shadow-lg .w-full .block .rounded-lg .border .border-gray-200}
+::::
+:::
+::::::
+
+{.text-center .space-y-2}
+:::
+{.flex .justify-center}
+![Michael Okoh image](/assets/img/love/trojan.jpeg){class="w-11 h-11 rounded-full"}
+
+{class="inline-block max-w-[500px] text-gray-600 text-center"}
+“APIToolkit allowed us make a drop in rewrite of our PHP service in Golang. Fixing all bugs without customers noticing any changes.”
+
+::::
+Michael Okoh
+
+{class="mt-[2px] text-sm text-gray-500"}
+CEO @ Thepeer
+::::
+:::
+
+``` =html
+            
+
       </div>
     </div>
   </section>
+```
 
-  <section class="width-control mx-auto mt-[54px] relative pb-16">
+``` =html
+    <br/><br/>
+  <section class="width-control mx-auto mt-[54px] pb-16 relative">
     <div class="h-full w-[1px] absolute z-10 left-[20px] top-[35px]">
-      <div class="relative section-line h-full w-full">
-      </div>
+      <div class="relative section-line h-full w-full"></div>
     </div>
     <div class="w-full flex items-start">
-      <div class="mt-1">
-        <img src="/assets/img/svgs/test.png" alt="">
-      </div>
       <div class="w-full flex flex-col gap-10">
-        <div class="flex flex-col gap-2 ml-8">
-          <h2 class="text-[#2E3238] text-4xl md:text-[49px] font-bold leading-[1.14] tracking-tight">Advanced Tests,
-            Linting &
-            <br>
-            Live Payload Validation
-          </h2>
-          <div class="mt-16px max-w-[480px] font-medium text-gray-600">
-            Test in Production. Catch breaking changes and errors. Let AI generate your schema, and validate realtime
-            requests
-            against it
-          </div>
-          <p class="max-w-[480px] text-gray-600"></p>
-        </div>
-        <div class="w-full rounded-t-2xl light-shadow overflow-hidden border-gray-100 px-10 pt-10">
-          <div class="flex flex-col md:flex-row">
-            <div class="">
-              <span class="text-gray-600 text-[18px] font-bold leading-[1.4] tracking-tighter">Effortlessly Test
-                complex <br> workflows</span>
-              <ul class="list-disc pl-6 py-4 flex flex-col gap-2">
-                <li class="text-gray-700 text-sm">Multi-step test flows generated from the API schema with
-                  help of our
-                  AI</li>
-                <li class="text-gray-700 text-sm">Manually add extra test cases and checks or ask the AI
-                  to do so
-                  [coming
-                  soon]</li>
-                <li class="text-gray-700 text-sm">Run the tests at deploy time, in CI or on a schedule
-                </li>
-              </ul>
-            </div>
-            <div class="translate-x-[10%] rounded-t-3xl mt-3 overflow-hidden light-shadow max-h-96 pt-1 pl-1">
-              <img src="/assets/img/integrations/testing_coming_soon.png" alt="" class="rounded-t-3xl">
-            </div>
-          </div>
-        </div>
-        <div class="grid  gap-6">
-          <div class="light-shadow overflow-hidden [&>span]:px-8 [&>p]:px-8 py-8 pb-0 rounded-3xl flex flex-col gap-2">
-            <span class="text-gray-600  font-semibold leading-[1.4] tracking-tighter">Linting and Payload
-              Validation for <br> realtime requests.</span>
-            <p class="text-gray-600 text-sm max-w-[400px]">
-              Validate the payloads against the specification. Catch breaking changes. Enforce Security and Best
-              practices
-            </p>
-            <div class="mt-4 [&>div]:overflow-hidden relative border-t bg-[url('/assets/img/dotedbg.png')] w-full h-80"
-              id="requests-apitoolkit-container">
-              <div class="w-full h-full">
-                <div
-                  class="*:select-none *:p-3 *:size-64 *:rounded-xl text-gray-600  *:overflow-y-auto *:border *:bg-white *:light-shadow text-sm h-full w-max flex items-center *:shrink-0 flex-nowrap gap-10"
-                  id="apitoolkit-container">
+```
 
-                  <div class="light-shadow">
-                    <div class="flex items-center">
-                      <div class="inline-block font-bold text-blue-700 space-x-1 mb-3">
-                        <img src="./assets/img/svgs/shape.svg" class="inline w-4 h-4">
-                        <span>Field Monitor Alert</span>
-                      </div>
-                    </div>
-                    <div class="w-full mb-1 bg-gray-100 overflow-hidden text-xs p-2 rounded-lg">
-                      <pre><code>amount = 100000 </code></pre>
-                    </div>
-                    <p class="flex items-center"> in
-                      <span class="ml-1 font-bold text-blue-500 mr-2 text-sm">POST</span>
-                      <span class="">/send-funds</span>
-                    </p>
-                    <span class="text-sm text-gray-500 fontp-semibold">Payload</span>
-                    <div class="w-full mb-1 bg-gray-100 overflow-hidden text-xs p-2 rounded-lg">
-                      <pre><code>{
- "amount": 10000,
- "currency": "USD",
- "reference": "For school fees"
- "recepient": "recepient_id"
-}</code></pre>
-                    </div>
-                  </div>
+{class="flex flex-col gap-2 ml-8"}
+::::::
 
-                  <div class="light-shadow">
-                    <div class="flex items-center">
-                      <div class="inline-block font-bold text-blue-700 space-x-1 mb-3">
-                        <img src="./assets/img/svgs/shape.svg" class="inline w-4 h-4">
-                        <span>New Request Shape</span>
-                      </div>
-                    </div>
-                    <p class="flex items-center"> in
-                      <span class="ml-1 font-bold text-blue-500 mr-2 text-sm">POST</span>
-                      <span class="">/user</span>
-                    </p>
+## Backend Errors & API Breaking Changes
 
-                    <span class="text-sm text-gray-500 fontp-semibold">shape</span>
-                    <div class="w-full mb-1 bg-gray-100 overflow-hidden text-xs p-2 rounded-lg">
-                      <pre><code>{
- "name": String,
- "bio": String,
- "password": String,
- "age": String
-}</code></pre>
-                    </div>
-                    <span class="text-sm text-gray-500 fontp-semibold">Modified field format</span>
-                    <div class="w-full mb-1 bg-gray-100 overflow-hidden text-xs p-2 rounded-lg">
-                      <pre><code>{"age": String}</code></pre>
-                    </div>
-                    <span class="text-sm text-gray-500 fontp-semibold">Previous formats</span>
-                    <div class="w-full mb-1 bg-gray-100 overflow-hidden text-xs p-2 rounded-lg">
-                      <pre><code>[Int]</code></pre>
-                    </div>
-                  </div>
+{.max-w-4xl .text-lg .pt-2}
+Get to the root cause of every issue. Whether it is caused by runtime errors, breaking API changes introduced by third-party integrations, or unintended API-breaking changes by your team.
 
-                  <div class="light-shadow">
-                    <div class="flex items-center">
-                      <div class="inline-block font-bold text-blue-700 space-x-1 mb-3">
-                        <img src="./assets/img/svgs/shape.svg" class="inline w-4 h-4">
-                        <span>New Request Shape</span>
-                      </div>
-                    </div>
-                    <p class="flex items-center"> in
-                      <span class="ml-1 font-bold text-blue-500 mr-2 text-sm">POST</span>
-                      <span class="">/user</span>
-                    </p>
+{.grid .grid-cols-3 .py-8 .gap-5}
+:::
+{.cols-span-1 .space-y-5 .text-lg .font-medium}
+::::
+```=html
+  <label for="" class="rounded-md border border-base-300 ring hover:ring block p-5">
+  See all your errors and API issues at a glance
+  </label>
+  <label for="" class="rounded-md border border-base-300 block p-5 hover:ring">
+  Trace Errors to their Root Cause 
+  </label>
+  <label for="" class="rounded-md border border-base-300 block p-5 hover:ring">
+  Track Breaking changes in your APIs and integrations
+  </label>
+```
+::::
+{.col-span-2}
+::::
+![Dashboard Screenshot](/assets/img/dashboard.png){.drop-shadow-lg .w-full .block .rounded-lg .border .border-gray-200}
+::::
+:::
+::::::
 
-                    <span class="text-sm text-gray-500 fontp-semibold">shape</span>
-                    <div class="w-full mb-1 bg-gray-100 overflow-hidden text-xs p-2 rounded-lg">
-                      <pre><code>{
- "name": String,
- "bio": String,
- "password": String,
- "age": Int
-}</code></pre>
-                    </div>
-                    <span class="text-sm text-gray-500 fontp-semibold">New fields (1)</span>
-                    <div class="w-full mb-1 bg-gray-100 overflow-hidden text-xs p-2 rounded-lg">
-                      <pre><code>{"age": Int}</code></pre>
-                    </div>
-                  </div>
+{.text-center .space-y-2}
+:::
+{.flex .justify-center}
+![Michael Okoh image](/assets/img/love/trojan.jpeg){class="w-11 h-11 rounded-full"}
 
-                  <div class="light-shadow">
-                    <p class="flex items-center mb-1.5"><span class="font-bold text-blue-500 mr-2">POST</span><span
-                        class="">/user</span>
-                    </p>
-                    <span class="">request body</span>
-                    <div class="w-full mb-1 bg-gray-100 overflow-hidden text-xs p-2 rounded-lg">
-                      <pre><code>{
- "name": "Jon Doe",
- "bio": "A place holder user",
- "password": "[CLIENT REDACTED]",
-}</code></pre>
-                    </div>
-                    <span class="font-medium text-xs text-blue-500">Above is what gets saved by APItoolkit</span>
-                  </div>
+{class="inline-block max-w-[500px] text-gray-600 text-center"}
+“APIToolkit allowed us make a drop in rewrite of our PHP service in Golang. Fixing all bugs without customers noticing any changes.”
 
-                  <div class="light-shadow">
-                    <div class="flex items-center">
-                      <div class="inline-block font-bold text-blue-700 space-x-1 mb-3">
-                        <img src="./assets/img/endpoint.svg" class="inline w-4 h-4">
-                        <span>New Endpoint</span>
-                      </div>
-                    </div>
-                    <p class="flex items-center">
-                      <span class="font-bold text-blue-500 mr-2 text-sm">POST</span>
-                      <span class="">/user</span>
-                    </p>
-                    <div class="mt-2">
-                      <span class="text-sm text-gray-500 font-semibold">Events</span>
-                      <div class="text-sm">
-                        <span class="text-xs">25,000</span>
-                      </div>
-                    </div>
-                    <div class="flex mt-2 gap-3 w-full">
-                      <div>
-                        <span class="text-sm text-gray-500 font-semibold">First seen</span>
-                        <div class="text-sm">
-                          <span class="text-xs">Dec 10, 2023 17:36</span>
-                        </div>
-                      </div>
-                      <div>
-                        <span class="text-sm text-gray-500 font-semibold">Last seen</span>
-                        <div class="text-sm">
-                          <span class="text-xs">Now</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="w-full flex items-center gap-4 mt-4 overflow-y-auto">
-                      <span
-                        class="inline-block xchild-hover cursor-pointer py-1 px-2 rounded border border-gray-200 text-xs hover:shadow shadow-blue-100">
-                        Archive
-                      </span>
-                      <span
-                        class="inline-block child-hover cursor-pointer py-1 px-2 rounded border border-gray-200 text-xs hover:shadow shadow-blue-100 "
-                        data-tippy-content="acknowlege anomaly"
-                        data-hx-get="/p/6d06b402-a667-4878-b12a-8621b8c6f37d/anomalies/d81f4f47-2d7b-4892-925f-0dc5d53aa329/acknowlege"
-                        data-hx-swap="outerHTML">✓ Acknowlege</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="absolute top-0 left-0 w-1/2 h-full">
-                <div
-                  class="*:select-none *:p-3 *:size-64 *:rounded-xl *:border *:bg-white text-sm text-gray-600 h-full w-max flex items-center *:shrink-0 flex-nowrap gap-10"
-                  id="requests-container">
-                  <div class="light-shadow">
-                    <p class="flex items-center mb-1.5"><span class="font-bold text-blue-500 mr-2">POST</span><span
-                        class="">/send-funds</span>
-                    </p>
-                    <span class="">request body</span>
-                    <div class="w-full mb-1 bg-gray-100 overflow-hidden text-xs p-2 rounded-lg">
-                      <pre><code>{
- "amount": 10000,
- "currency": "USD",
- "reference": "For school fees"
- "recepient": "recepient_id"
-}</code></pre>
-                    </div>
-                    <p>eg: Monitor amount field for all values greater 5000</p>
-                  </div>
+::::
+Michael Okoh
 
-                  <div class="light-shadow">
-                    <p class="flex items-center mb-1.5"><span class="font-bold text-blue-500 mr-2">POST</span><span
-                        class="">/user</span>
-                    </p>
-                    <span class="">request body</span>
-                    <div class="w-full mb-1 bg-gray-100 overflow-hidden text-xs p-2 rounded-lg">
-                      <pre><code>{
- "name": "Jane Doe",
- "bio": "A place holder user",
- "password": "fakepass",
- "age": "5 months"
-}</code></pre>
-                    </div>
-                  </div>
+{class="mt-[2px] text-sm text-gray-500"}
+CEO @ Thepeer
+::::
+:::
 
-                  <div class="light-shadow">
-                    <p class="flex items-center mb-1.5"><span class="font-bold text-blue-500 mr-2">POST</span><span
-                        class="">/user</span>
-                    </p>
-                    <span class="">request body</span>
-                    <div class="w-full mb-1 bg-gray-100 overflow-hidden text-xs p-2 rounded-lg">
-                      <pre><code>{
- "name": "Jon Doe",
- "bio": "A place holder user",
- "password": "fakepass",
- "age": 25
-}</code></pre>
-                    </div>
-                  </div>
+``` =html
+            
 
-                  <div class="light-shadow">
-                    <p class="flex items-center mb-1.5"><span class="font-bold text-blue-500 mr-2">POST</span><span
-                        class="">/user</span>
-                    </p>
-                    <span class="">request body</span>
-                    <div class="w-full mb-1 bg-gray-100 overflow-hidden text-xs p-2 rounded-lg">
-                      <pre><code>{
- "name": "Jon Doe",
- "bio": "A place holder user",
- "password": "fakepass",
-}</code></pre>
-                    </div>
-                    <span class="text-sm block">redact password</span>
-                    <span class="bg-gray-100 rounded-lg text-xs">redactRequestBody = ["$.password"]</span>
-                  </div>
-
-                  <div class="light-shadow">
-                    <p class="flex items-center mb-1.5"><span class="font-bold text-blue-500 mr-2">POST</span><span
-                        class="">/user</span>
-                    </p>
-                    <span class="">request body</span>
-                    <div class="w-full bg-gray-100 overflow-hidden text-xs p-2 rounded-lg">
-                      <pre><code>{
- "name": "Jon Doe",
- "bio": "A place holder user",
- "password": "fakepass",
-}</code></pre>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="absolute left-1/2 top-0 -translate-x-1/2 h-full w-2 bg-gray-400 animate-pulse">
-              </div>
-            </div>
-          </div>
-          <div class="flex flex-col gap-6">
-            <div class="light-shadow p-8 pb-0 rounded-3xl flex flex-col gap-2">
-              <span class="text-gray-600 font-semibold leading-[1.4] tracking-tighter">Automatic OpenAPI
-                Schema <br> Generation and Changelog monitoring</span>
-              <p class="text-gray-600 text-sm max-w-[400px]">
-                An openAPI schema and spec is automatically generated from your live traffic. Approve and acknowlege
-                endpoints and
-                fields
-              </p>
-              <div class="mt-4 pt-4 px-4 relative bg-[url('/assets/img/dotedbg.png')] overflow-hidden w-full">
-                <div class="w-full max-w-5xl overflow-hidden rounded-t-xl light-shadow h-full">
-                  <div class="w-full overflow-hidden rounded-t-xl light-shadow h-full">
-                    <img src="/assets/img/swagger.png" alt="" class="rounded-t-xl">
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="flex flex-col w-full gap-3 px-4 py-16 items-center">
-          <img src="/assets/img/love/joshua.jpeg" alt="" class="w-11 h-11 rounded-full">
-          <p class="max-w-[500px] text-gray-600 text-center">
-            “We had a major production incident, and the Engineering team didnt need to get involved, because the
-            support team could
-            see via APItoolkit, that the issues were caused by our third party integration, and they could reach out
-            to the team to
-            fix the issue”
-          </p>
-          <div class="text-center">
-            <p>Josua</p>
-            <p class="mt-[2px] text-sm text-gray-500">CTO @ Platnova</p>
-          </div>
-        </div>
       </div>
     </div>
   </section>
-  <section class="width-control px-2 mx-auto mt-[54px] relative">
+```
+
+``` =html
+    <br/><br/>
+  <section class="width-control mx-auto mt-[54px] pb-16 relative">
     <div class="h-full w-[1px] absolute z-10 left-[20px] top-[35px]">
-      <div class="relative section-line h-full w-full">
-      </div>
+      <div class="relative section-line h-full w-full"></div>
     </div>
     <div class="w-full flex items-start">
-      <div class="mt-1">
-        <svg xmlns="http://www.w3.org/2000/svg" width="31" height="35" viewBox="0 0 31 35" fill="none">
-          <path
-            d="M1.10714 9.84375V16.4062H7.75V9.84375H1.10714ZM0 8.75H1.10714H7.75H8.85714V9.84375V16.4062V17.5H7.75H1.10714H0V16.4062V9.84375V8.75ZM1.10714 20.7812V27.3438H7.75V20.7812H1.10714ZM0 19.6875H1.10714H7.75H8.85714V20.7812V27.3438V28.4375H7.75H1.10714H0V27.3438V20.7812V19.6875ZM18.8214 9.84375H12.1786V16.4062H18.8214V9.84375ZM12.1786 8.75H18.8214H19.9286V9.84375V16.4062V17.5H18.8214H12.1786H11.0714V16.4062V9.84375V8.75H12.1786ZM12.1786 20.7812V27.3438H18.8214V20.7812H12.1786ZM11.0714 19.6875H12.1786H18.8214H19.9286V20.7812V27.3438V28.4375H18.8214H12.1786H11.0714V27.3438V20.7812V19.6875ZM29.8929 9.84375H23.25V16.4062H29.8929V9.84375ZM23.25 8.75H29.8929H31V9.84375V16.4062V17.5H29.8929H23.25H22.1429V16.4062V9.84375V8.75H23.25ZM23.25 20.7812V27.3438H29.8929V20.7812H23.25ZM22.1429 19.6875H23.25H29.8929H31V20.7812V27.3438V28.4375H29.8929H23.25H22.1429V27.3438V20.7812V19.6875Z"
-            fill="black" />
-        </svg>
-      </div>
       <div class="w-full flex flex-col gap-10">
-        <div class="flex flex-col gap-2 ml-8">
-          <h2 class="text-[#2E3238] text-4xl md:text-[49px] font-bold leading-[1.14] tracking-tight">Query Customer
-            Activities,<br>
-            History, And API Requests.
-          </h2>
-          <div class="mt-16px max-w-[480px] font-medium text-gray-600">
-            Answer all sorts of questions based on the Request payload data APItoolkit is analyzing.
-          </div>
-          <p class="max-w-[480px] text-gray-600"></p>
-        </div>
-        <div class="grid w-full grid-cols-1 md:grid-cols-5 gap-10">
-          <div
-            class="w-full md:col-span-3 rounded-2xl overflow-hidden  md:ml-2 light-shadow  border-gray-100 px-8 pt-8">
-            <div class="flex flex-col gap-8">
-              <div class="flex flex-col gap-1 h-24">
-                <span class="text-gray-600 text-[16px] font-bold leading-[1.4] tracking-tighter">Real-time Request
-                  logs & User Journey.</span>
-                <p class="text-gray-600 text-sm max-w-[400px]">
-                  Inspect real-time API logs with powerful filters and selection.
-                </p>
-              </div>
-              <div class="translate-x-[10%] rounded-t-3xl mt-3 overflow-hidden light-shadow max-h-96 pt-1 pl-1">
-                <img src="/assets/img/realtime-logs.png" alt="" class="rounded-t-3xl">
-              </div>
-            </div>
-          </div>
-          <div class="flex flex-col w-full md:col-span-2 sm:flex-row gap-10">
-            <div class="w-full flex flex-col  gap-8 rounded-2xl light-shadow overflow-hidden border-gray-100 px-8 pt-8">
-              <div class="h-24">
-                <span class="text-gray-600 text-[16px] font-bold leading-[1.4] tracking-tighter">No code
-                  filters</span>
-                <p class="text-gray-600 text-sm max-w-[400px]">Filter in two clicks by any fields or data in the
-                  request
-                  or response payloads. No need to learn a
-                  query language for
-                  most queries</p>
-              </div>
-              <div class="px-8 pt-2 overflow-hidden">
-                <div class="rounded-t-3xl max-h-96 light-shadow overflow-hidden">
-                  <img src="/assets/img/nocode.png" alt="" class="translate-y-[12px]">
-                </div>
-              </div>
-            </div>
-            <div
-              class="w-full md:hidden md:w-0 md:ml-2 flex flex-col col-span-2 gap-8 rounded-2xl light-shadow overflow-hidden border-gray-100 px-8 pt-8">
-              <div class="h-24">
-                <span class="text-gray-600 text-[16px] font-bold leading-[1.4] tracking-tighter">Powerful Query
-                  language</span>
-                <p class="text-gray-600 text-sm max-w-[400px]">Write complex queries against your realtime customer
-                  data. Perfect if the visual query editor is not enough</p>
-              </div>
-              <div class="px-8 pt-2 overflow-hidden">
-                <div class="rounded-t-3xl max-h-96 light-shadow overflow-hidden">
-                  <img src="/assets/img/query-lang.png" alt="" class="translate-y-[12px]">
-                </div>
-              </div>
-            </div>
-          </div>
+```
 
-        </div>
+{class="flex flex-col gap-2 ml-8"}
+::::::
 
-        <div class="grid md:grid-cols-5 gap-10">
-          <div
-            class="w-full hidden md:ml-2 md:flex flex-col col-span-2 gap-8 rounded-2xl light-shadow overflow-hidden border-gray-100 px-8 pt-8">
-            <div class="h-24">
-              <span class="text-gray-600 text-[16px] font-bold leading-[1.4] tracking-tighter">Powerful Query
-                language</span>
-              <p class="text-gray-600 text-sm max-w-[400px]">Write complex queries against your realtime customer
-                data. Perfect if the visual query editor is not enough</p>
-            </div>
-            <div class="px-8 pt-2 overflow-hidden">
-              <div class="rounded-t-3xl max-h-96 light-shadow overflow-hidden">
-                <img src="/assets/img/query-lang.png" alt="" class="translate-y-[12px]">
-              </div>
-            </div>
-          </div>
-          <div class="w-full col-span-3 rounded-2xl overflow-hidden light-shadow  border-gray-100 px-8 pt-8">
-            <div class="flex flex-col gap-8">
-              <div class="flex flex-col gap-1 h-24">
-                <span class="text-gray-600 text-[16px] font-bold leading-[1.4] tracking-tighter">External APIs &
-                  Integrations</span>
-                <p class="text-gray-600 text-sm max-w-[400px]">
-                  Answer questions about your external APIs. What are their error rates? Performance? What requests
-                  did they wrongly fail?
-                  what customers were affected? </p>
-              </div>
-              <div class="translate-x-[10%] rounded-t-3xl mt-3 overflow-hidden light-shadow max-h-96 pt-1 pl-1">
-                <img src="/assets/img/out.png" alt="" class="rounded-t-3xl -translate-x-4">
-              </div>
-            </div>
-          </div>
-        </div>
+## E2E API Testing & Synthetic Monitors
+
+{.max-w-4xl .text-lg .pt-2}
+Ensure the reliability of your APIs and any APIs you depend on. Call any API at intervals and configure checks and assertions to ensure it continues to behave as expected. 
+
+{.grid .grid-cols-3 .py-8 .gap-5}
+:::
+{.cols-span-1 .space-y-5 .text-lg .font-medium}
+::::
+```=html
+  <label for="" class="rounded-md border border-base-300 ring hover:ring block p-5">
+  Be the first to know when your APIs are down or slow.
+  </label>
+  <label for="" class="rounded-md border border-base-300 block p-5 hover:ring">
+  Create chained/multi-step functional test sequences & assertions
+  </label>
+  <label for="" class="rounded-md border border-base-300 block p-5 hover:ring">
+  Create monitors with AI or by importing Swagger/OpenAPI 
+  </label>
+  <label for="" class="rounded-md border border-base-300 block p-5 hover:ring">
+  Run tests and monitors From 50+ Locations
+  </label>
+```
+::::
+{.col-span-2}
+::::
+![Dashboard Screenshot](/assets/img/dashboard.png){.drop-shadow-lg .w-full .block .rounded-lg .border .border-gray-200}
+::::
+:::
+::::::
+
+{.text-center .space-y-2}
+:::
+{.flex .justify-center}
+![Michael Okoh image](/assets/img/love/trojan.jpeg){class="w-11 h-11 rounded-full"}
+
+{class="inline-block max-w-[500px] text-gray-600 text-center"}
+“APIToolkit allowed us make a drop in rewrite of our PHP service in Golang. Fixing all bugs without customers noticing any changes.”
+
+::::
+Michael Okoh
+
+{class="mt-[2px] text-sm text-gray-500"}
+CEO @ Thepeer
+::::
+:::
+
+``` =html
+            
 
       </div>
     </div>
   </section>
+```
+
+
+``` =html
+    <br/><br/>
+  <section class="width-control mx-auto mt-[54px] pb-16 relative">
+    <div class="h-full w-[1px] absolute z-10 left-[20px] top-[35px]">
+      <div class="relative section-line h-full w-full"></div>
+    </div>
+    <div class="w-full flex items-start">
+      <div class="w-full flex flex-col gap-10">
+```
+
+{class="flex flex-col gap-2 ml-8"}
+::::::
+
+## Realtime Payload Validation & API Linting
+
+
+{.max-w-4xl .text-lg .pt-2}
+Validate real-time API payloads from your server to check if they introduced breaking changes, are following best practices, or are not meeting security benchmarks and expectations.
+
+{.grid .grid-cols-3 .py-8 .gap-5}
+:::
+{.cols-span-1 .space-y-5 .text-lg .font-medium}
+::::
+```=html
+  <label for="" class="rounded-md border border-base-300 ring hover:ring block p-5">
+  Verify your API payloads are returning the correct data.
+  </label>
+  <label for="" class="rounded-md border border-base-300 block p-5 hover:ring">
+  Verify that your API integrations did not introduce breaking changes 
+  </label>
+  <label for="" class="rounded-md border border-base-300 block p-5 hover:ring">
+  Lint API payloads for security issues and API best practices
+  </label>
+```
+::::
+{.col-span-2}
+::::
+![Dashboard Screenshot](/assets/img/dashboard.png){.drop-shadow-lg .w-full .block .rounded-lg .border .border-gray-200}
+::::
+:::
+::::::
+
+{.text-center .space-y-2}
+:::
+{.flex .justify-center}
+![Michael Okoh image](/assets/img/love/trojan.jpeg){class="w-11 h-11 rounded-full"}
+
+{class="inline-block max-w-[500px] text-gray-600 text-center"}
+“APIToolkit allowed us make a drop in rewrite of our PHP service in Golang. Fixing all bugs without customers noticing any changes.”
+
+::::
+Michael Okoh
+
+{class="mt-[2px] text-sm text-gray-500"}
+CEO @ Thepeer
+::::
+:::
+
+``` =html
+            
+
+      </div>
+    </div>
+  </section>
+```
+
+
+
+``` =html
+    <br/><br/>
+  <section class="width-control mx-auto mt-[54px] pb-16 relative">
+    <div class="h-full w-[1px] absolute z-10 left-[20px] top-[35px]">
+      <div class="relative section-line h-full w-full"></div>
+    </div>
+    <div class="w-full flex items-start">
+      <div class="w-full flex flex-col gap-10">
+```
+
+{class="flex flex-col gap-2 ml-8"}
+::::::
+
+## Documentation & API Specification 
+
+
+{.max-w-4xl .text-lg .pt-2}
+Automatically generate API specifications from the live API payloads that are analyzed. Enrich this specification with more context, descriptions, etc., and generate public-facing API documentation or OpenAPI/Swagger specifications.
+
+{.grid .grid-cols-3 .py-8 .gap-5}
+:::
+{.cols-span-1 .space-y-5 .text-lg .font-medium}
+::::
+```=html
+  <label for="" class="rounded-md border border-base-300 ring hover:ring block p-5">
+  AI-generated API specification based on live request payloads
+  </label>
+  <label for="" class="rounded-md border border-base-300 block p-5 hover:ring">
+  Auto verify that Documentation & Spec are in sync with backend implementation
+  </label>
+  <label for="" class="rounded-md border border-base-300 block p-5 hover:ring">
+  Design beautiful user-facing API documentation portals in minutes.
+  </label>
+```
+::::
+{.col-span-2}
+::::
+![Dashboard Screenshot](/assets/img/dashboard.png){.drop-shadow-lg .w-full .block .rounded-lg .border .border-gray-200}
+::::
+:::
+::::::
+
+{.text-center .space-y-2}
+:::
+{.flex .justify-center}
+![Michael Okoh image](/assets/img/love/trojan.jpeg){class="w-11 h-11 rounded-full"}
+
+{class="inline-block max-w-[500px] text-gray-600 text-center"}
+“APIToolkit allowed us make a drop in rewrite of our PHP service in Golang. Fixing all bugs without customers noticing any changes.”
+
+::::
+Michael Okoh
+
+{class="mt-[2px] text-sm text-gray-500"}
+CEO @ Thepeer
+::::
+:::
+
+``` =html
+            
+
+      </div>
+    </div>
+  </section>
+```
+
+
+
+
+``` =html
   <section class="py-10 my-16">
     <div class="width-control px-2 mx-auto">
       <div class="w-full border-t border-b grid md:grid-cols-2 relative">
