@@ -1,5 +1,5 @@
 ---
-title: Understanding Changes and Errors
+title: Changes and Errors
 date: 2023-09-29
 publishdate: 2023-09-20
 weight: 40
