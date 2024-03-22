@@ -41,26 +41,6 @@ Upon entering the dashboard, users are met with three primary categories:
 
 In essence, the "Changes & Errors" dashboard isn’t merely about tracking; it's about actionability. By categorizing and clearly presenting data, APIToolkit empowers developers to respond proactively, ensuring the API's continuous stability and growth.
 
-## **Inbox, Acknowledged, and Archived: The Three Pillars**
-
-As APIs adapt to shifting requirements and advancements, they inevitably experience various changes. Without diligent oversight and management of these changes, there can be unintended ripple effects that impact both the developer's workflow and the user experience. The "Changes & Errors" dashboard in APIToolkit, with its three central categories – Inbox, Acknowledged, and Archived – offers a structured framework to navigate this ever-evolving terrain.
-
-### Understanding Each Category
-
-- **Inbox:**
-
-  - **Definition:** The 'Inbox' is akin to a real-time alert system. It brings to light new developments, alterations, or issues that arise within the API structure.
-  - **Significance:** Having a live feed of changes ensures that developers are not caught off-guard. It aids in preemptively identifying issues before they escalate or have widespread effects.
-
-- **Acknowledged:**
-
-  - **Definition:** Once a change or error is reviewed and deemed significant or requiring attention, it's marked as 'Acknowledged.' This category acts as an interim between the detection (Inbox) and resolution (Archived) stages.
-  - **Significance:** Marking an item as acknowledged serves a dual purpose. Firstly, it signifies that the team is aware of the matter and is potentially addressing it. Secondly, it ensures clarity and reduces overlap in tasks among team members.
-
-- **Archived:**
-  - **Definition:** After resolving an issue or when a change becomes outdated, it's moved to the 'Archived' section. This area acts as a repository for past events and actions.
-  - **Significance:** While the primary purpose of this section is to declutter the active dashboard, it's equally valuable for retrospective analysis. It allows teams to understand historical patterns, learn from past incidents, and even anticipate future challenges.
-
 ### The Lifecycle of an API Change or Error
 
 From detection to resolution, here's a typical lifecycle:
