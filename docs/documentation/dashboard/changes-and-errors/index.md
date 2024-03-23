@@ -11,7 +11,7 @@ menu:
 
 ## Introduction 
 
-`Changes & Errors` feature gives you a real-time insights and control, helping to maintain functionality and improve user experience.  
+Changes & Errors feature gives you a real-time insights and control, helping to maintain functionality and improve user experience.  
 
 ## Changes and Errors in APItoolkit
 
