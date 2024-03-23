@@ -37,7 +37,7 @@ This give you a detailed description of the captured endpoint including all its 
 
 The events section can also be expanded to give you a broad overview of the various events happening within your connections.
 
-We use the term `Changes` to describe both the modifications made to the events section itself and the events listed within it. This term is used in the events section of your connection's API Toolkit client interface.
+We use the term `Changes` to describe both the modifications made to the events section itself and the events listed within it.
 
 ![events](./event%20expand.png)
 
