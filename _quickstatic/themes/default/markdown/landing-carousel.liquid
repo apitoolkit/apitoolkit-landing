@@ -1,11 +1,11 @@
-{.grid .grid-cols-3 .py-8 .gap-5}
+{class="grid grid-cols-1 sm:grid-cols-3 py-8 gap-5 "}
 :::
 {class="carousel-menu " script="install CarouselSectionInit"}
 ::::
 ```=html
 {% for item in this.items %}
   <input type="radio" name="{{this.name}}" role="tab" id="{{item.title | slugify}}-c"  _="install CarouselSection"/>
-  <label for="{{item.title | slugify}}-c" >{{item.title}}</label>
+  <label for="{{item.title | slugify}}-c" class="text-xl">{{item.title}}</label>
 {% endfor %}
 ```
 ::::

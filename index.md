@@ -7,23 +7,23 @@ hidenav: true
 monitoring-carousel:
     name: "monitoring-carousel"
     items:
-    - title: API and Endpoint Analytics
-      img: /assets/img/dashboard.png
     - title: Log Explorer to query Incoming and Outgoing Requests
-      img: /features/error-tracking/log_explorer_error.png
+      img: /assets/img/screenshots/log_explorer_zoom.png
     - title: Performance Analytics
-      img: /assets/img/dashboard.png
+      img: /assets/img/screenshots/analytics_zoomed.png
+    - title: API and Endpoint Analytics
+      img: /assets/img/screenshots/endpointlist_zoomed.png
     - title: Custom Alerts on API performance and metrics
       img: /features/error-tracking/apitoolkit_slack.png
 errors-carousel:
     name: "errors-carousel"
     items:
-    - title: See all your errors and API issues at a glance
-      img: /assets/img/dashboard.png
+    - title: See Errors and API Issues at a glance
+      img: /assets/img/screenshots/errors_zoomed.png
     - title: Trace Errors to their Root Cause
       img: /features/error-tracking/log_explorer_error.png
     - title: Track Breaking changes in your APIs and integrations
-      img: /assets/img/dashboard.png
+      img: /features/error-tracking/changes_details.png
 testing-carousel:
     name: "testing-carousel"
     items:
@@ -111,7 +111,7 @@ behavior CarouselSectionInit
                 repeat in <input/>
                     set it.checked to true 
                     trigger change on it
-                    then wait 3s 
+                    then wait 4s 
                 end
             end
 end
@@ -132,7 +132,7 @@ end
       <div class="w-full flex flex-col gap-10">
 ```
 
-{class="flex flex-col gap-2 ml-8"}
+{class="flex flex-col gap-2 ml-3 sm:ml-8"}
 ::::::
 ## Monitoring & Observability
 
@@ -143,19 +143,16 @@ Gain data-driven insights into your APIs and APIs you depend on. Query user beha
 
 ::::::
 
-{.text-center .space-y-2}
+{.flex .flex-row .justify-center .text-left .gap-4}
 :::
-{.flex .justify-center}
-![Michael Okoh image](/assets/img/love/trojan.jpeg){class="w-11 h-11 rounded-full"}
+![Michael Okoh image](/assets/img/love/trojan_pic.jpg){class="h-24 rounded-md"}
 
-{class="inline-block max-w-[500px] text-gray-600 text-center"}
-“APIToolkit allowed us make a drop in rewrite of our PHP service in Golang. Fixing all bugs without customers noticing any changes.”
-
+{class="space-y-1 flex-1"}
 ::::
-Michael Okoh
+[“APIToolkit allowed us make a drop in rewrite of our PHP service in Golang. Fixing all bugs without customers noticing any changes.”]{class="flex-1 inline-block max-w-[500px] text-gray-600 pb-1"}
 
-{class="mt-[2px] text-sm text-gray-500"}
-CEO @ Thepeer
+*Michael Okoh* 
+[CEO @ Thepeer]{class="text-sm text-gray-500 block"}
 ::::
 :::
 
@@ -177,7 +174,7 @@ CEO @ Thepeer
       <div class="w-full flex flex-col gap-10">
 ```
 
-{class="flex flex-col gap-2 ml-8"}
+{class="flex flex-col gap-2 ml-3 sm:ml-8"}
 ::::::
 
 ## Backend Errors & API Breaking Changes
@@ -188,19 +185,16 @@ Get to the root cause of every issue. Whether it is caused by runtime errors, br
 {% render "default/markdown/landing-carousel", this:this.frontmatter.errors-carousel  %}
 ::::::
 
-{.text-center .space-y-2}
+{.flex .flex-row .justify-center .text-left .gap-4}
 :::
-{.flex .justify-center}
-![Michael Okoh image](/assets/img/love/trojan.jpeg){class="w-11 h-11 rounded-full"}
+![Joshua Chinemezu image](/assets/img/love/joshua.jpeg){class="h-24 rounded-md object-contain"}
 
-{class="inline-block max-w-[500px] text-gray-600 text-center"}
-“APIToolkit allowed us make a drop in rewrite of our PHP service in Golang. Fixing all bugs without customers noticing any changes.”
-
+{class="space-y-1 flex-1"}
 ::::
-Michael Okoh
+[“We had a major production incident, and the Engineering team didnt need to get involved, because the support team could see via APItoolkit, that the issues were caused by our third party integration, and they could reach out to the team to fix the issue.”]{class="flex-1 inline-block max-w-[500px] text-gray-600 pb-1"}
 
-{class="mt-[2px] text-sm text-gray-500"}
-CEO @ Thepeer
+*Joshua Chinemezu* 
+[CEO @ Platnova]{class="text-sm text-gray-500 block"}
 ::::
 :::
 
@@ -212,6 +206,8 @@ CEO @ Thepeer
   </section>
 ```
 
+{% comment %}
+
 ``` =html
     <br/><br/>
   <section class="width-control mx-auto mt-[54px] pb-16 relative">
@@ -222,7 +218,7 @@ CEO @ Thepeer
       <div class="w-full flex flex-col gap-10">
 ```
 
-{class="flex flex-col gap-2 ml-8"}
+{class="flex flex-col gap-2 ml-3 sm:ml-8"}
 ::::::
 
 ## E2E API Testing & Synthetic Monitors
@@ -236,7 +232,7 @@ Ensure the reliability of your APIs and any APIs you depend on. Call any API at 
 {.text-center .space-y-2}
 :::
 {.flex .justify-center}
-![Michael Okoh image](/assets/img/love/trojan.jpeg){class="w-11 h-11 rounded-full"}
+![Michael Okoh image](/assets/img/love/trojan.jpeg){class="w-11 h-11 rounded-full object-contain"}
 
 {class="inline-block max-w-[500px] text-gray-600 text-center"}
 “APIToolkit allowed us make a drop in rewrite of our PHP service in Golang. Fixing all bugs without customers noticing any changes.”
@@ -256,8 +252,10 @@ CEO @ Thepeer
     </div>
   </section>
 ```
+{% endcomment %}
 
 
+{% comment %}
 ``` =html
     <br/><br/>
   <section class="width-control mx-auto mt-[54px] pb-16 relative">
@@ -268,7 +266,7 @@ CEO @ Thepeer
       <div class="w-full flex flex-col gap-10">
 ```
 
-{class="flex flex-col gap-2 ml-8"}
+{class="flex flex-col gap-2 ml-3 sm:ml-8"}
 ::::::
 
 ## Realtime Payload Validation & API Linting
@@ -283,7 +281,7 @@ Validate real-time API payloads from your server to check if they introduced bre
 {.text-center .space-y-2}
 :::
 {.flex .justify-center}
-![Michael Okoh image](/assets/img/love/trojan.jpeg){class="w-11 h-11 rounded-full"}
+![Michael Okoh image](/assets/img/love/trojan.jpeg){class="w-11 h-11 rounded-full object-contain"}
 
 {class="inline-block max-w-[500px] text-gray-600 text-center"}
 “APIToolkit allowed us make a drop in rewrite of our PHP service in Golang. Fixing all bugs without customers noticing any changes.”
@@ -303,8 +301,9 @@ CEO @ Thepeer
     </div>
   </section>
 ```
+{% endcomment %}
 
-
+{% comment %}
 
 ``` =html
     <br/><br/>
@@ -316,7 +315,7 @@ CEO @ Thepeer
       <div class="w-full flex flex-col gap-10">
 ```
 
-{class="flex flex-col gap-2 ml-8"}
+{class="flex flex-col gap-2 ml-3 sm:ml-8"}
 ::::::
 
 ## Documentation & API Specification 
@@ -352,7 +351,7 @@ CEO @ Thepeer
   </section>
 ```
 
-
+{% endcomment %}
 
 
 ``` =html
@@ -362,7 +361,7 @@ CEO @ Thepeer
         <div class="h-[calc(100%+30px)] w-[1px] absolute border-l top-[-15px] left-[15px]"></div>
         <div class="h-[calc(100%+30px)] w-[1px] absolute border-l top-[-15px] right-[15px]"></div>
         <div class="hidden md:block h-[calc(100%+30px)] w-[1px] absolute border-l top-[-15px] left-[50%]"></div>
-        <div class="px-16 py-14">
+        <div class="px-6 sm:px-16 py-14">
           <h2 class="text-gray-800 font-bold text-4xl">
             Scale with <span class="text-gray-400">security</span></h2>
           <p class="mt-[6px] max-w-[438px]">
@@ -380,9 +379,9 @@ CEO @ Thepeer
        white 0 calc((100% - 5*1px)/4),
        #e5e7eb 0 calc((100% - 5*1px)/4 + 1px));"></div>
           <div
-            class="border-t w-[calc(100%-15px)] flex-grow border-b gap-10 flex flex-wrap justify-center items-center">
-            <img src="./assets/img/gdpr.png" alt="">
-            <img src="./assets/img/security.png" alt="">
+            class="border-t sm:w-[calc(100%-15px)] flex-grow border-b gap-4 sm:gap-10 flex flex-wrap justify-center items-center">
+            <img src="./assets/img/gdpr.png" alt="CCPA" class="">
+            <img src="./assets/img/security.png" alt="GDPR" class="">
 
           </div>
           <div class="h-10 w-[calc(100%-(calc(100%-15px))/5)]" style="background: repeating-linear-gradient(90deg,
@@ -399,10 +398,10 @@ CEO @ Thepeer
       <p class="mt-4 text-gray-400 max-w-lg">
         Stay on top of your APIs, with real-time monitoring, specification, and quality assurance.
       </p>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 mt-20 gap-6">
+      <div class="grid grid-cols-2 sm:grid-cols-3 mt-20 gap-1 sm:gap-6">
       {% for item in this.frontmatter.somuchmore %}
         <div
-          class="rounded-[20px] overflow-hidden relative flex flex-col p-[40px] group duration-300  hover:border-[#305FB4] dark-shadow border border-transparent box-border">
+          class="rounded-[20px] overflow-hidden relative flex flex-col p-3 sm:p-8 group duration-300  hover:border-[#305FB4] dark-shadow border border-transparent box-border">
           <div class="z-10">
             <img src="{{item.img}}" alt="{{item.title}}" />
           </div>
