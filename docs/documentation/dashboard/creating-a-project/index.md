@@ -17,7 +17,7 @@ To create a project, you start by logging into the APIToolkit dashbboard
 
 ![sign in/ sign up](log-in.png)
 
-### Fill in the project's title and description to give it a clear identity.
+### Fill in the needed fields
 
 ![Title and description](title-and-description.png)
 
