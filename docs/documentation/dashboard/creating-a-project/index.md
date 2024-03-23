@@ -11,9 +11,7 @@ menu:
 
 # Creating A Project
 
-Embarking on your APIToolkit journey? Whether you're just starting out or are an existing user, this guide will walk you through the process of creating a new project and setting up your dashboard for seamless integration.
-
-Here, let's go:
+This guide will walk you through the process of creating a new project and setting up your dashboard for seamless integration.
 
 To create a project, you start by logging into the APIToolkit dashbboard
 
@@ -23,7 +21,7 @@ Fill in the project's title and description to give it a clear identity.
 
 ![Title and description](title-and-description.png)
 
-To optimize your experience with us:
+Select your prefer tech stack
 
 - Select your desired framework.
   ![desired framework](desired-framework.png)
@@ -31,10 +29,12 @@ To optimize your experience with us:
 - Specify the feature you're keen on.
   ![specify the feature](further-project-details.png)
 
-- Choose your preferred data location.
+- Get your API KEY and connect it to APItoolkit
 
 Upon completing these steps, we'll redirect you to the onboarding page with a default APIKEY automatically generated for you. Use the code example from the [quickstart](https://apitoolkit.io/docs/get-started/quickstarts/)and integrate it into your project before you can start using the APIToolkit dashboard.
 
 ![Welcome on board](welcome-on-board.png)
+
+After a successful connection you should see this 
 
 Congratulations, and welcome aboard!
