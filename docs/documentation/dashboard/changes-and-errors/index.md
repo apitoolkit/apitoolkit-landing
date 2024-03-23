@@ -9,7 +9,7 @@ menu:
     weight: 30
 ---
 
-##Introduction 
+## Introduction 
 
 `Changes & Errors` feature gives you a real-time insights and control, helping to maintain functionality and improve user experience.  
 
