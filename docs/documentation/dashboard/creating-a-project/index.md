@@ -26,6 +26,7 @@ To create a project, you start by logging into the APIToolkit dashbboard
   ![desired framework](desired-framework.png)
 
 ### Specify the feature you're keen on.
+
   ![specify the feature](further-project-details.png)
 
 ### Get your API KEY and connect it to APItoolkit
