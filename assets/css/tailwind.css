@@ -252,7 +252,12 @@
   }
 }
 
-
+.carousel-menu {
+  @apply col-span-1 text-lg font-medium [&>label]:mb-5 [&>label]:rounded-md [&>label]:border [&>label]:border-base-300 [&>label]:block [&>label]:p-5 [&>input]:hidden;
+}
+.carousel-img-parent {
+  @apply col-span-2 [&>*]:rounded-lg [&>*]:border [&>*]:border-gray-200 [&>*]:drop-shadow-lg [&>*]:hidden [&>*]:object-contain [&>*]:w-full  [&>*]:aspect-[4/3];
+}
 .carousel-menu input:checked + label {
   @apply ring;
 }

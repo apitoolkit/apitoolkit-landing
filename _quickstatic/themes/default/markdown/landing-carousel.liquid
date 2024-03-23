@@ -1,0 +1,15 @@
+{.grid .grid-cols-3 .py-8 .gap-5}
+:::
+{class="carousel-menu " script="install CarouselSectionInit"}
+::::
+```=html
+{% for item in this.items %}
+  <input type="radio" name="{{this.name}}" role="tab" id="{{item.title | slugify}}-c"  _="install CarouselSection"/>
+  <label for="{{item.title | slugify}}-c" >{{item.title}}</label>
+{% endfor %}
+```
+::::
+{class="carousel-img-parent {{this.name}}-img"}
+{% for item in this.items %}![{{item.title}}]({{item.img}}){#{{item.title | slugify}}-c-img class="{% if forloop.first %}!block{% endif %}" }{% endfor %}
+:::
+
