@@ -37,4 +37,6 @@ Upon completing these steps, we'll redirect you to the onboarding page with a de
 
 After a successful connection you should see this 
 
+![successful APItoolkit onboarding](successful apitoolkit onboarding.png)
+
 Congratulations, and welcome aboard!
