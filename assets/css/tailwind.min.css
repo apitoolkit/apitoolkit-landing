@@ -8561,10 +8561,18 @@ html:has(.drawer-toggle:checked) {
     display: none;
   }
 
+<<<<<<< HEAD
   .sm\:h-\[800px\] {
     height: 800px;
   }
 
+||||||| parent of eaa30a2 (fix broken homepage logos)
+=======
+  .sm\:h-8 {
+    height: 2rem;
+  }
+
+>>>>>>> eaa30a2 (fix broken homepage logos)
   .sm\:w-1\/2 {
     width: 50%;
   }
