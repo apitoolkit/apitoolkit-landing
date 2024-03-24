@@ -8,4 +8,4 @@ css:
 
 css-prod:
 	NODE_ENV=production npx tailwindcss -i assets/css/tailwind.css \
-	-c tailwind.config.js -o assets/css/tailwind.prod.min.css --minify
+	-c tailwind.config.js -o assets/css/tailwind.min.css --minify
