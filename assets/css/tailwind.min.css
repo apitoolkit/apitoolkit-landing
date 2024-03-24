@@ -5574,6 +5574,10 @@ html:has(.drawer-toggle:checked) {
   margin-left: 2rem;
 }
 
+.ml-auto {
+  margin-left: auto;
+}
+
 .mr-10 {
   margin-right: 2.5rem;
 }
@@ -5632,6 +5636,10 @@ html:has(.drawer-toggle:checked) {
 
 .mt-8 {
   margin-top: 2rem;
+}
+
+.mt-\[-4px\] {
+  margin-top: -4px;
 }
 
 .mt-\[20px\] {
@@ -6299,6 +6307,26 @@ html:has(.drawer-toggle:checked) {
   gap: 2rem;
 }
 
+.gap-\[10px\] {
+  gap: 10px;
+}
+
+.gap-\[14px\] {
+  gap: 14px;
+}
+
+.gap-\[16px\] {
+  gap: 16px;
+}
+
+.gap-\[24px\] {
+  gap: 24px;
+}
+
+.gap-\[2px\] {
+  gap: 2px;
+}
+
 .gap-\[6px\] {
   gap: 6px;
 }
@@ -6657,6 +6685,11 @@ html:has(.drawer-toggle:checked) {
 .bg-\[\#232529\] {
   --tw-bg-opacity: 1;
   background-color: rgb(35 37 41 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#26282D\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(38 40 45 / var(--tw-bg-opacity));
 }
 
 .bg-\[\#2E3238\] {
@@ -7368,6 +7401,24 @@ html:has(.drawer-toggle:checked) {
   color: rgb(46 50 56 / var(--tw-text-opacity));
 }
 
+.text-\[\#505967\] {
+  --tw-text-opacity: 1;
+  color: rgb(80 89 103 / var(--tw-text-opacity));
+}
+
+.text-\[\#BCC3CE\] {
+  --tw-text-opacity: 1;
+  color: rgb(188 195 206 / var(--tw-text-opacity));
+}
+
+.text-\[currentColor\] {
+  color: currentColor;
+}
+
+.text-\[var\(--iconColor\2c \#383E47\)\] {
+  color: var(--iconColor,#383E47);
+}
+
 .text-base-content {
   --tw-text-opacity: 1;
   color: var(--fallback-bc,oklch(var(--bc)/var(--tw-text-opacity)));
@@ -8044,6 +8095,10 @@ html:has(.drawer-toggle:checked) {
 .hover\:drop-shadow-lg:hover {
   --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.hover\:\[--iconColor\:\#266DF0\]:hover {
+  --iconColor: #266DF0;
 }
 
 .focus\:shadow-lg:focus {
@@ -8920,14 +8975,18 @@ html:has(.drawer-toggle:checked) {
   .xl\:mt-0 {
     margin-top: 0px;
   }
+
   .xl\:grid {
     display: grid;
   }
+
   .xl\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-
+  .xl\:gap-2 {
+    gap: 0.5rem;
+  }
 }
 
 .\[\&\>\*\]\:shrink-0>* {
@@ -8939,14 +8998,14 @@ html:has(.drawer-toggle:checked) {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
-.\[\&\>div\]\:overflow-hidden>div {
-  overflow: hidden;
-}
-
 @media (min-width: 640px) {
   .\[\&\>\*\]\:sm\:h-8>* {
     height: 2rem;
   }
+}
+
+.\[\&\>div\]\:overflow-hidden>div {
+  overflow: hidden;
 }
 
 .\[\&\>div\]\:border>div {
