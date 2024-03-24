@@ -13,9 +13,21 @@
     <meta name="generator" content="QuickStatic">
     <!-- This documentation site was built with QuickStatic, https://github.com/tonyalaribe/quickstatic -->
 
+
+    <!-- favicon items -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png" />
+    <link rel="manifest" href="/static/site.webmanifest" />
+    <link rel="mask-icon" href="/static/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <base href="{{ this.permalink }}" />
+
     <title>{% if this.frontmatter.title %}{{this.frontmatter.title}}{% endif %}</title>
     <meta name="description" content="{{ this.content | strip_html | truncatewords: 20 }}">
     <link rel="stylesheet" href="/assets/css/tailwind.min.css">
+
     <script defer src="https://kit.fontawesome.com/32c218ff10.js" crossorigin="anonymous"></script>
     <script defer src="/assets/deps/htmx/htmx.min.js"></script>
     <script defer src="/assets/deps/htmx/preload.js"></script>
