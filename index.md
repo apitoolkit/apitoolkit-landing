@@ -116,7 +116,6 @@ behavior CarouselSectionInit
             end
 end
 
-
 </script>
 ```
 
@@ -140,10 +139,11 @@ end
 Gain data-driven insights into your APIs and APIs you depend on. Query user behavior and see all requests made by users or requests you made to third parties.
 
 {% render "default/markdown/landing-carousel", this:this.frontmatter.monitoring-carousel  %}
-
 ::::::
 
-{.flex .flex-row .justify-center .text-left .gap-4}
+{.text-center }
+:::::::
+{.inline-flex .flex-row .justify-center .text-left .gap-4}
 :::
 ![Michael Okoh image](/assets/img/love/trojan_pic.jpg){class="h-24 rounded-md"}
 
@@ -155,6 +155,7 @@ Gain data-driven insights into your APIs and APIs you depend on. Query user beha
 [CEO @ Thepeer]{class="text-sm text-gray-500 block"}
 ::::
 :::
+:::::::
 
 ``` =html
             
@@ -185,7 +186,9 @@ Get to the root cause of every issue. Whether it is caused by runtime errors, br
 {% render "default/markdown/landing-carousel", this:this.frontmatter.errors-carousel  %}
 ::::::
 
-{.flex .flex-row .justify-center .text-left .gap-4}
+{.text-center }
+:::::::
+{.inline-flex .flex-row .justify-center .text-left .gap-4}
 :::
 ![Joshua Chinemezu image](/assets/img/love/joshua.jpeg){class="h-24 rounded-md object-contain"}
 
@@ -197,6 +200,7 @@ Get to the root cause of every issue. Whether it is caused by runtime errors, br
 [CEO @ Platnova]{class="text-sm text-gray-500 block"}
 ::::
 :::
+:::::::
 
 ``` =html
             
@@ -356,7 +360,7 @@ CEO @ Thepeer
 
 ``` =html
   <section class="py-10 my-16">
-    <div class="width-control px-2 mx-auto">
+    <div class="width-control px-3 mx-auto">
       <div class="w-full border-t border-b grid md:grid-cols-2 relative">
         <div class="h-[calc(100%+30px)] w-[1px] absolute border-l top-[-15px] left-[15px]"></div>
         <div class="h-[calc(100%+30px)] w-[1px] absolute border-l top-[-15px] right-[15px]"></div>
