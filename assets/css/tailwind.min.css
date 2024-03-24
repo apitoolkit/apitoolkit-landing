@@ -6297,6 +6297,11 @@ html:has(.drawer-toggle:checked) {
   margin-bottom: auto;
 }
 
+.-mx-5 {
+  margin-left: -1.25rem;
+  margin-right: -1.25rem;
+}
+
 .mb-3 {
   margin-bottom: 0.75rem;
 }
@@ -8876,6 +8881,12 @@ html:has(.drawer-toggle:checked) {
 .\[\&\>\*\]\:brightness-0>* {
   --tw-brightness: brightness(0);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+@media (min-width: 640px) {
+  .\[\&\>\*\]\:sm\:h-8>* {
+    height: 2rem;
+  }
 }
 
 .\[\&\>div\]\:border>div {

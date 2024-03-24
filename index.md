@@ -74,11 +74,19 @@ somuchmore:
   description: "Get notified about realtime issues on your terms."
   img: "/assets/img/home/alerts.svg"
 tweets:
+xtweets:
     -   - ppic: "https://firebasestorage.googleapis.com/v0/b/testimonialto.appspot.com/o/twitter-profile-image%2FadeshinaHH-299110704?alt=media"
           handle: adeshinaHH
           title: adeshina 
           tweet: "If you are bootstrapping an idea or your team already has a product in prod and you need to move fast and focus on the big picture, this is a great tool; abnormalities detector and manual documentation killer, say no more!"
           date: "10:01 PM · Apr 7, 2022"
+        - ppic: "https://pbs.twimg.com/profile_images/1609943775358459906/Nwzxhg21_400x400.jpg"
+          link: https://x.com/BlavkHades/status/1725140501257466116?s=20
+          handle: BlavkHades 
+          title: Cellotape Man 
+          tweet: "Use @ApiToolkit and Log everything, I mean everything."
+          date: "10:01 PM · Nov 16, 2023"
+    -   - ppic: 
 faqs:
     - q: What programming languages are supported?
       a: "We support Golang, PHP, C#, Java, etc. If we don't support your language or framework, please drop a message. We can create one on demand quite quickly."
@@ -457,38 +465,17 @@ CEO @ Thepeer
         </div>
       </div>
 
-      <div class="mt-32">
+      <div class="mt-32 relative">
         <h4 class="text-4xl md:text-5xl font-bold"><span class="text-gray-400">Loved by</span> Builders</h4>
-        <p class="max-w-[400px] my-4">APItoolkit is the intelligent API management system for teams who value peace of
-          mind.</p>
+        <p class="max-w-[400px] my-4">APItoolkit is the intelligent API management system for teams who value peace of mind.</p>
 
-        <div
-          class="relative mt-24 p-1 h-[650px] overflow-hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[24px]">
-          {% for row in this.frontmatter.tweets %}
-          <div class="flex flex-col gap-[24px]">
-          {% for tweet in row %}
-            <div
-              class="rounded-[20px] overflow-hidden w-full p-[24px] flex flex-col gap-[16px] flex-shrink-0 hover:[--iconColor:#266DF0] bg-[#26282D] dark-shadow border border-transparent box-border transition-colors">
-              <div class="flex flex-row items-center gap-[10px]">
-                <img
-                  src="{{tweet.ppic}}"
-                  alt="{{tweet.handle}}" loading="lazy" class="rounded-full w-[34px] h-[34px]">
-                <div class="flex flex-col gap-[2px]">
-                  <p class="text-[currentColor]">{{tweet.title}}</p>
-                  <p class="text-[#505967]">@{{tweet.handle}}</p>
-                </div><i class="fa-brands fa-twitter ml-auto mt-[-4px] text-[var(--iconColor,#383E47)] transition-colors"></i>                  
-              </div>
-              <div class="flex flex-col gap-[14px]">
-                <p class="text-[#BCC3CE]">{{tweet.tweet}}</p>
-                <p class="text-[#505967]">{{tweet.date}}</p>
-              </div>
-            </div>
-            {% endfor %}
-          </div>
-          {% endfor %}
+        <div class=" relative mt-24 p-1 overflow-hidden -mx-5">
+            <script type="text/javascript" src="https://testimonial.to/js/iframeResizer.min.js"></script>
+            <iframe id='testimonialto-apitoolkit-tag-all-light' src="https://embed-v2.testimonial.to/w/apitoolkit?theme=light&card=base&loadMore=off&initialCount=9&randomize=on&hideDate=on&tag=all" frameborder="0" scrolling="no" width="100%"></iframe>
+            <script type="text/javascript">iFrameResize({log: false, checkOrigin: false}, '#testimonialto-apitoolkit-tag-all-light');</script>
+        </div>
 
-          <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-b from-transparent to-[#232529]">
-          </div>
+        <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-b from-transparent to-[#232529]"></div>
         </div>
       </div>
     </div>
