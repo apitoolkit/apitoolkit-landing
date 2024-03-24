@@ -1,8 +1,9 @@
 <header id="header" class="w-full top-0 left-0 right-0 sticky  bg-white z-30">
   <nav
-    class="w-[min(100%,600px)] md:w-[min(100%,1200px)] px-2 mx-auto flex justify-between items-center py-3 md:py-4 relative">
+    class="w-[min(100%,600px)] md:w-[min(100%,1200px)] px-2 mx-auto flex justify-between items-center py-3 md:py-4 relative"
+  >
     <div class="flex md:gap-6 lg:gap-10 items-center">
-      <a href="/"><img src="/assets/brand/logo_full_color.svg" class="h-6"/></a>
+      <a href="/"><img src="/assets/brand/logo_full_color.svg" class="h-6"></a>
 
       <ul class="hidden md:flex items-center md:gap-4 lg:gap-8">
         <li class="relative group">
@@ -14,7 +15,8 @@
             </svg>
           </button>
           <div
-            class="group-hover:opacity-100 group-hover:h-[210px] w-96 h-0 z-40 overflow-y-hidden  duration-300 opacity-0 absolute top-[100%] left-0 bg-white border rounded-lg">
+            class="group-hover:opacity-100 group-hover:h-[210px] w-96 h-0 z-40 overflow-y-hidden  duration-300 opacity-0 absolute top-[100%] left-0 bg-white border rounded-lg"
+          >
             <ul class="flex flex-col gap-1 text-sm">
               <li>
                 <a href="/docs" class="p-2 flex items-center gap-2 hover:bg-gray-100 shrink-0">
@@ -30,8 +32,9 @@
                   <img src="/assets/img/nav-item.svg" class="h-12 w-12 flex-shrink-0 border rounded-lg" alt="">
                   <div class="flex flex-col">
                     <h6 class="font-bold text-gray-600">Quickstarts</h6>
-                    <span class="text-gray-500 leading-[1.10]">Quickly integrate APIToolkit using any of various
-                      SDKs</span>
+                    <span class="text-gray-500 leading-[1.10]"
+                      >Quickly integrate APIToolkit using any of various SDKs</span
+                    >
                   </div>
                 </a>
               </li>
@@ -40,8 +43,69 @@
                   <img src="/assets/img/nav-item.svg" class="h-12 flex-shrink-0 w-12 border rounded-lg" alt="">
                   <div class="flex flex-col">
                     <h6 class="font-bold text-gray-600">Dashboard</h6>
-                    <span class="text-gray-500 leading-[1.10]">Learn everything you need to easily navigate the
-                      APIToolkit dashboard</span>
+                    <span class="text-gray-500 leading-[1.10]"
+                      >Learn everything you need to easily navigate the APIToolkit dashboard</span
+                    >
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="relative group">
+          <button class="flex items-center p-2 gap-1 hover:bg-gray-100 rounded-lg">
+            Features
+            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18" fill="none">
+              <path d="M5.5293 7.125L9.2793 10.875L13.0293 7.125" stroke="#2E3238" stroke-width="1.2"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+          <div
+            class="group-hover:opacity-100 group-hover:h-72 w-96 h-0 z-40 overflow-y-hidden  duration-300 opacity-0 absolute top-[100%] left-0 bg-white border rounded-lg"
+          >
+            <ul class="flex flex-col justify-between text-sm">
+              <li>
+                <a href="/features/error-tracking" class="p-2 flex items-center gap-2 hover:bg-gray-100 shrink-0">
+                  <img src="/assets/img/features.svg" class="h-12 p-3 flex-shrink-0 w-12 border rounded-lg" alt="">
+                  <div class="flex flex-col">
+                    <h6 class="font-bold text-gray-600">Error Tracking</h6>
+                    <span class="text-gray-500 leading-[1.10]"
+                      >Find and fix Errors and Breaking Changes in realtime.
+                    </span>
+                  </div>
+                </a>
+              </li>
+              <li class="">
+                <a href="/features/api-analytics" class="p-2 flex items-center gap-2 hover:bg-gray-100 shrink-0">
+                  <img src="/assets/img/features.svg" class="h-12 w-12  p-3 flex-shrink-0 border rounded-lg" alt="">
+                  <div class="flex flex-col">
+                    <h6 class="font-bold text-gray-600">API Analytics</h6>
+                    <span class="text-gray-500 leading-[1.10]"
+                      >Easily identify trends and optimize what truly matters to your business.
+                    </span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/features/api-management" class="p-2 flex items-center gap-2 hover:bg-gray-100 shrink-0">
+                  <img src="/assets/img/features.svg" class="h-12  p-3 flex-shrink-0 w-12 border rounded-lg" alt="">
+                  <div class="flex flex-col">
+                    <h6 class="font-bold text-gray-600">API Management</h6>
+                    <span class="text-gray-500 leading-[1.10]"
+                      >Everything you need to manage your APIS effectively</span
+                    >
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/features/api-observability" class="p-2 flex items-center gap-2 hover:bg-gray-100 shrink-0">
+                  <img src="/assets/img/features.svg" class="h-12  p-3 flex-shrink-0 w-12 border rounded-lg" alt="">
+                  <div class="flex flex-col">
+                    <h6 class="font-bold text-gray-600">API Observability</h6>
+                    <span class="text-gray-500 leading-[1.10]"
+                      >Achieve real-time API Observability to pinpoint issues, understand root causes, and fix problems
+                      in real-time</span
+                    >
                   </div>
                 </a>
               </li>
@@ -55,10 +119,19 @@
       <div id="menu" class="fixed hidden overflow-y-auto pb-[73px] top-[73px] p-4 left-0 w-full h-full bg-white">
         <ul class="w-[min(100%,500px)] mx-auto flex flex-col">
           <li class="w-full  border-b">
-            <button class="text-left py-4 w-full justify-between flex items-center" onclick="showOptions(event)">
+            <button
+              class="text-left py-4 w-full justify-between flex items-center"
+              onclick="showOptions(event,'h-[210px]')"
+            >
               Documentation
-              <svg xmlns="http://www.w3.org/2000/svg" class="duration-200" width="19" height="18" viewBox="0 0 19 18"
-                fill="none">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="duration-200"
+                width="19"
+                height="18"
+                viewBox="0 0 19 18"
+                fill="none"
+              >
                 <path d="M5.5293 7.125L9.2793 10.875L13.0293 7.125" stroke="#2E3238" stroke-width="1.2"
                   stroke-linecap="round" stroke-linejoin="round" />
               </svg>
@@ -75,12 +148,16 @@
                   </a>
                 </li>
                 <li class="">
-                  <a href="/docs/get-started/quickstarts" class="p-2 flex items-center gap-2 hover:bg-gray-100 shrink-0">
+                  <a
+                    href="/docs/get-started/quickstarts"
+                    class="p-2 flex items-center gap-2 hover:bg-gray-100 shrink-0"
+                  >
                     <img src="/assets/img/nav-item.svg" class="h-12 flex-shrink-0 w-12 border rounded-lg" alt="">
                     <div class="flex flex-col">
                       <h6 class="font-bold text-gray-600">Quickstarts</h6>
-                      <span class="text-gray-500 leading-[1.10]">Quickly integrate APIToolkit using any of various
-                        SDKs</span>
+                      <span class="text-gray-500 leading-[1.10]"
+                        >Quickly integrate APIToolkit using any of various SDKs</span
+                      >
                     </div>
                   </a>
                 </li>
@@ -89,13 +166,81 @@
                     <img src="/assets/img/nav-item.svg" class="h-12 flex-shrink-0 w-12 border rounded-lg" alt="">
                     <div class="flex flex-col">
                       <h6 class="font-bold text-gray-600">Dashboard</h6>
-                      <span class="text-gray-500 leading-[1.10]">Learn everything you need to easily navigate the
-                        APIToolkit dashboard</span>
+                      <span class="text-gray-500 leading-[1.10]"
+                        >Learn everything you need to easily navigate the APIToolkit dashboard</span
+                      >
                     </div>
                   </a>
                 </li>
               </ul>
-
+            </div>
+          </li>
+          <li class="w-full  border-b">
+            <button
+              class="text-left py-4 w-full justify-between flex items-center"
+              onclick="showOptions(event, 'h-[288px]')"
+            >
+              Features
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="duration-200"
+                width="19"
+                height="18"
+                viewBox="0 0 19 18"
+                fill="none"
+              >
+                <path d="M5.5293 7.125L9.2793 10.875L13.0293 7.125" stroke="#2E3238" stroke-width="1.2"
+                  stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+            <div class="h-0 overflow-hidden duration-200">
+              <ul class="flex flex-col text-sm">
+                <li>
+                  <a href="/features/error-tracking" class="p-2 flex items-center gap-2 hover:bg-gray-100 shrink-0">
+                    <img src="/assets/img/features.svg" class="h-12 p-3 flex-shrink-0 w-12 border rounded-lg" alt="">
+                    <div class="flex flex-col">
+                      <h6 class="font-bold text-gray-600">Error Tracking</h6>
+                      <span class="text-gray-500 leading-[1.10]"
+                        >Find and fix Errors and Breaking Changes in realtime.
+                      </span>
+                    </div>
+                  </a>
+                </li>
+                <li class="">
+                  <a href="/features/api-analytics" class="p-2 flex items-center gap-2 hover:bg-gray-100 shrink-0">
+                    <img src="/assets/img/features.svg" class="h-12 p-3 w-12 flex-shrink-0 border rounded-lg" alt="">
+                    <div class="flex flex-col">
+                      <h6 class="font-bold text-gray-600">API Analytics</h6>
+                      <span class="text-gray-500 leading-[1.10]"
+                        >Easily identify trends and optimize what truly matters to your business.
+                      </span>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="/features/api-management" class="p-2 flex items-center gap-2 hover:bg-gray-100 shrink-0">
+                    <img src="/assets/img/features.svg" class="h-12 p-3 flex-shrink-0 w-12 border rounded-lg" alt="">
+                    <div class="flex flex-col">
+                      <h6 class="font-bold text-gray-600">API Management</h6>
+                      <span class="text-gray-500 leading-[1.10]"
+                        >Everything you need to manage your APIS effectively</span
+                      >
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="/features/api-observability" class="p-2 flex items-center gap-2 hover:bg-gray-100 shrink-0">
+                    <img src="/assets/img/features.svg" class="h-12 p-3 flex-shrink-0 w-12 border rounded-lg" alt="">
+                    <div class="flex flex-col">
+                      <h6 class="font-bold text-gray-600">API Observability</h6>
+                      <span class="text-gray-500 leading-[1.10]"
+                        >Achieve real-time API Observability to pinpoint issues, understand root causes, and fix
+                        problems in real-time</span
+                      >
+                    </div>
+                  </a>
+                </li>
+              </ul>
             </div>
           </li>
           <li class="w-full py-4 border-b">
@@ -104,8 +249,6 @@
           <li class="w-full py-4 border-b"><a href="/pricing">Pricing</a></li>
         </ul>
       </div>
-
-    </div>
     </div>
     <button class="p-3 last:hidden overflow-hidden md:hidden hover:bg-gray-100 rounded-lg" onclick="toggleMenu(event)">
       <svg class="text-black-500 h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">

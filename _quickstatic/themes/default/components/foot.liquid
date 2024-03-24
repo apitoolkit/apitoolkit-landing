@@ -138,9 +138,9 @@
       }
     }
 
-    function showOptions(e) {
+    function showOptions(e, height) {
       e.currentTarget.nextElementSibling.classList.toggle("h-0")
-      e.currentTarget.nextElementSibling.classList.toggle("h-[210px]")
+      e.currentTarget.nextElementSibling.classList.toggle(height)
       e.currentTarget.lastElementChild.classList.toggle("-rotate-180")
     }
 
