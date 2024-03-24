@@ -70,15 +70,18 @@ But note, make sure your chosen language matches your existing tech stack. For e
 To integrate, let's use this Express.js project as an example.
 
 Run this to install the needed packages
+
 ```js
   npm install express apitoolkit-express
 ```
 Run this to initialize APItoolkit into your existing application
+
 ```js
 import { APIToolkit } from 'apitoolkit-express';
 const apitoolkitClient = APIToolkit.NewClient({ apiKey: '<API-KEY>' });
 ```
 Once everything works you should get a complete code like this if you use common js
+
 ```js
 const { APIToolkit } = require('apitoolkit-express');
 const express = require('express');
@@ -110,6 +113,7 @@ After a successful integration you should see this.
 ![successful integration ](./suc-inte.png)
 
 ### Step 4 - Redacting Sensitive Fields 
+
 We believe in security and protection of sensitive data. To redact sensitive information like credit card numbers and other data, use the following code to perform the task.
 
 This example is for our initial Express.js project
