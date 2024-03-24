@@ -13,9 +13,21 @@
     <meta name="generator" content="QuickStatic">
     <!-- This documentation site was built with QuickStatic, https://github.com/tonyalaribe/quickstatic -->
 
+
+    <!-- favicon items -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png" />
+    <link rel="manifest" href="/static/site.webmanifest" />
+    <link rel="mask-icon" href="/static/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <base href="{{ this.permalink }}" />
+
     <title>{% if this.frontmatter.title %}{{this.frontmatter.title}}{% endif %}</title>
     <meta name="description" content="{{ this.content | strip_html | truncatewords: 20 }}">
     <link rel="stylesheet" href="/assets/css/tailwind.min.css">
+
     <script defer src="https://kit.fontawesome.com/32c218ff10.js" crossorigin="anonymous"></script>
     <script defer src="/assets/deps/htmx/htmx.min.js"></script>
     <script defer src="/assets/deps/htmx/preload.js"></script>
@@ -45,6 +57,31 @@
       h1:hover .header-link,h2:hover .header-link,h3:hover .header-link,h4:hover .header-link,h5:hover .header-link,h6:hover .header-link,
       .header-link:hover {
         display: inline;
+      }
+    </style>
+    <style>
+      @font-face {
+          font-family: "Bakemono";
+          src: url("/assets/deps/bakemono/Bakemono-Variable.woff2") format("woff2-variations"),
+                url("/assets/deps/bakemono/Bakemono-Variable.woff") format("woff-variations"),
+                url("/assets/deps/bakemono/Bakemono-Variable.ttf") format("ttf-variations"),
+      }
+      :root {
+        font-family: 'Bakemono', sans-serif;
+      }
+      h1 {
+        font-variation-settings: 'wght' 700, 'MONO' 500;
+      }
+      h2 {
+        font-variation-settings: 'wght' 600, 'MONO' 500;
+      }
+      h3, h4, h5 {
+        font-variation-settings: 'wght' 500, 'MONO' 500;
+      }
+      .monospace {
+        font-family: 'Bakemono', monospace;
+        font-variation-settings: 'MONO' 1000;
+        
       }
     </style>
   </head>
@@ -207,7 +244,9 @@
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/elixir.min.js"></script>
   <script defer type="text/javascript">
-    hljs.highlightAll();
+    document.addEventListener('DOMContentLoaded', function() {
+      hljs.highlightAll();
+    });
     function init(){
       // Select all headers
       const headers = document.querySelectorAll('#mainArticle h1, #mainArticle h2, #mainArticle h3, #mainArticle h4,#mainArticle h5,#mainArticle h6');

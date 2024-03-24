@@ -73,17 +73,6 @@
     @apply drop-shadow  rounded-md bg-blue-900 hover:bg-blue-800 border-blue-900 text-xs text-white inline-block px-4 py-2 mt-2 sm:mt-0 no-underline;
   }
 
-  .home-feature-image-div {
-    @apply flex flex-1 aspect-[4/3] prose prose-2xl;
-    @apply justify-center items-center px-5 pb-5 rounded-xl;
-    background: #eb3349; /* fallback for old browsers */
-    /* background: -webkit-linear-gradient(to right, #F45C43, #EB3349);  /* Chrome 10-25, Safari 5.1-6 */
-    /* background: linear-gradient(to right, #F45C43, #EB3349); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    /* background: linear-gradient(to right, rgba(169,208,113,0.05), rgba(136,173,215,0.15));  */
-    background: url('/assets/img/blob-landing-center4.svg');
-    flex: 1.6;
-  }
-
   .home-feature-image-div img {
     @apply rounded-lg drop-shadow-xl border-4 border-gray-200;
   }
