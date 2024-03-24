@@ -149,6 +149,13 @@
     window.lazyLoadOptions = {
       // Your custom settings go here
     };
+    window.addEventListener(
+      "LazyLoad::Initialized",
+      function (event) {
+        window.lazyLoadInstance = event.detail.instance;
+      },
+      false
+    );
   </script>
   <script async src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.4/dist/lazyload.min.js"></script>
 
@@ -168,6 +175,14 @@
     document.addEventListener('DOMContentLoaded', function() {
       iFrameResize({log: false, checkOrigin: false}, '#testimonialto-apitoolkit-tag-all-light');
       hljs.highlightAll();
+    });
+
+     document.body.addEventListener('htmx:afterSwap', function(event) {
+      window.requestAnimationFrame(() => {
+        iFrameResize({log: false, checkOrigin: false}, '#testimonialto-apitoolkit-tag-all-light');
+        hljs.highlightAll();
+        lazyLoadInstance.update();
+      })
     });
   </script>
 
