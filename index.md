@@ -406,7 +406,7 @@ CEO @ Thepeer
 
   <section class="w-full bg-[#232529] py-32 text-gray-100">
     <div class="width-control mx-auto">
-      <h4 class="text-4xl md:text-5xl font-bold"><span class="text-gray-400">And so</span> much more...</h4>
+      <h3 class="text-4xl md:text-5xl font-bold"><span class="text-gray-400">And so</span> much more...</h4>
       <p class="mt-4 text-gray-400 max-w-lg">
         Stay on top of your APIs, with real-time monitoring, specification, and quality assurance.
       </p>
@@ -470,11 +470,8 @@ CEO @ Thepeer
         <p class="max-w-[400px] my-4">APItoolkit is the intelligent API management system for teams who value peace of mind.</p>
 
         <div class=" relative mt-24 p-1 overflow-hidden -mx-5">
-            <script type="text/javascript" src="https://testimonial.to/js/iframeResizer.min.js"></script>
-            <iframe id='testimonialto-apitoolkit-tag-all-light' src="https://embed-v2.testimonial.to/w/apitoolkit?theme=light&card=base&loadMore=off&initialCount=9&randomize=on&hideDate=on&tag=all" frameborder="0" scrolling="no" width="100%"></iframe>
-            <script type="text/javascript">iFrameResize({log: false, checkOrigin: false}, '#testimonialto-apitoolkit-tag-all-light');</script>
+            <iframe id='testimonialto-apitoolkit-tag-all-light' src="https://embed-v2.testimonial.to/w/apitoolkit?theme=light&card=base&loadMore=off&initialCount=9&randomize=on&hideDate=on&tag=all" frameborder="0" scrolling="no" width="100%" title="testimonial.to testimonials"></iframe>
         </div>
-
         <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-b from-transparent to-[#232529]"></div>
         </div>
       </div>
