@@ -59,6 +59,31 @@
         display: inline;
       }
     </style>
+    <style>
+      @font-face {
+          font-family: "Bakemono";
+          src: url("/assets/deps/bakemono/Bakemono-Variable.woff2") format("woff2-variations"),
+                url("/assets/deps/bakemono/Bakemono-Variable.woff") format("woff-variations"),
+                url("/assets/deps/bakemono/Bakemono-Variable.ttf") format("ttf-variations"),
+      }
+      :root {
+        font-family: 'Bakemono', sans-serif;
+      }
+      h1 {
+        font-variation-settings: 'wght' 700, 'MONO' 500;
+      }
+      h2 {
+        font-variation-settings: 'wght' 600, 'MONO' 500;
+      }
+      h3, h4, h5 {
+        font-variation-settings: 'wght' 500, 'MONO' 500;
+      }
+      .monospace {
+        font-family: 'Bakemono', monospace;
+        font-variation-settings: 'MONO' 1000;
+        
+      }
+    </style>
   </head>
   <body data-theme="emerald" hx-boost="true" hx-ext="preload" class="" preload>
     <section class="sticky top-0 w-full bg-base-100 z-10 divide-y divide-y-gray-100 border-b-2 border-b-gray-100">
@@ -219,7 +244,9 @@
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/elixir.min.js"></script>
   <script defer type="text/javascript">
-    hljs.highlightAll();
+    document.addEventListener('DOMContentLoaded', function() {
+      hljs.highlightAll();
+    });
     function init(){
       // Select all headers
       const headers = document.querySelectorAll('#mainArticle h1, #mainArticle h2, #mainArticle h3, #mainArticle h4,#mainArticle h5,#mainArticle h6');

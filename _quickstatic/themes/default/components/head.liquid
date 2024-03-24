@@ -30,27 +30,10 @@
     <!-- end of meta tags and favicons -->
     <link rel="stylesheet" href="/assets/css/tailwind.min.css" />
 
-    <link rel="preconnect" href="https://rsms.me/">
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-
     <style>
-      :root {
-        font-family: 'Inter', sans-serif;
-      }
-      @supports (font-variation-settings: normal) {
-        :root {
-          font-family: 'Inter var', sans-serif;
-        }
-      }
       body {
         width: 100%;
         font-size: 14px;
-        font-family: 'Inter', sans-serif;
-        font-weight: medium;
-      }
-
-      .monospace {
-        font-family: 'Roboto Mono', monospace;
       }
 
       @media (min-width: 1200px) {
@@ -107,7 +90,32 @@
     </script>
     <!-- End Twitter conversion tracking base code -->
 
-    
     <link rel="preload" fetchpriority="high" as="image" href="/assets/img/svgs/grid.svg" type="image/webp">
+
+    <style>
+      @font-face {
+          font-family: "Bakemono";
+          src: url("/assets/deps/bakemono/Bakemono-Variable.woff2") format("woff2-variations"),
+                url("/assets/deps/bakemono/Bakemono-Variable.woff") format("woff-variations"),
+                url("/assets/deps/bakemono/Bakemono-Variable.ttf") format("ttf-variations"),
+      }
+      :root {
+        font-family: 'Bakemono', sans-serif;
+      }
+      h1 {
+        font-variation-settings: 'wght' 700, 'MONO' 500;
+      }
+      h2 {
+        font-variation-settings: 'wght' 600, 'MONO' 500;
+      }
+      h3, h4, h5 {
+        font-variation-settings: 'wght' 500, 'MONO' 500;
+      }
+      .monospace {
+        font-family: 'Bakemono', monospace;
+        font-variation-settings: 'MONO' 1000;
+        
+      }
+    </style>
   </head>
   <body data-theme="emerald" hx-boost="true" hx-ext="preload" class="" preload>
