@@ -423,7 +423,7 @@ CEO @ Thepeer
         {% endfor %}
       </div>
 
-      <div class="flex  w-full flex-col md:flex-row items-center md:justify-between mt-32 gap-6">
+      <div class="flex  w-full flex-col md:flex-row items-center md:justify-between mt-12 gap-6">
         <div class="w-full md:w-max order-2 md:order-1">
           <div
             class="rounded-[20px] overflow-hidden relative flex flex-col p-[40px] group duration-300  hover:border-[#305FB4] dark-shadow border border-transparent box-border">
@@ -447,7 +447,7 @@ CEO @ Thepeer
             </div>
           </div>
         </div>
-        <div class="order-1 w-full md:w-max md:order-2  h-full">
+        <div class="order-1 w-full md:w-max md:order-2  h-full flex-1">
           <div
             class="rounded-[20px] h-full overflow-hidden relative flex flex-col gap-8 p-[40px] group duration-300  hover:border-[#305FB4] dark-shadow border border-transparent box-border">
             <h3 class="font-semibold text-[22px] pb-[6px] pt-[18px]">Works seemlessly with your tech stack</h3>
