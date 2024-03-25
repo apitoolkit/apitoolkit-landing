@@ -141,9 +141,11 @@ end
 
 {class="flex flex-col gap-2 ml-3 sm:ml-8"}
 ::::::
-## Monitoring & Observability
+#### Monitoring & Observability
 
-{.max-w-4xl .text-lg .pt-2}
+## Monitor Critical Systems and third parties
+
+{.max-w-4xl .text-2xl .pt-7}
 Gain data-driven insights into your APIs and APIs you depend on. Query user behavior and see all requests made by users or requests you made to third parties.
 
 {% render "default/markdown/landing-carousel", this:this.frontmatter.monitoring-carousel  %}
@@ -186,9 +188,11 @@ Gain data-driven insights into your APIs and APIs you depend on. Query user beha
 {class="flex flex-col gap-2 ml-3 sm:ml-8"}
 ::::::
 
-## Backend Errors & API Breaking Changes
+#### Backend Errors & API Breaking Changes
 
-{.max-w-4xl .text-lg .pt-2}
+## No more Guessing Games. Track Code errors and Breaking Changes with more Context 
+
+{.max-w-4xl .text-2xl .pt-7}
 Get to the root cause of every issue. Whether it is caused by runtime errors, breaking API changes introduced by third-party integrations, or unintended API-breaking changes by your team.
 
 {% render "default/markdown/landing-carousel", this:this.frontmatter.errors-carousel  %}
@@ -505,4 +509,12 @@ CEO @ Thepeer
 ```
 :::
 ::::
+
+{class="width-control mx-auto mt-16 py-24 prose w-full max-w-full prose-pre:p-0"}
+::::
+{% render "default/markdown/integration-footer.liquid", config:config %}
+::::
+
 ::::::
+
+
