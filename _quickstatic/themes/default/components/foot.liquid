@@ -39,7 +39,7 @@
           <p class="mt-4 text-sm text-gray-500">Follow the APIToolkit journey with news and updates right to your inbox.
           </p>
           <br />
-          <div id="15d365ef1d">
+          <div class="15d365ef1d">
             <script async data-uid="15d365ef1d" src="https://apitoolkit.ck.page/15d365ef1d/index.js"></script>
           </div>
 
@@ -182,12 +182,14 @@
           existingScript.remove();
       }
 
-      // Create a new script element for the ConvertKit form
-      var script = document.createElement('script');
-      script.async = true;
-      script.dataset.uid = uid; // Your form's unique ID
-      script.src = "https://apitoolkit.ck.page/"+uid+"/index.js"; // The script source
-      document.getElementById(uid).appendChild(script);
+      var elements = document.getElementsByClassName(uid);
+      for (var i = 0; i < elements.length; i++) {
+        // Create a new script element for the ConvertKit form
+        var script = document.createElement('script');
+        script.dataset.uid = uid; // Your form's unique ID
+        script.src = "https://apitoolkit.ck.page/"+uid+"/index.js"; // The script source
+        elements[i].replaceChildren(script);
+      }
   }
 
     document.addEventListener('DOMContentLoaded', function() {
@@ -201,7 +203,6 @@
         iFrameResize({log: false, checkOrigin: false}, '#testimonialto-apitoolkit-tag-all-light');
         hljs.highlightAll();
         lazyLoadInstance.update();
-        loadConvertKitForm("15d365ef1d");
         loadConvertKitForm("15d365ef1d");
       })
     });

@@ -7720,6 +7720,10 @@ html:has(.drawer-toggle:checked) {
     gap: 2.5rem;
   }
 
+  .sm\:gap-5 {
+    gap: 1.25rem;
+  }
+
   .sm\:gap-6 {
     gap: 1.5rem;
   }
@@ -7737,6 +7741,10 @@ html:has(.drawer-toggle:checked) {
   .sm\:border-b-secondary {
     --tw-border-opacity: 1;
     border-bottom-color: var(--fallback-s,oklch(var(--s)/var(--tw-border-opacity)));
+  }
+
+  .sm\:p-2 {
+    padding: 0.5rem;
   }
 
   .sm\:p-20 {
@@ -7786,6 +7794,11 @@ html:has(.drawer-toggle:checked) {
 
   .sm\:text-lg {
     font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .sm\:text-xl {
+    font-size: 1.25rem;
     line-height: 1.75rem;
   }
 
@@ -7866,15 +7879,6 @@ html:has(.drawer-toggle:checked) {
 
   .md\:gap-6 {
     gap: 1.5rem;
-  }
-
-  .md\:gap-x-9 {
-    -moz-column-gap: 2.25rem;
-         column-gap: 2.25rem;
-  }
-
-  .md\:gap-y-12 {
-    row-gap: 3rem;
   }
 
   .md\:p-6 {
