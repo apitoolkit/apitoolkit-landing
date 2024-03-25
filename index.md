@@ -391,7 +391,7 @@ CEO @ Thepeer
        white 0 calc((100% - 5*1px)/4),
        #e5e7eb 0 calc((100% - 5*1px)/4 + 1px));"></div>
           <div
-            class="border-t sm:w-[calc(100%-15px)] flex-grow border-b gap-4 sm:gap-10 flex flex-wrap justify-center items-center">
+            class="border-t sm:w-[calc(100%-15px)] flex-grow border-b gap-2 sm:gap-10 flex flex-wrap justify-center items-center">
             <img src="./assets/img/gdpr.png" alt="CCPA" class="">
             <img src="./assets/img/security.png" alt="GDPR" class="">
 
