@@ -1,6 +1,6 @@
 ---
 title: "Mastering JavaScript Error Monitoring: Identifying the Root Cause of Exceptions with APIToolkit"
-featured: javascript-error-monitoring_png.png
+featured_image: javascript-error-monitoring_png.png
 date: 2023-09-24T01:36:58+02:00
 author: collins
 description: Understanding the importance of error analysis is the first step towards mastering JavaScript error monitoring.

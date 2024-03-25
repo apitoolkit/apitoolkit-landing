@@ -3,7 +3,7 @@ title: "API alternative to Puppeteer for taking screenshots"
 date: 2022-10-18T08:00:00+00:00
 author: dmytro
 description: "Efficient Screenshot API Alternative to Puppeteer - Customizable and Reliable Solutions for Your Screenshot Automation Needs"
-feature_image: screenshotone.png
+featured_image: screenshotone.png
 categories:
   - APIs
 ---
