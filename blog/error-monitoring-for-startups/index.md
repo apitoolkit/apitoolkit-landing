@@ -75,9 +75,9 @@ Error monitoring is a vital practice for any business, particularly for startups
 
 ## Keep Reading
 
-[Identifying the Root Cause of Application Errors: A Guide to Error Monitoring](https://apitoolkit.io/blog/application-errors-a-guide-to-error-monitoring/)
-[Web API Performance Best Practices: the Ultimate Guide](https://apitoolkit.io/blog/web-api-performance/)
-[API Management: How to Tackle Anomalies in RESTful APIs (the Right Way)](https://apitoolkit.io/blog/anomalies-in-restful-apis/)
-[Incident Management: How to Resolve API Downtime Issues Before It Escalates](https://apitoolkit.io/blog/api-downtime/)
-[Detecting API Documentation Errors: What You Should Know](https://apitoolkit.io/blog/detecting-api-documentation-errors/)
-[Top 7 Reasons Why Your Team Should Use an API Monitoring Tool](https://apitoolkit.io/blog/why-you-need-an-api-monitoring-tool/)
+- [Identifying the Root Cause of Application Errors: A Guide to Error Monitoring](https://apitoolkit.io/blog/application-errors-a-guide-to-error-monitoring/)
+- [Web API Performance Best Practices: the Ultimate Guide](https://apitoolkit.io/blog/web-api-performance/)
+- [API Management: How to Tackle Anomalies in RESTful APIs (the Right Way)](https://apitoolkit.io/blog/anomalies-in-restful-apis/)
+- [Incident Management: How to Resolve API Downtime Issues Before It Escalates](https://apitoolkit.io/blog/api-downtime/)
+- [Detecting API Documentation Errors: What You Should Know](https://apitoolkit.io/blog/detecting-api-documentation-errors/)
+- [Top 7 Reasons Why Your Team Should Use an API Monitoring Tool](https://apitoolkit.io/blog/why-you-need-an-api-monitoring-tool/)

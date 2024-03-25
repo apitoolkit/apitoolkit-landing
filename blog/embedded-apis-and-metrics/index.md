@@ -156,7 +156,7 @@ In this article, we've delved deep into the complexities of embedded APIs, empha
 
 ## Keep Reading 
 
-[Metrics that Matter: Key Performance Indicators in API Logs](https://apitoolkit.io/blog/metrics-that-matter/)
-[PHP Laravel Cache Setup for Apitoolkit to Avoid SDK Reinit](https://apitoolkit.io/blog/how-to-setup-php-laravel-cache-for-apitoolkit-to-avoid-sdk-reinitialization/)
-[From Data to Decisions: Leveraging API Logs for Strategic Insights with APIToolkit](https://apitoolkit.io/blog/leveraging-api-logs/)
-[Enhancing Customer Experience Through API Log Insights](https://apitoolkit.io/blog/enhancing-customer-experience/)
+- [Metrics that Matter: Key Performance Indicators in API Logs](https://apitoolkit.io/blog/metrics-that-matter/)
+- [PHP Laravel Cache Setup for Apitoolkit to Avoid SDK Reinit](https://apitoolkit.io/blog/how-to-setup-php-laravel-cache-for-apitoolkit-to-avoid-sdk-reinitialization/)
+- [From Data to Decisions: Leveraging API Logs for Strategic Insights with APIToolkit](https://apitoolkit.io/blog/leveraging-api-logs/)
+- [Enhancing Customer Experience Through API Log Insights](https://apitoolkit.io/blog/enhancing-customer-experience/)

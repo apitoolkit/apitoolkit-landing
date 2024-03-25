@@ -96,8 +96,8 @@ In conclusion, the efficient implementation and ongoing refinement of automated 
 
 ## Keep Reading
 
-[10 Must-Know API trends in 2023](https://apitoolkit.io/blog/api-trends/)
-[Key Benefits of API Integration for Developers](https://apitoolkit.io/blog/benefits-of-api-integration/)
-[How to Analyze API Logs and Metrics for Better Performance](https://apitoolkit.io/blog/api-logs-and-metrics/)
-[Incident Management: How to Resolve API Downtime Issues Before It Escalates](https://apitoolkit.io/blog/api-downtime/)
-[Top 7 Reasons Why Your Team Should Use an API Monitoring Tool](https://apitoolkit.io/blog/why-you-need-an-api-monitoring-tool/)
+- [10 Must-Know API trends in 2023](https://apitoolkit.io/blog/api-trends/)
+- [Key Benefits of API Integration for Developers](https://apitoolkit.io/blog/benefits-of-api-integration/)
+- [How to Analyze API Logs and Metrics for Better Performance](https://apitoolkit.io/blog/api-logs-and-metrics/)
+- [Incident Management: How to Resolve API Downtime Issues Before It Escalates](https://apitoolkit.io/blog/api-downtime/)
+- [Top 7 Reasons Why Your Team Should Use an API Monitoring Tool](https://apitoolkit.io/blog/why-you-need-an-api-monitoring-tool/)

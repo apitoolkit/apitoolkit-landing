@@ -120,8 +120,8 @@ APIToolkit is designed to be [user-friendly](https://apitoolkit.io/blog/usercent
 
 ## Keep Reading
 
-[Ultimate Guide to API monitoring Automation](https://apitoolkit.io/blog/api-testing-automation/)
-[Top 7 Reasons Why Your Team Should Use an API Monitoring Tool](https://apitoolkit.io/blog/why-you-need-an-api-monitoring-tool/)
-[Web API Performance Best Practices - the Ultimate Guide](https://apitoolkit.io/blog/web-api-performance/)
-[Incident Management: How to Resolve API Downtime Issues Before It Escalates](https://apitoolkit.io/blog/api-downtime/)
-[How to Tackle Anomalies in RESTful APIs](https://apitoolkit.io/blog/anomalies-in-restful-apis/)
+- [Ultimate Guide to API monitoring Automation](https://apitoolkit.io/blog/api-testing-automation/)
+- [Top 7 Reasons Why Your Team Should Use an API Monitoring Tool](https://apitoolkit.io/blog/why-you-need-an-api-monitoring-tool/)
+- [Web API Performance Best Practices - the Ultimate Guide](https://apitoolkit.io/blog/web-api-performance/)
+- [Incident Management: How to Resolve API Downtime Issues Before It Escalates](https://apitoolkit.io/blog/api-downtime/)
+- [How to Tackle Anomalies in RESTful APIs](https://apitoolkit.io/blog/anomalies-in-restful-apis/)

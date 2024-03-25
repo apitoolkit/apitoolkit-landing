@@ -104,8 +104,8 @@ When it comes to API management solutions, businesses face a decision: whether t
 
 ## Keep Reading
 
-[10 Must-Know API trends in 2023](https://apitoolkit.io/blog/api-trends/)
-[Fintech API: Unlocking the Secrets to its Rapid Growth in the Financial Sector](https://apitoolkit.io/blog/fintech-api/)
-[Best API Monitoring and Observability Tools in 2023](https://apitoolkit.io/blog/best-api-monitoring-and-observability-tools/)
-[The Rise of API-as-a-Product: How Companies are Leveraging APIs to Drive Revenue](https://apitoolkit.io/blog/api-as-a-product/)
-[How to Analyze API Logs and Metrics for Better Performance](https://apitoolkit.io/blog/api-logs-and-metrics/)
+- [10 Must-Know API trends in 2023](https://apitoolkit.io/blog/api-trends/)
+- [Fintech API: Unlocking the Secrets to its Rapid Growth in the Financial Sector](https://apitoolkit.io/blog/fintech-api/)
+- [Best API Monitoring and Observability Tools in 2023](https://apitoolkit.io/blog/best-api-monitoring-and-observability-tools/)
+- [The Rise of API-as-a-Product: How Companies are Leveraging APIs to Drive Revenue](https://apitoolkit.io/blog/api-as-a-product/)
+- [How to Analyze API Logs and Metrics for Better Performance](https://apitoolkit.io/blog/api-logs-and-metrics/)
