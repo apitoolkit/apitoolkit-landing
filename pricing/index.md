@@ -10,9 +10,7 @@ publishdate: 2022-03-24
         <div class="width-control  mx-auto px-2">
             <div class="w-full flex flex-col items-center gap-4">
                 <h1 class="font-bold text-4xl md:text-[50px]">Pay only for what you use.</h1>
-                <p class="max-w-[450px] text-gray-500 font-medium  text-lg text-center">Trust your APIs, and only pay
-                    for what you use as you grow.</p>
-
+                <p class="max-w-[450px] text-gray-500 font-medium  text-lg text-center">Trust your APIs, and only pay for the requests we analyze.</p>
             </div>
         </div>
     </header>
@@ -29,7 +27,7 @@ publishdate: 2022-03-24
                             </div>
                         </div>
                         <div class="text-sm leading-120 font-medium text-gray-600">
-                            20,000 reqs per month, billed monthly <br> <br>
+                            20,000 reqs per month included for free 
                         </div>
                     </div>
                 </div>
@@ -61,12 +59,11 @@ publishdate: 2022-03-24
                     <div>
                         <div class="flex flex-row items-start gap-8px">
                             <div class="font-bold text-6xl">
-                                $20
+                                $1 <small class="text-sm">per 10,000 requests</small>
                             </div>
                         </div>
                         <div class="text-sm leading-120 font-medium text-gray-200">
-                            250K request/month, billed monthly <br>
-                            $1 per extra 10,000 requests
+                            Get 40% off by pre-paying for up to a year 
                         </div>
                     </div>
                 </div>
@@ -104,7 +101,7 @@ publishdate: 2022-03-24
                 </button>
             </a>
             <a href="mailto:hello@apitoolkit.io"
-                class="group rounded-2xl border p-6 flex duration-300 flex-col  text-gray-50 justify-start gap-6 text-left bg-yellow-600 shadow-md hover:-translate-y-3">
+                class="group rounded-2xl border p-6 flex duration-300 flex-col  text-gray-50 justify-start gap-6 text-left bg-slate-900 shadow-md hover:-translate-y-3">
                 <div class="flex flex-col gap-3 pb-1">
                     <h3 class="font-medium text-3xl">Enterprise</h3>
                     <div>
@@ -121,30 +118,30 @@ publishdate: 2022-03-24
                     <p class="font-bold mb-3">For large organizations</p>
                     <ul class="flex flex-col gap-3 text-sm font-medium">
                         <li class="flex flex-row gap-2">
-                            <div class="text-center font-bold text-gray-100 rounded-md w-5 h-5 bg-yellow-300">
+                            <div class="text-center font-bold text-gray-100 rounded-md w-5 h-5 bg-gray-200">
                                 ✓
                             </div>Custom team members
                         </li>
                         <li class="flex flex-row gap-2">
-                            <div class="text-center font-bold text-gray-100 rounded-md w-5 h-5 bg-yellow-300">
+                            <div class="text-center font-bold text-gray-100 rounded-md w-5 h-5 bg-gray-200">
                                 ✓
                             </div>
                             Custom data retention
                         </li>
                         <li class="flex flex-row gap-2">
-                            <div class="text-center font-bold text-gray-100 rounded-md w-5 h-5 bg-yellow-300">
+                            <div class="text-center font-bold text-gray-100 rounded-md w-5 h-5 bg-gray-200">
                                 ✓
                             </div>
                             High Volume Discounts
                         </li>
                         <li class="flex flex-row gap-2">
-                            <div class="text-center font-bold text-gray-100 rounded-md w-5 h-5 bg-yellow-300">
+                            <div class="text-center font-bold text-gray-100 rounded-md w-5 h-5 bg-gray-200">
                                 ✓
                             </div>
                             On-prem or on your own infra
                         </li>
                         <li class="flex flex-row gap-2">
-                            <div class="text-center font-bold text-gray-100 rounded-md w-5 h-5 bg-yellow-300">
+                            <div class="text-center font-bold text-gray-100 rounded-md w-5 h-5 bg-gray-200">
                                 ✓
                             </div>
                             High Volume Discounts

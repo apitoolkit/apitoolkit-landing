@@ -6449,6 +6449,16 @@ html:has(.drawer-toggle:checked) {
   background-color: rgb(202 138 4 / var(--tw-bg-opacity));
 }
 
+.bg-slate-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(71 85 105 / var(--tw-bg-opacity));
+}
+
+.bg-slate-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(15 23 42 / var(--tw-bg-opacity));
+}
+
 .bg-opacity-15 {
   --tw-bg-opacity: 0.15;
 }
