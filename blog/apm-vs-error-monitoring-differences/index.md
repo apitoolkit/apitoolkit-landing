@@ -125,8 +125,8 @@ Using both APM and [Error Monitoring](https://apitoolkit.io/blog/error-monitorin
 
 ## Keep Reading
 
-[8 Essential Best Practices for Writing API Documentation | Simplify Your API Guides](https://apitoolkit.io/blog/best-practices-for-writing-api-doc/)
-[Error Monitoring for Startups: Why it's Essential for Early-stage Companies](https://apitoolkit.io/blog/error-monitoring-for-startups/)
-[Error Monitoring for Developers: How to Write Better Code and Improve Your Debugging Skills](https://apitoolkit.io/blog/error-monitoring-for-developer/)
-[Top 7 Better Stack Alternatives for Api Monitoring and Observability](https://apitoolkit.io/blog/top-7-better-stack-alternative-for-api-monitoring-and-observability./)
-[50 APi tools for Every Budget and Requirement](https://apitoolkit.io/blog/50-ap-tools-for-every-budget-and-requirement/)
+- [8 Essential Best Practices for Writing API Documentation | Simplify Your API Guides](https://apitoolkit.io/blog/best-practices-for-writing-api-doc/)
+- [Error Monitoring for Startups: Why it's Essential for Early-stage Companies](https://apitoolkit.io/blog/error-monitoring-for-startups/)
+- [Error Monitoring for Developers: How to Write Better Code and Improve Your Debugging Skills](https://apitoolkit.io/blog/error-monitoring-for-developer/)
+- [Top 7 Better Stack Alternatives for Api Monitoring and Observability](https://apitoolkit.io/blog/top-7-better-stack-alternative-for-api-monitoring-and-observability./)
+- [50 APi tools for Every Budget and Requirement](https://apitoolkit.io/blog/50-ap-tools-for-every-budget-and-requirement/)

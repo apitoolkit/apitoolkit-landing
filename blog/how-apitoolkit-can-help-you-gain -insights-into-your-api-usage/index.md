@@ -113,7 +113,7 @@ The future of [API observability](https://apitoolkit.io/blog/api-observability-b
 
 ## Keep Reading
 
-[How to Troubleshoot and Debug Your APIs with API Observability Tools](https://apitoolkit.io/blog/how-to-troubleshoot-and-debug-your-apis/)
-[API Observability Best Practices: How to Collect, Analyze, and Visualize Your API Telemetry Data](https://apitoolkit.io/blog/api-observability-best-practices/)
-[Incident Management: How to Resolve API Downtime Issues Before It Escalates](https://apitoolkit.io/blog/api-downtime/)
-[The Rise of API-as-a-Product: How Companies are Leveraging APIs to Drive Revenue](https://apitoolkit.io/blog/api-as-a-product/)
+- [How to Troubleshoot and Debug Your APIs with API Observability Tools](https://apitoolkit.io/blog/how-to-troubleshoot-and-debug-your-apis/)
+- [API Observability Best Practices: How to Collect, Analyze, and Visualize Your API Telemetry Data](https://apitoolkit.io/blog/api-observability-best-practices/)
+- [Incident Management: How to Resolve API Downtime Issues Before It Escalates](https://apitoolkit.io/blog/api-downtime/)
+- [The Rise of API-as-a-Product: How Companies are Leveraging APIs to Drive Revenue](https://apitoolkit.io/blog/api-as-a-product/)

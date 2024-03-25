@@ -4,10 +4,10 @@
   <div class="our_container py-16 w-full relative overflow-hidden">
     <div class="text-lg max-w-prose  mx-auto text-center">
       <span class="block text-base  text-indigo-600 font-semibold tracking-wide uppercase">
-        {% comment %} {{ this.frontmatter.date | date_to_string }} {% endcomment %}
+        {{ this.frontmatter.date | date: "%b %d, %y" }}
       </span>
     </div>
-    <article class="mt-6 prose prose-indigo prose-base text-gray-900 mx-auto">
+    <article class="mt-6 prose prose-indigo prose-base text-gray-900 mx-auto prose-img:drop-shadow-md prose-img:rounded-md ">
       <div class="flex gap-4 items-center">
         <span class="font-bold">Share:</span>
         <!-- Twitter -->

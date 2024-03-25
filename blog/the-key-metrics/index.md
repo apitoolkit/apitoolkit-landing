@@ -69,8 +69,8 @@ In conclusion, measuring developer success is essential for the growth and succe
 
 **Keep Reading**
 
-[Ultimate Guide to API Testing Automation](https://apitoolkit.io/blog/api-testing-automation)
-[Web API Performance Best Practices: the Ultimate Guide](https://apitoolkit.io/blog/web-api-performance/)
-[How to Analyze API Logs and Metrics for Better Performance](https://apitoolkit.io/blog/api-logs-and-metrics/)
-[How to Generate Automated API Documentation](https://apitoolkit.io/blog/how-to-generate-automated-api-documentation/)
-[API Observability and Monitoring: What's the Difference](https://apitoolkit.io/blog/api-observability-and-api-monitoring/)
+- [Ultimate Guide to API Testing Automation](https://apitoolkit.io/blog/api-testing-automation)
+- [Web API Performance Best Practices: the Ultimate Guide](https://apitoolkit.io/blog/web-api-performance/)
+- [How to Analyze API Logs and Metrics for Better Performance](https://apitoolkit.io/blog/api-logs-and-metrics/)
+- [How to Generate Automated API Documentation](https://apitoolkit.io/blog/how-to-generate-automated-api-documentation/)
+- [API Observability and Monitoring: What's the Difference](https://apitoolkit.io/blog/api-observability-and-api-monitoring/)

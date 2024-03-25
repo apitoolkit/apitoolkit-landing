@@ -9,7 +9,8 @@ categories:
 
 # What is API Testing and Why Should You Do It?
 
-![A phone and a laptop showing code](./image3.jpg "Photo by <a href='https://unsplash.com/@f12r?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Fahim Muntashir</a> on <a href='https://unsplash.com/s/photos/api?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Unsplash</a>")
+![A phone and a laptop showing code](./image3.jpg)
+"Photo by [Fahim Muntashir](https://unsplash.com/@f12r?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/api?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)"
 
 If you’re reading this, then I’m going to assume you already know what an API is. But, for the sake of those who may not know, I’ll touch on the fundamentals a bit.
 
@@ -118,7 +119,7 @@ API testing can be done with a variety of automated tools.
 - **Rapid API testing**: Over 1 million developers and 10,000 APIs are available on Rapid API testing. It’s an API testing solution for managing complex API tests throughout the development process. You can run tests for any type of API (including REST, SOAP, and GraphQL).
   ![Rapid API Testing](./image4.png "<a href='https://docs.rapidapi.com/docs/rapidapi-testing-overview'>Image source</a>")
 - **SOAPUI test**: Mainly used for REST, SOAP, and other mainstream API and IoT systems.
-  ![](./image2.png "<a href='https://www.soapui.org/getting-started/rest-testing/'>Image Source</a>")
+  ![](./image2.png)[Image Source](https://www.soapui.org/getting-started/rest-testing/)
 - **Postman testing**: Commonly used for REST APIs
   ![Postman testing](./image5.png "<a href='https://blog.postman.com/writing-tests-in-postman/'>Image Source</a>")
 - **Parasoft testing**: It’s a paid tool. It’s used for comprehensive API testing.

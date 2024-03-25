@@ -130,8 +130,8 @@ In conclusion, [SOAP APIs](https://apitoolkit.io/blog/everything-about-soap-apis
 
 ## Keep Reading
 
-[REST APIs are the Future: Compared to RPC, GraphQL, etc](https://apitoolkit.io/blog/rest-api-is-the-future/)
-[The Key Metrics to Measure Developer Success for Your API Platform](https://apitoolkit.io/blog/the-key-metrics/)
-[Generating Golang API Doc with Swagger](https://apitoolkit.io/blog/generating-golangdoc/)
-[Unlocking the Advantages of OpenAPI (Swagger) Specification for API Development](https://apitoolkit.io/blog/open-api-swagger-specification-for-api-development/imdex/)
-[The Importance of Streamlining Navigation with Skip Links for API Product Managers and Growth Teams](https://apitoolkit.io/blog/importance-of-streamlining-navigations/)
+- [REST APIs are the Future: Compared to RPC, GraphQL, etc](https://apitoolkit.io/blog/rest-api-is-the-future/)
+- [The Key Metrics to Measure Developer Success for Your API Platform](https://apitoolkit.io/blog/the-key-metrics/)
+- [Generating Golang API Doc with Swagger](https://apitoolkit.io/blog/generating-golangdoc/)
+- [Unlocking the Advantages of OpenAPI (Swagger) Specification for API Development](https://apitoolkit.io/blog/open-api-swagger-specification-for-api-development/imdex/)
+- [The Importance of Streamlining Navigation with Skip Links for API Product Managers and Growth Teams](https://apitoolkit.io/blog/importance-of-streamlining-navigations/)

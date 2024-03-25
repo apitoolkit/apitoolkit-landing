@@ -82,9 +82,10 @@ In the competitive API landscape, speed is of the essence. Accelerating the proo
 
 Streamlining navigation with skip links is a critical aspect of API product management that should not be overlooked. By enhancing accessibility, improving user experience, and aligning with business goals, skip links can contribute to the success and adoption of API products. Additionally, [monitoring](https://apitoolkit.io/blog/api-documentation-and-observability-the-truth-you-must-know/)API metrics, implementing effective pricing strategies, and choosing optimal management solutions are crucial considerations for long-term success in the API product space. As API product managers and growth teams strive to deliver exceptional experiences and drive business growth, incorporating skip links into their navigation strategy is a small but significant step toward achieving those goals. By ensuring that all users can access the valuable content of a website regardless of their abilities or limitations, API product managers and growth teams can foster inclusivity and create a positive impression for their users. So, why wait? Start streamlining navigation with skip links today and unlock the full potential of your API products.
 
-## Keep Reading
-[10 Must-Know API Trends in 2023](https://apitoolkit.io/blog/api-trends/)
-[Ultimate Guide to API Testing Automation](https://apitoolkit.io/blog/api-testing-automation/)
-[API Documentation vs API Specification - What it means for you](https://apitoolkit.io/blog/api-documentation-vs-api-specification/)
-[Web API Performance Best Practices - the Ultimate Guide](https://apitoolkit.io/blog/web-api-performance/)
-[API Documentation and Monitoring: the Truth You Must Know](https://apitoolkit.io/blog/api-documentation-and-observability-the-truth-you-must-know/)
+### Keep Reading
+
+- [10 Must-Know API Trends in 2023](https://apitoolkit.io/blog/api-trends/)
+- [Ultimate Guide to API Testing Automation](https://apitoolkit.io/blog/api-testing-automation/)
+- [API Documentation vs API Specification - What it means for you](https://apitoolkit.io/blog/api-documentation-vs-api-specification/)
+- [Web API Performance Best Practices - the Ultimate Guide](https://apitoolkit.io/blog/web-api-performance/)
+- [API Documentation and Monitoring: the Truth You Must Know](https://apitoolkit.io/blog/api-documentation-and-observability-the-truth-you-must-know/)
