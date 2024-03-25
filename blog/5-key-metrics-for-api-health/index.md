@@ -7,6 +7,9 @@ author: elliot
 categories:
   - API
 --- 
+
+# 5 Key Metrics for API health
+
 ![alt](./5%20Key%20Metrics%20for%20API%20health.png)
 Maintaining a healthy API is crucial for ensuring its smooth operation, user satisfaction, and overall business success. By closely monitoring a comprehensive set of API health metrics, you gain valuable insights into your API's performance, identify potential issues, and proactively address them. 
 
