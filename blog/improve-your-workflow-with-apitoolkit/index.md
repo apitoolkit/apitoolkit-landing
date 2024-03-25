@@ -1,7 +1,7 @@
 ---
 title: "Improve Your Workflow with APItoolkit"
 date: 2024-03-01T11:10:00+00:00
-featured_image: 5improve%20workflow%20apitoolkit.gif
+featured_image: improve%20workflow%20apitoolkit.gif
 description: "Bugs are an inevitable part of the software development lifecycle, no matter how rigorous your testing processes are. When a new exception rears its ugly head and starts impacting your users, it's crucial that you have systems in place that are able to quickly identify and resolve the issue."
 author: elliot
 categories:
