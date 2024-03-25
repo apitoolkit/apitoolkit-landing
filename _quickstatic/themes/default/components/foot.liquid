@@ -39,7 +39,9 @@
           <p class="mt-4 text-sm text-gray-500">Follow the APIToolkit journey with news and updates right to your inbox.
           </p>
           <br />
-          <script async data-uid="15d365ef1d" src="https://apitoolkit.ck.page/15d365ef1d/index.js"></script>
+          <div id="15d365ef1d">
+            <script async data-uid="15d365ef1d" src="https://apitoolkit.ck.page/15d365ef1d/index.js"></script>
+          </div>
 
         </div>
       </div>
@@ -172,9 +174,26 @@
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/elixir.min.js"></script>
   <script defer type="text/javascript">
+  function loadConvertKitForm(uid) {
+      // Check if the script is already loaded
+      const existingScript = document.querySelector('script[data-uid="'+uid+'"]');
+      if (existingScript) {
+          // Optionally, remove the existing script and re-add it to re-initialize the form
+          existingScript.remove();
+      }
+
+      // Create a new script element for the ConvertKit form
+      var script = document.createElement('script');
+      script.async = true;
+      script.dataset.uid = uid; // Your form's unique ID
+      script.src = "https://apitoolkit.ck.page/"+uid+"/index.js"; // The script source
+      document.getElementById(uid).appendChild(script);
+  }
+
     document.addEventListener('DOMContentLoaded', function() {
       iFrameResize({log: false, checkOrigin: false}, '#testimonialto-apitoolkit-tag-all-light');
       hljs.highlightAll();
+      loadConvertKitForm("15d365ef1d");
     });
 
      document.body.addEventListener('htmx:afterSwap', function(event) {
@@ -182,6 +201,8 @@
         iFrameResize({log: false, checkOrigin: false}, '#testimonialto-apitoolkit-tag-all-light');
         hljs.highlightAll();
         lazyLoadInstance.update();
+        loadConvertKitForm("15d365ef1d");
+        loadConvertKitForm("15d365ef1d");
       })
     });
   </script>

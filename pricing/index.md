@@ -9,7 +9,7 @@ publishdate: 2022-03-24
     <header class="w-full mt-32">
         <div class="width-control  mx-auto px-2">
             <div class="w-full flex flex-col items-center gap-4">
-                <h1 class="font-bold text-4xl md:text-[50px]">Pay as you Grow.</h1>
+                <h1 class="font-bold text-4xl md:text-[50px]">Pay only for what you use.</h1>
                 <p class="max-w-[450px] text-gray-500 font-medium  text-lg text-center">Trust your APIs, and only pay
                     for what you use as you grow.</p>
 
@@ -109,7 +109,7 @@ publishdate: 2022-03-24
                     <h3 class="font-medium text-3xl">Enterprise</h3>
                     <div>
                         <div class="flex flex-row items-start gap-8px">
-                            <div class="font-bold text-6xl">$$$
+                            <div class="font-bold text-6xl">Contact us 
                             </div>
                         </div>
                         <div class="text-sm leading-120 font-medium text-gray-200">
