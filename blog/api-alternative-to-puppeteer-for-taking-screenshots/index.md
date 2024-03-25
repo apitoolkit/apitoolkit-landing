@@ -10,7 +10,7 @@ categories:
 
 # API alternative to Puppeteer for taking screenshots
 
-<a href="screenshotone.png" class="block rounded-md border border-black"><img src="screenshotone.png" alt="ScreenshotOne" /></a>
+![ScreenshotOne](screenshotone.png){class="block rounded-md border border-black"}
 
 The [API](https://apitoolkit.io/blog/api-documentation-and-observability-the-truth-you-must-know/) market is booming. Every day you can see more and more APIs you can build your services upon. And many APIs have good open-source alternatives. You can host the alternative and have all control over it. But is it practical for you? Does it save time, money and energy? The most scarce resources we have. 
 
@@ -155,5 +155,7 @@ If you need to take a few screenshots here and there, I will choose Puppeteer, o
 Have a nice day, and I hope I elaborated a bit on the programmatic screenshots topic for you.
 
 Recommended Post: [How to Generate Automated API Documentation](https://apitoolkit.io/blog/how-to-generate-automated-api-documentation/)
+
 Recommended Post: [API Monitoring and Documentation: The Truth You Must Know](https://apitoolkit.io/blog/api-documentation-and-observability-the-truth-you-must-know/)
+
 Recommended Post: [Top 7 Reasons Why Your Team Should Use an API Monitoring Tool](https://apitoolkit.io/blog/why-you-need-an-api-monitoring-tool/)
