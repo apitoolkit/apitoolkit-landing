@@ -52,6 +52,7 @@ Cons: Requires careful monitoring of data volume to avoid overages.
 | Team Collaboration                            | Yes                  | Yes                  | Yes                  | Yes                  | Limited              | Yes                  | Yes                  | Yes                  |
 | Pricing Model                                 | Per User/Per Host    | Per Host/Per API Call| Per User/Per API Call| Per User             | Per User/Per API Call| Per User/Per API Call| Per Data Ingestion   | Per User             |
 
+![al](./price%20comparison.png)
 
 ## Why Choose APItoolkit
 
