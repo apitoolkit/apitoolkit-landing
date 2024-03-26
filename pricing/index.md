@@ -4,7 +4,7 @@ date: 2022-03-23
 publishdate: 2022-03-24
 ---
 
-``` =html
+```=html
 <div class="w-full">
     <header class="w-full mt-32">
         <div class="width-control  mx-auto px-2">
@@ -27,7 +27,7 @@ publishdate: 2022-03-24
                             </div>
                         </div>
                         <div class="text-sm leading-120 font-medium text-gray-600">
-                            20,000 reqs per month included for free 
+                            20,000 reqs per month included for free
                         </div>
                     </div>
                 </div>
@@ -63,7 +63,7 @@ publishdate: 2022-03-24
                             </div>
                         </div>
                         <div class="text-sm leading-120 font-medium text-gray-200">
-                            Get 40% off by pre-paying for up to a year 
+                            Get 40% off by pre-paying for up to a year
                         </div>
                     </div>
                 </div>
@@ -106,7 +106,7 @@ publishdate: 2022-03-24
                     <h3 class="font-medium text-3xl">Enterprise</h3>
                     <div>
                         <div class="flex flex-row items-start gap-8px">
-                            <div class="font-bold text-6xl">Contact us 
+                            <div class="font-bold text-6xl">Contact us
                             </div>
                         </div>
                         <div class="text-sm leading-120 font-medium text-gray-200">
@@ -118,30 +118,30 @@ publishdate: 2022-03-24
                     <p class="font-bold mb-3">For large organizations</p>
                     <ul class="flex flex-col gap-3 text-sm font-medium">
                         <li class="flex flex-row gap-2">
-                            <div class="text-center font-bold text-gray-100 rounded-md w-5 h-5 bg-gray-200">
+                            <div class="text-center font-bold text-gray-300 rounded-md w-5 h-5 bg-gray-500">
                                 ✓
                             </div>Custom team members
                         </li>
                         <li class="flex flex-row gap-2">
-                            <div class="text-center font-bold text-gray-100 rounded-md w-5 h-5 bg-gray-200">
+                            <div class="text-center font-bold text-gray-300 rounded-md w-5 h-5 bg-gray-500">
                                 ✓
                             </div>
                             Custom data retention
                         </li>
                         <li class="flex flex-row gap-2">
-                            <div class="text-center font-bold text-gray-100 rounded-md w-5 h-5 bg-gray-200">
+                            <div class="text-center font-bold text-gray-300 rounded-md w-5 h-5 bg-gray-500">
                                 ✓
                             </div>
                             High Volume Discounts
                         </li>
                         <li class="flex flex-row gap-2">
-                            <div class="text-center font-bold text-gray-100 rounded-md w-5 h-5 bg-gray-200">
+                            <div class="text-center font-bold text-gray-300 rounded-md w-5 h-5 bg-gray-500">
                                 ✓
                             </div>
                             On-prem or on your own infra
                         </li>
                         <li class="flex flex-row gap-2">
-                            <div class="text-center font-bold text-gray-100 rounded-md w-5 h-5 bg-gray-200">
+                            <div class="text-center font-bold text-gray-300 rounded-md w-5 h-5 bg-gray-500">
                                 ✓
                             </div>
                             High Volume Discounts
