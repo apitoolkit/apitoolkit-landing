@@ -1,14 +1,15 @@
-<header id="header" class="w-full top-0 left-0 right-0 sticky  bg-white z-30">
+<header id="header" class="w-full top-0 left-0 right-0 sticky  bg-base-100 z-30 dark:border-gray-700">
   <nav
     class="w-[min(100%,600px)] md:w-[min(100%,1200px)] px-2 mx-auto flex justify-between items-center py-3 md:py-4 relative"
   >
     <div class="flex md:gap-6 lg:gap-10 items-center">
       <a href="/" title="Back to homepage">
-        <img src="/assets/brand/logo_full_color.svg" class="h-6" alt="APItoolkit full logo">
+        <img class="h-6 dark:hidden" src="/assets/brand/logo_full_color.svg" alt="APItoolkit full color logo"/>
+        <img class="h-6 hidden dark:inline-block" src="/assets/brand/logo_white.svg" alt="APItoolkit white logo"/>
       </a>
       <ul class="hidden md:flex items-center md:gap-4 lg:gap-8">
         <li class="relative group">
-          <button class="flex items-center p-2 gap-1 hover:bg-gray-100 rounded-lg" title="Documentation">
+          <button class="flex items-center p-2 gap-1 hover:bg-base-200 rounded-lg" title="Documentation">
             Documentation
             <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18" fill="none">
               <path d="M5.5293 7.125L9.2793 10.875L13.0293 7.125" stroke="#2E3238" stroke-width="1.2"
@@ -16,13 +17,13 @@
             </svg>
           </button>
           <div
-            class="group-hover:opacity-100 group-hover:h-[210px] w-96 h-0 z-40 overflow-y-hidden  duration-300 opacity-0 absolute top-[100%] left-0 bg-white border rounded-lg"
+            class="group-hover:opacity-100 group-hover:h-[210px] w-96 h-0 z-40 overflow-y-hidden  duration-300 opacity-0 absolute top-[100%] left-0 bg-base-100 border rounded-lg"
           >
             <ul class="flex flex-col gap-1 text-sm">
               <li>
                 <a
                   href="/docs"
-                  class="p-2 flex items-center gap-2 hover:bg-gray-100 shrink-0"
+                  class="p-2 flex items-center gap-2 hover:bg-base-200 shrink-0"
                   title="To Documentaiton page"
                 >
                   <img
@@ -31,7 +32,7 @@
                     alt="navigation item icon"
                   >
                   <div class="flex flex-col">
-                    <h6 class="font-bold text-gray-600">Get started</h6>
+                    <h6 class="font-bold ">Get started</h6>
                     <span class="text-gray-500 leading-[1.10]">Get started with APIToolkit</span>
                   </div>
                 </a>
@@ -39,7 +40,7 @@
               <li class="">
                 <a
                   href="/docs/get-started/quickstarts"
-                  class="p-2 flex items-center gap-2 hover:bg-gray-100 shrink-0"
+                  class="p-2 flex items-center gap-2 hover:bg-base-200 shrink-0"
                   title="To Quickstarts"
                 >
                   <img
@@ -48,7 +49,7 @@
                     alt="navigation item icon"
                   >
                   <div class="flex flex-col">
-                    <h6 class="font-bold text-gray-600">Quickstarts</h6>
+                    <h6 class="font-bold ">Quickstarts</h6>
                     <span class="text-gray-500 leading-[1.10]"
                       >Quickly integrate APIToolkit using any of various SDKs</span
                     >
@@ -58,7 +59,7 @@
               <li>
                 <a
                   href="/docs/documentation/dashboard"
-                  class="p-2 flex items-center gap-2 hover:bg-gray-100 shrink-0"
+                  class="p-2 flex items-center gap-2 hover:bg-base-200 shrink-0"
                   title="To platform guides"
                 >
                   <img
@@ -67,7 +68,7 @@
                     alt="navigation item icon"
                   >
                   <div class="flex flex-col">
-                    <h6 class="font-bold text-gray-600">Dashboard</h6>
+                    <h6 class="font-bold ">Dashboard</h6>
                     <span class="text-gray-500 leading-[1.10]"
                       >Learn everything you need to easily navigate the APIToolkit dashboard</span
                     >
@@ -78,7 +79,7 @@
           </div>
         </li>
         <li class="relative group">
-          <button class="flex items-center p-2 gap-1 hover:bg-gray-100 rounded-lg">
+          <button class="flex items-center p-2 gap-1 hover:bg-base-200 rounded-lg">
             Features
             <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18" fill="none">
               <path d="M5.5293 7.125L9.2793 10.875L13.0293 7.125" stroke="#2E3238" stroke-width="1.2"
@@ -86,14 +87,14 @@
             </svg>
           </button>
           <div
-            class="group-hover:opacity-100 group-hover:h-72 w-96 h-0 z-40 overflow-y-hidden  duration-300 opacity-0 absolute top-[100%] left-0 bg-white border rounded-lg"
+            class="group-hover:opacity-100 group-hover:h-72 w-96 h-0 z-40 overflow-y-hidden  duration-300 opacity-0 absolute top-[100%] left-0 bg-base-100 border rounded-lg"
           >
             <ul class="flex flex-col justify-between text-sm">
               <li>
-                <a href="/features/error-tracking" class="p-2 flex items-center gap-2 hover:bg-gray-100 shrink-0">
+                <a href="/features/error-tracking" class="p-2 flex items-center gap-2 hover:bg-base-200 shrink-0">
                   <img src="/assets/img/features.svg" class="h-12 p-3 flex-shrink-0 w-12 border rounded-lg" alt="">
                   <div class="flex flex-col">
-                    <h6 class="font-bold text-gray-600">Error Tracking</h6>
+                    <h6 class="font-bold ">Error Tracking</h6>
                     <span class="text-gray-500 leading-[1.10]"
                       >Find and fix Errors and Breaking Changes in realtime.
                     </span>
@@ -101,10 +102,10 @@
                 </a>
               </li>
               <li class="">
-                <a href="/features/api-analytics" class="p-2 flex items-center gap-2 hover:bg-gray-100 shrink-0">
+                <a href="/features/api-analytics" class="p-2 flex items-center gap-2 hover:bg-base-200 shrink-0">
                   <img src="/assets/img/features.svg" class="h-12 w-12  p-3 flex-shrink-0 border rounded-lg" alt="">
                   <div class="flex flex-col">
-                    <h6 class="font-bold text-gray-600">API Analytics</h6>
+                    <h6 class="font-bold ">API Analytics</h6>
                     <span class="text-gray-500 leading-[1.10]"
                       >Easily identify trends and optimize what truly matters to your business.
                     </span>
@@ -112,10 +113,10 @@
                 </a>
               </li>
               <li>
-                <a href="/features/api-management" class="block p-2 flex items-center gap-2 hover:bg-gray-100 shrink-0">
+                <a href="/features/api-management" class="block p-2 flex items-center gap-2 hover:bg-base-200 shrink-0">
                   <img src="/assets/img/features.svg" class="h-12  p-3 flex-shrink-0 w-12 border rounded-lg" alt="">
                   <div class="flex flex-col">
-                    <h6 class="font-bold text-gray-600">API Management</h6>
+                    <h6 class="font-bold ">API Management</h6>
                     <span class="text-gray-500 leading-[1.10]"
                       >Everything you need to manage your APIS effectively</span
                     >
@@ -123,10 +124,10 @@
                 </a>
               </li>
               <li>
-                <a href="/features/api-observability" class="block p-2 flex items-center gap-2 hover:bg-gray-100 shrink-0">
+                <a href="/features/api-observability" class="block p-2 flex items-center gap-2 hover:bg-base-200 shrink-0">
                   <img src="/assets/img/features.svg" class="h-12  p-3 flex-shrink-0 w-12 border rounded-lg" alt="">
                   <div class="flex flex-col">
-                    <h6 class="font-bold text-gray-600">API Observability</h6>
+                    <h6 class="font-bold ">API Observability</h6>
                     <span class="text-gray-500 leading-[1.10]"
                       >Achieve real-time API Observability to pinpoint issues, understand root causes, and fix problems
                       in real-time</span
@@ -137,11 +138,11 @@
             </ul>
           </div>
         </li>
-        <li><a href="/about" class=" p-3 hover:bg-gray-100 rounded-lg block">About</a></li>
-        <li><a href="/blog" class=" p-3 hover:bg-gray-100 rounded-lg block">Blog</a></li>
-        <li><a href="/pricing" class=" p-3 hover:bg-gray-100 rounded-lg block">Pricing</a></li>
+        <li><a href="/about" class=" p-3 hover:bg-base-200 rounded-lg block">About</a></li>
+        <li><a href="/blog" class=" p-3 hover:bg-base-200 rounded-lg block">Blog</a></li>
+        <li><a href="/pricing" class=" p-3 hover:bg-base-200 rounded-lg block">Pricing</a></li>
       </ul>
-      <div id="menu" class="fixed hidden overflow-y-auto pb-[73px] top-[73px] p-4 left-0 w-full h-full bg-white">
+      <div id="menu" class="fixed hidden overflow-y-auto pb-[73px] top-[73px] p-4 left-0 w-full h-full bg-base-100">
         <ul class="w-[min(100%,500px)] mx-auto flex flex-col">
           <li class="w-full  border-b">
             <button
@@ -164,14 +165,14 @@
             <div class="h-0 overflow-hidden duration-200">
               <ul class="flex flex-col text-sm">
                 <li>
-                  <a href="/docs" class="p-2 flex items-center gap-2 hover:bg-gray-100 shrink-0">
+                  <a href="/docs" class="p-2 flex items-center gap-2 hover:bg-base-200 shrink-0">
                     <img
                       src="/assets/img/nav-item.svg"
                       class="h-12 flex-shrink-0 w-12 border rounded-lg"
                       alt="navigation item icon"
                     >
                     <div class="flex flex-col">
-                      <h6 class="font-bold text-gray-600">Get started</h6>
+                      <h6 class="font-bold  ">Get started</h6>
                       <span class="text-gray-500 leading-[1.10]">Get started with APIToolkit</span>
                     </div>
                   </a>
@@ -179,7 +180,7 @@
                 <li class="">
                   <a
                     href="/docs/get-started/quickstarts"
-                    class="p-2 flex items-center gap-2 hover:bg-gray-100 shrink-0"
+                    class="p-2 flex items-center gap-2 hover:bg-base-200 shrink-0"
                   >
                     <img
                       src="/assets/img/nav-item.svg"
@@ -187,7 +188,7 @@
                       alt="navigation item icon"
                     >
                     <div class="flex flex-col">
-                      <h6 class="font-bold text-gray-600">Quickstarts</h6>
+                      <h6 class="font-bold ">Quickstarts</h6>
                       <span class="text-gray-500 leading-[1.10]"
                         >Quickly integrate APIToolkit using any of various SDKs</span
                       >
@@ -195,14 +196,14 @@
                   </a>
                 </li>
                 <li>
-                  <a href="/docs/dashboard/dashboard" class="p-2 flex items-center gap-2 hover:bg-gray-100 shrink-0">
+                  <a href="/docs/dashboard/dashboard" class="p-2 flex items-center gap-2 hover:bg-base-200 shrink-0">
                     <img
                       src="/assets/img/nav-item.svg"
                       class="h-12 flex-shrink-0 w-12 border rounded-lg"
                       alt="navigation item icon"
                     >
                     <div class="flex flex-col">
-                      <h6 class="font-bold text-gray-600">Dashboard</h6>
+                      <h6 class="font-bold ">Dashboard</h6>
                       <span class="text-gray-500 leading-[1.10]"
                         >Learn everything you need to easily navigate the APIToolkit dashboard</span
                       >
@@ -233,10 +234,10 @@
             <div class="h-0 overflow-hidden duration-200">
               <ul class="flex flex-col text-sm">
                 <li>
-                  <a href="/features/error-tracking" class="p-2 flex items-center gap-2 hover:bg-gray-100 shrink-0">
+                  <a href="/features/error-tracking" class="p-2 flex items-center gap-2 hover:bg-base-200 shrink-0">
                     <img src="/assets/img/features.svg" class="h-12 p-3 flex-shrink-0 w-12 border rounded-lg" alt="">
                     <div class="flex flex-col">
-                      <h6 class="font-bold text-gray-600">Error Tracking</h6>
+                      <h6 class="font-bold ">Error Tracking</h6>
                       <span class="text-gray-500 leading-[1.10]"
                         >Find and fix Errors and Breaking Changes in realtime.
                       </span>
@@ -244,10 +245,10 @@
                   </a>
                 </li>
                 <li class="">
-                  <a href="/features/api-analytics" class="p-2 flex items-center gap-2 hover:bg-gray-100 shrink-0">
+                  <a href="/features/api-analytics" class="p-2 flex items-center gap-2 hover:bg-base-200 shrink-0">
                     <img src="/assets/img/features.svg" class="h-12 p-3 w-12 flex-shrink-0 border rounded-lg" alt="">
                     <div class="flex flex-col">
-                      <h6 class="font-bold text-gray-600">API Analytics</h6>
+                      <h6 class="font-bold ">API Analytics</h6>
                       <span class="text-gray-500 leading-[1.10]"
                         >Easily identify trends and optimize what truly matters to your business.
                       </span>
@@ -255,10 +256,10 @@
                   </a>
                 </li>
                 <li>
-                  <a href="/features/api-management" class="p-2 flex items-center gap-2 hover:bg-gray-100 shrink-0">
+                  <a href="/features/api-management" class="p-2 flex items-center gap-2 hover:bg-base-200 shrink-0">
                     <img src="/assets/img/features.svg" class="h-12 p-3 flex-shrink-0 w-12 border rounded-lg" alt="">
                     <div class="flex flex-col">
-                      <h6 class="font-bold text-gray-600">API Management</h6>
+                      <h6 class="font-bold ">API Management</h6>
                       <span class="text-gray-500 leading-[1.10]"
                         >Everything you need to manage your APIS effectively</span
                       >
@@ -266,10 +267,10 @@
                   </a>
                 </li>
                 <li>
-                  <a href="/features/api-observability" class="p-2 flex items-center gap-2 hover:bg-gray-100 shrink-0">
+                  <a href="/features/api-observability" class="p-2 flex items-center gap-2 hover:bg-base-200 shrink-0">
                     <img src="/assets/img/features.svg" class="h-12 p-3 flex-shrink-0 w-12 border rounded-lg" alt="">
                     <div class="flex flex-col">
-                      <h6 class="font-bold text-gray-600">API Observability</h6>
+                      <h6 class="font-bold ">API Observability</h6>
                       <span class="text-gray-500 leading-[1.10]"
                         >Achieve real-time API Observability to pinpoint issues, understand root causes, and fix
                         problems in real-time</span
@@ -287,7 +288,7 @@
         </ul>
       </div>
     </div>
-    <button class="p-3 last:hidden overflow-hidden md:hidden hover:bg-gray-100 rounded-lg" onclick="toggleMenu(event)">
+    <button class="p-3 last:hidden overflow-hidden md:hidden hover:bg-base-200 rounded-lg" onclick="toggleMenu(event)">
       <svg class="text-black-500 h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
         <path stroke="currentColor" id="hamburger" stroke-linejoin="round" stroke-width="1.2" d="M15 6H3M15 12H3">
         </path>
@@ -299,6 +300,16 @@
     <div class="hidden md:flex items-center gap-4">
       <a href="https://app.apitoolkit.io" class="btn btn-outline btn-neutral ">Sign in</a>
       <a href="https://app.apitoolkit.io" class="btn btn-secondary">Start for free</a>
+      <label class="swap swap-rotate" for="theme-controller">
+        <input type="checkbox" value="sunset" id="theme-controller" class="theme-controller" _="
+        on change localStorage.setItem('darkMode', me.checked) then log me.checked then if  me.checked set body's @data-theme to 'sunset' else set body's @data-theme to 'emerald' 
+        "/>
+        <svg class="swap-off icon h-5 w-5 text-current fill-current stroke-current opacity-70"><use xlink:href="/assets/deps/fontawesome/light.svg#sun-bright"></use></svg>
+        <svg class="swap-on icon h-5 w-5 text-current fill-current stroke-current opacity-70"><use xlink:href="/assets/deps/fontawesome/light.svg#moon-stars"></use></svg>
+      </label>
+      <script>
+        if (localStorage.getItem("darkMode")==='true') {document.getElementById("theme-controller").checked=true}
+      </script>
     </div>
   </nav>
 </header>

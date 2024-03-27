@@ -9,11 +9,12 @@ hide-date: true
     <div class="max-w-4xl inline-block text-left  text-xl sm:text-2xl">
 ```
 
-###### [*Error Tracking & Breaking Change Detection*{.drop-shadow-md}]{.bg-amber-300 .px-2 .rounded-md}
+###### [*Error Tracking & Breaking Change Detection*{.drop-shadow-md}]{class="bg-amber-300 px-2 rounded-md dark:text-black"}
 
-{.mt-2}
+{class="mt-2 mb-3 dark:text-white "}
 ### Find and fix Errors and Breaking Changes in realtime. 
 
+{class="py-5"}
 Error monitoring is not enough. Catch breaking changes in your APIs and third party integrations with enough context to reproduce the issues, and narrow down the root cause.
 
 {class="space-y-2 text-sm sm:pt-1 not-prose" id="waitlist-form-1"}

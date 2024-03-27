@@ -9,15 +9,15 @@ publishdate: 2022-03-24
     <header class="w-full mt-32">
         <div class="width-control  mx-auto px-2">
             <div class="w-full flex flex-col items-center gap-4">
-                <h1 class="font-bold text-4xl md:text-[50px]">Pay only for what you use.</h1>
-                <p class="max-w-[450px] text-gray-500 font-medium  text-lg text-center">Trust your APIs, and only pay for the requests we analyze.</p>
+                <h1 class="font-bold text-4xl md:text-[50px] dark:text-white">Pay only for what you use.</h1>
+                <p class="max-w-[450px] text-base-content font-medium  text-lg text-center">Trust your APIs, and only pay for the requests we analyze.</p>
             </div>
         </div>
     </header>
     <div class="width-control mx-auto px-2">
         <section class="w-full grid md:grid-cols-2 lg:grid-cols-3  gap-8 py-24">
             <a href="https://app.apitoolkit.io/p/new?plan=startup&annual"
-                class="group rounded-2xl border p-6 flex duration-300 flex-col justify-start gap-6 text-left bg-white shadow-md hover:-translate-y-3">
+                class="group rounded-2xl border p-6 flex duration-300 flex-col justify-start gap-6 text-left bg-base-100 shadow-md hover:-translate-y-3">
                 <div class="flex flex-col gap-3 pb-1">
                     <h3 class="font-medium text-3xl">Free</h3>
                     <div>
@@ -26,12 +26,12 @@ publishdate: 2022-03-24
                                 $0
                             </div>
                         </div>
-                        <div class="text-sm leading-120 font-medium text-gray-600">
+                        <div class="text-sm leading-120 font-medium text-base-content">
                             20,000 reqs per month included for free
                         </div>
                     </div>
                 </div>
-                <div class="text-gray-600">
+                <div class="text-base-content">
                     <p class="font-bold mb-3">For small teams</p>
                     <ul class="flex flex-col gap-3 text-sm font-medium">
                         <li class="flex flex-row gap-2">
@@ -168,7 +168,7 @@ publishdate: 2022-03-24
             <h4 class="font-semibold text-3xl mb-6 w-full">Your questions answered</h4>
             <div>
                 <div class="flex w-full [&>div]:border flex-col gap-4 text-gray-700">
-                    <div class="bg-white px-6 py-3 shadow-sm">
+                    <div class="bg-base-100 px-6 py-3 shadow-sm">
                         <button class="flex gap-4 items-center text-left hover:text-gray-800"
                             onclick="toggleFaq(event)">
                             <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0" width="24" height="24"
@@ -188,7 +188,7 @@ publishdate: 2022-03-24
                             one on demand
                             quite quickly. </div>
                     </div>
-                    <div class="bg-white px-6 py-3 shadow-sm">
+                    <div class="bg-base-100 px-6 py-3 shadow-sm">
                         <button class="flex gap-4 items-center text-left hover:text-gray-800"
                             onclick="toggleFaq(event)">
                             <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0" width="24" height="24"
@@ -206,7 +206,7 @@ publishdate: 2022-03-24
                             which don't depend on your API traffic.
                         </div>
                     </div>
-                    <div class="bg-white px-6 py-3 shadow-sm">
+                    <div class="bg-base-100 px-6 py-3 shadow-sm">
                         <button class="flex gap-4 items-center text-left hover:text-gray-800"
                             onclick="toggleFaq(event)">
                             <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0" width="24" height="24"
@@ -228,7 +228,7 @@ publishdate: 2022-03-24
 
                         </div>
                     </div>
-                    <div class="bg-white px-6 py-3 shadow-sm">
+                    <div class="bg-base-100 px-6 py-3 shadow-sm">
                         <button class="flex gap-4 items-center text-left hover:text-gray-800"
                             onclick="toggleFaq(event)">
                             <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0" width="24" height="24"
@@ -246,7 +246,7 @@ publishdate: 2022-03-24
                         </div>
                     </div>
 
-                    <div class="bg-white px-6 py-3 shadow-sm">
+                    <div class="bg-base-100 px-6 py-3 shadow-sm">
                         <button class="flex gap-4 items-center rounded-lg text-left hover:text-gray-800"
                             onclick="toggleFaq(event)">
                             <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0" width="24" height="24"

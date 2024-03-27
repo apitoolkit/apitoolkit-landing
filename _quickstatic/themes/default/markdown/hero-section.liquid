@@ -3,28 +3,31 @@
     <section class="mt-8 md:mt-16 py-10 md:py-20">
         <div class="width-control px-2 mx-auto flex flex-col items-center">
             <a href="/blog/updates-october-2022/"
-                class="mb-32px  bg-gray-100 group rounded-3xl bg-tertiary border border-opacity-0 hover:border-opacity-100 active:border-opacity-100 outline-none ring-0 hover:ring-[3px] focus:ring-[3px] active:ring-[1px] ring-opacity-0 hover:ring-opacity-30 focus:ring-opacity-30 active:ring-opacity-30 transition-all duration-500 ease-out"
+                class="mb-32px  bg-base-200 group rounded-3xl bg-tertiary border border-opacity-0 hover:border-opacity-100 active:border-opacity-100 outline-none ring-0 hover:ring-[3px] focus:ring-[3px] active:ring-[1px] ring-opacity-0 hover:ring-opacity-30 focus:ring-opacity-30 active:ring-opacity-30 transition-all duration-500 ease-out"
                 href="">
                 <div class="typography-p6-medium flex items-center gap-[6px] p-[2px_7px_2px_2px]">
                     <span class="rounded-3xl bg-[#2E3238] p-[3px_9px_3px_10px] text-white">New</span>
-                    <div class="flex items-center">Read latest updates! 🎉 &nbsp;&nbsp;<i class="fa fa-chevron-right w-3 h-3"></i></div>
+                    <div class="flex items-center">Read latest updates! 🎉 &nbsp;&nbsp;
+                      <svg class="flex-shrink-0 icon h-5 w-5 text-current fill-current stroke-current opacity-70"><use xlink:href="/assets/deps/fontawesome/solid.svg#chevron-right"></use></svg>
+                    </div>
                 </div>
             </a>
 
             <h1
-                class="text-center mt-[20px] text-4xl md:text-6xl tracking-tight sm:leading-normal font-bold ">
+                class="text-center mt-[20px] text-4xl md:text-6xl tracking-tight sm:leading-normal font-bold dark:text-white ">
                 The End-to-End API & Web Services Management Toolkit
             </h1>
             <p
-                class="mt-8 text-gray-700 md:text-[26px] tracking-tight leading-tight max-w-[800px]  text-center font-medium">
+                class="mt-8 text-gray-700 dark:text-inherit md:text-[26px] tracking-tight leading-tight max-w-[800px]  text-center font-medium">
                 APItoolkit uses AI to help engineering teams observe, manage & test their backend systems and any APIs they depend on.
             <p>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-10 pb-5">
-              <div class="flex gap-2 items-center"><i class="fa fa-badge-check text-secondary"></i><a class="hover:underline underline-offset-2" href="#">See & Query all API Activities</a></div>
-              <div class="flex gap-2 items-center"><i class="fa fa-badge-check text-secondary"></i><a class="hover:underline underline-offset-2" href="#">Track all Backend Errors in one place</a></div>
-              <div class="flex gap-2 items-center"><i class="fa fa-badge-check text-secondary"></i><a class="hover:underline underline-offset-2" href="#">Catch API Breaking Changes</a></div>
-              <div class="flex gap-2 items-center"><i class="fa fa-badge-check text-secondary"></i><a class="hover:underline underline-offset-2" href="#">Monitor Incoming & Outgoing Requests</a></div>
-              <div class="flex gap-2 items-center sm:col-span-2 justify-center"><i class="fa fa-badge-check text-secondary"></i><a class="hover:underline underline-offset-2" href="#">API Documentation & OpenAPI specification</a></div>
+              {% capture badgecheck %}<svg class="text-secondary flex-shrink-0 icon h-5 w-5 fill-secondary stroke-secondar"><use xlink:href="/assets/deps/fontawesome/solid.svg#badge-check"></use></svg>{% endcapture %}
+              <div class="flex gap-2 items-center">{{badgecheck}}<a class="hover:underline underline-offset-2" href="#">See & Query all API Activities</a></div>
+              <div class="flex gap-2 items-center">{{badgecheck}}<a class="hover:underline underline-offset-2" href="#">Track all Backend Errors in one place</a></div>
+              <div class="flex gap-2 items-center">{{badgecheck}}<a class="hover:underline underline-offset-2" href="#">Catch API Breaking Changes</a></div>
+              <div class="flex gap-2 items-center">{{badgecheck}}<a class="hover:underline underline-offset-2" href="#">Monitor Incoming & Outgoing Requests</a></div>
+              <div class="flex gap-2 items-center sm:col-span-2 justify-center">{{badgecheck}}<a class="hover:underline underline-offset-2" href="#">API Documentation & OpenAPI specification</a></div>
             </div>
             <div class="mt-[30px] flex items-center gap-4 text-center">
                 <a href="https://app.apitoolkit.io"
@@ -32,15 +35,15 @@
                 <a href="https://calendly.com/tonyalaribe/30min"
                     class="btn btn-outline btn-neutral sm:w-56">Get a demo</a>
             </div>
-            <div class="mt-3 flex items-center gap-2">
-                <p class="text-gray-700 text-sm"><span class="text-green-600">✓</span> Privacy controls</p>
-                <p class="text-gray-700 text-sm"><span class="text-green-600">✓</span> GDPR compliant</p>
-                <p class="text-gray-700 text-sm"><span class="text-green-600">✓</span> Security first</p>
+            <div class="mt-3 flex items-center gap-3 text-sm">
+                <p class=""><span class="text-green-600">✓</span> Privacy controls</p>
+                <p class=""><span class="text-green-600">✓</span> GDPR compliant</p>
+                <p class=""><span class="text-green-600">✓</span> Security first</p>
             </div>
         </div>
         <div
-            class="w-[min(100vw,1400px)] px-4 md:px-2 mx-auto mt-[54px] flex justify-center py-16 relative bg-[url('/assets/img/svgs/grid.svg')]">
-            <div class="border-2 w-max shadow-xl  bg-white">
+            class="w-[min(100vw,1400px)] px-4 md:px-2 mx-auto mt-[54px] flex justify-center py-16 relative bg-[url('/assets/img/svgs/grid.svg')] dark:bg-none">
+            <div class="border-2 w-max shadow-xl  bg-base-100">
                 <video src="/assets/video/dashboard.mp4" loop id="main-demo-video" class="w-[1200px] min-w-0"></video>
             </div>
             <button onclick="playVideo(event)" id="playVideoButton" title="play demo video">
@@ -61,7 +64,7 @@
         </div>
         <div class="width-control w-full mx-auto mt-[54px] py-12 relative text-center">
             <p class="text-xl pb-8">Trusted by 3000+ Developers at companies like </p>
-            <div class="flex gap-6  w-full justify-center flex-wrap items-center [&>*]:brightness-0">
+            <div class="flex gap-6  w-full justify-center flex-wrap items-center [&>*]:brightness-0 [&>*]:dark:invert">
                 <img src="/assets/img/c1.png" alt="Andela" class="h-5 sm:h-8">
                 <img src="/assets/img/c2.png" alt="Thepeer" class="h-5 sm:h-8">
                 <img src="/assets/img/c3.png" alt="Grovepay" class="h-5 sm:h-8">

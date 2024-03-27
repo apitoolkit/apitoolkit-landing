@@ -116,7 +116,7 @@ end
 behavior CarouselSectionInit
     on intersection(intersecting) having threshold 0.5
      repeat while intersecting 
-                repeat in <input/>
+                repeat in <input.carousel-input/>
                     set it.checked to true 
                     trigger change on it
                     then wait 4s 
@@ -159,7 +159,7 @@ Gain data-driven insights into your APIs and APIs you depend on. Query user beha
 
 {class="space-y-1 flex-1"}
 ::::
-[“APIToolkit allowed us make a drop in rewrite of our PHP service in Golang. Fixing all bugs without customers noticing any changes.”]{class="flex-1 inline-block max-w-[500px] text-gray-600 pb-1"}
+[“APIToolkit allowed us make a drop in rewrite of our PHP service in Golang. Fixing all bugs without customers noticing any changes.”]{class="flex-1 inline-block max-w-[500px] text-gray-600 dark:text-base-content pb-1"}
 
 *Michael Okoh* 
 [CEO @ Thepeer]{class="text-sm text-gray-500 block"}
@@ -206,7 +206,7 @@ Get to the root cause of every issue. Whether it is caused by runtime errors, br
 
 {class="space-y-1 flex-1"}
 ::::
-[“We had a major production incident, and the Engineering team didnt need to get involved, because the support team could see via APItoolkit, that the issues were caused by our third party integration, and they could reach out to the team to fix the issue.”]{class="flex-1 inline-block max-w-[500px] text-gray-600 pb-1"}
+[“We had a major production incident, and the Engineering team didnt need to get involved, because the support team could see via APItoolkit, that the issues were caused by our third party integration, and they could reach out to the team to fix the issue.”]{class="flex-1 inline-block max-w-[500px] text-gray-600 dark:text-base-content pb-1"}
 
 *Joshua Chinemezu* 
 [CEO @ Platnova]{class="text-sm text-gray-500 block"}
@@ -250,7 +250,7 @@ Ensure the reliability of your APIs and any APIs you depend on. Call any API at 
 {.flex .justify-center}
 ![Michael Okoh image](/assets/img/love/trojan.jpeg){class="w-11 h-11 rounded-full object-contain"}
 
-{class="inline-block max-w-[500px] text-gray-600 text-center"}
+{class="inline-block max-w-[500px] text-gray-600 dark:text-base-content text-center"}
 “APIToolkit allowed us make a drop in rewrite of our PHP service in Golang. Fixing all bugs without customers noticing any changes.”
 
 ::::
@@ -439,7 +439,7 @@ CEO @ Thepeer
             <div class="mt-4 flex gap-4">
               <a href="https://discord.gg/dEB6EjQnKB"
                 class="rounded-lg bg-[#7289DA] flex gap-2 w-max px-5 py-2 items-center">
-                <i class="fa-brands fa-discord" width="33" height="32"></i>
+                <svg  width="33" height="32" class="icon h-5 w-5 text-current fill-current stroke-current opacity-70"><use xlink:href="/assets/deps/fontawesome/brands.svg#discord"></use></svg>
                 <span class="text-sm leading-tight">Join the <br><span class="font-bold text-md">Discord</span>
                 </span>
               </a>
@@ -483,7 +483,7 @@ CEO @ Thepeer
   </section>
 
 ```
-{class="py-24 bg-[#F9FBFF]"}
+{class="py-24 bg-[#F9FBFF] dark:bg-base-100"}
 ::::::
 {class="width-control mx-auto flex flex-col md:flex-row gap-16"}
 ::::
@@ -492,18 +492,19 @@ CEO @ Thepeer
 {class="text-4xl md:text-6xl font-bold mb-3"}
 ### Frequestly asked <br/> Questions
 
-[Some questions others have asked]{class="text-gray-500 text-sm"}
+[Some questions others have asked]{class="text-gray-500 dark:text-base-content text-sm"}
 [View all FAQ](https://apitoolkit.io/docs/troubleshooting-and-faq/faq/){class="block  mt-6 text-blue-600 underline text-sm"}
 :::
-{class="flex w-full md:w-[40%] flex-col gap-4 text-gray-700"}
+{class="flex w-full md:w-[40%] flex-col gap-4 text-gray-700 dark:text-base-content"}
 :::
 ```=html
   {% for faq in this.frontmatter.faqs %}
-  <div class="bg-white px-6 py-3 shadow-sm">
-    <button class="flex gap-4 items-center text-left hover:text-gray-800" onclick="toggleFaq(event)">
-    <i class="fa-solid fa-caret-right flex-shrink-0"></i> {{faq.q}}
+  <div class="bg-base-100 px-6 py-3 shadow-sm">
+    <button class="flex gap-4 items-center text-left hover:text-gray-800 dark:hover:text-white" onclick="toggleFaq(event)">
+    <svg class="flex-shrink-0 icon h-5 w-5 text-current fill-current stroke-current opacity-70"><use xlink:href="/assets/deps/fontawesome/solid.svg#caret-right"></use></svg>
+     flex-shrink-0"></i> {{faq.q}}
     </button>
-    <div class="pl-4 py-4 hidden text-gray-600">{{faq.a}}</div>
+    <div class="pl-4 py-4 hidden text-gray-600 dark:text-base-content">{{faq.a}}</div>
   </div>
   {% endfor %}
 ```

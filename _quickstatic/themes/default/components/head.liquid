@@ -53,44 +53,6 @@
     <script async data-uid="e05f719e6e" src="https://apitoolkit.ck.page/e05f719e6e/index.js"></script>
     <script async data-uid="7a274e9e59" src="https://apitoolkit.ck.page/7a274e9e59/index.js"></script>
 
-
-
-    <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-        w[l] = w[l] || []; w[l].push({
-          'gtm.start':
-            new Date().getTime(), event: 'gtm.js'
-        }); var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-            'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-      })(window, document, 'script', 'dataLayer', 'GTM-PTLSTQ8');</script>
-    <!-- End Google Tag Manager -->
-
-    <!-- Hotjar Tracking Code for my site -->
-    <script>
-      (function (h, o, t, j, a, r) {
-        h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
-        h._hjSettings = { hjid: 3393437, hjsv: 6 };
-        a = o.getElementsByTagName('head')[0];
-        r = o.createElement('script'); r.async = 1;
-        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-        a.appendChild(r);
-      })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
-    </script>
-    <!-- End of Hotjar Tracking Code  -->
-
-    <!-- Twitter conversion tracking base code -->
-    <script>
-      !function (e, t, n, s, u, a) {
-        e.twq || (s = e.twq = function () {
-          s.exe ? s.exe.apply(s, arguments) : s.queue.push(arguments);
-        }, s.version = '1.1', s.queue = [], u = t.createElement(n), u.async = !0, u.src = 'https://static.ads-twitter.com/uwt.js',
-          a = t.getElementsByTagName(n)[0], a.parentNode.insertBefore(u, a))
-      }(window, document, 'script');
-      twq('config', 'ofc5n');
-    </script>
-    <!-- End Twitter conversion tracking base code -->
-
     <link rel="preload" fetchpriority="high" as="image" href="/assets/img/svgs/grid.svg" type="image/webp">
 
     <style>
@@ -109,6 +71,12 @@
       h2 {
         font-variation-settings: 'wght' 600, 'MONO' 500;
       }
+      body[data-theme="sunset"] h2{
+        color: white; 
+      }
+      body[data-theme="sunset"] formkit-input {
+        background-color: gray;
+      }
       h3, h4, h5 {
         font-variation-settings: 'wght' 500, 'MONO' 500;
       }
@@ -120,3 +88,7 @@
     </style>
   </head>
   <body data-theme="emerald" hx-boost="true" hx-ext="preload,head-support" class="" preload>
+    <script>
+      console.log(localStorage.getItem("darkMode")==='true', localStorage.getItem("darkMode"))
+      if (localStorage.getItem("darkMode")==='true') {document.body.setAttribute("data-theme", "sunset")}
+    </script>

@@ -3,11 +3,11 @@
 <main class="text-center">
   <div class="our_container py-16 w-full relative overflow-hidden">
     <div class="text-lg max-w-prose  mx-auto text-center">
-      <span class="block text-base  text-indigo-600 font-semibold tracking-wide uppercase">
+      <span class="block text-base  text-indigo-600 dark:text-info font-semibold tracking-wide uppercase">
         {{ this.frontmatter.date | date: "%b %d, %y" }}
       </span>
     </div>
-    <article class="mt-6 prose prose-lg sm:prose-xl prose-indigo prose-base text-gray-900 mx-auto prose-img:drop-shadow-md prose-img:rounded-md ">
+    <article class="mt-6 prose prose-lg dark:prose-invert sm:prose-xl prose-indigo prose-base mx-auto prose-img:drop-shadow-md prose-img:rounded-md ">
       <div class="flex gap-4 items-center">
         <span class="font-bold">Share:</span>
         <!-- Twitter -->
@@ -15,7 +15,7 @@
           title="Share on Twitter"
           class="inline-block rounded px-6 py-1 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
           style="background-color: #1da1f2">
-          <i class="fa-brands fa-twitter"></i>
+          <svg class="icon h-5 w-5"><use xlink:href="/assets/deps/fontawesome/brands.svg#twitter"></use></svg>
         </a>
 
         <!-- Facebook -->
@@ -23,7 +23,7 @@
           title="Share on Facebook"
           class="inline-block rounded px-6 py-1 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
           style="background-color: #1877f2">
-          <i class="fa-brands fa-facebook-f"></i>
+          <svg  class="icon h-5 w-5"><use xlink:href="/assets/deps/fontawesome/brands.svg#facebook-f"></use></svg>
         </a>
 
         <!-- Linkedin -->
@@ -31,14 +31,14 @@
           target="_blank" title="Share on LinkedIn"
           class="inline-block rounded px-6 py-1 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
           style="background-color: #0077b5">
-          <i class="fa-brands fa-linkedin"></i>
+          <svg  class="icon h-5 w-5"><use xlink:href="/assets/deps/fontawesome/brands.svg#linkedin"></use></svg>
         </a>
 
         <!-- Reddit -->
         <a href="https://www.reddit.com/submit?url={{ this.permalink }}&title={{ this.frontmatter.title }} || By APIToolkit" target="_blank"
           title="Share on Reddit" style="background-color:  #ff4500"
           class="inline-block rounded px-6 py-1 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg">
-          <i class="fa-brands fa-reddit-alien"></i>
+          <svg  class="icon h-5 w-5"><use xlink:href="/assets/deps/fontawesome/brands.svg#reddit-alien"></use></svg>
         </a>
 
         <!-- Discord
@@ -46,7 +46,7 @@
           title="Share on Discord"
           class="inline-block rounded px-6 py-1 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
           style="background-color: #7289DA">
-          <i class="fa-brands fa-discord"></i>
+          <svg class="icon h-5 w-5"><use xlink:href="/assets/deps/fontawesome/brands.svg#discord"></use></svg>
         </a>
 
         -->
