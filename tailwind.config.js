@@ -26,13 +26,13 @@ module.exports = {
     require("daisyui"),
     // ...
   ],
-
+  darkMode: ['class', '[data-theme="sunset"]'],
   // daisyUI config (optional - here are the default values)
   daisyui: {
     // themes: true, // false: only light + dark | true: all themes | array: specific themes like this ["light", "dark", "cupcake"]
-    themes: ["emerald"], 
-    // darkTheme: "dark", // name of one of the included themes for dark mode
-    darkTheme: false,
+    themes: ["emerald", "sunset"], 
+    darkTheme: "sunset", // name of one of the included themes for dark mode
+    // darkTheme: false,
     base: true, // applies background color and foreground color for root element by default
     styled: true, // include daisyUI colors and design decisions for all components
     utils: true, // adds responsive and modifier utility classes
