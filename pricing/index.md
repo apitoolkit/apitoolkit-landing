@@ -154,32 +154,29 @@ publishdate: 2022-03-24
             </a>
         </section>
         <section class="w-full py-8">
-            <!-- <h4 class="font-medium text-3xl mb-6 w-full">Some Customers</h4> -->
-            <div class="flex gap-6  w-full justify-center md:justify-between flex-wrap items-center">
-                <img src="/assets/img/c1.png" alt="">
-                <img src="/assets/img/c2.png" alt="">
-                <img src="/assets/img/c3.png" alt="">
-                <img src="/assets/img/c4.png" alt="">
-                <img src="/assets/img/c5.png" alt="">
-                <img src="/assets/img/c6.png" alt="">
+            <div class="width-control w-full mx-auto mt-[54px] py-12 relative text-center">
+                <p class="text-xl pb-8">Trusted by 3000+ Developers at companies like </p>
+                <div class="flex gap-6  w-full justify-center flex-wrap items-center [&>*]:brightness-0 [&>*]:dark:invert">
+                    <img src="/assets/img/c1.png" alt="Andela" class="h-5 sm:h-8">
+                    <img src="/assets/img/c2.png" alt="Thepeer" class="h-5 sm:h-8">
+                    <img src="/assets/img/c3.png" alt="Grovepay" class="h-5 sm:h-8">
+                    <img src="/assets/img/c4.png" alt="Same Day Customs" class="h-5 sm:h-8">
+                    <img src="/assets/img/customers/platnova.png" alt="Platnova" class="h-5 sm:h-8" >
+                    <img src="/assets/img/customers/payfonte.svg" alt="Payfonte" class="h-5 sm:h-8">
+                </div>
             </div>
         </section>
         <section class="py-16 space-y-4">
             <h4 class="font-semibold text-3xl mb-6 w-full">Your questions answered</h4>
             <div>
-                <div class="flex w-full [&>div]:border flex-col gap-4 text-gray-700">
+                <div class="flex w-full [&>div]:border flex-col gap-4 text-base-content">
                     <div class="bg-base-100 px-6 py-3 shadow-sm">
-                        <button class="flex gap-4 items-center text-left hover:text-gray-800"
+                        <button class="flex gap-4 items-center text-left hover:grow"
                             onclick="toggleFaq(event)">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0" width="24" height="24"
-                                viewBox="0 0 24 24" fill="none">
-                                <path
-                                    d="M8 6.81983V17.1798C8 17.9698 8.87 18.4498 9.54 18.0198L17.68 12.8398C17.8225 12.7496 17.9399 12.6249 18.0212 12.4771C18.1026 12.3294 18.1452 12.1635 18.1452 11.9948C18.1452 11.8262 18.1026 11.6603 18.0212 11.5125C17.9399 11.3648 17.8225 11.24 17.68 11.1498L9.54 5.97983C9.38917 5.88227 9.2148 5.82723 9.0353 5.82052C8.85579 5.81381 8.6778 5.85567 8.52011 5.94168C8.36241 6.0277 8.23085 6.15469 8.13931 6.30924C8.04777 6.4638 7.99964 6.6402 8 6.81983Z"
-                                    fill="#0E0D11" />
-                            </svg>
+                            <svg class="flex-shrink-0 icon h-5 w-5 text-current fill-current stroke-current opacity-70"><use xlink:href="/assets/deps/fontawesome/solid.svg#caret-right"></use></svg>
                             What programming languages are supported?
                         </button>
-                        <div class="pl-4 py-4 hidden text-gray-600">
+                        <div class="pl-4 py-4 hidden text-base-content">
                             Some services like the API testing does not need any SDK integration. But we have SDKs
                             for multiple
                             languages: Golang,
@@ -189,17 +186,12 @@ publishdate: 2022-03-24
                             quite quickly. </div>
                     </div>
                     <div class="bg-base-100 px-6 py-3 shadow-sm">
-                        <button class="flex gap-4 items-center text-left hover:text-gray-800"
+                        <button class="flex gap-4 items-center text-left hover:grow"
                             onclick="toggleFaq(event)">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0" width="24" height="24"
-                                viewBox="0 0 24 24" fill="none">
-                                <path
-                                    d="M8 6.81983V17.1798C8 17.9698 8.87 18.4498 9.54 18.0198L17.68 12.8398C17.8225 12.7496 17.9399 12.6249 18.0212 12.4771C18.1026 12.3294 18.1452 12.1635 18.1452 11.9948C18.1452 11.8262 18.1026 11.6603 18.0212 11.5125C17.9399 11.3648 17.8225 11.24 17.68 11.1498L9.54 5.97983C9.38917 5.88227 9.2148 5.82723 9.0353 5.82052C8.85579 5.81381 8.6778 5.85567 8.52011 5.94168C8.36241 6.0277 8.23085 6.15469 8.13931 6.30924C8.04777 6.4638 7.99964 6.6402 8 6.81983Z"
-                                    fill="#0E0D11" />
-                            </svg>
+                            <svg class="flex-shrink-0 icon h-5 w-5 text-current fill-current stroke-current opacity-70"><use xlink:href="/assets/deps/fontawesome/solid.svg#caret-right"></use></svg>
                             Do my requests have to leave my server to APIToolkit Servers?
                         </button>
-                        <div class="pl-4 py-4 hidden text-gray-600">
+                        <div class="pl-4 py-4 hidden text-content-base">
                             Only if you want to benefit from the API metrics and the logs explorer. You can also
                             enjoy all the other
                             functionality
@@ -207,17 +199,12 @@ publishdate: 2022-03-24
                         </div>
                     </div>
                     <div class="bg-base-100 px-6 py-3 shadow-sm">
-                        <button class="flex gap-4 items-center text-left hover:text-gray-800"
+                        <button class="flex gap-4 items-center text-left hover:grow"
                             onclick="toggleFaq(event)">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0" width="24" height="24"
-                                viewBox="0 0 24 24" fill="none">
-                                <path
-                                    d="M8 6.81983V17.1798C8 17.9698 8.87 18.4498 9.54 18.0198L17.68 12.8398C17.8225 12.7496 17.9399 12.6249 18.0212 12.4771C18.1026 12.3294 18.1452 12.1635 18.1452 11.9948C18.1452 11.8262 18.1026 11.6603 18.0212 11.5125C17.9399 11.3648 17.8225 11.24 17.68 11.1498L9.54 5.97983C9.38917 5.88227 9.2148 5.82723 9.0353 5.82052C8.85579 5.81381 8.6778 5.85567 8.52011 5.94168C8.36241 6.0277 8.23085 6.15469 8.13931 6.30924C8.04777 6.4638 7.99964 6.6402 8 6.81983Z"
-                                    fill="#0E0D11" />
-                            </svg>
+                            <svg class="flex-shrink-0 icon h-5 w-5 text-current fill-current stroke-current opacity-70"><use xlink:href="/assets/deps/fontawesome/solid.svg#caret-right"></use></svg>
                             Can I prevent sending sensitive Data to APIToolkit?
                         </button>
-                        <div class="pl-4 py-4 hidden text-gray-600">
+                        <div class="pl-4 py-4 hidden text-base-content">
                             Yes. All our SDKs support redacting data. Simply specify the json path to the fields
                             which you don't
                             want the SDKs to
@@ -229,17 +216,12 @@ publishdate: 2022-03-24
                         </div>
                     </div>
                     <div class="bg-base-100 px-6 py-3 shadow-sm">
-                        <button class="flex gap-4 items-center text-left hover:text-gray-800"
+                        <button class="flex gap-4 items-center text-left hover:grow"
                             onclick="toggleFaq(event)">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0" width="24" height="24"
-                                viewBox="0 0 24 24" fill="none">
-                                <path
-                                    d="M8 6.81983V17.1798C8 17.9698 8.87 18.4498 9.54 18.0198L17.68 12.8398C17.8225 12.7496 17.9399 12.6249 18.0212 12.4771C18.1026 12.3294 18.1452 12.1635 18.1452 11.9948C18.1452 11.8262 18.1026 11.6603 18.0212 11.5125C17.9399 11.3648 17.8225 11.24 17.68 11.1498L9.54 5.97983C9.38917 5.88227 9.2148 5.82723 9.0353 5.82052C8.85579 5.81381 8.6778 5.85567 8.52011 5.94168C8.36241 6.0277 8.23085 6.15469 8.13931 6.30924C8.04777 6.4638 7.99964 6.6402 8 6.81983Z"
-                                    fill="#0E0D11" />
-                            </svg>
+                            <svg class="flex-shrink-0 icon h-5 w-5 text-current fill-current stroke-current opacity-70"><use xlink:href="/assets/deps/fontawesome/solid.svg#caret-right"></use></svg>
                             I really love what you're doing. How do I show support?
                         </button>
-                        <div class="pl-4 py-4 hidden text-gray-600">
+                        <div class="pl-4 py-4 hidden text-base-content">
                             Give a shout out on twitter or discord. We would also appreciate honest feedback about
                             what we're
                             building. And suggestions for what functionality you would love to see next.
@@ -247,17 +229,12 @@ publishdate: 2022-03-24
                     </div>
 
                     <div class="bg-base-100 px-6 py-3 shadow-sm">
-                        <button class="flex gap-4 items-center rounded-lg text-left hover:text-gray-800"
+                        <button class="flex gap-4 items-center rounded-lg text-left hover:grow"
                             onclick="toggleFaq(event)">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0" width="24" height="24"
-                                viewBox="0 0 24 24" fill="none">
-                                <path
-                                    d="M8 6.81983V17.1798C8 17.9698 8.87 18.4498 9.54 18.0198L17.68 12.8398C17.8225 12.7496 17.9399 12.6249 18.0212 12.4771C18.1026 12.3294 18.1452 12.1635 18.1452 11.9948C18.1452 11.8262 18.1026 11.6603 18.0212 11.5125C17.9399 11.3648 17.8225 11.24 17.68 11.1498L9.54 5.97983C9.38917 5.88227 9.2148 5.82723 9.0353 5.82052C8.85579 5.81381 8.6778 5.85567 8.52011 5.94168C8.36241 6.0277 8.23085 6.15469 8.13931 6.30924C8.04777 6.4638 7.99964 6.6402 8 6.81983Z"
-                                    fill="#0E0D11" />
-                            </svg>
+                            <svg class="flex-shrink-0 icon h-5 w-5 text-current fill-current stroke-current opacity-70"><use xlink:href="/assets/deps/fontawesome/solid.svg#caret-right"></use></svg>
                             Will the SDKs slow down my backend?
                         </button>
-                        <div class="pl-4 py-4 hidden text-gray-600">
+                        <div class="pl-4 py-4 hidden text-base-content">
                             It depends. Most SDKs stream data asynchronously via google pubsub streaming, so your
                             requests will see
                             almost zero

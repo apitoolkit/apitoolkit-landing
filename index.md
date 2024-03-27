@@ -474,7 +474,7 @@ CEO @ Thepeer
         <p class="max-w-[400px] my-4">APItoolkit is the intelligent API management system for teams who value peace of mind.</p>
 
         <div class=" relative mt-24 p-1 overflow-hidden -mx-5 w-full">
-            <iframe id='testimonialto-apitoolkit-tag-all-light' src="https://embed-v2.testimonial.to/w/apitoolkit?theme=light&card=base&loadMore=off&initialCount=9&randomize=on&hideDate=on&tag=all" frameborder="0" scrolling="no" width="100%" title="testimonial.to testimonials"></iframe>
+            <iframe class="" id='testimonialto-apitoolkit-tag-all-light' src="https://embed-v2.testimonial.to/w/apitoolkit?theme=dark&card=base&loadMore=off&initialCount=9&randomize=on&hideDate=on&tag=all" frameborder="0" scrolling="no" width="100%" title="testimonial.to testimonials"></iframe>
         </div>
         <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-b from-transparent to-[#232529]"></div>
         </div>
