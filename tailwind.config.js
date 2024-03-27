@@ -3,6 +3,21 @@ module.exports = {
     "./**/*.{html,md,liquid}",
     "!./_quickstatic/public/*.{html,md,liquid}"
   ],
+  safelist: [
+    'h-screen',
+    'h-full',
+    'w-screen',
+    'w-full',
+    'h-lvh',
+    'lg:grid-cols-4',
+    'text-md',
+    'grid-rows-7',
+    'progress-white',
+    'bg-white/30',
+    'pl-6',
+    'pl-9',
+    'pl-12',
+  ],
   theme: {
     extend: {},
   },
