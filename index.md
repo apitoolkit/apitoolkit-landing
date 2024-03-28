@@ -291,7 +291,7 @@ end
 ::::
 [“We had a lot of issues coming from Merchants of our service, and needed something to track the incoming requests made by these merchants. APItoolkit was exactly what we needed, and even more.”]{class="flex-1 inline-block max-w-[500px] text-gray-600 dark:text-base-content pb-1"}
 
-*Michael* 
+*Michael Akinwonmi* 
 [CEO @ Payfonte]{class="text-sm text-gray-500 block"}
 ::::
 :::
