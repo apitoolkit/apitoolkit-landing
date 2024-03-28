@@ -11,9 +11,10 @@ hide-date: true
 
 ###### [*Full Observability, Zero Disruptions*{.drop-shadow-md}]{.bg-amber-300 .px-2 .rounded-md}
 
-{.mt-2}
+{class="mt-2 mb-3 dark:text-white "}
 ### See Clearly, Fix Quickly. Observe and Fix any API issues in Real Time. 
 
+{class="py-5"}
 Stop API issues before they stop your customers. Achieve real-time API Observability to pinpoint issues, understand root causes, and fix problems in real-time
 
 {class="space-y-2 text-sm sm:pt-1 not-prose" id="waitlist-form-1"}
@@ -31,7 +32,7 @@ Stop API issues before they stop your customers. Achieve real-time API Observabi
 {class="grid px-6 grid-cols-1 md:px-2 md:grid-cols-5  gap-8 justify-center items-center"}
 :::
 {.order-last .md:order-first .col-span-3}
-![](./dash.jpg){class="w-full  drop-shadow-lg border border-gray-200 rounded-md"}
+![](/assets/img/screenshots/analytics_zoomed.png){class="w-full  drop-shadow-lg border border-gray-200 rounded-md"}
 
 {class="space-y-3 col-span-2"}
 ::::

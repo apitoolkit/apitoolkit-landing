@@ -11,9 +11,10 @@ hide-date: true
 
 ###### [*Control It. Secure It. See It All*{.drop-shadow-md}]{.bg-amber-300 .px-2 .rounded-md}
 
-{#APIAnalytics .mt-2}
+{class="mt-2 mb-3 dark:text-white "}
 ### API Management 
 
+{class="py-5"}
 APItoolkit isn’t just another API management tool. It’s the most feature-rich solution available, offering everything you need to manage your APIs effectively.
 
 {class="space-y-2 text-sm sm:pt-1 not-prose" id="waitlist-form-1"}
@@ -31,7 +32,7 @@ APItoolkit isn’t just another API management tool. It’s the most feature-ric
 {class="grid px-6 grid-cols-1 md:px-2 md:grid-cols-5 gap-8 justify-center items-center"}
 :::
 {.order-last .md:order-first .col-span-3}
-![APIToolkit Dashboard image](./api_monitoring_apitoolkit.jpeg){ class="w-full  drop-shadow-lg border border-gray-200 rounded-md"}
+![APIToolkit Dashboard image](/assets/img/screenshots/analytics_zoomed.png){ class="w-full  drop-shadow-lg border border-gray-200 rounded-md"}
 
 {.space-y-3 .col-span-2}
 ::::
@@ -66,7 +67,7 @@ By leveraging API documentation tools for clear instructions, API testing tools 
 ::::
 
 {.col-span-3}
-![APItoolkit anomalies](apitoolkit-logs.jpeg){class="w-full drop-shadow-lg border border-gray-200 rounded-md"}
+![APItoolkit anomalies](/assets/img/screenshots/errors_zoomed.png){class="w-full drop-shadow-lg border border-gray-200 rounded-md"}
 :::
 
 {class="grid px-6 grid-cols-1 md:px-2 md:grid-cols-5 gap-8 justify-center items-center"}
