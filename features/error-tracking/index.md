@@ -29,6 +29,29 @@ Error monitoring is not enough. Catch breaking changes in your APIs and third pa
 <section  class="py-28  text-center w-full max-w-full aspect-auto" >
     <div class="max-w-6xl inline-block text-left  text-xl sm:text-2xl prose prose-lg prose-pre:p-0 space-y-16">
 ```
+
+{class="grid grid-cols-1 px-6 md:px-2 md:grid-cols-5 gap-8 justify-center items-center"}
+:::
+{class="space-y-3 col-span-2"}
+::::
+
+{.leading-tight}
+### See All Errors and API Changelog (Breaking and Safe Changes) at a glance
+
+{.text-lg}
+Seeing all changes and issues at glance to help you prioritize what issues need to be fixed, and what changes are benign and can be safely acknowleged.
+
+{class="space-y-2 text-sm sm:pt-1 not-prose" id="waitlist-form-1"}
+[Get Started for Free](https://app.apitoolkit.io){class="drop-shadow hover:drop-shadow-lg transition-all rounded-md hover:bg-yellow-300 bg-amber-300 text-black border border-amber-400 font-semibold inline-block px-4 py-2 mt-2 sm:mt-0 hs-init hs-inview"}
+[OR]{.inline-block .px-5}
+[Get a demo &nbsp;](https://calendar.app.google/1a4HG5GZYv1sjjZG6){target="_blank" class="drop-shadow rounded-md border border-gray-200 bg-gray-100 hover:bg-gray-200 text-xs text-gray-900 inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0 hs-init hs-inview"}
+::::
+
+{.col-span-3}
+![](/assets/img/screenshots/errors_zoomed.png){class="w-full  drop-shadow-lg border border-gray-200 rounded-md"} 
+:::
+
+
 {class="grid grid-cols-1  md:grid-cols-5 gap-8 px-6 md:px-2 justify-center items-center"}
 :::
 {class="order-last md:order-first col-span-3"}
