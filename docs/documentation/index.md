@@ -15,19 +15,12 @@ APItoolkit offers a centralized platform that enables you to gain visibility and
 When you integrate APIToolkit with your application, you gain access to the following features out of the box:
 
 - Real-time API Monitoring and Observability
-
 - Errors Tracking
-
 - API Analytics
-
 - API Log Explorer
-
 - Custom Monitors and Alerts
-
 - Automatic Documentation
-
 - Powerful Queries
-
 - Powerful Reports
 
 ## Onboarding with APIToolkit

@@ -89,7 +89,7 @@
     <script>
       if (localStorage.getItem("darkMode")==='true') {document.body.setAttribute("data-theme", "sunset")}
     </script>
-    <section class="sticky top-0 w-full bg-base-100 z-10 border-b-2 border-b-base-200">
+    <section class="sticky top-0 w-full bg-base-100 z-10 border-b border-b-base-200">
       <section class="text-center border-b border-b-base-200">
         <div class="max-w-7xl w-full py-4 px-5 sm:px-0 text-left inline-flex justify-between items-center">
           <a href="/" class="px-1 py-1" aria-label="Back to homepage">
@@ -197,7 +197,7 @@
           {% endfor %}
         {% endcapture %}
         {% unless this.frontmatter.hide_file_tree %}
-        <div class="w-64 leading-relaxed border-r-2 border-r-base-200 hidden sm:block ">
+        <div class="w-64 leading-relaxed border-r border-r-base-200 hidden sm:block ">
           <nav class="w-64 space-y-8 text-sm my-48 pr-5 fixed top-0">
           {{  main_menu_items }}
           </nav>
