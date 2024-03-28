@@ -9,12 +9,13 @@ hide-date: true
     <div class="max-w-4xl inline-block text-left  text-xl sm:text-2xl">
 ```
 
-###### [*API Logs and Metrics*{.drop-shadow-md}]{.bg-amber-300 .px-2 .rounded-md}
+###### [*API Logs and Metrics*{.drop-shadow-md}]{class="bg-amber-300 px-2 rounded-md dark:text-black"}
 
-{.mt-2}
+{class="mt-2 mb-3 dark:text-white "}
 ### See Clearly, Fix Quickly. Observe and Fix any API from API integrations or your services 
 
-Stop API issues before they stop your customers. Achieve real-time API Observability to pinpoint issues, understand root causes, and fix problems in real-time
+{class="py-5"}
+These logs give you an in-depth overview of your server-side API calls, including events, pageviews, clicks, and choose variation calls. They enable you to verify that your API calls are correct and identify implementation issues. You can also use logs to troubleshoot unexpected behavior and find the root cause
 
 {class="space-y-2 text-sm sm:pt-1 not-prose" id="waitlist-form-1"}
 [Get Started for Free](https://app.apitoolkit.io){class="drop-shadow hover:drop-shadow-lg transition-all rounded-md hover:bg-yellow-300 bg-amber-300 text-black border border-amber-400 font-semibold inline-block px-4 py-2 mt-2 sm:mt-0 hs-init hs-inview"}
@@ -31,12 +32,12 @@ Stop API issues before they stop your customers. Achieve real-time API Observabi
 {class="grid px-6 grid-cols-1 md:px-2 md:grid-cols-5  gap-8 justify-center items-center"}
 :::
 {.order-last .md:order-first .col-span-3}
-![](./dash.jpg){class="w-full  drop-shadow-lg border border-gray-200 rounded-md"}
+![](/assets/img/screenshots/log_explorer_zoom.png){class="w-full  drop-shadow-lg border border-gray-200 rounded-md"}
 
 {class="space-y-3 col-span-2"}
 ::::
 {.leading-tight}
-### Real-time Insights, Real-time Fixes 
+### Real-time Insights, Real-time Fixes via the Log Explorer
 
 {.text-lg}
 No more waiting for problems to snowball. Identify and fix issues as they happen, ensuring flawless performance and a seamless user experience.
@@ -64,13 +65,13 @@ Effortlessly capture the entire request-response chain, allowing you to reproduc
 [Get a demo &nbsp;](https://calendar.app.google/1a4HG5GZYv1sjjZG6){target="_blank" class="drop-shadow rounded-md border border-gray-200 bg-gray-100 hover:bg-gray-200 text-xs text-gray-900 inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0 hs-init hs-inview"}
 ::::
 {.col-span-3}
-![](./outgoing request.jpeg){class="w-full  drop-shadow-lg border border-gray-200 rounded-md"}
+![](/features/error-tracking/log_explorer_error.png){class="w-full  drop-shadow-lg border border-gray-200 rounded-md"}
 :::
 
 {class="grid px-6 grid-cols-1 md:px-2 md:grid-cols-5 gap-8 justify-center items-center"}
 :::
 {.col-span-3}
-![](./LOG.jpg){class="w-full order-last md:order-first  drop-shadow-lg border border-gray-200 rounded-md"}
+![](/assets/img/screenshots/errors_zoomed.png){class="w-full order-last md:order-first  drop-shadow-lg border border-gray-200 rounded-md"}
 
 {class="space-y-3 col-span-2"}
 ::::
