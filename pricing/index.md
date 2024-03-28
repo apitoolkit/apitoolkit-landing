@@ -38,14 +38,14 @@ publishdate: 2022-03-24
                             <div
                                 class="inline-block text-center font-bold text-green-500 rounded-md w-5 h-5 bg-gray-200">
                                 ✓
-                            </div>1 Team Member
+                            </div>2 Team Members
                         </li>
                         <li class="flex flex-row gap-2">
                             <div
                                 class="inline-block text-center font-bold text-green-500 rounded-md w-5 h-5 bg-gray-200">
                                 ✓
                             </div>
-                            Last *14 days Data Retained
+                            Last *7 days Data Retained
                         </li>
                     </ul>
                 </div><button as="button"
@@ -73,7 +73,7 @@ publishdate: 2022-03-24
                         <li class="flex flex-row gap-2">
                             <div class="text-center font-bold text-gray-100 rounded-md w-5 h-5 bg-blue-300">
                                 ✓
-                            </div>3 Team Members
+                            </div>Unlimited Team Members
                         </li>
                         <li class="flex flex-row gap-2">
                             <div class="text-center font-bold text-gray-100 rounded-md w-5 h-5 bg-blue-300">

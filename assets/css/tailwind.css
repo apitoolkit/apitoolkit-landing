@@ -247,7 +247,8 @@
   @apply [&>label]:p-2;
 }
 .carousel-img-parent {
-  @apply col-span-2 [&>*]:rounded-lg [&>*]:border [&>*]:border-gray-200 [&>*]:drop-shadow-lg [&>*]:hidden [&>*]:object-contain [&>*]:w-full  [&>*]:aspect-[4/3];
+  @apply  [&>*]:rounded-lg [&>*]:border [&>*]:border-gray-200 [&>*]:drop-shadow-lg;
+  @apply [&>*]:hidden [&>*]:object-contain [&>*]:w-full  [&>*]:aspect-[4/3];
 }
 .carousel-menu input:checked + label {
   @apply ring;

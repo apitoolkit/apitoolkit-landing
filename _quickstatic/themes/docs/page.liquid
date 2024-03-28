@@ -87,7 +87,7 @@
   </head>
   <body data-theme="emerald" hx-boost="true" hx-ext="preload,head-support" class="" preload>
     <script>
-      if (localStorage.getItem("darkMode")) {document.body.setAttribute("data-theme", "sunset")}
+      if (localStorage.getItem("darkMode")==='true') {document.body.setAttribute("data-theme", "sunset")}
     </script>
     <section class="sticky top-0 w-full bg-base-100 z-10 border-b-2 border-b-base-200">
       <section class="text-center border-b border-b-base-200">
@@ -116,13 +116,15 @@
             </dialog>
             <label class="swap swap-rotate" for="theme-control">
               <input type="checkbox" id="theme-control" class="theme-controller" value="sunset" _="
-              init set me.checked to localStorage.getItem('darkMode') then
-              on change localStorage.setItem('darkMode', me.checked) 
-              then if  me.checked set body's @data-theme to 'sunset' else set body's @data-theme to 'emerald' 
+                           on change localStorage.setItem('darkMode', me.checked) 
+                           then if  me.checked set body's @data-theme to 'sunset' else set body's @data-theme to 'emerald' 
               "/>
               <svg class="swap-off icon h-5 w-5 text-current fill-current stroke-current opacity-70"><use xlink:href="/assets/deps/fontawesome/light.svg#moon-stars"></use></svg>
               <svg class="swap-on icon h-5 w-5 text-current fill-current stroke-current opacity-70"><use xlink:href="/assets/deps/fontawesome/light.svg#sun-bright"></use></svg>
             </label>
+            <script>
+              if (localStorage.getItem("darkMode")==='true') {document.getElementById("theme-controller").checked=true}
+            </script>
           </div>
         </div>
       </section>

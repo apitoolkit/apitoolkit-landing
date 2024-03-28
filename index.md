@@ -6,6 +6,9 @@ description: "Build and maintain your APIs with Less downtimes, Fewer support ti
 hidenav: true
 monitoring-carousel:
     name: "monitoring-carousel"
+    pre-title: "Monitoring & Observability"
+    title: "Monitor Critical Systems and third parties"
+    description: "Gain data-driven insights into your APIs and APIs you depend on. Query user behavior and see all requests made by users or requests you made to third parties."
     items:
     - title: Log Explorer to query Incoming and Outgoing Requests
       img: /assets/img/screenshots/log_explorer_zoom.png
@@ -17,15 +20,28 @@ monitoring-carousel:
       img: /features/error-tracking/apitoolkit_slack.png
 errors-carousel:
     name: "errors-carousel"
+    pre-title: "Backend Errors & API Breaking Changes"
+    title: "No more Guessing Games. Track Code errors and Breaking Changes with more Context " 
+    description: >
+        Get to the root cause of every issue. 
+        Whether it is caused by runtime errors, 
+        breaking API changes introduced by third-party integrations, 
+        or unintended API-breaking changes by your team."
     items:
     - title: See Errors and API Issues at a glance
       img: /assets/img/screenshots/errors_zoomed.png
-    - title: Trace Errors to their Root Cause
+    - title: Trace Code Errors to their Root Cause
       img: /features/error-tracking/log_explorer_error.png
     - title: Track Breaking changes in your APIs and integrations
       img: /features/error-tracking/changes_details.png
 testing-carousel:
     name: "testing-carousel"
+    pre-title: "E2E API Testing & Synthetic Monitors"
+    title: "Run active e2e monitors on any APIs, and assert if key usecases work as expected."
+    description: >
+        Our AI even generates these tests and monitors for you, 
+        from your OpenAPI/Swagger spec, or from API request logs.
+        Schedule them to run at intervals and configure specific checks and assertions.
     items:
     - title: Be the first to know when your APIs are down or slow.
       img: /assets/img/dashboard.png
@@ -46,6 +62,9 @@ linting-carousel:
       img: /assets/img/dashboard.png
 documentation-carousel:
     name: "documentation-carousel"
+    pre-title: "Documentation & API Specification "
+    title: "The best Documentation is one you didnt have to write. Powered by AI and your API usage logs."
+    description: "Automatically generate API specifications from the live API payloads that are analyzed. Enrich this specification with more context, descriptions, etc., and generate public-facing API documentation or OpenAPI/Swagger specifications." 
     items:
     - title: AI-generated API specification based on live request payloads
       img: /assets/img/dashboard.png 
@@ -141,13 +160,6 @@ end
 
 {class="flex flex-col gap-2 ml-3 sm:ml-8"}
 ::::::
-#### Monitoring & Observability
-
-## Monitor Critical Systems and third parties
-
-{.max-w-4xl .text-2xl .pt-7}
-Gain data-driven insights into your APIs and APIs you depend on. Query user behavior and see all requests made by users or requests you made to third parties.
-
 {% render "default/markdown/landing-carousel", this:this.frontmatter.monitoring-carousel  %}
 ::::::
 
@@ -187,14 +199,6 @@ Gain data-driven insights into your APIs and APIs you depend on. Query user beha
 
 {class="flex flex-col gap-2 ml-3 sm:ml-8"}
 ::::::
-
-#### Backend Errors & API Breaking Changes
-
-## No more Guessing Games. Track Code errors and Breaking Changes with more Context 
-
-{.max-w-4xl .text-2xl .pt-7}
-Get to the root cause of every issue. Whether it is caused by runtime errors, breaking API changes introduced by third-party integrations, or unintended API-breaking changes by your team.
-
 {% render "default/markdown/landing-carousel", this:this.frontmatter.errors-carousel  %}
 ::::::
 
@@ -222,8 +226,6 @@ Get to the root cause of every issue. Whether it is caused by runtime errors, br
   </section>
 ```
 
-{% comment %}
-
 ``` =html
     <br/><br/>
   <section class="width-control mx-auto mt-[54px] pb-16 relative">
@@ -236,30 +238,24 @@ Get to the root cause of every issue. Whether it is caused by runtime errors, br
 
 {class="flex flex-col gap-2 ml-3 sm:ml-8"}
 ::::::
-
-## E2E API Testing & Synthetic Monitors
-
-{.max-w-4xl .text-lg .pt-2}
-Ensure the reliability of your APIs and any APIs you depend on. Call any API at intervals and configure checks and assertions to ensure it continues to behave as expected. 
-
 {% render "default/markdown/landing-carousel", this:this.frontmatter.testing-carousel  %}
 ::::::
 
-{.text-center .space-y-2}
+{.text-center }
+:::::::
+{.inline-flex .flex-row .justify-center .text-left .gap-4}
 :::
-{.flex .justify-center}
-![Michael Okoh image](/assets/img/love/trojan.jpeg){class="w-11 h-11 rounded-full object-contain"}
+![David Odohi Image](/assets/img/love/david.png){class="h-24 rounded-md object-contain"}
 
-{class="inline-block max-w-[500px] text-gray-600 dark:text-base-content text-center"}
-“APIToolkit allowed us make a drop in rewrite of our PHP service in Golang. Fixing all bugs without customers noticing any changes.”
-
+{class="space-y-1 flex-1"}
 ::::
-Michael Okoh
+[“We had to del with very unreliable integration partners, and APItoolkit helped us catch breaking changes they introduced, and armed us better to request better reliability guarantees.”]{class="flex-1 inline-block max-w-[500px] text-gray-600 dark:text-base-content pb-1"}
 
-{class="mt-[2px] text-sm text-gray-500"}
-CEO @ Thepeer
+*David Odohi* 
+[Engineering Lead @ Grovepay]{class="text-sm text-gray-500 block"}
 ::::
 :::
+:::::::
 
 ``` =html
             
@@ -268,58 +264,7 @@ CEO @ Thepeer
     </div>
   </section>
 ```
-{% endcomment %}
 
-
-{% comment %}
-``` =html
-    <br/><br/>
-  <section class="width-control mx-auto mt-[54px] pb-16 relative">
-    <div class="h-full w-[1px] absolute z-10 left-[20px] top-[35px]">
-      <div class="relative section-line h-full w-full"></div>
-    </div>
-    <div class="w-full flex items-start">
-      <div class="w-full flex flex-col gap-10">
-```
-
-{class="flex flex-col gap-2 ml-3 sm:ml-8"}
-::::::
-
-## Realtime Payload Validation & API Linting
-
-
-{.max-w-4xl .text-lg .pt-2}
-Validate real-time API payloads from your server to check if they introduced breaking changes, are following best practices, or are not meeting security benchmarks and expectations.
-
-{% render "default/markdown/landing-carousel", this:this.frontmatter.linting-carousel  %}
-::::::
-
-{.text-center .space-y-2}
-:::
-{.flex .justify-center}
-![Michael Okoh image](/assets/img/love/trojan.jpeg){class="w-11 h-11 rounded-full object-contain"}
-
-{class="inline-block max-w-[500px] text-gray-600 text-center"}
-“APIToolkit allowed us make a drop in rewrite of our PHP service in Golang. Fixing all bugs without customers noticing any changes.”
-
-::::
-Michael Okoh
-
-{class="mt-[2px] text-sm text-gray-500"}
-CEO @ Thepeer
-::::
-:::
-
-``` =html
-            
-
-      </div>
-    </div>
-  </section>
-```
-{% endcomment %}
-
-{% comment %}
 
 ``` =html
     <br/><br/>
@@ -333,31 +278,24 @@ CEO @ Thepeer
 
 {class="flex flex-col gap-2 ml-3 sm:ml-8"}
 ::::::
-
-## Documentation & API Specification 
-
-
-{.max-w-4xl .text-lg .pt-2}
-Automatically generate API specifications from the live API payloads that are analyzed. Enrich this specification with more context, descriptions, etc., and generate public-facing API documentation or OpenAPI/Swagger specifications.
-
 {% render "default/markdown/landing-carousel", this:this.frontmatter.documentation-carousel  %}
 ::::::
 
-{.text-center .space-y-2}
+{.text-center }
+:::::::
+{.inline-flex .flex-row .justify-center .text-left .gap-4}
 :::
-{.flex .justify-center}
-![Michael Okoh image](/assets/img/love/trojan.jpeg){class="w-11 h-11 rounded-full"}
+![Michael Payfonte image](/assets/img/love/michael_payfonte.jpeg){class="h-24 rounded-md object-contain"}
 
-{class="inline-block max-w-[500px] text-gray-600 text-center"}
-“APIToolkit allowed us make a drop in rewrite of our PHP service in Golang. Fixing all bugs without customers noticing any changes.”
-
+{class="space-y-1 flex-1"}
 ::::
-Michael Okoh
+[“We had a lot of issues coming from Merchants of our service, and needed something to track the incoming requests made by these merchants. APItoolkit was exactly what we needed, and even more.”]{class="flex-1 inline-block max-w-[500px] text-gray-600 dark:text-base-content pb-1"}
 
-{class="mt-[2px] text-sm text-gray-500"}
-CEO @ Thepeer
+*Michael* 
+[CEO @ Payfonte]{class="text-sm text-gray-500 block"}
 ::::
 :::
+:::::::
 
 ``` =html
             
@@ -366,8 +304,6 @@ CEO @ Thepeer
     </div>
   </section>
 ```
-
-{% endcomment %}
 
 
 ``` =html

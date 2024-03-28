@@ -6652,11 +6652,6 @@ html:has(.drawer-toggle:checked) {
   margin-bottom: auto;
 }
 
-.my-2 {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
 .mb-3 {
   margin-bottom: 0.75rem;
 }
@@ -6743,14 +6738,6 @@ html:has(.drawer-toggle:checked) {
 
 .mt-auto {
   margin-top: auto;
-}
-
-.mb-5 {
-  margin-bottom: 1.25rem;
-}
-
-.mt-5 {
-  margin-top: 1.25rem;
 }
 
 .box-border {
@@ -7720,6 +7707,10 @@ html:has(.drawer-toggle:checked) {
   stroke: none;
 }
 
+.stroke-secondary {
+  stroke: var(--fallback-s,oklch(var(--s)/1));
+}
+
 .object-contain {
   -o-object-fit: contain;
      object-fit: contain;
@@ -8152,11 +8143,6 @@ html:has(.drawer-toggle:checked) {
 
 .tracking-wide {
   letter-spacing: 0.025em;
-}
-
-.text-\[\#2E3238\] {
-  --tw-text-opacity: 1;
-  color: rgb(46 50 56 / var(--tw-text-opacity));
 }
 
 .text-base-content {
@@ -8613,22 +8599,18 @@ html:has(.drawer-toggle:checked) {
   padding: 0.5rem;
 }
 
-.carousel-img-parent {
-  grid-column: span 2 / span 2;
-}
-
 .carousel-img-parent>* {
-  display: none;
-  aspect-ratio: 4/3;
-  width: 100%;
   border-radius: 0.5rem;
   border-width: 1px;
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
-  -o-object-fit: contain;
-     object-fit: contain;
   --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+  display: none;
+  aspect-ratio: 4/3;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .carousel-menu input:checked + label {
@@ -9467,11 +9449,6 @@ html:has(.drawer-toggle:checked) {
   color: rgb(31 41 55 / var(--tw-text-opacity));
 }
 
-.hover\:text-gray-900:hover {
-  --tw-text-opacity: 1;
-  color: rgb(17 24 39 / var(--tw-text-opacity));
-}
-
 .hover\:text-indigo-900:hover {
   --tw-text-opacity: 1;
   color: rgb(49 46 129 / var(--tw-text-opacity));
@@ -9652,10 +9629,6 @@ html:has(.drawer-toggle:checked) {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
-.dark\:block:is([data-theme="sunset"] *) {
-  display: block;
-}
-
 .dark\:inline-block:is([data-theme="sunset"] *) {
   display: inline-block;
 }
@@ -9689,11 +9662,6 @@ html:has(.drawer-toggle:checked) {
   background-color: var(--fallback-b2,oklch(var(--b2)/var(--tw-bg-opacity)));
 }
 
-.dark\:bg-neutral:is([data-theme="sunset"] *) {
-  --tw-bg-opacity: 1;
-  background-color: var(--fallback-n,oklch(var(--n)/var(--tw-bg-opacity)));
-}
-
 .dark\:bg-none:is([data-theme="sunset"] *) {
   background-image: none;
 }
@@ -9701,6 +9669,11 @@ html:has(.drawer-toggle:checked) {
 .dark\:text-base-content:is([data-theme="sunset"] *) {
   --tw-text-opacity: 1;
   color: var(--fallback-bc,oklch(var(--bc)/var(--tw-text-opacity)));
+}
+
+.dark\:text-black:is([data-theme="sunset"] *) {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 .dark\:text-info:is([data-theme="sunset"] *) {
@@ -9715,16 +9688,6 @@ html:has(.drawer-toggle:checked) {
 .dark\:text-white:is([data-theme="sunset"] *) {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.dark\:text-black:is([data-theme="sunset"] *) {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
-}
-
-.dark\:text-neutral-content:is([data-theme="sunset"] *) {
-  --tw-text-opacity: 1;
-  color: var(--fallback-nc,oklch(var(--nc)/var(--tw-text-opacity)));
 }
 
 .dark\:hover\:text-info:hover:is([data-theme="sunset"] *) {
@@ -9804,6 +9767,10 @@ html:has(.drawer-toggle:checked) {
 
   .sm\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .sm\:grid-cols-5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 
   .sm\:flex-row {
@@ -10019,10 +9986,6 @@ html:has(.drawer-toggle:checked) {
 }
 
 @media (min-width: 1024px) {
-  .lg\:grid {
-    display: grid;
-  }
-
   .lg\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -10033,10 +9996,6 @@ html:has(.drawer-toggle:checked) {
 
   .lg\:gap-10 {
     gap: 2.5rem;
-  }
-
-  .lg\:gap-2 {
-    gap: 0.5rem;
   }
 
   .lg\:gap-8 {
@@ -10068,10 +10027,6 @@ html:has(.drawer-toggle:checked) {
 }
 
 @media (min-width: 1280px) {
-  .xl\:col-span-2 {
-    grid-column: span 2 / span 2;
-  }
-
   .xl\:mt-0 {
     margin-top: 0px;
   }
