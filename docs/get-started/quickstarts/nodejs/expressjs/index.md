@@ -28,56 +28,54 @@ The APIToolkit integration guide for ExpressJS provides a streamlined process to
 
 **ESM example**
 
-```javascript
-import express from 'express';
-import { APIToolkit } from 'apitoolkit-express';
+```typescript
+import { APIToolkit, ReportError } from "apitoolkit-express";
+import express from "express";
+import axios from "axios";
 
- const app = express();
- const port = 3000;
+const app = express();
+const port = 3000;
+const apitoolkitClient = APIToolkit.NewClient({ apiKey: "<API-KEY>" });
 
- app.use(express.json());
- app.use(express.urlencoded({ extended: true }));
-
-const apitoolkitClient = APIToolkit.NewClient({ apiKey: '<API-KEY>' });
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(apitoolkitClient.expressMiddleware);
 
-app.get('/', (req, res) => {
-res.json({ hello: 'Hello world!' });
-   });
+app.get("/", (req, res) => {
+  res.json({ hello: "Hello world!" });
+});
 
- app.listen(port, () => {
- console.log(`Example app listening on port ${port}`);
-   });
+app.listen(port, ()=> console.log("app running on port: " + port));
 ```
 
-   **CommonJs Example**
+**CommonJs Example**
 
-```javascript
-   const express = require('express');
-   const APIToolkit = require('apitoolkit-express').default;
+```js
+const express = require("express");
+const APIToolkit = require("apitoolkit-express").default;
 
-   const app = express();
-   const port = 3000;
+const app = express();
+const port = 3000;
 
-   const apitoolkitClient = APIToolkit.NewClient({
-     apiKey: '<API_KEY>',
-   });
+const apitoolkitClient = APIToolkit.NewClient({
+  apiKey: "&ltAPI_KEY&gt",
+});
 
-   app.use(express.json());
-   app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-   app.use(apitoolkitClient.expressMiddleware);
+app.use(apitoolkitClient.expressMiddleware);
 
-   app.get('/', (req, res) => {
-     res.json({ hello: 'Hello world!' });
-   });
+app.get("/", (req, res) => {
+  res.json({ hello: "Hello world!" });
+});
 
-   app.listen(port, () => {
-     console.log(`Example app listening on port ${port}`);
-   });
+app.listen(port, () => {
+  console.log("Example app listening on port: " + port);
+});
 ```
 
-**Note**: Replace `<API-KEY>` with your unique key from your [APIToolkit account](apitoolkit.io)
+**Note**: Replace `&ltAPI_KEY&gt` with your unique key from your [APIToolkit account](apitoolkit.io)
 
 ## Redacting Sensitive Fields and Headers
 
@@ -86,16 +84,16 @@ While it's possible to mark a field as redacted from the apitoolkit dashboard, t
 To mark fields that should be redacted, simply add them to the apitoolkit config object. Eg:
 
 ```js
-import express from 'express';
-import { APIToolkit } from 'apitoolkit-express';
+import express from "express";
+import { APIToolkit } from "apitoolkit-express";
 const app = express();
 const port = 3000;
 
 const apitoolkitClient = await APIToolkit.NewClient({
-  apiKey: '<API-KEY>',
-  redactHeaders: ['Content-Type', 'Authorization', 'Cookies'], // Specified headers will be redacted
-  redactRequestBody: ['$.credit-card.cvv', '$.credit-card.name'], // Specified request bodies fields will be redacted
-  redactResponseBody: ['$.message.error'], // Specified response body fields will be redacted
+  apiKey: "<API-KEY>",
+  redactHeaders: ["Content-Type", "Authorization", "Cookies"], // Specified headers will be redacted
+  redactRequestBody: ["$.credit-card.cvv", "$.credit-card.name"], // Specified request bodies fields will be redacted
+  redactResponseBody: ["$.message.error"], // Specified response body fields will be redacted
 });
 
 app.use(express.json());
@@ -103,12 +101,12 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(apitoolkitClient.expressMiddleware);
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
+app.get("/", (req, res) => {
+  res.send("Hello World!");
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log("Example app listening on port " + port);
 });
 ```
 
@@ -125,13 +123,13 @@ However, if you choose to employ `formidable` for managing file uploads, a more 
 For instance:
 
 ```js
-import express from 'express';
-import { APIToolkit } from 'apitoolkit-express';
-import formidable from 'formidable';
+import express from "express";
+import { APIToolkit } from "apitoolkit-express";
+import formidable from "formidable";
 
 const app = express();
 const client = APIToolkit.NewClient({
-  apiKey: '<API_KEY>',
+  apiKey: "&ltAPI_KEY&gt",
 });
 
 app.use(express.json());
@@ -139,7 +137,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(client.expressMiddleware);
 
-app.post('/upload-formidable', (req, res, next) => {
+app.post("/upload-formidable", (req, res, next) => {
   const form = formidable({});
   form.parse(req, (err, fields, files) => {
     // Attach fields to request body
@@ -147,12 +145,12 @@ app.post('/upload-formidable', (req, res, next) => {
     // Attach files
     req.files = files;
 
-    res.json({ message: 'Uploaded successfully' });
+    res.json({ message: "Uploaded successfully" });
   });
 });
 
 app.listen(3000, () => {
-  console.log('Server is running on port 3000');
+  console.log("Server is running on port 3000");
 });
 ```
 
@@ -164,42 +162,85 @@ Simply wrap your axios instance with the APIToolkit observeAvios function.
 
 ```typescript
 import { observeAxios } from 'apitoolkit-express';
-import axios from "axios"
+import axios from 'axios';
+import express from 'express';
 
-const response = await observeAxios(axios).get(`${baseURL}/user_list/active`);
+const app = express();
+const apitoolkitClient = APIToolkit.NewClient({ apiKey: '<API-KEY>' });
+app.use(apitoolkitClient.expressMiddleware);
+
+app.get('/', (req, res) => {
+    const response = await observeAxios(axios).get("http://localhost:8080/users/user1234");
+    res.send(response.data);
+});
+
 ```
 
 If you're making requests to endpoints which have variable urlPaths, you should include a wildcard url of the path, so that apitoolkit groups the endpoints correctly for you on the dashboardL:
 
 ```typescript
 import { observeAxios } from 'apitoolkit-express';
-import axios from "axios"
+import axios from 'axios';
+import express from 'express';
 
-const response = await observeAxios(axios, '/users/{user_id}').get(
-  `${baseURL}/users/user1234`
-);
+const app = express();
+const apitoolkitClient = APIToolkit.NewClient({ apiKey: '<API-KEY>' });
+app.use(apitoolkitClient.expressMiddleware);
+
+app.get('/', (req, res) => {
+    const response = await observeAxios(axios,'/users/{user_id}').get("http://localhost:8080/users/user1234");
+    res.send(response.data);
+});
 ```
 
 There are other optional arguments you could pass on to the observeAxios function, eg:
 
 ```typescript
 import { observeAxios } from 'apitoolkit-express';
-import axios from "axios"
+import axios from 'axios';
 
 const redactHeadersList = ['Content-Type', 'Authorization'];
 const redactRequestBodyList = ['$.body.bla.bla'];
 const redactResponseBodyList = undefined;
-const response = await observeAxios(
-  axios,
-  '/users/{user_id}',
-  redactHeadersList,
-  redactRequestBodyList,
-  redactResponseBodyList
-).get(`${baseURL}/users/user1234`);
+
+
+app.get('/', (req, res) => {
+    const response = await observeAxios(
+      axios,
+      '/users/{user_id}',
+      redactHeadersList,
+      redactRequestBodyList,
+      redactResponseBodyList
+    ).get("http://localhost:8080/users/user1234");
+
+    res.send(response.data);
+});
+
 ```
 
 Note that you can ignore any of these arguments except the first argument which is the axios instance to observe.
 For the other arguments, you can either skip them if at the end, or use undefined as a placeholder.
+
+### Observing request outside incoming request context 
+
+Monitoring outgoing requests inside an incoming request' context associates both request in the dashboard. You can also monitor  outgoing requests outside an incoming requests' context in a background job for example. To achieve this, instead of calling `observeAxios` as a standalone function 
+use the method on the APIToolkit client after initialization 
+
+Example 
+
+```js
+import axios from 'axios'
+import { APIToolkit } from 'apitoolkit-express';
+
+const apitoolkitClient = APIToolkit.NewClient({
+  apiKey: '&ltAPI_KEY&gt',
+});
+// using the above initialized client, 
+// you can monitor outgoing requests anywhere in your application.
+const response = await apitoolkitClient.observeAxios(axios).get("http://localhost:8080/ping");
+console.log(response.data)
+```
+The above request will show in the log explorer as a standalone outgoing request 
 
 ## Reporting errors to APIToolkit
 
@@ -209,45 +250,43 @@ If you've used sentry, or rollback, or bugsnag, then you're likely aware of this
 To enable automatic error reporting, add the APIToolkit `errorHandler` middleware immediately after your app's controllers and APIToolkit will handle all uncaught errors that happened during a request and associate the error to that request.
 
 ```typescript
-import {APIToolkit , ReportError } from "apitoolkit-express";
+import { APIToolkit, ReportError } from "apitoolkit-express";
 import express from "express";
-import axios from "axios"
+import axios from "axios";
 
 const app = express();
 const port = 3000;
-const apitoolkitClient= APIToolkit.NewClient({apiKey: "<API-KEY>"});
+const apitoolkitClient = APIToolkit.NewClient({ apiKey: "<API-KEY>" });
 app.use(apitoolkitClient.expressMiddleware);
 
 // All controllers should live here
-app.get("/", (req, res) => {
-
-});
+app.get("/", (req, res) => {});
 // ...
 
 // The error handler must be before any other error middleware and after all controllers
-app.use(apitoolkitClient.errorHandler)
+app.use(apitoolkitClient.errorHandler);
 ```
 
 Or manually report errors within the context of a web request, by calling the ReportError function.
 
 ```typescript
-import {APIToolkit , ReportError } from "apitoolkit-express";
+import { APIToolkit, ReportError } from "apitoolkit-express";
 import express from "express";
-import axios from "axios"
+import axios from "axios";
 
 const app = express();
 const port = 3000;
-const apitoolkitClient= APIToolkit.NewClient({apiKey: "<API-KEY>"});
+const apitoolkitClient = APIToolkit.NewClient({ apiKey: "<API-KEY>" });
 app.use(apitoolkitClient.expressMiddleware);
 
 app.get("/", (req, res) => {
   try {
-  const response = await observeAxios(axios).get(`${baseURL}/ping`);
-  res.send(response);
-} catch (error) {
-  ReportError(error);
-  res.send("Something went wrong")
-}
+    const response = await observeAxios(axios).get(baseURL + "/ping");
+    res.send(response);
+  } catch (error) {
+    ReportError(error);
+    res.send("Something went wrong");
+  }
 });
 ```
 
@@ -266,7 +305,7 @@ app.use(apitoolkitClient.expressMiddleware);
 
 app.get("/", (req, res) => {
   try {
-  const response = await observeAxios(axios).get(`${baseURL}/ping`);
+  const response = await observeAxios(axios).get(baseURL + "/ping");
   res.send(response);
 } catch (error) {
   apitoolkitClient.ReportError(error);
