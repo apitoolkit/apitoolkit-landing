@@ -34,13 +34,15 @@ It keeps track of incoming traffic, aggregates the requests, and then delivers t
    
 ## Installation
 
-Run the following command to install the package into your .NET application:
+Kindly run the following command to install the package:
 
 ```sh
 dotnet add package ApiToolkit.Net
 ```
 
-Now you can initialize APIToolkit in your application's entry point (eg Program.cs)
+## Configuration
+
+Now you can initialize APItoolkit in your application's entry point (e.g `Program.cs`) like so:
 
 ```csharp
 var config = new Config
@@ -56,31 +58,73 @@ app.Use(async (context, next) =>
     var apiToolkit = new APIToolkit(next, client);
     await apiToolkit.InvokeAsync(context);
 });
+
+# app.UseEndpoint(..) 
+# other middleware and logic
+# ...
 ```
 
-The field `{Your_APIKey}` should be replaced with the api key which you generated from the apitoolkit dashboard.
+> [!NOTE]
+> 
+> Please make sure the APItoolkit middleware is added before `UseEndpoint` and other middleware are initialized.
 
-## Redacting/Masking fields
+> [!IMPORTANT]
+> 
+> The `{Your_APIKey}` field should be replaced with the API key generated from the APItoolkit dashboard. 
 
-If you have fields which are too sensitive and should not be sent to APIToolkit servers, you can mark those fields to be redacted either via the APIToolkit dashboard, or via this client SDK. 
 
-Redacting fields via the SDK means that those fields never leave your servers in the first place, compared to redacting it via the APIToolkit dashboard, which would redact the fields on the edge before further processing. 
-But then the data still needs to be transported from your servers before they are redacted.
+## Redacting Sensitive Data
 
-To mark a field for redacting via this SDK, you simply need to provide additional arguments to the APIToolkitService with the paths to the fields that should be redacted. There are 3 potential arguments which you can provide to configure what gets redacted.
+If you have fields that are sensitive and should not be sent to APItoolkit servers, you can mark those fields to be redacted in two ways:
+- This client SDK (the fields will never leave your servers in the first place).
+- The APItoolkit dashboard (the fields will be transported from your servers first and then redacted on the edge before further processing).
 
-- `RedactHeaders` A list of HTTP header keys which should be redacted before data is sent out. eg COOKIE(redacted by default), CONTENT-TYPE, etc
-- `RedactRequestBody` A list of JSONpaths which will be redacted from the request body, if the request body is a valid json.
-- `RedactResponseBody` A list of JSONpaths which will be redacted from the response body, if the response body is a valid json.
+To mark a field for redacting via this SDK, you need to provide additional arguments to the `config` variable with paths to the fields that should be redacted. There are three (3) potential arguments that you can provide to configure what gets redacted.
+1. `RedactHeaders`:  A list of HTTP header keys (e.g., `COOKIE` (redacted by default), `CONTENT-TYPE`, etc.).
+2. `RedactRequestBody`: A list of JSONPaths from the request body (if the request body is a valid JSON).
+3. `RedactResponseBody`: A list of JSONPaths from the response body (if the response body is a valid JSON).
 
-Examples of valid jsonpaths would be:
+### JSONPath Example
 
-`$.store.book`: Will replace the books field inside the store object with the string [CLIENT_REDACTED]
-`$.store.books[*].author`: Will redact the author field in all the objects in the books list, inside the store object.
+Given the following JSON object:
 
-For more examples and introduction to json path, please take a look at: [https://support.smartbear.com/alertsite/docs/monitors/api/endpoint/jsonpath.html](https://support.smartbear.com/alertsite/docs/monitors/api/endpoint/jsonpath.html)
+```JSON
+{
+    "store": {
+        "books": [
+            {
+                "category": "reference",
+                "author": "Nigel Rees",
+                "title": "Sayings of the Century",
+                "price": 8.95
+            },
+            {
+                "category": "fiction",
+                "author": "Evelyn Waugh",
+                "title": "Sword of Honour",
+                "price": 12.99
+            },
+            ...
+        ],
+        "bicycle": {
+            "color": "red",
+            "price": 19.95
+        }
+    },
+    ...
+}
+```
 
-Here's an example of what your configuration in your entry point (Program.cs) would look like with the redacted fields configured:
+Examples of valid JSONPaths would be:
+
+- `$.store.books` (In this case, APItoolkit will replace the `books` field inside the store object with the string `[CLIENT_REDACTED]`).
+- `$.store.books[*].author` (In this case, APItoolkit will replace the `author` field in all the objects in the `books` list inside the `store` object with the string `[CLIENT_REDACTED]`).
+
+For more examples and a detailed introduction to JSONPath, please take a look at [this guide](https://support.smartbear.com/alertsite/docs/monitors/api/endpoint/jsonpath.html) or [this cheatsheet](https://lzone.de/#/LZone%20Cheat%20Sheets/Languages/JSONPath).
+
+### Configuration Example
+
+Here's an example of what the configuration in your entry point (`Program.cs`) would look like with the redacted fields configured:
 
 ```csharp
 var config = new Config
@@ -98,17 +142,140 @@ app.Use(async (context, next) =>
 {
     var apiToolkit = new APIToolkit(next, client);
     await apiToolkit.InvokeAsync(context);
+})
 ```
 
-It is important to note that while the `RedactHeaders` config field accepts a list of headers(case insensitive),
-the `RedactRequestBody` and `RedactResponseBody` expect a list of JSONPath strings as arguments.
+> [!NOTE]
+> 
+> While the `RedactHeaders` config field accepts a list of case-insensitive headers, `RedactRequestBody` and `RedactResponseBody` expect a list of JSONPath strings as arguments. Also, the list of items to be redacted will be applied to all endpoint requests and responses on your server.
 
-The choice of JSONPath was selected to allow you have great flexibility in describing which fields within your responses are sensitive. 
-Also note that these list of items to be redacted will be aplied to all endpoint requests and responses on your server.
 
-To learn more about jsonpath to help form your queries, please take a look at this cheatsheet [https://lzone.de/cheat-sheet/JSONPath](https://lzone.de/cheat-sheet/JSONPath)
+## Monitoring Outgoing Requests
 
-## Next Steps
+Apitoolkit allows your to monitor request you make from your application just like request that come into your app. Outgoing request are associated with the request that triggers them when the request context is passed otherwise they appear as a standalone log in the APIToolkit log explorer.
+To monitor outgoing request
 
-- Deploy your application or send test http requests to your service
-- Check API log explorer or Endpoints pages on the APIToolkit dashboard to see if your test request was processed correctly. 
+Example
+
+```csharp
+using ApiToolkit.Net;
+
+var builder = WebApplication.CreateBuilder(args);
+var app = builder.Build();
+
+var config = new Config
+{
+    ApiKey = "{YOUR_API_KEY}"
+};
+var client = await APIToolkit.NewClientAsync(config);
+
+app.Use(async (context, next) =>
+{
+    var apiToolkit = new APIToolkit(next, client);
+    await apiToolkit.InvokeAsync(context);
+});
+
+app.MapGet("/monitor-requets", async (context) =>
+{
+    using var httpClient = new HttpClient(client.APIToolkitObservingHandler(context));
+    var response = await httpClient.GetAsync("https://jsonplaceholder.typicode.com/posts/1");
+    var body = await response.Content.ReadAsStringAsync();
+    await context.Response.WriteAsync(body);
+});
+```
+
+
+The observing handler also take and optional configuration options which include the following fields
+
+`PathWildCard`: For urls with path params setting PathWildCard will be used as the url_path 
+`RedactHeaders`: A string list of headers to redact
+`RedactResponseBody`: A string list of json paths to redact from response body
+`RedactRequestBody`: A string list of json paths to redact from request body 
+
+### Full configuration example
+```csharp
+using ApiToolkit.Net;
+
+var builder = WebApplication.CreateBuilder(args);
+var app = builder.Build();
+
+var config = new Config
+{
+    ApiKey = "{YOUR_API_KEY}"
+};
+var client = await APIToolkit.NewClientAsync(config);
+
+app.Use(async (context, next) =>
+{
+    var apiToolkit = new APIToolkit(next, client);
+    await apiToolkit.InvokeAsync(context);
+});
+
+
+app.MapGet("/monitor-requets", async (context) =>
+{
+    var observingHandlerOptions = new ATOptions
+    {
+        PathWildCard = "/posts/{id}", // url_path will be /posts/{id} instead of /posts/1
+        RedactHeaders = ["User-Agent"],
+        RedactRequestBody = ["$.user.password"],
+        RedactResponseBody = ["$.user.data.email"]
+    };
+
+    using var httpClient = new HttpClient(client.APIToolkitObservingHandler(context, observingHandlerOptions));
+    var response = await httpClient.GetAsync("https://jsonplaceholder.typicode.com/posts/1");
+    var body = await response.Content.ReadAsStringAsync();
+    await context.Response.WriteAsync(body);
+});
+```
+
+## Error Reporting
+
+APIToolkit detects a lot of API issues automatically, but it's also valuable to report and track errors.
+
+This helps you associate more details about the backend with a given failing request. If you've used sentry, or rollback, or bugsnag, then you're likely aware of this functionality.
+
+To report errors, simply call `ReportError` method of the APIToolkit client
+
+Example
+
+```csharp
+
+using ApiToolkit.Net;
+
+var builder = WebApplication.CreateBuilder(args);
+var app = builder.Build();
+
+var config = new Config
+{
+    ApiKey = "{YOUR_API_KEY}"
+};
+
+var client = await APIToolkit.NewClientAsync(config);
+
+app.Use(async (context, next) =>
+{
+    var apiToolkit = new APIToolkit(next, client);
+    await apiToolkit.InvokeAsync(context);
+});
+
+app.MapGet("/error-tracking", async context =>
+{
+    try
+    {
+        // Attempt to open a non-existing file
+        using (var fileStream = System.IO.File.OpenRead("nonexistingfile.txt"))
+        {
+            // File opened successfully, do something if needed
+        }
+        await context.Response.WriteAsync($"Hello");
+    }
+    catch (Exception error)
+    {
+        // Report error to apitoolkit (associated with the request)
+        client.ReportError(context, error);
+        await context.Response.WriteAsync("Error reported!");
+    }
+});
+
+```
