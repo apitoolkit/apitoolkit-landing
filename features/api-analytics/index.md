@@ -99,10 +99,7 @@ You can even see the locations a request was made from, and the latency of that 
 
 {% render "default/markdown/feature-overview.liquid", this:this %}
 
-{class="width-control mx-auto mt-16 py-24 prose w-full max-w-full prose-pre:p-0"}
-:::
 {% render "default/markdown/integration-footer.liquid", config:config %}
-:::
 
 ```=html
 </div>
