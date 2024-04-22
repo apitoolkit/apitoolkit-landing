@@ -61,13 +61,19 @@ You can add more configurations in your settings to customize behavior, such as 
 
 ### Configuration Parameters
 
-**APITOOLKIT_KEY**: `required` API key for accessing the APIToolkit service.
-**APITOOLKIT_REDACT_HEADERS**: `optional` List of headers to redact in requests.
-**APITOOLKIT_DEBUG**: `optional` Flag to enable debug mode.
-**APITOOLKIT_REDACT_REQ_BODY**: `optional` List of fields to redact in request bodies.
-**APITOOLKIT_REDACT_RES_BODY**: `optional` List of fields to redact in response bodies.
-**APITOOLKIT_SERVICE_VERSION**: `optional` Version of the service (helps in monitoring different versions of your deployments).
-**APITOOLKIT_TAGS**: `optional` Tags associated with the service.
+`APITOOLKIT_KEY`: `required` API key for accessing the APIToolkit service.
+
+`APITOOLKIT_REDACT_HEADERS`: `optional` List of headers to redact in requests.
+
+`APITOOLKIT_DEBUG`: `optional` Flag to enable debug mode.
+
+`APITOOLKIT_REDACT_REQ_BODY`: `optional` List of fields to redact in request bodies.
+
+`APITOOLKIT_REDACT_RES_BODY`: `optional` List of fields to redact in response bodies.
+
+`APITOOLKIT_SERVICE_VERSION`: `optional` Version of the service (helps in monitoring different versions of your deployments).
+
+`APITOOLKIT_TAGS`: `optional` Tags associated with the service.
 
 ## Client Redacting fields
 
@@ -93,6 +99,18 @@ The choice of JSONPath was selected to allow you have great flexibility in desci
 Also note that these list of items to be redacted will be aplied to all endpoint requests and responses on your server.
 To learn more about jsonpath to help form your queries, please take a look at this cheatsheet:
 [https://lzone.de/cheat-sheet/JSONPath](https://lzone.de/cheat-sheet/JSONPath)
+
+## Whitelisting Routes and Patterns
+
+Define the specific routes and patterns you want to capture by configuring the required prefixes and patterns.
+
+```python
+settings = {
+    "APITOOLKIT_ROUTES_WHITELIST": ["/api/first", "/api/second", "/api/user/{name}/profile"],
+}
+```
+
+Requests matching these prefixes and patterns, such as `/api/first/customer/1` or `/user/johndoe/profile`, will be captured, while others like `/api/health` will not.
 
 ## Debugging
 
