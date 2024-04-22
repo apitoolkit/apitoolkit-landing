@@ -1,18 +1,18 @@
 ---
-title: About APIToolkit
+title: About
 date: 2022-03-23
 hide_date: true
 ---
 
-### Why APIToolkit 
+### Why APIToolkit
 
 A few years ago, I was a new hire at a food delivery company,
 migrating a legacy service from PHP to Golang. We implemented the
 fields listed in the swagger docs, and compared the responses from
 the legacy service to the responses of the new service, fixing
-differences until everything matched. 
+differences until everything matched.
 
-After weeks of implementation and testing, 
+After weeks of implementation and testing,
 we rolled out the new service after running tests to
 make sure everything worked as expected. But immediately we looked
 at our order monitoring charts, we knew we had messed up. Within
@@ -22,9 +22,9 @@ Apparently in a couple countries we ran in, a particular field which
 was expected by the apps was no longer being sent, prevent placing
 of orders. We had no idea since this field was not in the inherited
 documentation, and was only applicable in a couple countries which
-were not part of the samples we manually tested. 
+were not part of the samples we manually tested.
 
-We rolled back and fixed the issue, 
+We rolled back and fixed the issue,
 but I was sad that there was no tool which could
 have detected this issue faster.
 
@@ -46,8 +46,7 @@ thing of the past.
   </p>
 ```
 
-
-## APIToolkit is built by real engineers to solve problems that have cost them a lot in the past.
+## APIToolkit is built by real engineers to solve problems that have cost them a lot in the past
 
 We’re engineers at our core, who are very close to the problems we are
 solving. So, we encourage our users to be a part of this community
@@ -59,11 +58,10 @@ open conversation with us. We’re always open to have a chat with
 everyone and learn about their experiences around API documentation and
 observability.
 
-
-## Business Contact us 
+## Business Contact us
 
 APIToolkit is a product of Past 3 Technologies, a software consulting firm based out of Berlin, Germany.
 
-hello@past3.tech
+<hello@past3.tech>
 Past 3 Technologies UG \
 Gruntaler Str. 10553 Berlin, Germany

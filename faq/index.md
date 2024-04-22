@@ -1,5 +1,5 @@
 ---
-title: Frequently asked Questions
+title: Frequently Asked Questions
 date: 2022-03-23
 publishdate: 2022-03-24
 ---
@@ -11,7 +11,7 @@ publishdate: 2022-03-24
 
 ## Frequently asked Questions
 
-#### Some questions others have asked 
+#### Some questions others have asked
 
 ``` =html
 <br/><br/><br/>

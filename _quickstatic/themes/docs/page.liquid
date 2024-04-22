@@ -2,11 +2,15 @@
 <html lang="en">
   <head>
     <link rel="canonical" href="https://apitoolkit.io{{this.permalink}}">
-    <meta property="og:title" content="{% if this.frontmatter.title %}{{this.frontmatter.title}}{% endif %}">
-    <meta property="og:description" content="{{ this.content | strip_html | truncatewords: 20 }}">
+    <title>
+      {% if this.frontmatter.title %}{{ this.frontmatter.title }} | APItoolkit Docs{% endif %}
+    </title>
+    <meta name="description" content="APItoolkit product and SDKs documentation">
+    <meta property="og:title" content="{% if this.frontmatter.title %}{{this.frontmatter.title}} | APItoolkit Docs{% endif %}">
+    <meta property="og:description" content="APItoolkit product and SDKs documentation">
     <meta
       property="og:image"
-      content="{% if this.frontmatter.featured_image%}{{this.frontmatter.featured_image}}{% endif %}"
+      content="{% if this.frontmatter.featured_image%}{{this.frontmatter.featured_image}}{% else %}/static/og.png{% endif %}"
     >
     <meta
       property="og:type"
@@ -28,13 +32,9 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <base href="{{ this.permalink }}">
+    <!-- end of meta tags and favicons -->
 
-    <title>
-      {% if this.frontmatter.title %}{{ this.frontmatter.title }}{% endif %}
-    </title>
-    <meta name="description" content="{{ this.content | strip_html | truncatewords: 20 }}">
     <link rel="stylesheet" href="/assets/css/tailwind.min.css">
-
     <script defer src="https://kit.fontawesome.com/32c218ff10.js" crossorigin="anonymous"></script>
     <script defer src="/assets/deps/htmx/htmx.min.js"></script>
     <script defer src="/assets/deps/htmx/preload.js"></script>
