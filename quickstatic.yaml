@@ -39,12 +39,12 @@ authors:
 
 apitoolkit_supported_frameworks:
   - id: express_btn
-    title: expressjs
+    title: Expressjs
     img_src: /assets/img/framework-logos/express-logo.png
     alt: Express JS logo
 
   - id: phoenix_btn
-    title: phoenix
+    title: Phoenix
     img_src: /assets/img/framework-logos/phoenix.png
     alt: Phoenix Web Framework logo
 
@@ -54,59 +54,64 @@ apitoolkit_supported_frameworks:
     alt: Laravel logo
 
   - id: net_btn
-    title: dot net
+    title: Dot Net
     img_src: /assets/img/framework-logos/net-logo.png
     alt: Dot NET logo
 
   - id: django_btn
-    title: django
+    title: Django
     img_src: /assets/img/framework-logos/django-logo.png
     alt: Django logo
 
   - id: go_btn
-    title: go
+    title: Golang
     img_src: /assets/img/framework-logos/go-logo.png
     alt: Go logo
 
   - id: fast_btn
-    title: fastapi
+    title: FastAPI
     img_src: /assets/img/framework-logos/fastapi-logo.png
     alt: FastAPI logo
 
   - id: symfony_btn
-    title: symfony
+    title: img_src:ymfony
     img_src: /assets/img/framework-logos/symfony-logo.png
     alt: Symfony logo
 
   - id: flask_btn
-    title: flask
+    title: Flask
     img_src: /assets/img/framework-logos/flask-logo.png
     alt: Flask logo
 
   - id: gin_btn
-    title: gin
+    title: Gin
     img_src: /assets/img/framework-logos/gin-logo.png
     alt: Gin logo
 
   - id: adonis_btn
-    title: adonis
+    title: Adonisjs
     img_src: /assets/img/framework-logos/adonis-logo.png
     alt: Adonis JS logo
 
   - id: fastify_btn
-    title: fastify
+    title: Fastify
     img_src: /assets/img/framework-logos/fastify-logo.png
     alt: Fastify logo
 
   - id: nestjs_btn
-    title: nestjs
+    title: Nestjs
     img_src: /assets/img/framework-logos/nestjs-logo.png
     alt: NestJS logo
 
   - id: mux_btn
-    title: mux
+    title: Mux
     img_src: /assets/img/framework-logos/mux-logo.png
     alt: Mux logo
+
+  - id: pyramid_btn
+    title: Pyramid
+    img_src: /assets/img/framework-logos/pyramid-logo.png
+    alt: Pyramid logo
 
   - id: view_all
     title: View all SDKs ↣
