@@ -63,10 +63,20 @@ apitoolkit_supported_frameworks:
     img_src: /assets/img/framework-logos/django-logo.png
     alt: Django logo
 
+  - id: go_btn
+    title: go
+    img_src: /assets/img/framework-logos/go-logo.png
+    alt: Go logo
+
   - id: fast_btn
     title: fastapi
     img_src: /assets/img/framework-logos/fastapi-logo.png
     alt: FastAPI logo
+
+  - id: symfony_btn
+    title: symfony
+    img_src: /assets/img/framework-logos/symfony-logo.png
+    alt: Symfony logo
 
   - id: flask_btn
     title: flask
@@ -98,17 +108,7 @@ apitoolkit_supported_frameworks:
     img_src: /assets/img/framework-logos/mux-logo.png
     alt: Mux logo
 
-  - id: symfony_btn
-    title: symfony
-    img_src: /assets/img/framework-logos/symfony-logo.png
-    alt: Symfony logo
-
-  - id: go_btn
-    title: go
-    img_src: /assets/img/framework-logos/go-logo.png
-    alt: Go logo
-
   - id: view_all
-    title: View all SDKs
-    href: /docs/get-started/quickstarts
+    title: View all SDKs ↣
+    href: /docs/sdks
     alt: View all SDKs
