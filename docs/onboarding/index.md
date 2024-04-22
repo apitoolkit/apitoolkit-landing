@@ -1,12 +1,12 @@
 ---
 title: Onboarding
-fa-logo: book-open
+fa-logo: circle-play
 menu_weight: 1
 hide_file_tree: true
 page_full_width: true
 ---
 
-# Documentation
+# Quick Start Onboarding
 
 APIToolkit, as an API management system, provides a comprehensive solution to narrow the process of managing and monitoring APIs within your application.
 

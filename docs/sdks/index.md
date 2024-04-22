@@ -2,13 +2,10 @@
 title: SDK Docs
 date: 2022-03-23
 publishdate: 2022-03-24
-weight: 10
+menu_weight: 2
 page_full_width: true
 hide_toc: true
-fa-logo: circle-play 
-menu:
-  main:
-    weight: 10
+fa-logo: plug 
 ---
 
 # Quickstart guides

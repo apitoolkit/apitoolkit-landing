@@ -305,7 +305,7 @@
             <img class="h-6 hidden dark:inline-block" src="/assets/brand/logo_white.svg" alt="APItoolkit white logo">
           </a>
           <div class="flex gap-4 items-center">
-            <a href="/" class="hidden sm:inline-block text-sm text-secondary">Back to Website</a>
+            <a href="/" class="hidden sm:inline-block text-sm text-secondary">← Back to Website</a>
             <a class="cursor-pointer sm:hidden" onClick="search_modal.showModal()" aria-label="search" title="Search">
               <svg class="icon h-4 w-4 text-current fill-current stroke-current opacity-70">
                 <use xlink:href="/assets/deps/fontawesome/solid.svg#magnifying-glass"></use>
@@ -363,11 +363,11 @@
           {% capture root_menu_items %}
             {% assign is_home = this.frontmatter.title | equals: "Home" %}
             <a class="flex gap-3 sm:border-b-2  {{ is_home | ternary: 'sm:border-b-secondary text-secondary sm:text-current ', 'border-b-transparent' }} py-2 px-1 items-center" 
-              href="/docs/" preload="preload:init" title="Documentation Home" aria-label="Documentation Home">
+              href="/docs" preload="preload:init" title="Documentation Home" aria-label="Documentation Home">
               <svg class="icon h-5 w-5 text-current fill-current stroke-current  {{ is_home | ternary: 'text-secondary', '' }}"><use xlink:href="/assets/deps/fontawesome/regular.svg#house"></use></svg>
               <span>Home</span>
             </a>
-            {% assign pages = file_list | where_glob: 'file_path', "./docs/*/index.md" | sort: "frontmatter.menu_weight" | reverse %}
+            {% assign pages = file_list | where_glob: 'file_path', "./docs/*/index.md" | sort: "this.frontmatter.menu_weight" | reverse %}
             {% for page in pages %}
               {% assign parent_doc_prefix = page.file_path | remove: "index.md" | remove_first: "." %}
               {% assign is_active = this.permalink | starts_with: parent_doc_prefix %}
@@ -436,7 +436,7 @@
             </nav>
           </div>
         {% endunless %}
-        <!-- Navigation drawer used on Mbile only -->
+        <!-- Navigation drawer used on Mobile only -->
         <div class="drawer fixed top-0 z-50">
           <input id="mobile-menu-drawer" type="checkbox" class="drawer-toggle">
           <div class="drawer-side">
@@ -475,7 +475,7 @@
             </article>
             <footer class="py-12 text-left space-y-2">
               <h5 class="font-semibold">Need assistance?</h5>
-              <p>You can reachout to us at <a href="mailto:hello@apitoolkit.io">hello@apitoolkit.io</a></p>
+              <p>You can reach out to us at <a href="mailto:hello@apitoolkit.io">hello@apitoolkit.io</a>.</p>
             </footer>
           </div>
         </div>
