@@ -1,4 +1,5 @@
 <!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <link rel="canonical" href="https://apitoolkit.io{{this.permalink}}">
@@ -44,8 +45,17 @@
       window.addEventListener('DOMContentLoaded', (event) => {
         new PagefindUI({ element: '#search', showSubResults: true });
       });
+      window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: '#search', showSubResults: true });
+      });
     </script>
     <style>
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
       h1,
       h2,
       h3,
@@ -64,8 +74,15 @@
         color: #737373;
         cursor: pointer;
         font-size: 0.7rem;
+        font-size: 0.7rem;
         padding-right: 20px;
       }
+      h1:hover .header-link,
+      h2:hover .header-link,
+      h3:hover .header-link,
+      h4:hover .header-link,
+      h5:hover .header-link,
+      h6:hover .header-link,
       h1:hover .header-link,
       h2:hover .header-link,
       h3:hover .header-link,
@@ -82,6 +99,10 @@
         src: url('/assets/deps/bakemono/Bakemono-Variable.woff2') format('woff2-variations'),
           url('/assets/deps/bakemono/Bakemono-Variable.woff') format('woff-variations'),
           url('/assets/deps/bakemono/Bakemono-Variable.ttf') format('ttf-variations');
+        font-family: 'Bakemono';
+        src: url('/assets/deps/bakemono/Bakemono-Variable.woff2') format('woff2-variations'),
+          url('/assets/deps/bakemono/Bakemono-Variable.woff') format('woff-variations'),
+          url('/assets/deps/bakemono/Bakemono-Variable.ttf') format('ttf-variations');
       }
       :root {
         font-family: 'Bakemono', sans-serif;
@@ -92,6 +113,9 @@
       h2 {
         font-variation-settings: 'wght' 600, 'MONO' 500;
       }
+      h3,
+      h4,
+      h5 {
       h3,
       h4,
       h5 {
@@ -280,13 +304,204 @@
         src="https://px.ads.linkedin.com/collect/?pid=5779626&fmt=gif"
       >
     </noscript>
+    <!-- Facebook Pixel Code -->
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1135987380886994');
+      fbq('track', 'PageView');
+    </script>
+    <noscript>
+      <img
+        height="1"
+        width="1"
+        src="
+          https://www.facebook.com/tr?id=1135987380886994&ev=PageView
+          &noscript=1
+        "
+      >
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+    <!-- Twitter conversion tracking base code -->
+    <script>
+      !(function (e, t, n, s, u, a) {
+        e.twq ||
+          ((s = e.twq =
+            function () {
+              s.exe ? s.exe.apply(s, arguments) : s.queue.push(arguments);
+            }),
+          (s.version = '1.1'),
+          (s.queue = []),
+          (u = t.createElement(n)),
+          (u.async = !0),
+          (u.src = 'https://static.ads-twitter.com/uwt.js'),
+          (a = t.getElementsByTagName(n)[0]),
+          a.parentNode.insertBefore(u, a));
+      })(window, document, 'script');
+      twq('config', 'olaoh');
+    </script>
+    <!-- End Twitter conversion tracking base code -->
+    <script>
+      !(function (t, e) {
+        var o, n, p, r;
+        e.__SV ||
+          ((window.posthog = e),
+          (e._i = []),
+          (e.init = function (i, s, a) {
+            function g(t, e) {
+              var o = e.split('.');
+              2 == o.length && ((t = t[o[0]]), (e = o[1])),
+                (t[e] = function () {
+                  t.push([e].concat(Array.prototype.slice.call(arguments, 0)));
+                });
+            }
+            ((p = t.createElement('script')).type = 'text/javascript'),
+              (p.async = !0),
+              (p.src = s.api_host + '/static/array.js'),
+              (r = t.getElementsByTagName('script')[0]).parentNode.insertBefore(p, r);
+            var u = e;
+            for (
+              void 0 !== a ? (u = e[a] = []) : (a = 'posthog'),
+                u.people = u.people || [],
+                u.toString = function (t) {
+                  var e = 'posthog';
+                  return 'posthog' !== a && (e += '.' + a), t || (e += ' (stub)'), e;
+                },
+                u.people.toString = function () {
+                  return u.toString(1) + '.people (stub)';
+                },
+                o =
+                  'capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId'.split(
+                    ' '
+                  ),
+                n = 0;
+              n < o.length;
+              n++
+            )
+              g(u, o[n]);
+            e._i.push([i, s, a]);
+          }),
+          (e.__SV = 1));
+      })(document, window.posthog || []);
+      posthog.init('phc_XrCcXiHIfUzWzwXz0dMWSw19iGZsfk5VQ0VyJoiAIuA', { api_host: 'https://app.posthog.com' });
+    </script>
+
+    <script>
+      if (localStorage.getItem('darkMode') === 'true') {
+        document.body.setAttribute('data-theme', 'sunset');
+      }
+    </script>
+
+    <!-- Facebook Pixel Code -->
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '3674513372787915');
+      fbq('track', 'PageView');
+    </script>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display:none"
+        src="https://www.facebook.com/tr?id=3674513372787915&ev=PageView&noscript=1"
+    ></noscript>
+    <!-- DO NOT MODIFY -->
+    <!-- End Facebook Pixel Code -->
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-TF4BQQ3D');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <script type="text/javascript">
+      _linkedin_partner_id = '5779626';
+      window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+      window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+    </script>
+    <script type="text/javascript">
+      (function (l) {
+        if (!l) {
+          window.lintrk = function (a, b) {
+            window.lintrk.q.push([a, b]);
+          };
+          window.lintrk.q = [];
+        }
+        var s = document.getElementsByTagName('script')[0];
+        var b = document.createElement('script');
+        b.type = 'text/javascript';
+        b.async = true;
+        b.src = 'https://snap.licdn.com/li.lms-analytics/insight.min.js';
+        s.parentNode.insertBefore(b, s);
+      })(window.lintrk);
+    </script>
+    <noscript>
+      <img
+        height="1"
+        width="1"
+        style="display:none;"
+        alt=""
+        src="https://px.ads.linkedin.com/collect/?pid=5779626&fmt=gif"
+      >
+    </noscript>
   </head>
   <body data-theme="emerald" hx-boost="true" hx-ext="preload,head-support" class="" preload>
     <script>
       if (localStorage.getItem('darkMode') === 'true') {
         document.body.setAttribute('data-theme', 'sunset');
       }
+      if (localStorage.getItem('darkMode') === 'true') {
+        document.body.setAttribute('data-theme', 'sunset');
+      }
     </script>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-TF4BQQ3D"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <!-- Google Tag Manager (noscript) -->
     <noscript
       ><iframe
@@ -303,6 +518,8 @@
           <a href="/" class="px-1 py-1" aria-label="Back to homepage">
             <img class="h-6 dark:hidden" src="/assets/brand/logo_full_color.svg" alt="APItoolkit full color logo">
             <img class="h-6 hidden dark:inline-block" src="/assets/brand/logo_white.svg" alt="APItoolkit white logo">
+            <img class="h-6 dark:hidden" src="/assets/brand/logo_full_color.svg" alt="APItoolkit full color logo">
+            <img class="h-6 hidden dark:inline-block" src="/assets/brand/logo_white.svg" alt="APItoolkit white logo">
           </a>
           <div class="flex gap-4 items-center">
             <a href="/" class="hidden sm:inline-block text-sm text-secondary">← Back to Website</a>
@@ -310,9 +527,22 @@
               <svg class="icon h-4 w-4 text-current fill-current stroke-current opacity-70">
                 <use xlink:href="/assets/deps/fontawesome/solid.svg#magnifying-glass"></use>
               </svg>
+              <svg class="icon h-4 w-4 text-current fill-current stroke-current opacity-70">
+                <use xlink:href="/assets/deps/fontawesome/solid.svg#magnifying-glass"></use>
+              </svg>
             </a>
             <a href="app.apitoolkit.io" class="btn btn-sm btn-secondary">Sign Up</a>
 
+            <a
+              class="input input-sm bg-slate-50 dark:bg-base-200 input-bordered hidden sm:flex items-center gap-2"
+              onClick="search_modal.showModal()"
+              aria-label="search"
+              title="Search"
+            >
+              <svg class="icon h-4 w-4 text-current fill-current stroke-current opacity-70">
+                <use xlink:href="/assets/deps/fontawesome/solid.svg#magnifying-glass"></use>
+              </svg>
+              <span class="grow px-3">Search</span>
             <a
               class="input input-sm bg-slate-50 dark:bg-base-200 input-bordered hidden sm:flex items-center gap-2"
               onClick="search_modal.showModal()"
@@ -348,8 +578,27 @@
               <svg class="swap-on icon h-5 w-5 text-current fill-current stroke-current opacity-70">
                 <use xlink:href="/assets/deps/fontawesome/light.svg#sun-bright"></use>
               </svg>
+              <input
+                type="checkbox"
+                id="theme-control"
+                class="theme-controller"
+                value="sunset"
+                _="
+                  on change localStorage.setItem('darkMode', me.checked)
+                  then if  me.checked set body's @data-theme to 'sunset' else set body's @data-theme to 'emerald'
+                "
+              >
+              <svg class="swap-off icon h-5 w-5 text-current fill-current stroke-current opacity-70">
+                <use xlink:href="/assets/deps/fontawesome/light.svg#moon-stars"></use>
+              </svg>
+              <svg class="swap-on icon h-5 w-5 text-current fill-current stroke-current opacity-70">
+                <use xlink:href="/assets/deps/fontawesome/light.svg#sun-bright"></use>
+              </svg>
             </label>
             <script>
+              if (localStorage.getItem('darkMode') === 'true') {
+                document.getElementById('theme-controller').checked = true;
+              }
               if (localStorage.getItem('darkMode') === 'true') {
                 document.getElementById('theme-controller').checked = true;
               }
@@ -357,6 +606,7 @@
           </div>
         </div>
       </section>
+
 
       <section class="text-center">
         <div class="max-w-7xl w-full text-left gap-4 text-md hidden sm:inline-flex">
@@ -373,6 +623,7 @@
               {% assign is_active = this.permalink | starts_with: parent_doc_prefix %}
               <a class="flex gap-3 sm:border-b-2 {{ is_active | ternary: 'sm:border-b-secondary text-secondary sm:text-current', 'border-b-transparent' }} py-2 px-1 items-center" href="{{ page.permalink }}" preload="preload:init">
                 <i class="fa-regular fa-{% if page.frontmatter.fa-logo %}{{ page.frontmatter.fa-logo }}{%else%}star{%endif%} w-5 h-5 {{ is_active | ternary: 'text-secondary', '' }}"></i>
+                <i class="fa-regular fa-{% if page.frontmatter.fa-logo %}{{ page.frontmatter.fa-logo }}{%else%}star{%endif%} w-5 h-5 {{ is_active | ternary: 'text-secondary', '' }}"></i>
                 <span>{{ page.frontmatter.title | default: 'Untitled' }}</span>
               </a>
             {% endfor %}
@@ -386,11 +637,19 @@
             </svg>
           </label>
           <a class="py-2">{{ this.frontmatter.title }}</a>
+            <svg class="icon h-5 w-5 text-current fill-current stroke-current opacity-70">
+              <use xlink:href="/assets/deps/fontawesome/regular.svg#bars"></use>
+            </svg>
+          </label>
+          <a class="py-2">{{ this.frontmatter.title }}</a>
         </div>
       </section>
     </section>
     <section class="text-center  ">
       <div class="max-w-7xl w-full text-left inline-flex ">
+        <!--
+          Placed here to be situated infront of the conditional below, since the conditional clause does't affect mobile
+        -->
         <!--
           Placed here to be situated infront of the conditional below, since the conditional clause does't affect mobile
         -->
@@ -435,14 +694,23 @@
               {{ main_menu_items }}
             </nav>
           </div>
+          <div class="w-64 leading-relaxed border-r border-r-base-200 hidden sm:block ">
+            <nav class="w-64 space-y-8 text-sm my-48 pr-5 fixed top-0">
+              {{ main_menu_items }}
+            </nav>
+          </div>
         {% endunless %}
         <!-- Navigation drawer used on Mobile only -->
         <div class="drawer fixed top-0 z-50">
+          <input id="mobile-menu-drawer" type="checkbox" class="drawer-toggle">
           <input id="mobile-menu-drawer" type="checkbox" class="drawer-toggle">
           <div class="drawer-side">
             <label for="mobile-menu-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
             <div class="p-5 w-80 min-h-full bg-base-100 text-base-content clear-both">
               <label for="mobile-menu-drawer" class="p-5 float-right">
+                <svg class="flex-shrink-0 icon h-5 w-5 text-current fill-current stroke-current opacity-70">
+                  <use xlink:href="/assets/deps/fontawesome/regular.svg#xmark"></use>
+                </svg>
                 <svg class="flex-shrink-0 icon h-5 w-5 text-current fill-current stroke-current opacity-70">
                   <use xlink:href="/assets/deps/fontawesome/regular.svg#xmark"></use>
                 </svg>
@@ -453,14 +721,27 @@
                 </section>
                 <section class="py-5 space-y-5">
                   {{ main_menu_items }}
+                  {{ main_menu_items }}
                 </section>
               </div>
             </div>
           </div>
         </div>
 
+
         <div class="flex-1 grow flex relative min-h-screen  ">
           <div class="text-center flex-1 grow p-5 pt-12 sm:p-20 sm:pb-28 pb-40 divide-y divide-y-base-200">
+            <article
+              class="
+                text-left pb-12 prose prose-slate dark:prose-invert prose-headings:font-medium prose-a:text-secondary prose-a:underline prose-a:underline-offset-4
+                prose-img:w-full prose-img:rounded-md  prose-p:leading-relaxed
+                prose-headings:scroll-mt-40 prose-pre:p-0 prose-img:drop-shadow
+                before:prose-li:bg-secondary before:prose-li:text-secondary
+                prose-strong:font-medium prose-secondary w-full {%if this.frontmatter.page_full_width%}max-w-none {%endif%}
+              "
+              id="mainArticle"
+            >
+              {{ this.content }}
             <article
               class="
                 text-left pb-12 prose prose-slate dark:prose-invert prose-headings:font-medium prose-a:text-secondary prose-a:underline prose-a:underline-offset-4
@@ -496,10 +777,50 @@
               </ul>
             </div>
           </section>
+          <section class="w-56 hidden sm:block ">
+            <div class="w-56 my-48  fixed top-0 text-sm space-y-4">
+              <strong class="block font-medium">On this page </strong>
+              <ul class="space-y-2 border-l " id="tableOfContents">
+                {% for toc in this.toc %}
+                  <li class="hover:underline underline-offset-4 pl-{{toc.level | times: 3}}">
+                    <a href="#{{toc.id}}">{{ toc.title }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </section>
         {% endunless %}
       </div>
     </section>
 
+    <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css"
+    >
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/javascript.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/php.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/csharp.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/elixir.min.js"></script>
+    <script defer type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function () {
+        hljs.highlightAll();
+      });
+      function init() {
+        // Select all headers
+        const headers = document.querySelectorAll(
+          '#mainArticle h1, #mainArticle h2, #mainArticle h3, #mainArticle h4,#mainArticle h5,#mainArticle h6'
+        );
+        headers.forEach((header) => {
+          const hashtag = document.createElement('a');
+          hashtag.classList.add('header-link');
+          hashtag.textContent = '🔗 ';
+          hashtag.href = '#' + header.id;
+          header.insertBefore(hashtag, header.firstChild);
+        });
     <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
     <link
       rel="stylesheet"
@@ -546,7 +867,41 @@
           },
           { rootMargin: '0px', threshold: 0.0001 }
         );
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                document.querySelectorAll('#tableOfContents a').forEach((link) => {
+                  if (link.getAttribute('href').substring(1) === entry.target.id) {
+                    document.querySelectorAll('#tableOfContents a').forEach(function (element) {
+                      element.classList.remove('text-secondary');
+                    });
+                    link.classList.add('text-secondary');
+                  }
+                });
+              }
+            });
+          },
+          { rootMargin: '0px', threshold: 0.0001 }
+        );
 
+        // Observe all headings within the article
+        document
+          .querySelectorAll(
+            '#mainArticle h1, #mainArticle h2, #mainArticle h3, #mainArticle h4, #mainArticle h5, #mainArticle h6'
+          )
+          .forEach((heading) => {
+            observer.observe(heading);
+          });
+      }
+      init();
+      document.body.addEventListener('htmx:afterSwap', function (event) {
+        window.requestAnimationFrame(() => {
+          init();
+          hljs.highlightAll();
+        });
+      });
+    </script>
         // Observe all headings within the article
         document
           .querySelectorAll(

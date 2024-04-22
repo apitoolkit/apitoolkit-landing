@@ -82,7 +82,7 @@ necessary properties eg:
 
 ```js
 export const apitoolkitConfig = {
-  apiKey: "<YOUR_API_KEY>",
+  apiKey: "&lt;YOUR_API_KEY&gt;",
 };
 ```
 
@@ -102,7 +102,7 @@ To mark fields that should be redacted, simply add them to the
 
 ```js
 export const apitoolkitConfig = {
-  apiKey: "<YOUR_API_KEY>",
+  apiKey: "&lt;YOUR_API_KEY&gt;",
   redactHeaders: ["Content-Type", "Authorization", "Cookies"], // Specified headers will be redacted
   redactRequestBody: ["$.credit-card.cvv", "$.credit-card.name"], // Specified request bodies fields will be redacted
   redactResponseBody: ["$.message.error"], // Specified response body fields will be redacted
@@ -148,7 +148,7 @@ const redactRequestBodyList = ["$.body.user.name"];
 const redactResponseBodyList = undefined;
 
 Route.get('/observer', async () => {
-    const response = await observeAxios(axios).get(`${baseURL}/user_list/active`);
+    const response = await observeAxios(axios).get(baseURL + "/user_list/active");
     return {hello: "hello world"}
 })
 ```
@@ -163,7 +163,7 @@ import axios from "axios";
 
 Route.get('/observer', async () => {
     const response = await observeAxios(axios, "/users/{user_id}").get(
-      `${baseURL}/users/user1234`,
+      baseURL + "/users/user1234",
     );
     return {hello: "hello world"}
 })
@@ -190,7 +190,7 @@ Route.get("/observer", async () => {
     redactHeadersList,
     redactRequestBodyList,
     redactResponseBodyList,
-  ).get(`${baseURL}/users/user1234`);
+  ).get(baseURL + "/users/user1234");
 });
 ```
 

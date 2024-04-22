@@ -44,7 +44,7 @@ const fastify = Fastify();
 
 // Create and initialize an instance of the APIToolkit
 const apittoolkitClient = APIToolkit.NewClient({
-  apiKey: 'YOUR_API_KEY',
+  apiKey: '&lt;API_KEY&gt;',
   fastify,
 });
 apitoolkitClient.init();
@@ -94,7 +94,7 @@ const fastify = Fastify();
 
 const redactHeaders = ['Authorization', 'X-Secret-Token'];
 const apittoolkitClient = APIToolkit.NewClient({
-  apiKey: '<YOUR API KEY>',
+  apiKey: '&lt;API_KEY&gt;',
   fastify,
   redactHeaders,
 });
@@ -131,7 +131,7 @@ const redactRequestBody = ['$.password', '$.user.creditcard.cvv'];
 const redactResponseBody = ['$.apikeys[*]', '$.message.type'];
 
 const apittoolkitClient = APIToolkit.NewClient({
-  apiKey: '<YOUR API KEY>',
+  apiKey: '&lt;API_KEY&gt;',
   fastify,
   redactRequestBody,
   redactResponseBody,
@@ -159,7 +159,7 @@ const fastify = Fastify();
 
 
 const apittoolkitClient = APIToolkit.NewClient({
-  apiKey: '<YOUR API KEY>',
+  apiKey: '&lt;API_KEY&gt;',
   fastify,
 });
 apitoolkitClient.init();
@@ -183,7 +183,7 @@ const fastify = Fastify();
 
 
 const apittoolkitClient = APIToolkit.NewClient({
-    apiKey: '<YOUR API KEY>',
+    apiKey: '&lt;API_KEY&gt;',
     fastify,
 });
 apitoolkitClient.init();
@@ -210,7 +210,7 @@ const redactRequestBodyList = ["$.body.bla.bla"];
 const redactResponseBodyList = undefined;
 
 const apittoolkitClient = APIToolkit.NewClient({
-    apiKey: '<YOUR API KEY>',
+    apiKey: '&lt;API_KEY&gt;',
     fastify,
 });
 apitoolkitClient.init();
@@ -246,13 +246,13 @@ import Fastify from 'fastify';
 const fastify = Fastify();
 
 const apittoolkitClient = APIToolkit.NewClient({
-  apiKey: '<YOUR API KEY>',
+  apiKey: '&lt;API_KEY&gt;',
   fastify,
 });
 apitoolkitClient.init();
 app.get('/', async (request, reply) => {
     try {
-      const response = await observeAxios(axios).get(`${baseURL}/non-exisiting-endpoint`);
+      const response = await observeAxios(axios).get(baseURL+ "/non-exisiting-endpoint");
     } catch (error) {
       ReportError(error);
     }
@@ -266,10 +266,10 @@ In that case, you can call ReportError, but on the apitoolkit client, instead.
 import APIToolkit from "apitoolkit-fastify";
 import axios from "axios"
 
-const apitoolkitClient = APIToolkit.NewClient({ apiKey: "<API-KEY>" });
+const apitoolkitClient = APIToolkit.NewClient({ apiKey: "&lt;API_KEY&gt;" });
 
 try {
-  const response = await observeAxios(axios).get(`${baseURL}/ping`);
+  const response = await observeAxios(axios).get(baseURL + "/ping");
 } catch (error) {
   apitoolkitClient.ReportError(error);
 }

@@ -35,10 +35,10 @@ npm install apitoolkit-express
 Intialize apitoolkit into your project is as simple as :
 
 ```js
-const apitoolkitClient = await APIToolkit.NewClient({ apikey: '<API-KEY>' });
+const apitoolkitClient = await APIToolkit.NewClient({ apikey: '&lt;API_KEY&gt;' });
 ```
 
-where <API-KEY> is the apikey which can be generated from your [apitoolkit.io](apitoolkit.io) account.
+where &lt;API_KEY&gt; is the apikey which can be generated from your [apitoolkit.io](apitoolkit.io) account.
 
 ### Configuration Options
 
@@ -65,7 +65,7 @@ import { APIToolkit } from 'apitoolkit-express';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
-  const apiToolkitClient = APIToolkit.NewClient({ apikey: '<API-KEY>' });
+  const apiToolkitClient = APIToolkit.NewClient({ apikey: '&lt;API_KEY&gt;' });
   const app = await NestFactory.create(AppModule);
   app.use(apiToolkitClient.expressMiddleware);
   await app.listen(3000);
@@ -151,7 +151,7 @@ async function bootstrap() {
 bootstrap();
 ```
 
-In this Fastify integration, the APIToolkit Fastify SDK allows you to seamlessly integrate your APIToolkit into your fastify based NestJs app. Don't forget to replace `<API-KEY>` with your actual API key obtained from your APIToolkit dashboard [learn how](https://apitoolkit.io/docs/get-started/dashboard/generating-api-keys/).
+In this Fastify integration, the APIToolkit Fastify SDK allows you to seamlessly integrate your APIToolkit into your fastify based NestJs app. Don't forget to replace `&lt;API_KEY&gt;` with your actual API key obtained from your APIToolkit dashboard [learn how](https://apitoolkit.io/docs/get-started/dashboard/generating-api-keys/).
 
 Now you have successfully integrated APIToolkit's Fastify SDK into your Nest.js application.
 
@@ -172,7 +172,7 @@ async function bootstrap() {
   const redactRequestBody = ['$.password', '$.user.creditcard.cvv'];
   const redactResponseBody = ['$.apikeys[*]', '$.message.type'];
   const apiToolkitClient = APIToolkit.NewClient({
-    apikey: '<API-KEY>',
+    apikey: '&lt;API_KEY&gt;',
     redactHeaders,
     redactRequestBody,
     redactResponseBody,
@@ -205,7 +205,7 @@ async function bootstrap() {
   const redactResponseBody = ['$.apikeys[*]', '$.message.type'];
 
   const apittoolkitClient = APIToolkit.NewClient({
-    apiKey: '<YOUR API KEY>',
+    apiKey: '&lt;API_KEY&gt;',
     fastify,
     redactHeaders,
     redactRequestBody,
