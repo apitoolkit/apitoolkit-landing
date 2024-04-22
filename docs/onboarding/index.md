@@ -40,3 +40,10 @@ Integrating APItoolkit is quite easy. Refer to our documentation to locate and i
 If your specific language or framework is not currently covered, please contact our professional support team. We will assist in ensuring a smooth integration process tailored to your requirements.
 
 At APIToolkit, we prioritize providing a streamlined onboarding experience while accommodating unique organizational needs. With your account activated and the SDK integrated, you gain access to our powerful API management solution, facilitating monitoring, security, and optimization of your APIs.
+
+```=html
+<a href="/docs/sdks" class="w-full btn btn-outline link link-hover">
+    SDKs Documentation
+    <i class="fa-regular fa-arrow-right mr-4"></i>
+</a>
+```

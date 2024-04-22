@@ -1,5 +1,5 @@
 base_url: "https://apitoolkit.io"
-title: APIToolkit 
+title: APIToolkit
 description: AI tools for Automatic API Monitoring, Documentation and more
 
 layouts:
@@ -16,7 +16,6 @@ layouts:
 ignore:
   - "./node_modules/**"
   - ".git"
-
 
 authors:
   anthony:
@@ -37,7 +36,6 @@ authors:
   elliot:
     name: "Elliot Brenya Sarfo"
     picture: "https://avatars.githubusercontent.com/u/66503402?v=4"
-
 
 apitoolkit_supported_frameworks:
   - id: express_btn

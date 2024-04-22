@@ -27,33 +27,13 @@ APItoolkit is an end-to-end API and web services management toolkit for engineer
 [Get a Demo &nbsp;](https://calendar.app.google/1a4HG5GZYv1sjjZG6){target="_blank" class="drop-shadow rounded-md border border-gray-200 bg-gray-100 hover:bg-gray-200 font-semibold text-gray-900 inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0 hs-init hs-inview"}
 ::::::
 
+```=html
+<hr />
+```
+
 ![APItoolkit Dashboard screenshot](/assets/img/dashboard.png){.block .drop-shadow-lg .border}
 
-{class="flex text-left py-20"}
-::::::
-{.flex-1}
-::::
-
-## How-To's
-
-[Creating a project](/docs/documentation/dashboard/creating-a-project)
-
-[Generating API keys](/docs/documentation/dashboard/generating-api-keys)
-
-[Redacting Fields](/docs/documentation/dashboard/redacting-fields)
-::::
-{.flex-1}
-::::
-
-## Concepts
-
-[Log Explorer](/docs/documentation/dashboard/log-explorer)
-
-[API testing](/docs/documentation/dashboard/master-api-testing)
-
-[Changes and Errors](/docs/documentation/dashboard/changes-and-errors)
-::::
-::::::
+[TODO: add card blocks linking to all major sections of the documentation]
 
 {% render "default/markdown/integration-footer.liquid", config:config %}
 
