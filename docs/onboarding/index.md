@@ -8,6 +8,8 @@ page_full_width: true
 
 # Quick Start Onboarding
 
+![APItoolkit Dashboard screenshot](/assets/img/dashboard.png){.block .drop-shadow-lg .border}
+
 APIToolkit, as an API management system, provides a comprehensive solution to narrow the process of managing and monitoring APIs within your application.
 
 APItoolkit offers a centralized platform that enables you to gain visibility and control over your APIs, making it easier to understand and analyze the interactions between your application and third-party integrations.
