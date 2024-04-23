@@ -9635,18 +9635,3 @@ html:has(.drawer-toggle:checked) {
   padding-left: 2rem;
   padding-right: 2rem;
 }
-
-.docs-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 16rem;
-  text-decoration: none;
-  border-width: 2px;
-  border-color: gray;
-}
-.docs-card:hover {
-  border-color: #377cfb;
-}
