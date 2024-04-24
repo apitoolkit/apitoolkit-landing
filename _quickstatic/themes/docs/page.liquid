@@ -400,7 +400,7 @@
               {% assign parent_doc_prefix = page.file_path | remove: "index.md" | remove_first: "." %}
               {% assign is_active = this.permalink | starts_with: parent_doc_prefix %}
               <a class="flex gap-3 sm:border-b-2 {{ is_active | ternary: 'sm:border-b-secondary text-secondary sm:text-current', 'border-b-transparent' }} py-2 px-1 items-center" href="{{ page.permalink }}" preload="preload:init">
-                <i class="fa-regular fa-{{ page.frontmatter.fa-logo | default: 'star' }} w-5 h-5 {{ is_active | ternary: 'text-secondary', '' }}"></i>
+                <i class="fa-regular fa-{% if page.frontmatter.fa-logo %}{{ page.frontmatter.fa-logo }}{%else%}star{%endif%} w-5 h-5 {{ is_active | ternary: 'text-secondary', '' }}"></i>
                 <span>{{ page.frontmatter.title | default: 'Untitled' }}</span>
               </a>
             {% endfor %}
