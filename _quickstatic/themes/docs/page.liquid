@@ -32,116 +32,129 @@
   <base href="{{ this.permalink }}">
   <!-- end of meta tags and favicons -->
 
-  <link rel="stylesheet" href="/assets/css/tailwind.min.css">
-  <script defer src="https://kit.fontawesome.com/32c218ff10.js" crossorigin="anonymous"></script>
-  <script defer src="/assets/deps/htmx/htmx.min.js"></script>
-  <script defer src="/assets/deps/htmx/preload.js"></script>
-  <script defer src="https://unpkg.com/hyperscript.org@0.9.12"></script>
-  <script defer src="/pagefind/pagefind-ui.js"></script>
-  <script>
-    window.addEventListener('DOMContentLoaded', (event) => {
-      new PagefindUI({ element: '#search', showSubResults: true });
-    });
-  </script>
-  <style>
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      position: relative;
-      cursor: pointer;
-    }
-    .header-link {
-      position: absolute;
-      left: -20;
-      top: 5px;
-      display: none;
-      text-decoration: none;
-      color: #737373;
-      cursor: pointer;
-      font-size: 0.7rem;
-      padding-right: 20px;
-    }
-    h1:hover .header-link,
-    h2:hover .header-link,
-    h3:hover .header-link,
-    h4:hover .header-link,
-    h5:hover .header-link,
-    h6:hover .header-link,
-    .header-link:hover {
-      display: inline;
-    }
-    .docs-card {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      height: 16rem;
-      text-decoration: none;
-      border-width: 2px;
-      border-color: gray;
-    }
-    .docs-card:hover {
-      border-color: #377cfb;
-    }
-  </style>
-  <style>
-    @font-face {
-      font-family: 'Bakemono';
-      src: url('/assets/deps/bakemono/Bakemono-Variable.woff2') format('woff2-variations'),
-        url('/assets/deps/bakemono/Bakemono-Variable.woff') format('woff-variations'),
-        url('/assets/deps/bakemono/Bakemono-Variable.ttf') format('ttf-variations');
-    }
+    <script defer src="https://kit.fontawesome.com/32c218ff10.js" crossorigin="anonymous"></script>
+    <script defer src="/assets/deps/htmx/htmx.min.js"></script>
+    <script defer src="/assets/deps/htmx/preload.js"></script>
+    <script defer src="https://unpkg.com/hyperscript.org@0.9.12"></script>
+    <script defer src="/pagefind/pagefind-ui.js"></script>
+    <script>
+      window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: '#search', showSubResults: true });
+      });
+    </script>
+    <style>
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        position: relative;
+        cursor: pointer;
+      }
+      .header-link {
+        position: absolute;
+        left: -20;
+        top: 5px;
+        display: none;
+        text-decoration: none;
+        color: #737373;
+        cursor: pointer;
+        font-size: 0.7rem;
+        padding-right: 20px;
+      }
+      h1:hover .header-link,
+      h2:hover .header-link,
+      h3:hover .header-link,
+      h4:hover .header-link,
+      h5:hover .header-link,
+      h6:hover .header-link,
+      .header-link:hover {
+        display: inline;
+      }
+      .docs-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 16rem;
+        text-decoration: none;
+        border-width: 2px;
+        border-color: gray;
+      }
+      .docs-card:hover {
+        border-color: #377cfb;
+      }
+    </style>
+    <style>
+      @font-face {
+        font-family: 'Bakemono';
+        src: url('/assets/deps/bakemono/Bakemono-Variable.woff2') format('woff2-variations'),
+          url('/assets/deps/bakemono/Bakemono-Variable.woff') format('woff-variations'),
+          url('/assets/deps/bakemono/Bakemono-Variable.ttf') format('ttf-variations');
+      }
+      :root {
+        font-family: 'Bakemono', sans-serif;
+      }
+      h1 {
+        font-variation-settings: 'wght' 700, 'MONO' 500;
+      }
+      h2 {
+        font-variation-settings: 'wght' 600, 'MONO' 500;
+      }
+      h3,
+      h4,
+      h5 {
+        font-variation-settings: 'wght' 500, 'MONO' 500;
+      }
+      .monospace {
+        font-family: 'Bakemono', monospace;
+        font-variation-settings: 'MONO' 1000;
+      }
+    </style>
 
-    :root {
-      font-family: 'Bakemono', sans-serif;
-    }
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-TF4BQQ3D');
+    </script>
+    <!-- End Google Tag Manager -->
 
-    h1 {
-      font-variation-settings: 'wght' 700, 'MONO' 500;
-    }
-
-    h2 {
-      font-variation-settings: 'wght' 600, 'MONO' 500;
-    }
-
-    h3,
-    h4,
-    h5 {
-      font-variation-settings: 'wght' 500, 'MONO' 500;
-    }
-
-    .monospace {
-      font-family: 'Bakemono', monospace;
-      font-variation-settings: 'MONO' 1000;
-    }
-  </style>
-  <!-- Facebook Pixel Code -->
-  <script>
-    !(function (f, b, e, v, n, t, s) {
-      if (f.fbq) return;
-      n = f.fbq = function () {
-        n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
-      };
-      if (!f._fbq) f._fbq = n;
-      n.push = n;
-      n.loaded = !0;
-      n.version = '2.0';
-      n.queue = [];
-      t = b.createElement(e);
-      t.async = !0;
-      t.src = v;
-      s = b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t, s);
-    })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1135987380886994');
-    fbq('track', 'PageView');
-  </script>
-  <noscript>
-    <img height="1" width="1" src="
+    <!-- Facebook Pixel Code -->
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1135987380886994');
+      fbq('track', 'PageView');
+    </script>
+    <noscript>
+      <img
+        height="1"
+        width="1"
+        src="
           https://www.facebook.com/tr?id=1135987380886994&ev=PageView
           &noscript=1
         ">
@@ -271,43 +284,24 @@
         };
         window.lintrk.q = [];
       }
-      var s = document.getElementsByTagName('script')[0];
-      var b = document.createElement('script');
-      b.type = 'text/javascript';
-      b.async = true;
-      b.src = 'https://snap.licdn.com/li.lms-analytics/insight.min.js';
-      s.parentNode.insertBefore(b, s);
-    })(window.lintrk);
-  </script>
-  <noscript>
-    <img height="1" width="1" style="display:none;" alt=""
-      src="https://px.ads.linkedin.com/collect/?pid=5779626&fmt=gif">
-  </noscript>
-</head>
+    </script>
 
-<body data-theme="emerald" hx-boost="true" hx-ext="preload,head-support" class="" preload>
-  <script>
-    if (localStorage.getItem('darkMode') === 'true') {
-      document.body.setAttribute('data-theme', 'sunset');
-    }
-  </script>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TF4BQQ3D" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-  <section class="sticky top-0 w-full bg-base-100 z-10 border-b border-b-base-200">
-    <section class="text-center border-b border-b-base-200">
-      <div class="max-w-7xl w-full py-4 px-5 sm:px-0 text-left inline-flex justify-between items-center">
-        <a href="/" class="px-1 py-1" aria-label="Back to homepage">
-          <img class="h-6 dark:hidden" src="/assets/brand/logo_full_color.svg" alt="APItoolkit full color logo">
-          <img class="h-6 hidden dark:inline-block" src="/assets/brand/logo_white.svg" alt="APItoolkit white logo">
-        </a>
-        <div class="flex gap-4 items-center">
-          <a href="/" class="hidden sm:inline-block text-sm text-secondary">← Back to Website</a>
-          <a class="cursor-pointer sm:hidden" onClick="search_modal.showModal()" aria-label="search" title="Search">
-            <svg class="icon h-4 w-4 text-current fill-current stroke-current opacity-70">
-              <use xlink:href="/assets/deps/fontawesome/solid.svg#magnifying-glass"></use>
-            </svg>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-TF4BQQ3D"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <section class="sticky top-0 w-full bg-base-100 z-10 border-b border-b-base-200">
+      <section class="text-center border-b border-b-base-200">
+        <div class="max-w-7xl w-full py-4 px-5 sm:px-0 text-left inline-flex justify-between items-center">
+          <a href="/" class="px-1 py-1" aria-label="Back to homepage">
+            <img class="h-6 dark:hidden" src="/assets/brand/logo_full_color.svg" alt="APItoolkit full color logo">
+            <img class="h-6 hidden dark:inline-block" src="/assets/brand/logo_white.svg" alt="APItoolkit white logo">
           </a>
           <a href="https://app.apitoolkit.io" class="btn btn-sm btn-secondary">Sign Up</a>
 
