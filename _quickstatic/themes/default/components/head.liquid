@@ -10,14 +10,14 @@
     content="{% if this.frontmatter.featured_image%}{{this.frontmatter.featured_image}}{% else %}/static/og.png{% endif %}">
   <meta property="og:type"
     content="{% if this.frontmatter.og_type %}{{this.frontmatter.og_type}}{% else %}article{% endif %}">
-
+      
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="generator" content="QuickStatic">
   <!-- This documentation site was built with QuickStatic, https://github.com/tonyalaribe/quickstatic -->
 
-  <title>{% if this.frontmatter.title %}{{this.frontmatter.title}} | APItoolkit{% endif %}</title>
+  <title>{% if this.frontmatter.title %}{{this.frontmatter.title}}{% endif %}</title>
   <meta name="description" content="{{ this.content | strip_html | truncatewords: 20 | escape }}">
 
   <!-- favicon items -->
@@ -29,6 +29,8 @@
   <meta name="msapplication-TileColor" content="#da532c" />
   <meta name="theme-color" content="#ffffff" />
   <base href="{{ this.permalink }}" />
+
+
   <!-- end of meta tags and favicons -->
   <link rel="stylesheet" href="/assets/css/tailwind.min.css" />
 
@@ -44,71 +46,87 @@
       }
     }
   </style>
-  
-    <script defer src="https://kit.fontawesome.com/67b52e9a3b.js" crossorigin="anonymous"></script>
-    <script defer src="/assets/deps/htmx/htmx.min.js"></script>
-    <script defer src="/assets/deps/htmx/preload.js"></script>
-    <script defer src="/assets/deps/htmx/head-support.js"></script>
-    <script defer src="https://unpkg.com/hyperscript.org@0.9.12"></script>
+  <script defer src="https://kit.fontawesome.com/67b52e9a3b.js" crossorigin="anonymous"></script>
+  <script defer src="/assets/deps/htmx/htmx.min.js"></script>
+  <script defer src="/assets/deps/htmx/preload.js"></script>
+  <script defer src="/assets/deps/htmx/head-support.js"></script>
+  <script defer src="https://unpkg.com/hyperscript.org@0.9.12"></script>
 
-    <script defer src="https://f.convertkit.com/ckjs/ck.5.js"></script>
-    <!-- THis is for the convertkit join newsletter scroll popup -->
-    <script async data-uid="e05f719e6e" src="https://apitoolkit.ck.page/e05f719e6e/index.js"></script>
+  <script defer src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+  <!-- THis is for the convertkit join newsletter scroll popup -->
+  <script async data-uid="e05f719e6e" src="https://apitoolkit.ck.page/e05f719e6e/index.js"></script>
 
-    <link rel="preload" fetchpriority="high" as="image" href="/assets/img/svgs/grid.svg" type="image/webp">
+  <link rel="preload" fetchpriority="high" as="image" href="/assets/img/svgs/grid.svg" type="image/webp">
 
-    <style>
-      @font-face {
-          font-family: "Bakemono";
-          src: url("/assets/deps/bakemono/Bakemono-Variable.woff2") format("woff2-variations"),
-                url("/assets/deps/bakemono/Bakemono-Variable.woff") format("woff-variations"),
-                url("/assets/deps/bakemono/Bakemono-Variable.ttf") format("ttf-variations"),
-      }
-      :root {
-        font-family: 'Bakemono', sans-serif;
-      }
-      h1 {
-        font-variation-settings: 'wght' 700, 'MONO' 500;
-      }
-      h2 {
-        font-variation-settings: 'wght' 600, 'MONO' 500;
-      }
-      body[data-theme="sunset"] h2{
-        color: white; 
-      }
-      body[data-theme="sunset"] formkit-input {
-        background-color: gray;
-      }
-      h3, h4, h5 {
-        font-variation-settings: 'wght' 500, 'MONO' 500;
-      }
-      .monospace {
-        font-family: 'Bakemono', monospace;
-        font-variation-settings: 'MONO' 1000;
-        
-      }
-    </style>
+  <style>
+    @font-face {
+      font-family: "Bakemono";
+      src: url("/assets/deps/bakemono/Bakemono-Variable.woff2") format("woff2-variations"),
+        url("/assets/deps/bakemono/Bakemono-Variable.woff") format("woff-variations"),
+        url("/assets/deps/bakemono/Bakemono-Variable.ttf") format("ttf-variations"),
+    }
 
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-TF4BQQ3D');</script>
+    :root {
+      font-family: 'Bakemono', sans-serif;
+    }
+
+    h1 {
+      font-variation-settings: 'wght' 700, 'MONO' 500;
+    }
+
+    h2 {
+      font-variation-settings: 'wght' 600, 'MONO' 500;
+    }
+
+    body[data-theme="sunset"] h2 {
+      color: white;
+    }
+
+    body[data-theme="sunset"] formkit-input {
+      background-color: gray;
+    }
+
+    h3,
+    h4,
+    h5 {
+      font-variation-settings: 'wght' 500, 'MONO' 500;
+    }
+
+    .monospace {
+      font-family: 'Bakemono', monospace;
+      font-variation-settings: 'MONO' 1000;
+
+    }
+  </style>
+
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-TF4BQQ3D');</script>
   <!-- End Google Tag Manager -->
 
-    <!-- Facebook Pixel Code -->
-<script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window,document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-   fbq('init', '1135987380886994'); 
-  fbq('track', 'PageView');
+
+
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1135987380886994');
+    fbq('track', 'PageView');
   </script>
   <noscript>
     <img height="1" width="1" src="https://www.facebook.com/tr?id=1135987380886994&ev=PageView
@@ -131,42 +149,24 @@
   </script>
   <!-- End Twitter conversion tracking base code -->
 
-    <!-- Facebook Pixel Code 2 -->
-    <script>
-      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-      document,'script','https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '3674513372787915');
-      fbq('track', 'PageView');
-      </script>
-      <noscript><img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=3674513372787915&ev=PageView&noscript=1"
-      /></noscript>
-      <!-- DO NOT MODIFY -->
-      <!-- End Facebook Pixel Code -->
-<!-- START LINKEDIN -->
-<script type="text/javascript">
-  _linkedin_partner_id = "5779626";
-  window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
-  window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+  <!-- Facebook Pixel Code 2 -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      }; if (!f._fbq) f._fbq = n;
+      n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s)
+    }(window,
+      document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '3674513372787915');
+    fbq('track', 'PageView');
   </script>
   <noscript><img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=3674513372787915&ev=PageView&noscript=1" /></noscript>
   <!-- DO NOT MODIFY -->
   <!-- End Facebook Pixel Code -->
-  <!-- Google Tag Manager -->
-  <script>(function (w, d, s, l, i) {
-      w[l] = w[l] || []; w[l].push({
-        'gtm.start':
-          new Date().getTime(), event: 'gtm.js'
-      }); var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-TF4BQQ3D');</script>
-  <!-- End Google Tag Manager -->
-
   <!-- START LINKEDIN -->
   <script type="text/javascript">
     _linkedin_partner_id = "5779626";
@@ -190,9 +190,10 @@
     <img height="1" width="1" style="display:none;" alt=""
       src="https://px.ads.linkedin.com/collect/?pid=5779626&fmt=gif" />
   </noscript>
-<!-- END LINKEDIN -->
-  </head>
-  <body data-theme="emerald" hx-boost="true" hx-ext="preload,head-support" class="" preload>
-    <script>
-      if (localStorage.getItem("darkMode")==='true') {document.body.setAttribute("data-theme", "sunset")}
-    </script>
+  <!-- END LINKEDIN -->
+</head>
+
+<body data-theme="emerald" hx-boost="true" hx-ext="preload,head-support" class="" preload>
+  <script>
+    if (localStorage.getItem("darkMode") === 'true') { document.body.setAttribute("data-theme", "sunset") }
+  </script>
