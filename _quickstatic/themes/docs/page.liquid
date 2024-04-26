@@ -48,7 +48,7 @@
     });
   </script>
   <style>
-        @font-face {
+    @font-face {
       font-family: 'Bakemono';
       src: url('/assets/deps/bakemono/Bakemono-Variable.woff2') format('woff2-variations'),
         url('/assets/deps/bakemono/Bakemono-Variable.woff') format('woff-variations'),
@@ -58,7 +58,8 @@
     :root {
       font-family: 'Bakemono', sans-serif;
     }
-        .monospace {
+
+    .monospace {
       font-family: 'Bakemono', monospace;
       font-variation-settings: 'MONO' 1000;
     }
@@ -76,6 +77,7 @@
     h5 {
       font-variation-settings: 'wght' 500, 'MONO' 500;
     }
+
     h1,
     h2,
     h3,
@@ -107,20 +109,22 @@
     .header-link:hover {
       display: inline;
     }
-          .docs-card {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 16rem;
-        text-decoration: none;
-        border-width: 2px;
-        border-color: gray;
-      }
-      .docs-card:hover {
-        border-color: #377cfb;
-      }
+
+    .docs-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 16rem;
+      text-decoration: none;
+      border-width: 2px;
+      border-color: gray;
+    }
+
+    .docs-card:hover {
+      border-color: #377cfb;
+    }
   </style>
 
   <!-- Google Tag Manager -->
@@ -488,17 +492,18 @@
               " id="mainArticle">
             {{ this.content }}
           </article>
-<footer class="text-center py-12 text-left space-y-2">
-  <h5 class="font-semibold">Need assistance? You can reach out to us at:</h5>
-  <p>
-    <i class="fa-regular fa-envelope"></i> <a class="link" href="mailto:hello@apitoolkit.io">hello@apitoolkit.io</a>,
-    <i class="fa-brands fa-github"></i> <a class="link"
-      href="https://github.com/apitoolkit/apitoolkit-landing/issues/new/choose" target="_blank"
-      rel="noopener noreferrer">community issues</a>, or our
-    <i class="fa-brands fa-discord"></i></i> <a class="link" href="https://discord.gg/dEB6EjQnKB" target="_blank"
-      rel="noopener noreferrer">Discord community server</a>.
-  </p>
-</footer>
+          <footer class="text-center py-12 text-left space-y-2">
+            <h5 class="font-semibold">Need assistance? You can reach out to us at:</h5>
+            <p>
+              <i class="fa-regular fa-envelope"></i> <a class="link"
+                href="mailto:hello@apitoolkit.io">hello@apitoolkit.io</a>,
+              <i class="fa-brands fa-github"></i> <a class="link"
+                href="https://github.com/apitoolkit/apitoolkit-landing/issues/new/choose" target="_blank"
+                rel="noopener noreferrer">community issues</a>, or our
+              <i class="fa-brands fa-discord"></i> <a class="link" href="https://discord.gg/dEB6EjQnKB"
+                target="_blank" rel="noopener noreferrer">Discord community server</a>.
+            </p>
+          </footer>
         </div>
       </div>
       {% unless this.frontmatter.hide_toc %}
