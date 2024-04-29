@@ -1,14 +1,6 @@
 ---
 title: Nest Js
-date: 2023-07-06
-publishdate: 2023-07-06
-toc: true
-imageurl: /assets/img/framework-logos/nestjs-logo.png
-
-weight: 1
-menu:
-  main:
-    weight: 1
+ogImage: /assets/img/framework-logos/nestjs-logo.png
 ---
 
 # Nest JS integration guide
@@ -229,7 +221,7 @@ Hopefully, this documentation has everything you need to get APIToolkit app and 
 
 ### Using apitoolkit to observe an axios based outgoing request
 
-[Learn how to observe requests with express adapter ](/docs/get-started/quickstarts/nodejs/expressjs#using-apitoolkit-to-observe-an-axios-based-outgoing-request).
+[Learn how to observe requests with express adapter](/docs/get-started/quickstarts/nodejs/expressjs#using-apitoolkit-to-observe-an-axios-based-outgoing-request).
 [Learn hot to observe requests with fastify adapter](/docs/get-started/quickstarts/nodejs/fastify#using-apitoolkit-to-observe-an-axios-based-outgoing-request).
 
 ### Reporting errors to APIToolkit

@@ -11,7 +11,7 @@
     content="{% if this.frontmatter.title %}{{this.frontmatter.title}} | APItoolkit Docs{% endif %}">
   <meta property="og:description" content="APItoolkit product and SDKs documentation">
   <meta property="og:image"
-    content="{% if this.frontmatter.featured_image%}{{this.frontmatter.featured_image}}{% else %}/static/og.png{% endif %}">
+    content="{% if this.frontmatter.ogImage%}{{this.frontmatter.ogImage}}{% else %}/static/og.png{% endif %}">
   <meta property="og:type"
     content="{% if this.frontmatter.og_type %}{{this.frontmatter.og_type}}{% else %}article{% endif %}">
 
@@ -382,7 +382,7 @@
           </svg>
           <span>Home</span>
         </a>
-        {% assign pages = file_list | where_glob: 'file_path', "./docs/*/index.md" | sort: "frontmatter.menu_weight" |
+        {% assign pages = file_list | where_glob: 'file_path', "./docs/*/index.md" | sort: "frontmatter.menuWeight" |
         reverse %}
         {% for page in pages %}
         {% assign parent_doc_prefix = page.file_path | remove: "index.md" | remove_first: "." %}
@@ -390,7 +390,7 @@
         <a class="flex gap-3 sm:border-b-2 {{ is_active | ternary: 'sm:border-b-secondary text-secondary sm:text-current', 'border-b-transparent' }} py-2 px-1 items-center"
           href="{{ page.permalink }}" preload="preload:init">
           <i
-            class="fa-regular fa-{% if page.frontmatter.fa-logo %}{{ page.frontmatter.fa-logo }}{%else%}star{%endif%} w-5 h-5 {{ is_active | ternary: 'text-secondary', '' }}"></i>
+            class="fa-regular fa-{% if page.frontmatter.faLogo %}{{ page.frontmatter.faLogo }}{%else%}star{%endif%} w-5 h-5 {{ is_active | ternary: 'text-secondary', '' }}"></i>
           <span>{{ page.frontmatter.title | default: 'Untitled' }}</span>
         </a>
         {% endfor %}
@@ -451,14 +451,14 @@
       </section>
       {% endfor %}
       {% endcapture %}
-      {% unless this.frontmatter.hide_file_tree %}
+      {% unless this.frontmatter.hideFileTree %}
       <div class="w-64 leading-relaxed border-r border-r-base-200 hidden sm:block ">
         <nav class="w-64 space-y-8 text-sm my-48 pr-5 fixed top-0">
           {{ main_menu_items }}
         </nav>
       </div>
       {% endunless %}
-      <!-- Navigation drawer used on Mbile only -->
+      <!-- Navigation drawer used on Mobile only -->
       <div class="drawer fixed top-0 z-50">
         <input id="mobile-menu-drawer" type="checkbox" class="drawer-toggle">
         <div class="drawer-side">
@@ -488,7 +488,7 @@
                 prose-img:w-full prose-img:rounded-md  prose-p:leading-relaxed
                 prose-headings:scroll-mt-40 prose-pre:p-0 prose-img:drop-shadow
                 before:prose-li:bg-secondary before:prose-li:text-secondary
-                prose-strong:font-medium prose-secondary w-full {%if this.frontmatter.page_full_width%}max-w-none {%endif%}
+                prose-strong:font-medium prose-secondary w-full {%if this.frontmatter.pageFullWidth%}max-w-none {%endif%}
               " id="mainArticle">
             {{ this.content }}
           </article>
@@ -506,7 +506,7 @@
           </footer>
         </div>
       </div>
-      {% unless this.frontmatter.hide_toc %}
+      {% unless this.frontmatter.hideToc %}
       <section class="w-56 hidden sm:block ">
         <div class="w-56 my-48  fixed top-0 text-sm space-y-4">
           <strong class="block font-medium">On this page </strong>

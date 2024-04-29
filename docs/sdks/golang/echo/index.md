@@ -1,16 +1,10 @@
 ---
 title: Go Echo
-date: 2023-09-25
-publishdate: 2022-09-25
-toc: true
-weight: 20
-menu:
-  main:
-    weight: 20
+ogImage: /assets/img/framework-logos/golang-logo.png
 ---
-# Go Echo integration 
+# Go Echo integration
 
-Echo is an efficient web framework for Go, boasting both high performance and adaptability. Its vast array of middleware and plugins facilitate seamless integration into your application, simplifying the enhancement of features and functions. 
+Echo is an efficient web framework for Go, boasting both high performance and adaptability. Its vast array of middleware and plugins facilitate seamless integration into your application, simplifying the enhancement of features and functions.
 
 To further streamline your development, here's a guide on integrating the Go Echo with APIToolkit SDK.
 
@@ -38,15 +32,15 @@ c. Begin setting up your Echo server
 package main
 
 import (
-	"github.com/labstack/echo/v4"
+ "github.com/labstack/echo/v4"
 )
 
 func main() {
-	e := echo.New()
+ e := echo.New()
 
-	// Define your routes here...
+ // Define your routes here...
 
-	e.Start(":8080")
+ e.Start(":8080")
 }
 ```
 
@@ -57,31 +51,31 @@ Let's write the code to initialize `apitoolkit` with `echo`
 package main
 
 import (
-	"context"
-	"github.com/labstack/echo/v4"
-	apitoolkit "github.com/apitoolkit/apitoolkit-go"
+ "context"
+ "github.com/labstack/echo/v4"
+ apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
 
 func main() {
-	ctx := context.Background()
+ ctx := context.Background()
 
-	// Initialize the client using your apitoolkit.io generated apikey
-	apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "<APIKEY>"})
-	if err != nil {
-		panic(err)
-	}
+ // Initialize the client using your apitoolkit.io generated apikey
+ apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "<APIKEY>"})
+ if err != nil {
+  panic(err)
+ }
 
-	e := echo.New()
+ e := echo.New()
 
-	// Register with the corresponding middleware of your choice.
-	// Assuming apitoolkit provides an EchoMiddleware function for the echo framework.
-	e.Use(apitoolkitClient.EchoMiddleware)
+ // Register with the corresponding middleware of your choice.
+ // Assuming apitoolkit provides an EchoMiddleware function for the echo framework.
+ e.Use(apitoolkitClient.EchoMiddleware)
 
-	e.POST("/:slug/test", func(c echo.Context) error {
-		return c.String(http.StatusOK, "ok")
-	})
+ e.POST("/:slug/test", func(c echo.Context) error {
+  return c.String(http.StatusOK, "ok")
+ })
 
-	e.Start(":8080")
+ e.Start(":8080")
 }
 ```
 
@@ -93,7 +87,7 @@ Run your Echo server and access the endpoint to see if the integration works.
 
 ## Redacting Sensitive Fields with Go's Echo and APIToolkit
 
-While it's possible to mark fields as redacted directly from the APIToolkit dashboard, this client also offers client-side redacting. 
+While it's possible to mark fields as redacted directly from the APIToolkit dashboard, this client also offers client-side redacting.
 
 By doing this on the client-side, sensitive fields won't leave your server at all, ensuring that your data remains confined to your infrastructure.
 
@@ -112,38 +106,39 @@ For instance, if you have a request body like:
   }
 }
 ```
+
 And you wish to redact the `password` and credit card `number` fields, you'd configure the `apitoolkit` config struct as follows:
 
 ```go
 package main
 
 import (
-	"github.com/labstack/echo/v4"
-	"net/http"
-	"apitoolkit-go"
+ "github.com/labstack/echo/v4"
+ "net/http"
+ "apitoolkit-go"
 )
 
 func main() {
-	e := echo.New()
+ e := echo.New()
 
-	apitoolkitCfg := apitoolkit.Config{
+ apitoolkitCfg := apitoolkit.Config{
         RedactHeaders: []string{"Content-Type", "Authorization", "Cookies"}, // Redacting both request and response headers
         RedactRequestBody: []string{"$.user.password", "$.user.creditCard.number"},
         RedactResponseBody: []string{"$.message.error"},
         APIKey: "<APIKEY>",
     }
 
-	// Initialize the client with your apitoolkit.io generated API key
-	apitoolkitClient, _ := apitoolkit.NewClient(apitoolkitCfg)
+ // Initialize the client with your apitoolkit.io generated API key
+ apitoolkitClient, _ := apitoolkit.NewClient(apitoolkitCfg)
 
-	// Use the APIToolkit middleware with Echo
-	e.Use(apitoolkitClient.EchoMiddleware)  // Assuming APIToolkit provides such a middleware. Replace with the actual function if different.
+ // Use the APIToolkit middleware with Echo
+ e.Use(apitoolkitClient.EchoMiddleware)  // Assuming APIToolkit provides such a middleware. Replace with the actual function if different.
 
-	e.POST("/:slug/test", func(c echo.Context) error {
-		return c.String(http.StatusOK, "ok")
-	})
+ e.POST("/:slug/test", func(c echo.Context) error {
+  return c.String(http.StatusOK, "ok")
+ })
 
-	e.Start(":8080")
+ e.Start(":8080")
 }
 ```
 
@@ -194,9 +189,9 @@ func main() {
 }
 ```
 
-The provided code demonstrates how to set up the custom roundtripper to replace the default HTTP client's transport. 
+The provided code demonstrates how to set up the custom roundtripper to replace the default HTTP client's transport.
 
-The resulting HTTP client, `HTTPClient`, is configured to send copies of all incoming and outgoing requests to the apitoolkit servers. 
+The resulting HTTP client, `HTTPClient`, is configured to send copies of all incoming and outgoing requests to the apitoolkit servers.
 
 You can use this modified HTTP client for any HTTP requests you need to make from your server, ensuring they are monitored by apitoolkit.
 
@@ -204,7 +199,7 @@ You can use this modified HTTP client for any HTTP requests you need to make fro
 
 If you've used sentry, or bugsnag, or rollbar, then you're already familiar with this usecase.
 
-But you can report an error to apitoolkit. A difference, is that errors are always associated with a parent request, and helps you query and associate the errors which occured while serving a given customer request. 
+But you can report an error to apitoolkit. A difference, is that errors are always associated with a parent request, and helps you query and associate the errors which occured while serving a given customer request.
 
 To request errors to APIToolkit use call the `ReportError` method of `apitoolkit` not the client returned by `apitoolkit.NewClient` with the request context and the error to report.
 
@@ -215,32 +210,32 @@ package main
 
 import (
    //... other imports
-  	apitoolkit "github.com/apitoolkit/apitoolkit-go"
+   apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
 
 func main() {
-	e := echo.New()
-	ctx := context.Background()
+ e := echo.New()
+ ctx := context.Background()
 
-	apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "<API_KEY>"})
-	if err != nil {
-		panic(err)
-	}
+ apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "<API_KEY>"})
+ if err != nil {
+  panic(err)
+ }
 
-	e.Use(apitoolkitClient.EchoMiddleware)
+ e.Use(apitoolkitClient.EchoMiddleware)
 
-	e.GET("/", hello)
+ e.GET("/", hello)
 
-	e.Logger.Fatal(e.Start(":1323"))
+ e.Logger.Fatal(e.Start(":1323"))
 }
 
 func hello(c echo.Context) error {
-	file, err := os.Open("non-existing-file.txt")
-	if err != nil {
-		apitoolkit.ReportError(c.Request().Context(), err)
-	}
-	log.Println(file)
-	return c.String(http.StatusOK, "Hello, World!")
+ file, err := os.Open("non-existing-file.txt")
+ if err != nil {
+  apitoolkit.ReportError(c.Request().Context(), err)
+ }
+ log.Println(file)
+ return c.String(http.StatusOK, "Hello, World!")
 }
 
 ```

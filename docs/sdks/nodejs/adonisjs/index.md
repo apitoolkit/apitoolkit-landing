@@ -1,22 +1,15 @@
 ---
 title: Adonis Js
-date: 2023-12-11
-toc: true
-publishdate: 2023-12-11
-imageurl: /assets/img/framework-logos/adonis-logo.png
-weight: 1
-menu:
-  main:
-    weight: 1
+ogImage: /assets/img/framework-logos/adonisjs-logo.png
 ---
 
-# Adonis JS Integration 
+# Adonis JS Integration
 
 The APIToolkit integration guide for AdonisJS provides a streamlined process to
 capture incoming traffic data. It collects request information and efficiently
 forwards it to the APIToolkit servers.
 
-## APIToolkit Adonisjs integration.
+## APIToolkit Adonisjs integration
 
 The Adonisjs SDK integration guide for APIToolkit. It monitors incoming traffic,
 gathers the requests, and sends the request to the API toolkit servers.
@@ -114,16 +107,15 @@ list of headers(case insensitive), the `redactRequestBody` and
 `redactResponseBody` expect a list of JSONPath strings as arguments.
 
 The choice of JSONPath was selected to allow you have great flexibility in
-descibing which fields within your responses are sensitive. 
+descibing which fields within your responses are sensitive.
 
 Also note that these list of items to be redacted will be aplied to all endpoint requests and
-responses on your server. 
+responses on your server.
 
 To learn more about jsonpath, please take a look at these resources:
 
 1. [Query expressions for JSONPATH](https://ietf-wg-jsonpath.github.io/draft-ietf-jsonpath-base/draft-ietf-jsonpath-base.html)
 2. [JSONPATH Cheet Sheet](https://lzone.de/cheat-sheet/JSONPath)
-   
 
 ## Using apitoolkit to observe an axios based outgoing request
 
@@ -170,7 +162,7 @@ Route.get('/observer', async () => {
 ```
 
 There are other optional arguments you could pass on to the observe Axios
-function. 
+function.
 
 Example
 
@@ -194,13 +186,13 @@ Route.get("/observer", async () => {
 });
 ```
 
-Note that you can ignore any of these arguments except the first argument which is the axios instance to observe. 
+Note that you can ignore any of these arguments except the first argument which is the axios instance to observe.
 
 For the other arguments, you can either skip them if at the end, or use undefined as a placeholder.
 
 ## Reporting errors to APIToolkit
 
-APIToolkit detects a lot of API issues automatically, but it's also valuable to report and track errors. 
+APIToolkit detects a lot of API issues automatically, but it's also valuable to report and track errors.
 
 This helps you associate more details about the backend with a given failing request. If you've used sentry, or rollback, or bugsnag, then you're likely aware of this functionality.
 
@@ -228,5 +220,3 @@ Route.get("/observer", async () => {
   return { hello: "world" };
 });
 ```
-
-

@@ -1,12 +1,6 @@
 ---
-title: PHP (Slim)
-date: 2023-12-11
-publishdate: 2023-12-11
-weight: 1
-toc: true
-menu:
-  main:
-    weight: 1
+title: Slim (PHP)
+ogImage: /assets/img/framework-logos/php-logo.png
 ---
 
 # PHP Slim integration Guide
@@ -24,9 +18,11 @@ composer require apitoolkit/apitoolkit-slim
 ```
 
 ## Usage
+
 Create a new instance of the APIToolkitMiddleware class and register the middleware with Slim Framework, add it to the Slim app:
 
 Example:
+
 ```php
 use Slim\Factory\AppFactory;
 use APIToolkit\APIToolkitMiddleware;
@@ -209,4 +205,5 @@ $app->get('/', function (Request $request, Response $response) {
 
 $app->run();
 ```
+
 You can report as many errors as you want for each request.

@@ -1,11 +1,5 @@
 ---
 title: API Glossary
-date: 2023-11-27
-publishdate: 2023-11-28
-weight: 1
-menu:
-  main:
-    weight: 1
 ---
 
 # API Glossary

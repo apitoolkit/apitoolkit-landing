@@ -1,14 +1,6 @@
 ---
 title: Fastify Js
-date: 2023-07-06
-publishdate: 2023-07-06
-weight: 1
-toc: true
-imageurl: /assets/img/framework-logos/fastify-logo.png
-
-menu:
-  main:
-    weight: 1
+ogImage: /assets/img/framework-logos/fastify-logo.png
 ---
 
 # Fastify JS integration guide
@@ -119,9 +111,10 @@ Examples of valid jsonpaths would be:
 `$.store.books[*].author`: Will redact the author field in all the objects in the books list, inside the store object.
 
 To learn more about jsonpath, please take a look at these resources:
+
 1. [Query expressions for JSONPATH](https://ietf-wg-jsonpath.github.io/draft-ietf-jsonpath-base/draft-ietf-jsonpath-base.html)
 2. [JSONPATH Cheet Sheet](https://lzone.de/cheat-sheet/JSONPath)
- 
+
 ```javascript
 import APIToolkit from 'apitoolkit-fastify';
 import Fastify from 'fastify';

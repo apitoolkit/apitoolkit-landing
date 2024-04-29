@@ -1,19 +1,13 @@
 ---
 title: Elixir Phoenix
-date: 2024-05-2
-publishdate: 2024-05-2
-toc: true
-weight: 20
-menu:
-  main:
-    weight: 20
+ogImage: /assets/img/framework-logos/phoenix-logo.png
 ---
 
-# Elixir Phoenix integration.
+# Elixir Phoenix integration
 
-To integrate Elixir Phoenix with your project, begin by incorporating the SDK into your dependencies list within the mix.exs file. 
+To integrate Elixir Phoenix with your project, begin by incorporating the SDK into your dependencies list within the mix.exs file.
 
-To do this add the "apitoolkit_phoenix" package to your list of dependencies. 
+To do this add the "apitoolkit_phoenix" package to your list of dependencies.
 
 ## Installation
 
@@ -26,6 +20,7 @@ def deps do
   ]
 end
 ```
+
 Run `mix deps.get` to install the `apitoolkit_phoenix` dependency.
 
 Import and initialize the `ApitoolkitPhoenix` Plug in your `router.ex` file.
@@ -49,9 +44,9 @@ end
 
 ## Redacting Sensitive Data
 
-Some information is best kept private. Our Phoenix client supports redaction right on your servers. 
+Some information is best kept private. Our Phoenix client supports redaction right on your servers.
 
-This means sensitive data like passwords or credit card numbers never leave your premises. 
+This means sensitive data like passwords or credit card numbers never leave your premises.
 
 To mark fields that should be redacted, add them to the APIToolkit config map. Here’s how you do it:
 
@@ -78,9 +73,9 @@ end
 
 ## Reporting Errors
 
-If you’ve used Sentry, Bugsnag, or Rollbar, then you’re already familiar with this use case. But you can report an error to APIToolkit. 
+If you’ve used Sentry, Bugsnag, or Rollbar, then you’re already familiar with this use case. But you can report an error to APIToolkit.
 
-The difference is that errors are always associated with a parent request, helping you query and associate the errors which occurred while serving a given customer request. 
+The difference is that errors are always associated with a parent request, helping you query and associate the errors which occurred while serving a given customer request.
 
 To report errors to APIToolkit, use the `report_error` method of the `ApitoolkitPhoenix` module.
 

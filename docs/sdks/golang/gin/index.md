@@ -1,17 +1,10 @@
 ---
 title: Go Gin
-date: 2022-03-23
-publishdate: 2022-03-24
-toc: true
-imageurl: /assets/img/framework-logos/gin-logo.png
-weight: 20
-menu:
-  main:
-    weight: 20
+ogImage: /assets/img/framework-logos/golang-logo.png
 ---
 # Go Gin integration
 
-To integrate APIToolkit with Go Gin, first install it using the 'go get' command, then initialize the client in the application's main function with the generated API key from apitoolkit.io. 
+To integrate APIToolkit with Go Gin, first install it using the 'go get' command, then initialize the client in the application's main function with the generated API key from apitoolkit.io.
 
 ## Prerequisites
 
@@ -40,6 +33,7 @@ import (
     "github.com/gin-gonic/gin"
 )
 ```
+
 In your application's main function, initialize the APIToolkit client using your API key generated from your dashboard
 
 ```go
@@ -49,15 +43,19 @@ func main() {
         panic(err)
     }
 ```
+
 Create a Gin router instance
+
  ```go  
     router := gin.New()
 ```
+
 Register the APIToolkit middleware with your chosen middleware framework. For Gin router, use the 'GinMiddleware' method
 
 ```go
     router.Use(apitoolkitClient.GinMiddleware)
 ```
+
 Register your application's handlers as usual and run the Gin server
 
 ```go
@@ -66,9 +64,9 @@ Register your application's handlers as usual and run the Gin server
 
 ## Redacting Sensitive Fields
 
-Some information is best kept private. You can hide sensitive data fields directly in your dashboard, but for an extra layer of security, our client supports redaction right on your servers. 
+Some information is best kept private. You can hide sensitive data fields directly in your dashboard, but for an extra layer of security, our client supports redaction right on your servers.
 
-This means sensitive data like passwords or credit card numbers never leave your premises. To mark fields that should be redacted, Add them to the `apitoolkit` config struct. 
+This means sensitive data like passwords or credit card numbers never leave your premises. To mark fields that should be redacted, Add them to the `apitoolkit` config struct.
 
 Here's how you do it:
 
@@ -113,13 +111,13 @@ func main() {
 
 It is important to note that while the `RedactHeaders` config field accepts a list of headers (case insensitive), the `RedactRequestBody` and `RedactResponseBody` expect a list of JSONPath strings as arguments.
 
-The choice of JSONPath was selected to allow you to have great flexibility in describing which fields within your responses are sensitive. Also, note that this list of items to be redacted will be applied to all endpoint requests and responses on your server. 
+The choice of JSONPath was selected to allow you to have great flexibility in describing which fields within your responses are sensitive. Also, note that this list of items to be redacted will be applied to all endpoint requests and responses on your server.
 
 To learn more about JSONPath to help form your queries, please take a look at this cheatsheet: [JSONPath Cheatsheet](https://lzone.de/cheat-sheet/JSONPath)
 
 ## Outgoing Requests
 
-To monitor outgoing HTTP requests from your Go application, you can replace the default HTTP client transport with a custom roundtripper. 
+To monitor outgoing HTTP requests from your Go application, you can replace the default HTTP client transport with a custom roundtripper.
 
 This allows you to capture and send copies of all incoming and outgoing requests to an apitoolkit server for monitoring and analysis.
 
@@ -131,20 +129,20 @@ package main
 import (
     "context"
     "github.com/gin-gonic/gin"
-  	 apitoolkit "github.com/apitoolkit/apitoolkit-go"
+    apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
 
 func main() {
 
- 	apitoolkitClient, err := apitoolkit.NewClient(context.Background(), apitoolkit.Config{APIKey: "<API KEY>"})
-	if err != nil {
-		panic(err)
-	}
+  apitoolkitClient, err := apitoolkit.NewClient(context.Background(), apitoolkit.Config{APIKey: "<API KEY>"})
+ if err != nil {
+  panic(err)
+ }
 
-	router := gin.New()
+ router := gin.New()
 
-	// Register with the corresponding middleware of your choice. For Gin router, we use the GinMiddleware method.
-	router.Use(apitoolkitClient.GinMiddleware)
+ // Register with the corresponding middleware of your choice. For Gin router, we use the GinMiddleware method.
+ router.Use(apitoolkitClient.GinMiddleware)
   router.POST("/:slug/test", func(c *gin.Context) (err error) {
         // Create a new HTTP client
         HTTPClient := http.DefaultClient
@@ -167,13 +165,13 @@ func main() {
 
 The provided code demonstrates how to set up the custom roundtripper to replace the default HTTP client's transport.
 
-The resulting HTTP client, `HTTPClient`, is configured to send copies of all incoming and outgoing requests to the apitoolkit servers. 
+The resulting HTTP client, `HTTPClient`, is configured to send copies of all incoming and outgoing requests to the apitoolkit servers.
 
 You can use this modified HTTP client for any HTTP requests you need to make from your server, ensuring they are monitored by apitoolkit.
 
 ## Report Errors
 
-If you've used sentry, or bugsnag, or rollbar, then you're already familiar with this usecase. But you can report an error to apitoolkit. 
+If you've used sentry, or bugsnag, or rollbar, then you're already familiar with this usecase. But you can report an error to apitoolkit.
 
 The difference is that errors are always associated with a parent request, and helps you query and associate the errors which occured while serving a given customer request.
 
@@ -187,24 +185,24 @@ package main
 import (
     "github.com/gin-gonic/gin"
     "context"
-  	apitoolkit "github.com/apitoolkit/apitoolkit-go"
+   apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
 
 func main() {
     r := gin.Default()
-	apitoolkitClient, err := apitoolkit.NewClient(context.Background(), apitoolkit.Config{APIKey: "<APIKEY>"})
-	if err != nil {
-    	panic(err)
-	}
+ apitoolkitClient, err := apitoolkit.NewClient(context.Background(), apitoolkit.Config{APIKey: "<APIKEY>"})
+ if err != nil {
+     panic(err)
+ }
 
     r.Use(apitoolkitClient.GinMiddleware)
 
     r.GET("/", func(c *gin.Context) {
-		file, err := os.Open("non-existing-file.txt")
-		if err!= nil {
-			// Report an error to apitoolkit
-			apitoolkit.ReportError(c.Request.Context(), err)
-		}
+  file, err := os.Open("non-existing-file.txt")
+  if err!= nil {
+   // Report an error to apitoolkit
+   apitoolkit.ReportError(c.Request.Context(), err)
+  }
         c.String(http.StatusOK, "Hello, World!")
     })
 

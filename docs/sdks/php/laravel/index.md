@@ -1,16 +1,9 @@
 ---
-title: PHP (Laravel)
-date: 2022-03-23
-publishdate: 2022-03-24
-toc: true
-imageurl: /assets/img/framework-logos/laravel-logo.png
-weight: 1
-menu:
-  main:
-    weight: 1
+title: Laravel (PHP)
+ogImage: /assets/img/framework-logos/laravel-logo.png
 ---
 
-# PHP Laravel Integration guide
+# Laravel PHP Integration guide
 
 A PHP/Laravel SDK Wrapper for APIToolkit. It monitors incoming traffic, gathers the requests and sends the request to the apitoolkit servers.
 
@@ -31,7 +24,7 @@ APITOOLKIT_KEY=xxxxxx-xxxxx-xxxxxx-xxxxxx-xxxxxx
 # Requirements
 
 - For laravel, apitoolkit uses the cache to prevent reinitializing the sdk with each request. So make sure you have laravel cache setup for your service.
-  Read on [ PHP Laravel Cache Setup for Apitoolkit to Avoid SDK Reinit](https://apitoolkit.io/blog/how-to-setup-php-laravel-cache-for-apitoolkit-to-avoid-sdk-reinitialization/).
+  Read on [PHP Laravel Cache Setup for Apitoolkit to Avoid SDK Reinit](https://apitoolkit.io/blog/how-to-setup-php-laravel-cache-for-apitoolkit-to-avoid-sdk-reinitialization/).
 
 ## Usage
 

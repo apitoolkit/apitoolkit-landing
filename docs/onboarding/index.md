@@ -1,9 +1,9 @@
 ---
 title: Onboarding
-fa-logo: circle-play
-menu_weight: 1
-hide_file_tree: true
-page_full_width: true
+faLogo: circle-play
+menuWeight: 1
+hideFileTree: true
+pageFullWidth: true
 ---
 
 # Quick Start Onboarding

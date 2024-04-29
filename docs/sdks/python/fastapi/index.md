@@ -1,13 +1,6 @@
 ---
 title: FastAPI
-date: 2023-09-16
-toc: true
-publishdate: 2023-09-16
-weight: 20
-imageurl: /assets/img/framework-logos/fastapi-logo.png
-menu:
-  main:
-    weight: 20
+ogImage: /assets/img/framework-logos/fastapi-logo.png
 ---
 
 # FastAPI integration guide
@@ -15,11 +8,11 @@ menu:
 The API Toolkit FastAPI client is an sdk used to integrate FastAPI web services with APIToolkit.
 It monitors incoming traffic, gathers the requests and sends the request to the apitoolkit servers.
 
-## Design decisions:
+## Design decisions
 
 - Use the gcp SDK to send real time traffic from REST APIs to the gcp topic
 
-## How to Integrate:
+## How to Integrate
 
 First install the apitoolkit Go sdk:
 `pip install apitoolkit-fastapi`

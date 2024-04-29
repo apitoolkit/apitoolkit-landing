@@ -45,7 +45,7 @@ apitoolkit_supported_frameworks:
 
   - id: phoenix_btn
     title: Phoenix
-    img_src: /assets/img/framework-logos/phoenix.png
+    img_src: /assets/img/framework-logos/phoenix-logo.png
     alt: Phoenix Web Framework logo
 
   - id: laravel_btn

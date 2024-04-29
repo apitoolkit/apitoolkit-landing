@@ -1,13 +1,6 @@
 ---
 title: Go Gorilla Mux
-date: 2022-09-24
-publishdate: 2022-09-24
-weight: 20
-toc: true
-imageurl: /assets/img/framework-logos/mux-logo.png
-menu:
-  main:
-    weight: 20
+ogImage: /assets/img/framework-logos/golang-logo.png
 ---
 # Go Gorilla Mux integration
 
@@ -37,17 +30,17 @@ c.In your main.go file, initialize Gorilla Mux router and define your routes as 
 package main
 
 import (
-	"github.com/gorilla/mux"
-	"net/http"
+ "github.com/gorilla/mux"
+ "net/http"
 )
 
 func main() {
-	r := mux.NewRouter()
+ r := mux.NewRouter()
 
-	// Define your routes here...
+ // Define your routes here...
 
-	http.Handle("/", r)
-	http.ListenAndServe(":8080", r)
+ http.Handle("/", r)
+ http.ListenAndServe(":8080", r)
 }
 ```
 
@@ -67,30 +60,30 @@ Let's go ahead and write the code to initialize `apitoolkit` with `gorilla/mux`
 package main
 
 import (
-	"context"
-	"net/http"
-	"github.com/gorilla/mux"
-	apitoolkit "github.com/apitoolkit/apitoolkit-go"
+ "context"
+ "net/http"
+ "github.com/gorilla/mux"
+ apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
 
 func main() {
-	ctx := context.Background()
+ ctx := context.Background()
 
-	// Initialize the client using your generated apikey
-	apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: (<APIKEY>)})
-	if err != nil {
-		panic(err)
-	}
+ // Initialize the client using your generated apikey
+ apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: (<APIKEY>)})
+ if err != nil {
+  panic(err)
+ }
 
-	r := mux.NewRouter()
-	// Register middleware
-	r.Use(apitoolkitClient.GorillaMuxMiddleware)
-	r.HandleFunc("/{slug}/test",func(w http.ResponseWriter, r *http.Request) {
-		w.WriteHeader(http.StatusOK)
-		w.Write([]byte("ok"))
-	})
+ r := mux.NewRouter()
+ // Register middleware
+ r.Use(apitoolkitClient.GorillaMuxMiddleware)
+ r.HandleFunc("/{slug}/test",func(w http.ResponseWriter, r *http.Request) {
+  w.WriteHeader(http.StatusOK)
+  w.Write([]byte("ok"))
+ })
 
-	http.ListenAndServe(":8080", r)
+ http.ListenAndServe(":8080", r)
 }
 ```
 
@@ -126,38 +119,38 @@ To redact the `password` and credit card `number` fields, you would configure th
 package main
 
 import (
-	"net/http"
-	"github.com/gorilla/mux"
-	apitoolkit "github.com/apitoolkit/apitoolkit-go"
+ "net/http"
+ "github.com/gorilla/mux"
+ apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
 
 func main() {
-	r := mux.NewRouter()
+ r := mux.NewRouter()
 
-	apitoolkitCfg := apitoolkit.Config{
+ apitoolkitCfg := apitoolkit.Config{
         RedactHeaders: []string{"Content-Type", "Authorization", "Cookies"}, // Redacting both request and response headers
         RedactRequestBody: []string{"$.user.password", "$.user.creditCard.number"},
         RedactResponseBody: []string{"$.message.error"},
         APIKey: "<APIKEY>",
     }
 
-	// Initialize the APIToolkit client using your generated API key
-	apitoolkitClient, _ := apitoolkit.NewClient(apitoolkitCfg)
+ // Initialize the APIToolkit client using your generated API key
+ apitoolkitClient, _ := apitoolkit.NewClient(apitoolkitCfg)
 
-	r.Use(apitoolkitClient.GorillaMuxMiddleware)
+ r.Use(apitoolkitClient.GorillaMuxMiddleware)
 
-	r.HandleFunc("/:slug/test", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("ok"))
-	}).Methods("POST")
+ r.HandleFunc("/:slug/test", func(w http.ResponseWriter, r *http.Request) {
+  w.Write([]byte("ok"))
+ }).Methods("POST")
 
-	http.Handle("/", r)
-	http.ListenAndServe(":8080", r)
+ http.Handle("/", r)
+ http.ListenAndServe(":8080", r)
 }
 ```
 
 It's important to note that while the `RedactHeaders` config field will take the header names (which are case insensitive), `RedactRequestBody` and `RedactResponseBody` work with JSONPath strings.
 
-Using JSONPath allows for flexibility when determining which fields in your responses are sensitive. This configuration is global and impacts all endpoint requests and responses. 
+Using JSONPath allows for flexibility when determining which fields in your responses are sensitive. This configuration is global and impacts all endpoint requests and responses.
 
 To get a better grasp of JSONPath and how to draft these queries, look into: [JSONPath Cheatsheet](https://lzone.de/cheat-sheet/JSONPath)
 
@@ -173,46 +166,46 @@ Example
 package main
 
 import (
-	"net/http"
-	"github.com/gorilla/mux"
-  	 apitoolkit "github.com/apitoolkit/apitoolkit-go"
+ "net/http"
+ "github.com/gorilla/mux"
+    apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
 
 func main() {
 
- 	apitoolkitClient, err := apitoolkit.NewClient(context.Background(), apitoolkit.Config{APIKey: "<API KEY>"})
-	if err != nil {
-		panic(err)
-	}
+  apitoolkitClient, err := apitoolkit.NewClient(context.Background(), apitoolkit.Config{APIKey: "<API KEY>"})
+ if err != nil {
+  panic(err)
+ }
 
-	handlerFn := func(w http.ResponseWriter, r *http.Request) {
-		HTTPClient := http.DefaultClient
-		HTTPClient.Transport = client.WrapRoundTripper(
-			r.Context(), HTTPClient.Transport,
-			WithRedactHeaders([]string{}),
-		)
-		_, _ = HTTPClient.Get("http://localhost:3000/test-outgoing")
+ handlerFn := func(w http.ResponseWriter, r *http.Request) {
+  HTTPClient := http.DefaultClient
+  HTTPClient.Transport = client.WrapRoundTripper(
+   r.Context(), HTTPClient.Transport,
+   WithRedactHeaders([]string{}),
+  )
+  _, _ = HTTPClient.Get("http://localhost:3000/test-outgoing")
 
-		w.WriteHeader(http.StatusAccepted)
-		w.Write([]byte("Hello world"))
-	}
-	r := mux.NewRouter()
-	r.Use(client.GorillaMuxMiddleware)
-	r.HandleFunc("/:slug/test", handlerFn).Methods(http.MethodPost)
+  w.WriteHeader(http.StatusAccepted)
+  w.Write([]byte("Hello world"))
+ }
+ r := mux.NewRouter()
+ r.Use(client.GorillaMuxMiddleware)
+ r.HandleFunc("/:slug/test", handlerFn).Methods(http.MethodPost)
 }
 ```
 
-The provided code demonstrates how to set up the custom roundtripper to replace the default HTTP client's transport. 
+The provided code demonstrates how to set up the custom roundtripper to replace the default HTTP client's transport.
 
-The resulting HTTP client, `HTTPClient`, is configured to send copies of all incoming and outgoing requests to the apitoolkit servers. 
+The resulting HTTP client, `HTTPClient`, is configured to send copies of all incoming and outgoing requests to the apitoolkit servers.
 
 You can use this modified HTTP client for any HTTP requests you need to make from your server, ensuring they are monitored by apitoolkit.
 
 ## Report Errors
 
-If you've used sentry, or bugsnag, or rollbar, then you're already familiar with this usecase. But you can report an error to apitoolkit. 
+If you've used sentry, or bugsnag, or rollbar, then you're already familiar with this usecase. But you can report an error to apitoolkit.
 
-The difference, is that errors are always associated with a parent request, and helps you query and associate the errors which occured while serving a given customer request. 
+The difference, is that errors are always associated with a parent request, and helps you query and associate the errors which occured while serving a given customer request.
 
 To request errors to APIToolkit use call the `ReportError` method of `apitoolkit` not the client returned by `apitoolkit.NewClient` with the request context and the error to report
 Example:
@@ -222,31 +215,31 @@ Example:
 ```go
 import (
    //... other imports
-  	apitoolkit "github.com/apitoolkit/apitoolkit-go"
+   apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
 
 func main() {
-	r := mux.NewRouter()
-	ctx := context.Background()
+ r := mux.NewRouter()
+ ctx := context.Background()
 
-	apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "<API_KEY>"})
-	if err != nil {
-		panic(err)
-	}
-	r.Use(apitoolkitClient.GorillaMuxMiddleware)
-	r.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		_, err := os.Open("non-existing-file.json")
-		if err != nil {
-			// Report the error to apitoolkit
-			apitoolkit.ReportError(r.Context(), err)
-		}
-		fmt.Fprintln(w, "Hello, World!")
-	})
+ apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "<API_KEY>"})
+ if err != nil {
+  panic(err)
+ }
+ r.Use(apitoolkitClient.GorillaMuxMiddleware)
+ r.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+  _, err := os.Open("non-existing-file.json")
+  if err != nil {
+   // Report the error to apitoolkit
+   apitoolkit.ReportError(r.Context(), err)
+  }
+  fmt.Fprintln(w, "Hello, World!")
+ })
 
-	server := &http.Server{Addr: ":8080", Handler: r}
-	err = server.ListenAndServe()
-	if err != nil {
-		fmt.Println(err)
-	}
+ server := &http.Server{Addr: ":8080", Handler: r}
+ err = server.ListenAndServe()
+ if err != nil {
+  fmt.Println(err)
+ }
 }
 ```

@@ -1,13 +1,6 @@
 ---
 title: Flask
-date: 2023-09-18
-publishdate: 2023-09-18
-weight: 20
-toc: true
-imageurl: /assets/img/framework-logos/flask-logo.png
-menu:
-  main:
-    weight: 20
+ogImage: /assets/img/framework-logos/flask-logo.png
 ---
 
 # API Toolkit Python Flask SDK
@@ -15,11 +8,11 @@ menu:
 The API Toolkit Flask client is an sdk used to integrate flask web services with APIToolkit.
 It monitors incoming traffic, gathers the requests and sends the request to the apitoolkit servers.
 
-## Design decisions:
+## Design decisions
 
 - Use the gcp SDK to send real time traffic from REST APIs to the gcp topic
 
-## How to Integrate:
+## How to Integrate
 
 First install the apitoolkit flask sdk:
 `pip install apitoolkit-flask`
@@ -138,6 +131,7 @@ Enhance your request monitoring in APIToolkit by including tags and specifying s
 ```python
 apitoolkit = APIToolkit(api_key="<API_KEY>", debug=True, service_version="3.0.0", tags=["prod", "eu"])
 ```
+
 ## Outgoing Requests
 
 Effectively monitor outgoing HTTP requests from your Flask application using the `observe_request` function from the `apitoolkit_flask` module. This function allows you to capture and forward copies of both incoming and outgoing requests to an APIToolkit server for thorough monitoring and analysis.
@@ -156,6 +150,7 @@ async def sample_route(subject):
 ```
 
 The `observe_request` function wraps an HTTPX client, allowing you to use it seamlessly for any request, just like you would with HTTPX.
+
 ## Error Reporting
 
 If you're familiar with sentry, bugsnag, or rollbar, you'll easily grasp this use case. However, with APIToolkit, errors are always linked to a parent request, enabling you to query and associate errors that occurred while serving a specific customer request. To report errors to APIToolkit, utilize the `report_error` function from the `apitoolkit_flask` module. You can report as many errors as needed during a request.

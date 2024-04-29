@@ -1,13 +1,6 @@
 ---
 title: Pyramid
-date: 2024-04-03
-publishdate: 2024-04-03
-weight: 20
-toc: true
-imageurl: /assets/img/framework-logos/pyramid-logo.png
-menu:
-  main:
-    weight: 20
+ogImage: /assets/img/framework-logos/pyramid-logo.png
 ---
 
 # API Toolkit Python Pyramid SDK

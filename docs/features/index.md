@@ -1,11 +1,11 @@
 ---
-title: Features
 date: 2022-03-23
-publishdate: 2022-03-24
-menu_weight: 4
-page_full_width: true
-hide_toc: true
-fa-logo: folder-tree
+publishDate: 2022-03-24
+title: Features
+faLogo: folder-tree
+menuWeight: 4
+pageFullWidth: true
+hideToc: true
 ---
 
 Lorem Ipsum

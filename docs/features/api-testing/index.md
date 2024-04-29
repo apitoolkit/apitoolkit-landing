@@ -1,11 +1,7 @@
 ---
-title: API Testing
 publishdate: 2024-04-22
-weight: 1
-toc: true
-menu:
-  main:
-    weight: 1
+title: API Testing
+fileTreeWeight: 1
 ---
 
 Lorem Ipsum.

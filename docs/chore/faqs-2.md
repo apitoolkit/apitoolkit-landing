@@ -1,11 +1,5 @@
 ---
 title: Troubleshooting Common Errors
-date: 2023-10-19
-publishdate: 2022-10-19
-weight: 40
-menu:
-  main:
-    weight: 30
 ---
 
 Welcome to the Troubleshooting Guide for APIToolkit! This guide is designed to help you navigate any issues you may encounter while getting started with APIToolkit. Below, we'll address common challenges and provide solutions to ensure a smooth onboarding experience.

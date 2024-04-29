@@ -1,11 +1,5 @@
 ---
 title: Frequently Asked Questions (FAQ)
-date: 2023-10-21
-publishdate: 2022-10-21
-weight: 40
-menu:
-  main:
-    weight: 30
 ---
 
 # Frequently Asked Questions (FAQ)
@@ -43,6 +37,7 @@ menu:
 **A:** If you encounter a unique integration scenario that is not addressed in our documentation, we recommend reaching out to our [support team](hello@apitoolkit.io) for personalized assistance. Provide detailed information about your specific use case, and we'll work with you to find a solution tailored to your requirements.
 
 ### Q8: Will the SDKs slow down my backend?
+
 **A:** It depends. Most SDKs stream data asynchronously via google pubsub streaming, so your requests will see almost zero change in performance. Except if you use PHP. Because PHP doesn't support async workflows by default. But if you have the GRPC extension installed in your PHP environment, the GRPC extension is used by pubsub to stream data asynchronously like in other languages. Otherwise, you pay a very tiny performance hit to send data to google pubsub. But this performance hit is rarely noticable and usually under 5ms added to every request.
 
 ## Troubleshooting Questions
@@ -74,9 +69,11 @@ menu:
 **A:** Data integrity and consistency are essential. To achieve this, implement thorough data validation in your application for both outgoing requests and incoming responses. Validate data types, lengths, and formats to prevent issues caused by improperly formatted data. Our API Integration Guide provides insights into best practices for maintaining data integrity.
 
 ### Q15: Do my requests have to leave my server to APIToolkit Servers?
+
 **A:** Only if you want to benefit from the API metrics and the logs explorer. You can also enjoy all the other functionality which don't depend on your API traffic.
 
 ### Q16: Can I prevent sending sensitive Data to APIToolkit?
+
 **A:** Yes. All our SDKs support redacting data. Simply specify the json path to the fields which you don't want the SDKs to forward to APIToolkit, and those fields will be stripped out/redacted before the data even leaves your servers. So we would never see them.
 
 ## Additional Assistance
@@ -90,4 +87,5 @@ menu:
 **A:** Yes, we have an active community forum where users can ask questions, share insights, and collaborate. Visit our [Community Forum](https://discord.com/invite/dEB6EjQnKB) to join the discussions.
 
 ### Q19: I really love what you're doing. How do I show support?
+
 **A:** Give a shout out on twitter or discord. We would also appreciate honest feedback about what we're building. And suggestions for what functionality you would love to see next.

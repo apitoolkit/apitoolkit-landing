@@ -1,13 +1,6 @@
 ---
 title: Express Js
-date: 2022-03-23
-publishdate: 2022-03-24
-imageurl: /assets/img/framework-logos/express-logo.png
-weight: 1
-toc: true
-menu:
-  main:
-    weight: 1
+ogImage: /assets/img/framework-logos/expressjs-logo.png
 ---
 
 # ExpressJS integration guide
@@ -221,12 +214,12 @@ app.get('/', (req, res) => {
 Note that you can ignore any of these arguments except the first argument which is the axios instance to observe.
 For the other arguments, you can either skip them if at the end, or use undefined as a placeholder.
 
-### Observing request outside incoming request context 
+### Observing request outside incoming request context
 
-Monitoring outgoing requests inside an incoming request' context associates both request in the dashboard. You can also monitor  outgoing requests outside an incoming requests' context in a background job for example. To achieve this, instead of calling `observeAxios` as a standalone function 
-use the method on the APIToolkit client after initialization 
+Monitoring outgoing requests inside an incoming request' context associates both request in the dashboard. You can also monitor  outgoing requests outside an incoming requests' context in a background job for example. To achieve this, instead of calling `observeAxios` as a standalone function
+use the method on the APIToolkit client after initialization
 
-Example 
+Example
 
 ```js
 import axios from 'axios'
@@ -240,7 +233,8 @@ const apitoolkitClient = APIToolkit.NewClient({
 const response = await apitoolkitClient.observeAxios(axios).get("http://localhost:8080/ping");
 console.log(response.data)
 ```
-The above request will show in the log explorer as a standalone outgoing request 
+
+The above request will show in the log explorer as a standalone outgoing request
 
 ## Reporting errors to APIToolkit
 

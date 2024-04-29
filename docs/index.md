@@ -1,10 +1,10 @@
 ---
 title: Home
 linkTitle: "Documentation"
-menu_weight: 20
-hide_file_tree: true
-hide_toc: true
-page_full_width: true
+menuWeight: 20
+hideFileTree: true
+hideToc: true
+pageFullWidth: true
 ---
 
 ``` =html
