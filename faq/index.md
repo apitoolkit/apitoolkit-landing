@@ -4,16 +4,16 @@ date: 2022-03-23
 publishdate: 2022-03-24
 ---
 
-``` =html
+```=html
 <section class="text-center py-28">
 <div class="our_container w-full">
 ```
 
 ## Frequently asked Questions
 
-#### Some questions others have asked 
+#### Some questions others have asked
 
-``` =html
+```=html
 <br/><br/><br/>
 
 <div class="text-left space-y-4 prose"  >

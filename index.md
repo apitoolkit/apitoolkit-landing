@@ -421,7 +421,7 @@ _Michael Akinwonmi_
 :::
 {class="text-4xl md:text-6xl font-bold mb-3"}
 
-### Frequestly asked <br/> Questions
+Frequestly asked <br/> Questions
 
 [Some questions others have asked]{class="text-gray-500 dark:text-base-content text-sm"}
 [View all FAQ](https://apitoolkit.io/docs/troubleshooting-and-faq/faq/){class="block mt-6 text-blue-600 underline text-sm"}
@@ -434,7 +434,7 @@ _Michael Akinwonmi_
   <div class="bg-base-100 px-6 py-3 shadow-sm">
     <button class="flex gap-4 items-center text-left hover:text-gray-800 dark:hover:text-white" onclick="toggleFaq(event)">
     <svg class="flex-shrink-0 icon h-5 w-5 text-current fill-current stroke-current opacity-70"><use xlink:href="/assets/deps/fontawesome/solid.svg#caret-right"></use></svg>
-     flex-shrink-0"></i> {{faq.q}}
+     {{faq.q}}
     </button>
     <div class="pl-4 py-4 hidden text-gray-600 dark:text-base-content">{{faq.a}}</div>
   </div>
