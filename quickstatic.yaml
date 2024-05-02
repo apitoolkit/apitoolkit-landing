@@ -114,6 +114,6 @@ apitoolkit_supported_frameworks:
     alt: Pyramid logo
 
   - id: view_all
-    title: View all SDKs ↣
+    title: ALL SDKs ↣
     href: /docs/sdks
-    alt: View all SDKs
+    alt: View all SDK guides

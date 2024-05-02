@@ -12,8 +12,13 @@ pageFullWidth: true
     <section class="max-w-5xl sm:inline-block">
 ```
 
-{class="text-4xl sm:text-5xl"}
-Welcome to APItoolkit Documentation!
+# Welcome to APItoolkit Documentation
+
+**APItoolkit** is an end-to-end API and web services management toolkit for engineers and customer support teams. We use AI to help engineering teams observe, manage, monitor, and test their backend systems and any APIs they depend on.
+
+```=html
+<hr />
+```
 
 {.text-lg}
 Explore our product and SDK documentation to get started with using APItoolkit.
@@ -42,6 +47,14 @@ Explore our product and SDK documentation to get started with using APItoolkit.
 ```=html
 <hr />
 ```
+
+## Integrate APItoolkit
+
+{.text-lg}
+We currently support 17+ web frameworks in different programming languages.
+
+{.text-md .font-semibold}
+If we don't support your framework, kindly email <hello@apitoolkit.io> and we'll create an SDK for you ASAP!
 
 {% render "default/markdown/integration-footer.liquid", config:config %}
 
