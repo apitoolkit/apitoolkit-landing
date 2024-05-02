@@ -1,6 +1,4 @@
 ---
-date: 2022-03-23
-publishdate: 2022-03-24
 title: SDK Guides
 faLogo: plug 
 menuWeight: 2

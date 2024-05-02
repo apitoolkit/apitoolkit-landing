@@ -117,3 +117,20 @@ apitoolkit_supported_frameworks:
     title: ALL SDKs ↣
     href: /docs/sdks
     alt: View all SDK guides
+
+docs_main_pages:
+  - title: Onboarding
+    slug: /docs/onboarding
+    icon: circle-play
+
+  - title: SDK Guides
+    slug: /docs/sdks
+    icon: plug
+
+  - title: Dashboard Guides
+    slug: /docs/dashboard
+    icon: chart-line
+
+  - title: Features
+    slug: /docs/features
+    icon: folder-tree
