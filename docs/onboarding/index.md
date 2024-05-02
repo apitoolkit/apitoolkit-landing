@@ -8,14 +8,14 @@ pageFullWidth: true
 
 # Onboarding Guide
 
-**APItoolkit** is an end-to-end API and web services management toolkit for engineers and customer support teams. We use AI to help engineering teams observe, manage, monitor, and test their backend systems and any APIs they depend on. When you integrate APItoolkit into your application, you gain access to different features out of the box, including but not limited to: **API Monitoring and Observability**, **Error Tracking**, **Anomalies Detection**, **API Log Explorer**, **API Management**, **API Analytics**, **Automatic OpenAPI Spec Generation**, and even more coming soon (we're always shipping!).
+**APItoolkit** is an end-to-end API and web services management toolkit for engineers and customer support teams. We use AI to help engineering teams observe, manage, monitor, and test their backend systems and any APIs they depend on. When you integrate APItoolkit into your application, you gain access to different features out of the box, including but not limited to **API Monitoring and Observability**, **Error Tracking**, **Anomalies Detection**, **API Log Explorer**, **API Management**, **API Analytics**, **Automatic OpenAPI Spec Generation**, and even more coming soon (we're always shipping!).
 <!-- TODO: add links to the list of features once they're shipped -->
 
-In this guide, we will walk you through the process of integrating APItoolkit into your application. You will learn all the steps required to set up your account, fetch your API keys, integrate with our SDK, and start monitoring your APIs.
+In this guide, we will walk you through the process of integrating APItoolkit into your application. You will learn all the steps required to set up your account, fetch your API key, integrate with our SDK, and start monitoring requests on your API.
 
 ## Getting Started
 
-You need the following four steps to get started with APItoolkit and begin exploring and analyzing your API usage data in our dashboard:
+There are four steps required to get started with APItoolkit and begin exploring and analyzing requests on your API in our dashboard:
 
 1. [Create an Account](#create-an-account)
 2. [Create a New Project](#create-a-new-project)
@@ -70,9 +70,9 @@ Once you successfully integrate APItoolkit into your application using any of ou
 
 ![APItoolkit dashboard screenshot](/assets/img/dashboard.png){.block .drop-shadow-lg .border}
 
-## Dashboard Cheat Sheet
+## Dashboard Overview
 
-Here's a quick overview of all the current dashboard pages and data visualization options to aid your navigation:
+Here's a quick overview of all the current dashboard tabs and the data visualization options in them to aid your navigation:
 
 ```=html
 <table class="table border">
@@ -116,18 +116,14 @@ Here's a quick overview of all the current dashboard pages and data visualizatio
 Now that you've set up your new project with APItoolkit, you should explore the pages below to learn even more.
 
 ```=html
-<a href="/docs/sdks" class="w-full btn btn-outline link link-hover">
-    SDK Guides
-    <i class="fa-regular fa-arrow-right mr-4"></i>
-</a>
-```
-
-{.text-center}
-OR
-
-```=html
-<a href="/docs/dashboard" class="w-full btn btn-outline link link-hover">
-    Dashboard Guides
-    <i class="fa-regular fa-arrow-right mr-4"></i>
-</a>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 text-center">
+    <a href="/docs/sdks" class="docs-card rounded-md" preload="preload:init">
+    <p><i class="fa-regular fa-plug h-5 w-5 mr-2"></i><span class="text-xl font-bold text-black dark:text-white">SDK Guides</span></p>
+    <span class="px-8 font-normal text-black dark:text-white">Learn how to integrate APItoolkit using any of our SDKs for different programming languages and frameworks.</span>
+    </a>
+    <a href="/docs/dashboard" class="docs-card rounded-md" preload="preload:init">
+    <p><i class="fa-regular fa-chart-line h-5 w-5 mr-2"></i><span class="text-xl font-bold text-black dark:text-white">Dashboard Guides</span></p>
+    <span class="px-8 font-normal text-black dark:text-white">Explore APItoolkit's dashboard and learn how to navigate through all the available features and settings.</span>
+    </a>
+</div>
 ```
