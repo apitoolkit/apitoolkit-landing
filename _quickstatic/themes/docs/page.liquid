@@ -383,7 +383,7 @@
         {% assign parent_doc_prefix = page.file_path | remove: "index.md" | remove_first: "." %}
         {% assign is_active = this.permalink | starts_with: parent_doc_prefix %}
         <a class="flex gap-3 sm:border-b-2 {{ is_active | ternary: 'sm:border-b-secondary text-secondary sm:text-current', 'border-b-transparent' }} py-2 px-1 items-center"
-          href="{{ page.permalink }}" preload="preload:init">
+          href="{{ page.permalink }}">
           <i
             class="fa-regular fa-{% if page.frontmatter.faLogo %}{{ page.frontmatter.faLogo }}{%else%}star{%endif%} w-5 h-5 {{ is_active | ternary: 'text-secondary', '' }}"></i>
           <span>{{ page.frontmatter.title | default: 'Untitled' }}</span>
@@ -488,7 +488,7 @@
             {{ this.content }}
           </article>
           <footer class="text-center py-12 text-left space-y-2">
-            <h5 class="font-semibold">Need assistance? You can reach out to us at:</h5>
+            <h5 class="font-semibold">Need assistance or have some feedback for us? You can reach out to us at:</h5>
             <p>
               <i class="fa-regular fa-envelope"></i> <a class="link"
                 href="mailto:hello@apitoolkit.io">hello@apitoolkit.io</a>,
