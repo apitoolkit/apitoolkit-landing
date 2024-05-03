@@ -32,6 +32,15 @@ pages:
   - title: Reports
     slug: /docs/dashboard/reports
     icon: chart-simple
+  - title: Project Settings
+    slug: /docs/dashboard/project-settings
+    icon: gear
+  - title: Manage Members
+    slug: /docs/dashboard/manage-members
+    icon: user-plus
+  - title: API Keys
+    slug: /docs/dashboard/api-keys
+    icon: key
 ---
 
 # Dashboard Guides

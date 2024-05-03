@@ -60,6 +60,13 @@ Once you are redirected to the dashboard, you have to create a new project to be
 
 Once your project is created, an API key is automatically generated for you (which you can already see being used in the integration examples on the **Get Started** tab—onboarding checklist). To fetch your API key anytime or create a new one, kindly click on the project name at the top-left section of the dashboard and then click on the **API Keys** tab. You will then be redirected to another page where you can access the API key or create a new one.
 
+```=html
+<div class="callout">
+  <i class="fa-regular fa-lightbulb"></i>
+  <p>Usually you will create an API key for the different environments you want APItoolkit to track from (e.g., <b>development</b>, <b>staging</b>, <b>production</b>, etc.) and use each of the API keys when integrating with any of our SDK.</p>
+</div>
+```
+
 ![Screenshot of APItoolkit's settings popup](/docs/onboarding/api-keys-popup.png)
 
 ![Screenshot of APItoolkit's API keys page](/docs/onboarding/api-keys-page.png)

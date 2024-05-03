@@ -5,7 +5,7 @@ updatedDate: 2024-05-03
 menuWeight: 2
 ---
 
-## Dashboard Page
+# Dashboard Page
 
 In this guide, you will learn how to effectively navigate through the **Dashboard** page on the APItoolkit dashboard and maximize all the powerful features accessible in it.
 

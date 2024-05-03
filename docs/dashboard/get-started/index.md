@@ -5,7 +5,7 @@ updatedDate: 2024-05-03
 menuWeight: 1
 ---
 
-## Get Started Page
+# Get Started Page
 
 In this guide, you will learn how to effectively navigate through the **Get Started** page on the APItoolkit dashboard and maximize all the powerful features accessible in it.
 
