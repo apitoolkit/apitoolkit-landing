@@ -1,5 +1,7 @@
 ---
 title: API Glossary
+date: 2023-11-27
+updatedDate: 2024-05-04
 ---
 
 # API Glossary

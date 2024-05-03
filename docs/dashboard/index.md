@@ -1,5 +1,7 @@
 ---
 title: Dashboard Guides
+date: 2024-04-22
+updatedDate: 2024-05-04
 faLogo: chart-line
 menuWeight: 3
 hideFileTree: true

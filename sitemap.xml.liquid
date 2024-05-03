@@ -1,11 +1,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   {% assign pages = file_list | where_glob: 'file_path', "./**/index.md" %}
   {% for page in pages %}
-  <url>
-    <loc>{{config.raw.base_url}}{{page.permalink}}</loc>
-    {% if page.frontmatter.updated_on %}
-      <lastmod>{{page.frontmatter.updated_on |  date: '%Y-%m-%dT%H:%M:%S%:z' }}</lastmod>
-    {% else %}{% if page.frontmatter.date %}<lastmod>{{page.frontmatter.date |  date: '%Y-%m-%dT%H:%M:%S%:z' }}</lastmod>{% endif %}
-    {% endif %}
-  </url>{% endfor %}
+    <url>
+      <loc>{{ config.raw.base_url }}{{ page.permalink }}</loc>
+      {% if page.frontmatter.updatedDate %}
+        <lastmod>{{ page.frontmatter.updatedDate | date: '%Y-%m-%dT%H:%M:%S%:z' }}</lastmod>
+      {% else %}
+        {% if page.frontmatter.date %}
+          <lastmod>{{ page.frontmatter.date | date: '%Y-%m-%dT%H:%M:%S%:z' }}</lastmod>
+        {% endif %}
+      {% endif %}
+    </url>
+  {% endfor %}
 </urlset>
