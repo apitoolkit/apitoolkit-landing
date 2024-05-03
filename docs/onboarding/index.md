@@ -28,7 +28,7 @@ There are four steps required to get started with APItoolkit and begin exploring
 
 Kindly visit [this page](https://app.apitoolkit.com?utm_source=docs_onboarding) to create a new account. When you are there, you can choose to sign up with either your **Google** or **GitHub** account or your **email address**. If you choose to sign up with Google or GitHub, you will be redirected to the respective authentication page to authorize APItoolkit. If you choose to sign up with your email address, you will need to provide your email address and a strong password in the input fields as seen in the screenshot below.
 
-![](/docs/onboarding/signup-page.png)
+![Screenshot of APItoolkit's signup page](/docs/onboarding/signup-page.png)
 
 Once you are done providing the required values, click on the **Continue** button. Your account will then be created and you will be redirected to the APItoolkit dashboard.
 
@@ -42,8 +42,7 @@ Once you are redirected to the dashboard, you have to create a new project to be
 - **Plan**: Select the plan you want to subscribe to (required).
 - **Add member**: Invite someone else to collaborate on the project (optional).
 
-<!-- TODO: update this screenshot once the UI changes are made -->
-![](/docs/onboarding/create-project.png)
+![Screenshot of APItoolkit's create new project page](/docs/onboarding/create-project.png)
 
 Once you are done providing the required values and your payment details (if you chose the **Pay as you use** plan), click the **Proceed** button. Your new project will then be created and you will be redirected to a survey form; kindly fill out the form displayed to proceed further.
 
@@ -51,10 +50,9 @@ Once you are done providing the required values and your payment details (if you
 
 Once your project is created, an API key is automatically generated for you (which you can already see being used in the integration examples on the **Get Started** tab—onboarding checklist). To fetch your API key anytime or create a new one, kindly click on the project name at the top-left section of the dashboard and then click on the **API Keys** tab. You will then be redirected to another page where you can access the API key or create a new one.
 
-<!-- TODO: update this screenshot once the UI changes are made -->
-![](/docs/onboarding/settings-popup.png)
+![Screenshot of APItoolkit's settings popup](/docs/onboarding/api-keys-popup.png)
 
-![](/docs/onboarding/api-keys.png)
+![Screenshot of APItoolkit's API keys page](/docs/onboarding/api-keys-page.png)
 
 ## ④ Integrate SDK
 
