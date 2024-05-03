@@ -30,7 +30,12 @@ Kindly visit [this page](https://app.apitoolkit.com?utm_source=docs_onboarding) 
 
 ![Screenshot of APItoolkit's signup page](/docs/onboarding/signup-page.png)
 
-Once you are done providing the required values, click on the **Continue** button. Your account will then be created and you will be redirected to the APItoolkit dashboard.
+```=html
+<div class="callout">
+  <i class="fa-solid fa-forward"></i>
+  <p>Once you are done providing the required values, click on the <b>Continue</b> button. Your account will then be created and you will be redirected to the APItoolkit dashboard.</p>
+</div>
+```
 
 ## ② Create a New Project
 
@@ -44,7 +49,12 @@ Once you are redirected to the dashboard, you have to create a new project to be
 
 ![Screenshot of APItoolkit's create new project page](/docs/onboarding/create-project.png)
 
-Once you are done providing the required values and your payment details (if you chose the **Pay as you use** plan), click the **Proceed** button. Your new project will then be created and you will be redirected to a survey form; kindly fill out the form displayed to proceed further.
+```=html
+<div class="callout">
+  <i class="fa-solid fa-forward"></i>
+  <p>Once you are done providing the required values and your payment details (if you chose the <b>Pay as you use</b> plan), click the <b>Proceed</b> button. Your new project will then be created and you will be redirected to a survey form; kindly fill out the form displayed to proceed further.</p>
+</div>
+```
 
 ## ③ Fetch API Key
 
@@ -84,8 +94,12 @@ Here is a quick overview of all the available dashboard tabs and the features in
 <th class="font-bold">Description</th>
 </tr> -->
 <tr>
+<td class="font-bold border">Get Started</td>
+<td>The onboarding checklist that reminds you of all you need to integrate APItoolkit into your API for monitoring to begin.</td>
+</tr>
+<tr>
 <td class="font-bold border">Dashboard</td>
-<td>A summary of all the API analytics options, including the Logs Explorer, Anomalies Detection, Endpoints Detection, etc. alongside all monitored requests visualized by status code, errors, endpoint, and latency.</td>
+<td>A summary of all the API analytics, including requests, anomalies, endpoints, etc. alongside all the requests visualized by status code, errors, endpoint, and latency percentiles.</td>
 </tr>
 <tr>
 <td class="font-bold border">Endpoints</td>
