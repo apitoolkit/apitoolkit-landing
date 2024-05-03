@@ -8,8 +8,8 @@ hideFileTree: true
 pageFullWidth: true
 hideToc: true
 pages:
-  - title: Getting Started
-    slug: /docs/dashboard/getting-started
+  - title: Get Started
+    slug: /docs/dashboard/get-started
     icon: list-check
   - title: Dashboard
     slug: /docs/dashboard/dashboard
@@ -36,7 +36,7 @@ pages:
 
 # Dashboard Guides
 
-In these guides, we will show you how to navigate through the APItoolkit dashboard and maximize all the powerful features you can access on different pages of the dashboard. Kindly click on any of the cards below to get started.
+In these guides, we will show you how to effectively navigate through the APItoolkit dashboard and maximize all the powerful features accessible on different pages of the dashboard. Kindly click on any of the cards below to get started.
 
 ```=html
 <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-8 text-center">
