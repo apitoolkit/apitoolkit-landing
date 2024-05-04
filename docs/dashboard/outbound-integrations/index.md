@@ -19,8 +19,8 @@ On this page, you will find all the outgoing requests from your API. Like the ot
 
 ```=html
 <div class="callout">
-  <i class="fa-regular fa-lightbulb"></i>
-  <p>An <b>outgoing request</b> is the API request your make from your server to another. APItoolkit will also return outgoing requests in association with the incoming request that triggered them.</p>
+  <i class="fa-solid fa-book"></i>
+  <p>An <b>outgoing request</b> is the API request your make from your server to another (e.g., a request to an external API inside your own API). APItoolkit will also return outgoing requests in association with the incoming request that triggered them.</p>
 </div>
 ```
 
