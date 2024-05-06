@@ -33,6 +33,16 @@ On this page, you will find a list of all ongoing **anomalies** (new **Request S
 
 ```=html
 <hr />
+```
+
+Here's a quick video overview for a visual walkthrough of this page:
+
+```=html
+<iframe width="600" height="315" src="https://www.youtube.com/embed/4F4l-hjpUfs?si=prafvDIDS2IPwWsT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+```
+
+```=html
+<hr />
 <a href="/docs/dashboard/api-log-explorer/" class="w-full btn btn-outline link link-hover">
     Next: API Log Explorer Page
     <i class="fa-regular fa-arrow-right mr-4"></i>
