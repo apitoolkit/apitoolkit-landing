@@ -30,7 +30,7 @@ All endpoints are organized based on the following categories:
 </div>
 ```
 
-You can also click on any displayed endpoint to explore them in more detail. Doing this will redirect you to a new page with similar data visualization of the requests on the Dashboard page. Here you can access three tabs, namely: **Overview**, **API Docs**, and **Shapes**.
+You can also click on any displayed endpoint to explore them in more detail. Doing this will redirect you to a new page with similar data visualization of the requests on the Dashboard page. On this new page, you can access three tabs (**Overview**, **API Docs**, and **Shapes**) described below.
 
 ## Overview
 
