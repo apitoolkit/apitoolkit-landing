@@ -30,7 +30,7 @@ On this page, you will find a list of all the requests tracked from your API inc
 
 You can query the returned data using one or more fields from the request (`status_code`, `host`, `request_body`, `has_errors`, `request_type`, etc.).
 
-There are two filtering options, the **manual selector mode** and the **editor mode**.
+There are two query filtering options, the **manual selector mode** and the **editor mode**.
 
 You can manually add filters by selecting the fields and sub-fields you want and clicking the **Run Query** button as seen in the image below.
 
@@ -40,13 +40,13 @@ Alternatively, you can toggle the **Use editor** button, use the text editor to 
 
 ![Screenshot of APItoolkit's API log explorer page](/docs/dashboard/api-log-explorer/screen-4.png)
 
-If you toggle a request log, you can also manually select a field, click on it, and click the **Filter by field** or **Exclude by field** options to automatically add that field to the list of queries and run the query.
+If you toggle a request log, you can also manually select a field, click on it, and click the **Filter by field** or **Exclude by field** options to automatically add that field to the list of queries and run the query immediately.
 
 ![Screenshot of APItoolkit's API log explorer page](/docs/dashboard/api-log-explorer/screen-5.png)
 
 ## Alerts
 
-You can create an alert and get notified via email or a Slack channel (if already configured) when the defined requests cross a defined throughput threshold. To achieve this, apply your desired filters first, click on the **Save as Alert** tab, input the alert/warning threshold values, define the alert message, and select where the alert will be sent.
+You can create an alert and get notified via email or a Slack channel (if already configured) when some requests cross a defined throughput threshold. To achieve this, apply your desired filters first, click on the **Save as Alert** tab, input the alert/warning threshold values, define the alert message, and select the notification channels where the alert will be sent.
 
 <!-- You can also use template tags in the subject like so: `Error in {/{alert.tags}}` -->
 
