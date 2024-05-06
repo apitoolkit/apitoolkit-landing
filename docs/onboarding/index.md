@@ -17,12 +17,13 @@ In this guide, we will walk you through the process of integrating APItoolkit in
 
 ## Getting Started
 
-There are four steps required to get started with APItoolkit and begin exploring and analyzing requests from your API in our dashboard:
+There are five steps required to get started with APItoolkit and begin exploring and analyzing requests from your API in our dashboard:
 
 1. [Create an Account](#create-an-account)
 2. [Create a New Project](#create-a-new-project)
 3. [Fetch your API Key](#fetch-api-key)
 4. [Integrate the SDK](#integrate-sdk)
+5. [Acknowledge Endpoints](#⑤-acknowledge-endpoints)
 
 ## ① Create an Account
 
@@ -79,16 +80,13 @@ To integrate with your preferred framework, kindly follow the quick guidelines b
 
 {% render "default/markdown/integration-footer.liquid", config:config %}
 
-```=html
-<hr />
-```
+## ⑤ Acknowledge Endpoints
 
-::::
-{.text-center}
-Once you successfully integrate APItoolkit into your application using any of our SDKs, we will start monitoring requests to your API and you can begin exploring the data in the dashboard using all our powerful features.
+Once APItoolkit starts tracking data from your API, you will find the list of **detected endpoints** in the [Endpoints](/docs/dashboard/endpoints/) page and the list of **detected anomalies** (also known as **Request Shapes**) on the [Changes & Errors](/docs/dashboard/changes-errors/) page or in the Ongoing Anomalies and Monitors section of the [Dashboard](/docs/dashboard/dashboard/) page. You need to **acknowledge** each endpoint or anomaly so APItoolkit understands the shape of the endpoints on your API and uses that information for future anomaly detections. As a side effect, we then use this information to trigger the [OpenAPI spec generation](/docs/dashboard/documentation) (swagger docs) feature we offer and send reports. Hence, **you should acknowledge all important endpoints you want us to monitor**.
 
-![APItoolkit dashboard screenshot](/assets/img/dashboard.png){.block .drop-shadow-lg .border}
-::::
+![APItoolkit dashboard screenshot](/assets/img/dashboard.png)
+
+In summary, once you successfully integrate APItoolkit into your application using any of our SDKs, we will start monitoring requests to your API and you can start acknowledging endpoints and begin exploring the data in the dashboard using all our powerful features.
 
 ## Dashboard Overview
 
