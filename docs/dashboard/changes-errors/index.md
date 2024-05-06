@@ -13,9 +13,16 @@ In this guide, you will learn how to effectively navigate through the **Changes 
 <hr />
 ```
 
-On this page, you will find all the
+On this page, you will find a list of all ongoing **anomalies** (new **Request Shapes** or new **Endpoints**) detected from different request types on your API, including the endpoints they were detected on, and the new, updated, or deleted fields detected. You can **sort** the list based on the first/last time the anomaly was seen or the number of associated events, **acknowledge** or **archive** each anomaly, and click on each list item to explore them in more detail.
 
-![Screenshot of APItoolkit's endpoints page](/docs/dashboard/endpoints/endpoints.png)
+![Screenshot of APItoolkit's changes & errors page](/docs/dashboard/changes-errors/changes-errors.png)
+
+```=html
+<div class="callout">
+  <i class="fa-solid fa-book"></i>
+  <p>An <b>anomaly</b> is any user activity (requests) on your API that is significantly different from previously tracked activities. This might surface as increased response times, error rates, or downtimes, and can be caused by a variety of conditions such as API changes, server issues, network issues, or security threats.</p>
+</div>
+```
 
 ```=html
 <div class="callout">

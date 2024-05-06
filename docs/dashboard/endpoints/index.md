@@ -13,7 +13,7 @@ In this guide, you will learn how to effectively navigate through the **Endpoint
 <hr />
 ```
 
-On this page, you will find all the endpoints tracked from your API. You can **filter** them based on the host (e.g., list all endpoints from your `localhost`, `staging`, or `production` environment), **search** for specific endpoints, and **sort** based on the first/last time the endpoint was seen or the number of events associated with the endpoint.
+On this page, you will find all the endpoints tracked from your API. You can **filter** the list based on the host (e.g., list all endpoints from your `localhost`, `staging`, or `production` environment), **search** for specific endpoints, and **sort** based on the first/last time the endpoint was seen or the number of events associated with the endpoint.
 
 ![Screenshot of APItoolkit's endpoints page](/docs/dashboard/endpoints/endpoints.png)
 
