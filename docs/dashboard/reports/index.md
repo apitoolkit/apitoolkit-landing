@@ -15,7 +15,7 @@ In this guide, you will learn how to effectively navigate through the **Reports*
 
 On this page, you will find a history of all the email notification reports sent to members of the project. These reports will include a summary of detected anomalies and some performance details. You can choose to receive these reports daily or weekly by selecting any of the options at the top-left section of the page.
 
-![Screenshot of APItoolkit's documentation page](/docs/dashboard/reports/screen.png)
+![Screenshot of APItoolkit's report page](/docs/dashboard/reports/screen.png)
 
 ```=html
 <div class="callout">
@@ -26,7 +26,7 @@ On this page, you will find a history of all the email notification reports sent
 
 ```=html
 <hr />
-<a href="/docs/dashboard/reports/" class="w-full btn btn-outline link link-hover">
+<a href="/docs/dashboard/project-settings/" class="w-full btn btn-outline link link-hover">
     Next: Project Settings
     <i class="fa-regular fa-arrow-right mr-4"></i>
 </a>
