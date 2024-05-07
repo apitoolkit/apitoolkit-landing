@@ -2,12 +2,13 @@
 title: Error Tracking
 date: 2024-05-07
 updatedDate: 2024-05-07
+hideToc: true
 fileTreeWeight: 2
 ---
 
 # Error Tracking
 
-APItoolkit allows you to find and fix errors and breaking changes in real-time. With this, you can catch changes in your APIs (incoming requests) and third-party integrations (outgoing requests) with enough context to reproduce the issues and narrow down the root cause.
+APItoolkit allows you to find and fix errors and breaking changes affecting your users in real-time. With this, you can catch changes in your APIs (incoming requests) and third-party integrations (outgoing requests) with enough context to reproduce the issues and narrow down the root cause.
 
 ```=html
 <iframe width="600" height="315" src="https://www.youtube.com/embed/4F4l-hjpUfs?si=QRB9_IpS2MFw1Y1g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
