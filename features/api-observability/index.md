@@ -13,7 +13,7 @@ hide-date: true
 
 {class="mt-2 mb-3 dark:text-white "}
 
-### See Clearly, Fix Quickly. Observe and Fix any API issues in Real Time.
+### See Clearly, Fix Quickly. Observe and Fix any API issues in Real Time
 
 {class="py-5"}
 Stop API issues before they stop your customers. Achieve real-time API Observability to pinpoint issues, understand root causes, and fix problems in real-time
@@ -95,7 +95,17 @@ Catch errors from any source, whether it's the API itself, a dependent service, 
 
 {% render "default/markdown/feature-overview.liquid", this:this %}
 
+{class="text-center"}
+::::
+
+### Integrate APItoolkit
+
+```=html
+<hr />
+```
+
 {% render "default/markdown/integration-footer.liquid", config:config %}
+::::
 
 ```=html
 </div>

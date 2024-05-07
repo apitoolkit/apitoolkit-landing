@@ -13,7 +13,7 @@ hide-date: true
 
 {class="mt-2 mb-3 dark:text-white "}
 
-### Find and fix Errors and Breaking Changes in realtime.
+### Find and fix Errors and Breaking Changes in realtime
 
 {class="py-5"}
 Error monitoring is not enough. Catch breaking changes in your APIs and third party integrations with enough context to reproduce the issues, and narrow down the root cause.
@@ -81,7 +81,7 @@ Don't just track errors and stack traces, but also record the incoming and outgo
 
 {.leading-tight}
 
-### Track breaking changes in your APIs & Third party Integrations.
+### Track breaking changes in your APIs & Third party Integrations
 
 {.text-lg}
 Catch breaking changes in your APIs and in any third party APIs you depend on. No other platform can detect arbitrary breaking changes in your APIs or any APIs you call.
@@ -119,7 +119,17 @@ Integrate Alerts into your current workflow through slack, email, teams, pagerdu
 
 {% render "default/markdown/feature-overview.liquid", this:this %}
 
+{class="text-center"}
+::::
+
+### Integrate APItoolkit
+
+```=html
+<hr />
+```
+
 {% render "default/markdown/integration-footer.liquid", config:config %}
+::::
 
 ```=html
 </div>

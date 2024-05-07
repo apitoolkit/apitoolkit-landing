@@ -2,24 +2,30 @@
 <html lang="en">
   <head>
     <link rel="canonical" href="https://apitoolkit.io{{this.permalink}}">
-    <meta property="og:title" content="{% if this.frontmatter.title %}{{this.frontmatter.title}}{% endif %}">
-    <meta property="og:description" content="{{ this.content | strip_html | truncatewords: 20 }}">
-    <meta
-      property="og:image"
-      content="{% if this.frontmatter.featured_image%}{{this.frontmatter.featured_image}}{% endif %}"
-    >
-    <meta
-      property="og:type"
-      content="{% if this.frontmatter.og_type %}{{this.frontmatter.og_type}}{% else %}article{% endif %}"
-    >
-
+    <title>
+      {% if this.frontmatter.title %}{{ this.frontmatter.title }} | APItoolkit Docs{% endif %}
+    </title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="QuickStatic">
     <!-- This documentation site was built with QuickStatic, https://github.com/tonyalaribe/quickstatic -->
+    <meta name="description" content="APItoolkit product and SDKs documentation">
+    <meta
+      property="og:title"
+      content="{% if this.frontmatter.title %}{{this.frontmatter.title}} | APItoolkit Docs{% endif %}"
+    >
+    <meta property="og:description" content="APItoolkit product and SDKs documentation">
+    <meta
+      property="og:image"
+      content="{% if this.frontmatter.ogImage%}{{this.frontmatter.ogImage}}{% else %}https://raw.githubusercontent.com/apitoolkit/.github/main/images/docs-og.png{% endif %}"
+    >
+    <meta
+      property="og:type"
+      content="{% if this.frontmatter.ogType %}{{this.frontmatter.ogType}}{% else %}article{% endif %}"
+    >
 
-    <!-- favicon items -->
+    <!-- Favicon items -->
     <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
@@ -29,12 +35,8 @@
     <meta name="theme-color" content="#ffffff">
     <base href="{{ this.permalink }}">
 
-    <title>
-      {% if this.frontmatter.title %}{{ this.frontmatter.title }}{% endif %}
-    </title>
-    <meta name="description" content="{{ this.content | strip_html | truncatewords: 20 }}">
+    <!-- Stylesheets and Scripts -->
     <link rel="stylesheet" href="/assets/css/tailwind.min.css">
-
     <script defer src="https://kit.fontawesome.com/32c218ff10.js" crossorigin="anonymous"></script>
     <script defer src="/assets/deps/htmx/htmx.min.js"></script>
     <script defer src="/assets/deps/htmx/preload.js"></script>
@@ -46,6 +48,36 @@
       });
     </script>
     <style>
+      @font-face {
+        font-family: 'Bakemono';
+        src: url('/assets/deps/bakemono/Bakemono-Variable.woff2') format('woff2-variations'),
+          url('/assets/deps/bakemono/Bakemono-Variable.woff') format('woff-variations'),
+          url('/assets/deps/bakemono/Bakemono-Variable.ttf') format('ttf-variations');
+      }
+
+      :root {
+        font-family: 'Bakemono', sans-serif;
+      }
+
+      .monospace {
+        font-family: 'Bakemono', monospace;
+        font-variation-settings: 'MONO' 1000;
+      }
+
+      h1 {
+        font-variation-settings: 'wght' 700, 'MONO' 500;
+      }
+
+      h2 {
+        font-variation-settings: 'wght' 600, 'MONO' 500;
+      }
+
+      h3,
+      h4,
+      h5 {
+        font-variation-settings: 'wght' 500, 'MONO' 500;
+      }
+
       h1,
       h2,
       h3,
@@ -55,6 +87,7 @@
         position: relative;
         cursor: pointer;
       }
+
       .header-link {
         position: absolute;
         left: -20;
@@ -66,6 +99,7 @@
         font-size: 0.7rem;
         padding-right: 20px;
       }
+
       h1:hover .header-link,
       h2:hover .header-link,
       h3:hover .header-link,
@@ -75,31 +109,59 @@
       .header-link:hover {
         display: inline;
       }
-    </style>
-    <style>
-      @font-face {
-        font-family: 'Bakemono';
-        src: url('/assets/deps/bakemono/Bakemono-Variable.woff2') format('woff2-variations'),
-          url('/assets/deps/bakemono/Bakemono-Variable.woff') format('woff-variations'),
-          url('/assets/deps/bakemono/Bakemono-Variable.ttf') format('ttf-variations');
+
+      .docs-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 16rem;
+        text-decoration: none;
+        border-width: 2px;
+        border-color: #808080;
       }
-      :root {
-        font-family: 'Bakemono', sans-serif;
+
+      .docs-card:hover {
+        border-color: #377cfb;
       }
-      h1 {
-        font-variation-settings: 'wght' 700, 'MONO' 500;
+
+      .docs-card-2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 12rem;
+        text-decoration: none;
+        border-width: 2px;
+        border-color: #808080;
       }
-      h2 {
-        font-variation-settings: 'wght' 600, 'MONO' 500;
+
+      .docs-card-2:hover {
+        border-color: #377cfb;
       }
-      h3,
-      h4,
-      h5 {
-        font-variation-settings: 'wght' 500, 'MONO' 500;
+
+      .callout {
+        background-color: #f7f7f7;
+        border-left: 6px solid #377cfb;
+        padding: 16px;
+        margin: 16px 0;
+        border-radius: 4px;
       }
-      .monospace {
-        font-family: 'Bakemono', monospace;
-        font-variation-settings: 'MONO' 1000;
+
+      [data-theme="sunset"] .callout {
+        color: #000000;
+      }
+
+      .callout p {
+        margin: 0;
+      }
+
+      p img {
+        border-width: 1px;
+        border-color: #e5e7eb;
+        --tw-drop-shadow: none !important;
       }
     </style>
 
@@ -297,6 +359,7 @@
       >
     </noscript>
   </head>
+
   <body data-theme="emerald" hx-boost="true" hx-ext="preload,head-support" class="" preload>
     <script>
       if (localStorage.getItem('darkMode') === 'true') {
@@ -322,13 +385,13 @@
             <img class="h-6 hidden dark:inline-block" src="/assets/brand/logo_white.svg" alt="APItoolkit white logo">
           </a>
           <div class="flex gap-4 items-center">
-            <a href="/" class="hidden sm:inline-block text-sm text-secondary">Back to Website</a>
+            <a href="/" class="hidden sm:inline-block text-sm text-secondary">↢&nbsp;Back to Website</a>
             <a class="cursor-pointer sm:hidden" onClick="search_modal.showModal()" aria-label="search" title="Search">
               <svg class="icon h-4 w-4 text-current fill-current stroke-current opacity-70">
                 <use xlink:href="/assets/deps/fontawesome/solid.svg#magnifying-glass"></use>
               </svg>
             </a>
-            <a href="app.apitoolkit.io" class="btn btn-sm btn-secondary">Sign Up</a>
+            <a href="https://app.apitoolkit.io?utm_source=docs" class="btn btn-sm btn-secondary">Sign Up</a>
 
             <a
               class="input input-sm bg-slate-50 dark:bg-base-200 input-bordered hidden sm:flex items-center gap-2"
@@ -378,82 +441,83 @@
       <section class="text-center">
         <div class="max-w-7xl w-full text-left gap-4 text-md hidden sm:inline-flex">
           {% capture root_menu_items %}
-            {% assign is_home = this.frontmatter.title | equals: "Home" %}
-            <a class="flex gap-3 sm:border-b-2  {{ is_home | ternary: 'sm:border-b-secondary text-secondary sm:text-current ', 'border-b-transparent' }} py-2 px-1 items-center" 
-              href="/docs/" preload="preload:init" title="Documentation Home" aria-label="Documentation Home">
-              <svg class="icon h-5 w-5 text-current fill-current stroke-current  {{ is_home | ternary: 'text-secondary', '' }}"><use xlink:href="/assets/deps/fontawesome/regular.svg#house"></use></svg>
-              <span>Home</span>
-            </a>
-            {% assign pages = file_list | where_glob: 'file_path', "./docs/*/index.md" | sort: "frontmatter.menu_weight" | reverse %}
-            {% for page in pages %}
-              {% assign parent_doc_prefix = page.file_path | remove: "index.md" | remove_first: "." %}
-              {% assign is_active = this.permalink | starts_with: parent_doc_prefix %}
-              <a class="flex gap-3 sm:border-b-2 {{ is_active | ternary: 'sm:border-b-secondary text-secondary sm:text-current', 'border-b-transparent' }} py-2 px-1 items-center" href="{{ page.permalink }}" preload="preload:init">
-                <i class="fa-regular fa-{% if page.frontmatter.fa-logo %}{{ page.frontmatter.fa-logo }}{%else%}star{%endif%} w-5 h-5 {{ is_active | ternary: 'text-secondary', '' }}"></i>
-                <span>{{ page.frontmatter.title | default: 'Untitled' }}</span>
-              </a>
-            {% endfor %}
-          {% endcapture %}
+        {% assign is_home = this.frontmatter.title | equals: "Home" %}
+        <a class="flex gap-3 sm:border-b-2  {{ is_home | ternary: 'sm:border-b-secondary text-secondary sm:text-current ', 'border-b-transparent' }} py-2 px-1 items-center"
+          href="/docs/" preload="preload:init" title="Documentation Home" aria-label="Documentation Home">
+          <svg
+            class="icon h-5 w-5 text-current fill-current stroke-current  {{ is_home | ternary: 'text-secondary', '' }}">
+            <use xlink:href="/assets/deps/fontawesome/regular.svg#house"></use>
+          </svg>
+          <span>Home</span>
+        </a>
+        {% assign pages = file_list | where_glob: 'file_path', "./docs/*/index.md" %}
+        {% for page in pages %}
+        {% assign parent_doc_prefix = page.file_path | remove: "index.md" | remove_first: "." %}
+        {% assign is_active = this.permalink | starts_with: parent_doc_prefix %}
+        <a class="flex gap-3 sm:border-b-2 {{ is_active | ternary: 'sm:border-b-secondary text-secondary sm:text-current', 'border-b-transparent' }} py-2 px-1 items-center"
+          href="{{ page.permalink }}">
+          <i
+            class="fa-regular fa-{% if page.frontmatter.faLogo %}{{ page.frontmatter.faLogo }}{%else%}star{%endif%} w-5 h-5 {{ is_active | ternary: 'text-secondary', '' }}"></i>
+          <span>{{ page.frontmatter.title | default: 'Untitled' }}</span>
+        </a>
+        {% endfor %}
+        {% endcapture %}
           {{ root_menu_items }}
-        </div>
-        <div class="text-md sm:hidden text-left flex items-center ">
-          <label for="mobile-menu-drawer" class="px-5 py-3">
-            <svg class="icon h-5 w-5 text-current fill-current stroke-current opacity-70">
-              <use xlink:href="/assets/deps/fontawesome/regular.svg#bars"></use>
-            </svg>
-          </label>
-          <a class="py-2">{{ this.frontmatter.title }}</a>
         </div>
       </section>
     </section>
-    <section class="text-center  ">
+    <section class="text-center">
       <div class="max-w-7xl w-full text-left inline-flex ">
         <!--
           Placed here to be situated infront of the conditional below, since the conditional clause does't affect mobile
         -->
         {% capture main_menu_items %}
-          {% assign parts = this.permalink | split: '/' %}
-          {% assign parent_doc_section = parts[2] %}
-          {% capture glob_pattern %}./docs/{{ parent_doc_section }}/*/index.md{% endcapture %}
-          {% assign pages = file_list | where_glob: 'file_path', glob_pattern %}
-          {% for page in pages %}
-            <section class="pl-1">
-              <a class="block font-semibold pb-3" href="{{ page.permalink }}">{{ page.frontmatter.title }}</a>
-              {% capture glob_pattern1 %}.{{ page.permalink }}*/index.md{% endcapture %}
-              {% assign subpages = file_list | where_glob: 'file_path', glob_pattern1 %}
-              {% if subpages.size > 0 %}
-                <ul class="space-y-2">
-                  {% for subpage in subpages %}
-                    <li>
-                      {% assign is_active_page = subpage.permalink |  equals: this.permalink %}
-                      <a href="{{ subpage.permalink }}" class="hover:text-secondary {{ is_active_page | ternary: 'text-secondary', '' }}">{{ subpage.frontmatter.title }}</a>
-                      {% capture glob_pattern2 %}.{{ subpage.permalink }}*/index.md{% endcapture %}
-                      {% assign subsubpages = file_list | where_glob: 'file_path', glob_pattern2 %}
-                      {% if subsubpages.size > 0 %}
-                        <ul class="pl-5 space-y-2 pt-2">
-                          {% for subsubpage in subsubpages %}
-                            <li>
-                              {% assign is_active_subpage = subsubpage.permalink |  equals: this.permalink %}
-                              <a href="{{ subsubpage.permalink }}" class="hover:text-secondary {{ is_active_subpage | ternary: 'text-secondary', '' }}">{{ subsubpage.frontmatter.title }}</a>
-                            </li>
-                          {% endfor %}
-                        </ul>
-                      {% endif %}
-                    </li>
-                  {% endfor %}
-                </ul>
-              {% endif %}
-            </section>
+      {% assign parts = this.permalink | split: '/' %}
+      {% assign parent_doc_section = parts[2] %}
+      {% capture glob_pattern %}./docs/{{ parent_doc_section }}/*/index.md{% endcapture %}
+      {% assign pages = file_list | where_glob: 'file_path', glob_pattern | sort %}
+      {% for page in pages %}
+      <section class="pl-1">
+        <a class="block font-semibold pb-3" href="{{ page.permalink }}">{{ page.frontmatter.title }}</a>
+        {% capture glob_pattern1 %}.{{ page.permalink }}*/index.md{% endcapture %}
+        {% assign subpages = file_list | where_glob: 'file_path', glob_pattern1 | sort %}
+        {% if subpages.size > 0 %}
+        <ul class="space-y-2">
+          {% for subpage in subpages %}
+          <li>
+            {% assign is_active_page = subpage.permalink | equals: this.permalink %}
+            <a href="{{ subpage.permalink }}"
+              class="hover:text-secondary {{ is_active_page | ternary: 'text-secondary', '' }}">{{
+              subpage.frontmatter.title }}</a>
+            {% capture glob_pattern2 %}.{{ subpage.permalink }}*/index.md{% endcapture %}
+            {% assign subsubpages = file_list | where_glob: 'file_path', glob_pattern2 %}
+            {% if subsubpages.size > 0 %}
+            <ul class="pl-5 space-y-2 pt-2">
+              {% for subsubpage in subsubpages %}
+              <li>
+                {% assign is_active_subpage = subsubpage.permalink | equals: this.permalink %}
+                <a href="{{ subsubpage.permalink }}"
+                  class="hover:text-secondary {{ is_active_subpage | ternary: 'text-secondary', '' }}">{{
+                  subsubpage.frontmatter.title }}</a>
+              </li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+          </li>
           {% endfor %}
-        {% endcapture %}
-        {% unless this.frontmatter.hide_file_tree %}
+        </ul>
+        {% endif %}
+      </section>
+      {% endfor %}
+      {% endcapture %}
+        {% unless this.frontmatter.hideFileTree %}
           <div class="w-64 leading-relaxed border-r border-r-base-200 hidden sm:block ">
             <nav class="w-64 space-y-8 text-sm my-48 pr-5 fixed top-0">
               {{ main_menu_items }}
             </nav>
           </div>
         {% endunless %}
-        <!-- Navigation drawer used on Mbile only -->
+        <!-- Navigation drawer used on Mobile only -->
         <div class="drawer fixed top-0 z-50">
           <input id="mobile-menu-drawer" type="checkbox" class="drawer-toggle">
           <div class="drawer-side">
@@ -476,7 +540,7 @@
           </div>
         </div>
 
-        <div class="flex-1 grow flex relative min-h-screen  ">
+        <div class="flex-1 grow flex relative min-h-screen">
           <div class="text-center flex-1 grow p-5 pt-12 sm:p-20 sm:pb-28 pb-40 divide-y divide-y-base-200">
             <article
               class="
@@ -484,19 +548,40 @@
                 prose-img:w-full prose-img:rounded-md  prose-p:leading-relaxed
                 prose-headings:scroll-mt-40 prose-pre:p-0 prose-img:drop-shadow
                 before:prose-li:bg-secondary before:prose-li:text-secondary
-                prose-strong:font-medium prose-secondary w-full {%if this.frontmatter.page_full_width%}max-w-none {%endif%}
+                prose-strong:font-medium prose-secondary w-full {%if this.frontmatter.pageFullWidth%}max-w-none {%endif%}
               "
               id="mainArticle"
             >
               {{ this.content }}
             </article>
-            <footer class="py-12 text-left space-y-2">
-              <h5 class="font-semibold">Need assistance?</h5>
-              <p>You can reachout to us at <a href="mailto:hello@apitoolkit.io">hello@apitoolkit.io</a></p>
+            <footer class="text-center py-12 text-left space-y-2">
+              <h5 class="font-semibold">Need assistance or have some feedback for us? You can reach out to us at:</h5>
+              <p>
+                <i class="fa-regular fa-envelope"></i>
+                <a
+                  class="link"
+                  href="mailto:hello@apitoolkit.io"
+                  >hello@apitoolkit.io</a
+                >, <i class="fa-brands fa-github"></i>
+                <a
+                  class="link"
+                  href="https://github.com/apitoolkit/apitoolkit-landing/issues/new/choose"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >community issues</a
+                >, or our <i class="fa-brands fa-discord"></i>
+                <a
+                  class="link"
+                  href="https://discord.gg/dEB6EjQnKB"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Discord community server</a
+                >.
+              </p>
             </footer>
           </div>
         </div>
-        {% unless this.frontmatter.hide_toc %}
+        {% unless this.frontmatter.hideToc %}
           <section class="w-56 hidden sm:block ">
             <div class="w-56 my-48  fixed top-0 text-sm space-y-4">
               <strong class="block font-medium">On this page </strong>

@@ -1,5 +1,5 @@
 base_url: "https://apitoolkit.io"
-title: APIToolkit 
+title: APIToolkit
 description: AI tools for Automatic API Monitoring, Documentation and more
 
 layouts:
@@ -16,7 +16,6 @@ layouts:
 ignore:
   - "./node_modules/**"
   - ".git"
-
 
 authors:
   anthony:
@@ -38,16 +37,15 @@ authors:
     name: "Elliot Brenya Sarfo"
     picture: "https://avatars.githubusercontent.com/u/66503402?v=4"
 
-
 apitoolkit_supported_frameworks:
   - id: express_btn
-    title: expressjs
+    title: Expressjs
     img_src: /assets/img/framework-logos/express-logo.png
     alt: Express JS logo
 
   - id: phoenix_btn
-    title: phoenix
-    img_src: /assets/img/framework-logos/phoenix.png
+    title: Phoenix
+    img_src: /assets/img/framework-logos/phoenix-logo.png
     alt: Phoenix Web Framework logo
 
   - id: laravel_btn
@@ -56,61 +54,83 @@ apitoolkit_supported_frameworks:
     alt: Laravel logo
 
   - id: net_btn
-    title: dot net
+    title: Dot Net
     img_src: /assets/img/framework-logos/net-logo.png
     alt: Dot NET logo
 
   - id: django_btn
-    title: django
+    title: Django
     img_src: /assets/img/framework-logos/django-logo.png
     alt: Django logo
 
+  - id: go_btn
+    title: Golang
+    img_src: /assets/img/framework-logos/go-logo.png
+    alt: Go logo
+
   - id: fast_btn
-    title: fastapi
+    title: FastAPI
     img_src: /assets/img/framework-logos/fastapi-logo.png
     alt: FastAPI logo
 
+  - id: symfony_btn
+    title: img_src:ymfony
+    img_src: /assets/img/framework-logos/symfony-logo.png
+    alt: Symfony logo
+
   - id: flask_btn
-    title: flask
+    title: Flask
     img_src: /assets/img/framework-logos/flask-logo.png
     alt: Flask logo
 
   - id: gin_btn
-    title: gin
+    title: Gin
     img_src: /assets/img/framework-logos/gin-logo.png
     alt: Gin logo
 
   - id: adonis_btn
-    title: adonis
+    title: Adonisjs
     img_src: /assets/img/framework-logos/adonis-logo.png
     alt: Adonis JS logo
 
   - id: fastify_btn
-    title: fastify
+    title: Fastify
     img_src: /assets/img/framework-logos/fastify-logo.png
     alt: Fastify logo
 
   - id: nestjs_btn
-    title: nestjs
+    title: Nestjs
     img_src: /assets/img/framework-logos/nestjs-logo.png
     alt: NestJS logo
 
   - id: mux_btn
-    title: mux
+    title: Mux
     img_src: /assets/img/framework-logos/mux-logo.png
     alt: Mux logo
 
-  - id: symfony_btn
-    title: symfony
-    img_src: /assets/img/framework-logos/symfony-logo.png
-    alt: Symfony logo
-
-  - id: go_btn
-    title: go
-    img_src: /assets/img/framework-logos/go-logo.png
-    alt: Go logo
+  - id: pyramid_btn
+    title: Pyramid
+    img_src: /assets/img/framework-logos/pyramid-logo.png
+    alt: Pyramid logo
 
   - id: view_all
-    title: View all SDKs
-    href: /docs/get-started/quickstarts
-    alt: View all SDKs
+    title: ALL SDKs ↣
+    href: /docs/sdks
+    alt: View all SDK guides
+
+docs_main_pages:
+  - title: Onboarding
+    slug: /docs/onboarding
+    icon: circle-play
+
+  - title: SDK Guides
+    slug: /docs/sdks
+    icon: plug
+
+  - title: Dashboard Guides
+    slug: /docs/dashboard
+    icon: chart-line
+
+  - title: Features
+    slug: /docs/features
+    icon: folder-tree

@@ -1,10 +1,11 @@
 {.hidden #express_btn_content}
 :::::
-### Express js
 
-Quickly integrate APIToolkit into your express js application
+### Express JS
 
-#### Installation 
+Here's how to quickly integrate APItoolkit into your Express.js application.
+
+#### Installation
 
 ``` bash
 npm install apitoolkit-express
@@ -12,13 +13,12 @@ npm install apitoolkit-express
 
 #### Integrate
 
-``` js
-
-import express from 'express';
-import { APIToolkit } from 'apitoolkit-express';
+```js
+import express from "express";
+import { APIToolkit } from "apitoolkit-express";
 const app = express();
-const apitoolkitClient = APIToolkit.NewClient({ apiKey: '<API-KEY>' });
-  
+const apitoolkitClient = APIToolkit.NewClient({ apiKey: "{YOUR_API_KEY_HERE}" });
+
 app.use(apitoolkitClient.expressMiddleware)
 // All controllers should live here
 app.get("/", (req, res) => {
@@ -30,6 +30,8 @@ app.use(apitoolkitClient.errorHandler)
 
 ```
 
+⏭️: Read the [Express.js SDK guide](/docs/sdks/nodejs/expressjs) to learn more.
+
 :::::
 
 {.hidden #phoenix_btn_content}
@@ -37,9 +39,9 @@ app.use(apitoolkitClient.errorHandler)
 
 ### Elixir Phoenix
 
-Quickly integrate APIToolkit into your elixir application
+Here's how to quickly integrate APItoolkit into your Elixir application.
 
-#### Installation (add to deps)
+#### Installation
 
 ``` bash
 {:apitoolkit_phoenix, "~> 0.1.1"}
@@ -48,25 +50,26 @@ Quickly integrate APIToolkit into your elixir application
 #### Integrate
 
 ``` js
-// route.ex file                   
+// route.ex file
 defmodule HelloWeb.Router do
-  import ApitoolkitPhoenix
+import ApitoolkitPhoenix
 
-  pipeline :api do
-    plug ApitoolkitPhoenix,
-    config: %{
-      api_key: "<YOUR_API_KEY>",
-    }
-  end
+pipeline :api do
+plug ApitoolkitPhoenix,
+config: %{
+api_key: "{YOUR_API_KEY_HERE}",
+}
+end
 
-  // Automatic error handling
-  @impl Plug.ErrorHandler
-  def handle_errors(conn, err) do
-    conn = report_error(conn, err)
-    json(conn, %{message: "Something went wrong"})
-  end
-end 
+// Automatic error handling
+@impl Plug.ErrorHandler
+def handle_errors(conn, err) do
+conn = report_error(conn, err)
+json(conn, %{message: "Something went wrong"})
+end
+end
 ```
+⏭️: Read the [Elixir Phoenix SDK guide](/docs/sdks/elixir/phoenix) to learn more.
 
 :::::
 
@@ -74,23 +77,24 @@ end
 {.hidden #laravel_btn_content}
 :::::
 
-### Laravel PHP 
+### Laravel PHP
 
-Quickly integrate APIToolkit into your laravel application
+Here's how to quickly integrate APItoolkit into your Laravel application.
 
-#### Installation (add to deps)
+#### Installation
 
 ``` bash
 composer require apitoolkit/apitoolkit-laravel
 ```
 
-#### Set the APITOOLKIT_KEY environment variable to your API key in your .env file.
+#### Integrate
+
+First, set the `APITOOLKIT_KEY` environment variable to your `.env` file.
 
 ```bash
 APITOOLKIT_KEY=xxxxxx-xxxxx-xxxxxx-xxxxxx-xxxxxx
 ```
-
-#### Integrate
+Next, register the middleware in your `app/Http/Kernel.php` file.
 
 ``` php
 <?php
@@ -108,13 +112,17 @@ class Kernel extends HttpKernel
   ];
 }
 ```
+
+⏭️: Read the [PHP Laravel SDK guide](/docs/sdks/php/laravel) to learn more.
+
 :::::
 
 {.hidden #net_btn_content}
 :::::
+
 ### .NET 
 
-Quickly integrate APIToolkit into your .NET application
+Here's how to quickly integrate APItoolkit into your .NET application.
 
 #### Installation 
 
@@ -128,7 +136,7 @@ dotnet add package ApiToolkit.Net
 var config = new Config
 {
     Debug = true, # Set debug flags to false in production
-    ApiKey = "{Your_APIKey}"
+    ApiKey = "{YOUR_API_KEY_HERE}"
 };
 var client = await APIToolkit.NewClientAsync(config);
 # Register the middleware to use the initialized client
@@ -138,24 +146,22 @@ app.Use(async (context, next) =>
     await apiToolkit.InvokeAsync(context);
 });
 ```
+
+⏭️: Read the [.Net SDK guide](/docs/sdks/dotnet/dotnetcore) to learn more.
+
 :::::
 
 {.hidden #django_btn_content}
 :::::
+
 ### Django 
 
-Quickly integrate APIToolkit into your Django application
+Here's how to quickly integrate APItoolkit into your Django application.
 
 #### Installation 
 
 ``` bash
 pip install apitoolkit-django
-```
-
-#### Add APIKey to settings.py
-
-```bash
-APITOOLKIT_KEY = "< YOUR_API_KEY >"
 ```
 
 #### Integrate
@@ -169,16 +175,63 @@ MIDDLEWARE = [
 var config = new Config
 {
     Debug = true, # Set debug flags to false in production
-    ApiKey = "{Your_APIKey}"
+    ApiKey = "{YOUR_API_KEY_HERE}"
 };
 ```
+
+⏭️: Read the [Django SDK guide](/docs/sdks/python/django) to learn more.
+
+:::::
+
+{.hidden #go_btn_content}
+:::::
+
+### Golang Native
+
+Here's how to quickly integrate APItoolkit into your native Golang application.
+
+#### Installation
+
+``` bash
+go get -u github.com/apitoolkit/apitoolkit-go
+```
+
+#### Integrate
+
+```go
+package main
+
+import (
+"net/http"
+"context"
+apitoolkit "github.com/apitoolkit/apitoolkit-go"
+)
+
+func main() {
+// Initialize APIToolkit client with your generated API key
+ctx := context.Background()
+apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "{YOUR_API_KEY_HERE}"})
+if err != nil {
+panic(err)
+}
+
+http.Handle("/", apitoolkitClient.Middleware(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+w.Write([]byte("Hello, World!"))
+})))
+http.ListenAndServe(":8080", nil)
+}
+```
+
+⏭️: Read the [Golang Native SDK guide](/docs/sdks/golang/native) to learn more.
+
 :::::
 
 {.hidden #fast_btn_content}
 :::::
+
 ### FastAPI 
 
-Quickly integrate APIToolkit into your fastapi application
+Here's how to quickly integrate APItoolkit into your FastAPI application.
 
 #### Installation 
 
@@ -194,17 +247,61 @@ from apitoolkit_fastapi import APIToolkit
 
 app = FastAPI()
 
-apitoolkit = APIToolkit(api_key='')
+apitoolkit = APIToolkit(api_key="{YOUR_API_KEY_HERE}")
 
 app.middleware('http')(apitoolkit.middleware)
 ```
+
+⏭️: Read the [FastAPI SDK guide](/docs/sdks/python/fastapi) to learn more.
+
+:::::
+
+{.hidden #symfony_btn_content}
+:::::
+
+### Symfony PHP
+
+Here's how to quickly integrate APItoolkit into your Symfony PHP application.
+
+#### Installation
+
+``` bash
+composer require apitoolkit/apitoolkit-symfony
+```
+
+#### Integrate
+
+First, set the `APITOOLKIT_KEY` environment variable in your `.env` file.
+
+``` bash
+APITOOLKIT_KEY=xxxxxx-xxxxx-xxxxxx-xxxxxx-xxxxxx
+```
+
+Next, register the service in your `services.yaml` file.
+
+```yaml
+services:
+APIToolkit\EventSubscriber\APIToolkitService:
+arguments:
+$apiKey: '%env(APITOOLKIT_KEY)%'
+# Optional: if you want to cache login result add this cache poll instance via setter injection
+calls:
+- setCachePool: ['@PutYourCachePoolServiceHere']
+tags:
+- { name: 'kernel.event_subscriber' }
+
+```
+
+⏭️: Read the [PHP Symfony SDK guide](/docs/sdks/php/symfony) to learn more.
+
 :::::
 
 {.hidden #flask_btn_content}
 :::::
+
 ### Flask 
 
-Quickly integrate APIToolkit into your flask application
+Here's how to quickly integrate APItoolkit into your Flask application.
 
 #### Installation 
 
@@ -214,13 +311,13 @@ pip install apitoolkit-flask
 
 #### Integrate
 
-``` py
+```py
 from flask import Flask
 from apitoolkit_flask import APIToolkit
 
-app = Flask(**name**)
+app = Flask(__name__)
 
-apitoolkit = APIToolkit(api_key="<API_KEY>", debug=True)
+apitoolkit = APIToolkit(api_key="{YOUR_API_KEY_HERE}", debug=True)
 
 @app.before_request
 def before_request():
@@ -231,13 +328,17 @@ def after_request(response):
   apitoolkit.afterRequest(response)
   return response
 ```
+
+⏭️: Read the [Flask SDK guide](/docs/sdks/python/flask) to learn more.
+
 :::::
 
 {.hidden #gin_btn_content}
 :::::
+
 ### Golang Gin 
 
-Quickly integrate APIToolkit into your gin application
+Here's how to quickly integrate APItoolkit into your Gin application.
 
 #### Installation 
 
@@ -259,7 +360,7 @@ apitoolkit "github.com/apitoolkit/apitoolkit-go"
 func main() {
 
     // Initialize the client using your apitoolkit.io generated apikey
-    apitoolkitClient, err := apitoolkit.NewClient(context.Background(), apitoolkit.Config{APIKey: "YOUR GENERATED API KEY"})
+    apitoolkitClient, err := apitoolkit.NewClient(context.Background(), apitoolkit.Config{APIKey: "{YOUR_API_KEY_HERE}"})
     if err != nil {
     	panic(err)
     }
@@ -271,13 +372,17 @@ func main() {
 
 }
 ```
+
+⏭️: Read the [Golang Gin SDK guide](/docs/sdks/golang/gin) to learn more.
+
 :::::
 
 {.hidden #adonis_btn_content}
 :::::
-### Adonis JS 
 
-Quickly integrate APIToolkit into your adonis js application
+### Adonis JS
+
+Here's how to quickly integrate APItoolkit into your Adonis.js application.
 
 #### Installation 
 
@@ -285,21 +390,23 @@ Quickly integrate APIToolkit into your adonis js application
 npm install apitoolkit-adonis
 ```
 
-#### Configure the package
+#### Integrate
+
+First, configure the package.
 
 ``` bash
 node ace configure apitoolkit-adonis
 ```
 
-#### Set APIKEY in `/conf/apitoolkit`
+Next, set API key in a `/conf/apitoolkit.ts` file.
 
 ``` js
 export const apitoolkitConfig = {
-  apiKey: "",
+apiKey: "",
 };
 ```
 
-#### Integrate
+Then, add `@ioc:APIToolkit` to your global middlewares in the `start/kernel.ts` file.
 
 ``` js
 Server.middleware.register([
@@ -307,13 +414,17 @@ Server.middleware.register([
   () => import("@ioc:APIToolkit"),
 ]);
 ```
+
+⏭️: Read the [Adonis.js SDK guide](/docs/sdks/nodejs/adonisjs) to learn more.
+
 :::::
 
 {.hidden #fastify_btn_content}
 :::::
+
 ###  Fastify JS 
 
-Quickly integrate APIToolkit into your Fastify js application
+Here's how to quickly integrate APItoolkit into your Fastify.js application.
 
 #### Installation 
 
@@ -324,25 +435,29 @@ npm install apitoolkit-fastify
 #### Integrate
 
 ``` js
-import APIToolkit from 'apitoolkit-fastify';
-import Fastify from 'fastify';
+import APIToolkit from "apitoolkit-fastify";
+import Fastify from "fastify";
 
 const fastify = Fastify();
 
 // Create and initialize an instance of the APIToolkit
 const apittoolkitClient = APIToolkit.NewClient({
-  apiKey: 'YOUR_API_KEY',
+  apiKey: "{YOUR_API_KEY_HERE}",
   fastify,
 });
 apitoolkitClient.init();
 ```
+
+⏭️: Read the [Fastify.js SDK guide](/docs/sdks/nodejs/fastifyjs) to learn more.
+
 :::::
 
 {.hidden #nestjs_btn_content}
 :::::
+
 ###  Nest JS 
 
-Quickly integrate APIToolkit into your nest js application
+Here's how to quickly integrate APItoolkit into your Nest.js application.
 
 #### Installation 
 
@@ -353,13 +468,13 @@ npm install apitoolkit-express
 #### Integrate
 
 ``` js
-import { NestFactory } from '@nestjs/core';
-import { APIToolkit } from 'apitoolkit-express';
-import { AppModule } from './app.module';
+import { NestFactory } from "@nestjs/core";
+import { APIToolkit } from "apitoolkit-express";
+import { AppModule } from "./app.module";
 //
 async function bootstrap() {
   const apiToolkitClient = APIToolkit.NewClient({
-    apikey: '',
+    apikey: "{YOUR_API_KEY_HERE}",
   });
   const app = await NestFactory.create(AppModule);
   app.use(apiToolkitClient.expressMiddleware);
@@ -368,13 +483,17 @@ async function bootstrap() {
 //
 bootstrap();
 ```
+
+⏭️: Read the [Nest.js SDK guide](/docs/sdks/nodejs/nestjs) to learn more.
+
 :::::
 
 {.hidden #mux_btn_content}
 :::::
+
 ###  Golang Gorilla Mux
 
-Quickly integrate APIToolkit into your Golang Gorilla Mux application
+Here's how to quickly integrate APItoolkit into your Golang Gorilla Mux application.
 
 #### Installation 
 
@@ -397,7 +516,7 @@ import (
 func main() {
   ctx := context.Background()
   // Initialize the client using your generated apikey
-  apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: ""})
+  apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "{YOUR_API_KEY_HERE}"})
   if err != nil {
     panic(err)
   }
@@ -408,93 +527,55 @@ func main() {
 }
 ```
 
+⏭️: Read the [Gorilla Mux SDK guide](/docs/sdks/golang/gorillamux) to learn more.
+
 :::::
 
-
-{.hidden #symfony_btn_content}
+{.hidden #pyramid_btn_content}
 :::::
-### Symfony PHP
 
-Quickly integrate APIToolkit into your Symfony PHP application
+### Pyramid
 
-#### Installation 
+Here's how to quickly integrate APItoolkit into your Pyramid application.
+
+#### Installation
 
 ``` bash
-composer require apitoolkit/apitoolkit-symfony
+pip install apitoolkit-pyramid
 ```
 
-##### Set the APITOOLKIT_KEY environment variable to your API key in your .env file.
+#### Integrate
 
-``` bash
-APITOOLKIT_KEY=xxxxxx-xxxxx-xxxxxx-xxxxxx-xxxxxx
-```
+```py
+from wsgiref.simple_server import make_server
+from pyramid.config import Configurator
+from pyramid.response import Response
+from pyramid.view import view_config
 
-#### Integrate (services.yaml)
-
-```yaml 
-services:
-  APIToolkit\EventSubscriber\APIToolkitService:
-    arguments:
-      $apiKey: '%env(APITOOLKIT_KEY)%'
-    # Optional:  if you want to cache login result add this cache poll instance via setter injection
-    calls:
-      - setCachePool: ['@PutYourCachePoolServiceHere']
-    tags:
-      - { name: 'kernel.event_subscriber' }
-      
-```
-
-:::::
-
-{.hidden #go_btn_content}
-:::::
-### Golang Native 
-
-Quickly integrate APIToolkit into your native Golang application
-
-#### Installation 
-
-``` bash
-go get -u github.com/apitoolkit/apitoolkit-go
-```
-
-#### Integrate 
-
-```go
-package main
-
-import (
-  "net/http"
-  "context"
-  apitoolkit "github.com/apitoolkit/apitoolkit-go"
+@view_config(
+route_name='home'
 )
+def home(request):
+return Response('Welcome!')
 
-func main() {
-  // Initialize APIToolkit client with your generated API key
-  ctx := context.Background()
-  apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "YOUR_GENERATED_API_KEY"})
-  if err != nil {
-    panic(err)
-  }
-
-  http.Handle("/", apitoolkitClient.Middleware(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-    w.Write([]byte("Hello, World!"))
-  })))
-  http.ListenAndServe(":8080", nil)
-}
+if __name__ == '__main__':
+setting = {"APITOOLKIT_KEY": "{YOUR_API_KEY_HERE}"}
+with Configurator(settings=setting) as config:
+# Add APItoolkit tween
+config.add_tween("apitoolkit_pyramid.APIToolkit")
+config.add_route('home', '/')
+config.scan()
+app = config.make_wsgi_app()
+server = make_server('0.0.0.0', 6543, app)
+server.serve_forever()
 ```
 
+⏭️: Read the [Pyramid SDK guide](/docs/sdks/python/pyramid) to learn more.
+
 :::::
-
-
-{.text-center}
-## Integrate APIToolkit
-
-{.max-w-4xl .text-center .mx-auto .text-lg}
-We support 14+ web frameworks (if we don't support your framework, email hello@apitoolkit.io and we'll create an SDK for you ASAP)
 
 ``` =html
-<div class="flex flex-col md:flex-row sm:space-x-8 mt-8 width-control">
+<div class="flex flex-col md:flex-row sm:space-x-8 mt-8">
   <div class="mt-4 md:w-1/2">
     <div class="overflow-x-auto p-1 [&>*]:shrink-0 flex items-center flex-nowrap md:grid grid-cols-4 gap-2 ">
       {% for framework in config.raw.apitoolkit_supported_frameworks %}
@@ -505,7 +586,7 @@ We support 14+ web frameworks (if we don't support your framework, email hello@a
         {% else %}
           <button class="integrate-btns h-36 p-4 w-36 md:h-full md:w-full border shadow rounded-lg md:p-2 flex items-center justify-center {% if forloop.first %}ring{% endif %}" 
                   id="{{ framework.id }}" title="{{ framework.title }}" xonclick="integrationTabs(event)"
-                  _="on click remove .ring from .integrate-btns then add .ring to me then put #{{framework.id}}_content.innerHTML into #integration_details_parent.innerHTML "
+                  _="on click remove .ring from .integrate-btns then add .ring to me then put #{{framework.id}}_content.innerHTML into #integration_details_parent.innerHTML"
           >
             <img src="{{ framework.img_src }}" alt="{{ framework.alt }}" class="w-full" />
           </button>

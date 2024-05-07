@@ -116,7 +116,17 @@ Monitor and pinpoint every single error. Understand the “Why,” “How,” an
 
 {% render "default/markdown/feature-overview.liquid", this:this %}
 
+{class="text-center"}
+::::
+
+### Integrate APItoolkit
+
+```=html
+<hr />
+```
+
 {% render "default/markdown/integration-footer.liquid", config:config %}
+::::
 
 ```=html
 </div>
