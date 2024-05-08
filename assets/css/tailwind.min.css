@@ -5988,6 +5988,10 @@ html:has(.drawer-toggle:checked) {
   height: 20rem;
 }
 
+.h-96 {
+  height: 24rem;
+}
+
 .h-\[100vh\] {
   height: 100vh;
 }

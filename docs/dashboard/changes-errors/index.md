@@ -38,7 +38,14 @@ On this page, you will find a list of all ongoing **anomalies** (new **Request S
 Here's a quick video overview for a visual walkthrough of this page:
 
 ```=html
-<iframe width="600" height="315" src="https://www.youtube.com/embed/4F4l-hjpUfs?si=prafvDIDS2IPwWsT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe
+  class="w-full h-48 md:h-96 lg:h-96 xl:h-96"
+  src="https://www.youtube.com/embed/4F4l-hjpUfs?si=prafvDIDS2IPwWsT"
+  title="YouTube Video Player: APItoolkit Error Tracking & Breaking Change Detection"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen
+  ></iframe>
 ```
 
 ```=html
