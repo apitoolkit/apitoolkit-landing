@@ -79,6 +79,23 @@ This section displays some data analysis and visualization from all the requests
 
 ```=html
 <hr />
+```
+
+Here's a quick video overview for a visual walkthrough of this page:
+
+```=html
+<iframe
+  class="w-full h-48 md:h-96 lg:h-96 xl:h-96"
+  src="https://www.youtube.com/embed/blf34G9baP8?si=rwQ6Hwg3QEtSXAOW"
+  title="YouTube Video Player: APItoolkit OpenAPI Spec Documentation"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen
+  ></iframe>
+```
+
+```=html
+<hr />
 <a href="/docs/dashboard/endpoints/" class="w-full btn btn-outline link link-hover">
     Next: Endpoints Page
     <i class="fa-regular fa-arrow-right mr-4"></i>

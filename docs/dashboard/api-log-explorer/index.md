@@ -69,6 +69,53 @@ APItoolkit allows you to publicly share the details of a particular log request 
 
 ```=html
 <hr />
+```
+
+Here's a quick video overview for a visual walkthrough of this page:
+
+```=html
+<iframe
+  class="w-full h-48 md:h-96 lg:h-96 xl:h-96"
+  src="https://www.youtube.com/embed/leyBesljr40?si=wwGEO3bItDNIqHzk"
+  title="YouTube Video Player: APItoolkit OpenAPI Spec Documentation"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen
+  ></iframe>
+```
+
+```=html
+<br />
+```
+
+```=html
+<iframe
+  class="w-full h-48 md:h-96 lg:h-96 xl:h-96"
+  src="https://www.youtube.com/embed/OgHiP3RNJ78?si=UKbpDpDTNUUSBMID"
+  title="YouTube Video Player: APItoolkit OpenAPI Spec Documentation"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen
+  ></iframe>
+```
+
+```=html
+<br />
+```
+
+```=html
+<iframe
+  class="w-full h-48 md:h-96 lg:h-96 xl:h-96"
+  src="https://www.youtube.com/embed/xRzZNgfARLQ?si=byCc8n9f46G87VP9"
+  title="YouTube Video Player: APItoolkit OpenAPI Spec Documentation"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen
+  ></iframe>
+```
+
+```=html
+<hr />
 <a href="/docs/dashboard/documentation/" class="w-full btn btn-outline link link-hover">
     Next: Documentation Page
     <i class="fa-regular fa-arrow-right mr-4"></i>

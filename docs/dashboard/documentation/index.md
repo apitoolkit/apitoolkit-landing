@@ -27,7 +27,7 @@ On this page, you will find an auto-generated **OpenAPI specification** (swagger
 ```=html
 <div class="callout">
   <i class="fa-regular fa-lightbulb"></i>
-  <p>Generally, an OpenAPI specificiation document represents a comprehensive description of your API that other tools can use to generate code, documentation, test cases, etc., thereby streamlining and automating further integration.</p>
+  <p>Generally, an OpenAPI specification document represents a comprehensive description of your API that other tools can use to generate code, documentation, test cases, etc., thereby streamlining and automating further integration.</p>
 </div>
 ```
 
