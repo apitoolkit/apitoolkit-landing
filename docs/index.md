@@ -16,7 +16,7 @@ pageFullWidth: true
 
 # Welcome to APItoolkit Documentation
 
-**APItoolkit** is an end-to-end API and web services management toolkit for engineers and customer support teams. We use AI to help engineering teams observe, manage, monitor, and test their backend systems and any external API they depend on.
+**APItoolkit** is an end-to-end API and web services management toolkit for engineers and customer support teams. We use AI to help engineering teams observe, debug, monitor, and test their backend systems and any external API they depend on.
 
 ```=html
 <hr />
@@ -68,7 +68,7 @@ If we don't support your framework, kindly email <hello@apitoolkit.io> and we'll
 ::::::
 
 {.text-lg}
-APItoolkit is an end-to-end API and web services management toolkit for engineers and customer support teams. We use AI to help engineering teams observe, manage, monitor, and test their backend systems and any external API they depend on.
+APItoolkit is an end-to-end API and web services management toolkit for engineers and customer support teams. We use AI to help engineering teams observe, debug, monitor, and test their backend systems and any external API they depend on.
 
 {class="space-y-2 text-sm sm:pt-1 not-prose" id="waitlist-form-1"}
 [Get Started for Free](https://app.apitoolkit.io){class="drop-shadow hover:drop-shadow-lg transition-all rounded-md hover:bg-yellow-300 bg-amber-300 text-black border border-amber-400 font-semibold inline-block px-4 py-2 mt-2 sm:mt-0 hs-init hs-inview"}
