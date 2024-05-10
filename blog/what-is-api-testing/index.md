@@ -22,7 +22,7 @@ APIs are the reason why you can log in to your Twitter account using your Google
 
 ## What Is API Testing?
 
-API testing is the practice of validating the integrity and [functionality of APIs](https://apitoolkit.io/blog/api-documentation-and-observability-the-truth-you-must-know/) by sending requests across system software and evaluating system responses. In API testing special software is used to send calls to the API eing tested while the responses are noted and analyzed. 
+API testing is the practice of validating the integrity and [functionality of APIs](https://apitoolkit.io/blog/api-documentation-and-observability-the-truth-you-must-know/) by sending requests across system software and evaluating system responses. In API testing special software is used to send calls to the API eing tested while the responses are noted and analyzed.
 
 API testing works on the [business logic](https://www.investopedia.com/terms/b/businesslogic.asp#:~:text=Business%20logic%20is%20the%20custom,constrains%20how%20a%20business%20operates) layer of a codebase, so any anomalies detected could lead to astronomical effects
 One could say that APIs make up the background framework of the internet as we know it today. This is why [API tests are invaluable](https://www.mckinsey.com/business-functions/mckinsey-digital/our-insights/the-seven-make-or-break-api-challenges-cios-need-to-address).
@@ -31,11 +31,11 @@ Read: [Best API Monitoring and Observability Tool in 2023](https://apitoolkit.io
 
 ## Why Should You Test APIs?
 
-API testing is crucial now more than ever because APIs serve as the primary link to business logic. Perhaps, the most important reason for API testing is that as a system scales, changes are made across the codebase. API regression tests can help to detect whether a system upgrade results in a break in [API interfaces](https://apitoolkit.io/blog/the-ultimate-api-management-strategy/). 
+API testing is crucial now more than ever because APIs serve as the primary link to business logic. Perhaps, the most important reason for API testing is that as a system scales, changes are made across the codebase. API regression tests can help to detect whether a system upgrade results in a break in [API regression testing](https://www.bairesdev.com/blog/regression-testing/).
 
 Such a break could have catastrophic results for web apps that rely on those APIs.
 
-On the other hand, [API observability](https://apitoolkit.io/blog/best-api-monitoring-and-observability-tools/) like what we do at [APItoolkit](https://apitoolkit.io) can help you detect breaks in API interfaces that your web app relies on. 
+On the other hand, [API observability](https://apitoolkit.io/blog/best-api-monitoring-and-observability-tools/) like what we do at [APItoolkit](https://apitoolkit.io) can help you detect breaks in API interfaces that your web app relies on.
 For more context, here’s a list of the types of bugs that can be detected by API tests
 
 - Duplicate functionality
@@ -73,19 +73,19 @@ Read: [Key Benefits of API Integration for Developers (with Statistics)](https:/
 ## Key Considerations for Testing APIs
 
 1. **Test Coverage and Test Cases:**
-Designing comprehensive test cases and ensuring sufficient test coverage is essential to ensure that all critical API functionalities are thoroughly tested.
+   Designing comprehensive test cases and ensuring sufficient test coverage is essential to ensure that all critical API functionalities are thoroughly tested.
 
 2. **Test Environment Setup:**
-Creating a reliable and representative test environment that closely mimics the production environment is crucial for accurate testing and reproducing real-world scenarios.
+   Creating a reliable and representative test environment that closely mimics the production environment is crucial for accurate testing and reproducing real-world scenarios.
 
 3. **Test Data Preparation:**
-Preparing relevant and realistic test data sets that cover various scenarios is essential to validate the API's behavior under different conditions.
+   Preparing relevant and realistic test data sets that cover various scenarios is essential to validate the API's behavior under different conditions.
 
 4. **Handling Authentication and Authorization:**
-APIs often involve authentication and authorization mechanisms. Testing these components ensures that only authorized users can access the API's functionalities.
+   APIs often involve authentication and authorization mechanisms. Testing these components ensures that only authorized users can access the API's functionalities.
 
 5. **Performance Optimization:**
-Optimizing API performance is vital to provide a seamless user experience. Conducting performance tests and identifying bottlenecks can help optimize response times and resource utilization.
+   Optimizing API performance is vital to provide a seamless user experience. Conducting performance tests and identifying bottlenecks can help optimize response times and resource utilization.
 
 Read: [Must-Know API Trends in 2023](https://apitoolkit.io/blog/api-trends/)
 
@@ -115,7 +115,7 @@ Read: [Top 7 Reasons Why Your Team Needs an API Monitoring ](https://apitoolkit.
 API testing can be done with a variety of automated tools.
 
 - **APIToolkit**: APIToolkit possesses all the tool you need to design, TEST, and monitor your APIs. It's the one-stop toolbox for [API developers](https://apitoolkit.io/blog/top-8-api-documentation-tools-for-developers/) utilizing a variety of tech stack.
-   ![APIToolkit app user dashboard](./apitoolkit1.jpg)
+  ![APIToolkit app user dashboard](./apitoolkit1.jpg)
 - **Rapid API testing**: Over 1 million developers and 10,000 APIs are available on Rapid API testing. It’s an API testing solution for managing complex API tests throughout the development process. You can run tests for any type of API (including REST, SOAP, and GraphQL).
   ![Rapid API Testing](./image4.png "<a href='https://docs.rapidapi.com/docs/rapidapi-testing-overview'>Image source</a>")
 - **SOAPUI test**: Mainly used for REST, SOAP, and other mainstream API and IoT systems.
@@ -134,16 +134,16 @@ QA teams are usually in charge of API testing. It’s normal to see them follow 
 API test cases are based on the following considerations
 
 - **Failure to return a value**: This is an event in which there is no return value when an API is called.
-Trigger some other API/event/interrupt: Events and interrupt listeners should be tracked when an API output triggers some events.
+  Trigger some other API/event/interrupt: Events and interrupt listeners should be tracked when an API output triggers some events.
 
 - **Return value based on input condition**: This is pretty straightforward. Input is made and the results are authenticated.
 
 - **Update data structure**: Changing data structures will have some effect on the system, which should be authenticated
-Modify certain resources: API calls that modify resources should be checked by accessing the corresponding resources
+  Modify certain resources: API calls that modify resources should be checked by accessing the corresponding resources
 
 Read: [How to Write API Documentation: 10 Essential Guidelines](https://apitoolkit.io/blog/how-to-write-api-docs/)
 
-## Key Takeaways 
+## Key Takeaways
 
 - APIs are software interfaces that allow data exchange and interaction between two different software applications.
 
@@ -155,7 +155,7 @@ Read: [How to Write API Documentation: 10 Essential Guidelines](https://apitoolk
 
 - Develop API testing standards for your organization and train developers on prioritization.
 
-## Final Thoughts on API Testing 
+## Final Thoughts on API Testing
 
 API testing represents the most fundamental measure in maintaining the seamless operation of application systems.
 
