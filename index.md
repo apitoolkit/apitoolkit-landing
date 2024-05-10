@@ -444,8 +444,17 @@ Frequestly asked <br/> Questions
 :::
 ::::
 
-{class="width-control mx-auto mt-16 py-24 prose w-full max-w-full prose-pre:p-0"}
+{class="text-center width-control mx-auto mt-16 py-24 prose w-full max-w-full prose-pre:p-0"}
 ::::
+
+## Integrate APItoolkit
+
+{.mx-auto .text-lg}
+We currently support 17+ web frameworks in different programming languages.
+
+{.mx-auto .text-md .font-semibold}
+If we don't support your framework, kindly email <hello@apitoolkit.io> and we'll create an SDK for you ASAP!
+
 {% render "default/markdown/integration-footer.liquid", config:config %}
 ::::
 ::::::

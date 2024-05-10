@@ -95,7 +95,17 @@ Catch errors from any source, whether it's the API itself, a dependent service, 
 
 {% render "default/markdown/feature-overview.liquid", this:this %}
 
+{class="text-center"}
+::::
+
+### Integrate APItoolkit
+
+```=html
+<hr />
+```
+
 {% render "default/markdown/integration-footer.liquid", config:config %}
+::::
 
 ```=html
 </div>
