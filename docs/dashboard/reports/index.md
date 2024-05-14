@@ -20,7 +20,7 @@ On this page, you will find a history of all the email notification reports sent
 ```=html
 <div class="callout">
   <i class="fa-regular fa-lightbulb"></i>
-  <p>Aside from the general reports, APItoolkit will also send you transactional emails for when you create a new project, when you delete a project, when a new anomaly is detected, when APItoolkit starts tracking data from your API (first-time integration), and when a new member is added to a project.</p>
+  <p>Aside from the general reports, APItoolkit will also send you transactional emails for when you create a new project, when a new member is added to a project, when you delete a project, and when a new anomaly is detected.</p>
 </div>
 ```
 

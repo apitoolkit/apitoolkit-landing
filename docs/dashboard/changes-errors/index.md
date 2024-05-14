@@ -13,7 +13,7 @@ In this guide, you will learn how to effectively navigate through the **Changes 
 <hr />
 ```
 
-On this page, you will find a list of all ongoing **anomalies** (new **Request Shapes** or new **Endpoints**) detected from different request types on your API, including the endpoints they were detected on, and the new, updated, or deleted fields detected. You can **sort** the list based on the first/last time the anomaly was seen or the number of associated events, **acknowledge** or **archive** each anomaly, and click on each list item to explore them in more detail.
+On this page, you will find a list of all ongoing **anomalies** (new **Request Shapes**, **Field Formats**, or **Endpoints**) detected from different request types on your API, including the endpoints they were detected on, and the new, updated, or deleted fields detected. You can **sort** the list based on the first/last time the anomaly was seen or the number of associated events, **acknowledge** or **archive** each anomaly, and click on each list item to explore them in more detail.
 
 ![Screenshot of APItoolkit's changes & errors page](/docs/dashboard/changes-errors/changes-errors.png)
 
@@ -27,7 +27,7 @@ On this page, you will find a list of all ongoing **anomalies** (new **Request S
 ```=html
 <div class="callout">
   <i class="fa-regular fa-lightbulb"></i>
-  <p>When you acknowledge an endpoint or anomaly it is used to trigger the <a href="/docs/dashboard/documentation/">OpenAPI spec generation</a> feature we offer and in sending you daily/weekly reports.</p>
+  <p>When you acknowledge an anomaly, APItoolkit understands the shape of the endpoints on your API and uses that information for future anomaly detections. As a side effect, we then use that to trigger the <a href="/docs/dashboard/documentation/">OpenAPI spec generation</a> feature we offer and send you daily/weekly reports. Hence, <b>you should acknowledge all important detected anomalies</b>.</p>
 </div>
 ```
 
