@@ -23,7 +23,7 @@ To get to this page, kindly click on the project name at the top-left section of
 
 ```=html
 <hr />
-<a href="/docs/dashboard/api-keys/" class="w-full btn btn-outline link link-hover">
+<a href="/docs/dashboard/api-keys/" class="w-full btn btn-outline ">
     Next: API Keys
     <i class="fa-regular fa-arrow-right mr-4"></i>
 </a>
