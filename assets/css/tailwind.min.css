@@ -7389,6 +7389,10 @@ html:has(.drawer-toggle:checked) {
   overflow-y: clip;
 }
 
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
+
 .truncate {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -7866,6 +7870,11 @@ html:has(.drawer-toggle:checked) {
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.py-48 {
+  padding-top: 12rem;
+  padding-bottom: 12rem;
 }
 
 .py-5 {
