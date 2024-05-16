@@ -12,7 +12,6 @@ hide-date: true
 ###### [*API Logs and Metrics*{.drop-shadow-md}]{class="bg-amber-300 px-2 rounded-md dark:text-black"}
 
 {class="mt-2 mb-3 dark:text-white "}
-
 ### See Clearly, Fix Quickly. Observe and Fix any API from API integrations or your services
 
 {class="py-5"}
@@ -38,7 +37,6 @@ These logs give you an in-depth overview of your server-side API calls, includin
 {class="space-y-3 col-span-2"}
 ::::
 {.leading-tight}
-
 ### Real-time Insights, Real-time Fixes via the Log Explorer
 
 {.text-lg}
@@ -56,7 +54,6 @@ No more waiting for problems to snowball. Identify and fix issues as they happen
 {class="space-y-3 col-span-2"}
 ::::
 {.leading-tight}
-
 ### Trace Every Request with Outgoing Request Monitoring
 
 {.text-lg}
@@ -80,7 +77,6 @@ Effortlessly capture the entire request-response chain, allowing you to reproduc
 ::::
 
 {.leading-tight}
-
 ### Error Tracking and Logging for your APIs
 
 {.text-lg}
@@ -97,7 +93,6 @@ Catch errors from any source, whether it's the API itself, a dependent service, 
 
 {class="text-center"}
 ::::
-
 ### Integrate APItoolkit
 
 ```=html

@@ -454,7 +454,7 @@
           </svg>
           <span>Home</span>
         </a>
-        {% assign pages = file_list | where_glob: 'file_path', "./docs/*/index.md" %}
+        {% assign pages = file_list | where_glob: 'file_path', "./docs/*/index.md" | sort: 'frontmatter.menuWeight' %}
         {% for page in pages %}
         {% assign parent_doc_prefix = page.file_path | remove: "index.md" | remove_first: "." %}
         {% assign is_active = this.permalink | starts_with: parent_doc_prefix %}
@@ -479,7 +479,7 @@
       {% assign parts = this.permalink | split: '/' %}
       {% assign parent_doc_section = parts[2] %}
       {% capture glob_pattern %}./docs/{{ parent_doc_section }}/*/index.md{% endcapture %}
-      {% assign pages = file_list | where_glob: 'file_path', glob_pattern | sort %}
+      {% assign pages = file_list | where_glob: 'file_path', glob_pattern | sort: 'frontmatter.menuWeight' %}
       {% for page in pages %}
       <section class="pl-1">
         <a class="block font-semibold pb-3" href="{{ page.permalink }}">{{ page.frontmatter.title }}</a>

@@ -14,7 +14,7 @@ pageFullWidth: true
     <section class="max-w-5xl sm:inline-block">
 ```
 
-# Welcome to APItoolkit Documentation
+# Welcome to The APItoolkit Documentation
 
 **APItoolkit** is an end-to-end API and web services management toolkit for engineers and customer support teams. We use AI to help engineering teams observe, debug, monitor, and test their backend systems and any external API they depend on.
 

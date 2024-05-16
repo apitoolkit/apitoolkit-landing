@@ -196,6 +196,10 @@ _Michael Okoh_
     <div class="w-full flex items-start">
       <div class="w-full flex flex-col gap-10">
 ```
+{class="flex flex-col gap-2 ml-3 sm:ml-8"}
+::::::
+{% render "default/markdown/landing-carousel", this:this.frontmatter.errors-carousel  %}
+::::::
 
 {.text-center }
 :::::::

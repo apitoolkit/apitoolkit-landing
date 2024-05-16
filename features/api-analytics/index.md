@@ -12,7 +12,6 @@ hide-date: true
 ###### [*Gain Insights, Optimize Your Product*{.drop-shadow-md}]{class="bg-amber-300 px-2 rounded-md dark:text-black"}
 
 {class="mt-2 mb-3 dark:text-white "}
-
 ### API Analytics
 
 {class="py-5"}
@@ -39,7 +38,6 @@ Answer critical business and engineering questions around your APIs needed to dr
 {.space-y-3 .col-span-2}
 ::::
 {#getPeakUnderstanding .leading-tight}
-
 ### Deeply understand how APIs are used
 
 {.text-lg}
@@ -59,7 +57,6 @@ Segment and aggregate by URI request, endpoints, HTTP headers, body fields, or c
 { .space-y-3 .col-span-2}
 ::::
 {.leading-tight}
-
 ### Context-Rich Data at the endpoint level
 
 {.text-lg}
@@ -83,7 +80,6 @@ View the problematic endpoints, their performance and latency distributions, and
 { .space-y-3 .col-span-2}
 ::::
 {.leading-tight}
-
 ### Zoom into the individual customer requests understand issues
 
 {.text-lg}
@@ -101,7 +97,6 @@ You can even see the locations a request was made from, and the latency of that 
 
 {class="text-center"}
 ::::
-
 ### Integrate APItoolkit
 
 ```=html
