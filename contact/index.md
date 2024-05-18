@@ -6,7 +6,7 @@ hide_date: true
 
 ### Contact Us
 
-APItoolkit is a product of Past 3 Technologies, a software consulting firm based out of Berlin, Germany. To contact us with any inquiries or support request's kindly use the options below:
+APItoolkit is a product of Past 3 Technologies, a software consulting firm based out of Berlin, Germany. To contact us with any inquiries or support requests kindly use the options below:
 
 <hr>
 
