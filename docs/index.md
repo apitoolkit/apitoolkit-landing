@@ -26,22 +26,22 @@ pageFullWidth: true
 Explore our product and SDK documentation to get started with using APItoolkit.
 
 ```=html
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-    <a href="/docs/onboarding" class="docs-card rounded-md">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 mt-12">
+    <a href="/docs/onboarding" class="docs-card rounded-md hover:-translate-y-3 duration-300">
         <p><i class="fa-regular fa-circle-play h-5 w-5 mr-2"></i><span class="text-xl font-bold text-black dark:text-white">Quickstart</span></p>
-        <span class="px-8 font-normal text-black dark:text-white">Get started with using APItoolkit in a few steps.</span>
+        <span class="px-8 font-normal text-gray-600 dark:text-white">Get started with using APItoolkit in a few steps.</span>
     </a>
-    <a href="/docs/features" class="docs-card rounded-md">
+    <a href="/docs/features" class="docs-card rounded-md hover:-translate-y-3 duration-300">
         <p><i class="fa-regular fa-folder-tree h-5 w-5 mr-2"></i><span class="text-xl font-bold text-black dark:text-white">Features</span></p>
-        <span class="px-8 font-normal text-black dark:text-white">Explore all APItoolkit key features in detail.</span>
+        <span class="px-8 font-normal text-gray-600 dark:text-white">Explore all APItoolkit key features in detail.</span>
     </a>
-    <a href="/docs/sdks" class="docs-card rounded-md">
+    <a href="/docs/sdks" class="docs-card rounded-md hover:-translate-y-3 duration-300">
         <p><i class="fa-regular fa-plug h-5 w-5 mr-2"></i><span class="text-xl font-bold text-black dark:text-white">SDK Guides</span></p>
-        <span class="px-8 font-normal text-black dark:text-white">Learn how to integrate APItoolkit using any of our SDKs for different programming languages and frameworks.</span>
+        <span class="px-8 font-normal text-gray-600 dark:text-white">Learn how to integrate APItoolkit using any of our SDKs for different programming languages and frameworks.</span>
     </a>
-    <a href="/docs/dashboard" class="docs-card rounded-md">
+    <a href="/docs/dashboard" class="docs-card rounded-md hover:-translate-y-3 duration-300">
         <p><i class="fa-regular fa-chart-line h-5 w-5 mr-2"></i><span class="text-xl font-bold text-black dark:text-white">Dashboard Guides</span></p>
-        <span class="px-8 font-normal text-black dark:text-white">Explore APItoolkit's dashboard and learn how to navigate through all the available features and settings.</span>
+        <span class="px-8 font-normal text-gray-600 dark:text-white">Explore APItoolkit's dashboard and learn how to navigate through all the available features and settings.</span>
     </a>
 </div>
 ```
@@ -56,7 +56,7 @@ Explore our product and SDK documentation to get started with using APItoolkit.
 We currently support 17+ web frameworks in different programming languages.
 
 {.text-md .font-semibold}
-If we don't support your framework, kindly email <hello@apitoolkit.io> and we'll create an SDK for you ASAP!
+If we don't support your framework, kindly email [hello@apitoolkit.io](mailto:hello@apitoolkit.io) and we'll create an SDK for you ASAP!
 
 {% render "default/markdown/integration-footer.liquid", config:config %}
 
