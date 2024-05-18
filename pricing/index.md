@@ -9,8 +9,8 @@ publishdate: 2022-03-24
     <header class="w-full mt-32">
         <div class="width-control  mx-auto px-2">
             <div class="w-full flex flex-col items-center gap-4">
-                <h1 class="font-bold text-4xl md:text-[50px] dark:text-white">Pay only for what you use.</h1>
-                <p class="max-w-[450px] text-base-content font-medium  text-lg text-center">Trust your APIs, and only pay for the requests we analyze.</p>
+                <h1 class="font-bold text-4xl md:text-[50px] dark:text-white">Pay Only for What You Use</h1>
+                <p class="max-w-[450px] text-base-content font-medium  text-lg text-center">Trust your APIs and only pay for the requests we analyze.</p>
             </div>
         </div>
     </header>
@@ -27,7 +27,7 @@ publishdate: 2022-03-24
                             </div>
                         </div>
                         <div class="text-sm leading-120 font-medium text-base-content">
-                            20,000 reqs per month included for free
+                            20,000 reqs per month included for free.
                         </div>
                     </div>
                 </div>
@@ -45,7 +45,7 @@ publishdate: 2022-03-24
                                 class="inline-block text-center font-bold text-green-500 rounded-md w-5 h-5 bg-gray-200">
                                 ✓
                             </div>
-                            Last *7 days Data Retained
+                            Last 7 days Data Retained
                         </li>
                     </ul>
                 </div><button as="button"
@@ -59,11 +59,11 @@ publishdate: 2022-03-24
                     <div>
                         <div class="flex flex-row items-start gap-8px">
                             <div class="font-bold text-6xl">
-                                $1 <small class="text-sm">per 10,000 requests</small>
+                                $1 <small class="text-sm">per additional 10,000 requests.</small>
                             </div>
                         </div>
                         <div class="text-sm leading-120 font-medium text-gray-200">
-                            Get 40% off by pre-paying for up to a year
+                            Get 40% off by pre-paying for up to a year.
                         </div>
                     </div>
                 </div>
@@ -91,7 +91,7 @@ publishdate: 2022-03-24
                             <div class="text-center font-bold text-gray-100 rounded-md w-5 h-5 bg-blue-300">
                                 ✓
                             </div>
-                            Last *14 days Data Retained
+                            Last 14 days Data Retained
                         </li>
                     </ul>
                 </div>
@@ -110,7 +110,7 @@ publishdate: 2022-03-24
                             </div>
                         </div>
                         <div class="text-sm leading-120 font-medium text-gray-200">
-                            Amount determined based <br> on demands
+                            Amount determined based on demands.
                         </div>
                     </div>
                 </div>
@@ -120,13 +120,13 @@ publishdate: 2022-03-24
                         <li class="flex flex-row gap-2">
                             <div class="text-center font-bold text-gray-300 rounded-md w-5 h-5 bg-gray-500">
                                 ✓
-                            </div>Custom team members
+                            </div>Custom Team Members
                         </li>
                         <li class="flex flex-row gap-2">
                             <div class="text-center font-bold text-gray-300 rounded-md w-5 h-5 bg-gray-500">
                                 ✓
                             </div>
-                            Custom data retention
+                            Custom Data Retention
                         </li>
                         <li class="flex flex-row gap-2">
                             <div class="text-center font-bold text-gray-300 rounded-md w-5 h-5 bg-gray-500">
@@ -138,7 +138,7 @@ publishdate: 2022-03-24
                             <div class="text-center font-bold text-gray-300 rounded-md w-5 h-5 bg-gray-500">
                                 ✓
                             </div>
-                            On-prem or on your own infra
+                            On-Prem or On Your Own Infra
                         </li>
                         <li class="flex flex-row gap-2">
                             <div class="text-center font-bold text-gray-300 rounded-md w-5 h-5 bg-gray-500">
@@ -155,7 +155,7 @@ publishdate: 2022-03-24
         </section>
         <section class="w-full py-8">
             <div class="width-control w-full mx-auto mt-[54px] py-12 relative text-center">
-                <p class="text-xl pb-8">Trusted by 3000+ Developers at companies like </p>
+                <p class="text-xl pb-8">Trusted by 3000+ Developers at companies Like</p>
                 <div class="flex gap-6  w-full justify-center flex-wrap items-center [&>*]:brightness-0 [&>*]:dark:invert">
                     <img src="/assets/img/c1.png" alt="Andela" class="h-5 sm:h-8">
                     <img src="/assets/img/c2.png" alt="Thepeer" class="h-5 sm:h-8">
@@ -177,42 +177,26 @@ publishdate: 2022-03-24
                             What programming languages are supported?
                         </button>
                         <div class="pl-4 py-4 hidden text-base-content">
-                            Some services like the API testing does not need any SDK integration. But we have SDKs
-                            for multiple
-                            languages: Golang,
-                            PHP, C#, Java, etc. If we don't support your language or framework, please drop a
-                            message. We can create
-                            one on demand
-                            quite quickly. </div>
+                            Some services like the API testing does not need any SDK integration. But we have SDKs for multiple languages: Golang, PHP, C#, Java, etc. If we don't support your language or framework, please drop us a message at hello@apitoolkit.io. We can create one for you on-demand quite quickly.</div>
                     </div>
                     <div class="bg-base-100 px-6 py-3 shadow-sm">
                         <button class="flex gap-4 items-center text-left hover:grow"
                             onclick="toggleFaq(event)">
                             <svg class="flex-shrink-0 icon h-5 w-5 text-current fill-current stroke-current opacity-70"><use xlink:href="/assets/deps/fontawesome/solid.svg#caret-right"></use></svg>
-                            Do my requests have to leave my server to APIToolkit Servers?
+                            Do my requests have to leave my server to APItoolkit servers?
                         </button>
                         <div class="pl-4 py-4 hidden text-content-base">
-                            Only if you want to benefit from the API metrics and the logs explorer. You can also
-                            enjoy all the other
-                            functionality
-                            which don't depend on your API traffic.
+                            Only if you want to benefit from the API metrics and the logs explorer. You can also enjoy all the other functionality which don't depend on your API traffic.
                         </div>
                     </div>
                     <div class="bg-base-100 px-6 py-3 shadow-sm">
                         <button class="flex gap-4 items-center text-left hover:grow"
                             onclick="toggleFaq(event)">
                             <svg class="flex-shrink-0 icon h-5 w-5 text-current fill-current stroke-current opacity-70"><use xlink:href="/assets/deps/fontawesome/solid.svg#caret-right"></use></svg>
-                            Can I prevent sending sensitive Data to APIToolkit?
+                            Can I prevent sending sensitive data to APItoolkit?
                         </button>
                         <div class="pl-4 py-4 hidden text-base-content">
-                            Yes. All our SDKs support redacting data. Simply specify the json path to the fields
-                            which you don't
-                            want the SDKs to
-                            forward to APIToolkit, and those fields will be stripped out/redacted before the data
-                            even leaves your
-                            servers. So we
-                            would never see them.
-
+                            Yes. All our SDKs support redacting data. Simply specify the JSON path to the fields that you don't want the SDKs to forward to APItoolkit, and those fields will be stripped out/redacted before the data even leaves your servers. So we would never see them.
                         </div>
                     </div>
                     <div class="bg-base-100 px-6 py-3 shadow-sm">
@@ -222,9 +206,7 @@ publishdate: 2022-03-24
                             I really love what you're doing. How do I show support?
                         </button>
                         <div class="pl-4 py-4 hidden text-base-content">
-                            Give a shout out on twitter or discord. We would also appreciate honest feedback about
-                            what we're
-                            building. And suggestions for what functionality you would love to see next.
+                            Give us a shout-out on X (Twitter) or Discord. We would also appreciate honest feedback about what we're building and suggestions for what functionality you would love to see next.
                         </div>
                     </div>
 
@@ -235,19 +217,7 @@ publishdate: 2022-03-24
                             Will the SDKs slow down my backend?
                         </button>
                         <div class="pl-4 py-4 hidden text-base-content">
-                            It depends. Most SDKs stream data asynchronously via google pubsub streaming, so your
-                            requests will see
-                            almost zero
-                            change in performance. Except if you use PHP. Because PHP doesn't support async
-                            workflows by default.
-                            But if you have
-                            the GRPC extension installed in your PHP environment, the GRPC extension is used by
-                            pubsub to stream
-                            data asynchronously
-                            like in other languages. Otherwise, you pay a very tiny performance hit to send data to
-                            google pubsub.
-                            But this
-                            performance hit is rarely noticable and usually under 5ms added to every request.
+                            It depends. Most SDKs stream data asynchronously via google pubsub streaming, so your requests will see almost zero change in performance, except if you use PHP. PHP doesn't support async workflows by default but if you have the GRPC extension installed in your PHP environment, the GRPC extension is used by pubsub to stream data asynchronously like in other languages. Otherwise, you pay a very tiny performance hit to send data to google pubsub. But this performance hit is barely noticeable and usually under 5ms added to every request.
                         </div>
                     </div>
                 </div>

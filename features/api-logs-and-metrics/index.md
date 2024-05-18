@@ -12,7 +12,7 @@ hide-date: true
 ###### [*API Logs and Metrics*{.drop-shadow-md}]{class="bg-amber-300 px-2 rounded-md dark:text-black"}
 
 {class="mt-2 mb-3 dark:text-white "}
-### See Clearly, Fix Quickly. Observe and Fix any API from API integrations or your services
+### See Clearly, Fix Quickly. Observe and Fix any API from API Integrations or Your Services
 
 {class="py-5"}
 These logs give you an in-depth overview of your server-side API calls, including events, pageviews, clicks, and choose variation calls. They enable you to verify that your API calls are correct and identify implementation issues. You can also use logs to troubleshoot unexpected behavior and find the root cause
@@ -20,7 +20,7 @@ These logs give you an in-depth overview of your server-side API calls, includin
 {class="space-y-2 text-sm sm:pt-1 not-prose" id="waitlist-form-1"}
 [Get Started for Free](https://app.apitoolkit.io){class="drop-shadow hover:drop-shadow-lg transition-all rounded-md hover:bg-yellow-300 bg-amber-300 text-black border border-amber-400 font-semibold inline-block px-4 py-2 mt-2 sm:mt-0 hs-init hs-inview"}
 [OR]{.inline-block .px-5}
-[Get a demo &nbsp;](https://calendar.app.google/1a4HG5GZYv1sjjZG6){target="\_blank" class="drop-shadow rounded-md border border-gray-200 bg-gray-100 hover:bg-gray-200 text-xs text-gray-900 inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0 hs-init hs-inview"}
+[Get a Demo](https://calendar.app.google/1a4HG5GZYv1sjjZG6){target="\_blank" class="drop-shadow rounded-md border border-gray-200 bg-gray-100 hover:bg-gray-200 text-xs text-gray-900 inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0 hs-init hs-inview"}
 
 ```=html
     </div>
@@ -45,7 +45,7 @@ No more waiting for problems to snowball. Identify and fix issues as they happen
 {class="space-y-2 text-sm sm:pt-1 not-prose" id="waitlist-form-1"}
 [Get Started for Free](https://app.apitoolkit.io){class="drop-shadow hover:drop-shadow-lg transition-all rounded-md hover:bg-yellow-300 bg-amber-300 text-black border border-amber-400 font-semibold inline-block px-4 py-2 mt-2 sm:mt-0 hs-init hs-inview"}
 [OR]{.inline-block .px-5}
-[Get a demo &nbsp;](https://calendar.app.google/1a4HG5GZYv1sjjZG6){target="\_blank" class="drop-shadow rounded-md border border-gray-200 bg-gray-100 hover:bg-gray-200 text-xs text-gray-900 inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0 hs-init hs-inview"}
+[Get a Demo](https://calendar.app.google/1a4HG5GZYv1sjjZG6){target="\_blank" class="drop-shadow rounded-md border border-gray-200 bg-gray-100 hover:bg-gray-200 text-xs text-gray-900 inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0 hs-init hs-inview"}
 ::::
 :::
 
@@ -54,7 +54,7 @@ No more waiting for problems to snowball. Identify and fix issues as they happen
 {class="space-y-3 col-span-2"}
 ::::
 {.leading-tight}
-### Trace Every Request with Outgoing Request Monitoring
+### Trace Every Request with Outgoing Requests Monitoring
 
 {.text-lg}
 Effortlessly capture the entire request-response chain, allowing you to reproduce complex issues with ease and get to the bottom of them fast.
@@ -62,7 +62,7 @@ Effortlessly capture the entire request-response chain, allowing you to reproduc
 {class="space-y-2 text-sm sm:pt-1 not-prose" id="waitlist-form-1"}
 [Get Started for Free](https://app.apitoolkit.io){class="drop-shadow hover:drop-shadow-lg transition-all rounded-md hover:bg-yellow-300 bg-amber-300 text-black border border-amber-400 font-semibold inline-block px-4 py-2 mt-2 sm:mt-0 hs-init hs-inview"}
 [OR]{.inline-block .px-5}
-[Get a demo &nbsp;](https://calendar.app.google/1a4HG5GZYv1sjjZG6){target="\_blank" class="drop-shadow rounded-md border border-gray-200 bg-gray-100 hover:bg-gray-200 text-xs text-gray-900 inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0 hs-init hs-inview"}
+[Get a Demo](https://calendar.app.google/1a4HG5GZYv1sjjZG6){target="\_blank" class="drop-shadow rounded-md border border-gray-200 bg-gray-100 hover:bg-gray-200 text-xs text-gray-900 inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0 hs-init hs-inview"}
 ::::
 {.col-span-3}
 ![](/features/error-tracking/log_explorer_error.png){class="w-full drop-shadow-lg border border-gray-200 rounded-md"}
@@ -77,7 +77,7 @@ Effortlessly capture the entire request-response chain, allowing you to reproduc
 ::::
 
 {.leading-tight}
-### Error Tracking and Logging for your APIs
+### Error Tracking and Logging for Your APIs
 
 {.text-lg}
 Catch errors from any source, whether it's the API itself, a dependent service, or an underlying infrastructure component. Track them back to the specific request that triggered the issue.
@@ -85,7 +85,7 @@ Catch errors from any source, whether it's the API itself, a dependent service, 
 {class="space-y-2 text-sm sm:pt-1 not-prose" id="waitlist-form-1"}
 [Get Started for Free](https://app.apitoolkit.io){class="drop-shadow hover:drop-shadow-lg transition-all rounded-md hover:bg-yellow-300 bg-amber-300 text-black border border-amber-400 font-semibold inline-block px-4 py-2 mt-2 sm:mt-0 hs-init hs-inview"}
 [OR]{.inline-block .px-5}
-[Get a demo &nbsp;](https://calendar.app.google/1a4HG5GZYv1sjjZG6){target="\_blank" class="drop-shadow rounded-md border border-gray-200 bg-gray-100 hover:bg-gray-200 text-xs text-gray-900 inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0 hs-init hs-inview"}
+[Get a Demo](https://calendar.app.google/1a4HG5GZYv1sjjZG6){target="\_blank" class="drop-shadow rounded-md border border-gray-200 bg-gray-100 hover:bg-gray-200 text-xs text-gray-900 inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0 hs-init hs-inview"}
 ::::
 :::
 

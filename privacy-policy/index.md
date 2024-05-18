@@ -3,7 +3,7 @@ title: Privacy Policy
 date: 2022-08-21
 ---
 
-At apitoolkit.io, accessible from https://apitoolkit.io, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by apitoolkit.io and how we use it.
+At APItoolkit, accessible from [https://apitoolkit.io](https://apitoolkit.io), one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that are collected and recorded by APItoolkit and how we use it.
 
 If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.
 
@@ -23,15 +23,15 @@ When you register for an Account, we may ask for your contact information, inclu
 
 ## How we use your information
 
-We use the information we collect in various ways, including to:
+We use the information we collect in various ways, including:
 
-*   Provide, operate, and maintain our website
-*   Improve, personalize, and expand our website
-*   Understand and analyze how you use our website
-*   Develop new products, services, features, and functionality
-*   Communicate with you, either directly or through one of our partners, including for customer service, to provide you with updates and other information relating to the website, and for marketing and promotional purposes
-*   Send you emails
-*   Find and prevent fraud
+- Provide, operate, and maintain our website
+- Improve, personalize, and expand our website
+- Understand and analyze how you use our website
+- Develop new products, services, features, and functionality
+- Communicate with you, either directly or through one of our partners, including for customer service, to provide you with updates and other information relating to the website, and for marketing and promotional purposes
+- Send you emails
+- Find and prevent fraud
 
 ## Log Files
 
@@ -89,4 +89,4 @@ If you make a request, we have one month to respond to you. If you would like to
 
 Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity.
 
-apitoolkit.io does not knowingly collect any Personal Identifiable Information from children under the age of 13\. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.
+apitoolkit.io does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.

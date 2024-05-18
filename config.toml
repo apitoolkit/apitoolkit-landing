@@ -1,5 +1,5 @@
 baseurl = "https://apitoolkit.io/"
-title = "APIToolkit.io: Stay on top of your APIs!"
+title = "APItoolkit: Stay on top of your APIs!"
 theme = "apitoolkit"
 languageCode = 'en-us'
 enableEmoji = true
@@ -11,15 +11,15 @@ summarylength = 30
 [Params]
 mainSections = ["blog"]
 intro = true
-headline = "APIToolkit"
+headline = "APItoolkit"
 description = "Automatic API Monitoring and Documentation"
 github = "https://github.com/apitoolkit"
-twitter = "@ApiToolkit"
+twitter = "@apitoolkithq"
 email = "hello@apitoolkit.io"
 opengraph = true
 shareTwitter = true
 dateFormat = "Mon, Jan 2, 2006"
-ogimage = "/og.png"
+ogimage = "/main-og.png"
 
 [taxonomies]
 

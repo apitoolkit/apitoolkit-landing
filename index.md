@@ -2,95 +2,95 @@
 title: "The API Developer's Toolbox"
 date: 2022-03-23
 publishdate: 2022-03-24
-description: "Build and maintain your APIs with Less downtimes, Fewer support tickets, Faster time to resolution and always up to date insights into your APIs"
+description: "Build and maintain your APIs with less downtimes, fewer support tickets, faster time to resolution, and always up to date insights into your APIs."
 hidenav: true
 monitoring-carousel:
   name: "monitoring-carousel"
   pre-title: "Monitoring & Observability"
-  title: "Monitor Critical Systems and third parties"
+  title: "Monitor Critical Systems and Third Parties"
   description: "Gain data-driven insights into your APIs and APIs you depend on. Query user behavior and see all requests made by users or requests you made to third parties."
   items:
-    - title: Log Explorer to query Incoming and Outgoing Requests
+    - title: Log Explorer to Query Incoming and Outgoing Requests
       img: /assets/img/screenshots/log_explorer_zoom.png
     - title: Performance Analytics
       img: /assets/img/screenshots/analytics_zoomed.png
     - title: API and Endpoint Analytics
       img: /assets/img/screenshots/endpointlist_zoomed.png
-    - title: Custom Alerts on API performance and metrics
+    - title: Custom Alerts on API Performance and Metrics
       img: /features/error-tracking/apitoolkit_slack.png
 errors-carousel:
   name: "errors-carousel"
   pre-title: "Backend Errors & API Breaking Changes"
-  title: "No more Guessing Games. Track Code errors and Breaking Changes with more Context "
+  title: "No More Guessing Games. Track Code Errors and Breaking Changes with More Context"
   description: >
     Get to the root cause of every issue. 
     Whether it is caused by runtime errors, 
     breaking API changes introduced by third-party integrations, 
     or unintended API-breaking changes by your team."
   items:
-    - title: See Errors and API Issues at a glance
+    - title: See Errors and API Issues at a Glance
       img: /assets/img/screenshots/errors_zoomed.png
     - title: Trace Code Errors to their Root Cause
       img: /features/error-tracking/log_explorer_error.png
-    - title: Track Breaking changes in your APIs and integrations
+    - title: Track Breaking Changes in your APIs and Integrations
       img: /features/error-tracking/changes_details.png
 testing-carousel:
   name: "testing-carousel"
   pre-title: "E2E API Testing & Synthetic Monitors"
-  title: "Run active e2e monitors on any APIs, and assert if key usecases work as expected."
+  title: "Run Active E2E Monitors on any APIs, and Assert if Key Use Cases Work as Expected"
   description: >
     Our AI even generates these tests and monitors for you, 
-    from your OpenAPI/Swagger spec, or from API request logs.
+    from your OpenAPI/Swagger spec, or API request logs.
     Schedule them to run at intervals and configure specific checks and assertions.
   items:
-    - title: Be the first to know when your APIs are down or slow.
+    - title: Be the First to Know When Your APIs are Down or Slow
       img: /assets/img/dashboard.png
-    - title: Create chained/multi-step functional test sequences & assertions
+    - title: Create Chained/Multi-step Functional Test Sequences & Assertions
       img: /features/error-tracking/log_explorer_error.png
-    - title: Create monitors with AI or by importing Swagger/OpenAPI
+    - title: Create Monitors with AI or by Importing Swagger/OpenAPI
       img: /assets/img/dashboard.png
-    - title: Run tests and monitors From 50+ Locations
+    - title: Run Tests and Monitors From 50+ Locations
       img: /assets/img/dashboard.png
 linting-carousel:
   name: "linting-carousel"
   items:
-    - title: Verify your API payloads are returning the correct data.
+    - title: Verify your API Payloads are Returning the Correct Data
       img: /assets/img/dashboard.png
-    - title: Verify that your API integrations did not introduce breaking changes
+    - title: Verify That Your API Integrations Did Not Introduce Breaking Changes
       img: /features/error-tracking/log_explorer_error.png
-    - title: Lint API payloads for security issues and API best practices
+    - title: Lint API Payloads for Security Issues and API Best Practices
       img: /assets/img/dashboard.png
 documentation-carousel:
   name: "documentation-carousel"
   pre-title: "Documentation & API Specification "
-  title: "The best Documentation is one you didnt have to write. Powered by AI and your API usage logs."
+  title: "The Best Documentation Is One You Did Not Have to Write: Powered by AI and Your API Usage Logs"
   description: "Automatically generate API specifications from the live API payloads that are analyzed. Enrich this specification with more context, descriptions, etc., and generate public-facing API documentation or OpenAPI/Swagger specifications."
   items:
-    - title: AI-generated API specification based on live request payloads
+    - title: AI-Generated API Specification Based on Live Request Payloads
       img: /assets/img/dashboard.png
-    - title: Auto verify that Documentation & Spec are in sync with backend implementation
+    - title: Auto Verify That Documentation & Spec Are in Sync With Backend Implementation
       img: /features/error-tracking/log_explorer_error.png
-    - title: Design beautiful user-facing API documentation portals in minutes.
+    - title: Design Beautiful User-Facing API Documentation Portals in Minutes
       img: /assets/img/dashboard.png
 
 somuchmore:
   - title: "Powerful Reports"
-    description: "Get Daily and weekly Reports about the numbers that matter."
+    description: "Get daily and weekly reports about the numbers that matter."
     img: "/assets/img/home/reports.svg"
-  - title: "Up to date API Docs & Spec"
+  - title: "Up-to-Date API Docs & Spec"
     description: "AI generated spec based off your traffic. Approve new changes."
     img: "/assets/img/home/specs.svg"
   - title: "Automatic Changelogs"
-    description: "Maintain a changelog of your APis and APIs your depend on."
+    description: "Maintain a changelog of your APIs and APIs you depend on."
     img: "/assets/img/home/auto-changelogs.svg"
   - title: "Error Analytics"
     description: "Get deeper insights about errors and the affected users."
     img: "/assets/img/home/error-analytics.svg"
   - title: "Self Host"
-    description: "Don’t let your data leave your server via self hosting."
+    description: "Don’t let your data leave your server via self-hosting."
     img: "/assets/img/home/selfhost.svg"
   - title: "Alerts & Integrations"
-    description: "Get notified about realtime issues on your terms."
+    description: "Get notified about real-time issues on your terms."
     img: "/assets/img/home/alerts.svg"
 tweets:
 xtweets:
@@ -108,15 +108,15 @@ xtweets:
   - - ppic:
 faqs:
   - q: What programming languages are supported?
-    a: "We support Golang, PHP, C#, Java, etc. If we don't support your language or framework, please drop a message. We can create one on demand quite quickly."
+    a: "Some services like the API testing does not need any SDK integration. But we have SDKs for multiple languages: Golang, PHP, C#, Java, etc. If we don't support your language or framework, please drop us a message at hello@apitoolkit.io. We can create one for you on-demand quite quickly."
   - q: Do my requests have to leave my server to APIToolkit Servers?
     a: "Only if you want to benefit from the API metrics and the logs explorer. You can also enjoy all the other functionality which don't depend on your API traffic."
-  - q: Can I prevent sending sensitive Data to APIToolkit?
-    a: "Yes. All our SDKs support redacting data. Simply specify the json path to the fields which you don't want the SDKs to forward to APIToolkit, and those fields will be stripped out/redacted before the data even leaves your servers. So we would never see them."
+  - q: Can I prevent sending sensitive data to APItoolkit?
+    a: "Yes. All our SDKs support redacting data. Simply specify the JSON path to the fields that you don't want the SDKs to forward to APItoolkit, and those fields will be stripped out/redacted before the data even leaves your servers. So we would never see them."
   - q: I really love what you're doing. How do I show support?
-    a: "Give a shout out on twitter or discord. We would also appreciate honest feedback about what we're building. And suggestions for what functionality you would love to see next."
+    a: "Give us a shout-out on X (Twitter) or Discord. We would also appreciate honest feedback about what we're building and suggestions for what functionality you would love to see next."
   - q: Will the SDKs slow down my backend?
-    a: "It depends. Most SDKs stream data asynchronously via google pubsub streaming, so your requests will see almost zero change in performance. Except if you use PHP. Because PHP doesn't support async workflows by default. But if you have the GRPC extension installed in your PHP environment, the GRPC extension is used by pubsub to stream data asynchronously like in other languages. Otherwise, you pay a very tiny performance hit to send data to google pubsub. But this performance hit is rarely noticable and usually under 5ms added to every request."
+    a: "It depends. Most SDKs stream data asynchronously via google pubsub streaming, so your requests will see almost zero change in performance, except if you use PHP. PHP doesn't support async workflows by default but if you have the GRPC extension installed in your PHP environment, the GRPC extension is used by pubsub to stream data asynchronously like in other languages. Otherwise, you pay a very tiny performance hit to send data to google pubsub. But this performance hit is barely noticeable and usually under 5ms added to every request."
 ---
 
 ```=html
@@ -171,7 +171,7 @@ end
 
 {class="space-y-1 flex-1"}
 ::::
-[“APIToolkit allowed us make a drop in rewrite of our PHP service in Golang. Fixing all bugs without customers noticing any changes.”]{class="flex-1 inline-block max-w-[500px] text-gray-600 dark:text-base-content pb-1"}
+[“APItoolkit allowed us to make a drop in rewrite of our PHP service in Golang. Fixing all bugs without customers noticing any changes.”]{class="flex-1 inline-block max-w-[500px] text-gray-600 dark:text-base-content pb-1"}
 
 _Michael Okoh_
 [CEO @ Thepeer]{class="text-sm text-gray-500 block"}
@@ -196,6 +196,7 @@ _Michael Okoh_
     <div class="w-full flex items-start">
       <div class="w-full flex flex-col gap-10">
 ```
+
 {class="flex flex-col gap-2 ml-3 sm:ml-8"}
 ::::::
 {% render "default/markdown/landing-carousel", this:this.frontmatter.errors-carousel  %}
@@ -209,7 +210,7 @@ _Michael Okoh_
 
 {class="space-y-1 flex-1"}
 ::::
-[“We had a major production incident, and the Engineering team didnt need to get involved, because the support team could see via APItoolkit, that the issues were caused by our third party integration, and they could reach out to the team to fix the issue.”]{class="flex-1 inline-block max-w-[500px] text-gray-600 dark:text-base-content pb-1"}
+[“We had a major production incident, and the engineering team didn't need to get involved, because the support team could see via APItoolkit that the issues were caused by our third-party integration, and they could reach out to the team to fix the issue.”]{class="flex-1 inline-block max-w-[500px] text-gray-600 dark:text-base-content pb-1"}
 
 _Joshua Chinemezu_
 [CEO @ Platnova]{class="text-sm text-gray-500 block"}
@@ -248,7 +249,7 @@ _Joshua Chinemezu_
 
 {class="space-y-1 flex-1"}
 ::::
-[“We had to del with very unreliable integration partners, and APItoolkit helped us catch breaking changes they introduced, and armed us better to request better reliability guarantees.”]{class="flex-1 inline-block max-w-[500px] text-gray-600 dark:text-base-content pb-1"}
+[“We had to deal with very unreliable integration partners, and APItoolkit helped us catch breaking changes they introduced, and armed us better to request better reliability guarantees.”]{class="flex-1 inline-block max-w-[500px] text-gray-600 dark:text-base-content pb-1"}
 
 _David Odohi_
 [Engineering Lead @ Grovepay]{class="text-sm text-gray-500 block"}
@@ -287,7 +288,7 @@ _David Odohi_
 
 {class="space-y-1 flex-1"}
 ::::
-[“We had a lot of issues coming from Merchants of our service, and needed something to track the incoming requests made by these merchants. APItoolkit was exactly what we needed, and even more.”]{class="flex-1 inline-block max-w-[500px] text-gray-600 dark:text-base-content pb-1"}
+[“We had a lot of issues coming from merchants on our service, and needed something to track the incoming requests made by these merchants. APItoolkit was exactly what we needed, and even more.”]{class="flex-1 inline-block max-w-[500px] text-gray-600 dark:text-base-content pb-1"}
 
 _Michael Akinwonmi_
 [CEO @ Payfonte]{class="text-sm text-gray-500 block"}
@@ -312,7 +313,7 @@ _Michael Akinwonmi_
         <div class="hidden md:block h-[calc(100%+30px)] w-[1px] absolute border-l top-[-15px] left-[50%]"></div>
         <div class="px-6 sm:px-16 py-14">
           <h2 class="text-gray-800 font-bold text-4xl">
-            Scale with <span class="text-gray-400">security</span></h2>
+            Scale with <span class="text-gray-400">Security</span></h2>
           <p class="mt-[6px] max-w-[438px]">
             Built for security and privacy. Use our managed service or host on your own infra.</p>
           <div class="mt-[20px] flex gap-4">
@@ -365,9 +366,7 @@ _Michael Akinwonmi_
           <div
             class="rounded-[20px] overflow-hidden relative flex flex-col p-[40px] group duration-300  hover:border-[#305FB4] dark-shadow border border-transparent box-border">
             <h3 class="font-semibold text-[22px] pb-[6px] pt-[18px]">Build with Community</h3>
-            <p class="text-sm text-gray-400 max-w-[300px]">Join us on a mission to build a world from the frustrations
-              of broken API
-              contracts and unreliability.
+            <p class="text-sm text-gray-400 max-w-[300px]">Join us on a mission to build a world free from the frustrations of broken API contracts and unreliability.
             </p>
             <div class="mt-4 flex gap-4">
               <a href="https://discord.gg/dEB6EjQnKB"
@@ -387,7 +386,7 @@ _Michael Akinwonmi_
         <div class="order-1 w-full md:w-max md:order-2  h-full flex-1">
           <div
             class="rounded-[20px] h-full overflow-hidden relative flex flex-col gap-8 p-[40px] group duration-300  hover:border-[#305FB4] dark-shadow border border-transparent box-border">
-            <h3 class="font-semibold text-[22px] pb-[6px] pt-[18px]">Works seemlessly with your tech stack</h3>
+            <h3 class="font-semibold text-[22px] pb-[6px] pt-[18px]">Works seamlessly with your tech stack</h3>
             <div class="flex items-center gap-4">
               <img src="./assets/img/integrations/cloudflare.png" alt="">
               <img src="./assets/img/integrations/nginx.png" alt="">
@@ -425,10 +424,10 @@ _Michael Akinwonmi_
 :::
 {class="text-4xl md:text-6xl font-bold mb-3"}
 
-Frequestly asked <br/> Questions
+Frequently Asked <br/> Questions
 
 [Some questions others have asked]{class="text-gray-500 dark:text-base-content text-sm"}
-[View all FAQ](https://apitoolkit.io/docs/troubleshooting-and-faq/faq/){class="block mt-6 text-blue-600 underline text-sm"}
+[View all FAQs](https://apitoolkit.io/docs/faq/){class="block mt-6 text-blue-600 underline text-sm"}
 :::
 {class="flex w-full md:w-[40%] flex-col gap-4 text-gray-700 dark:text-base-content"}
 :::
@@ -457,7 +456,7 @@ Frequestly asked <br/> Questions
 We currently support 17+ web frameworks in different programming languages.
 
 {.mx-auto .text-md .font-semibold}
-If we don't support your framework, kindly email <hello@apitoolkit.io> and we'll create an SDK for you ASAP!
+If we don't support your framework, kindly email [hello@apitoolkit.io](mailto:hello@apitoolkit.io) and we'll create an SDK for you ASAP!
 
 {% render "default/markdown/integration-footer.liquid", config:config %}
 ::::
