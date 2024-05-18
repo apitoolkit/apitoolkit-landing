@@ -1,6 +1,6 @@
 base_url: "https://apitoolkit.io"
-title: APIToolkit
-description: AI tools for Automatic API Monitoring, Documentation and more
+title: APItoolkit
+description: AI tools for automatic API monitoring, documentation and more.
 
 layouts:
   "./blog/**/index.md": default/blog-single.liquid
