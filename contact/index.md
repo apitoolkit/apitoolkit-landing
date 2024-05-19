@@ -4,14 +4,19 @@ date: 2024-05-18
 hide_date: true
 ---
 
-### Contact Us
+```=html
+<section class="our_container w-full">
+```
 
-APItoolkit is a product of Past 3 Technologies, a software consulting firm based out of Berlin, Germany. To contact us with any inquiries or support requests kindly use the options below:
+## Contact Us
 
-<hr>
+To contact us with any inquiries, feedback, or support requests kindly click on the blue chat icon on the top-bottom section of this page or the use other options below:
 
-- [Book a Call](https://calendar.app.google/1a4HG5GZYv1sjjZG6)
-- [Send an Email](mailto:apitoolkit.io)
+- [Book a Call With a Staff](https://calendar.app.google/1a4HG5GZYv1sjjZG6)
+- [Send us an Email](mailto:hello@apitoolkit.io)
 - [Join our Discord Community Server](https://discord.gg/dEB6EjQnKB) 
 - [Submit a New Issue on GitHub](https://github.com/apitoolkit/apitoolkit-landing/issues/new/choose)
-- Address: Past 3 Technologies UG. Gruntaler Str. 10553 Berlin, Germany.
+
+```=html
+</section>
+```

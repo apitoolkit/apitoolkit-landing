@@ -4,6 +4,10 @@ date: 2022-03-23
 hide_date: true
 ---
 
+```=html
+<section class="our_container w-full">
+```
+
 ### Why APItoolkit
 
 A few years ago, I was a new hire at a food delivery company,
@@ -44,7 +48,7 @@ thing of the past.
 ## APItoolkit is built by real engineers to solve problems that have cost them a lot in the past
 
 We’re engineers at our core, who are very close to the problems we are
-solving. So, we encourage our users to be a part of this community
+solving. So, we encourage our users to be a part of this community,
 evolving solutions to solve API documentation, management and observability.
 
 You can do this by joining our Discord channel to join others who are
@@ -60,3 +64,7 @@ APItoolkit is a product of Past 3 Technologies, a software consulting firm based
 <hello@past3.tech>
 Past 3 Technologies UG \
 Gruntaler Str. 10553 Berlin, Germany
+
+```=html
+</section>
+```
