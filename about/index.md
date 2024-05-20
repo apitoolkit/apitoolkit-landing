@@ -8,7 +8,7 @@ hide_date: true
 <section class="our_container w-full">
 ```
 
-### Why APItoolkit
+## Why APItoolkit?
 
 A few years ago, I was a new hire at a food delivery company,
 migrating a legacy service from PHP to Golang. We implemented the
@@ -57,13 +57,13 @@ open conversation with us. We’re always open to have a chat with
 everyone and learn about their experiences around API documentation and
 observability.
 
-## Business Contact us
+## Business Contact
 
 APItoolkit is a product of Past 3 Technologies, a software consulting firm based out of Berlin, Germany.
 
-<hello@past3.tech>
-Past 3 Technologies UG \
-Gruntaler Str. 10553 Berlin, Germany
+[hello@past3.tech](mailto:hello@past3.tech) <br>
+Past 3 Technologies UG, <br>
+Gruntaler Str. 10553 Berlin, Germany.
 
 ```=html
 </section>
