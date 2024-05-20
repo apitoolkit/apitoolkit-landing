@@ -1,5 +1,5 @@
 ---
-title: Documentation (OpenAPI Spec)
+title: Documentation
 date: 2024-04-22
 updatedDate: 2024-05-07
 menuWeight: 7
@@ -15,7 +15,7 @@ In this guide, you will learn how to effectively navigate through the **Document
 
 On this page, you will find an auto-generated **OpenAPI specification** (swagger docs) for endpoints in your API using all the shapes detected from requests on your API. You can search, copy the raw specification, preview it, save different versions, and view all saved versions.
 
-![Screenshot of APItoolkit's documentation page](/docs/dashboard/documentation/screen.png)
+![Screenshot of APItoolkit's documentation page](/docs/dashboard/dashboard-pages/documentation/screen.png)
 
 ```=html
 <div class="callout">
@@ -50,7 +50,7 @@ Here's a quick video overview for a visual walkthrough of this page:
 
 ```=html
 <hr />
-<a href="/docs/dashboard/reports/" class="w-full btn btn-outline link link-hover">
+<a href="/docs/dashboard/dashboard-pages/reports/" class="w-full btn btn-outline link link-hover">
     Next: Reports Page
     <i class="fa-regular fa-arrow-right mr-4"></i>
 </a>

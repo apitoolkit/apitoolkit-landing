@@ -8,7 +8,7 @@ fileTreeWeight: 1
 
 # API Documentation
 
-APItoolkit allows you to auto-generate OpenAPI specifications (swagger docs) for live payloads (endpoints) in your API using all the shapes detected from requests on your API or upload your existing OpenAPI specification to enrich our anomaly detection. With this, you can easily keep your OpenAPI spec documentation consistent across all workflows and enrich the specification with more context, descriptions, etc.
+APItoolkit allows you to auto-generate OpenAPI specifications (swagger docs) for live payloads (endpoints) in your API. You can achieve this using all the shapes detected from requests on your API or by uploading your existing OpenAPI specification to enrich our anomaly detection. With this, you can easily keep your OpenAPI spec documentation consistent across all workflows and enrich the specification with more context, descriptions, etc.
 
 ```=html
 <hr />
@@ -23,7 +23,7 @@ Some **key benefits** and popular **use cases** include the ability to:
 - Set alerts to track certain requests when they cross certain thresholds and notify relevant members of your team via email or Slack when the alert is triggered.
 - And a lot more!
 
-![Screenshot of APItoolkit dashboard](/docs/dashboard/documentation/screen.png)
+![Screenshot of APItoolkit dashboard](/docs/dashboard/dashboard-pages/documentation/screen.png)
 
 ```=html
 <hr />

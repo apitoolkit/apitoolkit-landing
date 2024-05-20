@@ -2,7 +2,7 @@
 title: Project Settings
 date: 2024-04-22
 updatedDate: 2024-05-07
-menuWeight: 9
+menuWeight: 1
 ---
 
 # Project Settings
@@ -17,15 +17,15 @@ On this page, you will find two sections, **Project Settings** and **Project Not
 
 To get to this page, kindly click on the project name at the top-left section of the dashboard and then click on the **Settings** tab. You will then be redirected to another page where you can make the changes or delete your project.
 
-![Screenshot of APItoolkit's project settings page](/docs/dashboard/project-settings/screen-1.png)
+![Screenshot of APItoolkit's project settings page](/docs/dashboard/settings-pages/project-settings/screen-1.png)
 
-![Screenshot of APItoolkit's project settings page](/docs/dashboard/project-settings/screen-2.png)
+![Screenshot of APItoolkit's project settings page](/docs/dashboard/settings-pages/project-settings/screen-2.png)
 
-![Screenshot of APItoolkit's project settings page](/docs/dashboard/project-settings/screen-3.png)
+![Screenshot of APItoolkit's project settings page](/docs/dashboard/settings-pages/project-settings/screen-3.png)
 
 ```=html
 <hr />
-<a href="/docs/dashboard/manage-members/" class="w-full btn btn-outline link link-hover">
+<a href="/docs/dashboard/settings-pages/manage-members/" class="w-full btn btn-outline link link-hover">
     Next: Manage Members
     <i class="fa-regular fa-arrow-right mr-4"></i>
 </a>

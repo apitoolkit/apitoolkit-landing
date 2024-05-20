@@ -15,7 +15,7 @@ In this guide, you will learn how to effectively navigate through the **Outbound
 
 On this page, you will find all the outgoing requests from your API. Like the other pages, you can **search** for specific requests or **sort** based on the first/last time the request was detected or the number of events associated with the request.
 
-![Screenshot of APItoolkit's endpoints page](/docs/dashboard/outbound-integrations/outbound.png)
+![Screenshot of APItoolkit's endpoints page](/docs/dashboard/dashboard-pages/outbound-integrations/outbound.png)
 
 ```=html
 <div class="callout">
@@ -26,7 +26,7 @@ On this page, you will find all the outgoing requests from your API. Like the ot
 
 ```=html
 <hr />
-<a href="/docs/dashboard/changes-errors/" class="w-full btn btn-outline link link-hover">
+<a href="/docs/dashboard/dashboard-pages/changes-errors/" class="w-full btn btn-outline link link-hover">
     Next: Changes & Errors Page
     <i class="fa-regular fa-arrow-right mr-4"></i>
 </a>

@@ -124,6 +124,8 @@
 
       .docs-card:hover {
         border-color: #377cfb;
+        transform: translateY(-0.7rem);
+        transition-duration: 300ms;
       }
 
       .docs-card-2 {
@@ -140,6 +142,8 @@
 
       .docs-card-2:hover {
         border-color: #377cfb;
+        transform: translateY(-0.5rem);
+        transition-duration: 300ms;
       }
 
       .callout {
@@ -477,7 +481,7 @@ twq('config','om5gt');
       <section class="pl-1">
         <a class="block font-semibold pb-3" href="{{ page.permalink }}">{{ page.frontmatter.title }}</a>
         {% capture glob_pattern1 %}.{{ page.permalink }}*/index.md{% endcapture %}
-        {% assign subpages = file_list | where_glob: 'file_path', glob_pattern1 | sort %}
+        {% assign subpages = file_list | where_glob: 'file_path', glob_pattern1 | sort: 'frontmatter.menuWeight' %}
         {% if subpages.size > 0 %}
         <ul class="space-y-2">
           {% for subpage in subpages %}
@@ -487,7 +491,7 @@ twq('config','om5gt');
               class="hover:text-secondary {{ is_active_page | ternary: 'text-secondary', '' }}">{{
               subpage.frontmatter.title }}</a>
             {% capture glob_pattern2 %}.{{ subpage.permalink }}*/index.md{% endcapture %}
-            {% assign subsubpages = file_list | where_glob: 'file_path', glob_pattern2 %}
+            {% assign subsubpages = file_list | where_glob: 'file_path', glob_pattern2 | sort %}
             {% if subsubpages.size > 0 %}
             <ul class="pl-5 space-y-2 pt-2">
               {% for subsubpage in subsubpages %}
@@ -551,7 +555,7 @@ twq('config','om5gt');
             >
               {{ this.content }}
             </article>
-            <footer class="text-center py-12 text-left space-y-2">
+            <footer class="text-center pt-12 text-left space-y-2">
               <h5 class="font-semibold">Need assistance or have some feedback for us? You can reach out to us at:</h5>
               <p>
                 <i class="fa-regular fa-envelope"></i>
@@ -559,21 +563,25 @@ twq('config','om5gt');
                   class="link"
                   href="mailto:hello@apitoolkit.io"
                   >hello@apitoolkit.io</a
-                >, <i class="fa-brands fa-github"></i>
-                <a
-                  class="link"
-                  href="https://github.com/apitoolkit/apitoolkit-landing/issues/new/choose"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >community issues</a
-                >, or our <i class="fa-brands fa-discord"></i>
+                >
+                |
+                <i class="fa-brands fa-discord"></i>
                 <a
                   class="link"
                   href="https://discord.gg/dEB6EjQnKB"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >Discord community server</a
-                >.
+                  >Discord Community Server</a
+                >
+                |
+                <i class="fa-brands fa-github"></i>
+                <a
+                  class="link"
+                  href="https://github.com/apitoolkit/apitoolkit-landing/issues/new/choose"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >GitHub Community Issues</a
+                >
               </p>
             </footer>
           </div>

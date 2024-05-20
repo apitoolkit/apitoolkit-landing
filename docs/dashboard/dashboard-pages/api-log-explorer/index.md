@@ -15,9 +15,9 @@ In this guide, you will learn how to effectively navigate through the **API Log 
 
 On this page, you will find a list of all the requests tracked from your API including all the associated fields and parameters and a throughput graph. You can **filter** the data using the toggle at the top-left section of the page (the default is **Last 14 Days**), toggle any log request to view all the associated details, or further click the **Expand []** button to view even more request and response details.
 
-![Screenshot of APItoolkit's API log explorer page](/docs/dashboard/api-log-explorer/screen-1.png)
+![Screenshot of APItoolkit's API log explorer page](/docs/dashboard/dashboard-pages/api-log-explorer/screen-1.png)
 
-![Screenshot of APItoolkit's API log explorer page](/docs/dashboard/api-log-explorer/screen-2.png)
+![Screenshot of APItoolkit's API log explorer page](/docs/dashboard/dashboard-pages/api-log-explorer/screen-2.png)
 
 ```=html
 <div class="callout">
@@ -34,15 +34,15 @@ There are two query filtering options, the **manual selector mode** and the **ed
 
 You can manually add filters by selecting the fields and sub-fields you want and clicking the **Run Query** button as seen in the image below.
 
-![Screenshot of APItoolkit's API log explorer page](/docs/dashboard/api-log-explorer/screen-3.png)
+![Screenshot of APItoolkit's API log explorer page](/docs/dashboard/dashboard-pages/api-log-explorer/screen-3.png)
 
 Alternatively, you can toggle the **Use editor** button, use the text editor to write the query (as you would an SQL query), and click the **Run Query** button as seen in the image below.
 
-![Screenshot of APItoolkit's API log explorer page](/docs/dashboard/api-log-explorer/screen-4.png)
+![Screenshot of APItoolkit's API log explorer page](/docs/dashboard/dashboard-pages/api-log-explorer/screen-4.png)
 
 If you toggle a request log, you can also manually select a field, click on it, and click the **Filter by field** or **Exclude by field** options to automatically add that field to the list of queries and run the query immediately.
 
-![Screenshot of APItoolkit's API log explorer page](/docs/dashboard/api-log-explorer/screen-5.png)
+![Screenshot of APItoolkit's API log explorer page](/docs/dashboard/dashboard-pages/api-log-explorer/screen-5.png)
 
 ## Alerts
 
@@ -50,7 +50,7 @@ You can create an alert and get notified via email or a Slack channel (if alread
 
 <!-- You can also use template tags in the subject like so: `Error in {/{alert.tags}}` -->
 
-![Screenshot of APItoolkit's API log explorer page](/docs/dashboard/api-log-explorer/screen-6.png)
+![Screenshot of APItoolkit's API log explorer page](/docs/dashboard/dashboard-pages/api-log-explorer/screen-6.png)
 
 ```=html
 <div class="callout">
@@ -63,9 +63,9 @@ You can create an alert and get notified via email or a Slack channel (if alread
 
 APItoolkit allows you to publicly share the details of a particular log request to anyone you desire (maybe someone on the customer support team). All you need to do is click on the request, expand it, select the expiry date of the link, and click the **Get link** button. This will create a secure link which you can share with anyone.
 
-![Screenshot of APItoolkit's API log explorer page](/docs/dashboard/api-log-explorer/screen-7.png)
+![Screenshot of APItoolkit's API log explorer page](/docs/dashboard/dashboard-pages/api-log-explorer/screen-7.png)
 
-![Screenshot of APItoolkit's API log explorer page](/docs/dashboard/api-log-explorer/screen-8.png)
+![Screenshot of APItoolkit's API log explorer page](/docs/dashboard/dashboard-pages/api-log-explorer/screen-8.png)
 
 ```=html
 <hr />
@@ -116,7 +116,7 @@ Here's a quick video overview for a visual walkthrough of this page:
 
 ```=html
 <hr />
-<a href="/docs/dashboard/documentation/" class="w-full btn btn-outline link link-hover">
+<a href="/docs/dashboard/dashboard-pages/documentation/" class="w-full btn btn-outline link link-hover">
     Next: Documentation Page
     <i class="fa-regular fa-arrow-right mr-4"></i>
 </a>
