@@ -9,7 +9,7 @@ publishdate: 2022-03-24
 <div class="our_container w-full">
 ```
 
-## Frequently asked Questions
+## Frequently Asked Questions
 
 #### Some questions others have asked
 

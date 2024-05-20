@@ -15,7 +15,7 @@ In this guide, you will learn how to effectively navigate through the **Changes 
 
 On this page, you will find a list of all ongoing **anomalies** (new **Request Shapes**, **Field Formats**, or **Endpoints**) detected from different request types on your API, including the endpoints they were detected on, and the new, updated, or deleted fields detected. You can **sort** the list based on the first/last time the anomaly was seen or the number of associated events, **acknowledge** or **archive** each anomaly, and click on each list item to explore them in more detail.
 
-![Screenshot of APItoolkit's changes & errors page](/docs/dashboard/changes-errors/changes-errors.png)
+![Screenshot of APItoolkit's changes & errors page](/docs/dashboard/dashboard-pages/changes-errors/changes-errors.png)
 
 ```=html
 <div class="callout">
@@ -50,7 +50,7 @@ Here's a quick video overview for a visual walkthrough of this page:
 
 ```=html
 <hr />
-<a href="/docs/dashboard/api-log-explorer/" class="w-full btn btn-outline link link-hover">
+<a href="/docs/dashboard/dashboard-pages/api-log-explorer/" class="w-full btn btn-outline link link-hover">
     Next: API Log Explorer Page
     <i class="fa-regular fa-arrow-right mr-4"></i>
 </a>

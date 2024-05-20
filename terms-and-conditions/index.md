@@ -3,6 +3,10 @@ title: Terms and Conditions of Service
 date: 2022-08-21
 ---
 
+```=html
+<section class="our_container w-full px-6 md:px-0 lg:px-0">
+```
+
 ### OVERVIEW
 
 This website is operated by APItoolkit. Throughout the site, the terms “we”, “us” and “our” refer to APItoolkit. APItoolkit offers this website, including all information, tools and services available from this site to you, the user, conditioned upon your acceptance of all terms, conditions, policies and notices stated here.
@@ -154,3 +158,7 @@ We reserve the right, at our sole discretion, to update, change or replace any p
 ### SECTION 20 - CONTACT INFORMATION
 
 Questions about the Terms of Service should be sent to us at <hello@apitoolkit.io>.
+
+```=html
+</section>
+```

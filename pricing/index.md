@@ -7,10 +7,10 @@ publishdate: 2022-03-24
 ```=html
 <div class="w-full">
     <header class="w-full mt-32">
-        <div class="width-control  mx-auto px-2">
-            <div class="w-full flex flex-col items-center gap-4">
+        <div class="width-control mx-auto px-2">
+            <div class="w-full flex flex-col items-center text-center gap-4">
                 <h1 class="font-bold text-4xl md:text-[50px] dark:text-white">Pay Only for What You Use</h1>
-                <p class="max-w-[450px] text-base-content font-medium  text-lg text-center">Trust your APIs and only pay for the requests we analyze.</p>
+                <p class="max-w-[450px] text-base-content font-medium text-lg">Trust your APIs and only pay for the requests we analyze.</p>
             </div>
         </div>
     </header>

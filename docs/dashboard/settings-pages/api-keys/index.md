@@ -2,7 +2,7 @@
 title: API Keys
 date: 2024-04-22
 updatedDate: 2024-05-07
-menuWeight: 11
+menuWeight: 3
 ---
 
 # API Keys
@@ -17,13 +17,13 @@ On this page, you view, revoke, and copy all your API keys or create new ones.
 
 To get to this page, kindly click on the project name at the top-left section of the dashboard and then click on the **API Keys** tab. You will then be redirected to another page where you can make the changes.
 
-![Screenshot of APItoolkit's API keys page](/docs/dashboard/api-keys/screen-1.png)
+![Screenshot of APItoolkit's API keys page](/docs/dashboard/settings-pages/api-keys/screen-1.png)
 
-![Screenshot of APItoolkit's API keys page](/docs/dashboard/api-keys/screen-2.png)
+![Screenshot of APItoolkit's API keys page](/docs/dashboard/settings-pages/api-keys/screen-2.png)
 
 <!-- ```=html
 <hr />
-<a href="/docs/dashboard/api-keys/" class="w-full btn btn-outline link link-hover">
+<a href="/docs/dashboard/settings-pages/api-keys/" class="w-full btn btn-outline link link-hover">
     Next: API Keys
     <i class="fa-regular fa-arrow-right mr-4"></i>
 </a>

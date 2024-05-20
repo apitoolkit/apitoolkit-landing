@@ -15,7 +15,7 @@ In this guide, you will learn how to effectively navigate through the **Endpoint
 
 On this page, you will find all the endpoints tracked from your API. You can **filter** the list based on the host (e.g., list all endpoints from your `localhost`, `staging`, or `production` environment), **search** for specific endpoints, and **sort** based on the first/last time the endpoint was seen or the number of events associated with the endpoint.
 
-![Screenshot of APItoolkit's endpoints page](/docs/dashboard/endpoints/endpoints.png)
+![Screenshot of APItoolkit's endpoints page](/docs/dashboard/dashboard-pages/endpoints/endpoints.png)
 
 All endpoints are organized based on the following categories:
 
@@ -40,7 +40,7 @@ On this tab, the page is split into two parts, namely: **Ongoing Anomalies and M
 
 This section displays a quick summary of all ongoing anomalies detected from this endpoint, including the endpoints they were detected on, and the new, updated, or deleted fields detected.
 
-![Screenshot of APItoolkit's dashboard page](/docs/dashboard/dashboard/section-1.png)
+![Screenshot of APItoolkit's dashboard page](/docs/dashboard/dashboard-pages/dashboard/section-1.png)
 
 ```=html
 <div class="callout">
@@ -59,7 +59,7 @@ This section displays some data analysis and visualization from all the requests
 - **Total Requests**: Total number of requests for this endpoint this week vs the total for the entire project.
 - **Total Time**: Total time on this endpoint this week vs the total for the entire project.
 
-![Screenshot of APItoolkit's endpoints page](/docs/dashboard/endpoints/stats-1.png)
+![Screenshot of APItoolkit's endpoints page](/docs/dashboard/dashboard-pages/endpoints/stats-1.png)
 
 #### Graphs
 
@@ -69,7 +69,7 @@ This section displays some data analysis and visualization from all the requests
 - **Requests by Endpoint**: All requests grouped by endpoint.
 - **Request Latency Distribution**: Summary of the response time distribution.
 
-![Screenshot of APItoolkit's endpoints page](/docs/dashboard/endpoints/stats-2.png)
+![Screenshot of APItoolkit's endpoints page](/docs/dashboard/dashboard-pages/endpoints/stats-2.png)
 
 ```=html
 <div class="callout">
@@ -89,17 +89,17 @@ This section displays some data analysis and visualization from all the requests
 
 On this tab, you get a summary of the shape of your API (Request and Response) including all Headers, Query Params, Body fields, etc. detected. You can click on any of the fields displayed to view more details about it displayed on the right sidebar.
 
-![Screenshot of APItoolkit's endpoints page](/docs/dashboard/endpoints/tab-2.png)
+![Screenshot of APItoolkit's endpoints page](/docs/dashboard/dashboard-pages/endpoints/tab-2.png)
 
 ## Shapes
 
 On this tab, you get a list of all the shapes of your API detected from different request types. When you click on any shape, it takes you to the **API Docs** tab where you can preview all the data of the shape as described earlier.
 
-![Screenshot of APItoolkit's endpoints page](/docs/dashboard/endpoints/tab-3.png)
+![Screenshot of APItoolkit's endpoints page](/docs/dashboard/dashboard-pages/endpoints/tab-3.png)
 
 ```=html
 <hr />
-<a href="/docs/dashboard/outbound-integrations/" class="w-full btn btn-outline link link-hover">
+<a href="/docs/dashboard/dashboard-pages/outbound-integrations/" class="w-full btn btn-outline link link-hover">
     Next: Outbound Integrations Page
     <i class="fa-regular fa-arrow-right mr-4"></i>
 </a>

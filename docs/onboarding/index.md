@@ -11,9 +11,8 @@ pageFullWidth: true
 # Onboarding Guide
 
 **APItoolkit** is an end-to-end API and web services management toolkit for engineers and customer support teams. We use AI to help engineering teams observe, manage, monitor, and test their backend systems and any external API they depend on. When you integrate APItoolkit into your application, you gain access to different features out-of-the-box, including but not limited to **API Monitoring and Observability**, **Error Tracking**, **Anomalies Detection**, **API Log Explorer**, **API Management**, **API Analytics**, **Automatic OpenAPI Spec Generation**, and even more coming soon (we are always shipping!).
-<!-- TODO: add links to the list of features once they're shipped -->
 
-In this guide, we will walk you through the process of integrating APItoolkit into your application. You will learn all the steps required to set up your account, fetch your API key, integrate with our SDK, and start monitoring requests on your API.
+In this guide, we will walk you through the process of integrating APItoolkit into your application. You will learn all the steps required to set up your account, fetch an API key, integrate with our SDK, and start monitoring requests on your API.
 
 ## Getting Started
 
@@ -21,9 +20,9 @@ There are five steps required to get started with APItoolkit and begin exploring
 
 1. [Create an Account](#create-an-account)
 2. [Create a New Project](#create-a-new-project)
-3. [Fetch your API Key](#fetch-api-key)
-4. [Integrate the SDK](#integrate-sdk)
-5. [Acknowledge Endpoints](#⑤-acknowledge-endpoints)
+3. [Fetch API Key](#fetch-api-key)
+4. [Integrate SDK](#integrate-sdk)
+5. [Acknowledge Endpoints or Anomalies](#⑤-acknowledge-endpoints-or-anomalies)
 
 ## ① Create an Account
 
@@ -80,13 +79,13 @@ To integrate with your preferred framework, kindly follow the quick guidelines b
 
 {% render "default/markdown/integration-footer.liquid", config:config %}
 
-## ⑤ Acknowledge Endpoints
+## ⑤ Acknowledge Endpoints or Anomalies
 
-Once APItoolkit starts tracking data from your API, you will find the list of **detected endpoints** in the [Endpoints](/docs/dashboard/endpoints/) page and the list of **detected anomalies** (also known as **Request Shapes**) on the [Changes & Errors](/docs/dashboard/changes-errors/) page or in the Ongoing Anomalies and Monitors section of the [Dashboard](/docs/dashboard/dashboard/) page. You need to **acknowledge** each endpoint or anomaly so APItoolkit understands the shape of the endpoints on your API and uses that information for future anomaly detections. As a side effect, we then use this information to trigger the [OpenAPI spec generation](/docs/dashboard/documentation) (swagger docs) feature we offer and send reports. Hence, **you should acknowledge all important endpoints you want us to monitor**.
+Once APItoolkit starts tracking data from your API, you will find the list of **detected endpoints** on the [Endpoints](/docs/dashboard/endpoints/) page and the list of **detected anomalies** on the [Changes & Errors](/docs/dashboard/changes-errors/) page or in the Ongoing Anomalies and Monitors section of the [Dashboard](/docs/dashboard/dashboard/) page. You need to **acknowledge** each endpoint or anomaly so APItoolkit understands the shape of the endpoints on your API and uses that information for future anomaly detections. As a side effect, we then use this information to trigger the [OpenAPI spec generation](/docs/dashboard/documentation) (swagger docs) feature and send you scheduled reports. Hence, **you should continuously acknowledge all important endpoints and anomalies you want us to monitor**.
 
 ![APItoolkit dashboard screenshot](/assets/img/dashboard.png)
 
-In summary, once you successfully integrate APItoolkit into your application using any of our SDKs, we will start monitoring requests to your API and you can start acknowledging endpoints and begin exploring the data in the dashboard using all our powerful features.
+Once you successfully integrate APItoolkit into your application using any of our SDKs, we will start monitoring requests to your API and you can start acknowledging endpoints/anomalies, begin exploring the tracked data in the dashboard, and begin using all our powerful features.
 
 ## Dashboard Overview
 
@@ -140,7 +139,7 @@ Here is a quick overview of all the available dashboard tabs and the features in
 Now that you have set up your new project with APItoolkit, you should explore the pages below to learn even more.
 
 ```=html
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 text-center">
+<div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 text-center">
     <a href="/docs/sdks" class="docs-card rounded-md">
     <p><i class="fa-regular fa-plug h-5 w-5 mr-2"></i><span class="text-xl font-bold text-black dark:text-white">SDK Guides</span></p>
     <span class="px-8 font-normal text-gray-600 dark:text-white">Learn how to integrate APItoolkit using any of our SDKs for different programming languages and frameworks.</span>

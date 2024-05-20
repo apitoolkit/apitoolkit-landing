@@ -15,7 +15,7 @@ In this guide, you will learn how to effectively navigate through the **Dashboar
 
 On this page, you will find a summary of all the API analytics, including requests, anomalies, endpoints, etc. alongside all the requests visualized by status code, errors, endpoint, and latency percentiles. You can filter the data using the toggle at the top-left section of the page from the **Last Hour**, **Last 24 Hours**, **Last 7 Days**, **Last 14 Days**, or input a **custom date range** (the default is **Last 7 Days**).
 
-![Screenshot of APItoolkit's dashboard page](/docs/dashboard/dashboard/dashboard-page.png)
+![Screenshot of APItoolkit's dashboard page](/docs/dashboard/dashboard-pages/dashboard/dashboard-page.png)
 
 This page is split into two parts, **Ongoing Anomalies and Monitors** and **Analytics**.
 
@@ -23,7 +23,7 @@ This page is split into two parts, **Ongoing Anomalies and Monitors** and **Anal
 
 This section displays a quick summary of all ongoing anomalies detected from different request types on your API, including the endpoints they were detected on, and the new, updated, or deleted fields detected. You can view all the anomalies alongside errors in more detail on the [Changes & Error](/docs/dashboard/changes-errors/) page.
 
-![Screenshot of APItoolkit's dashboard page](/docs/dashboard/dashboard/section-1.png)
+![Screenshot of APItoolkit's dashboard page](/docs/dashboard/dashboard-pages/dashboard/section-1.png)
 
 ```=html
 <div class="callout">
@@ -44,7 +44,7 @@ This section displays some data analysis and visualization from all the requests
 - **Request Shapes**: Total number of request signatures that are active now vs the last week.
 - **Requests per minute**: Total number of requests per minute this week vs the last week.
 
-![Screenshot of APItoolkit's dashboard page](/docs/dashboard/dashboard/section-2.png)
+![Screenshot of APItoolkit's dashboard page](/docs/dashboard/dashboard-pages/dashboard/section-2.png)
 
 ### Graphs
 
@@ -61,7 +61,7 @@ This section displays some data analysis and visualization from all the requests
 </div>
 ```
 
-![Screenshot of APItoolkit's dashboard page](/docs/dashboard/dashboard/section-3.png)
+![Screenshot of APItoolkit's dashboard page](/docs/dashboard/dashboard-pages/dashboard/section-3.png)
 
 ```=html
 <div class="callout">
@@ -96,7 +96,7 @@ Here's a quick video overview for a visual walkthrough of this page:
 
 ```=html
 <hr />
-<a href="/docs/dashboard/endpoints/" class="w-full btn btn-outline link link-hover">
+<a href="/docs/dashboard/dashboard-pages/endpoints/" class="w-full btn btn-outline link link-hover">
     Next: Endpoints Page
     <i class="fa-regular fa-arrow-right mr-4"></i>
 </a>

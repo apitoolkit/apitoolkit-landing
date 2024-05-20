@@ -1,9 +1,8 @@
 ---
-title: Dashboard Guides
-date: 2024-04-22
-updatedDate: 2024-05-04
-faLogo: chart-line
-menuWeight: 3
+title: Dashboard Pages
+date: 2024-05-20
+updatedDate: 2024-05-20
+menuWeight: 1
 pageFullWidth: true
 hideToc: true
 pages:
@@ -31,23 +30,12 @@ pages:
   - title: Reports
     slug: /docs/dashboard/dashboard-pages/reports
     icon: chart-simple
-  - title: Project Settings
-    slug: /docs/dashboard/dashboard-pages/project-settings
-    icon: gear
-  - title: Manage Members
-    slug: /docs/dashboard/dashboard-pages/manage-members
-    icon: user-plus
-  - title: API Keys
-    slug: /docs/dashboard/dashboard-pages/api-keys
-    icon: key
 ---
 
-# Dashboard Guides
-
-In these guides, we will show you how to effectively navigate through the APItoolkit dashboard and maximize all the powerful features accessible on different pages of the dashboard. Kindly click on any of the cards below to get started.
+# Dashboard Pages
 
 ```=html
-<div class="mt-8 grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-8 text-center">
+<div class="mt-12 grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-8 text-center">
 {% for page in this.frontmatter.pages %}
   <a href="{{ page.slug }}" class="docs-card-2 rounded-md">
     <i class="fa-regular fa-{{ page.icon }} h-5 w-5 mr-2"></i>
@@ -56,3 +44,4 @@ In these guides, we will show you how to effectively navigate through the APItoo
 {% endfor %}
 </div>
 ```
+
