@@ -34,10 +34,8 @@ pages:
 
 # Dashboard Pages
 
-In these guides, we will show you how to effectively navigate through the APItoolkit dashboard and maximize all the powerful features accessible on different pages of the dashboard. Kindly click on any of the cards below to get started.
-
 ```=html
-<div class="mt-8 grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-8 text-center">
+<div class="mt-12 grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-8 text-center">
 {% for page in this.frontmatter.pages %}
   <a href="{{ page.slug }}" class="docs-card-2 rounded-md">
     <i class="fa-regular fa-{{ page.icon }} h-5 w-5 mr-2"></i>
