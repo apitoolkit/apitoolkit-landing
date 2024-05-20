@@ -16,16 +16,17 @@ pageFullWidth: true
 
 # Welcome to the APItoolkit Documentation
 
-{class="max-w-2xl sm:inline-block "}
+{class="max-w-2xl flex flex-col items-center not-prose"}
 ::::::
 
 {.text-lg}
 **APItoolkit** is an end-to-end API and web services management toolkit for engineers and customer support teams. We use AI to help engineering teams observe, debug, monitor, and test their backend systems and any external API they depend on.
 
-{class="space-y-2 text-sm sm:pt-1 not-prose" id="waitlist-form-1"}
-[Get Started](/docs/onboarding/){class="drop-shadow hover:drop-shadow-lg transition-all rounded-md hover:bg-yellow-300 bg-amber-300 text-black border border-amber-400 font-semibold inline-block px-4 py-2 mt-2 sm:mt-0 hs-init hs-inview"}
-[OR]{.inline-block .px-5}
-[Get a Demo](https://calendar.app.google/1a4HG5GZYv1sjjZG6){target="_blank" rel="noopener noreferrer" class="drop-shadow rounded-md border border-gray-200 bg-gray-100 hover:bg-gray-200 font-semibold text-gray-900 inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0 hs-init hs-inview"}
+<div class="flex items-center gap-2 text-center mt-12">
+    <a href="/docs/dashboard/" class="btn btn-secondary text-white sm:w-56">Get Started</a>
+    <p class="inline-block px-5">|</p>
+    <a href="https://calendar.app.google/1a4HG5GZYv1sjjZG6" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-neutral text-black sm:w-56">Get a Demo</a>
+</div>
 ::::::
 
 ```=html
