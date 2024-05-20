@@ -5,7 +5,7 @@ hide_date: true
 ---
 
 ```=html
-<section class="our_container w-full">
+<section class="our_container w-full px-6 md:px-0 lg:px-0">
 ```
 
 ## Why APItoolkit?
