@@ -16,14 +16,12 @@ pageFullWidth: true
 # Welcome to the APItoolkit Documentation
 
 ```=html
-<div class="max-w-2xl flex flex-col items-center text-center justify-center">
-    <p class="text-lg">APItoolkit is an end-to-end API and web services management toolkit for engineers and customer support teams. We use AI to help engineering teams observe, debug, monitor, and test their backend systems and any external API they depend on.</p>
+<p class="text-lg items-center text-center justify-center mt-4">APItoolkit is an end-to-end API and web services management toolkit for engineers and customer support teams. We use AI to help engineering teams observe, debug, monitor, and test their backend systems and any external API they depend on.</p>
 
-    <div class="flex items-center gap-2 text-center mt-8">
-        <a href="/docs/onboarding/" class="btn btn-secondary t-white sm:w-56">Get Started</a>
-        <p class="inline-block px-5">|</p>
-        <a href="https://calendar.app.google/1a4HG5GZYv1sjjZG6" target="_blank" rel="noopener noreferrer" class="btn btn-outline sm:w-56">Get a Demo</a>
-    </div>
+<div class="items-center text-center justify-center mt-8">
+    <a href="/docs/onboarding/" class="btn btn-secondary t-white sm:w-56">Get Started</a>
+    <p class="inline-block px-5">|</p>
+    <a href="https://calendar.app.google/1a4HG5GZYv1sjjZG6" target="_blank" rel="noopener noreferrer" class="btn btn-outline sm:w-56">Get a Demo</a>
 </div>
 ```
 
