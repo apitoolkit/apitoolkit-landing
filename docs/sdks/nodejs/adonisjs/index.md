@@ -20,8 +20,14 @@ gathers the requests, and sends the request to the API toolkit servers.
 
 Run the following command to install the package from your projects root:
 
+#### For adonis v5
 ```sh
-npm install apitoolkit-adonis
+npm install apitoolkit-adonis@v2.2.0
+```
+
+#### For adonis v6
+```sh
+npm install apitoolkit-adonis@latest
 ```
 
 ### Configure the adonis package using ace
@@ -35,14 +41,24 @@ node ace configure apitoolkit-adonis
 
 ### Register the middleware
 
-Then add `@ioc:APIToolkit` to your global middlewares list in the
+#### For adonis v5
+Add `@ioc:APIToolkit` to your global middlewares list in the
 `start/kernel.ts` file
 
 ```js
 Server.middleware.register([
-  () => import("@ioc:Adonis/Core/BodyParser"),
-  () => import("@ioc:APIToolkit"),
-]);
+  () => import('@ioc:Adonis/Core/BodyParser'),
+  () => import('@ioc:APIToolkit'),
+])
+```
+
+#### For adonis v6
+Add `apitoolkit-adonis` to your global middlewares list in the
+`start/kernel.ts` file
+```js
+server.use([
+  () => import('apitoolkit-adonis'),
+])
 ```
 
 ### Configuration
@@ -75,10 +91,21 @@ directory and export a `apitoolkitConfig` object with the following properties
 To configure, the default export of `/conf/apitoolkit` should contain all
 necessary properties eg:
 
+#### For adonis v5
 ```js
 export const apitoolkitConfig = {
   apiKey: "&lt;YOUR_API_KEY&gt;",
 };
+```
+
+#### For adonis v6 
+```js
+import { defineConfig } from 'apitoolkit-adonis'
+
+export default defineConfig({
+  apiKey: '<YOUR_API_KEY>',
+  debug: false,
+})
 ```
 
 After configuring the sdk, all incoming request will now be send to APIToolkit.
