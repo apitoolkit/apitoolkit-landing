@@ -10,7 +10,7 @@ pageFullWidth: true
 
 # Onboarding Guide
 
-**APItoolkit** is an end-to-end API and web services management toolkit for engineers and customer support teams. We use AI to help engineering teams observe, manage, monitor, and test their backend systems and any external API they depend on. When you integrate APItoolkit into your application, you gain access to different features out-of-the-box, including but not limited to **API Monitoring and Observability**, **Error Tracking**, **Anomalies Detection**, **API Log Explorer**, **API Management**, **API Analytics**, **Automatic OpenAPI Spec Generation**, and even more coming soon (we are always shipping!).
+**APItoolkit** is an end-to-end API and web services management toolkit for engineers and customer support teams. We use AI to help engineering teams observe, manage, monitor, and test their backend systems and any external API they depend on. When you integrate APItoolkit into your application, you gain access to different features out-of-the-box, including but not limited to **API Monitoring and Observability**, **Error Tracking**, **Anomalies Detection**, **API Log Explorer**, **API Testing**, **API Management**, **API Analytics**, **Automatic OpenAPI Spec Generation**, and even more coming (we are always shipping!).
 
 In this guide, we will walk you through the process of integrating APItoolkit into your application. You will learn all the steps required to set up your account, fetch an API key, integrate with our SDK, and start monitoring requests on your API.
 
@@ -52,7 +52,7 @@ Once you are redirected to the dashboard, you have to create a new project to be
 ```=html
 <div class="callout">
   <i class="fa-solid fa-forward"></i>
-  <p>Once you are done providing the required values and your payment details (if you chose the <b>Pay as you use</b> plan), click the <b>Proceed</b> button. Your new project will then be created and you will be redirected to a survey form; kindly fill out the form displayed to proceed further.</p>
+  <p>Once you are done providing the required values and your payment details (if you chose the <b>Pay as you use</b> or <b>Graduated</b> plan), click the <b>Proceed</b> button. Your new project will then be created and you will be redirected to a survey form; kindly fill out the form displayed to proceed further.</p>
 </div>
 ```
 
@@ -81,7 +81,7 @@ To integrate with your preferred framework, kindly follow the quick guidelines b
 
 ## ⑤ Acknowledge Endpoints or Anomalies
 
-Once APItoolkit starts tracking data from your API, you will find the list of **detected endpoints** on the [Endpoints](/docs/dashboard/endpoints/) page and the list of **detected anomalies** on the [Changes & Errors](/docs/dashboard/changes-errors/) page or in the Ongoing Anomalies and Monitors section of the [Dashboard](/docs/dashboard/dashboard/) page. You need to **acknowledge** each endpoint or anomaly so APItoolkit understands the shape of the endpoints on your API and uses that information for future anomaly detections. As a side effect, we then use this information to trigger the [OpenAPI spec generation](/docs/dashboard/documentation) (swagger docs) feature and send you scheduled reports. Hence, **you should continuously acknowledge all important endpoints and anomalies you want us to monitor**.
+Once APItoolkit starts tracking data from your API, you will find the list of **detected endpoints** on the [Endpoints](/docs/dashboard/endpoints/) page and the list of **detected anomalies** on the [Changes & Errors](/docs/dashboard/changes-errors/) page or in the Ongoing Anomalies and Monitors section of the [Dashboard](/docs/dashboard/dashboard/) page. You need to **acknowledge** each endpoint or anomaly so APItoolkit understands the shape of the endpoints on your API and uses that information for future anomaly detections. As a side effect, we then use this information to trigger the [OpenAPI spec generation](/docs/dashboard/documentation) feature and send you scheduled reports. Hence, **you should continuously acknowledge all important endpoints and anomalies you want us to monitor**.
 
 ![APItoolkit dashboard screenshot](/assets/img/dashboard.png)
 
@@ -99,7 +99,7 @@ Here is a quick overview of all the available dashboard tabs and the features in
 </tr> -->
 <tr>
 <td class="font-bold border">Get Started</td>
-<td>The onboarding checklist that reminds you of all you need to integrate APItoolkit into your API for monitoring to begin.</td>
+<td>The onboarding checklist that reminds you of all you need to integrate APItoolkit into your API and begin monitoring requests.</td>
 </tr>
 <tr>
 <td class="font-bold border">Dashboard</td>
@@ -110,20 +110,24 @@ Here is a quick overview of all the available dashboard tabs and the features in
 <td>A list of all endpoints detected from your API.</td>
 </tr>
 <tr>
-<td class="font-bold border">Outbound Integrations</td>
-<td>A list of all outgoing requests from your API.</td>
-</tr>
-<tr>
-<td class="font-bold border">Changes & Errors</td>
-<td>A list of all errors and anomalies detected.</td>
-</tr>
-<tr>
 <td class="font-bold border">API Log Explorer</td>
 <td>A list of all request logs with options to query them based on certain parameters and create alerts.</td>
 </tr>
 <tr>
-<td class="font-bold border">Documentation</td>
-<td>Explore the automatically generated OpenAPI specifications from your live API payloads.</td>
+<td class="font-bold border">Changes & Errors</td>
+<td>A list of all anomalies and errors detected from your API.</td>
+</tr>
+<tr>
+<td class="font-bold border">Outgoing Integrations</td>
+<td>A list of all outgoing requests (external API calls) from your API.</td>
+</tr>
+<tr>
+<td class="font-bold border">API Tests</td>
+<td>Explore and create manual or scheduled test assertions with multiple steps to validate HTTP responses in your API.</td>
+</tr>
+<tr>
+<td class="font-bold border">OpenAPI/Swagger</td>
+<td>Explore the automatically generated OpenAPI specifications (swagger docs) from your live API payloads.</td>
 </tr>
 <tr>
 <td class="font-bold border">Reports</td>
