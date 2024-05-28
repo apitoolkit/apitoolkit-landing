@@ -1,7 +1,7 @@
 ---
 title: Changes & Errors
 date: 2024-04-22
-updatedDate: 2024-05-04
+updatedDate: 2024-05-28
 menuWeight: 5
 ---
 
@@ -50,8 +50,8 @@ Here's a quick video overview for a visual walkthrough of this page:
 
 ```=html
 <hr />
-<a href="/docs/dashboard/dashboard-pages/api-log-explorer/" class="w-full btn btn-outline link link-hover">
-    Next: API Log Explorer Page
+<a href="/docs/dashboard/dashboard-pages/outgoing-integrations/" class="w-full btn btn-outline link link-hover">
+    Next: Outgoing Integrations Page
     <i class="fa-regular fa-arrow-right mr-4"></i>
 </a>
 ```

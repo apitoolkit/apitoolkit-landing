@@ -99,8 +99,8 @@ On this tab, you get a list of all the shapes of your API detected from differen
 
 ```=html
 <hr />
-<a href="/docs/dashboard/dashboard-pages/outbound-integrations/" class="w-full btn btn-outline link link-hover">
-    Next: Outbound Integrations Page
+<a href="/docs/dashboard/dashboard-pages/api-log-explorer/" class="w-full btn btn-outline link link-hover">
+    Next: API Log Explorer Page
     <i class="fa-regular fa-arrow-right mr-4"></i>
 </a>
 ```

@@ -1,7 +1,7 @@
 ---
 title: API Log Explorer
 date: 2024-04-22
-updatedDate: 2024-05-06
+updatedDate: 2024-05-28
 menuWeight: 6
 ---
 
@@ -116,8 +116,8 @@ Here's a quick video overview for a visual walkthrough of this page:
 
 ```=html
 <hr />
-<a href="/docs/dashboard/dashboard-pages/documentation/" class="w-full btn btn-outline link link-hover">
-    Next: Documentation Page
+<a href="/docs/dashboard/dashboard-pages/changes-errors/" class="w-full btn btn-outline link link-hover">
+    Next: Changes & Error Page
     <i class="fa-regular fa-arrow-right mr-4"></i>
 </a>
 ```
