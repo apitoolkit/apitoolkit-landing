@@ -55,7 +55,7 @@ apitoolkit_supported_frameworks:
 
   - id: net_btn
     title: .Net SDK
-    img_src: /assets/img/framework-logos/net-logo.png
+    img_src: /assets/img/framework-logos/netcore-logo.png
     alt: .NET logo
 
   - id: django_btn

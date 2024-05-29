@@ -1,36 +1,25 @@
 ---
-title: .Net Core
+title: .Net Core SDK
 date: 2022-03-23
-updatedDate: 2024-05-04
+updatedDate: 2024-05-30
 menuWeight: 1
-ogImage: /assets/img/framework-logos/net-logo.png
 ---
 
-# .Net SDK integration
+# .Net Core SDK Guide
 
-To integrate .Net web services with API Toolkit, an SDK called the `ApiToolkit.Net` client for API Toolkit is utilized.
+To integrate .Net web services with APItoolkit, you need to use this SDK to monitor incoming traffic, aggregate the requests, and then send them to APItoolkit's servers. Kindly follow this guide to get started and learn about all the supported features of this **.Net Core SDK**.
 
-It keeps track of incoming traffic, aggregates the requests, and then delivers them to the apitoolkit servers.
+```=html
+<hr>
+```
 
-## Design decisions
+## Prerequisites
 
-- APItoolkit SDK relies on google cloud pubsub over grpc behind the scenes, to ensure that your traffic is communicated to APIToolkit for processing in the most efficient ways.
-- Processing the live traffic in this way, allows:
-  
-  1. APIToolkit to perform all kinds of analysis and anomaly detection and monitoring on your APIs in real time.
-  2. Users to explore their API live, via the api log explorer.
-
-### Prerequisites
-
-- Sign up / Sign in to the [API dashboard](https://app.apitoolkit.io)
-
-- [Create a project](/docs/dashboard/creating-a-project/)
-
-- [Generate an API key for your project](/docs/dashboard/generating-api-keys), and include a brief description of your work. And to prevent losing your key after it has been generated, remember to make a copy of it.
+Ensure you have already completed the first three steps of the [onboarding guide](/docs/onboarding/){target="_blank"}.
 
 ## Installation
 
-Kindly run the following command to install the package:
+Kindly run the command below to install the [package](https://nuget.org/packages/ApiToolkit.Net){target="_blank"}:
 
 ```sh
 dotnet add package ApiToolkit.Net
@@ -38,13 +27,15 @@ dotnet add package ApiToolkit.Net
 
 ## Configuration
 
-Now you can initialize APItoolkit in your application's entry point (e.g `Program.cs`) like so:
+Next, initialize APItoolkit in your application's entry point (e.g `Program.cs`) like so:
 
 ```csharp
+using ApiToolkit.Net;
+
 var config = new Config
 {
     Debug = true, # Set debug flags to false in production
-    ApiKey = "{Your_APIKey}"
+    ApiKey = "{ENTER_YOUR_API_KEY_HERE}"
 };
 var client = await APIToolkit.NewClientAsync(config);
 
@@ -60,30 +51,33 @@ app.Use(async (context, next) =>
 # ...
 ```
 
-> [!NOTE]
->
-> Please make sure the APItoolkit middleware is added before `UseEndpoint` and other middleware are initialized.
-
-> [!IMPORTANT]
->
-> The `{Your_APIKey}` field should be replaced with the API key generated from the APItoolkit dashboard.
+<div class="callout">
+  <i class="fa-regular fa-lightbulb"></i>
+  <ul>
+    <li>Please make sure the APItoolkit middleware is added before `UseEndpoint` and other middleware are initialized.</li>
+    <li>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</li>
+  </ul>
+</div>
 
 ## Redacting Sensitive Data
 
 If you have fields that are sensitive and should not be sent to APItoolkit servers, you can mark those fields to be redacted in two ways:
 
-- This client SDK (the fields will never leave your servers in the first place).
-- The APItoolkit dashboard (the fields will be transported from your servers first and then redacted on the edge before further processing).
+1. This client SDK (the fields will never leave your servers in the first place).
+2. The APItoolkit dashboard (the fields will be transported from your servers first and then redacted on the edge before further processing).
 
-To mark a field for redacting via this SDK, you need to provide additional arguments to the `config` variable with paths to the fields that should be redacted. There are three (3) potential arguments that you can provide to configure what gets redacted.
+To mark a field for redacting via this SDK, you need to provide additional arguments to the `config` variable with paths to the fields that should be redacted. There are three potential arguments that you can provide to configure what gets redacted.
 
-1. `RedactHeaders`:  A list of HTTP header keys (e.g., `COOKIE` (redacted by default), `CONTENT-TYPE`, etc.).
+1. `RedactHeaders`:  A list of HTTP header keys (e.g., `COOKIE`, `CONTENT-TYPE`, etc.).
 2. `RedactRequestBody`: A list of JSONPaths from the request body (if the request body is a valid JSON).
 3. `RedactResponseBody`: A list of JSONPaths from the response body (if the response body is a valid JSON).
 
-### JSONPath Example
+<div class="callout">
+  <i class="fa-regular fa-lightbulb"></i>
+  <p>JSONPath is a query language used to select and extract data from JSON files.</p>
+</div>
 
-Given the following JSON object:
+For example, given the following JSON object:
 
 ```JSON
 {
@@ -114,20 +108,23 @@ Given the following JSON object:
 
 Examples of valid JSONPaths would be:
 
-- `$.store.books` (In this case, APItoolkit will replace the `books` field inside the store object with the string `[CLIENT_REDACTED]`).
-- `$.store.books[*].author` (In this case, APItoolkit will replace the `author` field in all the objects in the `books` list inside the `store` object with the string `[CLIENT_REDACTED]`).
+- `$.store.books` (In this case, APItoolkit will replace the `books` field inside the `store` object with the string `[CLIENT_REDACTED]`).
+- `$.store.books[*].author` (In this case, APItoolkit will replace the `author` field in all the objects of the `books` list inside the `store` object with the string `[CLIENT_REDACTED]`).
 
-For more examples and a detailed introduction to JSONPath, please take a look at [this guide](https://support.smartbear.com/alertsite/docs/monitors/api/endpoint/jsonpath.html) or [this cheatsheet](https://lzone.de/#/LZone%20Cheat%20Sheets/Languages/JSONPath).
+<div class="callout">
+  <i class="fa-regular fa-lightbulb"></i>
+  <p>To learn more about JSONPaths, please take a look at the [official docs](https://github.com/json-path/JsonPath/blob/master/README.md){target="_blank"} or [this cheat sheet](https://lzone.de/#/LZone%20Cheat%20Sheets/Languages/JSONPath?utm_source=apitoolkit){target="_blank"}. You can also use this [JSONPath Evaluator](https://jsonpath.com?utm_source=apitoolkit){target="_blank"} to validate your JSONPaths.</p>
+</div>
 
-### Configuration Example
-
-Here's an example of what the configuration in your entry point (`Program.cs`) would look like with the redacted fields configured:
+Here's an example of what the configuration in your application's entry point (e.g., `Program.cs`) would look like with redacted fields:
 
 ```csharp
+using ApiToolkit.Net;
+
 var config = new Config
 {
     Debug = true, # Set debug flags to false in production
-    ApiKey = "{Your_APIKey}",
+    ApiKey = "{ENTER_YOUR_API_KEY_HERE}",
     RedactHeaders = new List<string> { "HOST", "CONTENT-TYPE" },
     RedactRequestBody = new List<string> { "$.password", "$.payment.credit_cards[*].cvv", "$.user.addresses[*]" },
     RedactResponseBody = new List<string> { "$.title", "$.store.books[*].author" }
@@ -142,101 +139,23 @@ app.Use(async (context, next) =>
 })
 ```
 
-> [!NOTE]
->
-> While the `RedactHeaders` config field accepts a list of case-insensitive headers, `RedactRequestBody` and `RedactResponseBody` expect a list of JSONPath strings as arguments. Also, the list of items to be redacted will be applied to all endpoint requests and responses on your server.
-
-## Monitoring Outgoing Requests
-
-Apitoolkit allows your to monitor request you make from your application just like request that come into your app. Outgoing request are associated with the request that triggers them when the request context is passed otherwise they appear as a standalone log in the APIToolkit log explorer.
-To monitor outgoing request
-
-Example
-
-```csharp
-using ApiToolkit.Net;
-
-var builder = WebApplication.CreateBuilder(args);
-var app = builder.Build();
-
-var config = new Config
-{
-    ApiKey = "{YOUR_API_KEY}"
-};
-var client = await APIToolkit.NewClientAsync(config);
-
-app.Use(async (context, next) =>
-{
-    var apiToolkit = new APIToolkit(next, client);
-    await apiToolkit.InvokeAsync(context);
-});
-
-app.MapGet("/monitor-requets", async (context) =>
-{
-    using var httpClient = new HttpClient(client.APIToolkitObservingHandler(context));
-    var response = await httpClient.GetAsync("https://jsonplaceholder.typicode.com/posts/1");
-    var body = await response.Content.ReadAsStringAsync();
-    await context.Response.WriteAsync(body);
-});
-```
-
-The observing handler also take and optional configuration options which include the following fields
-
-`PathWildCard`: For urls with path params setting PathWildCard will be used as the url_path
-`RedactHeaders`: A string list of headers to redact
-`RedactResponseBody`: A string list of json paths to redact from response body
-`RedactRequestBody`: A string list of json paths to redact from request body
-
-### Full configuration example
-
-```csharp
-using ApiToolkit.Net;
-
-var builder = WebApplication.CreateBuilder(args);
-var app = builder.Build();
-
-var config = new Config
-{
-    ApiKey = "{YOUR_API_KEY}"
-};
-var client = await APIToolkit.NewClientAsync(config);
-
-app.Use(async (context, next) =>
-{
-    var apiToolkit = new APIToolkit(next, client);
-    await apiToolkit.InvokeAsync(context);
-});
-
-
-app.MapGet("/monitor-requets", async (context) =>
-{
-    var observingHandlerOptions = new ATOptions
-    {
-        PathWildCard = "/posts/{id}", // url_path will be /posts/{id} instead of /posts/1
-        RedactHeaders = ["User-Agent"],
-        RedactRequestBody = ["$.user.password"],
-        RedactResponseBody = ["$.user.data.email"]
-    };
-
-    using var httpClient = new HttpClient(client.APIToolkitObservingHandler(context, observingHandlerOptions));
-    var response = await httpClient.GetAsync("https://jsonplaceholder.typicode.com/posts/1");
-    var body = await response.Content.ReadAsStringAsync();
-    await context.Response.WriteAsync(body);
-});
-```
+<div class="callout">
+  <i class="fa-regular fa-lightbulb"></i>
+  <ul>
+    <li>The `RedactHeaders` config field accepts a list of case-insensitive headers.</li>
+    <li>The `RedactRequestBody` and `RedactResponseBody` fields <b>expect a list of JSONPath strings as arguments.</b></li>
+    <li>The list of items to be redacted will be applied to all endpoint requests and responses on your server.</li>
+  </ul>
+</div>
 
 ## Error Reporting
 
-APIToolkit detects a lot of API issues automatically, but it's also valuable to report and track errors.
+APItoolkit detects different API issues and anomalies automatically but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing request.
 
-This helps you associate more details about the backend with a given failing request. If you've used sentry, or rollback, or bugsnag, then you're likely aware of this functionality.
+To report errors, simply use the `ReportError()` handler like so:
 
-To report errors, simply call `ReportError` method of the APIToolkit client
-
-Example
 
 ```csharp
-
 using ApiToolkit.Net;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -244,9 +163,8 @@ var app = builder.Build();
 
 var config = new Config
 {
-    ApiKey = "{YOUR_API_KEY}"
+    ApiKey = "{ENTER_YOUR_API_KEY_HERE}"
 };
-
 var client = await APIToolkit.NewClientAsync(config);
 
 app.Use(async (context, next) =>
@@ -260,18 +178,77 @@ app.MapGet("/error-tracking", async context =>
     try
     {
         // Attempt to open a non-existing file
-        using (var fileStream = System.IO.File.OpenRead("nonexistingfile.txt"))
+        using (var fileStream = System.IO.File.OpenRead("non_existing_file.txt"))
         {
-            // File opened successfully, do something if needed
+            // File opened successfully, do something if needed.
         }
         await context.Response.WriteAsync($"Hello");
     }
     catch (Exception error)
     {
-        // Report error to apitoolkit (associated with the request)
+        // Report error to APItoolkit (associated with the request)
         client.ReportError(context, error);
         await context.Response.WriteAsync("Error reported!");
     }
 });
+```
 
+## Monitoring Outgoing Requests
+
+Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="_blank"} page. However, you can separate outgoing requests from others using the `APIToolkitObservingHandler()` handler and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="_blank"} page. APItoolkit will also return logged outgoing requests in association with the incoming request that triggered them.
+
+Here's an example of configuring outgoing requests with the SDK on a sample `/monitor-requests` endpoint that makes an asynchronous `HttpClient` GET request to a sample `https://jsonplaceholder.typicode.com/posts/1` public endpoint URL.
+
+
+```csharp
+using ApiToolkit.Net;
+
+var builder = WebApplication.CreateBuilder(args);
+var app = builder.Build();
+
+var config = new Config
+{
+    ApiKey = "{ENTER_YOUR_API_KEY_HERE}"
+};
+var client = await APIToolkit.NewClientAsync(config);
+
+app.Use(async (context, next) =>
+{
+    var apiToolkit = new APIToolkit(next, client);
+    await apiToolkit.InvokeAsync(context);
+});
+
+app.MapGet("/monitor-requests", async (context) =>
+{
+    var observingHandlerOptions = new ATOptions
+    {
+        PathWildCard = "/posts/{id}",
+        RedactHeaders = ["User-Agent"],
+        RedactRequestBody = ["$.user.password"],
+        RedactResponseBody = ["$.user.data.email"]
+    };
+
+    using var httpClient = new HttpClient(client.APIToolkitObservingHandler(context, observingHandlerOptions));
+    var response = await httpClient.GetAsync("https://jsonplaceholder.typicode.com/posts/1");
+    var body = await response.Content.ReadAsStringAsync();
+    await context.Response.WriteAsync(body);
+});
+```
+<div class="callout">
+  <i class="fa-regular fa-lightbulb"></i>
+  <p class="mt-6">The `client.APIToolkitObservingHandler` handler accepts a required `context` field and the following optional fields:</p>
+  <ul>
+    <li>`PathWildCard`: The `url_path` for URLs with path parameters.</li>
+    <li>`RedactHeaders`: A string list of headers to redact.</b></li>
+    <li>`RedactResponseBody`: A string list of JSONPaths to redact from the response body.</li>
+    <li>`RedactRequestBody`: A string list of JSONPaths to redact from the request body.</li>
+  </ul>
+</div>
+
+```=html
+<hr />
+<a href="https://github.com/apitoolkit/apitoolkit-dotnet" target="_blank" rel="noopener noreferrer" class="w-full btn btn-outline link link-hover">
+    <i class="fa-brands fa-github"></i>
+    Explore and Contribute to the SDK
+</a>
 ```

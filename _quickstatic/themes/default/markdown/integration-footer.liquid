@@ -585,7 +585,7 @@ server.serve_forever()
           </a>
         {% else %}
           <button
-            class="integrate-btns h-36 w-36 md:h-24 md:w-full p-4 md:p-2 no-prose border shadow rounded-lg flex items-center justify-center {% if forloop.first %}ring{% endif %}" 
+            class="integrate-btns h-36 w-36 md:w-full p-4 md:p-2 no-prose border shadow rounded-lg flex items-center justify-center {% if forloop.first %}ring{% endif %}" 
             id="{{ framework.id }}" title="{{ framework.title }}" xonclick="integrationTabs(event)"
             _="on click remove .ring from .integrate-btns then add .ring to me then put #{{framework.id}}_content.innerHTML into #integration_details_parent.innerHTML"
           >

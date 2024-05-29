@@ -1,5 +1,5 @@
 ---
-title: Dotnet SDKs
+title: .Net SDKs
 date: 2022-03-23
 updatedDate: 2024-05-04
 menuWeight: 1
@@ -8,7 +8,7 @@ hideToc: true
 pages:
   - title: .Net Core
     slug: /docs/sdks/dotnet/dotnetcore
-    icon: /assets/img/framework-logos/net-logo.png
+    icon: /assets/img/framework-logos/netcore-logo.png
 ---
 
 # .Net SDKs
