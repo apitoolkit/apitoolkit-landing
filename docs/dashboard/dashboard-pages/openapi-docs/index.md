@@ -1,13 +1,13 @@
 ---
-title: Documentation
+title: OpenAPI/Swagger
 date: 2024-04-22
-updatedDate: 2024-05-07
+updatedDate: 2024-05-28
 menuWeight: 7
 ---
 
-# Documentation Page
+# OpenAPI/Swagger Page
 
-In this guide, you will learn how to effectively navigate through the **Documentation** page on the APItoolkit dashboard and maximize all the powerful features accessible in it.
+In this guide, you will learn how to effectively navigate through the **OpenAPI/Swagger** page on the APItoolkit dashboard and maximize all the powerful features accessible in it.
 
 ```=html
 <hr />
@@ -15,7 +15,7 @@ In this guide, you will learn how to effectively navigate through the **Document
 
 On this page, you will find an auto-generated **OpenAPI specification** (swagger docs) for endpoints in your API using all the shapes detected from requests on your API. You can search, copy the raw specification, preview it, save different versions, and view all saved versions.
 
-![Screenshot of APItoolkit's documentation page](/docs/dashboard/dashboard-pages/documentation/screen.png)
+![Screenshot of APItoolkit's OpenAPI/Swagger page](/docs/dashboard/dashboard-pages/openapi-docs/screen.png)
 
 ```=html
 <div class="callout">

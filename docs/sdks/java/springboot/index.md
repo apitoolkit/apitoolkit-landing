@@ -2,6 +2,7 @@
 title: Java Springboot
 date: 2024-05-28
 updatedDate: 2024-05-28
+menuWeight: 1
 ogImage: /assets/img/framework-logos/golang-logo.png
 ---
 # Java Springboot

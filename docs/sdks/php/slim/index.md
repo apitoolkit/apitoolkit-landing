@@ -2,6 +2,7 @@
 title: Slim (PHP)
 date: 2022-03-23
 updatedDate: 2024-05-04
+menuWeight: 2
 ogImage: /assets/img/framework-logos/php-logo.png
 ---
 
