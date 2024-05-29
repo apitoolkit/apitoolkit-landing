@@ -1,5 +1,5 @@
 ---
-title: .Net Core SDK
+title: .Net Core
 date: 2022-03-23
 updatedDate: 2024-05-30
 menuWeight: 1
