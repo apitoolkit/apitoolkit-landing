@@ -15,17 +15,17 @@ pages:
   - title: Endpoints
     slug: /docs/dashboard/dashboard-pages/endpoints
     icon: swap
-  - title: Outbound Integrations
-    slug: /docs/dashboard/dashboard-pages/outbound-integrations
-    icon: arrows-turn-right
-  - title: Changes & Errors
-    slug: /docs/dashboard/dashboard-pages/changes-errors
-    icon: bug
   - title: API Log Explorer
     slug: /docs/dashboard/dashboard-pages/api-log-explorer
     icon: list-tree
-  - title: Documentation
-    slug: /docs/dashboard/dashboard-pages/documentation
+  - title: Changes & Errors
+    slug: /docs/dashboard/dashboard-pages/changes-errors
+    icon: bug
+  - title: Outgoing Integrations
+    slug: /docs/dashboard/dashboard-pages/outgoing-integrations
+    icon: arrows-turn-right
+  - title: OpenAPI/Swagger
+    slug: /docs/dashboard/dashboard-pages/openapi-docs
     icon: brackets-curly
   - title: Reports
     slug: /docs/dashboard/dashboard-pages/reports

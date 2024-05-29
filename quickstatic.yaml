@@ -39,84 +39,79 @@ authors:
 
 apitoolkit_supported_frameworks:
   - id: express_btn
-    title: Expressjs
+    title: Expressjs SDK
     img_src: /assets/img/framework-logos/express-logo.png
     alt: Express JS logo
 
   - id: phoenix_btn
-    title: Phoenix
+    title: Phoenix SDK
     img_src: /assets/img/framework-logos/phoenix-logo.png
     alt: Phoenix Web Framework logo
 
   - id: laravel_btn
-    title: Laravel
+    title: Laravel SDK
     img_src: /assets/img/framework-logos/laravel-logo.png
     alt: Laravel logo
 
   - id: net_btn
-    title: Dot Net
+    title: .Net SDK
     img_src: /assets/img/framework-logos/net-logo.png
-    alt: Dot NET logo
+    alt: .NET logo
 
   - id: django_btn
-    title: Django
+    title: Django SDK
     img_src: /assets/img/framework-logos/django-logo.png
     alt: Django logo
 
   - id: go_btn
-    title: Golang
+    title: Golang SDK
     img_src: /assets/img/framework-logos/go-logo.png
     alt: Go logo
 
   - id: fast_btn
-    title: FastAPI
+    title: FastAPI SDK
     img_src: /assets/img/framework-logos/fastapi-logo.png
     alt: FastAPI logo
 
   - id: symfony_btn
-    title: img_src:ymfony
+    title: Symfony SDK
     img_src: /assets/img/framework-logos/symfony-logo.png
     alt: Symfony logo
 
   - id: flask_btn
-    title: Flask
+    title: Flask SDK
     img_src: /assets/img/framework-logos/flask-logo.png
     alt: Flask logo
 
   - id: gin_btn
-    title: Gin
+    title: Gin SDK
     img_src: /assets/img/framework-logos/gin-logo.png
     alt: Gin logo
 
   - id: adonis_btn
-    title: Adonisjs
+    title: Adonisjs SDK
     img_src: /assets/img/framework-logos/adonis-logo.png
     alt: Adonis JS logo
 
   - id: fastify_btn
-    title: Fastify
+    title: Fastify SDK
     img_src: /assets/img/framework-logos/fastify-logo.png
     alt: Fastify logo
 
   - id: nestjs_btn
-    title: Nestjs
+    title: Nestjs SDK
     img_src: /assets/img/framework-logos/nestjs-logo.png
     alt: NestJS logo
 
   - id: mux_btn
-    title: Mux
+    title: Mux SDK
     img_src: /assets/img/framework-logos/mux-logo.png
     alt: Mux logo
 
   - id: pyramid_btn
-    title: Pyramid
+    title: Pyramid SDK
     img_src: /assets/img/framework-logos/pyramid-logo.png
     alt: Pyramid logo
-
-  - id: view_all
-    title: ALL SDKs ↣
-    href: /docs/sdks
-    alt: View all SDK guides
 
 docs_main_pages:
   - title: Onboarding

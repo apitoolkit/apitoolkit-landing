@@ -183,6 +183,10 @@
         border-width: 0px !important;
         --tw-drop-shadow: none !important;
       }
+      div #sdk-images img {
+        border-width: 0px !important;
+        --tw-drop-shadow: none !important;
+      }
     </style>
 
     <!-- Twitter conversion tracking base code -->
@@ -489,10 +493,16 @@ twq('config','om5gt');
       {% assign pages = file_list | where_glob: 'file_path', glob_pattern | sort: 'frontmatter.menuWeight' %}
       {% for page in pages %}
       <section class="pl-1">
+      <!-- FILE TREE PARENT -->
         <a class="block font-semibold pb-3" href="{{ page.permalink }}">{{ page.frontmatter.title }}</a>
         {% capture glob_pattern1 %}.{{ page.permalink }}*/index.md{% endcapture %}
+        <!-- In an idea scenario, we will sort this automatically based on "frontmatter.title"
+             but the dashboard guides page requires custom sorting and will conflict with the
+             sdk guides page. Hence all markdown files for now will have "menuWeight"
+          -->
         {% assign subpages = file_list | where_glob: 'file_path', glob_pattern1 | sort: 'frontmatter.menuWeight' %}
         {% if subpages.size > 0 %}
+        <!-- FILE TREE CHILDREN -->
         <ul class="space-y-2">
           {% for subpage in subpages %}
           <li>
