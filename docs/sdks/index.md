@@ -7,7 +7,7 @@ menuWeight: 3
 pageFullWidth: true
 hideToc: true
 pages:
-  - title: Dotnet SDKs
+  - title: .Net SDKs
     slug: /docs/sdks/dotnet
     icon: /assets/img/sdk-icons/dotnet.svg
   - title: Elixir SDKs
@@ -32,7 +32,7 @@ pages:
 
 # SDK Guides
 
-In these guides, we will show you how to integrate with APItoolkit using our 17+ platform SDKs in different programming languages and frameworks. Kindly select your preferred programming language below to get started.
+In these guides, you will learn how to integrate with APItoolkit using any of our 17+ platform SDKs in different programming languages and frameworks. Kindly select your preferred programming language below to get started.
 
 ```=html
 <div id="sdk-images" class="mt-8 grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-8 text-center items-center align-center">

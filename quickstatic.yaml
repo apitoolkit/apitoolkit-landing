@@ -100,7 +100,7 @@ apitoolkit_supported_frameworks:
 
   - id: nestjs_btn
     title: Nestjs SDK
-    img_src: /assets/img/framework-logos/nestjs-logo.png
+    img_src: /assets/img/framework-logos/nest-logo.png
     alt: NestJS logo
 
   - id: mux_btn
