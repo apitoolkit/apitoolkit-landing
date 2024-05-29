@@ -249,6 +249,6 @@ app.MapGet("/monitor-requests", async (context) =>
 <hr />
 <a href="https://github.com/apitoolkit/apitoolkit-dotnet" target="_blank" rel="noopener noreferrer" class="w-full btn btn-outline link link-hover">
     <i class="fa-brands fa-github"></i>
-    Explore and Contribute to the SDK
+    Explore the .Net Core SDK
 </a>
 ```
