@@ -65,7 +65,7 @@ apitoolkit_supported_frameworks:
 
   - id: go_btn
     title: Golang SDK
-    img_src: /assets/img/framework-logos/go-logo.png
+    img_src: /assets/img/framework-logos/go-logo.svg
     alt: Go logo
 
   - id: fast_btn
