@@ -73,7 +73,7 @@ To mark a field for redacting via this SDK, you need to provide additional argum
 3. `RedactResponseBody`: A list of JSONPaths from the response body (if the response body is a valid JSON).
 
 <div class="callout">
-  <i class="fa-regular fa-lightbulb"></i>
+  <i class="fa-solid fa-book"></i>
   <p>JSONPath is a query language used to select and extract data from JSON files.</p>
 </div>
 
