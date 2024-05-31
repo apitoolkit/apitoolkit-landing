@@ -113,7 +113,7 @@ Examples of valid JSONPaths would be:
 
 <div class="callout">
   <i class="fa-regular fa-lightbulb"></i>
-  <p>To learn more about JSONPaths, please take a look at the [official docs](https://github.com/json-path/JsonPath/blob/master/README.md){target="_blank"} or [this cheat sheet](https://lzone.de/#/LZone%20Cheat%20Sheets/Languages/JSONPath?utm_source=apitoolkit){target="_blank"}. You can also use this [JSONPath Evaluator](https://jsonpath.com?utm_source=apitoolkit){target="_blank"} to validate your JSONPaths.</p>
+  <p>To learn more about JSONPaths, please take a look at the [official docs](https://github.com/json-path/JsonPath/blob/master/README.md){target="_blank"}. You can also use this [JSONPath Evaluator](https://jsonpath.com?utm_source=apitoolkit){target="_blank"} to validate your JSONPaths.</p>
 </div>
 
 Here's an example of what the configuration in your application's entry point (e.g., `Program.cs`) would look like with redacted fields:
