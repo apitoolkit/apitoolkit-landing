@@ -142,8 +142,8 @@ app.Use(async (context, next) =>
 <div class="callout">
   <i class="fa-regular fa-lightbulb"></i>
   <ul>
-    <li>The `RedactHeaders` config field accepts a list of case-insensitive headers.</li>
-    <li>The `RedactRequestBody` and `RedactResponseBody` fields <b>expect a list of JSONPath strings as arguments.</b></li>
+    <li>The `RedactHeaders` config field accepts a list of case-insensitive headers as strings.</li>
+    <li>The `RedactRequestBody` and `RedactResponseBody` fields <b>expect a list of JSONPaths as strings.</b></li>
     <li>The list of items to be redacted will be applied to all endpoint requests and responses on your server.</li>
   </ul>
 </div>
