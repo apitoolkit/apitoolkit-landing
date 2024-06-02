@@ -20,7 +20,7 @@ To install the APItoolkit Spring Boot SDK, add the following dependency to your 
 &lt;dependency&gt;
     &lt;groupId&gt;io.apitoolkit.springboot&lt;/groupId&gt;
     &lt;artifactId&gt;apitoolkit-springboot&lt;/artifactId&gt;
-    &lt;version&gt;1.0.4&lt;/version&gt;
+    &lt;version&gt;1.0.5&lt;/version&gt;
 &lt;/dependency&gt;
 ```
 
