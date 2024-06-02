@@ -5,6 +5,7 @@ updatedDate: 2024-05-28
 menuWeight: 1
 ogImage: /assets/img/framework-logos/golang-logo.png
 ---
+
 # Java Springboot
 
 ## Overview
@@ -65,7 +66,9 @@ public class DemoApplication {
 	}
 }
 ```
-## Error monitoring 
+
+## Error monitoring
+
 The Spring Boot SDK includes robust error reporting capabilities. Errors are linked with requests, enabling developers to easily reproduce and resolve bugs. While uncaught errors are automatically reported along with requests, you also have the option to manually report errors to APIToolkit as well.
 
 ```java
@@ -99,4 +102,72 @@ public class DemoApplication {
     }
 }
 
+```
+
+## Outgoing Requests Monitoring
+
+Monitoring outgoing requests helps identify and troubleshoot performance issues effectively. The Spring Boot SDK provides the `ObserveRequest` class for monitoring outgoing requests using the Apache HTTP client. This guide will walk you through setting it up and using it in your application.
+
+### Create an Instance of `ObserveRequest`
+
+First, create an instance of the `ObserveRequest` class. You can pass optional parameters to redact headers and JSONPath expressions to redact parts of the request and response bodies before they are sent to APIToolkit.
+
+```java
+ObserveRequest observingClient = new ObserveRequest(
+    List.of("cookies", "authorization"),
+    List.of("$.title", "$.id"),
+    List.of("$.body")
+);
+```
+
+### Use `ObserveRequest` to Create an HTTP Client
+
+Use the `observingClient` to create a new HTTP client. Pass the current request context and an optional path pattern if the route has dynamic parameters. This setup allows you to monitor HTTP calls made within your server, linking them to the incoming requests that triggered them in the APIToolkit log explorer.
+
+### Full Example of Outgoing Request Monitoring
+
+Below is a complete example demonstrating how to set up and use `ObserveRequest` in a Spring Boot application.
+
+```java
+package com.example.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+import javax.servlet.http.HttpServletRequest;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.util.EntityUtils;
+
+@SpringBootApplication
+@EnableAPIToolkit
+@RestController
+public class DemoApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(DemoApplication.class, args);
+    }
+
+    private ObserveRequest observingClient = new ObserveRequest(
+        List.of("cookies", "authorization", "x-api-key"),
+        List.of("$.title", "$.id"),
+        List.of("$.body")
+    );
+
+    @GetMapping("/hello")
+    public String hello(HttpServletRequest request) {
+        CloseableHttpClient httpClient = observingClient.createHttpClient(request, "/posts/{post_id}");
+        try {
+            HttpGet httpGet = new HttpGet("https://jsonplaceholder.typicode.com/posts/1");
+            CloseableHttpResponse response = httpClient.execute(httpGet);
+            String responseStr = EntityUtils.toString(response.getEntity());
+            return responseStr;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "Error occurred while processing the request";
+        }
+    }
+}
 ```
