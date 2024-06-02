@@ -2,7 +2,7 @@
 title: API Log Explorer
 date: 2024-04-22
 updatedDate: 2024-05-28
-menuWeight: 6
+menuWeight: 4
 ---
 
 # API Log Explorer Page

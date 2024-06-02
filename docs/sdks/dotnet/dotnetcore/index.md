@@ -73,7 +73,7 @@ To mark a field for redacting via this SDK, you need to provide additional argum
 3. `RedactResponseBody`: A list of JSONPaths from the response body (if the response body is a valid JSON).
 
 <div class="callout">
-  <i class="fa-regular fa-lightbulb"></i>
+  <i class="fa-solid fa-book"></i>
   <p>JSONPath is a query language used to select and extract data from JSON files.</p>
 </div>
 
@@ -113,7 +113,7 @@ Examples of valid JSONPaths would be:
 
 <div class="callout">
   <i class="fa-regular fa-lightbulb"></i>
-  <p>To learn more about JSONPaths, please take a look at the [official docs](https://github.com/json-path/JsonPath/blob/master/README.md){target="_blank"} or [this cheat sheet](https://lzone.de/#/LZone%20Cheat%20Sheets/Languages/JSONPath?utm_source=apitoolkit){target="_blank"}. You can also use this [JSONPath Evaluator](https://jsonpath.com?utm_source=apitoolkit){target="_blank"} to validate your JSONPaths.</p>
+  <p>To learn more about JSONPaths, please take a look at the [official docs](https://github.com/json-path/JsonPath/blob/master/README.md){target="_blank"}. You can also use this [JSONPath Evaluator](https://jsonpath.com?utm_source=apitoolkit){target="_blank"} to validate your JSONPaths.</p>
 </div>
 
 Here's an example of what the configuration in your application's entry point (e.g., `Program.cs`) would look like with redacted fields:
@@ -142,8 +142,8 @@ app.Use(async (context, next) =>
 <div class="callout">
   <i class="fa-regular fa-lightbulb"></i>
   <ul>
-    <li>The `RedactHeaders` config field accepts a list of case-insensitive headers.</li>
-    <li>The `RedactRequestBody` and `RedactResponseBody` fields <b>expect a list of JSONPath strings as arguments.</b></li>
+    <li>The `RedactHeaders` config field accepts a list of case-insensitive headers as strings.</li>
+    <li>The `RedactRequestBody` and `RedactResponseBody` fields <b>expect a list of JSONPaths as strings.</b></li>
     <li>The list of items to be redacted will be applied to all endpoint requests and responses on your server.</li>
   </ul>
 </div>
