@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "dev": "quickstatic serve",
     "build": "npx tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/tailwind.min.css --minify",
     "build:watch": "npx tailwindcss -i ./assets/css/tailwind.css -o ./assets/css/tailwind.min.css --minify --watch"
   },
