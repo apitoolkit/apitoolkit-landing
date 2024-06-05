@@ -3,7 +3,7 @@ title: API Monitoring and Observability
 date: 2024-05-07
 updatedDate: 2024-05-07
 hideToc: true
-fileTreeWeight: 1
+menuWeight: 1
 ---
 
 # API Monitoring and Observability

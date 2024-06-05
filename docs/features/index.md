@@ -15,7 +15,7 @@ pages:
   - title: API Testing
     slug: /docs/features/api-testing
   - title: OpenAPI Spec Documentation
-    slug: /docs/features/api-documentation
+    slug: /docs/features/openapi-spec-documentation
 ---
 
 # APItoolkit Features
