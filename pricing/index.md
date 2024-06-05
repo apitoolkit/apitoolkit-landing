@@ -9,8 +9,8 @@ updatedDate: 2024-06-15
     <header class="w-full mt-32">
         <div class="width-control mx-auto px-2">
             <div class="w-full flex flex-col items-center text-center gap-4">
-                <h1 class="font-bold text-4xl md:text-[50px] dark:text-white">Pay Only for What You Use</h1>
-                <p class="max-w-[500px] text-base-content font-medium text-lg">Trust your APIs and only pay for the requests we analyze.</p>
+                <h1 class="font-bold text-4xl text-[50px] dark:text-white">Pay Only for What You Use</h1>
+                <p class="max-w-[300px] md:max-w-[500px] text-base-content font-medium text-base md:text-lg">Trust your APIs and only pay for the requests we analyze.</p>
             </div>
         </div>
     </header>
@@ -56,7 +56,7 @@ updatedDate: 2024-06-15
                         </li>
                     </ul>
                 </div>
-                <button as="button" class="mt-auto rounded-xl flex flex-row justify-center px-4 py-[7px] border"><span class="z-1 relative">Get started</span></button>
+                <button as="button" class="mt-auto rounded-xl flex flex-row justify-center px-4 py-[7px] border"><span class="z-1 relative">Get Started</span></button>
             </a>
             <!-- PAY AS YOU USE PLAN -->
             <a href="https://app.apitoolkit.io/p/new"
@@ -116,7 +116,7 @@ updatedDate: 2024-06-15
                 </div>
                 <button as="button"
                     class="mt-auto rounded-xl text-white flex flex-row justify-center px-4 py-[7px] border">
-                    Get started
+                    Get Started
                 </button>
             </a>
             <!-- GRADUATED PLAN -->
@@ -177,7 +177,7 @@ updatedDate: 2024-06-15
                 </div>
                 <button as="button"
                     class="mt-auto rounded-xl text-white flex flex-row justify-center px-4 py-[7px] border">
-                    Get started
+                    Get Started
                 </button>
             </a>
             <!-- ENTERPRISE PLAN -->
