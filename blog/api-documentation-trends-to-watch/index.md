@@ -1,5 +1,5 @@
 ---
-title: "API Documentation Trends to Watch out for in 2024: What's new and exciting"
+title: "API Documentation Trends to Watch out for in 2024: What's New and Exciting"
 featured_image: api-trends-to-watch.png
 date: 2024-02-14T08:05:56+02:00
 author: jessica

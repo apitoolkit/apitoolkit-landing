@@ -1,5 +1,5 @@
 ---
-title: "50 APi tools for Every Budget and Requirement"
+title: "50 API tools for Every Budget and Requirement"
 date: 2024-01-01T11:10:00+00:00
 featured_image: cover.png
 description: "From cost-effective solutions to high-end offerings, explore our curated list of 50 API tools designed to meet any budget and requirement."
@@ -8,9 +8,9 @@ categories:
   - API
 --- 
 
-# 50 APi tools for Every Budget and Requirement
+# 50 API tools for Every Budget and Requirement
 
-![APi tools](./cover.png)
+![API tools](./cover.png)
 
 
 APIs (application programming interfaces) play a critical role in software development today. They allow different systems and applications to communicate with each other by defining how one application can request and receive data from another.
