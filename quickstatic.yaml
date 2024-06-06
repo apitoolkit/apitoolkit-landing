@@ -8,7 +8,7 @@ layouts:
   "./pricing/index.md": default/index.liquid
   "./index.md": default/index.liquid
   "./docs/**/index.md": docs/page.liquid
-  # "./docs/**/index.md": default/docs.liquid
+  "./events/**/index.md": default/index.liquid
   "./*/index.md": default/prose.liquid
   "./**/*.md": default/index.liquid
   "./**/*.liquid": default/empty.liquid

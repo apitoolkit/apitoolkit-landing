@@ -15,7 +15,7 @@
       <!-- This documentation site was built with QuickStatic, https://github.com/tonyalaribe/quickstatic -->
     <meta property="og:title" content="{% if this.frontmatter.title %}{{this.frontmatter.title | escape}} | APItoolkit{% endif %}">
     <meta property="og:description" content="APItoolkit is an end-to-end API and web services management toolkit for engineers and customer support teams. We use AI to help engineering teams observe, manage, monitor, and test their backend systems and any APIs they depend on.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/apitoolkit/.github/main/images/main-og.png">
+    <meta property="og:image" content="{% if this.frontmatter.ogImage %}{{this.frontmatter.ogImage}}{% else %}https://raw.githubusercontent.com/apitoolkit/.github/main/images/main-og.png{% endif %}">
     <meta property="og:type" content="{% if this.frontmatter.og_type %}{{this.frontmatter.og_type}}{% else %}article{% endif %}">
 
 
@@ -53,6 +53,22 @@
         font-size: 14px;
       }
 
+      .grid-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 18rem;
+        text-decoration: none;
+      }
+
+      .grid-card:hover {
+        transform: translateY(-0.7rem);
+        transition-duration: 300ms;
+        filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07));
+      }
+
       @media (min-width: 1200px) {
         body {
           font-size: 16px;
@@ -73,10 +89,7 @@
 
     <script defer src="https://f.convertkit.com/ckjs/ck.5.js"></script>
     <!-- This is for the convertkit join newsletter scroll popup -->
-    <script
-      async
-      data-uid="e05f719e6e"
-      src="https://apitoolkit.ck.page/e05f719e6e/index.js"></script>
+    <script async data-uid="e05f719e6e" src="https://apitoolkit.ck.page/e05f719e6e/index.js"></script>
 
     <link
       rel="preload"
