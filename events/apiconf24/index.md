@@ -1,6 +1,7 @@
 ---
 title: API Conference 2024
 date: 2022-06-06
+ogImage: https://raw.githubusercontent.com/apitoolkit/.github/main/images/events-og.png
 ---
 
 ```=html

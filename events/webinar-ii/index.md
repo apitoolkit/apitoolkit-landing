@@ -1,6 +1,7 @@
 ---
 title: "Webinar II: Backend Performance and Error Monitoring with APItoolkit"
 date: 2024-06-06
+ogImage: https://raw.githubusercontent.com/apitoolkit/.github/main/images/webinar-ii.png
 ---
 
 ```=html
