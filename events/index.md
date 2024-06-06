@@ -31,7 +31,7 @@ pages:
         <div class="width-control mx-auto px-2">
             <div class="w-full flex flex-col items-center text-center gap-4">
                 <h1 class="font-bold text-4xl text-[50px] dark:text-white">APItoolkit Events & Webinars</h1>
-                <p class="max-w-[300px] md:max-w-[800px] lg:max-w-[800px] text-base-content font-medium text-base md:text-lg">Explore or come say hi at all events or webinars we're organizing or attending across the world.</p>
+                <p class="max-w-[300px] md:max-w-[800px] lg:max-w-[800px] text-base-content font-medium text-base md:text-lg">Explore or come say hi at all events and webinars we're organizing or attending across the world.</p>
             </div>
         </div>
     </header>
