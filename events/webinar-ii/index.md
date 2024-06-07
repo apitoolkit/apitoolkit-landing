@@ -10,6 +10,7 @@ ogImage: https://raw.githubusercontent.com/apitoolkit/.github/main/images/webina
 ```
 
 ### Webinar II
+
 # Backend Performance and Error Monitoring with APItoolkit
 
 ![Webinar II Banner](./banner.png)
@@ -21,6 +22,13 @@ Are you an engineer grappling with constant downtime, sluggish backend performan
 **Time**: 07:00 PM CET.
 
 **Duration**: 1 Hour.
+
+```=html
+        <a data-formkit-toggle="5acbc4a3d6" class="w-full btn btn-secondary bg-blue-600 text-white hover:bg-white hover:text-black">
+            Register
+            <i class="fa-regular fa-arrow-right mr-4"></i>
+        </a>
+```
 
 <hr />
 
@@ -77,5 +85,6 @@ Don’t miss this opportunity to transform your backend operations and solve the
         </a>
         <script async data-uid="5acbc4a3d6" src="https://apitoolkit.ck.page/5acbc4a3d6/index.js"></script>
     </article>
+    </div>
 </div>
 ```
