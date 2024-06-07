@@ -1,20 +1,25 @@
 ---
 title: Elixir Phoenix
 date: 2022-03-23
-updatedDate: 2024-05-04
+updatedDate: 2024-06-07
 menuWeight: 1
-ogImage: /assets/img/framework-logos/phoenix-logo.png
 ---
 
-# Elixir Phoenix integration
+# Elixir SDK Guide
 
-To integrate Elixir Phoenix with your project, begin by incorporating the SDK into your dependencies list within the mix.exs file.
+To integrate your Elixir Phoenix application with APItoolkit, you need to use this SDK to monitor incoming traffic, aggregate the requests, and then send them to APItoolkit's servers. Kindly follow this guide to get started and learn about all the supported features of this **Elixir SDK**.
 
-To do this add the "apitoolkit_phoenix" package to your list of dependencies.
+```=html
+<hr>
+```
+
+## Prerequisites
+
+Ensure you have already completed the first three steps of the [onboarding guide](/docs/onboarding/){target="_blank"}.
 
 ## Installation
 
-Install the SDK by adding `apitoolkit_phoenix` to your list of dependencies in `mix.exs`:
+To install the SDK, kindly add `apitoolkit_phoenix` to your list of dependencies in the `mix.exs` file like so:
 
 ```elixir
 def deps do
@@ -24,9 +29,11 @@ def deps do
 end
 ```
 
-Run `mix deps.get` to install the `apitoolkit_phoenix` dependency.
+Then, run the `mix deps.get` command to install the `apitoolkit_phoenix` dependency.
 
-Import and initialize the `ApitoolkitPhoenix` Plug in your `router.ex` file.
+## Configuration
+
+Next, import and initialize the `ApitoolkitPhoenix` Plug in your `router.ex` file like so:
 
 ```elixir
 defmodule HelloWeb.Router do
