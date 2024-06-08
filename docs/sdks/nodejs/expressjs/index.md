@@ -41,7 +41,7 @@ app.get("/", (req, res) => {
   res.json({ hello: "Hello world!" });
 });
 
-app.listen(port, ()=> console.log("app running on port: " + port));
+app.listen(port, () => console.log("app running on port: " + port));
 ```
 
 **CommonJs Example**
@@ -154,64 +154,95 @@ By executing this procedure, APIToolkit gains access to non-redacted fields and 
 
 ## Using apitoolkit to observe an axios based outgoing request
 
-Simply wrap your axios instance with the APIToolkit observeAvios function.
+### Global Monitoring of Axios Requests
+
+To enable global monitoring of all Axios requests with APIToolkit, import the Axios instance into the `NewClient` options.
+
+Example:
 
 ```typescript
-import { observeAxios } from 'apitoolkit-express';
-import axios from 'axios';
-import express from 'express';
+import APIToolkit from "apitoolkit-express";
+import axios from "axios";
+import express from "express";
 
 const app = express();
-const apitoolkitClient = APIToolkit.NewClient({ apiKey: '<API-KEY>' });
+const apitoolkitClient = APIToolkit.NewClient({
+  apiKey: "<API-KEY>",
+  monitorAxios: axios,
+});
 app.use(apitoolkitClient.expressMiddleware);
 
-app.get('/', (req, res) => {
-    const response = await observeAxios(axios).get("http://localhost:8080/users/user1234");
-    res.send(response.data);
+app.get("/", async (req, res) => {
+  // This Axios request will be monitored and logged in the APIToolkit log explorer
+  const response = await axios.get(baseURL + "users/123");
+  res.send(response.data);
 });
-
 ```
+
+### Monitoring a Specific Axios Request
+
+To monitor a specific Axios request, use the `observeAxios` function from APIToolkit. This approach offers greater flexibility, such as specifying URL path patterns for requests with dynamic routes.
+
+Example:
+
+```typescript
+import APIToolkit, { observeAxios } from "apitoolkit-express";
+import axios from "axios";
+import express from "express";
+
+const app = express();
+const apitoolkitClient = APIToolkit.NewClient({ apiKey: "<API-KEY>" });
+app.use(apitoolkitClient.expressMiddleware);
+
+app.get("/", async (req, res) => {
+  // This specific Axios request will be monitored
+  const response = await observeAxios(axios).get(baseURL + "users/123");
+  res.send(response.data);
+});
+```
+
+### Monitoring routes with dynamic paths
 
 If you're making requests to endpoints which have variable urlPaths, you should include a wildcard url of the path, so that apitoolkit groups the endpoints correctly for you on the dashboardL:
 
 ```typescript
-import { observeAxios } from 'apitoolkit-express';
-import axios from 'axios';
-import express from 'express';
+import { observeAxios } from "apitoolkit-express";
+import axios from "axios";
+import express from "express";
 
 const app = express();
-const apitoolkitClient = APIToolkit.NewClient({ apiKey: '<API-KEY>' });
+const apitoolkitClient = APIToolkit.NewClient({ apiKey: "<API-KEY>" });
 app.use(apitoolkitClient.expressMiddleware);
 
-app.get('/', (req, res) => {
-    const response = await observeAxios(axios,'/users/{user_id}').get("http://localhost:8080/users/user1234");
-    res.send(response.data);
+app.get("/", (req, res) => {
+  const response = await observeAxios(axios, "/users/{user_id}").get(
+    "http://localhost:8080/users/user1234"
+  );
+  res.send(response.data);
 });
 ```
 
 There are other optional arguments you could pass on to the observeAxios function, eg:
 
 ```typescript
-import { observeAxios } from 'apitoolkit-express';
-import axios from 'axios';
+import { observeAxios } from "apitoolkit-express";
+import axios from "axios";
 
-const redactHeadersList = ['Content-Type', 'Authorization'];
-const redactRequestBodyList = ['$.body.bla.bla'];
+const redactHeadersList = ["Content-Type", "Authorization"];
+const redactRequestBodyList = ["$.body.bla.bla"];
 const redactResponseBodyList = undefined;
 
+app.get("/", (req, res) => {
+  const response = await observeAxios(
+    axios,
+    "/users/{user_id}",
+    redactHeadersList,
+    redactRequestBodyList,
+    redactResponseBodyList
+  ).get("http://localhost:8080/users/user1234");
 
-app.get('/', (req, res) => {
-    const response = await observeAxios(
-      axios,
-      '/users/{user_id}',
-      redactHeadersList,
-      redactRequestBodyList,
-      redactResponseBodyList
-    ).get("http://localhost:8080/users/user1234");
-
-    res.send(response.data);
+  res.send(response.data);
 });
-
 ```
 
 Note that you can ignore any of these arguments except the first argument which is the axios instance to observe.
@@ -219,22 +250,24 @@ For the other arguments, you can either skip them if at the end, or use undefine
 
 ### Observing request outside incoming request context
 
-Monitoring outgoing requests inside an incoming request' context associates both request in the dashboard. You can also monitor  outgoing requests outside an incoming requests' context in a background job for example. To achieve this, instead of calling `observeAxios` as a standalone function
+Monitoring outgoing requests inside an incoming request' context associates both request in the dashboard. You can also monitor outgoing requests outside an incoming requests' context in a background job for example. To achieve this, instead of calling `observeAxios` as a standalone function
 use the method on the APIToolkit client after initialization
 
 Example
 
 ```js
-import axios from 'axios'
-import { APIToolkit } from 'apitoolkit-express';
+import axios from "axios";
+import { APIToolkit } from "apitoolkit-express";
 
 const apitoolkitClient = APIToolkit.NewClient({
-  apiKey: '&ltAPI_KEY&gt',
+  apiKey: "&ltAPI_KEY&gt",
 });
-// using the above initialized client, 
+// using the above initialized client,
 // you can monitor outgoing requests anywhere in your application.
-const response = await apitoolkitClient.observeAxios(axios).get("http://localhost:8080/ping");
-console.log(response.data)
+const response = await apitoolkitClient
+  .observeAxios(axios)
+  .get("http://localhost:8080/ping");
+console.log(response.data);
 ```
 
 The above request will show in the log explorer as a standalone outgoing request
