@@ -174,7 +174,7 @@ app.use(apitoolkitClient.expressMiddleware);
 
 app.get("/", async (req, res) => {
   // This Axios request will be monitored and logged in the APIToolkit log explorer
-  const response = await axios.get(`${baseURL}/users/123`);
+  const response = await axios.get(baseURL + "users/123");
   res.send(response.data);
 });
 ```
@@ -196,7 +196,7 @@ app.use(apitoolkitClient.expressMiddleware);
 
 app.get("/", async (req, res) => {
   // This specific Axios request will be monitored
-  const response = await observeAxios(axios).get(`${baseURL}/users/123`);
+  const response = await observeAxios(axios).get(baseURL + "users/123");
   res.send(response.data);
 });
 ```
