@@ -1,12 +1,12 @@
 ---
-title: API Documentation
+title: OpenAPI Spec Documentation
 date: 2024-05-07
 updatedDate: 2024-05-07
 hideToc: true
-fileTreeWeight: 1
+menuWeight: 4
 ---
 
-# API Documentation
+# OpenAPI Spec Documentation
 
 APItoolkit allows you to auto-generate OpenAPI specifications (swagger docs) for live payloads (endpoints) in your API. You can achieve this using all the shapes detected from requests on your API or by uploading your existing OpenAPI specification to enrich our anomaly detection. With this, you can easily keep your OpenAPI spec documentation consistent across all workflows and enrich the specification with more context, descriptions, etc.
 

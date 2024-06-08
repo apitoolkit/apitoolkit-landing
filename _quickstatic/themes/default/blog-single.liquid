@@ -2,24 +2,19 @@
 {% render "default/components/nav", this:this %}
 <main class="text-center">
   <div class="our_container py-16 w-full relative overflow-hidden">
-    <div class="text-lg max-w-prose  mx-auto text-center">
-      <span class="block text-base  text-indigo-600 dark:text-info font-semibold tracking-wide uppercase">
-        {{ this.frontmatter.date | date: "%b %d, %y" }}
-      </span>
-    </div>
     <article class="mt-6 prose prose-lg dark:prose-invert sm:prose-xl prose-indigo prose-base mx-auto prose-img:drop-shadow-md prose-img:rounded-md ">
       <div class="flex gap-4 items-center">
         <span class="font-bold">Share:</span>
-        <!-- Twitter -->
-        <a href="https://www.twitter.com/share?url={{ this.permalink }}&text={{ this.frontmatter.title }}" target="_blank"
+        <!-- X (Twitter) -->
+        <a href="https://www.twitter.com/share?url=https://apitoolkit.io{{ this.permalink }}&text={{ this.frontmatter.title }}" target="_blank"
           title="Share on Twitter"
           class="inline-block rounded px-6 py-1 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
           style="background-color: #1da1f2">
-          <svg class="icon h-5 w-5"><use xlink:href="/assets/deps/fontawesome/brands.svg#twitter"></use></svg>
+          <svg class="icon h-5 w-5"><use xlink:href="/assets/deps/fontawesome/brands.svg#x-twitter"></use></svg>
         </a>
 
         <!-- Facebook -->
-        <a href="https://www.facebook.com/sharer/sharer.php?u={{ this.permalink }}" target="_blank"
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://apitoolkit.io{{ this.permalink }}" target="_blank"
           title="Share on Facebook"
           class="inline-block rounded px-6 py-1 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
           style="background-color: #1877f2">
@@ -35,22 +30,23 @@
         </a>
 
         <!-- Reddit -->
-        <a href="https://www.reddit.com/submit?url={{ this.permalink }}&title={{ this.frontmatter.title }} || By APIToolkit" target="_blank"
+        <a href="https://www.reddit.com/submit?url=https://apitoolkit.io{{ this.permalink }}&title={{ this.frontmatter.title }} || By APIToolkit" target="_blank"
           title="Share on Reddit" style="background-color:  #ff4500"
           class="inline-block rounded px-6 py-1 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg">
           <svg  class="icon h-5 w-5"><use xlink:href="/assets/deps/fontawesome/brands.svg#reddit-alien"></use></svg>
         </a>
 
-        <!-- Discord
-        <a href="https://discord.com/share?url={{ this.permalink }}&title={{ this.frontmatter.title }}" target="_blank"
+        <!-- Discord -->
+        <a href="https://discord.com/share?url=https://apitoolkit.io{{ this.permalink }}&title={{ this.frontmatter.title }}" target="_blank"
           title="Share on Discord"
           class="inline-block rounded px-6 py-1 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
           style="background-color: #7289DA">
           <svg class="icon h-5 w-5"><use xlink:href="/assets/deps/fontawesome/brands.svg#discord"></use></svg>
         </a>
-
-        -->
       </div>
+        <div class="mt-2 block text-base text-blue-600 dark:text-info font-semibold tracking-wide uppercase">
+          {{ this.frontmatter.date | date: "%B %d, %Y" }}
+        </div>
 
       <section class="py-8">
       {{ this.content }}

@@ -1,5 +1,5 @@
 ---
-title: "API Documentation vs API Specification - What it means for you"
+title: "API Documentation vs API Specification - What it Means For You"
 featured_image: document.jpeg
 date: 2023-09-28T08:05:56+02:00
 author: jessica

@@ -7,15 +7,14 @@
       <div class="relative mx-auto divide-y-2 divide-gray-200 dark:divide-gray-700">
         <div>
           <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl lg:text-6xl">
-            The APIToolkit Blog
+            The APItoolkit Blog
           </h2>
-          <h5 class="pt-2 pb-5">Sharing knowlege about building & maintaining impeccable APIs.</h5>
+          <h5 class="pt-2 pb-5">Sharing knowledge about building and maintaining impeccable APIs.</h5>
         </div>
         <div>
-          <div class="mt-6   md:gap-4">
+          <div class="mt-6 md:gap-4">
             <p class="pl-2 sm:pl-3 pb-3 sm:text-lg text-base-content">
-              Get articles and updates in your inbox on what we learn while
-              building APIToolkit.
+            Get articles and updates in your inbox on what we learn while building APItoolkit.
             </p>
             <div class="15d365ef1d">
               <script async data-uid="15d365ef1d" src="https://apitoolkit.ck.page/15d365ef1d/index.js"></script>
@@ -27,35 +26,27 @@
           <h3 class="font-black pb-3"> ❯ &nbsp; {{ this.frontmatter.title }}</h3>
           {% endif %}
 
-          <div class="grid gap-1 sm:gap-5 grid-cols-2 sm:grid-cols-3 ">
-          {% assign blog_posts = file_list | where_glob: 'file_path', "./blog/*/index.md" %}
+          <div class="grid gap-1 sm:gap-5 grid-cols-1 md:grid-cols-3 lg:grid-cols-3">
+          {% assign blog_posts = file_list | where_glob: 'file_path', "./blog/*/index.md" | sort: "date" %}
           {% for post in blog_posts %}
             <div
               class="overflow-hidden flex flex-col content-between justify-between border border-stone-200 dark:border-gray-700 p-1 sm:p-2 md:p-6 rounded-xl bg-base-100 hover:drop-shadow-2xl shadow-slate-200 transition duration-300 ease-in-out">
               <div>
-                {% if post.frontmatter.date %}
-                <time class="text-xs text-base-content" datetime='{{ post.frontmatter.date  | date: "2006-01-02"}}'>
-                  {{ post.frontmatter.date  | date: '%Y-%m-%d'}}
-                </time>
-                {% endif %}
-                <a href="{{post.permalink}}" class="mt-2 block">
-                  <img data-src="{% if post.frontmatter.featured_image %}{{post.permalink}}{{post.frontmatter.featured_image}}{% endif %}" class="lazy aspect-[7/3] rounded-md object-cover border border-slate-100 dark:border-gray-700" />
-                </a>
-                {% if post.frontmatter.categories %}
-                  {% for category in post.frontmatter.categories %}
-                  <a href="/categories/{{category | slugify}}"
-                    class="inline-block  text-xs pt-4 text-blue-900 dark:text-info  hover:scale-x-105 ">{{category}}
-                    &nbsp; ❯</a>
-                  {% endfor %}
-                {% endif %}
+
+                <img data-src="{% if post.frontmatter.featured_image %}{{post.permalink}}{{post.frontmatter.featured_image}}{% endif %}" class="lazy aspect-[7/3] rounded-md object-cover border border-slate-100 dark:border-gray-700 mt-2 block" />
+
+                <p class="mt-4">{{ post.frontmatter.date | date: "%B %d, %Y"}}</p>
+
                 <a href="{{post.permalink}}" class="">
                   <h6 class="text-lg sm:text-xl font-bold text-base-content pt-3">{{post.frontmatter.title }}</h6>
-                  <p class="mt-3 leading-relaxed">{{post.markdown_body | markdownify | strip_html | truncatewords: 30, "..." }}</p>
+                  <p class="mt-3 leading-relaxed">{{post.markdown_body | markdownify | strip_html | truncatewords: 30, "..."}}</p>
                 </a>
+
                 <a href="{{post.permalink}}"
                   class="mt-2 inline-block text-sm font-medium text-blue-900 dark:text-info hover:text-indigo-900 dark:hover:text-info ">
-                  Read full article
+                  Read ❯
                 </a>
+
                 {% if post.frontmatter.author %}
                   {% assign author = config.raw.authors[post.frontmatter.author] %}
                   <div class="pt-6 space-x-2 ">
@@ -65,6 +56,15 @@
                     <span>
                   </div>
                 {% endif %}
+
+                <!---{% if post.frontmatter.categories %}
+                  {% for category in post.frontmatter.categories %}
+                  <a href="/categories/{{category | slugify}}"
+                    class="inline-block  text-xs pt-4 text-blue-900 dark:text-info  hover:scale-x-105 ">{{category}}
+                    &nbsp; ❯</a>
+                  {% endfor %}
+                {% endif %}-->
+
               </div>
             </div>
           {% endfor %}
