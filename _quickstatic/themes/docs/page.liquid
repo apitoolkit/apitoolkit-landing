@@ -2,7 +2,11 @@
 <html lang="en">
   <head>
     <title>
-    {% if this.frontmatter.title %}{{ this.frontmatter.title }} | APItoolkit Docs{% endif %}
+    {% if this.frontmatter.ogTitle %}
+      {{this.frontmatter.ogTitle}}
+    {% else %}
+      {{this.frontmatter.title}}
+    {% endif %} | APItoolkit Docs
     </title>
     <meta name="description" content="APItoolkit product and SDKs documentation">
     <link rel="canonical" href="https://apitoolkit.io{{this.permalink}}">
@@ -13,7 +17,7 @@
     <!-- This documentation site was built with QuickStatic, https://github.com/tonyalaribe/quickstatic -->
     <meta
       property="og:title"
-      content="{% if this.frontmatter.title %}{{this.frontmatter.title}} | APItoolkit Docs{% endif %}"
+      content="{% if this.frontmatter.ogTitle %}{{this.frontmatter.ogTitle}}{% else %}{{this.frontmatter.title}}{% endif %} | APItoolkit Docs"
     >
     <meta property="og:description" content="APItoolkit product and SDKs documentation">
     <meta
@@ -159,7 +163,7 @@
         color: #000000;
       }
 
-      .callout p {
+      .callout p:first-child {
         margin: 0;
         margin-top: 5px;
       }

@@ -1,5 +1,6 @@
 ---
 title: .Net Core
+ogTitle: .Net Core SDK Guide
 date: 2022-03-23
 updatedDate: 2024-05-30
 menuWeight: 1
@@ -7,7 +8,7 @@ menuWeight: 1
 
 # .Net Core SDK Guide
 
-To integrate .Net web services with APItoolkit, you need to use this SDK to monitor incoming traffic, aggregate the requests, and then send them to APItoolkit's servers. Kindly follow this guide to get started and learn about all the supported features of this **.Net Core SDK**.
+To integrate .Net web services with APItoolkit, you need to use this SDK to monitor incoming traffic, aggregate the requests, and then send them to APItoolkit's servers. Kindly follow this guide to get started and learn about all the supported features of APItoolkit's **.Net Core SDK**.
 
 ```=html
 <hr>
@@ -27,7 +28,7 @@ dotnet add package ApiToolkit.Net
 
 ## Configuration
 
-Next, initialize APItoolkit in your application's entry point (e.g `Program.cs`) like so:
+Next, initialize APItoolkit in your application's entry point (e.g., `Program.cs`) like so:
 
 ```csharp
 using ApiToolkit.Net;
@@ -52,7 +53,7 @@ app.Use(async (context, next) =>
 ```
 
 <div class="callout">
-  <i class="fa-regular fa-lightbulb"></i>
+  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
   <ul>
     <li>Please make sure the APItoolkit middleware is added before `UseEndpoint` and other middleware are initialized.</li>
     <li>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</li>
@@ -61,23 +62,16 @@ app.Use(async (context, next) =>
 
 ## Redacting Sensitive Data
 
-If you have fields that are sensitive and should not be sent to APItoolkit servers, you can mark those fields to be redacted in two ways:
+If you have fields that are sensitive and should not be sent to APItoolkit servers, you can mark those fields to be redacted  (the fields will never leave your servers).
 
-1. This client SDK (the fields will never leave your servers in the first place).
-2. The APItoolkit dashboard (the fields will be transported from your servers first and then redacted on the edge before further processing).
+To mark a field for redacting via this SDK, you need to provide additional arguments to the `config` variable with paths to the fields that should be redacted. There are three arguments you can provide to configure what gets redacted, namely:
 
-To mark a field for redacting via this SDK, you need to provide additional arguments to the `config` variable with paths to the fields that should be redacted. There are three potential arguments that you can provide to configure what gets redacted.
+1. `RedactHeaders`:  A list of HTTP header keys.
+2. `RedactRequestBody`: A list of JSONPaths from the request body.
+3. `RedactResponseBody`: A list of JSONPaths from the response body.
 
-1. `RedactHeaders`:  A list of HTTP header keys (e.g., `COOKIE`, `CONTENT-TYPE`, etc.).
-2. `RedactRequestBody`: A list of JSONPaths from the request body (if the request body is a valid JSON).
-3. `RedactResponseBody`: A list of JSONPaths from the response body (if the response body is a valid JSON).
-
-<div class="callout">
-  <i class="fa-solid fa-book"></i>
-  <p>JSONPath is a query language used to select and extract data from JSON files.</p>
-</div>
-
-For example, given the following JSON object:
+<hr />
+JSONPath is a query language used to select and extract data from JSON files. For example, given the following JSON object:
 
 ```JSON
 {
@@ -112,11 +106,12 @@ Examples of valid JSONPaths would be:
 - `$.store.books[*].author` (In this case, APItoolkit will replace the `author` field in all the objects of the `books` list inside the `store` object with the string `[CLIENT_REDACTED]`).
 
 <div class="callout">
-  <i class="fa-regular fa-lightbulb"></i>
+  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
   <p>To learn more about JSONPaths, please take a look at the [official docs](https://github.com/json-path/JsonPath/blob/master/README.md){target="_blank"}. You can also use this [JSONPath Evaluator](https://jsonpath.com?utm_source=apitoolkit){target="_blank"} to validate your JSONPaths.</p>
 </div>
+<hr />
 
-Here's an example of what the configuration in your application's entry point (e.g., `Program.cs`) would look like with redacted fields:
+Here's an example of what the configuration would look like with redacted fields:
 
 ```csharp
 using ApiToolkit.Net;
@@ -126,8 +121,8 @@ var config = new Config
     Debug = true, # Set debug flags to false in production
     ApiKey = "{ENTER_YOUR_API_KEY_HERE}",
     RedactHeaders = new List<string> { "HOST", "CONTENT-TYPE" },
-    RedactRequestBody = new List<string> { "$.password", "$.payment.credit_cards[*].cvv", "$.user.addresses[*]" },
-    RedactResponseBody = new List<string> { "$.title", "$.store.books[*].author" }
+    RedactRequestBody = new List<string> { "$.user.password", "$.user.credit_card" },
+    RedactResponseBody = new List<string> { "$.users[*].email", "$.store.books[*].author" }
 };
 var client = await APIToolkit.NewClientAsync(config);
 
@@ -140,20 +135,19 @@ app.Use(async (context, next) =>
 ```
 
 <div class="callout">
-  <i class="fa-regular fa-lightbulb"></i>
+  <p><i class="fa-regular fa-circle-info"></i> <b>Note</b></p>
   <ul>
-    <li>The `RedactHeaders` config field accepts a list of case-insensitive headers as strings.</li>
-    <li>The `RedactRequestBody` and `RedactResponseBody` fields <b>expect a list of JSONPaths as strings.</b></li>
+    <li>The `RedactHeaders` config field expects a list of <b>case-insensitive headers as strings</b>.</li>
+    <li>The `RedactRequestBody` and `RedactResponseBody` config fields expect a list of <b>JSONPaths as strings</b>.</li>
     <li>The list of items to be redacted will be applied to all endpoint requests and responses on your server.</li>
   </ul>
 </div>
 
 ## Error Reporting
 
-APItoolkit detects different API issues and anomalies automatically but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing request.
+APItoolkit detects different API issues and anomalies automatically but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
 
-To report errors, simply use the `ReportError()` handler like so:
-
+To report errors, use the `ReportError()` handler like so:
 
 ```csharp
 using ApiToolkit.Net;
@@ -235,7 +229,7 @@ app.MapGet("/monitor-requests", async (context) =>
 });
 ```
 <div class="callout">
-  <i class="fa-regular fa-lightbulb"></i>
+  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
   <p class="mt-6">The `client.APIToolkitObservingHandler` handler accepts a required `context` field and the following optional fields:</p>
   <ul>
     <li>`PathWildCard`: The `url_path` for URLs with path parameters.</li>
