@@ -1,16 +1,22 @@
 ---
-title: Java Springboot
+title: Springboot
+ogTitle: Springboot SDK Guide
 date: 2024-05-28
-updatedDate: 2024-05-28
+updatedDate: 2024-06-10
 menuWeight: 1
-ogImage: /assets/img/framework-logos/golang-logo.png
 ---
 
-# Java Springboot
+# Springboot SDK Guide
 
-## Overview
+To integrate your Springboot Java application with APItoolkit, you need to use this SDK to monitor incoming traffic, aggregate the requests, and then send them to APItoolkit's servers. Kindly follow this guide to get started and learn about all the supported features of APItoolkit's **Springboot SDK**.
 
-The APItoolkit Spring Boot SDK allows seamless integration of APItoolkit with your Spring Boot applications.
+```=html
+<hr>
+```
+
+## Prerequisites
+
+Ensure you have already completed the first three steps of the [onboarding guide](/docs/onboarding/){target="_blank"}.
 
 ## Installation
 
