@@ -20,7 +20,7 @@ Ensure you have already completed the first three steps of the [onboarding guide
 
 ## Installation
 
-To install the SDK, kindly add `apitoolkit_phoenix` to your list of dependencies in the `mix.exs` file like so:
+To install the SDK, kindly add `apitoolkit_phoenix` to the list of dependencies in the `mix.exs` file like so:
 
 ```elixir
 def deps do
@@ -44,11 +44,11 @@ defmodule HelloWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
-    # Other plugs
     plug ApitoolkitPhoenix,
       config: %{
         api_key: "{ENTER_YOUR_API_KEY_HERE}",
       }
+    # Other plugs...
   end
 end
 ```
@@ -62,46 +62,49 @@ end
 
 If you have fields that are sensitive and should not be sent to APItoolkit servers, you can mark those fields to be redacted  (the fields will never leave your servers).
 
-To mark a field for redacting via this SDK, you need to provide additional arguments to the `config` variable with paths to the fields that should be redacted. There are three arguments you can provide to configure what gets redacted, namely:
+To mark a field for redacting via this SDK, you need to provide additional arguments to the `config` key with paths to the fields that should be redacted. There are three arguments you can provide to configure what gets redacted, namely:
 
 1. `redact_headers`:  A list of HTTP header keys.
 2. `redact_request_body`: A list of JSONPaths from the request body.
 3. `redact_response_body`: A list of JSONPaths from the response body.
 
 <hr />
-JSONPath is a query language used to select and extract data from JSON files. For example, given the following JSON object:
+JSONPath is a query language used to select and extract data from JSON files. For example, given the following sample user data JSON object:
 
 ```JSON
 {
-    "store": {
-        "books": [
-            {
-                "category": "reference",
-                "author": "Nigel Rees",
-                "title": "Sayings of the Century",
-                "price": 8.95
-            },
-            {
-                "category": "fiction",
-                "author": "Evelyn Waugh",
-                "title": "Sword of Honour",
-                "price": 12.99
-            },
-            ...
-        ],
-        "bicycle": {
-            "color": "red",
-            "price": 19.95
-        }
-    },
-    ...
+  "user": {
+    "name": "John Martha",
+    "email": "john.martha@example.com",
+    "addresses": [
+      {
+        "street": "123 Main St",
+        "city": "Anytown",
+        "state": "CA",
+        "zip": "12345"
+      },
+      {
+        "street": "123 Main St",
+        "city": "Anytown",
+        "state": "CA",
+        "zip": "12345"
+      },
+      ...
+    ],
+    "credit_card": {
+      "number": "4111111111111111",
+      "expiration": "12/28",
+      "cvv": "123"
+    }
+  },
+  ...
 }
 ```
 
 Examples of valid JSONPaths would be:
 
-- `$.store.books` (In this case, APItoolkit will replace the `books` field inside the `store` object with the string `[CLIENT_REDACTED]`).
-- `$.store.books[*].author` (In this case, APItoolkit will replace the `author` field in all the objects of the `books` list inside the `store` object with the string `[CLIENT_REDACTED]`).
+- `$.user.credit_card` (In this case, APItoolkit will replace the `addresses` field inside the `user` object with the string `[CLIENT_REDACTED]`).
+- `$.user.addresses[*].zip` (In this case, APItoolkit will replace the `zip` field in all the objects of the `addresses` list inside the `user` object with the string `[CLIENT_REDACTED]`).
 
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
@@ -124,9 +127,8 @@ defmodule HelloWeb.Router do
       config: %{
         api_key: "{ENTER_YOUR_API_KEY_HERE}",
         redact_headers: ["accept-language", "cookie", "x-csrf-token"]
-        redact_request_body: ["$.user.password", "$.user.credit_card"]
-        redact_response_body: ["$.users[*].email", "$.store.books[*].author"]
-
+        redact_request_body: ["$.user.email", "$.user.addresses"]
+        redact_response_body: ["$.users[*].email", "$.users[*].credit_card"]
       }
   end
 end

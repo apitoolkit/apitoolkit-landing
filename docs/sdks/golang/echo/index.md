@@ -1,54 +1,47 @@
 ---
 title: Go Echo
+ogTitle: Go Echo SDK Guide
 date: 2022-03-23
-updatedDate: 2024-05-04
+updatedDate: 2024-06-08
 menuWeight: 1
 ogImage: /assets/img/framework-logos/golang-logo.png
 ---
-# Go Echo integration
 
-Echo is an efficient web framework for Go, boasting both high performance and adaptability. Its vast array of middleware and plugins facilitate seamless integration into your application, simplifying the enhancement of features and functions.
+# Go Echo SDK Guide
 
-To further streamline your development, here's a guide on integrating the Go Echo with APIToolkit SDK.
+To integrate your Golang Echo application with APItoolkit, you need to use this SDK to monitor incoming traffic, aggregate the requests, and then send them to APItoolkit's servers. Kindly follow this guide to get started and learn about all the supported features of APItoolkit's **Golang SDK**.
 
-### Prerequisites
-
-1. Sign up / Sign in to the [API dashboard](https://app.apitoolkit.io)
-2. [Create a project](/docs/documentation/dashboard/creating-a-project/)
-3. [Generate an API key for your project](/docs/documentation/dashboard/generating-api-keys), and include a brief description of your work. And to prevent losing your key after it has been generated, remember to make a copy of it.
-
-**Integrate with Go's Echo Framework**
-
-Assuming you have Go and Echo already set up
-
-a. Install necessary packages (if not)
-
-```go
-go get -u github.com/labstack/echo/v4
+```=html
+<hr>
 ```
 
-b. Create a new Go file, e.g., `main.go`
+## Prerequisites
 
-c. Begin setting up your Echo server
+Ensure you have already completed the first three steps of the [onboarding guide](/docs/onboarding/){target="_blank"}.
+
+## Installation
+
+Kindly run the command below to install the SDK:
+
+```sh
+go get github.com/apitoolkit/apitoolkit-go
+```
+
+Then add `github.com/apitoolkit/apitoolkit-go` to the list of dependencies like so:
 
 ```go
 package main
 
 import (
+ "context"
  "github.com/labstack/echo/v4"
+ apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
-
-func main() {
- e := echo.New()
-
- // Define your routes here...
-
- e.Start(":8080")
-}
 ```
 
-d. Integrate with APIToolkit
-Let's write the code to initialize `apitoolkit` with `echo`
+## Configuration
+
+Next, initialize APItoolkit in your application's entry point (e.g., `main.go`) like so:
 
 ```go
 package main
@@ -62,17 +55,19 @@ import (
 func main() {
  ctx := context.Background()
 
- // Initialize the client using your apitoolkit.io generated apikey
- apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "<APIKEY>"})
+ // Initialize the client
+ apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"})
  if err != nil {
   panic(err)
  }
 
  e := echo.New()
 
- // Register with the corresponding middleware of your choice.
- // Assuming apitoolkit provides an EchoMiddleware function for the echo framework.
+ // Register APItoolkit's middleware
  e.Use(apitoolkitClient.EchoMiddleware)
+ 
+ // e.Use(...)
+ // Other middleware
 
  e.POST("/:slug/test", func(c echo.Context) error {
   return c.String(http.StatusOK, "ok")
@@ -82,82 +77,157 @@ func main() {
 }
 ```
 
-Replace `"YOUR_GENERATED_API_KEY"` with the API key you generated.
+<div class="callout">
+  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
+  <p>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</p>
+</div>
 
-**Test the Integration**
+## Redacting Sensitive Data
 
-Run your Echo server and access the endpoint to see if the integration works.
+If you have fields that are sensitive and should not be sent to APItoolkit servers, you can mark those fields to be redacted  (the fields will never leave your servers).
 
-## Redacting Sensitive Fields with Go's Echo and APIToolkit
+To mark a field for redacting via this SDK, you need to provide additional arguments to the `apitoolkitCfg` variable with paths to the fields that should be redacted. There are three arguments you can provide to configure what gets redacted, namely:
 
-While it's possible to mark fields as redacted directly from the APIToolkit dashboard, this client also offers client-side redacting.
+1. `RedactHeaders`:  A list of HTTP header keys.
+2. `RedactRequestBody`: A list of JSONPaths from the request body.
+3. `RedactResponseBody`: A list of JSONPaths from the response body.
 
-By doing this on the client-side, sensitive fields won't leave your server at all, ensuring that your data remains confined to your infrastructure.
+<hr />
+JSONPath is a query language used to select and extract data from JSON files. For example, given the following sample user data JSON object:
 
-For instance, if you have a request body like:
-
-```json
+```JSON
 {
   "user": {
-    "id": 123456789,
-    "name": "John Doe",
-    "password": "secretpassword123",
-    "creditCard": {
-      "number": "1234567890123456",
-      "expiry": "12/25"
+    "name": "John Martha",
+    "email": "john.martha@example.com",
+    "addresses": [
+      {
+        "street": "123 Main St",
+        "city": "Anytown",
+        "state": "CA",
+        "zip": "12345"
+      },
+      {
+        "street": "123 Main St",
+        "city": "Anytown",
+        "state": "CA",
+        "zip": "12345"
+      },
+      ...
+    ],
+    "credit_card": {
+      "number": "4111111111111111",
+      "expiration": "12/28",
+      "cvv": "123"
     }
-  }
+  },
+  ...
 }
 ```
 
-And you wish to redact the `password` and credit card `number` fields, you'd configure the `apitoolkit` config struct as follows:
+Examples of valid JSONPaths would be:
+
+- `$.user.credit_card` (In this case, APItoolkit will replace the `addresses` field inside the `user` object with the string `[CLIENT_REDACTED]`).
+- `$.user.addresses[*].zip` (In this case, APItoolkit will replace the `zip` field in all the objects of the `addresses` list inside the `user` object with the string `[CLIENT_REDACTED]`).
+
+<div class="callout">
+  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
+  <p>To learn more about JSONPaths, please take a look at the [official docs](https://github.com/json-path/JsonPath/blob/master/README.md){target="_blank"}. You can also use this [JSONPath Evaluator](https://jsonpath.com?utm_source=apitoolkit){target="_blank"} to validate your JSONPaths.</p>
+</div>
+<hr />
+
+Here's an example of what the configuration would look like with redacted fields:
 
 ```go
 package main
 
 import (
+ "context"
  "github.com/labstack/echo/v4"
  "net/http"
  "apitoolkit-go"
 )
 
 func main() {
- e := echo.New()
-
- apitoolkitCfg := apitoolkit.Config{
-        RedactHeaders: []string{"Content-Type", "Authorization", "Cookies"}, // Redacting both request and response headers
-        RedactRequestBody: []string{"$.user.password", "$.user.creditCard.number"},
-        RedactResponseBody: []string{"$.message.error"},
-        APIKey: "<APIKEY>",
+  apitoolkitCfg := apitoolkit.Config{
+        RedactHeaders: []string{"Content-Type", "Authorization", "Cookies"},
+        RedactRequestBody: []string{"$.user.email", "$.user.addresses"},
+        RedactResponseBody: []string{"$.users[*].email", "$.users[*].credit_card"},
+        APIKey: "{ENTER_YOUR_API_KEY_HERE}",
     }
+  apitoolkitClient, _ := apitoolkit.NewClient(apitoolkitCfg)
 
- // Initialize the client with your apitoolkit.io generated API key
- apitoolkitClient, _ := apitoolkit.NewClient(apitoolkitCfg)
+  e := echo.New()
+  e.Use(apitoolkitClient.EchoMiddleware)
 
- // Use the APIToolkit middleware with Echo
- e.Use(apitoolkitClient.EchoMiddleware)  // Assuming APIToolkit provides such a middleware. Replace with the actual function if different.
+  e.POST("/:slug/test", func(c echo.Context) error {
+    return c.String(http.StatusOK, "ok")
+  })
 
- e.POST("/:slug/test", func(c echo.Context) error {
-  return c.String(http.StatusOK, "ok")
- })
-
- e.Start(":8080")
+  e.Start(":8080")
 }
 ```
 
-It's important to emphasize that while the `RedactHeaders` config field accepts header names (case insensitive), `RedactRequestBody` and `RedactResponseBody` expect JSONPath strings.
+<div class="callout">
+  <p><i class="fa-regular fa-circle-info"></i> <b>Note</b></p>
+  <ul>
+    <li>The `RedactHeaders` config field expects a list of <b>case-insensitive headers as strings</b>.</li>
+    <li>The `RedactRequestBody` and `RedactResponseBody` config fields expect a list of <b>JSONPaths as strings</b>.</li>
+    <li>The list of items to be redacted will be applied to all endpoint requests and responses on your server.</li>
+  </ul>
+</div>
 
-JSONPath provides a flexible way to define sensitive fields in your responses. This list will be applied across all endpoint requests and responses.
+## Error Reporting
 
-For more on JSONPath and how to craft queries, check out: [JSONPath Cheatsheet](https://lzone.de/cheat-sheet/JSONPath)
+APItoolkit detects different API issues and anomalies automatically but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
 
-## Outgoing Requests
+To report errors, use the `ReportError()` method, passing in the `context` and `error` arguments like so:
 
-To monitor outgoing HTTP requests from your Go application, you can replace the default HTTP client transport with a custom roundtripper.
+```go
+package main
 
-This allows you to capture and send copies of all incoming and outgoing requests to an apitoolkit server for monitoring and analysis.
+import (
+   "context"
+   "github.com/labstack/echo/v4"
+   apitoolkit "github.com/apitoolkit/apitoolkit-go"
+)
 
-Example
+func main() {
+  ctx := context.Background()
+  apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"})
+  if err != nil {
+    panic(err)
+  }
+
+  router := echo.New()
+  e.Use(apitoolkitClient.EchoMiddleware)
+
+  e.GET("/", hello)
+
+  e.Logger.Fatal(e.Start(":1323"))
+}
+
+func hello(c echo.Context) error {
+  // Attempt to open a non-existing file
+ file, err := os.Open("non-existing-file.txt")
+ if err != nil {
+  apitoolkit.ReportError(c.Request().Context(), err)
+ }
+ log.Println(file)
+ return c.String(http.StatusOK, "Hello, World!")
+}
+```
+
+<div class="callout">
+  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
+  <p>The `ReportError()` method mentioned above is imported from `apitoolkit` and not `apitoolkitClient`.</p>
+</div>
+
+## Monitoring Outgoing Requests
+
+Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="_blank"} page. However, you can separate outgoing requests from others and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="_blank"} page, alongside the incoming request that triggered them.
+
+To monitor outgoing HTTP requests from your application, replace the default HTTP client transport with a custom RoundTripper. This allows you to capture and send copies of all incoming and outgoing requests to APItoolkit. Here's an example of configuring outgoing requests:
 
 ```go
 package main
@@ -169,6 +239,12 @@ import (
 )
 
 func main() {
+    ctx := context.Background()
+    apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"})
+    if err != nil {
+      panic(err)
+    }
+
     router := echo.New()
     router.Use(client.EchoMiddleware)
 
@@ -176,15 +252,17 @@ func main() {
         // Create a new HTTP client
         HTTPClient := http.DefaultClient
 
-        // Replace the transport with the custom roundtripper
+        // Replace the transport with the custom RoundTripper
         HTTPClient.Transport = client.WrapRoundTripper(
             c.Request().Context(),
             HTTPClient.Transport,
-            WithRedactHeaders([]string{}),
+            WithRedactHeaders([]string{...}),
+            WithRedactRequestBody([]string{...}),
+            WithRedactResponseBody([]string{...})
         )
 
         // Make an outgoing HTTP request using the modified HTTPClient
-        _, _ = HTTPClient.Get("http://localhost:3000/monitored-outgoing-request")
+        _, _ = HTTPClient.Get("https://jsonplaceholder.typicode.com/posts/1")
 
         // Respond to the request
         c.String(http.StatusOK, "ok")
@@ -192,53 +270,15 @@ func main() {
 }
 ```
 
-The provided code demonstrates how to set up the custom roundtripper to replace the default HTTP client's transport.
+<div class="callout">
+  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
+  <p class="mt-6">You can also redact data with the custom RoundTripper for outgoing requests.</p>
+</div>
 
-The resulting HTTP client, `HTTPClient`, is configured to send copies of all incoming and outgoing requests to the apitoolkit servers.
-
-You can use this modified HTTP client for any HTTP requests you need to make from your server, ensuring they are monitored by apitoolkit.
-
-## Report Errors
-
-If you've used sentry, or bugsnag, or rollbar, then you're already familiar with this usecase.
-
-But you can report an error to apitoolkit. A difference, is that errors are always associated with a parent request, and helps you query and associate the errors which occured while serving a given customer request.
-
-To request errors to APIToolkit use call the `ReportError` method of `apitoolkit` not the client returned by `apitoolkit.NewClient` with the request context and the error to report.
-
-Example
-
-```go
-package main
-
-import (
-   //... other imports
-   apitoolkit "github.com/apitoolkit/apitoolkit-go"
-)
-
-func main() {
- e := echo.New()
- ctx := context.Background()
-
- apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "<API_KEY>"})
- if err != nil {
-  panic(err)
- }
-
- e.Use(apitoolkitClient.EchoMiddleware)
-
- e.GET("/", hello)
-
- e.Logger.Fatal(e.Start(":1323"))
-}
-
-func hello(c echo.Context) error {
- file, err := os.Open("non-existing-file.txt")
- if err != nil {
-  apitoolkit.ReportError(c.Request().Context(), err)
- }
- log.Println(file)
- return c.String(http.StatusOK, "Hello, World!")
-}
-
+```=html
+<hr />
+<a href="https://github.com/apitoolkit/apitoolkit-go" target="_blank" rel="noopener noreferrer" class="w-full btn btn-outline link link-hover">
+    <i class="fa-brands fa-github"></i>
+    Explore the Golang SDK
+</a>
 ```

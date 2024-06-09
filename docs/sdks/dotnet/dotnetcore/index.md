@@ -20,7 +20,7 @@ Ensure you have already completed the first three steps of the [onboarding guide
 
 ## Installation
 
-Kindly run the command below to install the [package](https://nuget.org/packages/ApiToolkit.Net){target="_blank"}:
+Kindly run the command below to install the SDK:
 
 ```sh
 dotnet add package ApiToolkit.Net
@@ -38,17 +38,18 @@ var config = new Config
     Debug = true, # Set debug flags to false in production
     ApiKey = "{ENTER_YOUR_API_KEY_HERE}"
 };
+# Initialize the client
 var client = await APIToolkit.NewClientAsync(config);
 
-# Register the middleware to use the initialized client
+# Register APItoolkit's middleware
 app.Use(async (context, next) =>
 {
     var apiToolkit = new APIToolkit(next, client);
     await apiToolkit.InvokeAsync(context);
 });
 
-# app.UseEndpoint(..) 
-# other middleware and logic
+# app.UseEndpoint(...) 
+# Other middleware and logic
 # ...
 ```
 
@@ -71,39 +72,42 @@ To mark a field for redacting via this SDK, you need to provide additional argum
 3. `RedactResponseBody`: A list of JSONPaths from the response body.
 
 <hr />
-JSONPath is a query language used to select and extract data from JSON files. For example, given the following JSON object:
+JSONPath is a query language used to select and extract data from JSON files. For example, given the following sample user data JSON object:
 
 ```JSON
 {
-    "store": {
-        "books": [
-            {
-                "category": "reference",
-                "author": "Nigel Rees",
-                "title": "Sayings of the Century",
-                "price": 8.95
-            },
-            {
-                "category": "fiction",
-                "author": "Evelyn Waugh",
-                "title": "Sword of Honour",
-                "price": 12.99
-            },
-            ...
-        ],
-        "bicycle": {
-            "color": "red",
-            "price": 19.95
-        }
-    },
-    ...
+  "user": {
+    "name": "John Martha",
+    "email": "john.martha@example.com",
+    "addresses": [
+      {
+        "street": "123 Main St",
+        "city": "Anytown",
+        "state": "CA",
+        "zip": "12345"
+      },
+      {
+        "street": "123 Main St",
+        "city": "Anytown",
+        "state": "CA",
+        "zip": "12345"
+      },
+      ...
+    ],
+    "credit_card": {
+      "number": "4111111111111111",
+      "expiration": "12/28",
+      "cvv": "123"
+    }
+  },
+  ...
 }
 ```
 
 Examples of valid JSONPaths would be:
 
-- `$.store.books` (In this case, APItoolkit will replace the `books` field inside the `store` object with the string `[CLIENT_REDACTED]`).
-- `$.store.books[*].author` (In this case, APItoolkit will replace the `author` field in all the objects of the `books` list inside the `store` object with the string `[CLIENT_REDACTED]`).
+- `$.user.credit_card` (In this case, APItoolkit will replace the `addresses` field inside the `user` object with the string `[CLIENT_REDACTED]`).
+- `$.user.addresses[*].zip` (In this case, APItoolkit will replace the `zip` field in all the objects of the `addresses` list inside the `user` object with the string `[CLIENT_REDACTED]`).
 
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
@@ -121,8 +125,8 @@ var config = new Config
     Debug = true, # Set debug flags to false in production
     ApiKey = "{ENTER_YOUR_API_KEY_HERE}",
     RedactHeaders = new List<string> { "HOST", "CONTENT-TYPE" },
-    RedactRequestBody = new List<string> { "$.user.password", "$.user.credit_card" },
-    RedactResponseBody = new List<string> { "$.users[*].email", "$.store.books[*].author" }
+    RedactRequestBody = new List<string> { "$.user.email", "$.user.addresses" },
+    RedactResponseBody = new List<string> { "$.users[*].email", "$.users[*].credit_card" }
 };
 var client = await APIToolkit.NewClientAsync(config);
 
@@ -147,7 +151,7 @@ app.Use(async (context, next) =>
 
 APItoolkit detects different API issues and anomalies automatically but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
 
-To report errors, use the `ReportError()` handler like so:
+To report errors, use the `ReportError()` handler, passing in the `context` and `error` arguments like so:
 
 ```csharp
 using ApiToolkit.Net;
@@ -189,9 +193,9 @@ app.MapGet("/error-tracking", async context =>
 
 ## Monitoring Outgoing Requests
 
-Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="_blank"} page. However, you can separate outgoing requests from others using the `APIToolkitObservingHandler()` handler and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="_blank"} page. APItoolkit will also return logged outgoing requests in association with the incoming request that triggered them.
+Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="_blank"} page. However, you can separate outgoing requests from others and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="_blank"} page, alongside the incoming request that triggered them.
 
-Here's an example of configuring outgoing requests with the SDK on a sample `/monitor-requests` endpoint that makes an asynchronous `HttpClient` GET request to a sample `https://jsonplaceholder.typicode.com/posts/1` public endpoint URL.
+To monitor outgoing HTTP requests from your application, we provide the `APIToolkitObservingHandler()` handler. Here's an example of configuring outgoing requests with the SDK on a sample `/monitor-requests` endpoint that makes an asynchronous `HttpClient` GET request to a sample public endpoint URL.
 
 
 ```csharp
@@ -228,6 +232,7 @@ app.MapGet("/monitor-requests", async (context) =>
     await context.Response.WriteAsync(body);
 });
 ```
+
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
   <p class="mt-6">The `client.APIToolkitObservingHandler` handler accepts a required `context` field and the following optional fields:</p>
