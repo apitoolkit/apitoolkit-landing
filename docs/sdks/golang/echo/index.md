@@ -33,9 +33,7 @@ Then add `github.com/apitoolkit/apitoolkit-go` to the list of dependencies like 
 package main
 
 import (
- "context"
- "github.com/labstack/echo/v4"
- apitoolkit "github.com/apitoolkit/apitoolkit-go"
+  "github.com/apitoolkit/apitoolkit-go"
 )
 ```
 
@@ -47,33 +45,35 @@ Next, initialize APItoolkit in your application's entry point (e.g., `main.go`) 
 package main
 
 import (
- "context"
- "github.com/labstack/echo/v4"
- apitoolkit "github.com/apitoolkit/apitoolkit-go"
+  "context"
+  "log"
+  "net/http"
+  "github.com/labstack/echo/v4"
+  "github.com/apitoolkit/apitoolkit-go"
 )
 
 func main() {
- ctx := context.Background()
+  ctx := context.Background()
+  
+  // Initialize the client
+  apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"})
+  if err != nil {
+    panic(err)
+  }
+  
+  router := echo.New()
 
- // Initialize the client
- apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"})
- if err != nil {
-  panic(err)
- }
-
- e := echo.New()
-
- // Register APItoolkit's middleware
- e.Use(apitoolkitClient.EchoMiddleware)
+  // Register APItoolkit's middleware
+  router.Use(apitoolkitClient.EchoMiddleware)
  
- // e.Use(...)
- // Other middleware
+  // router.Use(...)
+  // Other middleware
 
- e.POST("/:slug/test", func(c echo.Context) error {
-  return c.String(http.StatusOK, "ok")
- })
+  router.POST("/:slug/test", func(c echo.Context) error {
+    return c.String(http.StatusOK, "ok")
+  })
 
- e.Start(":8080")
+  router.Start(":8080")
 }
 ```
 
@@ -142,29 +142,31 @@ Here's an example of what the configuration would look like with redacted fields
 package main
 
 import (
- "context"
- "github.com/labstack/echo/v4"
- "net/http"
- "apitoolkit-go"
+  "context"
+  "net/http"
+  "github.com/labstack/echo/v4"
+  "github.com/apitoolkit/apitoolkit-go"
 )
 
 func main() {
-  apitoolkitCfg := apitoolkit.Config{
-        RedactHeaders: []string{"Content-Type", "Authorization", "Cookies"},
-        RedactRequestBody: []string{"$.user.email", "$.user.addresses"},
-        RedactResponseBody: []string{"$.users[*].email", "$.users[*].credit_card"},
-        APIKey: "{ENTER_YOUR_API_KEY_HERE}",
-    }
-  apitoolkitClient, _ := apitoolkit.NewClient(apitoolkitCfg)
+  ctx := context.Background()
 
-  e := echo.New()
-  e.Use(apitoolkitClient.EchoMiddleware)
+  apitoolkitCfg := apitoolkit.Config {
+    RedactHeaders: []string{"Content-Type", "Authorization", "Cookies"},
+    RedactRequestBody: []string{"$.user.email", "$.user.addresses"},
+    RedactResponseBody: []string{"$.users[*].email", "$.users[*].credit_card"},
+    APIKey: "{ENTER_YOUR_API_KEY_HERE}",
+  }
+  apitoolkitClient, _ := apitoolkit.NewClient(ctx, apitoolkitCfg)
 
-  e.POST("/:slug/test", func(c echo.Context) error {
+  router := echo.New()
+  router.Use(apitoolkitClient.EchoMiddleware)
+
+  router.POST("/:slug/test", func(c echo.Context) error {
     return c.String(http.StatusOK, "ok")
   })
 
-  e.Start(":8080")
+  router.Start(":8080")
 }
 ```
 
@@ -187,9 +189,11 @@ To report errors, use the `ReportError()` method, passing in the `context` and `
 package main
 
 import (
-   "context"
-   "github.com/labstack/echo/v4"
-   apitoolkit "github.com/apitoolkit/apitoolkit-go"
+  "context"
+  "log"
+  "net/http"
+  "github.com/labstack/echo/v4"
+  "github.com/apitoolkit/apitoolkit-go"
 )
 
 func main() {
@@ -200,21 +204,21 @@ func main() {
   }
 
   router := echo.New()
-  e.Use(apitoolkitClient.EchoMiddleware)
+  router.Use(apitoolkitClient.EchoMiddleware)
 
-  e.GET("/", hello)
+  router.GET("/", hello)
 
-  e.Logger.Fatal(e.Start(":1323"))
+  log.Fatal(router.Start(":8080"))
 }
 
 func hello(c echo.Context) error {
   // Attempt to open a non-existing file
- file, err := os.Open("non-existing-file.txt")
- if err != nil {
-  apitoolkit.ReportError(c.Request().Context(), err)
- }
- log.Println(file)
- return c.String(http.StatusOK, "Hello, World!")
+  file, err := os.Open("non-existing-file.txt")
+  if err != nil {
+   apitoolkit.ReportError(c.Request().Context(), err)
+  }
+  log.Println(file)
+  return c.String(http.StatusOK, "Hello, World!")
 }
 ```
 
@@ -227,46 +231,50 @@ func hello(c echo.Context) error {
 
 Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="_blank"} page. However, you can separate outgoing requests from others and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="_blank"} page, alongside the incoming request that triggered them.
 
-To monitor outgoing HTTP requests from your application, replace the default HTTP client transport with a custom RoundTripper. This allows you to capture and send copies of all incoming and outgoing requests to APItoolkit. Here's an example of configuring outgoing requests:
+To monitor outgoing HTTP requests from your application, replace the default HTTP client transport with a custom RoundTripper. This allows you to capture and send copies of all incoming and outgoing requests to APItoolkit. Here's an example of outgoing requests configuration with this SDK:
 
 ```go
 package main
 
 import (
-    "github.com/labstack/echo/v4"
-    "net/http"
-    apitoolkit "github.com/apitoolkit/apitoolkit-go"
+  "context"
+  "log"
+  "net/http"
+  "github.com/labstack/echo/v4"
+  "github.com/apitoolkit/apitoolkit-go"
 )
 
 func main() {
-    ctx := context.Background()
-    apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"})
-    if err != nil {
-      panic(err)
-    }
+  ctx := context.Background()
+  apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"})
+  if err != nil {
+    panic(err)
+  }
 
-    router := echo.New()
-    router.Use(client.EchoMiddleware)
+  router := echo.New()
+  router.Use(client.EchoMiddleware)
 
-    router.POST("/:slug/test", func(c echo.Context) (err error) {
-        // Create a new HTTP client
-        HTTPClient := http.DefaultClient
+  router.POST("/:slug/test", func(c echo.Context) (err error) {
+    // Create a new HTTP client
+    HTTPClient := http.DefaultClient
 
-        // Replace the transport with the custom RoundTripper
-        HTTPClient.Transport = client.WrapRoundTripper(
-            c.Request().Context(),
-            HTTPClient.Transport,
-            WithRedactHeaders([]string{...}),
-            WithRedactRequestBody([]string{...}),
-            WithRedactResponseBody([]string{...})
-        )
+    // Replace the transport with the custom RoundTripper
+    HTTPClient.Transport = client.WrapRoundTripper (
+      c.Request().Context(),
+      HTTPClient.Transport,
+      WithRedactHeaders([]string{"..."}),
+      WithRedactRequestBody([]string{"..."}),
+      WithRedactResponseBody([]string{"..."})
+    )
 
-        // Make an outgoing HTTP request using the modified HTTPClient
-        _, _ = HTTPClient.Get("https://jsonplaceholder.typicode.com/posts/1")
+    // Make an outgoing HTTP request using the modified HTTPClient
+    _, _ = HTTPClient.Get("https://jsonplaceholder.typicode.com/posts/1")
 
-        // Respond to the request
-        c.String(http.StatusOK, "ok")
-    })
+    // Respond to the request
+    c.String(http.StatusOK, "ok")
+  })
+
+  log.Fatal(router.Start(":8080"))
 }
 ```
 
