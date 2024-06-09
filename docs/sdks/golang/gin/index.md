@@ -1,214 +1,291 @@
 ---
 title: Go Gin
+ogTitle: Go Gin SDK Guide
 date: 2022-03-23
-updatedDate: 2024-05-04
+updatedDate: 2024-06-08
 menuWeight: 2
-ogImage: /assets/img/framework-logos/golang-logo.png
 ---
-# Go Gin integration
 
-To integrate APIToolkit with Go Gin, first install it using the 'go get' command, then initialize the client in the application's main function with the generated API key from apitoolkit.io.
+# Go Gin SDK Guide
+
+To integrate your Golang Gin application with APItoolkit, you need to use this SDK to monitor incoming traffic, aggregate the requests, and then send them to APItoolkit's servers. Kindly follow this guide to get started and learn about all the supported features of APItoolkit's **Golang SDK**.
+
+```=html
+<hr>
+```
 
 ## Prerequisites
 
-1. Sign up / Sign in to the [API dashboard](https://app.apitoolkit.io)
-2. [Create a project](/docs/documentation/dashboard/creating-a-project/)
-3. [Generate an API key for your project](/docs/documentation/dashboard/generating-api-keys), and include a brief description of your work. And to prevent losing your key after it has been generated, remember to make a copy of it.
+Ensure you have already completed the first three steps of the [onboarding guide](/docs/onboarding/){target="_blank"}.
 
 ## Installation
 
-To install run this command
+Kindly run the command below to install the SDK:
 
-```go
+```sh
 go get github.com/apitoolkit/apitoolkit-go
 ```
 
-Now you can initialize APIToolkit in your application’s entry point (eg main.go)
-
-Import the necessary packages into your Go application
+Then add `github.com/apitoolkit/apitoolkit-go` to the list of dependencies like so:
 
 ```go
 package main
 
 import (
-    "context"
-    apitoolkit "github.com/apitoolkit/apitoolkit-go"
-    "github.com/gin-gonic/gin"
+  "github.com/apitoolkit/apitoolkit-go"
 )
 ```
 
-In your application's main function, initialize the APIToolkit client using your API key generated from your dashboard
+## Configuration
+
+Next, initialize APItoolkit in your application's entry point (e.g., `main.go`) like so:
 
 ```go
+package main
+
+import (
+  "context"
+  "log"
+  "net/http"
+  "github.com/gin-gonic/gin"
+  "github.com/apitoolkit/apitoolkit-go"
+)
+
 func main() {
-    apitoolkitClient, err := apitoolkit.NewClient(context.Background(), apitoolkit.Config{APIKey: "YOUR GENERATED API KEY"})
-    if err != nil {
-        panic(err)
-    }
+  ctx := context.Background()
+  
+  // Initialize the client
+  apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"})
+  if err != nil {
+    panic(err)
+  }
+  
+  router := gin.New()
+
+  // Register APItoolkit's middleware
+  router.Use(apitoolkitClient.GinMiddleware)
+ 
+  // router.Use(...)
+  // Other middleware
+
+  router.POST("/:slug/test", func(c gin.Context) error {
+    return c.String(http.StatusOK, "ok")
+  })
+
+  router.Start(":8080")
+}
 ```
 
-Create a Gin router instance
+<div class="callout">
+  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
+  <p>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</p>
+</div>
 
- ```go  
-    router := gin.New()
-```
+## Redacting Sensitive Data
 
-Register the APIToolkit middleware with your chosen middleware framework. For Gin router, use the 'GinMiddleware' method
+If you have fields that are sensitive and should not be sent to APItoolkit servers, you can mark those fields to be redacted  (the fields will never leave your servers).
 
-```go
-    router.Use(apitoolkitClient.GinMiddleware)
-```
+To mark a field for redacting via this SDK, you need to provide additional arguments to the `apitoolkitCfg` variable with paths to the fields that should be redacted. There are three arguments you can provide to configure what gets redacted, namely:
 
-Register your application's handlers as usual and run the Gin server
+1. `RedactHeaders`:  A list of HTTP header keys.
+2. `RedactRequestBody`: A list of JSONPaths from the request body.
+3. `RedactResponseBody`: A list of JSONPaths from the response body.
 
-```go
-    router.POST("/:slug/test", func(c *gin.Context) { c.String(200, "ok") })
-```
+<hr />
+JSONPath is a query language used to select and extract data from JSON files. For example, given the following sample user data JSON object:
 
-## Redacting Sensitive Fields
-
-Some information is best kept private. You can hide sensitive data fields directly in your dashboard, but for an extra layer of security, our client supports redaction right on your servers.
-
-This means sensitive data like passwords or credit card numbers never leave your premises. To mark fields that should be redacted, Add them to the `apitoolkit` config struct.
-
-Here's how you do it:
-
-Imagine you have a request that looks like this:
-
-```json
+```JSON
 {
   "user": {
-    "id": 123456789,
-    "name": "John Doe",
-    "password": "secretpassword123",
-    "creditCard": {
-      "number": "1234567890123456",
-      "expiry": "12/25"
+    "name": "John Martha",
+    "email": "john.martha@example.com",
+    "addresses": [
+      {
+        "street": "123 Main St",
+        "city": "Anytown",
+        "state": "CA",
+        "zip": "12345"
+      },
+      {
+        "street": "123 Main St",
+        "city": "Anytown",
+        "state": "CA",
+        "zip": "12345"
+      },
+      ...
+    ],
+    "credit_card": {
+      "number": "4111111111111111",
+      "expiration": "12/28",
+      "cvv": "123"
     }
+  },
+  ...
+}
+```
+
+Examples of valid JSONPaths would be:
+
+- `$.user.credit_card` (In this case, APItoolkit will replace the `addresses` field inside the `user` object with the string `[CLIENT_REDACTED]`).
+- `$.user.addresses[*].zip` (In this case, APItoolkit will replace the `zip` field in all the objects of the `addresses` list inside the `user` object with the string `[CLIENT_REDACTED]`).
+
+<div class="callout">
+  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
+  <p>To learn more about JSONPaths, please take a look at the [official docs](https://github.com/json-path/JsonPath/blob/master/README.md){target="_blank"}. You can also use this [JSONPath Evaluator](https://jsonpath.com?utm_source=apitoolkit){target="_blank"} to validate your JSONPaths.</p>
+</div>
+<hr />
+
+Here's an example of what the configuration would look like with redacted fields:
+
+```go
+package main
+
+import (
+  "context"
+  "net/http"
+  "github.com/gin-gonic/gin"
+  "github.com/apitoolkit/apitoolkit-go"
+)
+
+func main() {
+  ctx := context.Background()
+
+  apitoolkitCfg := apitoolkit.Config {
+    RedactHeaders: []string{"Content-Type", "Authorization", "Cookies"},
+    RedactRequestBody: []string{"$.user.email", "$.user.addresses"},
+    RedactResponseBody: []string{"$.users[*].email", "$.users[*].credit_card"},
+    APIKey: "{ENTER_YOUR_API_KEY_HERE}",
   }
+  apitoolkitClient, _ := apitoolkit.NewClient(ctx, apitoolkitCfg)
+
+  router := gin.New()
+  router.Use(apitoolkitClient.GinMiddleware)
+
+  router.POST("/:slug/test", func(c gin.Context) error {
+    return c.String(http.StatusOK, "ok")
+  })
+
+  router.Start(":8080")
 }
 ```
 
-You might not wnat to trust us with John Doe's password or credit card number, right? So, you'll tell apitoolkit to hide these details. Add `$.user.password` and `$.user.creditCard.number` the `RedactRequestBody` array, like this:
+<div class="callout">
+  <p><i class="fa-regular fa-circle-info"></i> <b>Note</b></p>
+  <ul>
+    <li>The `RedactHeaders` config field expects a list of <b>case-insensitive headers as strings</b>.</li>
+    <li>The `RedactRequestBody` and `RedactResponseBody` config fields expect a list of <b>JSONPaths as strings</b>.</li>
+    <li>The list of items to be redacted will be applied to all endpoint requests and responses on your server.</li>
+  </ul>
+</div>
 
-```go
-func main() {
-    apitoolkitCfg := apitoolkit.Config{
-        RedactHeaders: []string{"Content-Type", "Authorization", "Cookies"}, // Redacting both request and response headers
-        RedactRequestBody: []string{"$.user.password", "$.user.creditCard.number"},
-        RedactResponseBody: []string{"$.message.error"},
-        APIKey: "<APIKEY>",
-    }
+## Error Reporting
 
-    // Initialize the client using your apitoolkit.io generated apikey
-    apitoolkitClient, _ := apitoolkit.NewClient(context.Background(), apitoolkitCfg)
+APItoolkit detects different API issues and anomalies automatically but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
 
-    router := gin.New()
-    // Register with the corresponding middleware of your choice. For Gin router, we use the GinMiddleware method.
-    router.Use(apitoolkitClient.GinMiddleware)
-    // Register your handlers as usual and run the gin server as usual.
-    router.POST("/:slug/test", func(c *gin.Context) {c.String(200, "ok")})
-    router.Run(":8080")
-}
-```
-
-It is important to note that while the `RedactHeaders` config field accepts a list of headers (case insensitive), the `RedactRequestBody` and `RedactResponseBody` expect a list of JSONPath strings as arguments.
-
-The choice of JSONPath was selected to allow you to have great flexibility in describing which fields within your responses are sensitive. Also, note that this list of items to be redacted will be applied to all endpoint requests and responses on your server.
-
-To learn more about JSONPath to help form your queries, please take a look at this cheatsheet: [JSONPath Cheatsheet](https://lzone.de/cheat-sheet/JSONPath)
-
-## Outgoing Requests
-
-To monitor outgoing HTTP requests from your Go application, you can replace the default HTTP client transport with a custom roundtripper.
-
-This allows you to capture and send copies of all incoming and outgoing requests to an apitoolkit server for monitoring and analysis.
-
-Example
+To report errors, use the `ReportError()` method, passing in the `context` and `error` arguments like so:
 
 ```go
 package main
 
 import (
-    "context"
-    "github.com/gin-gonic/gin"
-    apitoolkit "github.com/apitoolkit/apitoolkit-go"
+  "context"
+  "log"
+  "net/http"
+  "github.com/gin-gonic/gin"
+  "github.com/apitoolkit/apitoolkit-go"
 )
 
 func main() {
+  ctx := context.Background()
+  apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"})
+  if err != nil {
+    panic(err)
+  }
 
-  apitoolkitClient, err := apitoolkit.NewClient(context.Background(), apitoolkit.Config{APIKey: "<API KEY>"})
- if err != nil {
-  panic(err)
- }
+  router := gin.New()
+  router.Use(apitoolkitClient.GinMiddleware)
 
- router := gin.New()
+  router.GET("/", hello)
 
- // Register with the corresponding middleware of your choice. For Gin router, we use the GinMiddleware method.
- router.Use(apitoolkitClient.GinMiddleware)
-  router.POST("/:slug/test", func(c *gin.Context) (err error) {
-        // Create a new HTTP client
-        HTTPClient := http.DefaultClient
-
-        // Replace the transport with the custom roundtripper
-        HTTPClient.Transport = client.WrapRoundTripper(
-            c.Request().Context(),
-            HTTPClient.Transport,
-            WithRedactHeaders([]string{}),
-        )
-
-        // Make an outgoing HTTP request using the modified HTTPClient
-        _, _ = HTTPClient.Get("http://localhost:3000/monitored-outgoing-request")
-
-        // Respond to the request
-        c.String(http.StatusOK, "ok")
-    })
+  log.Fatal(router.Start(":8080"))
 }
-```
 
-The provided code demonstrates how to set up the custom roundtripper to replace the default HTTP client's transport.
-
-The resulting HTTP client, `HTTPClient`, is configured to send copies of all incoming and outgoing requests to the apitoolkit servers.
-
-You can use this modified HTTP client for any HTTP requests you need to make from your server, ensuring they are monitored by apitoolkit.
-
-## Report Errors
-
-If you've used sentry, or bugsnag, or rollbar, then you're already familiar with this usecase. But you can report an error to apitoolkit.
-
-The difference is that errors are always associated with a parent request, and helps you query and associate the errors which occured while serving a given customer request.
-
-To request errors to APIToolkit use call the `ReportError` method of `apitoolkit` not the client returned by `apitoolkit.NewClient` with the request context and the error to report
-
-Example
-
-```go
-package main
-
-import (
-    "github.com/gin-gonic/gin"
-    "context"
-   apitoolkit "github.com/apitoolkit/apitoolkit-go"
-)
-
-func main() {
-    r := gin.Default()
- apitoolkitClient, err := apitoolkit.NewClient(context.Background(), apitoolkit.Config{APIKey: "<APIKEY>"})
- if err != nil {
-     panic(err)
- }
-
-    r.Use(apitoolkitClient.GinMiddleware)
-
-    r.GET("/", func(c *gin.Context) {
+func hello(c gin.Context) error {
+  // Attempt to open a non-existing file
   file, err := os.Open("non-existing-file.txt")
-  if err!= nil {
-   // Report an error to apitoolkit
-   apitoolkit.ReportError(c.Request.Context(), err)
+  if err != nil {
+   apitoolkit.ReportError(c.Request().Context(), err)
   }
-        c.String(http.StatusOK, "Hello, World!")
-    })
-
-    r.Run(":8080")
+  log.Println(file)
+  return c.String(http.StatusOK, "Hello, World!")
 }
+```
+
+<div class="callout">
+  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
+  <p>The `ReportError()` method mentioned above is imported from `apitoolkit` and not `apitoolkitClient`.</p>
+</div>
+
+## Monitoring Outgoing Requests
+
+Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="_blank"} page. However, you can separate outgoing requests from others and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="_blank"} page, alongside the incoming request that triggered them.
+
+To monitor outgoing HTTP requests from your application, replace the default HTTP client transport with a custom RoundTripper. This allows you to capture and send copies of all incoming and outgoing requests to APItoolkit. Here's an example of outgoing requests configuration with this SDK:
+
+```go
+package main
+
+import (
+  "context"
+  "log"
+  "net/http"
+  "github.com/gin-gonic/gin"
+  "github.com/apitoolkit/apitoolkit-go"
+)
+
+func main() {
+  ctx := context.Background()
+  apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"})
+  if err != nil {
+    panic(err)
+  }
+
+  router := gin.New()
+  router.Use(client.GinMiddleware)
+
+  router.POST("/:slug/test", func(c gin.Context) (err error) {
+    // Create a new HTTP client
+    HTTPClient := http.DefaultClient
+
+    // Replace the transport with the custom RoundTripper
+    HTTPClient.Transport = client.WrapRoundTripper (
+      c.Request().Context(),
+      HTTPClient.Transport,
+      WithRedactHeaders([]string{"..."}),
+      WithRedactRequestBody([]string{"..."}),
+      WithRedactResponseBody([]string{"..."})
+    )
+
+    // Make an outgoing HTTP request using the modified HTTPClient
+    _, _ = HTTPClient.Get("https://jsonplaceholder.typicode.com/posts/1")
+
+    // Respond to the request
+    c.String(http.StatusOK, "ok")
+  })
+
+  log.Fatal(router.Start(":8080"))
+}
+```
+
+<div class="callout">
+  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
+  <p class="mt-6">You can also redact data with the custom RoundTripper for outgoing requests.</p>
+</div>
+
+```=html
+<hr />
+<a href="https://github.com/apitoolkit/apitoolkit-go" target="_blank" rel="noopener noreferrer" class="w-full btn btn-outline link link-hover">
+    <i class="fa-brands fa-github"></i>
+    Explore the Golang SDK
+</a>
 ```
