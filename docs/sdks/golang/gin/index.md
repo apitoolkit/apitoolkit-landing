@@ -32,7 +32,7 @@ Then add `github.com/apitoolkit/apitoolkit-go` to the list of dependencies like 
 package main
 
 import (
-  "github.com/apitoolkit/apitoolkit-go"
+  apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
 ```
 
@@ -48,7 +48,7 @@ import (
   "log"
   "net/http"
   "github.com/gin-gonic/gin"
-  "github.com/apitoolkit/apitoolkit-go"
+  apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
 
 func main() {
@@ -69,7 +69,7 @@ func main() {
   // Other middleware
 
   router.POST("/:slug/test", func(c gin.Context) error {
-    return c.String(http.StatusOK, "ok")
+    return c.String(http.StatusOK, "Ok, success!")
   })
 
   router.Start(":8080")
@@ -144,7 +144,7 @@ import (
   "context"
   "net/http"
   "github.com/gin-gonic/gin"
-  "github.com/apitoolkit/apitoolkit-go"
+  apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
 
 func main() {
@@ -162,7 +162,7 @@ func main() {
   router.Use(apitoolkitClient.GinMiddleware)
 
   router.POST("/:slug/test", func(c gin.Context) error {
-    return c.String(http.StatusOK, "ok")
+    return c.String(http.StatusOK, "Ok, success!")
   })
 
   router.Start(":8080")
@@ -189,10 +189,12 @@ package main
 
 import (
   "context"
+  "fmt"
   "log"
   "net/http"
+  "os"
   "github.com/gin-gonic/gin"
-  "github.com/apitoolkit/apitoolkit-go"
+  apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
 
 func main() {
@@ -214,7 +216,8 @@ func hello(c gin.Context) error {
   // Attempt to open a non-existing file
   file, err := os.Open("non-existing-file.txt")
   if err != nil {
-   apitoolkit.ReportError(c.Request().Context(), err)
+    // Report the error to APItoolkit
+    apitoolkit.ReportError(c.Request().Context(), err)
   }
   log.Println(file)
   return c.String(http.StatusOK, "Hello, World!")
@@ -240,7 +243,7 @@ import (
   "log"
   "net/http"
   "github.com/gin-gonic/gin"
-  "github.com/apitoolkit/apitoolkit-go"
+  apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
 
 func main() {
@@ -251,26 +254,26 @@ func main() {
   }
 
   router := gin.New()
-  router.Use(client.GinMiddleware)
+  router.Use(apitoolkitClient.GinMiddleware)
 
   router.POST("/:slug/test", func(c gin.Context) (err error) {
     // Create a new HTTP client
     HTTPClient := http.DefaultClient
 
     // Replace the transport with the custom RoundTripper
-    HTTPClient.Transport = client.WrapRoundTripper (
+    HTTPClient.Transport = apitoolkitClient.WrapRoundTripper (
       c.Request().Context(),
       HTTPClient.Transport,
-      WithRedactHeaders([]string{"..."}),
-      WithRedactRequestBody([]string{"..."}),
-      WithRedactResponseBody([]string{"..."})
+      apitoolkit.WithRedactHeaders([]string{"..."}),
+      apitoolkit.WithRedactRequestBody([]string{"..."}),
+      apitoolkit.WithRedactResponseBody([]string{"..."})
     )
 
     // Make an outgoing HTTP request using the modified HTTPClient
     _, _ = HTTPClient.Get("https://jsonplaceholder.typicode.com/posts/1")
 
     // Respond to the request
-    c.String(http.StatusOK, "ok")
+    c.String(http.StatusOK, "Ok, success!")
   })
 
   log.Fatal(router.Start(":8080"))

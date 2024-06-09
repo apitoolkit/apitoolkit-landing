@@ -169,6 +169,7 @@ defmodule HelloWeb.PageController do
       raise("Oops, something went wrong!")
     rescue
       err ->
+        # Report the error to APItoolkit
         report_error(conn, err, __STACKTRACE__)
     end
 

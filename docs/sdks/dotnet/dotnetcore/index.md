@@ -184,7 +184,7 @@ app.MapGet("/error-tracking", async context =>
     }
     catch (Exception error)
     {
-        // Report error to APItoolkit (associated with the request)
+        // Report the error to APItoolkit
         client.ReportError(context, error);
         await context.Response.WriteAsync("Error reported!");
     }
