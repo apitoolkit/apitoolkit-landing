@@ -1,37 +1,55 @@
 ---
-title: Express Js
+title: ExpressJs
+ogTitle: ExpressJs SDK Guide
 date: 2022-03-23
-updatedDate: 2024-05-04
+updatedDate: 2024-06-10
 menuWeight: 2
-ogImage: /assets/img/framework-logos/expressjs-logo.png
 ---
 
-# ExpressJS integration guide
+# ExpressJs SDK Guide
 
-The APIToolkit integration guide for ExpressJS provides a streamlined process to capture incoming traffic data. It collects request information and efficiently forwards it to the APIToolkit servers.
+To integrate your ExpressJs application with APItoolkit, you need to use this SDK to monitor incoming traffic, aggregate the requests, and then send them to APItoolkit's servers. Kindly follow this guide to get started and learn about all the supported features of APItoolkit's **ExpressJs SDK**.
 
-## Integrating in an ExpressJS server
+```=html
+<hr>
+```
 
-1. **Install the necessary packages**
+## Prerequisites
 
-   Use npm or yarn to install `express` and `apitoolkit-express`.
+Ensure you have already completed the first three steps of the [onboarding guide](/docs/onboarding/){target="_blank"}.
 
-   ```bash
-   npm install express apitoolkit-express
-   ```
+## Installation
 
-2. **Setup your server**
+Kindly run the command below to install the SDK:
 
-**ESM example**
+```sh
+npm install apitoolkit-express
 
-```typescript
-import { APIToolkit, ReportError } from "apitoolkit-express";
+# Or
+
+yarn install apitoolkit-express
+```
+
+## Configuration
+
+Next, initialize APItoolkit in your application's entry point (e.g., `index.js`) like so:
+
+<section>
+  <div class="tab-buttons">
+      <div class="tab-button active" onclick="openTab(event, 'Tab1')">ESM</div>
+      <div class="tab-button" onclick="openTab(event, 'Tab2')">CommonJs</div>
+  </div>
+  <div id="Tab1" class="tab-content active">
+
+```js
+import { APIToolkit } from "apitoolkit-express";
 import express from "express";
 import axios from "axios";
 
 const app = express();
 const port = 3000;
-const apitoolkitClient = APIToolkit.NewClient({ apiKey: "<API-KEY>" });
+
+const apitoolkitClient = APIToolkit.NewClient({ apiKey: "{ENTER_YOUR_API_KEY_HERE}" });
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -41,10 +59,10 @@ app.get("/", (req, res) => {
   res.json({ hello: "Hello world!" });
 });
 
-app.listen(port, () => console.log("app running on port: " + port));
+app.listen(port, () => console.log("App running on port: " + port));
 ```
-
-**CommonJs Example**
+  </div>
+  <div id="Tab2" class="tab-content">
 
 ```js
 const express = require("express");
@@ -54,12 +72,11 @@ const app = express();
 const port = 3000;
 
 const apitoolkitClient = APIToolkit.NewClient({
-  apiKey: "&ltAPI_KEY&gt",
+  apiKey: "{ENTER_YOUR_API_KEY_HERE}",
 });
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
 app.use(apitoolkitClient.expressMiddleware);
 
 app.get("/", (req, res) => {
@@ -67,34 +84,89 @@ app.get("/", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log("Example app listening on port: " + port);
+  console.log("App running on port: " + port);
 });
 ```
+  </div>
+</section>
 
-**Note**: Replace `&ltAPI_KEY&gt` with your unique key from your [APIToolkit account](apitoolkit.io)
+<div class="callout">
+  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
+  <p>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</p>
+</div>
 
-## Redacting Sensitive Fields and Headers
+## Redacting Sensitive Data
 
-While it's possible to mark a field as redacted from the apitoolkit dashboard, this client also supports redacting at the client side. Client side redacting means that those fields would never leave your servers at all. So you feel safer that your sensitive data only stays on your servers.
+If you have fields that are sensitive and should not be sent to APItoolkit servers, you can mark those fields to be redacted  (the fields will never leave your servers).
 
-To mark fields that should be redacted, simply add them to the apitoolkit config object. Eg:
+To mark a field for redacting via this SDK, you need to add some additional arguments to the `apitoolkitClient` config object with paths to the fields that should be redacted. There are three arguments you can provide to configure what gets redacted, namely:
+
+1. `redactHeaders`:  A list of HTTP header keys.
+2. `redactRequestBody`: A list of JSONPaths from the request body.
+3. `redactResponseBody`: A list of JSONPaths from the response body.
+
+<hr />
+JSONPath is a query language used to select and extract data from JSON files. For example, given the following sample user data JSON object:
+
+```JSON
+{
+  "user": {
+    "name": "John Martha",
+    "email": "john.martha@example.com",
+    "addresses": [
+      {
+        "street": "123 Main St",
+        "city": "Anytown",
+        "state": "CA",
+        "zip": "12345"
+      },
+      {
+        "street": "123 Main St",
+        "city": "Anytown",
+        "state": "CA",
+        "zip": "12345"
+      },
+      ...
+    ],
+    "credit_card": {
+      "number": "4111111111111111",
+      "expiration": "12/28",
+      "cvv": "123"
+    }
+  },
+  ...
+}
+```
+
+Examples of valid JSONPaths would be:
+
+- `$.user.credit_card` (In this case, APItoolkit will replace the `addresses` field inside the `user` object with the string `[CLIENT_REDACTED]`).
+- `$.user.addresses[*].zip` (In this case, APItoolkit will replace the `zip` field in all the objects of the `addresses` list inside the `user` object with the string `[CLIENT_REDACTED]`).
+
+<div class="callout">
+  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
+  <p>To learn more about JSONPaths, please take a look at the [official docs](https://github.com/json-path/JsonPath/blob/master/README.md){target="_blank"}. You can also use this [JSONPath Evaluator](https://jsonpath.com?utm_source=apitoolkit){target="_blank"} to validate your JSONPaths.</p>
+</div>
+<hr />
+
+Here's an example of what the configuration would look like with redacted fields:
 
 ```js
 import express from "express";
 import { APIToolkit } from "apitoolkit-express";
+
 const app = express();
 const port = 3000;
 
 const apitoolkitClient = await APIToolkit.NewClient({
-  apiKey: "<API-KEY>",
-  redactHeaders: ["Content-Type", "Authorization", "Cookies"], // Specified headers will be redacted
-  redactRequestBody: ["$.credit-card.cvv", "$.credit-card.name"], // Specified request bodies fields will be redacted
-  redactResponseBody: ["$.message.error"], // Specified response body fields will be redacted
+  apiKey: "{ENTER_YOUR_API_KEY_HERE}",
+  redactHeaders: ["Content-Type", "Authorization", "HOST"],
+  redactRequestBody: ["$.user.email", "$.user.addresses"], 
+  redactResponseBody: ["$.users[*].email", "$.users[*].credit_card"]
 });
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
 app.use(apitoolkitClient.expressMiddleware);
 
 app.get("/", (req, res) => {
@@ -102,21 +174,24 @@ app.get("/", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log("Example app listening on port " + port);
+  console.log("App running on port " + port);
 });
 ```
 
-It is important to note that while the `redactHeaders` config field accepts a list of headers(case insensitive), the `redactRequestBody` and `redactResponseBody` expect a list of JSONPath strings as arguments.
+<div class="callout">
+  <p><i class="fa-regular fa-circle-info"></i> <b>Note</b></p>
+  <ul>
+    <li>The `redactHeaders` config field expects a list of <b>case-insensitive headers as strings</b>.</li>
+    <li>The `redactRequestBody` and `redactResponseBody` config fields expect a list of <b>JSONPaths as strings</b>.</li>
+    <li>The list of items to be redacted will be applied to all endpoint requests and responses on your server.</li>
+  </ul>
+</div>
 
-The choice of JSONPath was selected to allow you have great flexibility in describing which fields within your responses are sensitive. Also note that these list of items to be redacted will be applied to all endpoint requests and responses on your server. To learn more about jsonpath, please take a look at this [cheat-sheet.](https://lzone.de/cheat-sheet/JSONPath)
+## Handling File Uploads
 
-## Handling File Uploads with Formidable
+If you handling file uploads in your application using a framework, you might need to add some extra configuration to ensure that the request object contains all the parsed data, enabling accurate monitoring of file uploads across your application.
 
-Working with file uploads using the `multer` package is quite straightforward and requires no manual intervention, making it seamless to send multipart/form-data requests to APIToolkit.
-
-However, if you choose to employ `formidable` for managing file uploads, a more hands-on approach becomes necessary to ensure proper data transmission to APIToolkit. Without manual intervention, no data is dispatched, potentially hindering the accurate monitoring of the endpoint. To enable this functionality, developers must attach both the `fields` and `files` extracted from the `form.parse` method to the request object.
-
-For instance:
+Working with file uploads using [multer](https://npmjs.com/package/multer){target="_blank" rel="noopener noreferrer"} for example requires no extra work since the parsed data (`fields` and `files`) are attached to the request object in multipart/form-data requests. However, if you're using [formidable](https://npmjs.com/package/formidable){target="_blank" rel="noopener noreferrer"}, you need to attach the parsed data yourself to ensure accurate monitoring. Here's an example:
 
 ```js
 import express from "express";
@@ -124,13 +199,14 @@ import { APIToolkit } from "apitoolkit-express";
 import formidable from "formidable";
 
 const app = express();
+const port = 3000;
+
 const client = APIToolkit.NewClient({
-  apiKey: "&ltAPI_KEY&gt",
+  apiKey: "{ENTER_YOUR_API_KEY_HERE}",
 });
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
 app.use(client.expressMiddleware);
 
 app.post("/upload-formidable", (req, res, next) => {
@@ -138,175 +214,73 @@ app.post("/upload-formidable", (req, res, next) => {
   form.parse(req, (err, fields, files) => {
     // Attach fields to request body
     req.body = fields;
-    // Attach files
+    // Attach files to request body
     req.files = files;
 
-    res.json({ message: "Uploaded successfully" });
+    res.json({ message: "Uploaded successfully!" });
   });
 });
 
-app.listen(3000, () => {
-  console.log("Server is running on port 3000");
+app.listen(port, () => {
+  console.log("App running on port " + port);
 });
 ```
 
-By executing this procedure, APIToolkit gains access to non-redacted fields and files, thereby enhancing the precision of monitoring and documentation processes. This method ensures that all necessary data is accessible and correctly relayed to APIToolkit for thorough analysis and documentation.
+## Error Reporting
 
-## Using apitoolkit to observe an axios based outgoing request
+APItoolkit detects different API issues and anomalies automatically but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
 
-### Global Monitoring of Axios Requests
+### Report All Errors
 
-To enable global monitoring of all Axios requests with APIToolkit, import the Axios instance into the `NewClient` options.
-
-Example:
-
-```typescript
-import APIToolkit from "apitoolkit-express";
-import axios from "axios";
-import express from "express";
-
-const app = express();
-const apitoolkitClient = APIToolkit.NewClient({
-  apiKey: "<API-KEY>",
-  monitorAxios: axios,
-});
-app.use(apitoolkitClient.expressMiddleware);
-
-app.get("/", async (req, res) => {
-  // This Axios request will be monitored and logged in the APIToolkit log explorer
-  const response = await axios.get(baseURL + "users/123");
-  res.send(response.data);
-});
-```
-
-### Monitoring a Specific Axios Request
-
-To monitor a specific Axios request, use the `observeAxios` function from APIToolkit. This approach offers greater flexibility, such as specifying URL path patterns for requests with dynamic routes.
-
-Example:
-
-```typescript
-import APIToolkit, { observeAxios } from "apitoolkit-express";
-import axios from "axios";
-import express from "express";
-
-const app = express();
-const apitoolkitClient = APIToolkit.NewClient({ apiKey: "<API-KEY>" });
-app.use(apitoolkitClient.expressMiddleware);
-
-app.get("/", async (req, res) => {
-  // This specific Axios request will be monitored
-  const response = await observeAxios(axios).get(baseURL + "users/123");
-  res.send(response.data);
-});
-```
-
-### Monitoring routes with dynamic paths
-
-If you're making requests to endpoints which have variable urlPaths, you should include a wildcard url of the path, so that apitoolkit groups the endpoints correctly for you on the dashboardL:
-
-```typescript
-import { observeAxios } from "apitoolkit-express";
-import axios from "axios";
-import express from "express";
-
-const app = express();
-const apitoolkitClient = APIToolkit.NewClient({ apiKey: "<API-KEY>" });
-app.use(apitoolkitClient.expressMiddleware);
-
-app.get("/", (req, res) => {
-  const response = await observeAxios(axios, "/users/{user_id}").get(
-    "http://localhost:8080/users/user1234"
-  );
-  res.send(response.data);
-});
-```
-
-There are other optional arguments you could pass on to the observeAxios function, eg:
-
-```typescript
-import { observeAxios } from "apitoolkit-express";
-import axios from "axios";
-
-const redactHeadersList = ["Content-Type", "Authorization"];
-const redactRequestBodyList = ["$.body.bla.bla"];
-const redactResponseBodyList = undefined;
-
-app.get("/", (req, res) => {
-  const response = await observeAxios(
-    axios,
-    "/users/{user_id}",
-    redactHeadersList,
-    redactRequestBodyList,
-    redactResponseBodyList
-  ).get("http://localhost:8080/users/user1234");
-
-  res.send(response.data);
-});
-```
-
-Note that you can ignore any of these arguments except the first argument which is the axios instance to observe.
-For the other arguments, you can either skip them if at the end, or use undefined as a placeholder.
-
-### Observing request outside incoming request context
-
-Monitoring outgoing requests inside an incoming request' context associates both request in the dashboard. You can also monitor outgoing requests outside an incoming requests' context in a background job for example. To achieve this, instead of calling `observeAxios` as a standalone function
-use the method on the APIToolkit client after initialization
-
-Example
+To report all uncaught errors that happened during a request, you can use the `errorHandler` middleware immediately after your app's controllers like so:
 
 ```js
-import axios from "axios";
-import { APIToolkit } from "apitoolkit-express";
-
-const apitoolkitClient = APIToolkit.NewClient({
-  apiKey: "&ltAPI_KEY&gt",
-});
-// using the above initialized client,
-// you can monitor outgoing requests anywhere in your application.
-const response = await apitoolkitClient
-  .observeAxios(axios)
-  .get("http://localhost:8080/ping");
-console.log(response.data);
-```
-
-The above request will show in the log explorer as a standalone outgoing request
-
-## Reporting errors to APIToolkit
-
-APIToolkit detects a lot of API issues automatically, but it's also valuable to report and track errors. This helps you associate more details about the backend with a given failing request.
-If you've used sentry, or rollback, or bugsnag, then you're likely aware of this functionality.
-
-To enable automatic error reporting, add the APIToolkit `errorHandler` middleware immediately after your app's controllers and APIToolkit will handle all uncaught errors that happened during a request and associate the error to that request.
-
-```typescript
 import { APIToolkit, ReportError } from "apitoolkit-express";
 import express from "express";
 import axios from "axios";
 
 const app = express();
 const port = 3000;
-const apitoolkitClient = APIToolkit.NewClient({ apiKey: "<API-KEY>" });
+
+const apitoolkitClient = APIToolkit.NewClient({ apiKey: "{ENTER_YOUR_API_KEY_HERE}" });
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(apitoolkitClient.expressMiddleware);
 
-// All controllers should live here
+// All controllers
 app.get("/", (req, res) => {});
-// ...
+// Other controllers...
 
-// The error handler must be before any other error middleware and after all controllers
+// Add the error handler
 app.use(apitoolkitClient.errorHandler);
+
+app.listen(port, () => {
+  console.log("App running on port " + port);
+});
 ```
 
-Or manually report errors within the context of a web request, by calling the ReportError function.
+<div class="callout">
+  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
+  <p>Ensure to add the error handler before any other error middleware and after all controllers.</p>
+</div>
 
-```typescript
+### Report Specific Errors
+
+To manually report errors within the context of a web request handler, use the `ReportError()` function like so:
+
+```js
 import { APIToolkit, ReportError } from "apitoolkit-express";
 import express from "express";
 import axios from "axios";
 
 const app = express();
 const port = 3000;
-const apitoolkitClient = APIToolkit.NewClient({ apiKey: "<API-KEY>" });
+
+const apitoolkitClient = APIToolkit.NewClient({ apiKey: "{ENTER_YOUR_API_KEY_HERE}" });
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(apitoolkitClient.expressMiddleware);
 
 app.get("/", (req, res) => {
@@ -314,14 +288,20 @@ app.get("/", (req, res) => {
     const response = await observeAxios(axios).get(baseURL + "/ping");
     res.send(response);
   } catch (error) {
+    // Report the error to APItoolkit
     ReportError(error);
-    res.send("Something went wrong");
+    res.send("Something went wrong...");
   }
+});
+
+app.listen(port, () => {
+  console.log("App running on port " + port);
 });
 ```
 
-This works automatically from within a web request which is wrapped by the apitoolkit middleware. But if called from a background job, ReportError will not know how to actually Report the Error.
-In that case, you can call ReportError, but on the apitoolkit client, instead.
+### Report Specific Errors (Background Job)
+
+If your request is called from a background job for example (outside the web request handler and hence, not wrapped by APItoolkit's middleware), using `ReportError()` directly from `apitoolkit-express` will not be available. Instead, call `ReportError()` from `apitoolkitClient` like so:
 
 ```js
 import {APIToolkit , ReportError } from "apitoolkit-express";
@@ -330,7 +310,9 @@ import axios from "axios"
 
 const app = express();
 const port = 3000;
-const apitoolkitClient = APIToolkit.NewClient({apiKey: "<API-KEY>"});
+
+const apitoolkitClient = APIToolkit.NewClient({apiKey: "{ENTER_YOUR_API_KEY_HERE}"});
+
 app.use(apitoolkitClient.expressMiddleware);
 
 app.get("/", (req, res) => {
@@ -338,8 +320,152 @@ app.get("/", (req, res) => {
   const response = await observeAxios(axios).get(baseURL + "/ping");
   res.send(response);
 } catch (error) {
+  // Report the error to APItoolkit
   apitoolkitClient.ReportError(error);
-  res.send("Something went wrong")
+  res.send("Something went wrong...")
 }
 });
+
+app.listen(port, () => {
+  console.log("App running on port " + port);
+});
+```
+
+## Monitoring Outgoing Requests
+
+Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="_blank"} page. However, you can separate outgoing requests from others and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="_blank"} page, alongside the incoming request that triggered them.
+
+### Monitor All Requests
+
+To enable global monitoring of all axios requests with APItoolkit, import the axios instance into the `apitoolkitClient` configuration options like so:
+
+```js
+import APIToolkit from "apitoolkit-express";
+import axios from "axios";
+import express from "express";
+
+const app = express();
+const port = 3000;
+
+const apitoolkitClient = APIToolkit.NewClient({
+  apiKey: "{ENTER_YOUR_API_KEY_HERE}",
+  monitorAxios: axios,
+});
+
+app.use(apitoolkitClient.expressMiddleware);
+
+app.get("/", async (req, res) => {
+  // This outgoing axios request will be monitored
+  const response = await axios.get(baseURL + "users/123");
+  res.send(response.data);
+});
+
+app.listen(port, () => {
+  console.log("App running on port " + port);
+});
+```
+
+### Monitor Specific Requests
+
+To monitor a specific axios request within the context of a web request handler, wrap your axios instance with the APIToolkit `observeAxios()` function like so:
+
+```js
+import APIToolkit, { observeAxios } from "apitoolkit-express";
+import axios from "axios";
+import express from "express";
+
+const app = express();
+const port = 3000;
+
+const apitoolkitClient = APIToolkit.NewClient({ apiKey: "{ENTER_YOUR_API_KEY_HERE}" });
+
+app.use(apitoolkitClient.expressMiddleware);
+
+const pathWildCard = "/users/{user_id}";
+const redactHeadersList = ["Content-Type", "Authorization", "HOST"];
+const redactRequestBodyList = ["Content-Type", "Authorization", "HOST"];
+const redactResponseBodyList = ["$.users[*].email", "$.users[*].credit_card"];
+
+app.get("/", (req, res) => {
+  const response = await observeAxios(
+    axios,
+    pathWildCard,
+    redactHeadersList,
+    redactRequestBodyList,
+    redactResponseBodyList
+  ).get(baseURL + "/users/user1234");
+  res.send(response.data);
+});
+
+app.listen(port, () => {
+  console.log("App running on port " + port);
+});
+```
+
+<div class="callout">
+  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
+  <p class="mt-6">The `observeAxios` function accepts a required `axios` instance and the following optional fields:</p>
+  <ul>
+    <li>`pathWildCard`: The `url_path` for URLs with path parameters.</li>
+    <li>`redactHeaders`: A string list of headers to redact.</b></li>
+    <li>`redactResponseBody`: A string list of JSONPaths to redact from the response body.</li>
+    <li>`redactRequestBody`: A string list of JSONPaths to redact from the request body.</li>
+  </ul>
+</div>
+
+### Monitor Specific Requests (Background Job)
+
+If your outgoing request is called from a background job for example (outside the web request handler and hence, not wrapped by APItoolkit's middleware), using `observeAxios` directly from `apitoolkit-express` will not be available. Instead, call `observeAxios` from `apitoolkitClient` like so:
+
+```js
+import axios from "axios";
+import { APIToolkit } from "apitoolkit-express";
+
+const apitoolkitClient = APIToolkit.NewClient({
+  apiKey: "{ENTER_YOUR_API_KEY_HERE}",
+});
+
+const response = await apitoolkitClient
+  .observeAxios(axios)
+  .get("http://localhost:8080/ping");
+console.log(response.data);
+```
+
+```=html
+<hr />
+<a href="https://github.com/apitoolkit/apitoolkit-express" target="_blank" rel="noopener noreferrer" class="w-full btn btn-outline link link-hover">
+    <i class="fa-brands fa-github"></i>
+    Explore the ExpressJS SDK
+</a>
+```
+
+```=html
+    <script>
+        function openTab(event, tabName) {
+            let i, tabcontent, tablinks;
+
+            // Hide all tab content
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tabcontent[i].classList.remove("active");
+            }
+
+            // Remove the active class from all tab buttons
+            tablinks = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+
+            // Show the current tab's content and add active class to the button
+            document.getElementById(tabName).style.display = "block";
+            document.getElementById(tabName).classList.add("active");
+            event.currentTarget.classList.add("active");
+        }
+
+        // Initialize the first tab to be visible
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelector(".tab-button").click();
+        });
+    </script>
 ```

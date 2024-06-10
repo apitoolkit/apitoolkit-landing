@@ -24,6 +24,10 @@ Kindly run the command below to install the SDK:
 
 ```sh
 npm install apitoolkit-adonis@latest
+
+# Or
+
+npm install apitoolkit-adonis@latest
 ```
 
 ## Configuration
@@ -186,6 +190,7 @@ router.get("/observer", async () => {
   try {
     throw ("Error occurred!");
   } catch (error) {
+    // Report the error to APItoolkit
     reportError(error);
   }
   return { hello: "world" };
@@ -222,9 +227,8 @@ Route.get('/observer', async () => {
     pathWildCard,
     redactHeadersList,
     redactRequestBodyList,
-    redactResponseBodyList,
-  ).get(baseURL + "/users/user1234",
-);
+    redactResponseBodyList
+  ).get(baseURL + "/users/user1234");
   return {hello: "hello world"}
 })
 ```
