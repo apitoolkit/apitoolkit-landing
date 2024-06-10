@@ -23,11 +23,7 @@ Ensure you have already completed the first three steps of the [onboarding guide
 Kindly run the command below to install the SDK:
 
 ```sh
-# For adonis v6 (latest)
 npm install apitoolkit-adonis@latest
-
-# For adonis v5
-npm install apitoolkit-adonis@v2.2.0
 ```
 
 ## Configuration
