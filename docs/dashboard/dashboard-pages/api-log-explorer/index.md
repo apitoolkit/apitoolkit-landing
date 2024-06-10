@@ -28,7 +28,18 @@ On this page, you will find a list of all the requests tracked from your API inc
 
 ## Query Results
 
-You can query the returned data using one or more fields from the request (`status_code`, `host`, `request_body`, `has_errors`, `request_type`, etc.).
+You can filter the data displayed on the API Log Explorer using one or more fields from the request (`status_code`, `host`, `request_body`, `method`, `request_type`, etc.) using the following comparison symbols:
+
+:::
+| Symbol | Description |
+| :-: | :-: |
+| **==** | **Equals** to another value. |
+| **!=** | **Not equal** to another value. |
+| **>** | **Greater than** another value. |
+| **<** | **Less than** another value. |
+| **>=** | **Greater than or equal** to another value. |
+| **<=** | **Less than or equal** to another value. |
+:::
 
 There are two query filtering options, the **manual selector mode** and the **editor mode**.
 
@@ -36,7 +47,7 @@ You can manually add filters by selecting the fields and sub-fields you want and
 
 ![Screenshot of APItoolkit's API log explorer page](/docs/dashboard/dashboard-pages/api-log-explorer/screen-3.png)
 
-Alternatively, you can toggle the **Use editor** button, use the text editor to write the query (as you would an SQL query), and click the **Run Query** button as seen in the image below.
+Alternatively, you can toggle the **Use editor** button, use the text editor to write the query as text and click the **Run Query** button as seen in the image below.
 
 ![Screenshot of APItoolkit's API log explorer page](/docs/dashboard/dashboard-pages/api-log-explorer/screen-4.png)
 
