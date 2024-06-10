@@ -35,7 +35,7 @@ To install the SDK, kindly add the following dependency to your `pom.xml` file w
 First, add your APItoolkit API key to the `application.properties` file like so:
 
 ```sh
-apitoolkit.apikey={ENTER_YOUR_API_KEY_HERE};
+apitoolkit.apikey={ENTER_YOUR_API_KEY_HERE}
 
 # Other configuation options
 apitoolkit.debug=false # Set to true to enable debug mode
@@ -134,9 +134,9 @@ Here's an example of what the configuration would look like with redacted fields
 ```sh
 apitoolkit.apikey={ENTER_YOUR_API_KEY_HERE};
 
-apitoolkit.redactHeaders=Authorization,Cookie,accept,accept-encoding;
-apitoolkit.redactRequestBody=$.user.email,$.user.addresses;
-apitoolkit.redactResponseBody=$.users[*].email,$.users[*].credit_card;
+apitoolkit.redactHeaders=content-type,Authorization,HOST
+apitoolkit.redactRequestBody=$.user.email,$.user.addresses
+apitoolkit.redactResponseBody=$.users[*].email,$.users[*].credit_card
 ```
 
 <div class="callout">

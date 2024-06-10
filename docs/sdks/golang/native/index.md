@@ -143,7 +143,7 @@ func main() {
   ctx := context.Background()
 
   apitoolkitCfg := apitoolkit.Config {
-    RedactHeaders: []string{"Content-Type", "Authorization", "Cookies"},
+    RedactHeaders: []string{"content-type", "Authorization", "HOST"},
     RedactRequestBody: []string{"$.user.email", "$.user.addresses"},
     RedactResponseBody: []string{"$.users[*].email", "$.users[*].credit_card"},
     APIKey: "{ENTER_YOUR_API_KEY_HERE}",

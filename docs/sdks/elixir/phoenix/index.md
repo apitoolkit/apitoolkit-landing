@@ -126,7 +126,7 @@ defmodule HelloWeb.Router do
     plug ApitoolkitPhoenix,
       config: %{
         api_key: "{ENTER_YOUR_API_KEY_HERE}",
-        redact_headers: ["accept-language", "cookie", "x-csrf-token"]
+        redact_headers: ["content-type", "Authorization", "HOST"]
         redact_request_body: ["$.user.email", "$.user.addresses"]
         redact_response_body: ["$.users[*].email", "$.users[*].credit_card"]
       }

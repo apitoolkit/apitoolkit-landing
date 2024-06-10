@@ -124,7 +124,7 @@ var config = new Config
 {
     Debug = true, # Set debug flags to false in production
     ApiKey = "{ENTER_YOUR_API_KEY_HERE}",
-    RedactHeaders = new List<string> { "HOST", "CONTENT-TYPE" },
+    RedactHeaders = new List<string> { "content-type", "Authorization", "HOST" },
     RedactRequestBody = new List<string> { "$.user.email", "$.user.addresses" },
     RedactResponseBody = new List<string> { "$.users[*].email", "$.users[*].credit_card" }
 };
