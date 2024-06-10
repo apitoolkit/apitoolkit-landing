@@ -6,9 +6,15 @@ menuWeight: 3
 pageFullWidth: true
 hideToc: true
 pages:
+  - title: Go Chi
+    slug: /docs/sdks/golang/chi
+    icon: /assets/img/framework-logos/chi-logo.svg
   - title: Go Echo
     slug: /docs/sdks/golang/echo
     icon: /assets/img/framework-logos/echo-logo.png
+  - title: Go Fiber
+    slug: /docs/sdks/golang/fiber
+    icon: /assets/img/framework-logos/fiber-logo.svg
   - title: Go Gin
     slug: /docs/sdks/golang/gin
     icon: /assets/img/framework-logos/gin-logo.png
