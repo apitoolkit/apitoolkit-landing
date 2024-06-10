@@ -181,7 +181,7 @@
       }
 
       /*
-      Do not remove. 
+      DO NOT REMOVE 
       This is for the images in integration-footer.liquid 
       */
       button img {
@@ -191,6 +191,31 @@
       div #sdk-images img {
         border-width: 0px !important;
         --tw-drop-shadow: none !important;
+      }
+
+      /* Styling for tabs component */
+      .tab-buttons {
+          display: flex;
+      }
+      .tab-button {
+        padding: 10px 20px;
+        cursor: pointer;
+        border: 1px solid #ccc;
+        border-bottom: none;
+        border-radius: 5px 5px 0 0;
+        margin-right: 5px;
+      }
+      .tab-button.active {
+        border-bottom: 2px solid #377cfb;
+      }
+      .tab-content {
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 0 5px 5px 5px;
+        display: none;
+      }
+      .tab-content.active {
+        display: block;
       }
     </style>
 

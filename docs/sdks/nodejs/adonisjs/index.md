@@ -1,51 +1,73 @@
 ---
-title: Adonis Js
+title: AdonisJs
+ogTitle: AdonisJs SDK Guide
 date: 2022-03-23
-updatedDate: 2024-05-04
+updatedDate: 2024-06-10
 menuWeight: 1
-ogImage: /assets/img/framework-logos/adonisjs-logo.png
 ---
 
-# Adonis JS Integration
+# AdonisJs SDK Guide
 
-The APIToolkit integration guide for AdonisJS provides a streamlined process to
-capture incoming traffic data. It collects request information and efficiently
-forwards it to the APIToolkit servers.
+To integrate your AdonisJs application with APItoolkit, you need to use this SDK to monitor incoming traffic, aggregate the requests, and then send them to APItoolkit's servers. Kindly follow this guide to get started and learn about all the supported features of APItoolkit's **AdonisJs SDK**.
 
-## APIToolkit Adonisjs integration
+```=html
+<hr>
+```
 
-The Adonisjs SDK integration guide for APIToolkit. It monitors incoming traffic,
-gathers the requests, and sends the request to the API toolkit servers.
+## Prerequisites
 
-### Installation
+Ensure you have already completed the first three steps of the [onboarding guide](/docs/onboarding/){target="_blank"}.
 
-Run the following command to install the package from your projects root:
+## Installation
 
-#### For adonis v5
+Kindly run the command below to install the SDK:
+
 ```sh
+# For adonis v6 (latest)
+npm install apitoolkit-adonis@latest
+
+# For adonis v5
 npm install apitoolkit-adonis@v2.2.0
 ```
 
-#### For adonis v6
-```sh
-npm install apitoolkit-adonis@latest
-```
+## Configuration
 
-### Configure the adonis package using ace
-
-After installing the `apitoolkit-adonis` SDK, run the following command to
-configure it in your adonis project
+First, run the command below to configure the SDK using ace:
 
 ```bash
 node ace configure apitoolkit-adonis
 ```
 
-### Register the middleware
+Then, register the middleware like so:
 
-#### For adonis v5
-Add `@ioc:APIToolkit` to your global middlewares list in the
-`start/kernel.ts` file
+<section>
+  <div class="tab-buttons">
+      <div class="tab-button active" onclick="openTab(event, 'Tab1')">Adonis v6 (latest)</div>
+      <div class="tab-button" onclick="openTab(event, 'Tab2')">Adonis v5</div>
+  </div>
+  <div id="Tab1" class="tab-content active">
+    Add `apitoolkit-adonis` to your global middleware list in the `start/kernel.ts` file like so:
+        
+```js
+server.use([
+  () => import('apitoolkit-adonis'),
+])
+```
 
+    Then, create an `apitoolkit.js|ts` file in the `/conf` directory and export the `defineConfig` object with some properties like so:
+
+```js
+import { defineConfig } from 'apitoolkit-adonis'
+
+export default defineConfig({
+  apiKey: "{ENTER_YOUR_API_KEY_HERE}",
+  debug: false,
+})
+```
+  </div>
+  <div id="Tab2" class="tab-content">
+    Add `@ioc:APIToolkit` to your global middleware list in the `start/kernel.ts` file like so:
+          
 ```js
 Server.middleware.register([
   () => import('@ioc:Adonis/Core/BodyParser'),
@@ -53,75 +75,77 @@ Server.middleware.register([
 ])
 ```
 
-#### For adonis v6
-Add `apitoolkit-adonis` to your global middlewares list in the
-`start/kernel.ts` file
-```js
-server.use([
-  () => import('apitoolkit-adonis'),
-])
-```
+    Then, create an `apitoolkit.js|ts` file in the `/conf` directory and export an `apitoolkitConfig` object with some properties like so:
 
-### Configuration
-
-To configure the sdk first create an `apitoolkit.ts` file in the `/conf`
-directory and export a `apitoolkitConfig` object with the following properties
-
-- **apiKey**: `required` This API key can be generated from your
-  [APIToolkit acount](https://app.apitoolkit.io)
-  
-- **redactHeaders**: `optional` This is an array of request and response headers
-  that should be omited by APIToolkit
-  
-- **redactRequestBody**: `optional` An array of request body keypaths to be
-  redacted (i.e should not leave your servers)
-  
-- **redactResponseBody**: `optional` An array of reponse body keypaths to be
-  redacted
-  
-- **serviceVersion**: `optional` A string service version to help you monitor
-  different versions of your deployments
-  
-- **tags**: `optional` An array of tags to be associated with a request
-  
-- **debug**: `optional` A boolean to enable debug mode (ie print debug
-  information)
-  
-- **disable**: `optional` A boolean to disable the sdk by setting it to `true`
-
-To configure, the default export of `/conf/apitoolkit` should contain all
-necessary properties eg:
-
-#### For adonis v5
 ```js
 export const apitoolkitConfig = {
-  apiKey: "&lt;YOUR_API_KEY&gt;",
+  apiKey: "{ENTER_YOUR_API_KEY_HERE}",
 };
 ```
+  </div>
+</section>
 
-#### For adonis v6 
-```js
-import { defineConfig } from 'apitoolkit-adonis'
+<div class="callout">
+  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
+  <p>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</p>
+</div>
 
-export default defineConfig({
-  apiKey: '<YOUR_API_KEY>',
-  debug: false,
-})
+## Redacting Sensitive Data
+
+If you have fields that are sensitive and should not be sent to APItoolkit servers, you can mark those fields to be redacted  (the fields will never leave your servers).
+
+To mark a field for redacting via this SDK, you need to add some additional arguments to the default export object in the `conf/apitoolkit.js|ts` file with paths to the fields that should be redacted. There are three arguments you can provide to configure what gets redacted, namely:
+
+1. `redactHeaders`:  A list of HTTP header keys.
+2. `redactRequestBody`: A list of JSONPaths from the request body.
+3. `redactResponseBody`: A list of JSONPaths from the response body.
+
+<hr />
+JSONPath is a query language used to select and extract data from JSON files. For example, given the following sample user data JSON object:
+
+```JSON
+{
+  "user": {
+    "name": "John Martha",
+    "email": "john.martha@example.com",
+    "addresses": [
+      {
+        "street": "123 Main St",
+        "city": "Anytown",
+        "state": "CA",
+        "zip": "12345"
+      },
+      {
+        "street": "123 Main St",
+        "city": "Anytown",
+        "state": "CA",
+        "zip": "12345"
+      },
+      ...
+    ],
+    "credit_card": {
+      "number": "4111111111111111",
+      "expiration": "12/28",
+      "cvv": "123"
+    }
+  },
+  ...
+}
 ```
 
-After configuring the sdk, all incoming request will now be send to APIToolkit.
+Examples of valid JSONPaths would be:
 
-## Redacting Senstive Fields and Headers
+- `$.user.credit_card` (In this case, APItoolkit will replace the `addresses` field inside the `user` object with the string `[CLIENT_REDACTED]`).
+- `$.user.addresses[*].zip` (In this case, APItoolkit will replace the `zip` field in all the objects of the `addresses` list inside the `user` object with the string `[CLIENT_REDACTED]`).
 
-While it's possible to mark a field as redacted from the apitoolkit dashboard,
-this client also supports redacting at the client side.
+<div class="callout">
+  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
+  <p>To learn more about JSONPaths, please take a look at the [official docs](https://github.com/json-path/JsonPath/blob/master/README.md){target="_blank"}. You can also use this [JSONPath Evaluator](https://jsonpath.com?utm_source=apitoolkit){target="_blank"} to validate your JSONPaths.</p>
+</div>
+<hr />
 
-Client side redacting
-means that those fields would never leave your servers at all. So you feel safer
-that your sensitive data only stays on your servers.
+Here's an example of what the configuration would look like with redacted fields:
 
-To mark fields that should be redacted, simply add them to the
-`conf/apitoolkit.(js,ts)` default export object. Eg:
 
 ```js
 export const apitoolkitConfig = {
@@ -250,3 +274,34 @@ Route.get("/observer", async () => {
   return { hello: "world" };
 });
 ```
+
+```=html
+    <script>
+        function openTab(event, tabName) {
+            let i, tabcontent, tablinks;
+
+            // Hide all tab content
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tabcontent[i].classList.remove("active");
+            }
+
+            // Remove the active class from all tab buttons
+            tablinks = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+
+            // Show the current tab's content and add active class to the button
+            document.getElementById(tabName).style.display = "block";
+            document.getElementById(tabName).classList.add("active");
+            event.currentTarget.classList.add("active");
+        }
+
+        // Initialize the first tab to be visible
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelector(".tab-button").click();
+        });
+    </script>
+    ```
