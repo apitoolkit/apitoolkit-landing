@@ -42,7 +42,7 @@ Then, register the middleware like so:
       <div class="tab-button" onclick="openTab(event, 'Tab2')">Adonis v5</div>
   </div>
   <div id="Tab1" class="tab-content active">
-    Add `apitoolkit-adonis` to your global middleware list in the `start/kernel.ts` file like so:
+    Add `apitoolkit-adonis` to your global middleware list in the `start/kernel.js|ts` file like so:
         
 ```js
 server.use([
@@ -62,7 +62,7 @@ export default defineConfig({
 ```
   </div>
   <div id="Tab2" class="tab-content">
-    Add `@ioc:APIToolkit` to your global middleware list in the `start/kernel.ts` file like so:
+    Add `@ioc:APIToolkit` to your global middleware list in the `start/kernel.js|ts` file like so:
           
 ```js
 Server.middleware.register([
