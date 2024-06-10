@@ -3,7 +3,7 @@ title: Go Gorilla Mux
 ogTitle: Go Gorilla Mux SDK Guide
 date: 2022-03-23
 updatedDate: 2024-06-08
-menuWeight: 3
+menuWeight: 5
 ---
 
 # Go Gorilla Mux SDK Guide

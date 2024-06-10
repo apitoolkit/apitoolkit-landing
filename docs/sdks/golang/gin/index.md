@@ -3,7 +3,7 @@ title: Go Gin
 ogTitle: Go Gin SDK Guide
 date: 2022-03-23
 updatedDate: 2024-06-08
-menuWeight: 2
+menuWeight: 4
 ---
 
 # Go Gin SDK Guide

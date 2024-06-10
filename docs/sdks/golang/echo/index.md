@@ -3,7 +3,7 @@ title: Go Echo
 ogTitle: Go Echo SDK Guide
 date: 2022-03-23
 updatedDate: 2024-06-08
-menuWeight: 1
+menuWeight: 2
 ---
 
 # Go Echo SDK Guide
