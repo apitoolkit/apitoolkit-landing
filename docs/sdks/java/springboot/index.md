@@ -32,7 +32,7 @@ To install the SDK, kindly add the following dependency to your `pom.xml` file w
 
 ## Configuration
 
-First, add your APItoolkit `API_KEY` to the `application.properties` file as shown below:
+First, add your APItoolkit API key to the `application.properties` file like so:
 
 ```sh
 apitoolkit.apikey={ENTER_YOUR_API_KEY_HERE};
@@ -54,11 +54,12 @@ package com.example.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+// Import APItoolkit annotation
 import io.apitoolkit.springboot.annotations.EnableAPIToolkit;
-
 import org.springframework.web.bind.annotation.*;
 
 @SpringBootApplication
+// Class declaration for the annotation
 @EnableAPIToolkit
 @RestController
 public class DemoApplication {
@@ -133,9 +134,9 @@ Here's an example of what the configuration would look like with redacted fields
 ```sh
 apitoolkit.apikey={ENTER_YOUR_API_KEY_HERE};
 
-apitoolkit.redactHeaders=Authorization,Cookie,accept,accept-encoding
-apitoolkit.redactRequestBody=$.user.email,$.user.addresses
-apitoolkit.redactResponseBody=$.users[*].email,$.users[*].credit_card
+apitoolkit.redactHeaders=Authorization,Cookie,accept,accept-encoding;
+apitoolkit.redactRequestBody=$.user.email,$.user.addresses;
+apitoolkit.redactResponseBody=$.users[*].email,$.users[*].credit_card;
 ```
 
 <div class="callout">
@@ -151,10 +152,10 @@ apitoolkit.redactResponseBody=$.users[*].email,$.users[*].credit_card
 
 APItoolkit detects different API issues and anomalies automatically but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
 
-To report errors, use the `reportError()` handler, passing in the `request` and `exception` arguments like so:
+To report errors, use the `reportError()` method, passing in the `request` and `exception` parameters like so:
 
 ```java
-package io.apitoolkit.demo;
+package com.example.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -175,7 +176,7 @@ public class DemoApplication {
     @GetMapping("/hello")
     public String hello(@RequestParam(value = "name", defaultValue = "World") String name, HttpServletRequest request) {
         try {
-            System.out.print(1 / 0);
+            System.out.print(1 / 0); // This will throw an ArithmeticException
         } catch (Exception e) {
             // Report the error to APItoolkit
             APErrors.reportError(request, e);
