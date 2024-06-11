@@ -1,14 +1,22 @@
 ---
-title: Fastify Js
+title: FastifyJS
+ogTitle: FastifyJS SDK Guide
 date: 2022-03-23
-updatedDate: 2024-05-04
+updatedDate: 2024-06-11
 menuWeight: 3
-ogImage: /assets/img/framework-logos/fastify-logo.png
 ---
 
-# Fastify JS integration guide
+# FastifyJS SDK Guide
 
-The APIToolkit Fastify SDK is a library that enables seamless integration of Fastify applications with APIToolkit's monitorin. By utilizing this SDK, you can effortlessly collect and publish relevant data about incoming requests and outgoing responses to APIToolkit's servers.
+To integrate your FastifyJS application with APItoolkit, you need to use this SDK to monitor incoming traffic, aggregate the requests, and then send them to APItoolkit's servers. Kindly follow this guide to get started and learn about all the supported features of APItoolkit's **FastifyJS SDK**.
+
+```=html
+<hr>
+```
+
+## Prerequisites
+
+Ensure you have already completed the first three steps of the [onboarding guide](/docs/onboarding/){target="_blank"}.
 
 ## Installation
 
