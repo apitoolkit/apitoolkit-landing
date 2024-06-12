@@ -41,6 +41,10 @@ app.get("/", (req, res) => {
   res.json({ hello: "Hello world!" });
 });
 
+// Error monitoring
+// The error handler must be before any other error middleware and after all controllers
+app.use(apitoolkitClient.errorHandler);
+
 app.listen(port, () => console.log("app running on port: " + port));
 ```
 
@@ -65,6 +69,10 @@ app.use(apitoolkitClient.expressMiddleware);
 app.get("/", (req, res) => {
   res.json({ hello: "Hello world!" });
 });
+
+// Error monitoring
+// The error handler must be before any other error middleware and after all controllers
+app.use(apitoolkitClient.errorHandler);
 
 app.listen(port, () => {
   console.log("Example app listening on port: " + port);
@@ -100,6 +108,10 @@ app.use(apitoolkitClient.expressMiddleware);
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
+
+// Error monitoring
+// The error handler must be before any other error middleware and after all controllers
+app.use(apitoolkitClient.errorHandler);
 
 app.listen(port, () => {
   console.log("Example app listening on port " + port);
@@ -177,6 +189,10 @@ app.get("/", async (req, res) => {
   const response = await axios.get(baseURL + "users/123");
   res.send(response.data);
 });
+
+// Error monitoring
+// The error handler must be before any other error middleware and after all controllers
+app.use(apitoolkitClient.errorHandler);
 ```
 
 ### Monitoring a Specific Axios Request
@@ -191,7 +207,6 @@ import axios from "axios";
 import express from "express";
 
 const app = express();
-const apitoolkitClient = APIToolkit.NewClient({ apiKey: "<API-KEY>" });
 app.use(apitoolkitClient.expressMiddleware);
 
 app.get("/", async (req, res) => {
@@ -342,4 +357,8 @@ app.get("/", (req, res) => {
   res.send("Something went wrong")
 }
 });
+// Error monitoring
+// The error handler must be before any other error middleware and after all controllers
+app.use(apitoolkitClient.errorHandler);
+
 ```
