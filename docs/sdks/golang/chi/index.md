@@ -1,14 +1,14 @@
 ---
-title: Go Native
-ogTitle: Go Native SDK Guide
+title: Go Chi
+ogTitle: Go Chi SDK Guide
 date: 2022-03-23
-updatedDate: 2024-06-08
-menuWeight: 6
+updatedDate: 2024-06-10
+menuWeight: 1
 ---
 
-# Go Native SDK Guide
+# Go Chi SDK Guide
 
-To integrate your Golang Native application with APItoolkit, you need to use this SDK to monitor incoming traffic, aggregate the requests, and then send them to APItoolkit's servers. Kindly follow this guide to get started and learn about all the supported features of APItoolkit's **Golang SDK**.
+To integrate your Golang Chi application with APItoolkit, you need to use this SDK to monitor incoming traffic, aggregate the requests, and then send them to APItoolkit's servers. Kindly follow this guide to get started and learn about all the supported features of APItoolkit's **Golang SDK**.
 
 ```=html
 <hr>
@@ -47,6 +47,8 @@ import (
   "context"
   "log"
   "net/http"
+  "github.com/go-chi/chi/v5"
+  "github.com/go-chi/chi/v5/middleware"
   apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
 
@@ -58,14 +60,21 @@ func main() {
   if err != nil {
     panic(err)
   }
+  
+  router := chi.NewRouter()
 
   // Register APItoolkit's middleware
-  http.Handle("/", apitoolkitClient.Middleware(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+  router.Use(apitoolkitClient.ChiMiddleware)
+ 
+  // router.Use(...)
+  // Other middleware
+  
+  router.Get("/{slug}/test", func(w http.ResponseWriter, r *http.Request) {
     w.WriteHeader(http.StatusOK)
-    w.Write([]byte("Hello, World!"))
-  })))
-
-  http.ListenAndServe(":8080", nil)
+    w.Write([]byte("ok"))
+  })
+  
+  http.ListenAndServe(":3000", router)
 }
 ```
 
@@ -136,6 +145,8 @@ package main
 import (
   "context"
   "net/http"
+  "github.com/go-chi/chi/v5"
+  "github.com/go-chi/chi/v5/middleware"
   apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
 
@@ -150,12 +161,15 @@ func main() {
   }
   apitoolkitClient, _ := apitoolkit.NewClient(ctx, apitoolkitCfg)
 
-  http.HandleFunc("/:slug/test", apitoolkitClient.Middleware(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-    w.WriteHeader(http.StatusOK)
-    w.Write([]byte("Ok, success!"))
-  })))
+  router := chi.NewRouter()
+  router.Use(apitoolkitClient.ChiMiddleware)
 
-  http.ListenAndServe(":8080", nil)
+  router.Get("/{slug}/test", func(w http.ResponseWriter, r *http.Request) {
+    w.WriteHeader(http.StatusOK)
+    w.Write([]byte("ok"))
+  })
+  
+  http.ListenAndServe(":3000", router)
 }
 ```
 
@@ -183,6 +197,8 @@ import (
   "log"
   "net/http"
   "os"
+  "github.com/go-chi/chi/v5"
+  "github.com/go-chi/chi/v5/middleware"
   apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
 
@@ -193,22 +209,26 @@ func main() {
     panic(err)
   }
 
- helloHandler := func(w http.ResponseWriter, r *http.Request) {
-  // Attempt to open a non-existing file
-  file, err := os.Open("non-existing-file.txt")
-  if err!= nil {
-   // Report the error to APItoolkit
-   apitoolkit.ReportError(r.Context(), err)
-  }
-  fmt.Fprintln(w, "{\"Hello\": \"World!\"}")
- }
- 
- http.Handle("/", apitoolkitClient.Middleware(http.HandlerFunc(helloHandler)))
+  router := chi.NewRouter()
+  router.Use(apitoolkitClient.ChiMiddleware)
 
- if err := http.ListenAndServe(":8089", nil); err != nil {
-  fmt.Println("Server error:", err)
- }
+  router.Get("/{slug}/test", func(w http.ResponseWriter, r *http.Request) {
+    w.WriteHeader(http.StatusOK)
+    w.Write([]byte("ok"))
+  })
+  
+  http.ListenAndServe(":3000", router)
 }
+
+func hello(w http.ResponseWriter, r *http.Request) {
+  // Attempt to open a non-existing file
+  _, err := os.Open("non-existing-file.txt")
+  if err != nil {
+    // Report the error to APItoolkit
+    apitoolkit.ReportError(r.Context(), err)
+  }
+  fmt.Fprintln(w, "Hello, World!")
+ }
 ```
 
 <div class="callout">
@@ -229,6 +249,8 @@ import (
   "context"
   "log"
   "net/http"
+  "github.com/go-chi/chi/v5"
+  "github.com/go-chi/chi/v5/middleware"
   apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
 
@@ -238,13 +260,16 @@ func main() {
   if err != nil {
     panic(err)
   }
+
+  router := chi.NewRouter()
+  router.Use(apitoolkitClient.ChiMiddleware)
   
-  http.HandleFunc("/:slug/test", apitoolkitClient.Middleware(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+  router.Get("/{slug}/test", func(w http.ResponseWriter, r *http.Request) {
     // Create a new HTTP client
     HTTPClient := http.DefaultClient
 
     // Replace the transport with the custom RoundTripper
-    HTTPClient.Transport = apitoolkitClient.WrapRoundTripper(
+    HTTPClient.Transport = apitoolkitClient.WrapRoundTripper (
       r.Context(),
       HTTPClient.Transport,
       apitoolkit.WithRedactHeaders([]string{"..."}),
@@ -253,14 +278,14 @@ func main() {
     )
 
     // Make an outgoing HTTP request using the modified HTTPClient
-    resp, err = HTTPClient.Get("https://jsonplaceholder.typicode.com/posts/1")
+    _, _ = HTTPClient.Get("https://jsonplaceholder.typicode.com/posts/1")
 
     // Respond to the request
     w.WriteHeader(http.StatusOK)
-    w.Write([]byte("Hello, World!"))
- })))
-
-  log.Fatal(http.ListenAndServe(":8080", router))
+    w.Write([]byte("Ok, success!"))
+  }).Methods(http.MethodPost)
+  
+  http.ListenAndServe(":3000", router)
 }
 ```
 

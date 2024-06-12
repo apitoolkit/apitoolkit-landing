@@ -1,51 +1,73 @@
 ---
-title: Adonis Js
+title: AdonisJs
+ogTitle: AdonisJs SDK Guide
 date: 2022-03-23
-updatedDate: 2024-05-04
+updatedDate: 2024-06-10
 menuWeight: 1
-ogImage: /assets/img/framework-logos/adonisjs-logo.png
 ---
 
-# Adonis JS Integration
+# AdonisJs SDK Guide
 
-The APIToolkit integration guide for AdonisJS provides a streamlined process to
-capture incoming traffic data. It collects request information and efficiently
-forwards it to the APIToolkit servers.
+To integrate your AdonisJs application with APItoolkit, you need to use this SDK to monitor incoming traffic, aggregate the requests, and then send them to APItoolkit's servers. Kindly follow this guide to get started and learn about all the supported features of APItoolkit's **AdonisJs SDK**.
 
-## APIToolkit Adonisjs integration
-
-The Adonisjs SDK integration guide for APIToolkit. It monitors incoming traffic,
-gathers the requests, and sends the request to the API toolkit servers.
-
-### Installation
-
-Run the following command to install the package from your projects root:
-
-#### For adonis v5
-```sh
-npm install apitoolkit-adonis@v2.2.0
+```=html
+<hr>
 ```
 
-#### For adonis v6
+## Prerequisites
+
+Ensure you have already completed the first three steps of the [onboarding guide](/docs/onboarding/){target="_blank"}.
+
+## Installation
+
+Kindly run the command below to install the SDK:
+
 ```sh
+npm install apitoolkit-adonis@latest
+
+# Or
+
 npm install apitoolkit-adonis@latest
 ```
 
-### Configure the adonis package using ace
+## Configuration
 
-After installing the `apitoolkit-adonis` SDK, run the following command to
-configure it in your adonis project
+First, run the command below to configure the SDK using ace:
 
 ```bash
 node ace configure apitoolkit-adonis
 ```
 
-### Register the middleware
+Then, register the middleware like so:
 
-#### For adonis v5
-Add `@ioc:APIToolkit` to your global middlewares list in the
-`start/kernel.ts` file
+<section>
+  <div class="tab-buttons">
+      <div class="tab-button active" onclick="openTab(event, 'Tab1')">Adonis v6 (latest)</div>
+      <div class="tab-button" onclick="openTab(event, 'Tab2')">Adonis v5</div>
+  </div>
+  <div id="Tab1" class="tab-content active">
+    Add `apitoolkit-adonis` to your global middleware list in the `start/kernel.js|ts` file like so:
+        
+```js
+server.use([
+  () => import('apitoolkit-adonis'),
+])
+```
 
+    Then, create an `apitoolkit.js|ts` file in the `/conf` directory and export the `defineConfig` object with some properties like so:
+
+```js
+import { defineConfig } from 'apitoolkit-adonis'
+
+export default defineConfig({
+  apiKey: "{ENTER_YOUR_API_KEY_HERE}",
+  debug: false // Set to true to enable debug mode
+})
+```
+  </div>
+  <div id="Tab2" class="tab-content">
+    Add `@ioc:APIToolkit` to your global middleware list in the `start/kernel.js|ts` file like so:
+          
 ```js
 Server.middleware.register([
   () => import('@ioc:Adonis/Core/BodyParser'),
@@ -53,200 +75,181 @@ Server.middleware.register([
 ])
 ```
 
-#### For adonis v6
-Add `apitoolkit-adonis` to your global middlewares list in the
-`start/kernel.ts` file
-```js
-server.use([
-  () => import('apitoolkit-adonis'),
-])
-```
+    Then, create an `apitoolkit.js|ts` file in the `/conf` directory and export an `apitoolkitConfig` object with some properties like so:
 
-### Configuration
-
-To configure the sdk first create an `apitoolkit.ts` file in the `/conf`
-directory and export a `apitoolkitConfig` object with the following properties
-
-- **apiKey**: `required` This API key can be generated from your
-  [APIToolkit acount](https://app.apitoolkit.io)
-  
-- **redactHeaders**: `optional` This is an array of request and response headers
-  that should be omited by APIToolkit
-  
-- **redactRequestBody**: `optional` An array of request body keypaths to be
-  redacted (i.e should not leave your servers)
-  
-- **redactResponseBody**: `optional` An array of reponse body keypaths to be
-  redacted
-  
-- **serviceVersion**: `optional` A string service version to help you monitor
-  different versions of your deployments
-  
-- **tags**: `optional` An array of tags to be associated with a request
-  
-- **debug**: `optional` A boolean to enable debug mode (ie print debug
-  information)
-  
-- **disable**: `optional` A boolean to disable the sdk by setting it to `true`
-
-To configure, the default export of `/conf/apitoolkit` should contain all
-necessary properties eg:
-
-#### For adonis v5
 ```js
 export const apitoolkitConfig = {
-  apiKey: "&lt;YOUR_API_KEY&gt;",
+  apiKey: "{ENTER_YOUR_API_KEY_HERE}",
 };
 ```
+  </div>
+</section>
 
-#### For adonis v6 
+<div class="callout">
+  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
+  <p>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</p>
+</div>
+
+## Redacting Sensitive Data
+
+If you have fields that are sensitive and should not be sent to APItoolkit servers, you can mark those fields to be redacted  (the fields will never leave your servers).
+
+To mark a field for redacting via this SDK, you need to add some additional arguments to the configuration object in the `conf/apitoolkit.js|ts` file with paths to the fields that should be redacted. There are three arguments you can provide to configure what gets redacted, namely:
+
+1. `redactHeaders`:  A list of HTTP header keys.
+2. `redactRequestBody`: A list of JSONPaths from the request body.
+3. `redactResponseBody`: A list of JSONPaths from the response body.
+
+<hr />
+JSONPath is a query language used to select and extract data from JSON files. For example, given the following sample user data JSON object:
+
+```JSON
+{
+  "user": {
+    "name": "John Martha",
+    "email": "john.martha@example.com",
+    "addresses": [
+      {
+        "street": "123 Main St",
+        "city": "Anytown",
+        "state": "CA",
+        "zip": "12345"
+      },
+      {
+        "street": "123 Main St",
+        "city": "Anytown",
+        "state": "CA",
+        "zip": "12345"
+      },
+      ...
+    ],
+    "credit_card": {
+      "number": "4111111111111111",
+      "expiration": "12/28",
+      "cvv": "123"
+    }
+  },
+  ...
+}
+```
+
+Examples of valid JSONPaths would be:
+
+- `$.user.credit_card` (In this case, APItoolkit will replace the `addresses` field inside the `user` object with the string `[CLIENT_REDACTED]`).
+- `$.user.addresses[*].zip` (In this case, APItoolkit will replace the `zip` field in all the objects of the `addresses` list inside the `user` object with the string `[CLIENT_REDACTED]`).
+
+<div class="callout">
+  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
+  <p>To learn more about JSONPaths, please take a look at the [official docs](https://github.com/json-path/JsonPath/blob/master/README.md){target="_blank"}. You can also use this [JSONPath Evaluator](https://jsonpath.com?utm_source=apitoolkit){target="_blank"} to validate your JSONPaths.</p>
+</div>
+<hr />
+
+Here's an example of what the configuration would look like with redacted fields:
+
+
 ```js
-import { defineConfig } from 'apitoolkit-adonis'
-
 export default defineConfig({
-  apiKey: '<YOUR_API_KEY>',
+  apiKey: "{ENTER_YOUR_API_KEY_HERE}",
   debug: false,
+
+  redactHeaders: ["Content-Type", "Authorization", "HOST"], 
+  redactRequestBody: ["$.user.email", "$.user.addresses"],
+  redactResponseBody: ["$.users[*].email", "$.users[*].credit_card"]
 })
 ```
 
-After configuring the sdk, all incoming request will now be send to APIToolkit.
+<div class="callout">
+  <p><i class="fa-regular fa-circle-info"></i> <b>Note</b></p>
+  <ul>
+    <li>The `redactHeaders` config field expects a list of <b>case-insensitive headers as strings</b>.</li>
+    <li>The `redactRequestBody` and `redactResponseBody` config fields expect a list of <b>JSONPaths as strings</b>.</li>
+    <li>The list of items to be redacted will be applied to all endpoint requests and responses on your server.</li>
+  </ul>
+</div>
 
-## Redacting Senstive Fields and Headers
+## Error Reporting
 
-While it's possible to mark a field as redacted from the apitoolkit dashboard,
-this client also supports redacting at the client side.
+APItoolkit detects different API issues and anomalies automatically but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
 
-Client side redacting
-means that those fields would never leave your servers at all. So you feel safer
-that your sensitive data only stays on your servers.
-
-To mark fields that should be redacted, simply add them to the
-`conf/apitoolkit.(js,ts)` default export object. Eg:
-
-```js
-export const apitoolkitConfig = {
-  apiKey: "&lt;YOUR_API_KEY&gt;",
-  redactHeaders: ["Content-Type", "Authorization", "Cookies"], // Specified headers will be redacted
-  redactRequestBody: ["$.credit-card.cvv", "$.credit-card.name"], // Specified request bodies fields will be redacted
-  redactResponseBody: ["$.message.error"], // Specified response body fields will be redacted
-};
-```
-
-It is important to note that while the `redactHeaders` config field accepts a
-list of headers(case insensitive), the `redactRequestBody` and
-`redactResponseBody` expect a list of JSONPath strings as arguments.
-
-The choice of JSONPath was selected to allow you have great flexibility in
-descibing which fields within your responses are sensitive.
-
-Also note that these list of items to be redacted will be aplied to all endpoint requests and
-responses on your server.
-
-To learn more about jsonpath, please take a look at these resources:
-
-1. [Query expressions for JSONPATH](https://ietf-wg-jsonpath.github.io/draft-ietf-jsonpath-base/draft-ietf-jsonpath-base.html)
-2. [JSONPATH Cheet Sheet](https://lzone.de/cheat-sheet/JSONPath)
-
-## Using apitoolkit to observe an axios based outgoing request
-
-To monitor outgoing request, you need to first enable asyncLocalStorage in your adonisjs project by setting useAsyncLocalStorage to true in your `config/app.ts` file.
+To report errors, you need to first enable [asyncLocalStorage](https://docs.adonisjs.com/guides/concepts/async-local-storage){target="_blank" rel="noopener noreferrer"} in your AdonisJS project by setting `useAsyncLocalStorage` to true in your `config/app.js|ts` file like so:
 
 ```js
 export const http: ServerConfig = {
   useAsyncLocalStorage: true
-  // other configs
+  // other configs...
 }
 ```
 
-After setting asyncLocalStorage to true, simply wrap your axios instance with the APIToolkit observeAxios function.
-
-```ts
-import Route from '@ioc:Adonis/Core/Route'
-import { observeAxios } from "apitoolkit-adonis"
-import axios from "axios"
-
-const redactHeadersList = ["Content-Type", "Authorization"];
-const redactRequestBodyList = ["$.body.user.name"];
-const redactResponseBodyList = undefined;
-
-Route.get('/observer', async () => {
-    const response = await observeAxios(axios).get(baseURL + "/user_list/active");
-    return {hello: "hello world"}
-})
-```
-
-If you're making requests to endpoints which have variable urlPaths, you should
-include a wildcard url of the path, so that apitoolkit groups the endpoints
-correctly for you on the dashboard:
+Then, use the `reportError()` function, passing in the `error` argument like so:
 
 ```js
-import { observeAxios } from "apitoolkit-adonis";
-import axios from "axios";
-
-Route.get('/observer', async () => {
-    const response = await observeAxios(axios, "/users/{user_id}").get(
-      baseURL + "/users/user1234",
-    );
-    return {hello: "hello world"}
-})
-```
-
-There are other optional arguments you could pass on to the observe Axios
-function.
-
-Example
-
-```js
-import Route from "@ioc:Adonis/Core/Route";
-import axios from "axios";
-import { observeAxios } from "apitoolkit-adonis";
-
-const redactHeadersList = ["Content-Type", "Authorization"];
-const redactRequestBodyList = ["$.body.user.password"];
-const redactResponseBodyList = undefined;
-
-Route.get("/observer", async () => {
-  const response = await observeAxios(
-    axios,
-    "/users/{user_id}",
-    redactHeadersList,
-    redactRequestBodyList,
-    redactResponseBodyList,
-  ).get(baseURL + "/users/user1234");
-});
-```
-
-Note that you can ignore any of these arguments except the first argument which is the axios instance to observe.
-
-For the other arguments, you can either skip them if at the end, or use undefined as a placeholder.
-
-## Reporting errors to APIToolkit
-
-APIToolkit detects a lot of API issues automatically, but it's also valuable to report and track errors.
-
-This helps you associate more details about the backend with a given failing request. If you've used sentry, or rollback, or bugsnag, then you're likely aware of this functionality.
-
-To report errors, you need to first enable asyncLocalStorage in your adonisjs project by setting useAsyncLocalStorage to true in your config/app.ts file.
-
-```js
-export const http: ServerConfig = {
-  useAsyncLocalStorage: true
-  // other configs
-}
-```
-
-You can then start reporting errors by calling the apitoolkit `reportError`` function.
-
-```js
-import Route from "@ioc:Adonis/Core/Route";
+import router from '@adonisjs/core/services/router'
 import { reportError } from "apitoolkit-adonis";
 
-Route.get("/observer", async () => {
+router.get("/observer", async () => {
   try {
-    throw ("Error occured");
+    throw ("Error occurred!");
   } catch (error) {
+    // Report the error to APItoolkit
     reportError(error);
   }
   return { hello: "world" };
 });
 ```
+
+## Monitoring Outgoing Requests
+
+Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="_blank"} page. However, you can separate outgoing requests from others and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="_blank"} page, alongside the incoming request that triggered them.
+
+To monitor outgoing axios-based HTTP requests from your application, first enable [asyncLocalStorage](https://docs.adonisjs.com/guides/concepts/async-local-storage){target="_blank" rel="noopener noreferrer"} in your AdonisJS project by setting `useAsyncLocalStorage` to true in your `config/app.js|ts` file like so:
+
+```js
+export const http: ServerConfig = {
+  useAsyncLocalStorage: true
+  // other configs...
+}
+```
+
+Then, wrap your axios instance with the APIToolkit `observeAxios` function like so:
+
+```js
+import { observeAxios } from "apitoolkit-adonis";
+import axios from "axios";
+
+const pathWildCard = "/users/{user_id}";
+const redactHeadersList = ["Content-Type", "Authorization", "HOST"];
+const redactRequestBodyList = ["Content-Type", "Authorization", "HOST"];
+const redactResponseBodyList = ["$.users[*].email", "$.users[*].credit_card"];
+
+Route.get('/observer', async () => {
+  const response = await observeAxios(
+    axios,
+    pathWildCard,
+    redactHeadersList,
+    redactRequestBodyList,
+    redactResponseBodyList
+  ).get(baseURL + "/users/user1234");
+  return {hello: "hello world"}
+})
+```
+
+<div class="callout">
+  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
+  <p class="mt-6">The `observeAxios` function accepts a required `axios` instance and the following optional fields:</p>
+  <ul>
+    <li>`pathWildCard`: The `url_path` for URLs with path parameters.</li>
+    <li>`redactHeaders`: A string list of headers to redact.</b></li>
+    <li>`redactResponseBody`: A string list of JSONPaths to redact from the response body.</li>
+    <li>`redactRequestBody`: A string list of JSONPaths to redact from the request body.</li>
+  </ul>
+</div>
+
+```=html
+<hr />
+<a href="https://github.com/apitoolkit/apitoolkit-adonis" target="_blank" rel="noopener noreferrer" class="w-full btn btn-outline link link-hover">
+    <i class="fa-brands fa-github"></i>
+    Explore the AdonisJS SDK
+</a>
+```
+
+<script defer src="/assets/js/tabs.js"></script>

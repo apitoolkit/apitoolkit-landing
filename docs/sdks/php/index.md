@@ -12,9 +12,9 @@ pages:
   - title: Slim
     slug: /docs/sdks/php/slim
     icon: /assets/img/framework-logos/slim-icon.png
-  - title: Symphony
-    slug: /docs/sdks/php/symphony
-    icon: /assets/img/framework-logos/fastify-icon.png
+  - title: Symfony
+    slug: /docs/sdks/php/symfony
+    icon: /assets/img/framework-logos/symfony-icon.png
 ---
 
 # PHP SDKs

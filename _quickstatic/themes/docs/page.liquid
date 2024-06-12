@@ -2,7 +2,11 @@
 <html lang="en">
   <head>
     <title>
-    {% if this.frontmatter.title %}{{ this.frontmatter.title }} | APItoolkit Docs{% endif %}
+    {% if this.frontmatter.ogTitle %}
+      {{this.frontmatter.ogTitle}}
+    {% else %}
+      {{this.frontmatter.title}}
+    {% endif %} | APItoolkit Docs
     </title>
     <meta name="description" content="APItoolkit product and SDKs documentation">
     <link rel="canonical" href="https://apitoolkit.io{{this.permalink}}">
@@ -13,7 +17,7 @@
     <!-- This documentation site was built with QuickStatic, https://github.com/tonyalaribe/quickstatic -->
     <meta
       property="og:title"
-      content="{% if this.frontmatter.title %}{{this.frontmatter.title}} | APItoolkit Docs{% endif %}"
+      content="{% if this.frontmatter.ogTitle %}{{this.frontmatter.ogTitle}}{% else %}{{this.frontmatter.title}}{% endif %} | APItoolkit Docs"
     >
     <meta property="og:description" content="APItoolkit product and SDKs documentation">
     <meta
@@ -159,7 +163,7 @@
         color: #000000;
       }
 
-      .callout p {
+      .callout p:first-child {
         margin: 0;
         margin-top: 5px;
       }
@@ -177,7 +181,7 @@
       }
 
       /*
-      Do not remove. 
+      DO NOT REMOVE 
       This is for the images in integration-footer.liquid 
       */
       button img {
@@ -187,6 +191,31 @@
       div #sdk-images img {
         border-width: 0px !important;
         --tw-drop-shadow: none !important;
+      }
+
+      /* Styling for tabs component */
+      .tab-buttons {
+          display: flex;
+      }
+      .tab-button {
+        padding: 10px 20px;
+        cursor: pointer;
+        border: 1px solid #ccc;
+        border-bottom: none;
+        border-radius: 5px 5px 0 0;
+        margin-right: 5px;
+      }
+      .tab-button.active {
+        border-bottom: 2px solid #377cfb;
+      }
+      .tab-content {
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 0 5px 5px 5px;
+        display: none;
+      }
+      .tab-content.active {
+        display: block;
       }
     </style>
 

@@ -1,14 +1,14 @@
 ---
-title: Go Native
-ogTitle: Go Native SDK Guide
+title: Go Fiber
+ogTitle: Go Fiber SDK Guide
 date: 2022-03-23
-updatedDate: 2024-06-08
-menuWeight: 6
+updatedDate: 2024-06-10
+menuWeight: 3
 ---
 
-# Go Native SDK Guide
+# Go Fiber SDK Guide
 
-To integrate your Golang Native application with APItoolkit, you need to use this SDK to monitor incoming traffic, aggregate the requests, and then send them to APItoolkit's servers. Kindly follow this guide to get started and learn about all the supported features of APItoolkit's **Golang SDK**.
+To integrate your Golang Fiber application with APItoolkit, you need to use this SDK to monitor incoming traffic, aggregate the requests, and then send them to APItoolkit's servers. Kindly follow this guide to get started and learn about all the supported features of APItoolkit's **Golang SDK**.
 
 ```=html
 <hr>
@@ -47,6 +47,7 @@ import (
   "context"
   "log"
   "net/http"
+  "github.com/gofiber/fiber/v2"
   apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
 
@@ -58,14 +59,20 @@ func main() {
   if err != nil {
     panic(err)
   }
+  
+  router := fiber.New()
 
   // Register APItoolkit's middleware
-  http.Handle("/", apitoolkitClient.Middleware(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-    w.WriteHeader(http.StatusOK)
-    w.Write([]byte("Hello, World!"))
-  })))
+  router.Use(apitoolkitClient.FiberMiddleware)
+ 
+  // router.Use(...)
+  // Other middleware
 
-  http.ListenAndServe(":8080", nil)
+  router.POST("/:slug/test", func(c fiber.Context) error {
+    return c.String(http.StatusOK, "Ok, success!")
+  })
+  
+  log.Fatal(app.Listen(":3000"))
 }
 ```
 
@@ -136,6 +143,7 @@ package main
 import (
   "context"
   "net/http"
+  "github.com/gofiber/fiber/v2"
   apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
 
@@ -150,12 +158,14 @@ func main() {
   }
   apitoolkitClient, _ := apitoolkit.NewClient(ctx, apitoolkitCfg)
 
-  http.HandleFunc("/:slug/test", apitoolkitClient.Middleware(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-    w.WriteHeader(http.StatusOK)
-    w.Write([]byte("Ok, success!"))
-  })))
+  router := fiber.New()
+  router.Use(apitoolkitClient.FiberMiddleware)
 
-  http.ListenAndServe(":8080", nil)
+  router.POST("/:slug/test", func(c fiber.Context) error {
+    return c.String(http.StatusOK, "Ok, success!")
+  })
+  
+  log.Fatal(app.Listen(":3000"))
 }
 ```
 
@@ -183,6 +193,7 @@ import (
   "log"
   "net/http"
   "os"
+  "github.com/gofiber/fiber/v2"
   apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
 
@@ -193,21 +204,23 @@ func main() {
     panic(err)
   }
 
- helloHandler := func(w http.ResponseWriter, r *http.Request) {
+  router := fiber.New()
+  router.Use(apitoolkitClient.FiberMiddleware)
+
+  router.GET("/", hello)
+  
+  log.Fatal(app.Listen(":3000"))
+}
+
+func hello(c fiber.Context) error {
   // Attempt to open a non-existing file
   file, err := os.Open("non-existing-file.txt")
-  if err!= nil {
-   // Report the error to APItoolkit
-   apitoolkit.ReportError(r.Context(), err)
+  if err != nil {
+    // Report the error to APItoolkit
+    apitoolkit.ReportError(c.Request().Context(), err)
   }
-  fmt.Fprintln(w, "{\"Hello\": \"World!\"}")
- }
- 
- http.Handle("/", apitoolkitClient.Middleware(http.HandlerFunc(helloHandler)))
-
- if err := http.ListenAndServe(":8089", nil); err != nil {
-  fmt.Println("Server error:", err)
- }
+  log.Println(file)
+  return c.String(http.StatusOK, "Hello, World!")
 }
 ```
 
@@ -229,6 +242,7 @@ import (
   "context"
   "log"
   "net/http"
+  "github.com/gofiber/fiber/v2"
   apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
 
@@ -238,14 +252,17 @@ func main() {
   if err != nil {
     panic(err)
   }
-  
-  http.HandleFunc("/:slug/test", apitoolkitClient.Middleware(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+
+  router := fiber.New()
+  router.Use(apitoolkitClient.FiberMiddleware)
+
+  router.POST("/:slug/test", func(c fiber.Context) (err error) {
     // Create a new HTTP client
     HTTPClient := http.DefaultClient
 
     // Replace the transport with the custom RoundTripper
-    HTTPClient.Transport = apitoolkitClient.WrapRoundTripper(
-      r.Context(),
+    HTTPClient.Transport = apitoolkitClient.WrapRoundTripper (
+      c.Request().Context(),
       HTTPClient.Transport,
       apitoolkit.WithRedactHeaders([]string{"..."}),
       apitoolkit.WithRedactRequestBody([]string{"..."}),
@@ -253,14 +270,13 @@ func main() {
     )
 
     // Make an outgoing HTTP request using the modified HTTPClient
-    resp, err = HTTPClient.Get("https://jsonplaceholder.typicode.com/posts/1")
+    _, _ = HTTPClient.Get("https://jsonplaceholder.typicode.com/posts/1")
 
     // Respond to the request
-    w.WriteHeader(http.StatusOK)
-    w.Write([]byte("Hello, World!"))
- })))
-
-  log.Fatal(http.ListenAndServe(":8080", router))
+    c.String(http.StatusOK, "Ok, success!")
+  })
+  
+  log.Fatal(app.Listen(":3000"))
 }
 ```
 
