@@ -277,7 +277,7 @@ app.listen(port, () => {
 
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <p>Ensure to add the error handler before any other error middleware and after all controllers.</p>
+  <p>Ensure to add the error handler after all controllers and before any other error middleware.</p>
 </div>
 
 ### Report Specific Errors
