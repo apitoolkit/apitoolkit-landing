@@ -61,8 +61,6 @@ app.get("/", (req, res) => {
   res.json({ hello: "Hello world!" });
 });
 
-// Error monitoring
-// The error handler must be before any other error middleware and after all controllers
 app.use(apitoolkitClient.errorHandler);
 
 app.listen(port, () => console.log("App running on port: " + port));
@@ -90,8 +88,6 @@ app.get("/", (req, res) => {
   res.json({ hello: "Hello world!" });
 });
 
-// Error monitoring
-// The error handler must be before any other error middleware and after all controllers
 app.use(apitoolkitClient.errorHandler);
 
 app.listen(port, () => {
@@ -104,7 +100,10 @@ app.listen(port, () => {
 
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <p>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</p>
+  <ul>
+    <li>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</li>
+    <li>The `apitoolkitClient.errorHandler` must be after all controllers and before any other error middleware.</li>
+  </ul>
 </div>
 
 ## Redacting Sensitive Data
@@ -185,8 +184,6 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-// Error monitoring
-// The error handler must be before any other error middleware and after all controllers
 app.use(apitoolkitClient.errorHandler);
 
 app.listen(port, () => {
@@ -344,8 +341,6 @@ app.get("/", (req, res) => {
 }
 });
 
-// Error monitoring
-// The error handler must be before any other error middleware and after all controllers
 app.use(apitoolkitClient.errorHandler);
 
 app.listen(port, () => {
