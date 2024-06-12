@@ -174,7 +174,7 @@ const apitoolkitClient = await APIToolkit.NewClient({
   apiKey: "{ENTER_YOUR_API_KEY_HERE}",
   redactHeaders: ["Content-Type", "Authorization", "HOST"],
   redactRequestBody: ["$.user.email", "$.user.addresses"],
-  redactResponseBody: ["$.users[*].email", "$.users[*].credit_card"],
+  redactResponseBody: ["$.users[*].email", "$.users[*].credit_card"]
 });
 
 app.use(express.json());
@@ -390,7 +390,7 @@ app.listen(port, () => {
 
 ### Monitor Specific Requests
 
-To monitor a specific axios request within the context of a web request handler, wrap your axios instance with the APIToolkit `observeAxios()` function like so:
+To monitor a specific axios request within the context of a web request handler, wrap your axios instance with the `observeAxios()` function like so:
 
 ```js
 import APIToolkit, { observeAxios } from "apitoolkit-express";

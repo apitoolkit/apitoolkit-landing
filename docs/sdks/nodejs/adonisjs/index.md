@@ -201,7 +201,7 @@ router.get("/observer", async () => {
 
 Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="_blank"} page. However, you can separate outgoing requests from others and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="_blank"} page, alongside the incoming request that triggered them.
 
-To monitor outgoing axios-based HTTP requests from your application, first enable [asyncLocalStorage](https://docs.adonisjs.com/guides/concepts/async-local-storage){target="_blank" rel="noopener noreferrer"} in your AdonisJS project by setting `useAsyncLocalStorage` to true in your `config/app.js|ts` file like so:
+To monitor outgoing axios-based HTTP requests from your application, first, enable [asyncLocalStorage](https://docs.adonisjs.com/guides/concepts/async-local-storage){target="_blank" rel="noopener noreferrer"} in your AdonisJS project by setting `useAsyncLocalStorage` to true in your `config/app.js|ts` file like so:
 
 ```js
 export const http: ServerConfig = {
@@ -210,7 +210,7 @@ export const http: ServerConfig = {
 }
 ```
 
-Then, wrap your axios instance with the APIToolkit `observeAxios` function like so:
+Then, wrap your axios instance with the `observeAxios()` function like so:
 
 ```js
 import { observeAxios } from "apitoolkit-adonis";
