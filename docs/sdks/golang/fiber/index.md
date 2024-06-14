@@ -16,7 +16,7 @@ To integrate your Golang Fiber application with APItoolkit, you need to use this
 
 ## Prerequisites
 
-Ensure you have already completed the first three steps of the [onboarding guide](/docs/onboarding/){target="_blank"}.
+Ensure you have already completed the first three steps of the [onboarding guide](/docs/onboarding/){target="\_blank"}.
 
 ## Installation
 
@@ -26,7 +26,7 @@ Kindly run the command below to install the SDK:
 go get github.com/apitoolkit/apitoolkit-go
 ```
 
-Then add `github.com/apitoolkit/apitoolkit-go` to the list of dependencies like so:
+Then add `github.com/apitoolkit/apitoolkit-go` to the list of imports like so:
 
 ```go
 package main
@@ -44,35 +44,35 @@ Next, initialize APItoolkit in your application's entry point (e.g., `main.go`) 
 package main
 
 import (
-  "context"
-  "log"
-  "net/http"
-  "github.com/gofiber/fiber/v2"
-  apitoolkit "github.com/apitoolkit/apitoolkit-go"
+	"context"
+
+	apitoolkit "github.com/apitoolkit/apitoolkit-go"
+	"github.com/gofiber/fiber/v2"
 )
 
 func main() {
-  ctx := context.Background()
-  
-  // Initialize the client
-  apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"})
-  if err != nil {
-    panic(err)
-  }
-  
-  router := fiber.New()
+	ctx := context.Background()
 
-  // Register APItoolkit's middleware
-  router.Use(apitoolkitClient.FiberMiddleware)
- 
-  // router.Use(...)
-  // Other middleware
+	// Initialize the client
+	apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE"})
+	if err != nil {
+		panic(err)
+	}
 
-  router.POST("/:slug/test", func(c fiber.Context) error {
-    return c.String(http.StatusOK, "Ok, success!")
-  })
-  
-  log.Fatal(app.Listen(":3000"))
+	router := fiber.New()
+
+	// Register APItoolkit's middleware
+	router.Use(apitoolkitClient.FiberMiddleware)
+
+	// router.Use(...)
+	// Other middleware
+
+	router.Get("/greet", func(c *fiber.Ctx) error {
+		name := c.Query("name", "jon")
+		return c.SendString("Hello " + name)
+	})
+
+	router.Listen(":3000")
 }
 ```
 
@@ -83,11 +83,11 @@ func main() {
 
 ## Redacting Sensitive Data
 
-If you have fields that are sensitive and should not be sent to APItoolkit servers, you can mark those fields to be redacted  (the fields will never leave your servers).
+If you have fields that are sensitive and should not be sent to APItoolkit servers, you can mark those fields to be redacted (the fields will never leave your servers).
 
 To mark a field for redacting via this SDK, you need to provide additional arguments to the `apitoolkitCfg` variable with paths to the fields that should be redacted. There are three arguments you can provide to configure what gets redacted, namely:
 
-1. `RedactHeaders`:  A list of HTTP header keys.
+1. `RedactHeaders`: A list of HTTP header keys.
 2. `RedactRequestBody`: A list of JSONPaths from the request body.
 3. `RedactResponseBody`: A list of JSONPaths from the response body.
 
@@ -141,31 +141,37 @@ Here's an example of what the configuration would look like with redacted fields
 package main
 
 import (
-  "context"
-  "net/http"
-  "github.com/gofiber/fiber/v2"
-  apitoolkit "github.com/apitoolkit/apitoolkit-go"
+	"context"
+	"os"
+
+	apitoolkit "github.com/apitoolkit/apitoolkit-go"
+	"github.com/gofiber/fiber/v2"
 )
 
 func main() {
-  ctx := context.Background()
+	ctx := context.Background()
+	apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"})
+	if err != nil {
+		panic(err)
+	}
 
-  apitoolkitCfg := apitoolkit.Config {
-    RedactHeaders: []string{"content-type", "Authorization", "HOST"},
-    RedactRequestBody: []string{"$.user.email", "$.user.addresses"},
-    RedactResponseBody: []string{"$.users[*].email", "$.users[*].credit_card"},
-    APIKey: "{ENTER_YOUR_API_KEY_HERE}",
-  }
-  apitoolkitClient, _ := apitoolkit.NewClient(ctx, apitoolkitCfg)
+	router := fiber.New()
+	router.Use(apitoolkitClient.FiberMiddleware)
 
-  router := fiber.New()
-  router.Use(apitoolkitClient.FiberMiddleware)
+	router.Get("/", hello)
 
-  router.POST("/:slug/test", func(c fiber.Context) error {
-    return c.String(http.StatusOK, "Ok, success!")
-  })
-  
-  log.Fatal(app.Listen(":3000"))
+	router.Listen(":3000")
+}
+
+func hello(c *fiber.Ctx) error {
+	// Attempt to open a non-existing file
+	file, err := os.Open("non-existing-file.txt")
+	if err != nil {
+		// Report the error to APItoolkit
+		apitoolkit.ReportError(c.Context(), err)
+		return c.SendString("Something went wrong")
+	}
+	return c.SendString("Hello file, " + file.Name())
 }
 ```
 
@@ -189,8 +195,6 @@ package main
 
 import (
   "context"
-  "fmt"
-  "log"
   "net/http"
   "os"
   "github.com/gofiber/fiber/v2"
@@ -208,19 +212,19 @@ func main() {
   router.Use(apitoolkitClient.FiberMiddleware)
 
   router.GET("/", hello)
-  
-  log.Fatal(app.Listen(":3000"))
+
+  router.Listen(":3000")
 }
 
-func hello(c fiber.Context) error {
+func hello(c *fiber.Ctx) error {
   // Attempt to open a non-existing file
   file, err := os.Open("non-existing-file.txt")
   if err != nil {
     // Report the error to APItoolkit
-    apitoolkit.ReportError(c.Request().Context(), err)
+    apitoolkit.ReportError(c.Context(), err)
+    return c.SendString("Something went wrong")
   }
-  log.Println(file)
-  return c.String(http.StatusOK, "Hello, World!")
+  return c.SendString("Hello file, ", file.Name())
 }
 ```
 
@@ -231,7 +235,7 @@ func hello(c fiber.Context) error {
 
 ## Monitoring Outgoing Requests
 
-Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="_blank"} page. However, you can separate outgoing requests from others and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="_blank"} page, alongside the incoming request that triggered them.
+Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="\_blank"} page. However, you can separate outgoing requests from others and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="\_blank"} page, alongside the incoming request that triggered them.
 
 To monitor outgoing HTTP requests from your application, replace the default HTTP client transport with a custom RoundTripper. This allows you to capture and send copies of all incoming and outgoing requests to APItoolkit. Here's an example of outgoing requests configuration with this SDK:
 
@@ -239,44 +243,44 @@ To monitor outgoing HTTP requests from your application, replace the default HTT
 package main
 
 import (
-  "context"
-  "log"
-  "net/http"
-  "github.com/gofiber/fiber/v2"
-  apitoolkit "github.com/apitoolkit/apitoolkit-go"
+	"context"
+	"net/http"
+
+	apitoolkit "github.com/apitoolkit/apitoolkit-go"
+	"github.com/gofiber/fiber/v2"
 )
 
 func main() {
-  ctx := context.Background()
-  apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"})
-  if err != nil {
-    panic(err)
-  }
+	ctx := context.Background()
+	apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"})
+	if err != nil {
+		panic(err)
+	}
 
-  router := fiber.New()
-  router.Use(apitoolkitClient.FiberMiddleware)
+	router := fiber.New()
+	router.Use(apitoolkitClient.FiberMiddleware)
 
-  router.POST("/:slug/test", func(c fiber.Context) (err error) {
-    // Create a new HTTP client
-    HTTPClient := http.DefaultClient
+	router.Get("/test", func(c *fiber.Ctx) error {
+		// Create a new HTTP client
+		HTTPClient := http.DefaultClient
 
-    // Replace the transport with the custom RoundTripper
-    HTTPClient.Transport = apitoolkitClient.WrapRoundTripper (
-      c.Request().Context(),
-      HTTPClient.Transport,
-      apitoolkit.WithRedactHeaders([]string{"..."}),
-      apitoolkit.WithRedactRequestBody([]string{"..."}),
-      apitoolkit.WithRedactResponseBody([]string{"..."})
-    )
+		// Replace the transport with the custom RoundTripper
+		HTTPClient.Transport = apitoolkitClient.WrapRoundTripper(
+			c.Context(),
+			HTTPClient.Transport,
+			apitoolkit.WithRedactHeaders("Authorization", "..."),
+			apitoolkit.WithRedactRequestBody("$.password", "..."),
+			apitoolkit.WithRedactResponseBody("$.account_number", "..."),
+		)
 
-    // Make an outgoing HTTP request using the modified HTTPClient
-    _, _ = HTTPClient.Get("https://jsonplaceholder.typicode.com/posts/1")
+		// Make an outgoing HTTP request using the modified HTTPClient
+		_, _ = HTTPClient.Get("https://jsonplaceholder.typicode.com/posts/1")
 
-    // Respond to the request
-    c.String(http.StatusOK, "Ok, success!")
-  })
-  
-  log.Fatal(app.Listen(":3000"))
+		// Respond to the request
+		return c.SendString("Ok, success!")
+	})
+
+	router.Listen(":3000")
 }
 ```
 
