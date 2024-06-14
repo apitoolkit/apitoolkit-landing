@@ -1,12 +1,12 @@
 ---
-title: Nest Js
+title: NestJs
+ogTitle: NestJs SDK Guide
 date: 2022-03-23
-updatedDate: 2024-05-04
+updatedDate: 2024-06-12
 menuWeight: 4
-ogImage: /assets/img/framework-logos/nestjs-logo.png
 ---
 
-# Nest JS integration guide
+# NestJs SDK Guide
 
 Nest.js is a powerful framework for building scalable and efficient server-side applications with TypeScript. It is known for its modular architecture, dependency injection, and support for various HTTP platforms. Nest.js allows you to choose between two popular HTTP platforms: Express and Fastify. It provides seamless integration with both platforms, allowing developers to take advantage of the features offered by each.
 
