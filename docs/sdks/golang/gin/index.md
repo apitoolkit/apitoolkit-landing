@@ -16,7 +16,7 @@ To integrate your Golang Gin application with APItoolkit, you need to use this S
 
 ## Prerequisites
 
-Ensure you have already completed the first three steps of the [onboarding guide](/docs/onboarding/){target="_blank"}.
+Ensure you have already completed the first three steps of the [onboarding guide](/docs/onboarding/){target="\_blank"}.
 
 ## Installation
 
@@ -24,16 +24,6 @@ Kindly run the command below to install the SDK:
 
 ```sh
 go get github.com/apitoolkit/apitoolkit-go
-```
-
-Then add `github.com/apitoolkit/apitoolkit-go` to the list of dependencies like so:
-
-```go
-package main
-
-import (
-  apitoolkit "github.com/apitoolkit/apitoolkit-go"
-)
 ```
 
 ## Configuration
@@ -44,35 +34,35 @@ Next, initialize APItoolkit in your application's entry point (e.g., `main.go`) 
 package main
 
 import (
-  "context"
-  "log"
-  "net/http"
-  "github.com/gin-gonic/gin"
-  apitoolkit "github.com/apitoolkit/apitoolkit-go"
+	"context"
+	"net/http"
+
+	apitoolkit "github.com/apitoolkit/apitoolkit-go"
+	"github.com/gin-gonic/gin"
 )
 
 func main() {
-  ctx := context.Background()
-  
-  // Initialize the client
-  apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"})
-  if err != nil {
-    panic(err)
-  }
-  
-  router := gin.New()
+	ctx := context.Background()
 
-  // Register APItoolkit's middleware
-  router.Use(apitoolkitClient.GinMiddleware)
- 
-  // router.Use(...)
-  // Other middleware
+	// Initialize the client
+	apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"})
+	if err != nil {
+		panic(err)
+	}
 
-  router.POST("/:slug/test", func(c gin.Context) error {
-    return c.String(http.StatusOK, "Ok, success!")
-  })
+	router := gin.New()
 
-  router.Start(":8080")
+	// Register APItoolkit's middleware
+	router.Use(apitoolkitClient.GinMiddleware)
+
+	// router.Use(...)
+	// Other middleware
+
+	router.GET("/:slug/test", func(c *gin.Context) {
+		c.JSON(http.StatusOK, gin.H{"message": "hello world"})
+	})
+
+	router.Run(":8080")
 }
 ```
 
@@ -83,11 +73,11 @@ func main() {
 
 ## Redacting Sensitive Data
 
-If you have fields that are sensitive and should not be sent to APItoolkit servers, you can mark those fields to be redacted  (the fields will never leave your servers).
+If you have fields that are sensitive and should not be sent to APItoolkit servers, you can mark those fields to be redacted (the fields will never leave your servers).
 
 To mark a field for redacting via this SDK, you need to provide additional arguments to the `apitoolkitCfg` variable with paths to the fields that should be redacted. There are three arguments you can provide to configure what gets redacted, namely:
 
-1. `RedactHeaders`:  A list of HTTP header keys.
+1. `RedactHeaders`: A list of HTTP header keys.
 2. `RedactRequestBody`: A list of JSONPaths from the request body.
 3. `RedactResponseBody`: A list of JSONPaths from the response body.
 
@@ -161,11 +151,11 @@ func main() {
   router := gin.New()
   router.Use(apitoolkitClient.GinMiddleware)
 
-  router.POST("/:slug/test", func(c gin.Context) error {
-    return c.String(http.StatusOK, "Ok, success!")
-  })
+	router.GET("/:slug/test", func(c *gin.Context) {
+		c.JSON(http.StatusOK, gin.H{"message": "hello world"})
+	})
 
-  router.Start(":8080")
+  router.Run(":8080")
 }
 ```
 
@@ -188,39 +178,43 @@ To report errors, use the `ReportError()` method, passing in the `context` and `
 package main
 
 import (
-  "context"
-  "fmt"
-  "log"
-  "net/http"
-  "os"
-  "github.com/gin-gonic/gin"
-  apitoolkit "github.com/apitoolkit/apitoolkit-go"
+	"context"
+	"net/http"
+	"os"
+
+	apitoolkit "github.com/apitoolkit/apitoolkit-go"
+	"github.com/gin-gonic/gin"
 )
 
 func main() {
-  ctx := context.Background()
-  apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"})
-  if err != nil {
-    panic(err)
-  }
+	ctx := context.Background()
 
-  router := gin.New()
-  router.Use(apitoolkitClient.GinMiddleware)
+	// Initialize the client
+	apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"})
+	if err != nil {
+		panic(err)
+	}
 
-  router.GET("/", hello)
+	router := gin.New()
 
-  log.Fatal(router.Start(":8080"))
+	// Register APItoolkit's middleware
+	router.Use(apitoolkitClient.GinMiddleware)
+
+	router.GET("/", hello)
+
+	router.Run(":8000")
 }
 
-func hello(c gin.Context) error {
-  // Attempt to open a non-existing file
-  file, err := os.Open("non-existing-file.txt")
-  if err != nil {
-    // Report the error to APItoolkit
-    apitoolkit.ReportError(c.Request().Context(), err)
-  }
-  log.Println(file)
-  return c.String(http.StatusOK, "Hello, World!")
+func hello(c *gin.Context) {
+	// Attempt to open a non-existing file
+	file, err := os.Open("non-existing-file.txt")
+	if err != nil {
+		// Report the error to APItoolkit
+		apitoolkit.ReportError(c.Request.Context(), err)
+		c.JSON(http.StatusInternalServerError, gin.H{"message": "Something went wrong"})
+		return
+	}
+	c.JSON(http.StatusOK, gin.H{"message": file.Name()})
 }
 ```
 
@@ -231,7 +225,7 @@ func hello(c gin.Context) error {
 
 ## Monitoring Outgoing Requests
 
-Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="_blank"} page. However, you can separate outgoing requests from others and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="_blank"} page, alongside the incoming request that triggered them.
+Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="\_blank"} page. However, you can separate outgoing requests from others and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="\_blank"} page, alongside the incoming request that triggered them.
 
 To monitor outgoing HTTP requests from your application, replace the default HTTP client transport with a custom RoundTripper. This allows you to capture and send copies of all incoming and outgoing requests to APItoolkit. Here's an example of outgoing requests configuration with this SDK:
 
@@ -239,45 +233,46 @@ To monitor outgoing HTTP requests from your application, replace the default HTT
 package main
 
 import (
-  "context"
-  "log"
-  "net/http"
-  "github.com/gin-gonic/gin"
-  apitoolkit "github.com/apitoolkit/apitoolkit-go"
+	"context"
+	"net/http"
+
+	apitoolkit "github.com/apitoolkit/apitoolkit-go"
+	"github.com/gin-gonic/gin"
 )
 
 func main() {
-  ctx := context.Background()
-  apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"})
-  if err != nil {
-    panic(err)
-  }
+	ctx := context.Background()
+	apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"})
+	if err != nil {
+		panic(err)
+	}
 
-  router := gin.New()
-  router.Use(apitoolkitClient.GinMiddleware)
+	router := gin.New()
+	router.Use(apitoolkitClient.GinMiddleware)
 
-  router.POST("/:slug/test", func(c gin.Context) (err error) {
-    // Create a new HTTP client
-    HTTPClient := http.DefaultClient
+	router.GET("/test", func(c *gin.Context) {
+		// Create a new HTTP client
+		HTTPClient := http.DefaultClient
 
-    // Replace the transport with the custom RoundTripper
-    HTTPClient.Transport = apitoolkitClient.WrapRoundTripper (
-      c.Request().Context(),
-      HTTPClient.Transport,
-      apitoolkit.WithRedactHeaders([]string{"..."}),
-      apitoolkit.WithRedactRequestBody([]string{"..."}),
-      apitoolkit.WithRedactResponseBody([]string{"..."})
-    )
+		// Replace the transport with the custom RoundTripper
+		HTTPClient.Transport = apitoolkitClient.WrapRoundTripper(
+			c.Request.Context(),
+			HTTPClient.Transport,
+			apitoolkit.WithRedactHeaders("Authorization", "..."),
+			apitoolkit.WithRedactRequestBody("$.password", "..."),
+			apitoolkit.WithRedactResponseBody("$.account_number","..."),
+		)
 
-    // Make an outgoing HTTP request using the modified HTTPClient
-    _, _ = HTTPClient.Get("https://jsonplaceholder.typicode.com/posts/1")
+		// Make an outgoing HTTP request using the modified HTTPClient
+		_, _ = HTTPClient.Get("https://jsonplaceholder.typicode.com/posts/1")
 
-    // Respond to the request
-    c.String(http.StatusOK, "Ok, success!")
-  })
+		// Respond to the request
+		c.String(http.StatusOK, "Ok, success!")
+	})
 
-  log.Fatal(router.Start(":8080"))
+	router.Run(":8088")
 }
+
 ```
 
 <div class="callout">
