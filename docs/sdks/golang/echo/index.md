@@ -16,7 +16,7 @@ To integrate your Golang Echo application with APItoolkit, you need to use this 
 
 ## Prerequisites
 
-Ensure you have already completed the first three steps of the [onboarding guide](/docs/onboarding/){target="_blank"}.
+Ensure you have already completed the first three steps of the [onboarding guide](/docs/onboarding/){target="\_blank"}.
 
 ## Installation
 
@@ -53,18 +53,18 @@ import (
 
 func main() {
   ctx := context.Background()
-  
+
   // Initialize the client
   apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"})
   if err != nil {
     panic(err)
   }
-  
+
   router := echo.New()
 
   // Register APItoolkit's middleware
   router.Use(apitoolkitClient.EchoMiddleware)
- 
+
   // router.Use(...)
   // Other middleware
 
@@ -83,11 +83,11 @@ func main() {
 
 ## Redacting Sensitive Data
 
-If you have fields that are sensitive and should not be sent to APItoolkit servers, you can mark those fields to be redacted  (the fields will never leave your servers).
+If you have fields that are sensitive and should not be sent to APItoolkit servers, you can mark those fields to be redacted (the fields will never leave your servers).
 
 To mark a field for redacting via this SDK, you need to provide additional arguments to the `apitoolkitCfg` variable with paths to the fields that should be redacted. There are three arguments you can provide to configure what gets redacted, namely:
 
-1. `RedactHeaders`:  A list of HTTP header keys.
+1. `RedactHeaders`: A list of HTTP header keys.
 2. `RedactRequestBody`: A list of JSONPaths from the request body.
 3. `RedactResponseBody`: A list of JSONPaths from the response body.
 
@@ -180,7 +180,7 @@ func main() {
 
 ## Error Reporting
 
-APItoolkit detects different API issues and anomalies automatically but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
+APItoolkit detects different API issues, anomalies and server errors automatically but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
 
 To report errors, use the `ReportError()` method, passing in the `context` and `error` arguments like so:
 
@@ -188,39 +188,38 @@ To report errors, use the `ReportError()` method, passing in the `context` and `
 package main
 
 import (
-  "context"
-  "fmt"
-  "log"
-  "net/http"
-  "os"
-  "github.com/labstack/echo/v4"
-  apitoolkit "github.com/apitoolkit/apitoolkit-go"
+	"context"
+	"net/http"
+	"os"
+
+	apitoolkit "github.com/apitoolkit/apitoolkit-go"
+	"github.com/labstack/echo/v4"
 )
 
 func main() {
-  ctx := context.Background()
-  apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"})
-  if err != nil {
-    panic(err)
-  }
+	ctx := context.Background()
+	apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"})
+	if err != nil {
+		panic(err)
+	}
 
-  router := echo.New()
-  router.Use(apitoolkitClient.EchoMiddleware)
+	router := echo.New()
+	router.Use(apitoolkitClient.EchoMiddleware)
 
-  router.GET("/", hello)
+	router.GET("/", hello)
 
-  log.Fatal(router.Start(":8080"))
+	router.Start(":8080")
 }
 
 func hello(c echo.Context) error {
-  // Attempt to open a non-existing file
-  file, err := os.Open("non-existing-file.txt")
-  if err != nil {
-    // Report the error to APItoolkit
-    apitoolkit.ReportError(c.Request().Context(), err)
-  }
-  log.Println(file)
-  return c.String(http.StatusOK, "Hello, World!")
+	// Attempt to open a non-existing file
+	file, err := os.Open("non-existing-file.txt")
+	if err != nil {
+		// Report the error to APItoolkit
+		apitoolkit.ReportError(c.Request().Context(), err)
+		return c.String(http.StatusInternalServerError, "Something went wrong")
+	}
+	return c.String(http.StatusOK, "File: "+file.Name())
 }
 ```
 
@@ -231,7 +230,7 @@ func hello(c echo.Context) error {
 
 ## Monitoring Outgoing Requests
 
-Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="_blank"} page. However, you can separate outgoing requests from others and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="_blank"} page, alongside the incoming request that triggered them.
+Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="\_blank"} page. However, you can separate outgoing requests from others and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="\_blank"} page, alongside the incoming request that triggered them.
 
 To monitor outgoing HTTP requests from your application, replace the default HTTP client transport with a custom RoundTripper. This allows you to capture and send copies of all incoming and outgoing requests to APItoolkit. Here's an example of outgoing requests configuration with this SDK:
 
@@ -239,44 +238,44 @@ To monitor outgoing HTTP requests from your application, replace the default HTT
 package main
 
 import (
-  "context"
-  "log"
-  "net/http"
-  "github.com/labstack/echo/v4"
-  apitoolkit "github.com/apitoolkit/apitoolkit-go"
+	"context"
+	"net/http"
+
+	apitoolkit "github.com/apitoolkit/apitoolkit-go"
+	"github.com/labstack/echo/v4"
 )
 
 func main() {
-  ctx := context.Background()
-  apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"})
-  if err != nil {
-    panic(err)
-  }
+	ctx := context.Background()
+	apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"})
+	if err != nil {
+		panic(err)
+	}
 
-  router := echo.New()
-  router.Use(apitoolkitClient.EchoMiddleware)
+	router := echo.New()
+	router.Use(apitoolkitClient.EchoMiddleware)
 
-  router.POST("/:slug/test", func(c echo.Context) (err error) {
-    // Create a new HTTP client
-    HTTPClient := http.DefaultClient
+	router.POST("/:slug/test", func(c echo.Context) (err error) {
+		// Create a new HTTP client
+		HTTPClient := http.DefaultClient
 
-    // Replace the transport with the custom RoundTripper
-    HTTPClient.Transport = apitoolkitClient.WrapRoundTripper (
-      c.Request().Context(),
-      HTTPClient.Transport,
-      apitoolkit.WithRedactHeaders([]string{"..."}),
-      apitoolkit.WithRedactRequestBody([]string{"..."}),
-      apitoolkit.WithRedactResponseBody([]string{"..."})
-    )
+		// Replace the transport with the custom RoundTripper
+		HTTPClient.Transport = apitoolkitClient.WrapRoundTripper(
+			c.Request().Context(),
+			HTTPClient.Transport,
+			apitoolkit.WithRedactHeaders("Authorization", "..."),
+			apitoolkit.WithRedactRequestBody("$.password", "..."),
+			apitoolkit.WithRedactResponseBody("$.account_number", "..."),
+		)
 
-    // Make an outgoing HTTP request using the modified HTTPClient
-    _, _ = HTTPClient.Get("https://jsonplaceholder.typicode.com/posts/1")
+		// Make an outgoing HTTP request using the modified HTTPClient
+		_, _ = HTTPClient.Get("https://jsonplaceholder.typicode.com/posts/1")
 
-    // Respond to the request
-    c.String(http.StatusOK, "Ok, success!")
-  })
+		// Respond to the request
+		return c.String(http.StatusOK, "Ok, success!")
+	})
 
-  log.Fatal(router.Start(":8080"))
+	router.Start(":8080")
 }
 ```
 
