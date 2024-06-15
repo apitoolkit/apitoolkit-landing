@@ -16,7 +16,7 @@ To integrate your Springboot Java application with APItoolkit, you need to use t
 
 ## Prerequisites
 
-Ensure you have already completed the first three steps of the [onboarding guide](/docs/onboarding/){target="_blank"}.
+Ensure you have already completed the first three steps of the [onboarding guide](/docs/onboarding/){target="\_blank"}.
 
 ## Installation
 
@@ -26,7 +26,7 @@ To install the SDK, kindly add the following dependency to your `pom.xml` file w
 &lt;dependency&gt;
     &lt;groupId&gt;io.apitoolkit.springboot&lt;/groupId&gt;
     &lt;artifactId&gt;apitoolkit-springboot&lt;/artifactId&gt;
-    &lt;version&gt;1.0.5&lt;/version&gt;
+    &lt;version&gt;1.0.6&lt;/version&gt;
 &lt;/dependency&gt;
 ```
 
@@ -38,7 +38,7 @@ First, add your APItoolkit API key to the `application.properties` file like so:
 apitoolkit.apikey={ENTER_YOUR_API_KEY_HERE}
 
 # Other configuation options
-apitoolkit.debug=false # Set to true to enable debug mode
+apitoolkit.debug=false
 # ...
 ```
 
@@ -59,7 +59,7 @@ import io.apitoolkit.springboot.annotations.EnableAPIToolkit;
 import org.springframework.web.bind.annotation.*;
 
 @SpringBootApplication
-// Class declaration for the annotation
+// Add APIToolkit custom annotation
 @EnableAPIToolkit
 @RestController
 public class DemoApplication {
@@ -68,20 +68,21 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
-	@GetMapping("/user/{name}")
-	public User getUser(@PathVariable String name) {
-		return new User("Jon Doe", "example@gmail.com");
+	@GetMapping("/greet/{name}")
+	public String getUser(@PathVariable String name) {
+
+		return "Hello, " + name;
 	}
 }
 ```
 
 ## Redacting Sensitive Data
 
-If you have fields that are sensitive and should not be sent to APItoolkit servers, you can mark those fields to be redacted  (the fields will never leave your servers).
+If you have fields that are sensitive and should not be sent to APItoolkit servers, you can mark those fields to be redacted (the fields will never leave your servers).
 
 To mark a field for redacting via this SDK, you need to provide additional configuration options to the `application.properties` file with paths to the fields that should be redacted. There are three arguments you can provide to configure what gets redacted, namely:
 
-1. `redactHeaders`:  A list of HTTP header keys.
+1. `redactHeaders`: A list of HTTP header keys.
 2. `redactRequestBody`: A list of JSONPaths from the request body.
 3. `redactResponseBody`: A list of JSONPaths from the response body.
 
@@ -150,7 +151,7 @@ apitoolkit.redactResponseBody=$.users[*].email,$.users[*].credit_card
 
 ## Error Reporting
 
-APItoolkit detects different API issues and anomalies automatically but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
+APItoolkit detects different API issues, anomalies and uncaught exceptions automatically but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
 
 To report errors, use the `reportError()` method, passing in the `request` and `exception` parameters like so:
 
@@ -188,53 +189,57 @@ public class DemoApplication {
 
 ## Monitoring Outgoing Requests
 
-Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="_blank"} page. However, you can separate outgoing requests from others and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="_blank"} page, alongside the incoming request that triggered them.
+Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="\_blank"} page. However, you can separate outgoing requests from others and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="\_blank"} page, alongside the incoming request that triggered them.
 
 The Spring Boot SDK provides the `ObserveRequest` class for monitoring outgoing requests using the Apache HTTP client. First, you will create an instance of the `ObserveRequest` class (you can also pass optional parameters to redact headers and request/response body). Then use the `observingClient` to create a new HTTP client, passing in the current request context and an optional path pattern if the route has dynamic parameters. Here's an example of outgoing requests configuration with this SDK:
 
 ```java
 package com.example.demo;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
-import javax.servlet.http.HttpServletRequest;
+import java.util.List;
+
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.util.EntityUtils;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+// Import APItoolkit annotation
+import io.apitoolkit.springboot.annotations.EnableAPIToolkit;
+import io.apitoolkit.springboot.integrations.ObserveRequest;
+import jakarta.servlet.http.HttpServletRequest;
+
+import org.springframework.web.bind.annotation.*;
 
 @SpringBootApplication
+// Add APIToolkit custom annotation
 @EnableAPIToolkit
 @RestController
 public class DemoApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(DemoApplication.class, args);
-    }
+	public static void main(String[] args) {
+		SpringApplication.run(DemoApplication.class, args);
+	}
 
-    // Create an Instance of ObserveRequest
-    private ObserveRequest observingClient = new ObserveRequest(
-        List.of("cookies", "authorization", "x-api-key"),
-        List.of("$.title", "$.id"),
-        List.of("$.body")
-    );
+	private ObserveRequest observingClient = new ObserveRequest(
+			List.of("cookies", "authorization", "x-api-key"),
+			List.of("$.title", "$.id"),
+			List.of("$.body"));
 
-    @GetMapping("/hello")
-    public String hello(HttpServletRequest request) {
-        // Use observingClient to Create an HTTP Client
-        CloseableHttpClient httpClient = observingClient.createHttpClient(request, "/posts/{post_id}");
-        try {
-            HttpGet httpGet = new HttpGet("https://jsonplaceholder.typicode.com/posts/1");
-            CloseableHttpResponse response = httpClient.execute(httpGet);
-            String responseStr = EntityUtils.toString(response.getEntity());
-            return responseStr;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return "Error occurred while processing the request";
-        }
-    }
+	@GetMapping("/hello")
+	public String hello(HttpServletRequest request) {
+		// Use observingClient to Create an HTTP Client
+		CloseableHttpClient httpClient = observingClient.createHttpClient(request, "/posts/{post_id}");
+		try {
+			HttpGet httpGet = new HttpGet("https://jsonplaceholder.typicode.com/posts/1");
+			CloseableHttpResponse response = httpClient.execute(httpGet);
+			String responseStr = EntityUtils.toString(response.getEntity());
+			return responseStr;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "Error occurred while processing the request";
+		}
+	}
 }
 ```
 
