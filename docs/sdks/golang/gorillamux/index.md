@@ -265,9 +265,9 @@ func main() {
     HTTPClient.Transport = apitoolkitClient.WrapRoundTripper (
       r.Context(),
       HTTPClient.Transport,
-      apitoolkit.WithRedactHeaders([]string{"..."}),
-      apitoolkit.WithRedactRequestBody([]string{"..."}),
-      apitoolkit.WithRedactResponseBody([]string{"..."})
+      apitoolkit.WithRedactHeaders("Authorization", "...other headers"),
+      apitoolkit.WithRedactRequestBody("$.password", "... "),
+      apitoolkit.WithRedactResponseBody("$.account_number", "... ")
     )
 
     // Make an outgoing HTTP request using the modified HTTPClient
