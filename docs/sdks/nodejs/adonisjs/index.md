@@ -16,18 +16,18 @@ To integrate your AdonisJs application with APItoolkit, you need to use this SDK
 
 ## Prerequisites
 
-Ensure you have already completed the first three steps of the [onboarding guide](/docs/onboarding/){target="_blank"}.
+Ensure you have already completed the first three steps of the [onboarding guide](/docs/onboarding/){target="\_blank"}.
 
 ## Installation
 
 Kindly run the command below to install the SDK:
 
 ```sh
+# Adonis v6
 npm install apitoolkit-adonis@latest
 
-# Or
-
-npm install apitoolkit-adonis@latest
+# Adonis v5
+npm install apitoolkit-adonis@2.2.0
 ```
 
 ## Configuration
@@ -57,13 +57,14 @@ server.use([
     Then, create an `apitoolkit.js|ts` file in the `/conf` directory and export the `defineConfig` object with some properties like so:
 
 ```js
-import { defineConfig } from 'apitoolkit-adonis'
+import { defineConfig } from "apitoolkit-adonis";
 
 export default defineConfig({
   apiKey: "{ENTER_YOUR_API_KEY_HERE}",
-  debug: false // Set to true to enable debug mode
-})
+  debug: false, // Set to true to enable debug mode
+});
 ```
+
   </div>
   <div id="Tab2" class="tab-content">
     Add `@ioc:APIToolkit` to your global middleware list in the `start/kernel.js|ts` file like so:
@@ -82,6 +83,7 @@ export const apitoolkitConfig = {
   apiKey: "{ENTER_YOUR_API_KEY_HERE}",
 };
 ```
+
   </div>
 </section>
 
@@ -92,11 +94,11 @@ export const apitoolkitConfig = {
 
 ## Redacting Sensitive Data
 
-If you have fields that are sensitive and should not be sent to APItoolkit servers, you can mark those fields to be redacted  (the fields will never leave your servers).
+If you have fields that are sensitive and should not be sent to APItoolkit servers, you can mark those fields to be redacted (the fields will never leave your servers).
 
 To mark a field for redacting via this SDK, you need to add some additional arguments to the configuration object in the `conf/apitoolkit.js|ts` file with paths to the fields that should be redacted. There are three arguments you can provide to configure what gets redacted, namely:
 
-1. `redactHeaders`:  A list of HTTP header keys.
+1. `redactHeaders`: A list of HTTP header keys.
 2. `redactRequestBody`: A list of JSONPaths from the request body.
 3. `redactResponseBody`: A list of JSONPaths from the response body.
 
@@ -146,16 +148,15 @@ Examples of valid JSONPaths would be:
 
 Here's an example of what the configuration would look like with redacted fields:
 
-
 ```js
 export default defineConfig({
   apiKey: "{ENTER_YOUR_API_KEY_HERE}",
   debug: false,
 
-  redactHeaders: ["Content-Type", "Authorization", "HOST"], 
+  redactHeaders: ["Content-Type", "Authorization", "HOST"],
   redactRequestBody: ["$.user.email", "$.user.addresses"],
-  redactResponseBody: ["$.users[*].email", "$.users[*].credit_card"]
-})
+  redactResponseBody: ["$.users[*].email", "$.users[*].credit_card"],
+});
 ```
 
 <div class="callout">
@@ -171,7 +172,7 @@ export default defineConfig({
 
 APItoolkit detects different API issues and anomalies automatically but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
 
-To report errors, you need to first enable [asyncLocalStorage](https://docs.adonisjs.com/guides/concepts/async-local-storage){target="_blank" rel="noopener noreferrer"} in your AdonisJS project by setting `useAsyncLocalStorage` to true in your `config/app.js|ts` file like so:
+To report errors, you need to first enable [asyncLocalStorage](https://docs.adonisjs.com/guides/concepts/async-local-storage){target="\_blank" rel="noopener noreferrer"} in your AdonisJS project by setting `useAsyncLocalStorage` to true in your `config/app.js|ts` file like so:
 
 ```js
 export const http: ServerConfig = {
@@ -183,12 +184,12 @@ export const http: ServerConfig = {
 Then, use the `reportError()` function, passing in the `error` argument like so:
 
 ```js
-import router from '@adonisjs/core/services/router'
+import router from "@adonisjs/core/services/router";
 import { reportError } from "apitoolkit-adonis";
 
 router.get("/observer", async () => {
   try {
-    throw ("Error occurred!");
+    throw "Error occurred!";
   } catch (error) {
     // Report the error to APItoolkit
     reportError(error);
@@ -199,9 +200,9 @@ router.get("/observer", async () => {
 
 ## Monitoring Outgoing Requests
 
-Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="_blank"} page. However, you can separate outgoing requests from others and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="_blank"} page, alongside the incoming request that triggered them.
+Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="\_blank"} page. However, you can separate outgoing requests from others and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="\_blank"} page, alongside the incoming request that triggered them.
 
-To monitor outgoing axios-based HTTP requests from your application, first, enable [asyncLocalStorage](https://docs.adonisjs.com/guides/concepts/async-local-storage){target="_blank" rel="noopener noreferrer"} in your AdonisJS project by setting `useAsyncLocalStorage` to true in your `config/app.js|ts` file like so:
+To monitor outgoing axios-based HTTP requests from your application, first, enable [asyncLocalStorage](https://docs.adonisjs.com/guides/concepts/async-local-storage){target="\_blank" rel="noopener noreferrer"} in your AdonisJS project by setting `useAsyncLocalStorage` to true in your `config/app.js|ts` file like so:
 
 ```js
 export const http: ServerConfig = {
@@ -221,7 +222,7 @@ const redactHeadersList = ["Content-Type", "Authorization", "HOST"];
 const redactRequestBodyList = ["Content-Type", "Authorization", "HOST"];
 const redactResponseBodyList = ["$.users[*].email", "$.users[*].credit_card"];
 
-Route.get('/observer', async () => {
+Route.get("/observer", async () => {
   const response = await observeAxios(
     axios,
     pathWildCard,
@@ -229,8 +230,8 @@ Route.get('/observer', async () => {
     redactRequestBodyList,
     redactResponseBodyList
   ).get(baseURL + "/users/user1234");
-  return {hello: "hello world"}
-})
+  return { hello: "hello world" };
+});
 ```
 
 <div class="callout">
