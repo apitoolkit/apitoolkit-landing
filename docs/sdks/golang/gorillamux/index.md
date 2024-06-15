@@ -16,7 +16,7 @@ To integrate your Golang Gorilla Mux application with APItoolkit, you need to us
 
 ## Prerequisites
 
-Ensure you have already completed the first three steps of the [onboarding guide](/docs/onboarding/){target="_blank"}.
+Ensure you have already completed the first three steps of the [onboarding guide](/docs/onboarding/){target="\_blank"}.
 
 ## Installation
 
@@ -26,7 +26,7 @@ Kindly run the command below to install the SDK:
 go get github.com/apitoolkit/apitoolkit-go
 ```
 
-Then add `github.com/apitoolkit/apitoolkit-go` to the list of dependencies like so:
+Then add `github.com/apitoolkit/apitoolkit-go` to the list of imports like so:
 
 ```go
 package main
@@ -45,7 +45,6 @@ package main
 
 import (
   "context"
-  "log"
   "net/http"
   "github.com/gorilla/mux"
   apitoolkit "github.com/apitoolkit/apitoolkit-go"
@@ -53,22 +52,22 @@ import (
 
 func main() {
   ctx := context.Background()
-  
+
   // Initialize the client
   apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"})
   if err != nil {
     panic(err)
   }
-  
+
   router := mux.NewRouter()
 
   // Register APItoolkit's middleware
   router.Use(apitoolkitClient.GorillaMuxMiddleware)
- 
+
   // router.Use(...)
   // Other middleware
 
-  router.HandleFunc("/{slug}/test", func(w http.ResponseWriter, r *http.Request) {
+  router.HandleFunc("/test", func(w http.ResponseWriter, r *http.Request) {
     w.WriteHeader(http.StatusOK)
     w.Write([]byte("ok"))
   })
@@ -85,11 +84,11 @@ func main() {
 
 ## Redacting Sensitive Data
 
-If you have fields that are sensitive and should not be sent to APItoolkit servers, you can mark those fields to be redacted  (the fields will never leave your servers).
+If you have fields that are sensitive and should not be sent to APItoolkit servers, you can mark those fields to be redacted (the fields will never leave your servers).
 
 To mark a field for redacting via this SDK, you need to provide additional arguments to the `apitoolkitCfg` variable with paths to the fields that should be redacted. There are three arguments you can provide to configure what gets redacted, namely:
 
-1. `RedactHeaders`:  A list of HTTP header keys.
+1. `RedactHeaders`: A list of HTTP header keys.
 2. `RedactRequestBody`: A list of JSONPaths from the request body.
 3. `RedactResponseBody`: A list of JSONPaths from the response body.
 
@@ -163,7 +162,7 @@ func main() {
   router := mux.NewRouter()
   router.Use(apitoolkitClient.GorillaMuxMiddleware)
 
-  router.HandleFunc("/{slug}/test", func(w http.ResponseWriter, r *http.Request) {
+  router.HandleFunc("/test", func(w http.ResponseWriter, r *http.Request) {
     w.WriteHeader(http.StatusOK)
     w.Write([]byte("Ok, success!"))
   })
@@ -194,7 +193,6 @@ package main
 import (
   "context"
   "fmt"
-  "log"
   "net/http"
   "os"
   "github.com/gorilla/mux"
@@ -234,7 +232,7 @@ func hello(w http.ResponseWriter, r *http.Request) {
 
 ## Monitoring Outgoing Requests
 
-Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="_blank"} page. However, you can separate outgoing requests from others and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="_blank"} page, alongside the incoming request that triggered them.
+Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="\_blank"} page. However, you can separate outgoing requests from others and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="\_blank"} page, alongside the incoming request that triggered them.
 
 To monitor outgoing HTTP requests from your application, replace the default HTTP client transport with a custom RoundTripper. This allows you to capture and send copies of all incoming and outgoing requests to APItoolkit. Here's an example of outgoing requests configuration with this SDK:
 
