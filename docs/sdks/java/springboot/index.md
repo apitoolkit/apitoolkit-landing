@@ -70,7 +70,6 @@ public class DemoApplication {
 
 	@GetMapping("/greet/{name}")
 	public String getUser(@PathVariable String name) {
-
 		return "Hello, " + name;
 	}
 }
