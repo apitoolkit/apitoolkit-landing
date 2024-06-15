@@ -173,7 +173,7 @@ const apitoolkitClient = await APIToolkit.NewClient({
   apiKey: "{ENTER_YOUR_API_KEY_HERE}",
   redactHeaders: ["Content-Type", "Authorization", "HOST"],
   redactRequestBody: ["$.user.email", "$.user.addresses"],
-  redactResponseBody: ["$.users[*].email", "$.users[*].credit_card"]
+  redactResponseBody: ["$.users[*].email", "$.users[*].credit_card"],
 });
 
 app.use(express.json());
@@ -287,12 +287,13 @@ To manually report errors within the context of a web request handler, use the `
 ```js
 import { APIToolkit, ReportError } from "apitoolkit-express";
 import express from "express";
-import axios from "axios";
 
 const app = express();
 const port = 3000;
 
-const apitoolkitClient = APIToolkit.NewClient({ apiKey: "{ENTER_YOUR_API_KEY_HERE}" });
+const apitoolkitClient = APIToolkit.NewClient({
+  apiKey: "{ENTER_YOUR_API_KEY_HERE}",
+});
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -300,8 +301,8 @@ app.use(apitoolkitClient.expressMiddleware);
 
 app.get("/", (req, res) => {
   try {
-    const response = await observeAxios(axios).get(baseURL + "/ping");
-    res.send(response);
+    throw new Error("Deliberate error");
+    res.send("Hello");
   } catch (error) {
     // Report the error to APItoolkit
     ReportError(error);
@@ -312,41 +313,6 @@ app.get("/", (req, res) => {
 app.listen(port, () => {
   console.log("App running on port " + port);
 });
-```
-
-### Report Specific Errors (Background Job)
-
-If your request is called from a background job for example (outside the web request handler and hence, not wrapped by APItoolkit's middleware), using `ReportError()` directly from `apitoolkit-express` will not be available. Instead, call `ReportError()` from `apitoolkitClient` like so:
-
-```js
-import {APIToolkit , ReportError } from "apitoolkit-express";
-import express from "express";
-import axios from "axios"
-
-const app = express();
-const port = 3000;
-
-const apitoolkitClient = APIToolkit.NewClient({apiKey: "{ENTER_YOUR_API_KEY_HERE}"});
-
-app.use(apitoolkitClient.expressMiddleware);
-
-app.get("/", (req, res) => {
-  try {
-  const response = await observeAxios(axios).get(baseURL + "/ping");
-  res.send(response);
-} catch (error) {
-  // Report the error to APItoolkit
-  apitoolkitClient.ReportError(error);
-  res.send("Something went wrong...")
-}
-});
-
-app.use(apitoolkitClient.errorHandler);
-
-app.listen(port, () => {
-  console.log("App running on port " + port);
-});
-
 ```
 
 ## Monitoring Outgoing Requests
