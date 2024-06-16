@@ -44,13 +44,8 @@
     <script defer src="https://kit.fontawesome.com/32c218ff10.js" crossorigin="anonymous"></script>
     <script defer src="/assets/deps/htmx/htmx.min.js"></script>
     <script defer src="/assets/deps/htmx/preload.js"></script>
+    <script defer src="/assets/js/tabs.js"></script>
     <script defer src="https://unpkg.com/hyperscript.org@0.9.12"></script>
-    <script defer src="/pagefind/pagefind-ui.js"></script>
-    <script>
-      window.addEventListener('DOMContentLoaded', (event) => {
-        new PagefindUI({ element: '#search', showSubResults: true });
-      });
-    </script>
     <style>
       @font-face {
         font-family: 'Bakemono';
@@ -539,8 +534,8 @@ twq('config','om5gt');
           <li>
             {% assign is_active_page = subpage.permalink | equals: this.permalink %}
             <a href="{{ subpage.permalink }}"
-              class="hover:text-secondary {{ is_active_page | ternary: 'text-secondary', '' }}">{{
-              subpage.frontmatter.title }}</a>
+               class="hover:text-secondary {{ is_active_page | ternary: 'text-secondary', '' }}">{{
+               subpage.frontmatter.title }}</a>
             {% capture glob_pattern2 %}.{{ subpage.permalink }}*/index.md{% endcapture %}
             {% assign subsubpages = file_list | where_glob: 'file_path', glob_pattern2 | sort %}
             {% if subsubpages.size > 0 %}
@@ -654,7 +649,6 @@ twq('config','om5gt');
       </div>
     </section>
 
-    <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css"

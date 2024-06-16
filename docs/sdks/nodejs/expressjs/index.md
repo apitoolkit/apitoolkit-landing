@@ -426,5 +426,3 @@ console.log(response.data);
     Explore the ExpressJS SDK
 </a>
 ```
-
-<script defer src="/assets/js/tabs.js"></script>

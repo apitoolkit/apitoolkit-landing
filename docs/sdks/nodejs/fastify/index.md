@@ -260,5 +260,3 @@ app.get("/", async (request, reply) => {
     Explore the FastifyJS SDK
 </a>
 ```
-
-<script defer src="/assets/js/tabs.js"></script>

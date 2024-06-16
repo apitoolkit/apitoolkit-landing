@@ -289,5 +289,3 @@ Route.get("/observer", async () => {
     Explore the AdonisJS SDK
 </a>
 ```
-
-<script defer src="/assets/js/tabs.js"></script>

@@ -25,14 +25,16 @@ function tabsComponent(tabGroup) {
 
   // Set the first tab to be visible
   if (tabButtons.length > 0) {
+    console.log("Initializing first tab");
     tabButtons[0].click();
   }
 }
 
-// Initialize the tabs functionality
-document.addEventListener("DOMContentLoaded", function () {
+// Wait for the DOM to fully load
+document.addEventListener("DOMContentLoaded", () => {
   const tabGroups = document.querySelectorAll(".tab-group");
   tabGroups.forEach((group) => {
+    // Initialize the tabs functionality
     tabsComponent(group);
   });
 });
