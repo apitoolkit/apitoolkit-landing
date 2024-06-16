@@ -149,7 +149,7 @@ app.Use(async (context, next) =>
 
 ## Error Reporting
 
-APItoolkit detects different API issues and anomalies automatically but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
+APItoolkit automatically detects different unhandled errors, API issues, and anomalies but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
 
 To report errors, use the `ReportError()` handler, passing in the `context` and `error` arguments like so:
 

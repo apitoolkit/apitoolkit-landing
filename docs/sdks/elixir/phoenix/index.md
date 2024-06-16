@@ -145,7 +145,7 @@ end
 
 ## Error Reporting
 
-APItoolkit detects different API issues and anomalies automatically but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
+APItoolkit automatically detects different unhandled errors, API issues, and anomalies but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
 
 To report errors and uncaught exceptions, use the `report_error()` method, passing in the `connection` and `error` arguments in the `handle_errors` function like so:
 
