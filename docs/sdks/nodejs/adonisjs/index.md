@@ -189,20 +189,19 @@ To report errors, you need to first enable [asyncLocalStorage](https://docs.adon
   <div id="Tab_1" class="tab-content active">
 
 ```js
-export const http: ServerConfig = {
-  useAsyncLocalStorage: true
-  // other configs...
-}
+export const http = defineConfig({
+  useAsyncLocalStorage: true,
+  // ohter configs...
+})
 ```
   </div>
   <div id="Tab_2" class="tab-content">
 
 ```js
-export const http = defineConfig({
-  useAsyncLocalStorage: true,
-  // ohter configs...
-})
-
+export const http: ServerConfig = {
+  useAsyncLocalStorage: true
+  // other configs...
+}
 ```
 
   </div>
@@ -239,19 +238,19 @@ To monitor outgoing axios-based HTTP requests from your application, first, enab
   <div id="Tab__1" class="tab-content active">
 
 ```js
-export const http: ServerConfig = {
-  useAsyncLocalStorage: true
-  // other configs...
-}
+export const http = defineConfig({
+  useAsyncLocalStorage: true,
+  // ohter configs...
+})
 ```
   </div>
   <div id="Tab__2" class="tab-content">
 
 ```js
-export const http = defineConfig({
-  useAsyncLocalStorage: true,
-  // ohter configs...
-})
+export const http: ServerConfig = {
+  useAsyncLocalStorage: true
+  // other configs...
+}
 
 ```
 
