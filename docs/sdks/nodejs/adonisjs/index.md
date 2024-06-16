@@ -20,14 +20,20 @@ Ensure you have already completed the first three steps of the [onboarding guide
 
 ## Installation
 
-Kindly run the command below to install the SDK:
+Run the command below to install the SDK:
+
+#### Adonis v5
+
+Version 2.2.0 provides support for adonis v5
 
 ```sh
-# Adonis v6
-npm install apitoolkit-adonis@latest
-
-# Adonis v5
 npm install apitoolkit-adonis@2.2.0
+```
+
+#### Adonis v6
+
+```sh
+npm install apitoolkit-adonis@latest
 ```
 
 ## Configuration
@@ -174,12 +180,33 @@ APItoolkit detects different API issues and anomalies automatically but you can 
 
 To report errors, you need to first enable [asyncLocalStorage](https://docs.adonisjs.com/guides/concepts/async-local-storage){target="\_blank" rel="noopener noreferrer"} in your AdonisJS project by setting `useAsyncLocalStorage` to true in your `config/app.js|ts` file like so:
 
+
+<section>
+  <div class="tab-buttons">
+      <div class="tab-button active" onclick="openTab(event, 'Tab_1')">Adonis v6 (latest)</div>
+      <div class="tab-button" onclick="openTab(event, 'Tab_2')">Adonis v5</div>
+  </div>
+  <div id="Tab_1" class="tab-content active">
+
 ```js
 export const http: ServerConfig = {
   useAsyncLocalStorage: true
   // other configs...
 }
 ```
+  </div>
+  <div id="Tab_2" class="tab-content">
+
+```js
+export const http = defineConfig({
+  useAsyncLocalStorage: true,
+  // ohter configs...
+})
+
+```
+
+  </div>
+</section>
 
 Then, use the `reportError()` function, passing in the `error` argument like so:
 
@@ -204,12 +231,32 @@ Outgoing requests are external API calls you make from your API. By default, API
 
 To monitor outgoing axios-based HTTP requests from your application, first, enable [asyncLocalStorage](https://docs.adonisjs.com/guides/concepts/async-local-storage){target="\_blank" rel="noopener noreferrer"} in your AdonisJS project by setting `useAsyncLocalStorage` to true in your `config/app.js|ts` file like so:
 
+<section>
+  <div class="tab-buttons">
+      <div class="tab-button active" onclick="openTab(event, 'Tab_1')">Adonis v6 (latest)</div>
+      <div class="tab-button" onclick="openTab(event, 'Tab_2')">Adonis v5</div>
+  </div>
+  <div id="Tab_1" class="tab-content active">
+
 ```js
 export const http: ServerConfig = {
   useAsyncLocalStorage: true
   // other configs...
 }
 ```
+  </div>
+  <div id="Tab_2" class="tab-content">
+
+```js
+export const http = defineConfig({
+  useAsyncLocalStorage: true,
+  // ohter configs...
+})
+
+```
+
+  </div>
+</section>
 
 Then, wrap your axios instance with the `observeAxios()` function like so:
 
