@@ -1,28 +1,38 @@
-// Temporary tab component script (only works with one tab per page)
+// Script for the tabs component used in the docs.
 
-function openTab(event, tabName) {
-  let i, tabcontent, tablinks;
+function tabsComponent(tabGroup) {
+  const tabButtons = tabGroup.querySelectorAll(".tab-button");
+  const tabContents = tabGroup.querySelectorAll(".tab-content");
 
-  // Hide all tab content
-  tabcontent = document.getElementsByClassName("tab-content");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-    tabcontent[i].classList.remove("active");
+  tabButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      // Hide all tab content within this group
+      tabContents.forEach((content) => {
+        content.style.display = "none";
+      });
+
+      // Remove the active class from all tab buttons within this group
+      tabButtons.forEach((btn) => {
+        btn.classList.remove("active");
+      });
+
+      // Show the current tab's content and add the active class to the button
+      const tabName = button.getAttribute("data-tab");
+      tabGroup.querySelector(`#${tabName}`).style.display = "block";
+      button.classList.add("active");
+    });
+  });
+
+  // Set the first tab to be visible
+  if (tabButtons.length > 0) {
+    tabButtons[0].click();
   }
-
-  // Remove the active class from all tab buttons
-  tablinks = document.getElementsByClassName("tab-button");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].classList.remove("active");
-  }
-
-  // Show the current tab's content and add the active class to the button
-  document.getElementById(tabName).style.display = "block";
-  document.getElementById(tabName).classList.add("active");
-  event.currentTarget.classList.add("active");
 }
 
-// Initialize the first tab to be visible
+// Initialize the tabs functionality
 document.addEventListener("DOMContentLoaded", function () {
-  document.querySelector(".tab-button").click();
+  const tabGroups = document.querySelectorAll(".tab-group");
+  tabGroups.forEach((group) => {
+    tabsComponent(group);
+  });
 });

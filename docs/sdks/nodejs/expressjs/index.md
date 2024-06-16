@@ -34,12 +34,10 @@ yarn install apitoolkit-express
 
 Next, initialize APItoolkit in your application's entry point (e.g., `index.js`) like so:
 
-<section>
-  <div class="tab-buttons">
-      <div class="tab-button active" onclick="openTab(event, 'Tab1')">ESM</div>
-      <div class="tab-button" onclick="openTab(event, 'Tab2')">CommonJs</div>
-  </div>
-  <div id="Tab1" class="tab-content active">
+<section class="tab-group" data-tab-group="group1">
+  <button class="tab-button" data-tab="tab1">ESM</button>
+  <button class="tab-button" data-tab="tab2">CommonJs</button>
+  <div id="tab1" class="tab-content">
 
 ```js
 import { APIToolkit } from "apitoolkit-express";
@@ -66,8 +64,8 @@ app.use(apitoolkitClient.errorHandler);
 app.listen(port, () => console.log("App running on port: " + port));
 ```
 
-  </div>
-  <div id="Tab2" class="tab-content">
+</div>
+  <div id="tab2" class="tab-content">
 
 ```js
 const express = require("express");
@@ -241,10 +239,12 @@ app.listen(port, () => {
 
 ## Error Reporting
 
-APItoolkit detects different API issues and anomalies automatically but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
+APItoolkit automatically detects different unhandled errors, API issues, and anomalies but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
 
-### Report All Errors
-
+<section class="tab-group" data-tab-group="group2">
+  <button class="tab-button" data-tab="tab1"> Report All Errors</button>
+  <button class="tab-button" data-tab="tab2">Report Specific Errors</button>
+  <div id="tab1" class="tab-content">
 To report all uncaught errors that happened during a request, you can use the `errorHandler` middleware immediately after your app's controllers like so:
 
 ```js
@@ -277,11 +277,10 @@ app.listen(port, () => {
 
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <p>Ensure to add the error handler after all controllers and before any other error middleware.</p>
+  <p>Ensure to add the `apitoolkitClient.errorHandler` after all controllers and before any other error middleware.</p>
 </div>
-
-### Report Specific Errors
-
+  </div>
+  <div id="tab2" class="tab-content">
 To manually report errors within the context of a web request handler, use the `ReportError()` function like so:
 
 ```js
@@ -314,13 +313,18 @@ app.listen(port, () => {
   console.log("App running on port " + port);
 });
 ```
+  </div>
+</section>
 
 ## Monitoring Outgoing Requests
 
 Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="\_blank"} page. However, you can separate outgoing requests from others and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="\_blank"} page, alongside the incoming request that triggered them.
 
-### Monitor All Requests
-
+<section class="tab-group" data-tab-group="group3">
+  <button class="tab-button" data-tab="tab1">All Requests</button>
+  <button class="tab-button" data-tab="tab2">Specific Requests</button>
+  <button class="tab-button" data-tab="tab3">Specific Requests (Background Job)</button>
+  <div id="tab1" class="tab-content">
 To enable global monitoring of all axios requests with APItoolkit, import the axios instance into the `apitoolkitClient` configuration options like so:
 
 ```js
@@ -348,9 +352,8 @@ app.listen(port, () => {
   console.log("App running on port " + port);
 });
 ```
-
-### Monitor Specific Requests
-
+  </div>
+  <div id="tab2" class="tab-content">
 To monitor a specific axios request within the context of a web request handler, wrap your axios instance with the `observeAxios()` function like so:
 
 ```js
@@ -396,9 +399,8 @@ app.listen(port, () => {
     <li>`redactRequestBody`: A string list of JSONPaths to redact from the request body.</li>
   </ul>
 </div>
-
-### Monitor Specific Requests (Background Job)
-
+  </div>
+  <div id="tab3" class="tab-content">
 If your outgoing request is called from a background job for example (outside the web request handler and hence, not wrapped by APItoolkit's middleware), using `observeAxios` directly from `apitoolkit-express` will not be available. Instead, call `observeAxios` from `apitoolkitClient` like so:
 
 ```js
@@ -414,6 +416,8 @@ const response = await apitoolkitClient
   .get("http://localhost:8080/ping");
 console.log(response.data);
 ```
+  </div>
+</section>
 
 ```=html
 <hr />

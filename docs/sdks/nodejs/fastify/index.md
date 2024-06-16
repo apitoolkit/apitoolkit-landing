@@ -147,10 +147,12 @@ fastify.listen({ port: 3000 }, function (err, address) {
 
 ## Error Reporting
 
-APItoolkit detects different API issues and anomalies automatically but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
+APItoolkit automatically detects different unhandled errors, API issues, and anomalies but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
 
-### Report Specific Errors
-
+<section class="tab-group" data-tab-group="group1">
+  <button class="tab-button" data-tab="tab1">Report Specific Errors</button>
+  <button class="tab-button" data-tab="tab2">Report Specific Errors (Background Job)</button>
+  <div id="tab1" class="tab-content">
 To manually report errors within the context of a web request handler, use the `ReportError()` function like so:
 
 ```js
@@ -175,10 +177,9 @@ app.get("/", async (request, reply) => {
     }
 });
 ```
-
-### Report Specific Errors (Background Job)
-
-If your request is called from a background job for example (outside the web request handler and hence, not wrapped by APItoolkit's middleware), using `ReportError()` directly from `apitoolkit-express` will not be available. Instead, call `ReportError()` from `apitoolkitClient` like so:
+  </div>
+  <div id="tab2" class="tab-content">
+  If your request is called from a background job for example (outside the web request handler and hence, not wrapped by APItoolkit's middleware), using `ReportError()` directly from `apitoolkit-express` will not be available. Instead, call `ReportError()` from `apitoolkitClient` like so:
 
 ```js
 import Fastify from "fastify";
@@ -197,6 +198,8 @@ try {
   apitoolkitClient.ReportError(error);
 }
 ```
+  </div>
+</section>
 
 ## Monitoring Outgoing Requests
 
@@ -257,3 +260,5 @@ app.get("/", async (request, reply) => {
     Explore the FastifyJS SDK
 </a>
 ```
+
+<script defer src="/assets/js/tabs.js"></script>
