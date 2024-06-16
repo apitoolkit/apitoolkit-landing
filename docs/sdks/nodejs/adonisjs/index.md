@@ -235,17 +235,17 @@ To monitor outgoing axios-based HTTP requests from your application, first, enab
       <div class="tab-button active" onclick="openTab(event, 'Tab__1')">Adonis v6 (latest)</div>
       <div class="tab-button" onclick="openTab(event, 'Tab__2')">Adonis v5</div>
   </div>
-  <div id="Tab__1" class="tab-content active">
-        
+<div id="Tab__1" class="tab-content active">
+
 ```js
 export const http = defineConfig({
   useAsyncLocalStorage: true,
   // other configs...
-})
+});
 ```
-</div>
 
-  <div id="Tab__2" class="tab-content">
+</div>
+<div id="Tab__2" class="tab-content">
 
 ```js
 export const http: ServerConfig = {
@@ -254,7 +254,7 @@ export const http: ServerConfig = {
 }
 ```
 
-  </div>
+</div>
 </section>
 
 Then, wrap your axios instance with the `observeAxios()` function like so:
