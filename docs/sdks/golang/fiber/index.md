@@ -46,8 +46,8 @@ package main
 import (
 	"context"
 
-	apitoolkit "github.com/apitoolkit/apitoolkit-go"
 	"github.com/gofiber/fiber/v2"
+	apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
 
 func main() {
@@ -144,13 +144,20 @@ import (
 	"context"
 	"os"
 
-	apitoolkit "github.com/apitoolkit/apitoolkit-go"
 	"github.com/gofiber/fiber/v2"
+	apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
 
 func main() {
 	ctx := context.Background()
-	apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"})
+
+	apitoolkitCfg := apitoolkit.Config{
+		RedactHeaders:      []string{"content-type", "Authorization", "HOST"},
+		RedactRequestBody:  []string{"$.user.email", "$.user.addresses"},
+		RedactResponseBody: []string{"$.users[*].email", "$.users[*].credit_card"},
+		APIKey:             "{ENTER_YOUR_API_KEY_HERE}",
+	}
+	apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkitCfg)
 	if err != nil {
 		panic(err)
 	}
@@ -186,7 +193,7 @@ func hello(c *fiber.Ctx) error {
 
 ## Error Reporting
 
-APItoolkit detects different API issues, anomalies and unhandled errors automatically but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
+APItoolkit automatically detects different unhandled errors, API issues, and anomalies but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
 
 To report errors, use the `ReportError()` method, passing in the `context` and `error` arguments like so:
 
@@ -197,6 +204,7 @@ import (
   "context"
   "net/http"
   "os"
+
   "github.com/gofiber/fiber/v2"
   apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
@@ -230,7 +238,7 @@ func hello(c *fiber.Ctx) error {
 
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <p>The `ReportError()` method mentioned above is imported from `apitoolkit` and not `apitoolkitClient`.</p>
+  <p>The `ReportError()` method mentioned above is imported directly from `apitoolkit` and not `apitoolkitClient`.</p>
 </div>
 
 ## Monitoring Outgoing Requests
@@ -246,8 +254,8 @@ import (
 	"context"
 	"net/http"
 
-	apitoolkit "github.com/apitoolkit/apitoolkit-go"
 	"github.com/gofiber/fiber/v2"
+	apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
 
 func main() {
@@ -268,9 +276,9 @@ func main() {
 		HTTPClient.Transport = apitoolkitClient.WrapRoundTripper(
 			c.Context(),
 			HTTPClient.Transport,
-			apitoolkit.WithRedactHeaders("Authorization", "..."),
-			apitoolkit.WithRedactRequestBody("$.password", "..."),
-			apitoolkit.WithRedactResponseBody("$.account_number", "..."),
+			apitoolkit.WithRedactHeaders("content-type", "Authorization", "HOST"),
+			apitoolkit.WithRedactRequestBody("$.user.email", "$.user.addresses"),
+			apitoolkit.WithRedactResponseBody("$.users[*].email", "$.users[*].credit_card"),
 		)
 
 		// Make an outgoing HTTP request using the modified HTTPClient

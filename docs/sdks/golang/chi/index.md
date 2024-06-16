@@ -47,8 +47,8 @@ import (
 	"context"
 	"net/http"
 
-	apitoolkit "github.com/apitoolkit/apitoolkit-go"
 	"github.com/go-chi/chi/v5"
+	apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
 
 func main() {
@@ -145,8 +145,8 @@ import (
 	"context"
 	"net/http"
 
-	apitoolkit "github.com/apitoolkit/apitoolkit-go"
 	"github.com/go-chi/chi/v5"
+	apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
 
 func main() {
@@ -183,7 +183,7 @@ func main() {
 
 ## Error Reporting
 
-APItoolkit detects different API issues and anomalies automatically but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
+APItoolkit automatically detects different unhandled errors, API issues, and anomalies but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
 
 To report errors, use the `ReportError()` method, passing in the `context` and `error` arguments like so:
 
@@ -228,7 +228,7 @@ func hello(w http.ResponseWriter, r *http.Request) {
 
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <p>The `ReportError()` method mentioned above is imported from `apitoolkit` and not `apitoolkitClient`.</p>
+  <p>The `ReportError()` method mentioned above is imported directly from `apitoolkit` and not `apitoolkitClient`.</p>
 </div>
 
 ## Monitoring Outgoing Requests
@@ -244,8 +244,8 @@ import (
 	"context"
 	"net/http"
 
-	apitoolkit "github.com/apitoolkit/apitoolkit-go"
 	"github.com/go-chi/chi/v5"
+	apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
 
 func main() {
@@ -266,9 +266,9 @@ func main() {
 		HTTPClient.Transport = apitoolkitClient.WrapRoundTripper(
 			r.Context(),
 			HTTPClient.Transport,
-			apitoolkit.WithRedactHeaders("Authorization", "..."),
-			apitoolkit.WithRedactRequestBody("$.password", "..."),
-			apitoolkit.WithRedactResponseBody("$.account_number", "..."),
+			apitoolkit.WithRedactHeaders("content-type", "Authorization", "HOST"),
+			apitoolkit.WithRedactRequestBody("$.user.email", "$.user.addresses"),
+			apitoolkit.WithRedactResponseBody("$.users[*].email", "$.users[*].credit_card"),
 		)
 
 		// Make an outgoing HTTP request using the modified HTTPClient

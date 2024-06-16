@@ -26,6 +26,16 @@ Kindly run the command below to install the SDK:
 go get github.com/apitoolkit/apitoolkit-go
 ```
 
+Then add `github.com/apitoolkit/apitoolkit-go` to the list of imports like so:
+
+```go
+package main
+
+import (
+  apitoolkit "github.com/apitoolkit/apitoolkit-go"
+)
+```
+
 ## Configuration
 
 Next, initialize APItoolkit in your application's entry point (e.g., `main.go`) like so:
@@ -37,8 +47,8 @@ import (
 	"context"
 	"net/http"
 
-	apitoolkit "github.com/apitoolkit/apitoolkit-go"
 	"github.com/gin-gonic/gin"
+	apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
 
 func main() {
@@ -133,6 +143,7 @@ package main
 import (
   "context"
   "net/http"
+  
   "github.com/gin-gonic/gin"
   apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
@@ -141,10 +152,10 @@ func main() {
   ctx := context.Background()
 
   apitoolkitCfg := apitoolkit.Config {
-    RedactHeaders: []string{"content-type", "Authorization", "HOST"},
-    RedactRequestBody: []string{"$.user.email", "$.user.addresses"},
+    RedactHeaders:      []string{"content-type", "Authorization", "HOST"},
+    RedactRequestBody:  []string{"$.user.email", "$.user.addresses"},
     RedactResponseBody: []string{"$.users[*].email", "$.users[*].credit_card"},
-    APIKey: "{ENTER_YOUR_API_KEY_HERE}",
+    APIKey:             "{ENTER_YOUR_API_KEY_HERE}",
   }
   apitoolkitClient, _ := apitoolkit.NewClient(ctx, apitoolkitCfg)
 
@@ -170,7 +181,7 @@ func main() {
 
 ## Error Reporting
 
-APItoolkit detects different API issues and anomalies and unhandled errors automatically but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
+APItoolkit automatically detects different unhandled errors, API issues, and anomalies but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
 
 To report errors, use the `ReportError()` method, passing in the `context` and `error` arguments like so:
 
@@ -182,8 +193,8 @@ import (
 	"net/http"
 	"os"
 
-	apitoolkit "github.com/apitoolkit/apitoolkit-go"
 	"github.com/gin-gonic/gin"
+	apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
 
 func main() {
@@ -220,7 +231,7 @@ func hello(c *gin.Context) {
 
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <p>The `ReportError()` method mentioned above is imported from `apitoolkit` and not `apitoolkitClient`.</p>
+  <p>The `ReportError()` method mentioned above is imported directly from `apitoolkit` and not `apitoolkitClient`.</p>
 </div>
 
 ## Monitoring Outgoing Requests
@@ -258,9 +269,9 @@ func main() {
 		HTTPClient.Transport = apitoolkitClient.WrapRoundTripper(
 			c.Request.Context(),
 			HTTPClient.Transport,
-			apitoolkit.WithRedactHeaders("Authorization", "..."),
-			apitoolkit.WithRedactRequestBody("$.password", "..."),
-			apitoolkit.WithRedactResponseBody("$.account_number","..."),
+			apitoolkit.WithRedactHeaders("content-type", "Authorization", "HOST"),
+			apitoolkit.WithRedactRequestBody("$.user.email", "$.user.addresses"),
+			apitoolkit.WithRedactResponseBody("$.users[*].email", "$.users[*].credit_card"),
 		)
 
 		// Make an outgoing HTTP request using the modified HTTPClient
