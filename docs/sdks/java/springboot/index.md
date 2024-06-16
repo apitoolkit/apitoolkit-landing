@@ -150,7 +150,7 @@ apitoolkit.redactResponseBody=$.users[*].email,$.users[*].credit_card
 
 ## Error Reporting
 
-APItoolkit detects different API issues, anomalies and uncaught exceptions automatically but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
+APItoolkit automatically detects different unhandled errors, API issues, and anomalies but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
 
 To report errors, use the `reportError()` method, passing in the `request` and `exception` parameters like so:
 
