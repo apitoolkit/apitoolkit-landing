@@ -28,7 +28,7 @@ dotnet add package ApiToolkit.Net
 
 ## Configuration
 
-Next, initialize APItoolkit in your application's entry point (e.g., `Program.cs`) like so:
+Next, initialize APItoolkit in your application's entry point (e.g., `Program.cs`), like so:
 
 ```csharp
 using ApiToolkit.Net;
@@ -151,7 +151,7 @@ app.Use(async (context, next) =>
 
 APItoolkit automatically detects different unhandled errors, API issues, and anomalies but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
 
-To report errors, use the `ReportError()` handler, passing in the `context` and `error` arguments like so:
+To report errors, use the `ReportError()` handler, passing in the `context` and `error` arguments, like so:
 
 ```csharp
 using ApiToolkit.Net;

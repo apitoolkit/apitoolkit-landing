@@ -44,13 +44,13 @@ First, run the command below to configure the SDK using ace:
 node ace configure apitoolkit-adonis
 ```
 
-Then, register the middleware like so:
+Then, register the middleware, like so:
 
 <section class="tab-group" data-tab-group="group1">
   <button class="tab-button" data-tab="tab1">Adonis v6 (latest)</button>
   <button class="tab-button" data-tab="tab2">Adonis v5</button>
   <div id="tab1" class="tab-content">
-    Add `apitoolkit-adonis` to your global middleware list in the `start/kernel.js|ts` file like so:
+    Add `apitoolkit-adonis` to your global middleware list in the `start/kernel.js|ts` file, like so:
         
 ```js
 server.use([
@@ -58,7 +58,7 @@ server.use([
 ])
 ```
 
-    Then, create an `apitoolkit.js|ts` file in the `/conf` directory and export the `defineConfig` object with some properties like so:
+    Then, create an `apitoolkit.js|ts` file in the `/conf` directory and export the `defineConfig` object with some properties, like so:
 
 ```js
 import { defineConfig } from "apitoolkit-adonis";
@@ -72,7 +72,7 @@ export default defineConfig({
 ```
   </div>
   <div id="tab2" class="tab-content">
-    Add `@ioc:APIToolkit` to your global middleware list in the `start/kernel.js|ts` file like so:
+    Add `@ioc:APIToolkit` to your global middleware list in the `start/kernel.js|ts` file, like so:
           
 ```js
 Server.middleware.register([
@@ -81,7 +81,7 @@ Server.middleware.register([
 ])
 ```
 
-    Then, create an `apitoolkit.js|ts` file in the `/conf` directory and export an `apitoolkitConfig` object with some properties like so:
+    Then, create an `apitoolkit.js|ts` file in the `/conf` directory and export an `apitoolkitConfig` object with some properties, like so:
 
 ```js
 export const apitoolkitConfig = {
@@ -187,7 +187,7 @@ export default defineConfig({
 
 APItoolkit automatically detects different unhandled errors, API issues, and anomalies but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
 
-To report errors, you need to first enable [asyncLocalStorage](https://docs.adonisjs.com/guides/concepts/async-local-storage){target="\_blank" rel="noopener noreferrer"} in your AdonisJS project by setting `useAsyncLocalStorage` to `true` in your `config/app.js|ts` file like so:
+To report errors, you need to first enable [asyncLocalStorage](https://docs.adonisjs.com/guides/concepts/async-local-storage){target="\_blank" rel="noopener noreferrer"} in your AdonisJS project by setting `useAsyncLocalStorage` to `true` in your `config/app.js|ts` file, like so:
 
 <section class="tab-group" data-tab-group="group2">
   <button class="tab-button" data-tab="tab3">Adonis v6 (latest)</button>
@@ -214,7 +214,7 @@ export const http: ServerConfig = {
   </div>
 </section>
 
-Then, use the `reportError()` function, passing in the `error` argument like so:
+Then, use the `reportError()` function, passing in the `error` argument, like so:
 
 ```js
 import router from "@adonisjs/core/services/router";
@@ -235,7 +235,7 @@ router.get("/observer", async () => {
 
 Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="\_blank"} page. However, you can separate outgoing requests from others and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="\_blank"} page, alongside the incoming request that triggered them.
 
-To monitor outgoing axios-based HTTP requests from your application, first, enable [asyncLocalStorage](https://docs.adonisjs.com/guides/concepts/async-local-storage){target="\_blank" rel="noopener noreferrer"} in your AdonisJS project by setting `useAsyncLocalStorage` to `true` in your `config/app.js|ts` file like so:
+To monitor outgoing axios-based HTTP requests from your application, first, enable [asyncLocalStorage](https://docs.adonisjs.com/guides/concepts/async-local-storage){target="\_blank" rel="noopener noreferrer"} in your AdonisJS project by setting `useAsyncLocalStorage` to `true` in your `config/app.js|ts` file, like so:
 
 <section class="tab-group" data-tab-group="group2">
   <button class="tab-button" data-tab="tab3">Adonis v6 (latest)</button>
@@ -261,7 +261,7 @@ export const http: ServerConfig = {
   </div>
 </section>
 
-Then, wrap your axios instance with the `observeAxios()` function like so:
+Then, wrap your axios instance with the `observeAxios()` function, like so:
 
 ```js
 import { observeAxios } from "apitoolkit-adonis";

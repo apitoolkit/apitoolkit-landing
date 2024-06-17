@@ -26,7 +26,7 @@ Kindly run the command below to install the SDK:
 go get github.com/apitoolkit/apitoolkit-go
 ```
 
-Then add `github.com/apitoolkit/apitoolkit-go` to the list of imports like so:
+Then add `github.com/apitoolkit/apitoolkit-go` to the list of imports, like so:
 
 ```go
 package main
@@ -38,7 +38,7 @@ import (
 
 ## Configuration
 
-Next, initialize APItoolkit in your application's entry point (e.g., `main.go`) like so:
+Next, initialize APItoolkit in your application's entry point (e.g., `main.go`), like so:
 
 ```go
 package main
@@ -195,7 +195,7 @@ func hello(c *fiber.Ctx) error {
 
 APItoolkit automatically detects different unhandled errors, API issues, and anomalies but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
 
-To report errors, use the `ReportError()` method, passing in the `context` and `error` arguments like so:
+To report errors, use the `ReportError()` method, passing in the `context` and `error` arguments, like so:
 
 ```go
 package main

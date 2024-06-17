@@ -32,7 +32,7 @@ yarn install apitoolkit-fastify
 
 ## Configuration
 
-Next, initialize APItoolkit in your application's entry point (e.g., `index.js`) like so:
+Next, initialize APItoolkit in your application's entry point (e.g., `index.js`), like so:
 
 ```js
 import Fastify from "fastify";
@@ -153,7 +153,7 @@ APItoolkit automatically detects different unhandled errors, API issues, and ano
   <button class="tab-button" data-tab="tab1">Report Specific Errors</button>
   <button class="tab-button" data-tab="tab2">Report Specific Errors (Background Job)</button>
   <div id="tab1" class="tab-content">
-To manually report errors within the context of a web request handler, use the `ReportError()` function like so:
+To manually report errors within the context of a web request handler, use the `ReportError()` function, like so:
 
 ```js
 import Fastify from "fastify";
@@ -179,7 +179,7 @@ app.get("/", async (request, reply) => {
 ```
   </div>
   <div id="tab2" class="tab-content">
-  If your request is called from a background job for example (outside the web request handler and hence, not wrapped by APItoolkit's middleware), using `ReportError()` directly from `apitoolkit-express` will not be available. Instead, call `ReportError()` from `apitoolkitClient` like so:
+  If your request is called from a background job for example (outside the web request handler and hence, not wrapped by APItoolkit's middleware), using `ReportError()` directly from `apitoolkit-express` will not be available. Instead, call `ReportError()` from `apitoolkitClient`, like so:
 
 ```js
 import Fastify from "fastify";
@@ -205,7 +205,7 @@ try {
 
 Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="\_blank"} page. However, you can separate outgoing requests from others and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="\_blank"} page, alongside the incoming request that triggered them.
 
-To monitor outgoing axios-based HTTP requests from your application, wrap your axios instance with the `observeAxios()` function like so:
+To monitor outgoing axios-based HTTP requests from your application, wrap your axios instance with the `observeAxios()` function, like so:
 
 ```js
 import Fastify from "fastify";

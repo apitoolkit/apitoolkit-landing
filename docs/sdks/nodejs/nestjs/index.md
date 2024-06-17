@@ -64,7 +64,7 @@ yarn install apitoolkit-fastify
 
 ## Configuration
 
-Next, initialize APItoolkit in your application's entry point (e.g., `index.js`) like so:
+Next, initialize APItoolkit in your application's entry point (e.g., `index.js`), like so:
 
 <section class="tab-group" data-tab-group="group2">
   <button class="tab-button" data-tab="tab1">Express (Default)</button>

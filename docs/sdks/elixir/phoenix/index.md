@@ -20,7 +20,7 @@ Ensure you have already completed the first three steps of the [onboarding guide
 
 ## Installation
 
-To install the SDK, kindly add `apitoolkit_phoenix` to the list of dependencies in the `mix.exs` file like so:
+To install the SDK, kindly add `apitoolkit_phoenix` to the list of dependencies in the `mix.exs` file, like so:
 
 ```elixir
 def deps do
@@ -34,7 +34,7 @@ Then, run the `mix deps.get` command to install the `apitoolkit_phoenix` depende
 
 ## Configuration
 
-Next, import and initialize the `ApitoolkitPhoenix` Plug in your `router.ex` file like so:
+Next, import and initialize the `ApitoolkitPhoenix` Plug in your `router.ex` file, like so:
 
 ```elixir
 defmodule HelloWeb.Router do
@@ -147,7 +147,7 @@ end
 
 APItoolkit automatically detects different unhandled errors, API issues, and anomalies but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
 
-To report errors and uncaught exceptions, use the `report_error()` method, passing in the `connection` and `error` arguments in the `handle_errors` function like so:
+To report errors and uncaught exceptions, use the `report_error()` method, passing in the `connection` and `error` arguments in the `handle_errors` function, like so:
 
 ```elixir
 @impl Plug.ErrorHandler
@@ -157,7 +157,7 @@ def handle_errors(conn, err) do
 end
 ```
 
-To report errors manually, call the `report_error()` method anywhere within a controller, also passing in the `connection`, `error`, and `__STACKTRACE__` arguments like so:
+To report errors manually, call the `report_error()` method anywhere within a controller, also passing in the `connection`, `error`, and `__STACKTRACE__` arguments, like so:
 
 ```elixir
 defmodule HelloWeb.PageController do

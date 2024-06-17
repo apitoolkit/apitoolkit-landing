@@ -20,7 +20,7 @@ Ensure you have already completed the first three steps of the [onboarding guide
 
 ## Installation
 
-To install the SDK, kindly add the following dependency to your `pom.xml` file within the `&lt;dependencies&gt;` section like so:
+To install the SDK, kindly add the following dependency to your `pom.xml` file within the `&lt;dependencies&gt;` section, like so:
 
 ```xml
 &lt;dependency&gt;
@@ -32,7 +32,7 @@ To install the SDK, kindly add the following dependency to your `pom.xml` file w
 
 ## Configuration
 
-First, add your APItoolkit API key to the `application.properties` file like so:
+First, add your APItoolkit API key to the `application.properties` file, like so:
 
 ```sh
 apitoolkit.apikey={ENTER_YOUR_API_KEY_HERE}
@@ -47,7 +47,7 @@ apitoolkit.debug=false
   <p>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</p>
 </div>
 
-Then, initialize the SDK like so:
+Then, initialize the SDK, like so:
 
 ```java
 package com.example.demo;
@@ -152,7 +152,7 @@ apitoolkit.redactResponseBody=$.users[*].email,$.users[*].credit_card
 
 APItoolkit automatically detects different unhandled errors, API issues, and anomalies but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
 
-To report errors, use the `reportError()` method, passing in the `request` and `exception` parameters like so:
+To report errors, use the `reportError()` method, passing in the `request` and `exception` parameters, like so:
 
 ```java
 package com.example.demo;
