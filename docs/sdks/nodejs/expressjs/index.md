@@ -111,7 +111,7 @@ app.listen(port, () => {
   <p>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</p>
 </div>
 
-<div class="callout red">
+<div class="callout callout-red">
   <p><i class="fa-solid fa-triangle-exclamation"></i> <b>Warning</b></p>
   <ul>
     <li>`apitoolkitClient` must be declared BEFORE all controllers and middleware in your application.</li>

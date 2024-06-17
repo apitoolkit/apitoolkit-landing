@@ -153,17 +153,12 @@
         border-radius: 4px;
       }
 
-      .red {
-        border-left: 6px solid red !important;
-      }
-
-      .red p:first-of-type {
-        color: red !important;
+      .callout p:first-of-type {
+        color: #377cfb;
         margin-top: 5px;
       }
 
-      .callout p:first-of-type {
-        color: #377cfb;
+      .callout ol:first-of-type {
         margin-top: 5px;
       }
 
@@ -171,12 +166,22 @@
         margin-right: 5px;
       }
 
-      .callout ol:first-of-type {
+      .callout-red {
+        border-left: 6px solid red !important;
+      }
+
+      .callout-red p:first-of-type {
+        color: red !important;
         margin-top: 5px;
       }
 
       [data-theme="sunset"] .callout {
-        color: #000000;
+        background-color: #c5c5c5;
+        color: 	#36454F;
+      }
+
+      [data-theme="sunset"] .callout code {
+        background: #282c34;
       }
 
       .btn {
