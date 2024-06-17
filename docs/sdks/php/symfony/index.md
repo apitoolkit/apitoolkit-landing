@@ -50,7 +50,7 @@ services:
         autowire: true      # Automatically injects dependencies in your services.
         autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
 
-    APIToolkit\EventSubscriber\APIToolkitService:
+    APIToolkit\EventSubscriber\APIToolkitService: # Initialize the APItoolkit client
       arguments:
         $apiKey: '%env(APITOOLKIT_KEY)%'
 

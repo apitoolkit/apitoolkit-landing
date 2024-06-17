@@ -22,7 +22,6 @@ NestJs is a progressive NodeJs framework for building efficient, reliable, and s
 APIToolkit already provides SDKs for both Express and Fastify, hence you can integrate any into your NestJs application. In the following sections of this guide, we will walk you through the process of integrating APIToolkit's [ExpressJS SDK](/docs/sdks/nodejs/expressjs/){target="\_blank"} or [FastifyJS SDK](/docs/sdks/nodejs/fastifyjs/){target="\_blank"} into your NestJs application.</p>
 </div>
 
-
 ```=html
 <hr>
 ```
@@ -81,6 +80,7 @@ async function bootstrap() {
   const apiToolkitClient = APIToolkit.NewClient({ apikey: "{ENTER_YOUR_API_KEY_HERE}" });
 
   const app = await NestFactory.create(AppModule);
+  // Initialize the APItoolkit client
   app.use(apiToolkitClient.expressMiddleware);
   await app.listen(3000);
 }
@@ -105,6 +105,7 @@ async function bootstrap() {
     new FastifyAdapter(fastifyInstance)
   );
 
+  // Initialize the APItoolkit client
   const apiToolkitClient = await APIToolkit.NewClient({
     apiKey: "{ENTER_YOUR_API_KEY_HERE}",
     fastify: fastifyInstance,

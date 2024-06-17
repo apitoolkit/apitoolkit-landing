@@ -38,10 +38,10 @@ var config = new Config
     Debug = true, # Set debug flags to false in production
     ApiKey = "{ENTER_YOUR_API_KEY_HERE}"
 };
-# Initialize the client
+// Initialize the APItoolkit client
 var client = await APIToolkit.NewClientAsync(config);
 
-# Register APItoolkit's middleware
+// Register APItoolkit's middleware
 app.Use(async (context, next) =>
 {
     var apiToolkit = new APIToolkit(next, client);
@@ -122,7 +122,7 @@ using ApiToolkit.Net;
 
 var config = new Config
 {
-    Debug = true, # Set debug flags to false in production
+    Debug = true, // Set debug flags to false in production
     ApiKey = "{ENTER_YOUR_API_KEY_HERE}",
     RedactHeaders = new List<string> { "content-type", "Authorization", "HOST" },
     RedactRequestBody = new List<string> { "$.user.email", "$.user.addresses" },

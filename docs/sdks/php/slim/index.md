@@ -45,6 +45,7 @@ $apitoolkitMiddleware = new APIToolkitMiddleware(
     $serviceVersion="v2.0"
 );
 
+// Initialize the APItoolkit client
 $app->add($apitoolkitMiddleware);
 
 $app->get('/', function ($request, $response) {

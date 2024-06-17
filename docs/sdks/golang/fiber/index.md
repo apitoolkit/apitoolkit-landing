@@ -53,7 +53,7 @@ import (
 func main() {
 	ctx := context.Background()
 
-	// Initialize the client
+	// Initialize the APItoolkit client
 	apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE"})
 	if err != nil {
 		panic(err)

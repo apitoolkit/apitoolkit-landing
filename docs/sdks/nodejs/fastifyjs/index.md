@@ -40,6 +40,7 @@ import APIToolkit from "apitoolkit-fastify";
 
 const fastify = Fastify();
 
+// Initialize the APItoolkit client
 const apitoolkitClient = APIToolkit.NewClient({
   fastify,
   apiKey: "{ENTER_YOUR_API_KEY_HERE}"
