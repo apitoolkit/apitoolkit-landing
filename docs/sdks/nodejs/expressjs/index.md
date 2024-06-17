@@ -47,6 +47,8 @@ import axios from "axios";
 const app = express();
 const port = 3000;
 
+// IMPORTANT: apitoolkitClient must be declared
+// BEFORE all controllers and middleware in your application.
 const apitoolkitClient = APIToolkit.NewClient({
   apiKey: "{ENTER_YOUR_API_KEY_HERE}",
 });
@@ -59,6 +61,9 @@ app.get("/", (req, res) => {
   res.json({ hello: "Hello world!" });
 });
 
+// IMPORTANT: apitoolkitClient.errorHandler must be declared
+// AFTER declaring apitoolkitClient.expressMiddleware
+// and all controllers and BEFORE any other error middleware.
 app.use(apitoolkitClient.errorHandler);
 
 app.listen(port, () => console.log("App running on port: " + port));
@@ -74,6 +79,8 @@ const APIToolkit = require("apitoolkit-express").default;
 const app = express();
 const port = 3000;
 
+// IMPORTANT: apitoolkitClient must be declared
+// BEFORE all controllers and middleware in your application.
 const apitoolkitClient = APIToolkit.NewClient({
   apiKey: "{ENTER_YOUR_API_KEY_HERE}",
 });
@@ -86,6 +93,9 @@ app.get("/", (req, res) => {
   res.json({ hello: "Hello world!" });
 });
 
+// IMPORTANT: apitoolkitClient.errorHandler must be declared
+// AFTER declaring apitoolkitClient.expressMiddleware
+// and all controllers and BEFORE any other error middleware.
 app.use(apitoolkitClient.errorHandler);
 
 app.listen(port, () => {
@@ -98,9 +108,14 @@ app.listen(port, () => {
 
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
+  <p>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</p>
+</div>
+
+<div class="callout red">
+  <p><i class="fa-solid fa-triangle-exclamation"></i> <b>Warning</b></p>
   <ul>
-    <li>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</li>
-    <li>The `apitoolkitClient.errorHandler` must be after all controllers and before any other error middleware.</li>
+    <li>`apitoolkitClient` must be declared BEFORE all controllers and middleware in your application.</li>
+    <li>`apitoolkitClient.errorHandler` must be declared AFTER `apitoolkitClient.expressMiddleware` and all other controllers and BEFORE any other error middleware.</li>
   </ul>
 </div>
 
