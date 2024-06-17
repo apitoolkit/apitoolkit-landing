@@ -103,6 +103,7 @@ export const apitoolkitConfig = {
         <li>`debug`: Set to `true` to enable debug mode.</li>
         <li>`tags`: A list of defined tags for your services (used for grouping and filtering data on the dashboard).</b></li>
         <li>`serviceVersion`: A defined string version of your application (used for further debugging on the dashboard).</li>
+        <li>`disable`: Set to `true` to disable the SDK (data monitoring will be paused).</li>
       </ul>
   </ol>
 </div>
