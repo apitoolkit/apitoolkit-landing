@@ -32,17 +32,20 @@ composer require apitoolkit/apitoolkit-laravel
 First, add the `APITOOLKIT_KEY` environment variable to your `.env` file like so:
 
 ```sh
-APITOOLKIT_KEY=gKMdJZdMPikzn91teStINgjBSYCe6bjitWoNTwORK9Y3C
+APITOOLKIT_KEY={ENTER_YOUR_API_KEY_HERE}
 ```
 
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <p class="mt-6">The `APITOOLKIT_KEY` environment variable is required but you can add the following optional variables:</p>
+  <ol>
+  <li>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</li>
+  <li class="mt-6">The `APITOOLKIT_KEY` environment variable is required but you can add the following optional variables:</li>
   <ul>
     <li>`APITOOLKIT_DEBUG`: Set to `true` to enable debug mode.</li>
     <li>`APITOOLKIT_TAGS`: A list of defined tags for your services (used for grouping and filtering data on the dashboard).</b></li>
     <li>`APITOOLKIT_SERVICE_VERSION`: A defined string version of your application (used for further debugging on the dashboard).</li>
   </ul>
+  </ol>
 </div>
 
 <section class="tab-group" data-tab-group="group1">
@@ -191,7 +194,7 @@ APItoolkit automatically detects different unhandled errors, API issues, and ano
   <button class="tab-button" data-tab="tab1"> Report All Errors</button>
   <button class="tab-button" data-tab="tab2">Report Specific Errors</button>
   <div id="tab1" class="tab-content">
-To report all uncaught errors that happened during a request, modify your Laravel Exceptions handler, passing in the `error` and the `request` as arguments, like so:
+To report all uncaught errors that happened during a web request, modify your Laravel Exceptions handler, passing in the `error` and the `request` as arguments, like so:
 
 ```php
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
@@ -216,7 +219,7 @@ class Handler extends ExceptionHandler
 
   </div>
   <div id="tab2" class="tab-content">
-To report specific errors at different parts of your application, you can use the `reportError` method of `APIToolkitLaravel` class, passing in the `error` and the `request` as arguments, like so:
+To report specific errors at different parts of your application, you can use the `reportError` method of the `APIToolkitLaravel` class, passing in the `error` and the `request` as arguments, like so:
 
 ```php
 use Illuminate\Http\Request;
