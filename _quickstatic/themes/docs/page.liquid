@@ -639,7 +639,7 @@ twq('config','om5gt');
         {% unless this.frontmatter.hideToc %}
           <section class="w-56 hidden sm:block ">
             <div class="w-56 my-48  fixed top-0 text-sm space-y-4">
-              <strong class="block font-medium">On this page </strong>
+              <strong class="block font-medium">On this page:</strong>
               <ul class="space-y-2 border-l " id="tableOfContents">
                 {% for toc in this.toc %}
                   <li class="hover:underline underline-offset-4 pl-{{toc.level | times: 3}}">
