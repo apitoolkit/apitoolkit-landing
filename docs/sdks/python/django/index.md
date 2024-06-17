@@ -36,7 +36,6 @@ APITOOLKIT_KEY={ENTER_YOUR_API_KEY_HERE}
 
 Next, add the `APITOOLKIT_KEY` to your Django settings (`settings.py`) file, like so:
 
-
 ```python
 from pathlib import Path
 from dotenv import load_dotenv
@@ -79,7 +78,7 @@ Then add the `apitoolkit_django.APIToolkit` middleware into the `settings.py` mi
 
 ```python
 MIDDLEWARE = [
-    'apitoolkit_django.APIToolkit',
+    'apitoolkit_django.APIToolkit', # Initialize APItoolkit
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -162,7 +161,7 @@ APITOOLKIT_REDACT_RES_BODY = ["$.users[*].email", "$.users[*].credit_card"]
 
 APItoolkit automatically detects different unhandled errors, API issues, and anomalies but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
 
-To report all uncaught errors that happened during a web request, use the `report_error()` function from the `apitoolkit_django` module, like so:
+To report all uncaught errors that happened during a web request, use the `report_error()` function from the `apitoolkit_django` module, passing in the `request` and `error`, like so:
 
 ```python
 from django.http import JsonResponse

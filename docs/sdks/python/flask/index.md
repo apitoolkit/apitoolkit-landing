@@ -43,7 +43,7 @@ apitoolkit = APIToolkit(
     service_version = "v2.0"
 )
 
-
+# Initialize APItoolkit
 @app.before_request
 def before_request():
     apitoolkit.beforeRequest()
@@ -59,7 +59,6 @@ def sample_route(subject):
     return {"Hello": "World"}
 
 app.run(debug=True)
-
 ```
 
 <div class="callout">
@@ -178,7 +177,7 @@ app.run(debug=True)
 
 APItoolkit automatically detects different unhandled errors, API issues, and anomalies but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
 
-To report all uncaught errors that happened during a web request, use the `report_error()` function from the `apitoolkit_flask` module, like so:
+To report all uncaught errors that happened during a web request, use the `report_error()` function from the `apitoolkit_flask` module, passing in the `request` and `error`, like so:
 
 ```python
 from flask import Flask, request

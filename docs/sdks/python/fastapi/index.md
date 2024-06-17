@@ -2,7 +2,7 @@
 title: FastAPI
 ogTitle: FastAPI SDK Guide
 date: 2022-03-23
-updatedDate: 2024-05-04
+updatedDate: 2024-06-17
 menuWeight: 2
 ---
 
@@ -36,13 +36,13 @@ from apitoolkit_fastapi import APIToolkit
 
 app = FastAPI()
 
+# Initialize APItoolkit
 apitoolkit = APIToolkit(
     api_key = "{ENTER_YOUR_API_KEY_HERE}"
     debug = False
     tags = ["environment: production", "region: us-east-1"]
     service_version = "v2.0"
 )
-
 app.middleware("http")(apitoolkit.middleware)
 
 
@@ -157,7 +157,7 @@ def read_root():
 
 APItoolkit automatically detects different unhandled errors, API issues, and anomalies but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
 
-To report all uncaught errors that happened during a web request, use the `report_error()` function from the `apitoolkit_fastapi` module, like so:
+To report all uncaught errors that happened during a web request, use the `report_error()` function from the `apitoolkit_fastapi` module, passing in the `request` and `error`, like so:
 
 ```python
 from fastapi import FastAPI, Request
