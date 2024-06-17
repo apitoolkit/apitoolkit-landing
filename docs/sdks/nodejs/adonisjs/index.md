@@ -169,7 +169,7 @@ export default defineConfig({
   apiKey: "{ENTER_YOUR_API_KEY_HERE}",
   debug: false,
 
-  redactHeaders: ["Content-Type", "Authorization", "HOST"],
+  redactHeaders: ["content-type", "Authorization", "HOST"],
   redactRequestBody: ["$.user.email", "$.user.addresses"],
   redactResponseBody: ["$.users[*].email", "$.users[*].credit_card"],
 });

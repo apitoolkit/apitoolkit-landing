@@ -29,10 +29,14 @@ composer require apitoolkit/apitoolkit-laravel
 
 ## Configuration
 
-First, add the `APITOOLKIT_KEY` environment variable to your `.env` file like so:
+First, add the `APITOOLKIT_KEY` environment variable to your `.env` file, like so:
 
 ```sh
 APITOOLKIT_KEY={ENTER_YOUR_API_KEY_HERE}
+
+APITOOLKIT_DEBUG=false
+APITOOLKIT_TAGS="environment: production, region: us-east-1"
+APITOOLKIT_SERVICE_VERSION=v2.0
 ```
 
 <div class="callout">
@@ -179,12 +183,19 @@ Examples of valid JSONPaths would be:
 Here's an example of what the `.env` file would look like with redacted fields:
 
 ```sh
-APITOOLKIT_KEY=gKMdJZdMPikzn91teStINgjBSYCe6bjitWoNTwORK9Y3C
-
 APITOOLKIT_REDACT_HEADERS="Content-Type, Authorization, HOST"
 APITOOLKIT_REDACT_REQUEST_BODY="$.user.email, $.user.addresses"
 APITOOLKIT_REDACT_RESPONSE_BODY="$.users[*].email, $.users[*].credit_card"
 ```
+
+<div class="callout">
+  <p><i class="fa-regular fa-circle-info"></i> <b>Note</b></p>
+  <ul>
+    <li>The `APITOOLKIT_REDACT_HEADERS` variable expects a list of <b>case-insensitive headers as strings</b>.</li>
+    <li>The `APITOOLKIT_REDACT_REQUEST_BODY` and `APITOOLKIT_REDACT_RESPONSE_BODY` variables expect a list of <b>JSONPaths as strings</b>.</li>
+    <li>The list of items to be redacted will be applied to all endpoint requests and responses on your server.</li>
+  </ul>
+</div>
 
 ## Error Reporting
 
@@ -254,8 +265,8 @@ use APIToolkit\APIToolkitLaravel;
 Route::get('/user', function (Request $request) {
     $options = [
         "pathWildCard" => "/repos/{owner}/{repo}",
-        "redactHeaders" => ["Content-Type", "Authorization", "HOST"],
-        "redactRequestBody" => ["$.users[*].email", "$.users[*].credit_card"],
+        "redactHeaders" => ["content-type", "Authorization", "HOST"],
+        "redactRequestBody" => ["$.user.email", "$.user.addresses"],
         "redactResponseBody" => ["$.users[*].email", "$.users[*].credit_card"]
     ];
     $guzzleClient = APIToolkitLaravel::observeGuzzle($request, $options);

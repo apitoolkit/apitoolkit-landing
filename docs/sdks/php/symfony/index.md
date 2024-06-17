@@ -134,7 +134,7 @@ services:
     arguments:
       $apiKey: '%env(APITOOLKIT_KEY)%'
       $redactedHeaders:
-        - 'Content-Type'
+        - 'content-type'
         - 'Authorization'
         - 'HOST'
       $redactRequestBody:

@@ -219,12 +219,13 @@ import { AppModule } from "./app.module";
 
 const fastify = Fastify();
 async function bootstrap() {
-  const redactHeaders = ["Content-Type", "Authorization", "HOST"];
+  const apiKey = "{ENTER_YOUR_API_KEY_HERE}";
+  const redactHeaders = ["content-type", "Authorization", "HOST"];
   const redactRequestBody = ["$.user.email", "$.user.addresses"];
   const redactResponseBody = ["$.users[*].email", "$.users[*].credit_card"];
 
-  const apittoolkitClient = APIToolkit.NewClient({
-    apiKey: "{ENTER_YOUR_API_KEY_HERE}",
+  const apitoolkitClient = APIToolkit.NewClient({
+    apiKey,
     fastify,
     redactHeaders,
     redactRequestBody,

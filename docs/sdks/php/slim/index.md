@@ -134,7 +134,7 @@ $app = AppFactory::create();
 
 $apitoolkitMiddleware = new APIToolkitMiddleware(
     "{ENTER_YOUR_API_KEY_HERE}",
-    redactHeaders = ["Content-Type", "Authorization", "HOST"],
+    redactHeaders = ["content-type", "Authorization", "HOST"],
     redactRequestBody = ["$.user.email", "$.user.addresses"],
     redactResponseBody = ["$.users[*].email", "$.users[*].credit_card"]
 );
@@ -148,6 +148,15 @@ $app->get('/', function ($request, $response) {
 
 $app->run();
 ```
+
+<div class="callout">
+  <p><i class="fa-regular fa-circle-info"></i> <b>Note</b></p>
+  <ul>
+    <li>The `redactHeaders` variable expects a list of <b>case-insensitive headers as strings</b>.</li>
+    <li>The `redactRequestBody` and `redactResponseBody` variables expect a list of <b>JSONPaths as strings</b>.</li>
+    <li>The list of items to be redacted will be applied to all endpoint requests and responses on your server.</li>
+  </ul>
+</div>
 
 ## Error Reporting
 

@@ -182,11 +182,16 @@ import { APIToolkit } from "apitoolkit-express";
 const app = express();
 const port = 3000;
 
+const apiKey = "{ENTER_YOUR_API_KEY_HERE}";
+const redactHeaders = ["content-type", "Authorization", "HOST"];
+const redactRequestBody = ["$.user.email", "$.user.addresses"];
+const redactResponseBody = ["$.users[*].email", "$.users[*].credit_card"];
+
 const apitoolkitClient = await APIToolkit.NewClient({
-  apiKey: "{ENTER_YOUR_API_KEY_HERE}",
-  redactHeaders: ["Content-Type", "Authorization", "HOST"],
-  redactRequestBody: ["$.user.email", "$.user.addresses"],
-  redactResponseBody: ["$.users[*].email", "$.users[*].credit_card"],
+  apiKey,
+  redactHeaders,
+  redactRequestBody,
+  redactResponseBody
 });
 
 app.use(express.json());
