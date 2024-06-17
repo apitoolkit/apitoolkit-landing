@@ -37,13 +37,13 @@ from apitoolkit_fastapi import APIToolkit
 app = FastAPI()
 
 apitoolkit = APIToolkit(
-    api_key = '{ENTER_YOUR_API_KEY_HERE}'
+    api_key = "{ENTER_YOUR_API_KEY_HERE}"
     debug = False
     tags = ["environment: production", "region: us-east-1"]
     service_version = "v2.0"
 )
 
-app.middleware('http')(apitoolkit.middleware)
+app.middleware("http")(apitoolkit.middleware)
 
 
 @app.get("/")
