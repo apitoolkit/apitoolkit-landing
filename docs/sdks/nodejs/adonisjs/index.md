@@ -65,7 +65,9 @@ import { defineConfig } from "apitoolkit-adonis";
 
 export default defineConfig({
   apiKey: "{ENTER_YOUR_API_KEY_HERE}",
-  debug: false, // Set to true to enable debug mode
+  debug: false,
+  tags: ["environment: production", "region: us-east-1"],
+  serviceVersion: "v2.0"
 });
 ```
   </div>
@@ -84,6 +86,9 @@ Server.middleware.register([
 ```js
 export const apitoolkitConfig = {
   apiKey: "{ENTER_YOUR_API_KEY_HERE}",
+  debug: false,
+  tags: ["environment: production", "region: us-east-1"],
+  serviceVersion: "v2.0"
 };
 ```
   </div>
@@ -91,7 +96,15 @@ export const apitoolkitConfig = {
 
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <p>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</p>
+  <ol>
+   <li>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</li>
+    <li class="mt-6">The configuration accepts a required `apiKey` value and the following optional fields:</li>
+      <ul>
+        <li>`debug`: Set to `true` to enable debug mode.</li>
+        <li>`tags`: A list of defined tags for your services (used for grouping and filtering data on the dashboard).</b></li>
+        <li>`serviceVersion`: A defined string version of your application (used for further debugging on the dashboard).</li>
+      </ul>
+  </ol>
 </div>
 
 ## Redacting Sensitive Data

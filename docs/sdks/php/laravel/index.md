@@ -1,35 +1,39 @@
 ---
-title: Laravel (PHP)
+title: Laravel
+ogTitle: Laravel SDK Guide
 date: 2022-03-23
-updatedDate: 2024-05-04
+updatedDate: 2024-06-17
 menuWeight: 1
-ogImage: /assets/img/framework-logos/laravel-logo.png
 ---
 
-# Laravel PHP Integration guide
+# Laravel SDK Guide
 
-A PHP/Laravel SDK Wrapper for APIToolkit. It monitors incoming traffic, gathers the requests and sends the request to the apitoolkit servers.
+To integrate your FastifyJs application with APItoolkit, you need to use this SDK to monitor incoming traffic, aggregate the requests, and then send them to APItoolkit's servers. Kindly follow this guide to get started and learn about all the supported features of APItoolkit's **FastifyJs SDK**.
+
+```=html
+<hr>
+```
+
+## Prerequisites
+
+- Ensure you have already completed the first three steps of the [onboarding guide](/docs/onboarding/){target="_blank"}.
+- APItoolkit uses the Laravel cache to prevent reinitializing the SDK with each request. So make sure you have [Laravel cache](https://laravel.com/docs/10.x/cache){target="\_blank"} set up for your service.
 
 ## Installation
 
-Run the following command to install the package:
+Kindly run the command below to install the SDK:
 
-```bash
+```sh
 composer require apitoolkit/apitoolkit-laravel
 ```
 
-Set the `APITOOLKIT_KEY` environment variable to your API key in you `.env` file, should look like this:
+Then, add the `APITOOLKIT_KEY` environment variable to your `.env` file like so:
 
+```sh
+APITOOLKIT_KEY=gKMdJZdMPikzn91teStINgjBSYCe6bjitWoNTwORK9Y3C
 ```
-APITOOLKIT_KEY=xxxxxx-xxxxx-xxxxxx-xxxxxx-xxxxxx
-```
 
-# Requirements
-
-- For laravel, apitoolkit uses the cache to prevent reinitializing the sdk with each request. So make sure you have laravel cache setup for your service.
-  Read on [PHP Laravel Cache Setup for Apitoolkit to Avoid SDK Reinit](https://apitoolkit.io/blog/how-to-setup-php-laravel-cache-for-apitoolkit-to-avoid-sdk-reinitialization/).
-
-## Usage
+## Configuration
 
 Register the middleware in the `app/Http/Kernel.php` file under the correct middleware group eg `api`, or at the root:
 
