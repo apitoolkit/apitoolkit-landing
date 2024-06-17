@@ -370,7 +370,7 @@ app.use(apitoolkitClient.expressMiddleware);
 
 const pathWildCard = "/users/{user_id}";
 const redactHeadersList = ["Content-Type", "Authorization", "HOST"];
-const redactRequestBodyList = ["Content-Type", "Authorization", "HOST"];
+const redactRequestBodyList = ["$.user.email", "$.user.addresses"];
 const redactResponseBodyList = ["$.users[*].email", "$.users[*].credit_card"];
 
 app.get("/", (req, res) => {

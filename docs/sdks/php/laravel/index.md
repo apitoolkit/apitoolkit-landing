@@ -8,7 +8,7 @@ menuWeight: 1
 
 # Laravel SDK Guide
 
-To integrate your FastifyJs application with APItoolkit, you need to use this SDK to monitor incoming traffic, aggregate the requests, and then send them to APItoolkit's servers. Kindly follow this guide to get started and learn about all the supported features of APItoolkit's **FastifyJs SDK**.
+To integrate your Laravel application with APItoolkit, you need to use this SDK to monitor incoming traffic, aggregate the requests, and then send them to APItoolkit's servers. Kindly follow this guide to get started and learn about all the supported features of APItoolkit's **Laravel SDK**.
 
 ```=html
 <hr>
@@ -17,7 +17,7 @@ To integrate your FastifyJs application with APItoolkit, you need to use this SD
 ## Prerequisites
 
 - Ensure you have already completed the first three steps of the [onboarding guide](/docs/onboarding/){target="_blank"}.
-- APItoolkit uses the Laravel cache to prevent reinitializing the SDK with each request. So make sure you have [Laravel cache](https://laravel.com/docs/10.x/cache){target="\_blank"} set up for your service.
+- APItoolkit uses the Laravel cache to prevent reinitializing the SDK for each request. So, ensure you have [Laravel cache](https://laravel.com/docs/10.x/cache?utm_source=APItoolkit){target="\_blank"} set up in your application.
 
 ## Installation
 
@@ -27,15 +27,29 @@ Kindly run the command below to install the SDK:
 composer require apitoolkit/apitoolkit-laravel
 ```
 
-Then, add the `APITOOLKIT_KEY` environment variable to your `.env` file like so:
+## Configuration
+
+First, add the `APITOOLKIT_KEY` environment variable to your `.env` file like so:
 
 ```sh
 APITOOLKIT_KEY=gKMdJZdMPikzn91teStINgjBSYCe6bjitWoNTwORK9Y3C
 ```
 
-## Configuration
+<div class="callout">
+  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
+  <p class="mt-6">The `APITOOLKIT_KEY` environment variable is required but you can add the following optional variables:</p>
+  <ul>
+    <li>`APITOOLKIT_DEBUG`: Set to `true` to enable debug mode.</li>
+    <li>`APITOOLKIT_TAGS`: A list of defined tags for your services (used for grouping and filtering data on the dashboard).</b></li>
+    <li>`APITOOLKIT_SERVICE_VERSION`: A defined string version of your application (used for further debugging on the dashboard).</li>
+  </ul>
+</div>
 
-Register the middleware in the `app/Http/Kernel.php` file under the correct middleware group eg `api`, or at the root:
+<section class="tab-group" data-tab-group="group1">
+  <button class="tab-button" data-tab="tab1">Middleware (Global)</button>
+  <button class="tab-button" data-tab="tab2">Middleware (Specific Routes)</button>
+  <div id="tab1" class="tab-content">
+    Next, register the middleware in the `app/Http/Kernel.php` file under the correct middleware group (e.g., `api`) or at the root, like so:
 
 ```php
 <?php
@@ -64,7 +78,19 @@ class Kernel extends HttpKernel
 }
 ```
 
-Alternatively, if you want to monitor specific routes, you can register the middleware, like this:
+    Then you can use the `apitoolkit` middleware in your routes like so:
+
+```php
+Route::get('/', function () {
+    return response()->json([
+        'message' => 'Welcome to your new application!'
+    ]);
+})->middleware('apitoolkit');
+```
+
+  </div>
+  <div id="tab2" class="tab-content">
+    Alternatively, if you want to monitor specific routes, you can register the middleware, like so:
 
 ```php
     /**
@@ -80,7 +106,7 @@ Alternatively, if you want to monitor specific routes, you can register the midd
     ];
 ```
 
-Then you can use the `apitoolkit` middleware in your routes:
+    Then you can use the `apitoolkit` middleware in your routes like so:
 
 ```php
 Route::get('/', function () {
@@ -90,69 +116,82 @@ Route::get('/', function () {
 })->middleware('apitoolkit');
 ```
 
-### Configuration Options
+  </div>
+</section>
 
-Other optional environment variables to configure APIToolkit with
+## Redacting Sensitive Data
 
-`APITOOLKIT_TAGS`:_array_ A list of tags for your services
-`APITOOLKIT_SERVICE_VERSION`: _string_ The version of your application.
-`APITOOLKIT_REDACT_HEADERS`:_array_ A list of headers to be redacted.
-`APITOOLKIT_REDACT_REQUEST_BODY`: _array_ A list of request body fields (jsonpaths) to be redacted
-`APITOOLKIT_REDACT_RESPONSE_BODY`: _array_ A list of response body fields (jsonpaths) to be redacted
-`APITOOLKIT_DEBUG`: _boolean_ Set to true to enable debug
+If you have fields that are sensitive and should not be sent to APItoolkit servers, you can mark those fields to be redacted (the fields will never leave your servers).
 
-## Observing Outgoing Requests with Guzzle in APIToolkit-Slim SDK
+To mark a field for redacting via this SDK, you need to add some additional environmental variables to the `.env` file with paths to the fields that should be redacted. There are three variables you can provide to configure what gets redacted, namely:
 
-The SDK facilitates the observation of outgoing requests within your application using Guzzle middleware. This feature allows you to monitor and track details about your API calls, aiding in debugging and performance analysis.
+1. `APITOOLKIT_REDACT_HEADERS`: A list of HTTP header keys.
+2. `APITOOLKIT_REDACT_REQUEST_BODY`: A list of JSONPaths from the request body.
+3. `APITOOLKIT_REDACT_RESPONSE_BODY`: A list of JSONPaths from the response body.
 
-To observe outgoing requests, utilize the `observeGuzzle` method of the `APIToolkitLaravel` class. Pass the `$request` object to this method, and it will configure Guzzle with monitoring capabilities.
+<hr />
+JSONPath is a query language used to select and extract data from JSON files. For example, given the following sample user data JSON object:
 
-```php
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
-use APIToolkit\APIToolkitLaravel;
-
-Route::get('/user', function (Request $request) {
-    $options = [
-        "pathPattern" => "/repos/{owner}/{repo}", # For observing Requests with Path Params
-        "redactHeaders" => ["Server"], # headers redaction
-        "redactRequestBody" => ["$.password"],
-        "redactResponseBody" => ["$.password"]
-    ];
-    $guzzleClient = APIToolkitLaravel::observeGuzzle($request, $options);
-    $responseFromGuzzle = $guzzleClient->request('GET', 'https://api.github.com/repos/guzzle/guzzle?foobar=123');
-    $response = $responseFromGuzzle->getBody()->getContents();
-
-    return $response;
+```JSON
+{
+  "user": {
+    "name": "John Martha",
+    "email": "john.martha@example.com",
+    "addresses": [
+      {
+        "street": "123 Main St",
+        "city": "Anytown",
+        "state": "CA",
+        "zip": "12345"
+      },
+      {
+        "street": "123 Main St",
+        "city": "Anytown",
+        "state": "CA",
+        "zip": "12345"
+      },
+      ...
+    ],
+    "credit_card": {
+      "number": "4111111111111111",
+      "expiration": "12/28",
+      "cvv": "123"
+    }
+  },
+  ...
 }
 ```
 
-## Reporting Errors to APIToolkit
+Examples of valid JSONPaths would be:
 
-APIToolkit is capable of detecting API issues, but for more detailed insight, reporting server errors associated with a request is invaluable. To accomplish this, utilize the `reportError` method of `APIToolkitLaravel` by passing both the error and the request.
+- `$.user.credit_card` (In this case, APItoolkit will replace the `addresses` field inside the `user` object with the string `[CLIENT_REDACTED]`).
+- `$.user.addresses[*].zip` (In this case, APItoolkit will replace the `zip` field in all the objects of the `addresses` list inside the `user` object with the string `[CLIENT_REDACTED]`).
 
-To streamline error reporting, consider integrating it into your Laravel Exceptions handler, enabling automatic error reporting, or handle exceptions manually when necessary.
+<div class="callout">
+  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
+  <p>To learn more about JSONPaths, please take a look at the [official docs](https://github.com/json-path/JsonPath/blob/master/README.md){target="_blank"}. You can also use this [JSONPath Evaluator](https://jsonpath.com?utm_source=apitoolkit){target="_blank"} to validate your JSONPaths.</p>
+</div>
+<hr />
 
-For manual error reporting, implement the following code snippet:
+Here's an example of what the `.env` file would look like with redacted fields:
 
-```php
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
-use APIToolkit\APIToolkitLaravel;
+```sh
+APITOOLKIT_KEY=gKMdJZdMPikzn91teStINgjBSYCe6bjitWoNTwORK9Y3C
 
-Route::get('/user', function (Request $request) {
-    try {
-        throw new Exception("Custom user error");
-        return response()->json(["hello" => "world"]);
-    } catch (Exception $e) {
-        // Report the error to APIToolkit
-        APIToolkitLaravel::reportError($e, $request);
-        return response()->json(["error" => $e->getMessage()]);
-    }
-});
+APITOOLKIT_REDACT_HEADERS="Content-Type, Authorization, HOST"
+APITOOLKIT_REDACT_REQUEST_BODY="$.user.email, $.user.addresses"
+APITOOLKIT_REDACT_RESPONSE_BODY="$.users[*].email, $.users[*].credit_card"
 ```
 
-For automatic reporting of all uncaught exceptions within a request, modify your Laravel Exceptions handler as follows:
+## Error Reporting
+
+APItoolkit automatically detects different unhandled errors, API issues, and anomalies but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
+
+<section class="tab-group" data-tab-group="group2">
+  <button class="tab-button" data-tab="tab1"> Report All Errors</button>
+  <button class="tab-button" data-tab="tab2">Report Specific Errors</button>
+  <div id="tab1" class="tab-content">
+To report all uncaught errors that happened during a request, modify your Laravel Exceptions handler, passing in the `error` and the `request` as arguments, like so:
 
 ```php
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
@@ -167,7 +206,7 @@ class Handler extends ExceptionHandler
     public function register(): void
     {
         $this->reportable(function (Throwable $e) {
-            // Report the error to APIToolkit
+            // Report the error to APItoolkit
             $request = request();
             APIToolkitLaravel::reportError($e, $request);
         });
@@ -175,4 +214,70 @@ class Handler extends ExceptionHandler
 }
 ```
 
-Remember, you can report as many errors as necessary for each request, ensuring comprehensive error tracking and resolution.
+  </div>
+  <div id="tab2" class="tab-content">
+To report specific errors at different parts of your application, you can use the `reportError` method of `APIToolkitLaravel` class, passing in the `error` and the `request` as arguments, like so:
+
+```php
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+use APIToolkit\APIToolkitLaravel;
+
+Route::get('/user', function (Request $request) {
+    try {
+        throw new Exception("Custom user error");
+        return response()->json(["hello" => "world"]);
+    } catch (Exception $e) {
+        // Report the error to APItoolkit
+        APIToolkitLaravel::reportError($e, $request);
+        return response()->json(["error" => $e->getMessage()]);
+    }
+});
+```
+  </div>
+</section>
+
+## Monitoring Outgoing Requests
+
+Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="\_blank"} page. However, you can separate outgoing requests from others and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="\_blank"} page, alongside the incoming request that triggered them.
+
+To monitor outgoing HTTP requests from your application, use the `observeGuzzle` method of the `APIToolkitLaravel` class, passing in the `$request` (and optionally `$options`) object, like so:
+
+```php
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+use APIToolkit\APIToolkitLaravel;
+
+Route::get('/user', function (Request $request) {
+    $options = [
+        "pathWildCard" => "/repos/{owner}/{repo}",
+        "redactHeaders" => ["Content-Type", "Authorization", "HOST"],
+        "redactRequestBody" => ["$.users[*].email", "$.users[*].credit_card"],
+        "redactResponseBody" => ["$.users[*].email", "$.users[*].credit_card"]
+    ];
+    $guzzleClient = APIToolkitLaravel::observeGuzzle($request, $options);
+    $responseFromGuzzle = $guzzleClient->request('GET', 'https://api.github.com/repos/apitoolkit/apitoolkit-laravel?foobar=123');
+    $response = $responseFromGuzzle->getBody()->getContents();
+
+    return $response;
+})
+```
+
+<div class="callout">
+  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
+  <p class="mt-6">The `$options` list accepts the following optional fields:</p>
+  <ul>
+    <li>`pathWildCard`: The `url_path` for URLs with path parameters.</li>
+    <li>`redactHeaders`: A string list of headers to redact.</b></li>
+    <li>`redactResponseBody`: A string list of JSONPaths to redact from the response body.</li>
+    <li>`redactRequestBody`: A string list of JSONPaths to redact from the request body.</li>
+  </ul>
+</div>
+
+```=html
+<hr />
+<a href="https://github.com/apitoolkit/apitoolkit-laravel" target="_blank" rel="noopener noreferrer" class="w-full btn btn-outline link link-hover">
+    <i class="fa-brands fa-github"></i>
+    Explore the Laravel SDK
+</a>
+```
