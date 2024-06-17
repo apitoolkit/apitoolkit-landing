@@ -2,65 +2,84 @@
 title: NestJs
 ogTitle: NestJs SDK Guide
 date: 2022-03-23
-updatedDate: 2024-06-12
+updatedDate: 2024-06-17
 menuWeight: 4
 ---
 
 # NestJs SDK Guide
 
-Nest.js is a powerful framework for building scalable and efficient server-side applications with TypeScript. It is known for its modular architecture, dependency injection, and support for various HTTP platforms. Nest.js allows you to choose between two popular HTTP platforms: Express and Fastify. It provides seamless integration with both platforms, allowing developers to take advantage of the features offered by each.
+To integrate your NestJs application with APItoolkit, you need to use this SDK to monitor incoming traffic, aggregate the requests, and then send them to APItoolkit's servers. Kindly follow this guide to get started and learn about all the supported features of APItoolkit's **NestJs SDK**.
 
-APIToolkit provides SDKs for both Express and Fastify, enabling developers to easily integrate their APIs into Nest.js applications. These SDKs offer a simplified and efficient way to send data to APIToolkit's servers.
+```=html
+<hr>
+```
 
-In the following sections, we will walk you through the process of integrating APIToolkit's Express SDK and Fastify SDK into your Nest.js application, starting with Express and then proceeding with Fastify.
+<div class="callout">
+  <p><i class="fa-regular fa-circle-info"></i> <b>Note</b></p>
+  <p class="mt-6">
+NestJs is a progressive NodeJs framework for building efficient, reliable, and scalable server-side applications. With NestJs, you can choose between two popular HTTP server frameworks: **Express** (the default) and **Fastify**. With this, developers have the freedom to use the numerous third-party modules that are available for any of the frameworks selected.
 
-## Integrating APIToolkit into Nest.js (Express Platform or Default)
+APIToolkit already provides SDKs for both Express and Fastify, hence you can integrate any into your NestJs application. In the following sections of this guide, we will walk you through the process of integrating APIToolkit's [ExpressJS SDK](/docs/sdks/nodejs/expressjs/){target="\_blank"} or [FastifyJS SDK](/docs/sdks/nodejs/fastifyjs/){target="\_blank"} into your NestJs application.</p>
+</div>
 
-### Installation
 
-Run the following command to install the package from your projects root:
+```=html
+<hr>
+```
+
+## Prerequisites
+
+Ensure you have already completed the first three steps of the [onboarding guide](/docs/onboarding/){target="\_blank"}.
+
+## Installation
+
+Kindly run the command below to install the SDK:
+
+<section class="tab-group" data-tab-group="group1">
+  <button class="tab-button" data-tab="tab1">Express (Default)</button>
+  <button class="tab-button" data-tab="tab2">Fastify</button>
+  <div id="tab1" class="tab-content">
 
 ```sh
 npm install apitoolkit-express
 
+# Or
+
+yarn install apitoolkit-express
 ```
 
-### Project setup
+  </div>
+  <div id="tab2" class="tab-content">
 
-Intialize apitoolkit into your project is as simple as :
+```sh
+npm install apitoolkit-fastify
 
-```js
-const apitoolkitClient = await APIToolkit.NewClient({ apikey: '&lt;API_KEY&gt;' });
+# Or
+
+yarn install apitoolkit-fastify
 ```
 
-where &lt;API_KEY&gt; is the apikey which can be generated from your [apitoolkit.io](apitoolkit.io) account.
+  </div>
+</section>
 
-### Configuration Options
+## Configuration
 
-The NewClient method accepts an optional configuration object with the following properties:
+Next, initialize APItoolkit in your application's entry point (e.g., `index.js`) like so:
 
-- apiKey (required): Your APIToolkit API key.
-- redactHeaders (optional): An array of header names to redact from the captured request headers (case insensitive).
-- redactRequestBody (optional): An array of JSONPath expressions specifying fields to redact from the request body.
-- redactResponseBody (optional): An array of JSONPath expressions specifying fields to redact from the response body.
+<section class="tab-group" data-tab-group="group2">
+  <button class="tab-button" data-tab="tab1">Express (Default)</button>
+  <button class="tab-button" data-tab="tab2">Fastify</button>
+  <div id="tab1" class="tab-content">
 
-Next, you can use the apitoolkit middleware into your nestjs app.
-
-```js
-app.use(apitoolkitClient.expressMiddleware);
-```
-
-where app is your nestjs application instance.
-
-Your final could might look something like this:
 
 ```js
-import { NestFactory } from '@nestjs/core';
-import { APIToolkit } from 'apitoolkit-express';
-import { AppModule } from './app.module';
+import { NestFactory } from "@nestjs/core";
+import { APIToolkit } from "apitoolkit-express";
+import { AppModule } from "./app.module";
 
 async function bootstrap() {
-  const apiToolkitClient = APIToolkit.NewClient({ apikey: '&lt;API_KEY&gt;' });
+  const apiToolkitClient = APIToolkit.NewClient({ apikey: "{ENTER_YOUR_API_KEY_HERE}" });
+
   const app = await NestFactory.create(AppModule);
   app.use(apiToolkitClient.expressMiddleware);
   await app.listen(3000);
@@ -69,66 +88,15 @@ async function bootstrap() {
 bootstrap();
 ```
 
-## Integrating APIToolkit into Nest.js (Fastify)
-
-### Installation
-
-Run the following command to install the fastify SDK from your project's root:
-
-```sh
-npm install apitoolkit-fastify
-```
-
-### Project setup
-
-Initialize APIToolkit into your project by following these steps:
-
-Import the required dependencies:
-
-```javascript
-import  APIToolkit  from 'apitoolkit-fastify';
-import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
-```
-
-Create and initialize an APIToolkit instance with your API key and fastify instance:
-
-```javascript
-async function bootstrap() {
-  const fastifyInstance = fastify();
-  const app = await NestFactory.create(
-    AppModule,
-    new FastifyAdapter(fastifyInstance)
-  );
-  const apiToolkitClient = APIToolkit.NewClient({
-    apiKey: '<YOUR API KEY>',
-    fastify: fastifyInstance,
-  });
-  apiToolkitClient.init();
-}
-```
-
-### Configuration Options
-
-The NewClient method accepts an optional configuration object with the following properties:
-
-- apiKey (required): Your APIToolkit API key.
-- fastify (required): An instance of Fastify.
-- redactHeaders (optional): An array of header names to redact from the captured request headers (case insensitive).
-- redactRequestBody (optional): An array of JSONPath expressions specifying fields to redact from the request body.
-- redactResponseBody (optional): An array of JSONPath expressions specifying fields to redact from the response body.
-
-Your final code should look something like this:
+  </div>
+  <div id="tab2" class="tab-content">
 
 ```js
-import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
-import {
-  FastifyAdapter,
-  NestFastifyApplication,
-} from '@nestjs/platform-fastify';
-import fastify from 'fastify';
-import APIToolkit from 'apitoolkit-fastify';
+import { NestFactory } from "@nestjs/core";
+import { AppModule } from "./app.module";
+import { FastifyAdapter, NestFastifyApplication } from "@nestjs/platform-fastify";
+import fastify from "fastify";
+import APIToolkit from "apitoolkit-fastify";
 
 async function bootstrap() {
   const fastifyInstance = fastify();
@@ -136,38 +104,98 @@ async function bootstrap() {
     AppModule,
     new FastifyAdapter(fastifyInstance)
   );
+
   const apiToolkitClient = await APIToolkit.NewClient({
-    apiKey: '<YOUR API KEY>',
+    apiKey: "{ENTER_YOUR_API_KEY_HERE}",
     fastify: fastifyInstance,
   });
   apiToolkitClient.init();
   await app.listen(3000);
 }
+
 bootstrap();
 ```
 
-In this Fastify integration, the APIToolkit Fastify SDK allows you to seamlessly integrate your APIToolkit into your fastify based NestJs app. Don't forget to replace `&lt;API_KEY&gt;` with your actual API key obtained from your APIToolkit dashboard [learn how](https://apitoolkit.io/docs/get-started/dashboard/generating-api-keys/).
+  </div>
+</section>
 
-Now you have successfully integrated APIToolkit's Fastify SDK into your Nest.js application.
+<div class="callout">
+  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
+  <p>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</p>
+</div>
 
-## Redacting Senstive Fields
+## Redacting Sensitive Data
 
-While it's possible to mark a field as redacted from the apitoolkit dashboard, both express and fastify SDKs provide a way to redact sensitive fields from the request and response data sent to APIToolkit servers on the client side. Client side redacting means that those fields would never leave your servers at all. So you feel safer that your sensitive data only stays on your servers.
+If you have fields that are sensitive and should not be sent to APItoolkit servers, you can mark those fields to be redacted (the fields will never leave your servers).
 
-#### Redacting fields using Express SDK
+To mark a field for redacting via this SDK, you need to add some additional arguments to the `apitoolkitClient` config object with paths to the fields that should be redacted. There are three arguments you can provide to configure what gets redacted, namely:
 
-You can redact `headers`, `requestBody` and `responseBody` fields using the Express SDK by providing a list of headers and fields to redact when initializing the SDK:
+1. `redactHeaders`: A list of HTTP header keys.
+2. `redactRequestBody`: A list of JSONPaths from the request body.
+3. `redactResponseBody`: A list of JSONPaths from the response body.
+
+<hr />
+JSONPath is a query language used to select and extract data from JSON files. For example, given the following sample user data JSON object:
+
+```JSON
+{
+  "user": {
+    "name": "John Martha",
+    "email": "john.martha@example.com",
+    "addresses": [
+      {
+        "street": "123 Main St",
+        "city": "Anytown",
+        "state": "CA",
+        "zip": "12345"
+      },
+      {
+        "street": "123 Main St",
+        "city": "Anytown",
+        "state": "CA",
+        "zip": "12345"
+      },
+      ...
+    ],
+    "credit_card": {
+      "number": "4111111111111111",
+      "expiration": "12/28",
+      "cvv": "123"
+    }
+  },
+  ...
+}
+```
+
+Examples of valid JSONPaths would be:
+
+- `$.user.credit_card` (In this case, APItoolkit will replace the `addresses` field inside the `user` object with the string `[CLIENT_REDACTED]`).
+- `$.user.addresses[*].zip` (In this case, APItoolkit will replace the `zip` field in all the objects of the `addresses` list inside the `user` object with the string `[CLIENT_REDACTED]`).
+
+<div class="callout">
+  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
+  <p>To learn more about JSONPaths, please take a look at the [official docs](https://github.com/json-path/JsonPath/blob/master/README.md){target="_blank"}. You can also use this [JSONPath Evaluator](https://jsonpath.com?utm_source=apitoolkit){target="_blank"} to validate your JSONPaths.</p>
+</div>
+<hr />
+
+Here's an example of what the configuration would look like with redacted fields:
+
+<section class="tab-group" data-tab-group="group3">
+  <button class="tab-button" data-tab="tab1">Express (Default)</button>
+  <button class="tab-button" data-tab="tab2">Fastify</button>
+  <div id="tab1" class="tab-content">
 
 ```js
-import { NestFactory } from '@nestjs/core';
-import { APIToolkit } from 'apitoolkit-express';
+import { NestFactory } from "@nestjs/core";
+import { APIToolkit } from "apitoolkit-express";
 
 async function bootstrap() {
-  const redactHeaders = ['Authorization', 'X-Secret-Token'];
-  const redactRequestBody = ['$.password', '$.user.creditcard.cvv'];
-  const redactResponseBody = ['$.apikeys[*]', '$.message.type'];
+  const redactHeaders = ["Content-Type", "Authorization", "HOST"];
+  const redactRequestBody = ["$.user.email", "$.user.addresses"];
+  const redactResponseBody = ["$.users[*].email", "$.users[*].credit_card"];
+
   const apiToolkitClient = APIToolkit.NewClient({
-    apikey: '&lt;API_KEY&gt;',
+    apikey: "{ENTER_YOUR_API_KEY_HERE}",
     redactHeaders,
     redactRequestBody,
     redactResponseBody,
@@ -179,28 +207,24 @@ async function bootstrap() {
 bootstrap();
 ```
 
-#### Redacting fields using Fastify SDK
-
-You can redact `headers`, `requestBody` and `responseBody` fields using the fastify SDK by providing a list of headers and fields to redact when initializing the SDK:
+  </div>
+  <div id="tab2" class="tab-content">
 
 ```js
-import { NestFactory } from '@nestjs/core';
-import {
-  FastifyAdapter,
-  NestFastifyApplication,
-} from '@nestjs/platform-fastify';
-import APIToolkit from 'apitoolkit-fastify';
-import Fastify from 'fastify';
-import { AppModule } from './app.module';
+import { NestFactory } from "@nestjs/core";
+import { FastifyAdapter, NestFastifyApplication } from "@nestjs/platform-fastify";
+import APIToolkit from "apitoolkit-fastify";
+import Fastify from "fastify";
+import { AppModule } from "./app.module";
 
 const fastify = Fastify();
 async function bootstrap() {
-  const redactHeaders = ['Authorization', 'X-Secret-Token'];
-  const redactRequestBody = ['$.password', '$.user.creditcard.cvv'];
-  const redactResponseBody = ['$.apikeys[*]', '$.message.type'];
+  const redactHeaders = ["Content-Type", "Authorization", "HOST"];
+  const redactRequestBody = ["$.user.email", "$.user.addresses"];
+  const redactResponseBody = ["$.users[*].email", "$.users[*].credit_card"];
 
   const apittoolkitClient = APIToolkit.NewClient({
-    apiKey: '&lt;API_KEY&gt;',
+    apiKey: "{ENTER_YOUR_API_KEY_HERE}",
     fastify,
     redactHeaders,
     redactRequestBody,
@@ -216,18 +240,72 @@ async function bootstrap() {
 bootstrap();
 ```
 
-It is important to note that while the RedactHeaders config field accepts a list of headers (case insensitive), the RedactRequestBody and RedactResponseBody expect a list of JSONPath strings as arguments.
+  </div>
+</section>
 
-The choice of JSONPath was selected to allow you to have great flexibility in describing which fields within your responses are sensitive. Also, note that this list of items to be redacted will be applied to all endpoint requests and responses on your server. To learn more about JSONPath to help form your queries, please take a look at this cheatsheet: [JSONPath Cheatsheet](https://lzone.de/cheat-sheet/JSONPath)
+<div class="callout">
+  <p><i class="fa-regular fa-circle-info"></i> <b>Note</b></p>
+  <ul>
+    <li>The `redactHeaders` config field expects a list of <b>case-insensitive headers as strings</b>.</li>
+    <li>The `redactRequestBody` and `redactResponseBody` config fields expect a list of <b>JSONPaths as strings</b>.</li>
+    <li>The list of items to be redacted will be applied to all endpoint requests and responses on your server.</li>
+  </ul>
+</div>
 
-Hopefully, this documentation has everything you need to get APIToolkit app and runing in both your fastify and express based Nest.js application.
+## Error Reporting
 
-### Using apitoolkit to observe an axios based outgoing request
+APItoolkit automatically detects different unhandled errors, API issues, and anomalies but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
 
-[Learn how to observe requests with express adapter](/docs/get-started/quickstarts/nodejs/expressjs#using-apitoolkit-to-observe-an-axios-based-outgoing-request).
-[Learn hot to observe requests with fastify adapter](/docs/get-started/quickstarts/nodejs/fastify#using-apitoolkit-to-observe-an-axios-based-outgoing-request).
+Since the configuration process is the same with our ExpressJS and FastifyJS SDK, you can read their respective documentation by clicking any of the buttons below:
 
-### Reporting errors to APIToolkit
+<section class="tab-group" data-tab-group="group4">
+  <button class="tab-button" data-tab="tab1">Express (Default)</button>
+  <button class="tab-button" data-tab="tab2">Fastify</button>
+  <div id="tab1" class="tab-content">
+    <a href="/docs/sdks/nodejs/expressjs/#error-reporting" target="_blank" rel="noopener noreferrer" class="w-full btn glass">
+      ExpressJS Error Reporting Guide <i class="fa-regular fa-arrow-right"></i>
+    </a>
+  </div>
+  <div id="tab2" class="tab-content">
+    <a href="/docs/sdks/nodejs/fastifyjs/#error-reporting" target="_blank" rel="noopener noreferrer" class="w-full btn glass">
+      FastifyJS Error Reporting Guide <i class="fa-regular fa-arrow-right"></i>
+    </a>
+  </div>
+</section>
 
-[Reporting errors using express adapter](/docs/get-started/quickstarts/nodejs/expressjs#reporting-errors-to-apitoolkit).
-[Reporting errors using fastify adapter](/docs/get-started/quickstarts/nodejs/fastify#reporting-errors-to-apitoolkit).
+## Monitoring Outgoing Requests
+
+Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="\_blank"} page. However, you can separate outgoing requests from others and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="\_blank"} page, alongside the incoming request that triggered them.
+
+ Since the configuration process is the same with our ExpressJS and FastifyJS SDK, you can read their respective documentation by clicking any of the buttons below:
+
+<section class="tab-group" data-tab-group="group4">
+  <button class="tab-button" data-tab="tab1">Express (Default)</button>
+  <button class="tab-button" data-tab="tab2">Fastify</button>
+  <div id="tab1" class="tab-content">
+    <a href="/docs/sdks/nodejs/expressjs/#monitoring-outgoing-requests" target="_blank" rel="noopener noreferrer" class="w-full btn glass">
+      ExpressJS Monitoring Outgoing Requests Guide <i class="fa-regular fa-arrow-right"></i>
+    </a>
+  </div>
+  <div id="tab2" class="tab-content">
+    <a href="/docs/sdks/nodejs/fastifyjs/#monitoring-outgoing-requests" target="_blank" rel="noopener noreferrer" class="w-full btn glass">
+      FastifyJS Monitoring Outgoing Requests Guide <i class="fa-regular fa-arrow-right"></i>
+    </a>
+  </div>
+</section>
+
+
+```=html
+<hr />
+<a href="https://github.com/apitoolkit/apitoolkit-express" target="_blank" rel="noopener noreferrer" class="w-full btn btn-outline link link-hover">
+    <i class="fa-brands fa-github"></i>
+    Explore the ExpressJS SDK
+</a>
+
+<br /><br />
+
+<a href="https://github.com/apitoolkit/apitoolkit-fastify" target="_blank" rel="noopener noreferrer" class="w-full btn btn-outline link link-hover">
+    <i class="fa-brands fa-github"></i>
+    Explore the FastifyJS SDK
+</a>
+```

@@ -13,7 +13,7 @@ pages:
     slug: /docs/sdks/nodejs/expressjs
     icon: /assets/img/framework-logos/express-icon.png
   - title: Fastify
-    slug: /docs/sdks/nodejs/fastify
+    slug: /docs/sdks/nodejs/fastifyjs
     icon: /assets/img/framework-logos/fastify-icon.png
   - title: NestJS
     slug: /docs/sdks/nodejs/nestjs

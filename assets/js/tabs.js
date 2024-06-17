@@ -25,7 +25,6 @@ function tabsComponent(tabGroup) {
 
   // Set the first tab to be visible
   if (tabButtons.length > 0) {
-    console.log("Initializing first tab");
     tabButtons[0].click();
   }
 }
