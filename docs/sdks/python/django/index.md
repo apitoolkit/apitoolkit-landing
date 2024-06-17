@@ -49,8 +49,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 APITOOLKIT_KEY = os.getenv('APITOOLKIT_KEY')
 APITOOLKIT_DEBUG = False
-APITOOLKIT_TAGS= ["environment: production", "region: us-east-1"]
-APITOOLKIT_SERVICE_VERSION= "v2.0"
+APITOOLKIT_TAGS = ["environment: production", "region: us-east-1"]
+APITOOLKIT_SERVICE_VERSION = "v2.0"
 
 # Application definition
 INSTALLED_APPS = [
@@ -75,7 +75,7 @@ INSTALLED_APPS = [
   </ol>
 </div>
 
-Then add the `apitoolkit_django.APIToolkit` middleware into the settings middleware list, like so:
+Then add the `apitoolkit_django.APIToolkit` middleware into the `settings.py` middleware list, like so:
 
 ```python
 MIDDLEWARE = [
