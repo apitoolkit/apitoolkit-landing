@@ -44,7 +44,6 @@
     <script defer src="https://kit.fontawesome.com/32c218ff10.js" crossorigin="anonymous"></script>
     <script defer src="/assets/deps/htmx/htmx.min.js"></script>
     <script defer src="/assets/deps/htmx/preload.js"></script>
-    <script defer src="/assets/js/tabs.js"></script>
     <script defer src="https://unpkg.com/hyperscript.org@0.9.12"></script>
     <style>
       @font-face {
@@ -212,7 +211,6 @@
         padding: 20px;
         border: 1px solid #ccc;
         border-radius: 0 5px 5px 5px;
-        display: none;
       }
       .tab-content.active {
         display: block;
@@ -664,10 +662,12 @@ twq('config','om5gt');
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/csharp.min.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/elixir.min.js"></script>
+    <script defer src="/assets/js/tabs.js"></script>
     <script defer type="text/javascript">
       document.addEventListener('DOMContentLoaded', function () {
         hljs.highlightAll();
       });
+
       function init() {
         // Select all headers
         const headers = document.querySelectorAll(
@@ -709,6 +709,7 @@ twq('config','om5gt');
           });
       }
       init();
+
       document.body.addEventListener('htmx:afterSwap', function (event) {
         window.requestAnimationFrame(() => {
           init();
