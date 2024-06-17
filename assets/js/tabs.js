@@ -67,7 +67,7 @@
   }
 
   // Listen for HTMX afterSwap event to re-initialize tab groups
-  document.body.addEventListener("htmx:afterSwap", function (event) {
+  document.body.addEventListener("htmx:afterSwap", () => {
     window.requestAnimationFrame(() => {
       initializeTabGroups();
       observeTabGroups();
