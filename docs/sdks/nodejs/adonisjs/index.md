@@ -22,7 +22,6 @@ Ensure you have already completed the first three steps of the [onboarding guide
 
 Kindly run the command below to install the SDK:
 
-
 ```sh
 npm install apitoolkit-adonis@latest
 
@@ -50,13 +49,22 @@ Then, register the middleware, like so:
   <button class="tab-button" data-tab="tab1">Adonis v6 (latest)</button>
   <button class="tab-button" data-tab="tab2">Adonis v5</button>
   <div id="tab1" class="tab-content">
-    Add `apitoolkit-adonis` to your global middleware list in the `start/kernel.js|ts` file, like so:
+    Add apitoolkit-adonis client to your global middleware list in the `start/kernel.js|ts` file, like so:
         
 ```js
+import server from '@adonisjs/core/services/server'
+import APIToolkit from 'apitoolkit-adonis'
+
+const client = new APIToolkit()
+
 server.use([
-  () => import('apitoolkit-adonis'),
+() => import('#middleware/container_bindings_middleware'),
+() => import('#middleware/force_json_response_middleware'),
+() => import('@adonisjs/cors/cors_middleware'),
+() => client.middleware(),
 ])
-```
+
+````
 
     Then, create an `apitoolkit.js|ts` file in the `/conf` directory and export the `defineConfig` object with some properties, like so:
 
@@ -69,7 +77,8 @@ export default defineConfig({
   tags: ["environment: production", "region: us-east-1"],
   serviceVersion: "v2.0"
 });
-```
+````
+
   </div>
   <div id="tab2" class="tab-content">
     Add `@ioc:APIToolkit` to your global middleware list in the `start/kernel.js|ts` file, like so:
@@ -88,9 +97,10 @@ export const apitoolkitConfig = {
   apiKey: "{ENTER_YOUR_API_KEY_HERE}",
   debug: false,
   tags: ["environment: production", "region: us-east-1"],
-  serviceVersion: "v2.0"
+  serviceVersion: "v2.0",
 };
 ```
+
   </div>
 </section>
 
@@ -199,7 +209,7 @@ To report errors, you need to first enable [asyncLocalStorage](https://docs.adon
 export const http = defineConfig({
   useAsyncLocalStorage: true,
   // Other configs...
-})
+});
 ```
 
   </div>
@@ -232,6 +242,25 @@ router.get("/observer", async () => {
 });
 ```
 
+To automatically report service exceptions call `reportError` in your applications exception handler, like so:
+
+```ts
+import { HttpContext, ExceptionHandler } from "@adonisjs/core/http";
+import { reportError } from "apitoolkit-adonis";
+
+export default class HttpExceptionHandler extends ExceptionHandler {
+  async handle(error: unknown, ctx: HttpContext) {
+    return super.handle(error, ctx);
+  }
+
+  async report(error: unknown, ctx: HttpContext) {
+    // Automatically report all uncaught errors to apitoolkit
+    reportError(error);
+    return super.report(error, ctx);
+  }
+}
+```
+
 ## Monitoring Outgoing Requests
 
 Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="\_blank"} page. However, you can separate outgoing requests from others and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="\_blank"} page, alongside the incoming request that triggered them.
@@ -247,7 +276,7 @@ To monitor outgoing axios-based HTTP requests from your application, first, enab
 export const http = defineConfig({
   useAsyncLocalStorage: true,
   // Other configs...
-})
+});
 ```
 
   </div>
@@ -259,10 +288,22 @@ export const http: ServerConfig = {
   // Other configs...
 }
 ```
+
   </div>
 </section>
 
-Then, wrap your axios instance with the `observeAxios()` function, like so:
+To monitor all axios request gobally if you're using adonis V6, add `monitorAxios` to the apitoolkit config in the `config/apitoolkit.js|ts` file, like so:
+
+```ts
+import { defineConfig } from "apitoolkit-adonis";
+import axios from "axios";
+export default defineConfig({
+  apiKey: "{ENTER_YOUR_API_KEY_HERE}",
+  monitorAxios: axios,
+});
+```
+
+To monitor specific requests (both Adonis v6 and v5) wrap your axios instance with the `observeAxios()` function, like so:
 
 ```js
 import { observeAxios } from "apitoolkit-adonis";
