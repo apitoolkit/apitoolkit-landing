@@ -32,7 +32,7 @@ yarn install apitoolkit-adonis@latest
 
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <p>If you're using Adonis v5, you will need to instead install `v2.2.0` of the APItoolkit Adonis SDK (i.e., `apitoolkit-adonis@2.2.0`).</p>
+  <p>If you're using Adonis v5, you will need to instead install `v2.2.1` of the APItoolkit Adonis SDK (i.e., `apitoolkit-adonis@2.2.1`).</p>
 </div>
 
 ## Configuration
