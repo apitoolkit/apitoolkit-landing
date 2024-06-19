@@ -16,7 +16,7 @@ To integrate your FastifyJs application with APItoolkit, you need to use this SD
 
 ## Prerequisites
 
-Ensure you have already completed the first three steps of the [onboarding guide](/docs/onboarding/){target="_blank"}.
+Ensure you have already completed the first three steps of the [onboarding guide](/docs/onboarding/){target="\_blank"}.
 
 ## Installation
 
@@ -27,7 +27,7 @@ npm install apitoolkit-fastify
 
 # Or
 
-yarn install apitoolkit-fastify
+yarn add apitoolkit-fastify
 ```
 
 ## Configuration
@@ -157,7 +157,7 @@ const apitoolkitClient = APIToolkit.NewClient({
   apiKey,
   redactHeaders,
   redactRequestBody,
-  redactResponseBody
+  redactResponseBody,
 });
 apitoolkitClient.init();
 
@@ -173,95 +173,86 @@ fastify.listen({ port: 3000 }, function (err, address) {
 
 APItoolkit automatically detects different unhandled errors, API issues, and anomalies but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
 
-<section class="tab-group" data-tab-group="group1">
-  <button class="tab-button" data-tab="tab1">Report Specific Errors</button>
-  <button class="tab-button" data-tab="tab2">Report Specific Errors (Background Job)</button>
-  <div id="tab1" class="tab-content">
 To manually report errors within the context of a web request handler, use the `ReportError()` function, passing in the `error` argument like so:
 
 ```js
 import Fastify from "fastify";
-import axios from "axios"
+import axios from "axios";
 import APIToolkit, { ReportError } from "apitoolkit-fastify";
 
 const fastify = Fastify();
 
 const apitoolkitClient = APIToolkit.NewClient({
   fastify,
-  apiKey: "{ENTER_YOUR_API_KEY_HERE}"
+  apiKey: "{ENTER_YOUR_API_KEY_HERE}",
 });
 apitoolkitClient.init();
 
 app.get("/", async (request, reply) => {
-    try {
-      const response = await observeAxios(axios).get(baseURL+ "/non-existing-endpoint");
-    } catch (error) {
-      // Report the error to APItoolkit
-      ReportError(error);
-    }
+  try {
+    const response = await observeAxios(axios).get(
+      baseURL + "/non-existing-endpoint"
+    );
+  } catch (error) {
+    // Report the error to APItoolkit
+    ReportError(error);
+  }
 });
 ```
-  </div>
-  <div id="tab2" class="tab-content">
-  If your request is called from a background job for example (outside the web request handler and hence, not wrapped by APItoolkit's middleware), using `ReportError()` directly from `apitoolkit-express` will not be available. Instead, call `ReportError()` from `apitoolkitClient`, like so:
-
-```js
-import Fastify from "fastify";
-import axios from "axios"
-import APIToolkit from "apitoolkit-fastify";
-
-const apitoolkitClient = APIToolkit.NewClient({
-  fastify,
-  apiKey: "{ENTER_YOUR_API_KEY_HERE}"
-});
-
-try {
-  const response = await observeAxios(axios).get(baseURL + "/ping");
-} catch (error) {
-  // Report the error to APItoolkit
-  apitoolkitClient.ReportError(error);
-}
-```
-  </div>
-</section>
 
 ## Monitoring Outgoing Requests
 
 Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="\_blank"} page. However, you can separate outgoing requests from others and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="\_blank"} page, alongside the incoming request that triggered them.
 
-To monitor outgoing axios-based HTTP requests from your application, wrap your axios instance with the `observeAxios()` function, like so:
+<section class="tab-group" data-tab-group="group4">
+  <button class="tab-button" data-tab="tab1">All Requests</button>
+  <button class="tab-button" data-tab="tab2">Specific Requests</button>
+  <div id="tab1" class="tab-content">
+    Then, add `monitorAxios` to the `defineConfig` configuration options in the `config/apitoolkit.js|ts` file, to enable global monitoring of all axios requests (for only Adonis v6), like so:
 
 ```js
 import Fastify from "fastify";
-import axios from "axios"
+import axios from "axios";
+import APIToolkit from "apitoolkit-fastify";
+
+const fastify = Fastify();
+
+const apitoolkitClient = APIToolkit.NewClient({
+  fastify,
+  apiKey: "{ENTER_YOUR_API_KEY_HERE}",
+  monitorAxios: axios,
+});
+apitoolkitClient.init();
+
+app.get("/", async (request, reply) => {
+  // This axios request get's monitored
+  const res = await axios.get("https://jsonplaceholder.typicode.com/todos/1");
+  return res.data;
+});
+```
+
+  </div>
+  <div id="tab2" class="tab-content">
+    Wrap your axios instance with the `observeAxios()` function to monitor a specific axios request within the context of a web request handler (for both Adonis v6 and v5), like so:
+
+```js
+import Fastify from "fastify";
+import axios from "axios";
 import APIToolkit, { observeAxios } from "apitoolkit-fastify";
 
 const fastify = Fastify();
 
 const apitoolkitClient = APIToolkit.NewClient({
   fastify,
-  apiKey: "{ENTER_YOUR_API_KEY_HERE}"
+  apiKey: "{ENTER_YOUR_API_KEY_HERE}",
 });
 apitoolkitClient.init();
 
-const pathWildCard = "/users/{user_id}";
-const redactHeaders = ["Content-Type", "Authorization", "HOST"];
-const redactRequestBody = ["$.user.email", "$.user.addresses"];
-const redactResponseBody = ["$.users[*].email", "$.users[*].credit_card"];
-
 app.get("/", async (request, reply) => {
-    try {
-        const res = await observeAxios(
-          axios,
-          pathWildCard,
-          redactHeaders,
-          redactRequestBody,
-          redactResponseBody,
-        ).get("https://jsonplaceholder.typicode.com/todos/1");
-        return res.data
-    } catch (error) {
-        return { error: "Something went wrong..." }
-    }
+  const res = await observeAxios(axios).get(
+    "https://jsonplaceholder.typicode.com/todos/1"
+  );
+  return res.data;
 });
 ```
 
@@ -276,6 +267,9 @@ The `observeAxios` function above accepts a **required `axios` instance** and th
 | `redactResponseBody` | A list of JSONPaths from the request body to redact. |
 | `redactRequestBody` | A list of JSONPaths from the response body to redact. |
 :::
+
+  </div>
+</section>
 
 ```=html
 <hr />
