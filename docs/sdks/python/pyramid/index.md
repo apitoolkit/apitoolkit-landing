@@ -63,7 +63,7 @@ settings = {
   </div>
 </section>
 
-Next, initialize APItoolkit in your application's entry point (e.g., `app.py`), like so:
+Then, initialize APItoolkit in your application's entry point (e.g., `app.py`), like so:
 
 ```python
 from wsgiref.simple_server import make_server
@@ -90,19 +90,25 @@ if __name__ == '__main__':
     server.serve_forever()
 ```
 
+In the configuration above, **only the `APITOOLKIT_KEY` option is required**, but you can add the following optional fields:
+
+{class="docs-table"}
+:::
+| Option | Description |
+| ------ | ----------- |
+| `APITOOLKIT_DEBUG` | Set to `true` to enable debug mode. |
+| `APITOOLKIT_TAGS` | A list of defined tags for your services (used for grouping and filtering data on the dashboard). |
+| `APITOOLKIT_SERVICE_VERSION` | A defined string version of your application (used for further debugging on the dashboard). |
+| `APITOOLKIT_ROUTES_WHITELIST` | A list of route prefixes that should be captured (only capture specific incoming requests that match these prefixes). |
+| `APITOOLKIT_IGNORE_HTTP_CODES` | A list of HTTP status codes that should NOT be captured (ignore status codes you're not interested in or are spamming your logs). |
+| `APITOOLKIT_REDACT_HEADERS` | A list of HTTP header keys to redact. |
+| `APITOOLKIT_REDACT_REQ_BODY` | A list of JSONPaths from the request body to redact. |
+| `APITOOLKIT_REDACT_RES_BODY` | A list of JSONPaths from the response body to redact. |
+:::
+
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <ol>
-  <li>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</li>
-  <li class="mt-6">The `APITOOLKIT_KEY` field is required but you can add the following optional fields:</li>
-  <ul>
-    <li>`APITOOLKIT_DEBUG`: Set to `true` to enable debug mode.</li>
-    <li>`APITOOLKIT_TAGS`: A list of defined tags for your services (used for grouping and filtering data on the dashboard).</b></li>
-    <li>`APITOOLKIT_SERVICE_VERSION`: A defined string version of your application (used for further debugging on the dashboard).</li>
-    <li>`APITOOLKIT_ROUTES_WHITELIST`: A list of route prefixes that should be captured (only capture specific incoming requests that match these prefixes).</li>
-    <li>`APITOOLKIT_IGNORE_HTTP_CODES`: A list of HTTP status codes that should NOT be captured (ignore status codes you're not interested in or are spamming your logs).</li>
-  </ul>
-  </ol>
+  <p>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</p>
 </div>
 
 ## Redacting Sensitive Data
@@ -194,7 +200,7 @@ settings = {
 
 APItoolkit automatically detects different unhandled errors, API issues, and anomalies but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
 
-To report all uncaught errors that happened during a web request, use the `report_error()` function from the `apitoolkit_pyramid` module, passing in the `request` and `error`, like so:
+To report all uncaught errors and service exceptions that happened during a web request, use the `report_error()` function from the `apitoolkit_pyramid` module, passing in the `request` and `error` arguments, like so:
 
 ```python
 from pyramid.response import Response
@@ -217,7 +223,7 @@ def home(request):
 
 Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="\_blank"} page. However, you can separate outgoing requests from others and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="\_blank"} page, alongside the incoming request that triggered them.
 
-To monitor outgoing HTTP requests from your application, use the `observe_request()` function from the `apitoolkit_pyramid` module, like so:
+To monitor outgoing HTTP requests from your application, use the `observe_request()` function from the `apitoolkit_pyramid` module, passing in the `request` argument, like so:
 
 ```python
 from pyramid.response import Response
@@ -233,7 +239,7 @@ def home(request):
 
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <p>The `observe_request()` function wraps an [HTTPX](https://python-httpx.org?utm_source=apitoolkit){target="\_blank"} client and you can use it just like you would normally use HTTPX for any request you need.</p>
+  <p>The `observe_request()` function wraps an [HTTPX](https://python-httpx.org?utm_source=apitoolkit){target="\_blank"} client and you can use it just like you would normally use HTTPX for any request.</p>
 </div>
 
 ```=html
