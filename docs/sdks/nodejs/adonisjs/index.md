@@ -330,19 +330,8 @@ export default defineConfig({
 import { observeAxios } from "apitoolkit-adonis";
 import axios from "axios";
 
-const pathWildCard = "/users/{user_id}";
-const redactHeaders = ["Content-Type", "Authorization", "HOST"];
-const redactRequestBody = ["Content-Type", "Authorization", "HOST"];
-const redactResponseBody = ["$.users[*].email", "$.users[*].credit_card"];
-
 Route.get("/observer", async () => {
-  const response = await observeAxios(
-    axios,
-    pathWildCard,
-    redactHeaders,
-    redactRequestBody,
-    redactResponseBody
-  ).get(baseURL + "/users/user1234");
+  const response = await observeAxios(axios).get(baseURL + "/users/user1234");
   return { hello: "hello world" };
 });
 ```

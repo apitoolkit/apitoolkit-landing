@@ -411,19 +411,8 @@ const apitoolkitClient = APIToolkit.NewClient({ apiKey: "{ENTER_YOUR_API_KEY_HER
 
 app.use(apitoolkitClient.expressMiddleware);
 
-const pathWildCard = "/users/{user_id}";
-const redactHeaders = ["Content-Type", "Authorization", "HOST"];
-const redactRequestBody = ["$.user.email", "$.user.addresses"];
-const redactResponseBody = ["$.users[*].email", "$.users[*].credit_card"];
-
 app.get("/", (req, res) => {
-  const response = await observeAxios(
-    axios,
-    pathWildCard,
-    redactHeaders,
-    redactRequestBody,
-    redactResponseBody
-  ).get(baseURL + "/users/user1234");
+  const response = await observeAxios(axios).get(baseURL + "/users/user1234");
   res.send(response.data);
 });
 
@@ -461,6 +450,18 @@ const response = await apitoolkitClient
   .get("http://localhost:8080/ping");
 console.log(response.data);
 ```
+
+The `observeAxios` function above accepts a **required `axios` instance** and the following optional fields:
+
+{class="docs-table"}
+:::
+| Option | Description |
+| ------ | ----------- |
+| `pathWildCard` | The `url_path` for URLs with path parameters. |
+| `redactHeaders` | A list of HTTP header keys to redact. |
+| `redactResponseBody` | A list of JSONPaths from the request body to redact. |
+| `redactRequestBody` | A list of JSONPaths from the response body to redact. |
+:::
 
   </div>
 </section>

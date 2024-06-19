@@ -248,19 +248,8 @@ const apitoolkitClient = APIToolkit.NewClient({
 });
 apitoolkitClient.init();
 
-const pathWildCard = "/users/{user_id}";
-const redactHeaders = ["Content-Type", "Authorization", "HOST"];
-const redactRequestBody = ["Content-Type", "Authorization", "HOST"];
-const redactResponseBody = ["$.users[*].email", "$.users[*].credit_card"];
-
 app.get("/", async (request, reply) => {
-  const res = await observeAxios(
-    axios,
-    pathWildCard,
-    redactHeaders,
-    redactRequestBody,
-    redactResponseBody
-    ).get(baseURL + "/users/user1234");
+  const res = await observeAxios(axios).get(baseURL + "/users/user1234");
   return res.data;
 });
 ```
