@@ -46,6 +46,7 @@ load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Add the APItoolkit configuration options
 APITOOLKIT_KEY = os.getenv('APITOOLKIT_KEY')
 APITOOLKIT_DEBUG = False
 APITOOLKIT_TAGS = ["environment: production", "region: us-east-1"]
@@ -61,19 +62,6 @@ INSTALLED_APPS = [
 ...
 ```
 
-<div class="callout">
-  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <ol>
-  <li>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</li>
-  <li class="mt-6">The `APITOOLKIT_KEY` variable is required but you can add the following optional variables:</li>
-  <ul>
-    <li>`APITOOLKIT_DEBUG`: Set to `true` to enable debug mode.</li>
-    <li>`APITOOLKIT_TAGS`: A list of defined tags for your services (used for grouping and filtering data on the dashboard).</b></li>
-    <li>`APITOOLKIT_SERVICE_VERSION`: A defined string version of your application (used for further debugging on the dashboard).</li>
-  </ul>
-  </ol>
-</div>
-
 Then add the `apitoolkit_django.APIToolkit` middleware into the `settings.py` middleware list, like so:
 
 ```python
@@ -86,11 +74,30 @@ MIDDLEWARE = [
 ]
 ```
 
+In the configuration above, **only the `APITOOLKIT_KEY` option is required**, but you can add the following optional fields:
+
+{class="docs-table"}
+:::
+| Option | Description |
+| ------ | ----------- |
+| `APITOOLKIT_DEBUG` | Set to `true` to enable debug mode. |
+| `APITOOLKIT_TAGS` | A list of defined tags for your services (used for grouping and filtering data on the dashboard). |
+| `APITOOLKIT_SERVICE_VERSION` | A defined string version of your application (used for further debugging on the dashboard). |
+| `APITOOLKIT_REDACT_HEADERS` | A list of HTTP header keys to redact. |
+| `APITOOLKIT_REDACT_REQ_BODY` | A list of JSONPaths from the request body to redact. |
+| `APITOOLKIT_REDACT_RES_BODY` | A list of JSONPaths from the response body to redact. |
+:::
+
+<div class="callout">
+  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
+  <p>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</p>
+</div>
+
 ## Redacting Sensitive Data
 
 If you have fields that are sensitive and should not be sent to APItoolkit servers, you can mark those fields to be redacted (the fields will never leave your servers).
 
-To mark a field for redacting via this SDK, you need to add some additional environmental fields to the `.env` file with paths to the fields that should be redacted. There are three variables you can provide to configure what gets redacted, namely:
+To mark a field for redacting via this SDK, you need to add some additional configuration options to the `settings.py` file with paths to the fields that should be redacted. There are three variables you can provide to configure what gets redacted, namely:
 
 1. `APITOOLKIT_REDACT_HEADERS`: A list of HTTP header keys.
 2. `APITOOLKIT_REDACT_REQ_BODY`: A list of JSONPaths from the request body.
@@ -161,7 +168,7 @@ APITOOLKIT_REDACT_RES_BODY = ["$.users[*].email", "$.users[*].credit_card"]
 
 APItoolkit automatically detects different unhandled errors, API issues, and anomalies but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
 
-To report all uncaught errors that happened during a web request, use the `report_error()` function from the `apitoolkit_django` module, passing in the `request` and `error`, like so:
+To report all uncaught errors and service exceptions that happened during a web request, use the `report_error()` function from the `apitoolkit_django` module, passing in the `request` and `error`, like so:
 
 ```python
 from django.http import JsonResponse
@@ -182,7 +189,7 @@ def hello_world(request, name):
 
 Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="\_blank"} page. However, you can separate outgoing requests from others and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="\_blank"} page, alongside the incoming request that triggered them.
 
-To monitor outgoing HTTP requests from your application, use the `observe_request()` function from the `apitoolkit_django` module, like so:
+To monitor outgoing HTTP requests from your application, use the `observe_request()` function from the `apitoolkit_django` module, passing in the `request` argument, like so:
 
 ```python
 from django.http import JsonResponse
@@ -198,7 +205,7 @@ def hello_world(request, name):
 
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <p>The `observe_request()` function wraps an [HTTPX](https://python-httpx.org?utm_source=apitoolkit){target="\_blank"} client and you can use it just like you would normally use HTTPX for any request you need.</p>
+  <p>The `observe_request()` function wraps an [HTTPX](https://python-httpx.org?utm_source=apitoolkit){target="\_blank"} client and you can use it just like you would normally use HTTPX for any request.</p>
 </div>
 
 ```=html
