@@ -39,19 +39,6 @@ APITOOLKIT_TAGS="environment: production, region: us-east-1"
 APITOOLKIT_SERVICE_VERSION=v2.0
 ```
 
-<div class="callout">
-  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <ol>
-  <li>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</li>
-  <li class="mt-6">The `APITOOLKIT_KEY` environment variable is required but you can add the following optional variables:</li>
-  <ul>
-    <li>`APITOOLKIT_DEBUG`: Set to `true` to enable debug mode.</li>
-    <li>`APITOOLKIT_TAGS`: A list of defined tags for your services (used for grouping and filtering data on the dashboard).</b></li>
-    <li>`APITOOLKIT_SERVICE_VERSION`: A defined string version of your application (used for further debugging on the dashboard).</li>
-  </ul>
-  </ol>
-</div>
-
 <section class="tab-group" data-tab-group="group1">
   <button class="tab-button" data-tab="tab1">Middleware (Global)</button>
   <button class="tab-button" data-tab="tab2">Middleware (Specific Routes)</button>
@@ -125,6 +112,25 @@ Route::get('/', function () {
 
   </div>
 </section>
+
+In the configuration above, **only the `APITOOLKIT_KEY` option is required**, but you can add the following optional fields:
+
+{class="docs-table"}
+:::
+| Option | Description |
+| ------ | ----------- |
+| `APITOOLKIT_DEBUG` | Set to `true` to enable debug mode. |
+| `APITOOLKIT_TAGS` | A list of defined tags for your services (used for grouping and filtering data on the dashboard). |
+| `APITOOLKIT_SERVICE_VERSION` | A defined string version of your application (used for further debugging on the dashboard). |
+| `APITOOLKIT_REDACT_HEADERS` | A list of HTTP header keys to redact. |
+| `APITOOLKIT_REDACT_REQUEST_BODY` | A list of JSONPaths from the request body to redact. |
+| `APITOOLKIT_REDACT_RESPONSE_BODY` | A list of JSONPaths from the response body to redact. |
+:::
+
+<div class="callout">
+  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
+  <p>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</p>
+</div>
 
 ## Redacting Sensitive Data
 
@@ -205,7 +211,7 @@ APItoolkit automatically detects different unhandled errors, API issues, and ano
   <button class="tab-button" data-tab="tab1"> Report All Errors</button>
   <button class="tab-button" data-tab="tab2">Report Specific Errors</button>
   <div id="tab1" class="tab-content">
-To report all uncaught errors that happened during a web request, modify your Laravel Exceptions handler, passing in the `error` and the `request` as arguments, like so:
+To report all uncaught errors and service exceptions that happened during a web request, modify your Laravel Exceptions handler, passing in the `error` and the `request` as arguments, like so:
 
 ```php
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
@@ -230,7 +236,7 @@ class Handler extends ExceptionHandler
 
   </div>
   <div id="tab2" class="tab-content">
-To report specific errors at different parts of your application, you can use the `reportError` method of the `APIToolkitLaravel` class, passing in the `error` and the `request` as arguments, like so:
+To report specific errors at different parts of your application, use the `reportError` method of the `APIToolkitLaravel` class, passing in the `error` and the `request` as arguments, like so:
 
 ```php
 use Illuminate\Http\Request;

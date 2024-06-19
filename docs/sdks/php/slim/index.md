@@ -47,6 +47,7 @@ $apitoolkitMiddleware = new APIToolkitMiddleware(
 
 // Initialize the APItoolkit client
 $app->add($apitoolkitMiddleware);
+// END Initialize the APItoolkit client
 
 $app->get('/', function ($request, $response) {
     $response->getBody()->write('Hello, World!');
@@ -56,17 +57,23 @@ $app->get('/', function ($request, $response) {
 $app->run();
 ```
 
+In the configuration above, **only the API key option is required**, but you can add the following optional fields:
+
+{class="docs-table"}
+:::
+| Option | Description |
+| ------ | ----------- |
+| `$debug` | Set to `true` to enable debug mode. |
+| `$tags` | A list of defined tags for your services (used for grouping and filtering data on the dashboard). |
+| `$serviceVersion` | A defined string version of your application (used for further debugging on the dashboard). |
+| `$redactHeaders` | A list of HTTP header keys to redact. |
+| `$redactRequestBody` | A list of JSONPaths from the request body to redact. |
+| `$redactResponseBody` | A list of JSONPaths from the response body to redact. |
+:::
+
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <ol>
-  <li>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</li>
-  <li class="mt-6">The `APIToolkitMiddleware` accepts a required API Key and the following optional fields:</li>
-  <ul>
-    <li>`$debug`: Set to `true` to enable debug mode.</li>
-    <li>`$tags`: A list of defined tags for your services (used for grouping and filtering data on the dashboard).</b></li>
-    <li>`$serviceVersion`: A defined string version of your application (used for further debugging on the dashboard).</li>
-  </ul>
-  </ol>
+  <p>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</p>
 </div>
 
 ## Redacting Sensitive Data
@@ -163,7 +170,7 @@ $app->run();
 
 APItoolkit automatically detects different unhandled errors, API issues, and anomalies but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
 
-To report all uncaught errors that happened during a web request, use the `reportError` method of the `APIToolkitSlim` class, passing in the `error` and the `request` as arguments, like so:
+To report all uncaught errors and service exceptions that happened during a web request, use the `reportError` method of the `APIToolkitSlim` class, passing in the `error` and the `request` as arguments, like so:
 
 ```php
 use Slim\Factory\AppFactory;
