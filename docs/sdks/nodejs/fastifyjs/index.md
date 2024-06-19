@@ -43,9 +43,13 @@ const fastify = Fastify();
 // Initialize the APItoolkit client
 const apitoolkitClient = APIToolkit.NewClient({
   fastify,
-  apiKey: "{ENTER_YOUR_API_KEY_HERE}"
+  apiKey: "{ENTER_YOUR_API_KEY_HERE}",
+  debug: false,
+  tags: ["environment: production", "region: us-east-1"],
+  serviceVersion: "v2.0",
 });
 apitoolkitClient.init();
+// END Initialize the APItoolkit client
 
 fastify.get("/hello", function (request, reply) {
   reply.send({ hello: "world" });
@@ -58,6 +62,20 @@ fastify.listen({ port: 3000 }, function (err, address) {
   }
 });
 ```
+
+In the configuration above, **only the `apiKey` option is required**, but you can add the following optional fields:
+
+{class="docs-table"}
+:::
+| Option | Description |
+| ------ | ----------- |
+| `debug` | Set to `true` to enable debug mode. |
+| `tags` | A list of defined tags for your services (used for grouping and filtering data on the dashboard). |
+| `serviceVersion` | A defined string version of your application (used for further debugging on the dashboard). |
+| `redactHeaders` | A list of HTTP header keys to redact. |
+| `redactResponseBody` | A list of JSONPaths from the request body to redact. |
+| `redactRequestBody` | A list of JSONPaths from the response body to redact. |
+:::
 
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
@@ -159,7 +177,7 @@ APItoolkit automatically detects different unhandled errors, API issues, and ano
   <button class="tab-button" data-tab="tab1">Report Specific Errors</button>
   <button class="tab-button" data-tab="tab2">Report Specific Errors (Background Job)</button>
   <div id="tab1" class="tab-content">
-To manually report errors within the context of a web request handler, use the `ReportError()` function, like so:
+To manually report errors within the context of a web request handler, use the `ReportError()` function, passing in the `error` argument like so:
 
 ```js
 import Fastify from "fastify";
@@ -227,18 +245,18 @@ const apitoolkitClient = APIToolkit.NewClient({
 apitoolkitClient.init();
 
 const pathWildCard = "/users/{user_id}";
-const redactHeadersList = ["Content-Type", "Authorization", "HOST"];
-const redactRequestBodyList = ["$.user.email", "$.user.addresses"];
-const redactResponseBodyList = ["$.users[*].email", "$.users[*].credit_card"];
+const redactHeaders = ["Content-Type", "Authorization", "HOST"];
+const redactRequestBody = ["$.user.email", "$.user.addresses"];
+const redactResponseBody = ["$.users[*].email", "$.users[*].credit_card"];
 
 app.get("/", async (request, reply) => {
     try {
         const res = await observeAxios(
           axios,
           pathWildCard,
-          redactHeadersList,
-          redactRequestBodyList,
-          redactResponseBodyList,
+          redactHeaders,
+          redactRequestBody,
+          redactResponseBody,
         ).get("https://jsonplaceholder.typicode.com/todos/1");
         return res.data
     } catch (error) {
@@ -247,17 +265,17 @@ app.get("/", async (request, reply) => {
 });
 ```
 
-<div class="callout">
-  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <p class="mt-6">The `observeAxios` function accepts a required `axios` instance and the following optional fields:</p>
-  <ul>
-    <li>`pathWildCard`: The `url_path` for URLs with path parameters.</li>
-    <li>`redactHeaders`: A string list of headers to redact.</b></li>
-    <li>`redactResponseBody`: A string list of JSONPaths to redact from the response body.</li>
-    <li>`redactRequestBody`: A string list of JSONPaths to redact from the request body.</li>
-  </ul>
-</div>
+The `observeAxios` function above accepts a **required `axios` instance** and the following optional fields:
 
+{class="docs-table"}
+:::
+| Option | Description |
+| ------ | ----------- |
+| `pathWildCard` | The `url_path` for URLs with path parameters. |
+| `redactHeaders` | A list of HTTP header keys to redact. |
+| `redactResponseBody` | A list of JSONPaths from the request body to redact. |
+| `redactRequestBody` | A list of JSONPaths from the response body to redact. |
+:::
 
 ```=html
 <hr />

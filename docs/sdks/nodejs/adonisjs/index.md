@@ -103,19 +103,26 @@ export const apitoolkitConfig = {
   </div>
 </section>
 
+In the configuration above, **only the `apiKey` option is required**, but you can add the following optional fields:
+
+{class="docs-table"}
+:::
+| Option | Description |
+| ------ | ----------- |
+| `debug` | Set to `true` to enable debug mode. |
+| `tags` | A list of defined tags for your services (used for grouping and filtering data on the dashboard). |
+| `serviceVersion` | A defined string version of your application (used for further debugging on the dashboard). |
+| `disable` | Set to `true` to disable the SDK (data monitoring will be paused). |
+| `redactHeaders` | A list of HTTP header keys to redact. |
+| `redactResponseBody` | A list of JSONPaths from the request body to redact. |
+| `redactRequestBody` | A list of JSONPaths from the response body to redact. |
+:::
+
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <ol>
-   <li>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</li>
-    <li class="mt-6">The configuration accepts a required `apiKey` value and the following optional fields:</li>
-      <ul>
-        <li>`debug`: Set to `true` to enable debug mode.</li>
-        <li>`tags`: A list of defined tags for your services (used for grouping and filtering data on the dashboard).</b></li>
-        <li>`serviceVersion`: A defined string version of your application (used for further debugging on the dashboard).</li>
-        <li>`disable`: Set to `true` to disable the SDK (data monitoring will be paused).</li>
-      </ul>
-  </ol>
+  <p>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</p>
 </div>
+
 
 ## Redacting Sensitive Data
 
@@ -325,17 +332,17 @@ import { observeAxios } from "apitoolkit-adonis";
 import axios from "axios";
 
 const pathWildCard = "/users/{user_id}";
-const redactHeadersList = ["Content-Type", "Authorization", "HOST"];
-const redactRequestBodyList = ["Content-Type", "Authorization", "HOST"];
-const redactResponseBodyList = ["$.users[*].email", "$.users[*].credit_card"];
+const redactHeaders = ["Content-Type", "Authorization", "HOST"];
+const redactRequestBody = ["Content-Type", "Authorization", "HOST"];
+const redactResponseBody = ["$.users[*].email", "$.users[*].credit_card"];
 
 Route.get("/observer", async () => {
   const response = await observeAxios(
     axios,
     pathWildCard,
-    redactHeadersList,
-    redactRequestBodyList,
-    redactResponseBodyList
+    redactHeaders,
+    redactRequestBody,
+    redactResponseBody
   ).get(baseURL + "/users/user1234");
   return { hello: "hello world" };
 });
@@ -343,16 +350,17 @@ Route.get("/observer", async () => {
   </div>
 </section>
 
-<div class="callout">
-  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <p class="mt-6">The `observeAxios` function accepts a required `axios` instance and the following optional fields:</p>
-  <ul>
-    <li>`pathWildCard`: The `url_path` for URLs with path parameters.</li>
-    <li>`redactHeaders`: A string list of headers to redact.</b></li>
-    <li>`redactResponseBody`: A string list of JSONPaths to redact from the response body.</li>
-    <li>`redactRequestBody`: A string list of JSONPaths to redact from the request body.</li>
-  </ul>
-</div>
+The `observeAxios` function above accepts a **required `axios` instance** and the following optional fields:
+
+{class="docs-table"}
+:::
+| Option | Description |
+| ------ | ----------- |
+| `pathWildCard` | The `url_path` for URLs with path parameters. |
+| `redactHeaders` | A list of HTTP header keys to redact. |
+| `redactResponseBody` | A list of JSONPaths from the request body to redact. |
+| `redactRequestBody` | A list of JSONPaths from the response body to redact. |
+:::
 
 ```=html
 <hr />

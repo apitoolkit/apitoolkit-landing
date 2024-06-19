@@ -17,7 +17,7 @@ To integrate your NestJs application with APItoolkit, you need to use this SDK t
 <div class="callout">
   <p><i class="fa-regular fa-circle-info"></i> <b>Note</b></p>
   <p class="mt-6">
-NestJs is a progressive NodeJs framework for building efficient, reliable, and scalable server-side applications. With NestJs, you can choose between two popular HTTP server frameworks: **Express** (the default) and **Fastify**. With this, developers have the freedom to use the numerous third-party modules that are available for any of the frameworks selected.
+NestJs is a progressive NodeJs framework for building efficient, reliable, and scalable server-side applications. **With NestJs, you can choose between two popular HTTP server frameworks: Express (the default) and Fastify**. With this, developers have the freedom to use the numerous third-party modules that are available for any of the frameworks selected.
 
 APIToolkit already provides SDKs for both Express and Fastify, hence you can integrate any into your NestJs application. In the following sections of this guide, we will walk you through the process of integrating APIToolkit's [ExpressJS SDK](/docs/sdks/nodejs/expressjs/){target="\_blank"} or [FastifyJS SDK](/docs/sdks/nodejs/fastifyjs/){target="\_blank"} into your NestJs application.</p>
 </div>
@@ -77,11 +77,18 @@ import { APIToolkit } from "apitoolkit-express";
 import { AppModule } from "./app.module";
 
 async function bootstrap() {
-  const apiToolkitClient = APIToolkit.NewClient({ apikey: "{ENTER_YOUR_API_KEY_HERE}" });
+  const apiToolkitClient = APIToolkit.NewClient({
+    apikey: "{ENTER_YOUR_API_KEY_HERE}",
+    debug: false,
+    tags: ["environment: production", "region: us-east-1"],
+    serviceVersion: "v2.0",
+  });
 
   const app = await NestFactory.create(AppModule);
   // Initialize the APItoolkit client
   app.use(apiToolkitClient.expressMiddleware);
+  // END Initialize the APItoolkit client
+  
   await app.listen(3000);
 }
 
@@ -99,18 +106,23 @@ import fastify from "fastify";
 import APIToolkit from "apitoolkit-fastify";
 
 async function bootstrap() {
-  const fastifyInstance = fastify();
+  const fastify = fastify();
   const app = await NestFactory.create(
     AppModule,
-    new FastifyAdapter(fastifyInstance)
+    new FastifyAdapter(fastify)
   );
 
   // Initialize the APItoolkit client
   const apiToolkitClient = await APIToolkit.NewClient({
+    fastify,
     apiKey: "{ENTER_YOUR_API_KEY_HERE}",
-    fastify: fastifyInstance,
+    debug: false,
+    tags: ["environment: production", "region: us-east-1"],
+    serviceVersion: "v2.0",
   });
   apiToolkitClient.init();
+  // END Initialize the APItoolkit client
+
   await app.listen(3000);
 }
 
@@ -119,6 +131,20 @@ bootstrap();
 
   </div>
 </section>
+
+In the configuration above, **only the `apiKey` option is required**, but you can add the following optional fields:
+
+{class="docs-table"}
+:::
+| Option | Description |
+| ------ | ----------- |
+| `debug` | Set to `true` to enable debug mode. |
+| `tags` | A list of defined tags for your services (used for grouping and filtering data on the dashboard). |
+| `serviceVersion` | A defined string version of your application (used for further debugging on the dashboard). |
+| `redactHeaders` | A list of HTTP header keys to redact. |
+| `redactResponseBody` | A list of JSONPaths from the request body to redact. |
+| `redactRequestBody` | A list of JSONPaths from the response body to redact. |
+:::
 
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
@@ -129,7 +155,7 @@ bootstrap();
 
 If you have fields that are sensitive and should not be sent to APItoolkit servers, you can mark those fields to be redacted (the fields will never leave your servers).
 
-To mark a field for redacting via this SDK, you need to add some additional arguments to the `apitoolkitClient` config object with paths to the fields that should be redacted. There are three arguments you can provide to configure what gets redacted, namely:
+To mark a field for redacting via this SDK, you need to add some additional arguments to the `apitoolkitClient` configuration object with paths to the fields that should be redacted. There are three arguments you can provide to configure what gets redacted, namely:
 
 1. `redactHeaders`: A list of HTTP header keys.
 2. `redactRequestBody`: A list of JSONPaths from the request body.
@@ -203,6 +229,7 @@ async function bootstrap() {
   });
   const app = await NestFactory.create(AppModule);
   app.use(apiToolkitClient.expressMiddleware);
+
   await app.listen(3000);
 }
 bootstrap();
@@ -218,25 +245,27 @@ import APIToolkit from "apitoolkit-fastify";
 import Fastify from "fastify";
 import { AppModule } from "./app.module";
 
-const fastify = Fastify();
 async function bootstrap() {
+  const fastify = fastify();
+  const app = await NestFactory.create(
+    AppModule,
+    new FastifyAdapter(fastify)
+  );
+
   const apiKey = "{ENTER_YOUR_API_KEY_HERE}";
   const redactHeaders = ["content-type", "Authorization", "HOST"];
   const redactRequestBody = ["$.user.email", "$.user.addresses"];
   const redactResponseBody = ["$.users[*].email", "$.users[*].credit_card"];
 
   const apitoolkitClient = APIToolkit.NewClient({
-    apiKey,
     fastify,
+    apiKey,
     redactHeaders,
     redactRequestBody,
     redactResponseBody,
   });
   apitoolkitClient.init();
-  const app = await NestFactory.create(
-    AppModule,
-    new FastifyAdapter(fastifyInstance)
-  );
+
   await app.listen(3000);
 }
 bootstrap();

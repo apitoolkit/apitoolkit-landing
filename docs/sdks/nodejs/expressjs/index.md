@@ -51,6 +51,9 @@ const port = 3000;
 // BEFORE all controllers and middleware in your application.
 const apitoolkitClient = APIToolkit.NewClient({
   apiKey: "{ENTER_YOUR_API_KEY_HERE}",
+  debug: false,
+  tags: ["environment: production", "region: us-east-1"],
+  serviceVersion: "v2.0",
 });
 
 app.use(express.json());
@@ -83,6 +86,9 @@ const port = 3000;
 // BEFORE all controllers and middleware in your application.
 const apitoolkitClient = APIToolkit.NewClient({
   apiKey: "{ENTER_YOUR_API_KEY_HERE}",
+  debug: false,
+  tags: ["environment: production", "region: us-east-1"],
+  serviceVersion: "v2.0",
 });
 
 app.use(express.json());
@@ -106,6 +112,20 @@ app.listen(port, () => {
   </div>
 </section>
 
+In the configuration above, **only the `apiKey` option is required**, but you can add the following optional fields:
+
+{class="docs-table"}
+:::
+| Option | Description |
+| ------ | ----------- |
+| `debug` | Set to `true` to enable debug mode. |
+| `tags` | A list of defined tags for your services (used for grouping and filtering data on the dashboard). |
+| `serviceVersion` | A defined string version of your application (used for further debugging on the dashboard). |
+| `redactHeaders` | A list of HTTP header keys to redact. |
+| `redactResponseBody` | A list of JSONPaths from the request body to redact. |
+| `redactRequestBody` | A list of JSONPaths from the response body to redact. |
+:::
+
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
   <p>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</p>
@@ -123,7 +143,7 @@ app.listen(port, () => {
 
 If you have fields that are sensitive and should not be sent to APItoolkit servers, you can mark those fields to be redacted (the fields will never leave your servers).
 
-To mark a field for redacting via this SDK, you need to add some additional arguments to the `apitoolkitClient` config object with paths to the fields that should be redacted. There are three arguments you can provide to configure what gets redacted, namely:
+To mark a field for redacting via this SDK, you need to add some additional arguments to the `apitoolkitClient` configuration object with paths to the fields that should be redacted. There are three arguments you can provide to configure what gets redacted, namely:
 
 1. `redactHeaders`: A list of HTTP header keys.
 2. `redactRequestBody`: A list of JSONPaths from the request body.
@@ -390,17 +410,17 @@ const apitoolkitClient = APIToolkit.NewClient({ apiKey: "{ENTER_YOUR_API_KEY_HER
 app.use(apitoolkitClient.expressMiddleware);
 
 const pathWildCard = "/users/{user_id}";
-const redactHeadersList = ["Content-Type", "Authorization", "HOST"];
-const redactRequestBodyList = ["$.user.email", "$.user.addresses"];
-const redactResponseBodyList = ["$.users[*].email", "$.users[*].credit_card"];
+const redactHeaders = ["Content-Type", "Authorization", "HOST"];
+const redactRequestBody = ["$.user.email", "$.user.addresses"];
+const redactResponseBody = ["$.users[*].email", "$.users[*].credit_card"];
 
 app.get("/", (req, res) => {
   const response = await observeAxios(
     axios,
     pathWildCard,
-    redactHeadersList,
-    redactRequestBodyList,
-    redactResponseBodyList
+    redactHeaders,
+    redactRequestBody,
+    redactResponseBody
   ).get(baseURL + "/users/user1234");
   res.send(response.data);
 });
@@ -410,16 +430,18 @@ app.listen(port, () => {
 });
 ```
 
-<div class="callout">
-  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <p class="mt-6">The `observeAxios` function accepts a required `axios` instance and the following optional fields:</p>
-  <ul>
-    <li>`pathWildCard`: The `url_path` for URLs with path parameters.</li>
-    <li>`redactHeaders`: A string list of headers to redact.</b></li>
-    <li>`redactResponseBody`: A string list of JSONPaths to redact from the response body.</li>
-    <li>`redactRequestBody`: A string list of JSONPaths to redact from the request body.</li>
-  </ul>
-</div>
+The `observeAxios` function above accepts a **required `axios` instance** and the following optional fields:
+
+{class="docs-table"}
+:::
+| Option | Description |
+| ------ | ----------- |
+| `pathWildCard` | The `url_path` for URLs with path parameters. |
+| `redactHeaders` | A list of HTTP header keys to redact. |
+| `redactResponseBody` | A list of JSONPaths from the request body to redact. |
+| `redactRequestBody` | A list of JSONPaths from the response body to redact. |
+:::
+
   </div>
   <div id="tab3" class="tab-content">
 If your outgoing request is called from a background job for example (outside the web request handler and hence, not wrapped by APItoolkit's middleware), using the imported `observeAxios` directly from `apitoolkit-express` will not be available. Instead, call `observeAxios` directly from `apitoolkitClient`, like so:
