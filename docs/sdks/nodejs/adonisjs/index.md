@@ -224,7 +224,32 @@ export const http: ServerConfig = {
   </div>
 </section>
 
-Then, use the `reportError()` function, passing in the `error` argument, like so:
+<section class="tab-group" data-tab-group="group3">
+  <button class="tab-button" data-tab="tab1">Report All Errors</button>
+  <button class="tab-button" data-tab="tab2">Report Specific Errors</button>
+  <div id="tab1" class="tab-content">
+    Then, use the `reportError()` function in your application's exception handler, passing in the `error` argument, to report all uncaught errors and service exceptions that happened during a request, like so:
+
+```js
+import { HttpContext, ExceptionHandler } from "@adonisjs/core/http";
+import { reportError } from "apitoolkit-adonis";
+
+export default class HttpExceptionHandler extends ExceptionHandler {
+  async handle(error: unknown, ctx: HttpContext) {
+    return super.handle(error, ctx);
+  }
+
+  async report(error: unknown, ctx: HttpContext) {
+    // Automatically report all uncaught errors to APItoolkit
+    reportError(error);
+    return super.report(error, ctx);
+  }
+}
+```
+
+  </div>
+  <div id="tab2" class="tab-content">
+    Then, use the `reportError()` function, passing in the `error` argument, to manually report errors within the context of a web request handler, like so:
 
 ```js
 import router from "@adonisjs/core/services/router";
@@ -241,24 +266,8 @@ router.get("/observer", async () => {
 });
 ```
 
-To automatically report service exceptions, use the `reportError()` function in your application's exception handler, like so:
-
-```js
-import { HttpContext, ExceptionHandler } from "@adonisjs/core/http";
-import { reportError } from "apitoolkit-adonis";
-
-export default class HttpExceptionHandler extends ExceptionHandler {
-  async handle(error: unknown, ctx: HttpContext) {
-    return super.handle(error, ctx);
-  }
-
-  async report(error: unknown, ctx: HttpContext) {
-    // Automatically report all uncaught errors to apitoolkit
-    reportError(error);
-    return super.report(error, ctx);
-  }
-}
-```
+  </div>
+</section>
 
 ## Monitoring Outgoing Requests
 
