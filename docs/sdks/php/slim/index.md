@@ -40,9 +40,13 @@ $app = AppFactory::create();
 
 $apitoolkitMiddleware = new APIToolkitMiddleware(
     "{ENTER_YOUR_API_KEY_HERE}",
-    $debug=false
+	  $rootUrl=null,
+	  $redactHeaders=[],
+	  $redactRequestBody=[],
+	  $redactResponseBody=[],
+    $debug=false,
+    $serviceVersion="v2.0",
     $tags=["environment: production", "region: us-east-1"],
-    $serviceVersion="v2.0"
 );
 
 // Initialize the APItoolkit client
@@ -236,7 +240,7 @@ $app->get('/user', function (Request $request, Response $response) {
 $app->run();
 ```
 
-The `$options` list accepts the following optional fields:
+The `$options` associative array accepts the following optional fields:
 
 {class="docs-table"}
 :::
