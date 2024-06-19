@@ -19,7 +19,7 @@ To integrate your NestJs application with APItoolkit, you need to use this SDK t
   <p class="mt-6">
 NestJs is a progressive NodeJs framework for building efficient, reliable, and scalable server-side applications. **With NestJs, you can choose between two popular HTTP server frameworks: Express (the default) and Fastify**. With this, developers have the freedom to use the numerous third-party modules that are available for any of the frameworks selected.
 
-APIToolkit already provides SDKs for both Express and Fastify, hence you can integrate any into your NestJs application. In the following sections of this guide, we will walk you through the process of integrating APIToolkit's [ExpressJS SDK](/docs/sdks/nodejs/expressjs/){target="\_blank"} or [FastifyJS SDK](/docs/sdks/nodejs/fastifyjs/){target="\_blank"} into your NestJs application.</p>
+APItoolkit already provides SDKs for both Express and Fastify, hence you can integrate any into your NestJs application. In the following sections of this guide, we will walk you through the process of integrating APIToolkit's [ExpressJS SDK](/docs/sdks/nodejs/expressjs/){target="\_blank"} or [FastifyJS SDK](/docs/sdks/nodejs/fastifyjs/){target="\_blank"} into your NestJs application.</p>
 
 </div>
 
