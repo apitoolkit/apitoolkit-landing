@@ -27,7 +27,7 @@ npm install apitoolkit-adonis@latest
 
 # Or
 
-yarn install apitoolkit-adonis@latest
+yarn add apitoolkit-adonis@latest
 ```
 
 <div class="callout">
@@ -58,12 +58,13 @@ import APIToolkit from "apitoolkit-adonis"
 const client = new APIToolkit();
 
 server.use([
-  () => import("#middleware/container_bindings_middleware"),
-  () => import("#middleware/force_json_response_middleware"),
-  () => import("@adonisjs/cors/cors_middleware"),
-  () => client.middleware(),
+() => import("#middleware/container_bindings_middleware"),
+() => import("#middleware/force_json_response_middleware"),
+() => import("@adonisjs/cors/cors_middleware"),
+() => client.middleware(),
 ])
-```
+
+````
 
   Then, create an `apitoolkit.js|ts` file in the `/conf` directory and export the `defineConfig` object with some properties, like so:
 
@@ -76,7 +77,7 @@ export default defineConfig({
   tags: ["environment: production", "region: us-east-1"],
   serviceVersion: "v2.0",
 });
-```
+````
 
   </div>
   <div id="tab2" class="tab-content">
@@ -122,7 +123,6 @@ In the configuration above, **only the `apiKey` option is required**, but you ca
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
   <p>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</p>
 </div>
-
 
 ## Redacting Sensitive Data
 
@@ -347,6 +347,7 @@ Route.get("/observer", async () => {
   return { hello: "hello world" };
 });
 ```
+
   </div>
 </section>
 

@@ -20,6 +20,7 @@ To integrate your NestJs application with APItoolkit, you need to use this SDK t
 NestJs is a progressive NodeJs framework for building efficient, reliable, and scalable server-side applications. **With NestJs, you can choose between two popular HTTP server frameworks: Express (the default) and Fastify**. With this, developers have the freedom to use the numerous third-party modules that are available for any of the frameworks selected.
 
 APIToolkit already provides SDKs for both Express and Fastify, hence you can integrate any into your NestJs application. In the following sections of this guide, we will walk you through the process of integrating APIToolkit's [ExpressJS SDK](/docs/sdks/nodejs/expressjs/){target="\_blank"} or [FastifyJS SDK](/docs/sdks/nodejs/fastifyjs/){target="\_blank"} into your NestJs application.</p>
+
 </div>
 
 ```=html
@@ -44,7 +45,7 @@ npm install apitoolkit-express
 
 # Or
 
-yarn install apitoolkit-express
+yarn add apitoolkit-express
 ```
 
   </div>
@@ -55,7 +56,7 @@ npm install apitoolkit-fastify
 
 # Or
 
-yarn install apitoolkit-fastify
+yarn add apitoolkit-fastify
 ```
 
   </div>
@@ -69,7 +70,6 @@ Next, initialize APItoolkit in your application's entry point (e.g., `index.js`)
   <button class="tab-button" data-tab="tab1">Express (Default)</button>
   <button class="tab-button" data-tab="tab2">Fastify</button>
   <div id="tab1" class="tab-content">
-
 
 ```js
 import { NestFactory } from "@nestjs/core";
@@ -88,7 +88,7 @@ async function bootstrap() {
   // Initialize the APItoolkit client
   app.use(apiToolkitClient.expressMiddleware);
   // END Initialize the APItoolkit client
-  
+
   await app.listen(3000);
 }
 
@@ -101,16 +101,16 @@ bootstrap();
 ```js
 import { NestFactory } from "@nestjs/core";
 import { AppModule } from "./app.module";
-import { FastifyAdapter, NestFastifyApplication } from "@nestjs/platform-fastify";
+import {
+  FastifyAdapter,
+  NestFastifyApplication,
+} from "@nestjs/platform-fastify";
 import fastify from "fastify";
 import APIToolkit from "apitoolkit-fastify";
 
 async function bootstrap() {
   const fastify = fastify();
-  const app = await NestFactory.create(
-    AppModule,
-    new FastifyAdapter(fastify)
-  );
+  const app = await NestFactory.create(AppModule, new FastifyAdapter(fastify));
 
   // Initialize the APItoolkit client
   const apiToolkitClient = await APIToolkit.NewClient({
@@ -240,17 +240,17 @@ bootstrap();
 
 ```js
 import { NestFactory } from "@nestjs/core";
-import { FastifyAdapter, NestFastifyApplication } from "@nestjs/platform-fastify";
+import {
+  FastifyAdapter,
+  NestFastifyApplication,
+} from "@nestjs/platform-fastify";
 import APIToolkit from "apitoolkit-fastify";
 import Fastify from "fastify";
 import { AppModule } from "./app.module";
 
 async function bootstrap() {
   const fastify = fastify();
-  const app = await NestFactory.create(
-    AppModule,
-    new FastifyAdapter(fastify)
-  );
+  const app = await NestFactory.create(AppModule, new FastifyAdapter(fastify));
 
   const apiKey = "{ENTER_YOUR_API_KEY_HERE}";
   const redactHeaders = ["content-type", "Authorization", "HOST"];
@@ -308,7 +308,7 @@ Since the configuration process is the same with our ExpressJS and FastifyJS SDK
 
 Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="\_blank"} page. However, you can separate outgoing requests from others and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="\_blank"} page, alongside the incoming request that triggered them.
 
- Since the configuration process is the same with our ExpressJS and FastifyJS SDK, you can read their respective documentation by clicking any of the buttons below:
+Since the configuration process is the same with our ExpressJS and FastifyJS SDK, you can read their respective documentation by clicking any of the buttons below:
 
 <section class="tab-group" data-tab-group="group4">
   <button class="tab-button" data-tab="tab1">Express (Default)</button>
@@ -324,7 +324,6 @@ Outgoing requests are external API calls you make from your API. By default, API
     </a>
   </div>
 </section>
-
 
 ```=html
 <hr />

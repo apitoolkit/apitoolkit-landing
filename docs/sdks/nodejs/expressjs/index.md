@@ -27,7 +27,7 @@ npm install apitoolkit-express
 
 # Or
 
-yarn install apitoolkit-express
+yarn add apitoolkit-express
 ```
 
 ## Configuration
@@ -211,7 +211,7 @@ const apitoolkitClient = await APIToolkit.NewClient({
   apiKey,
   redactHeaders,
   redactRequestBody,
-  redactResponseBody
+  redactResponseBody,
 });
 
 app.use(express.json());
@@ -354,6 +354,7 @@ app.listen(port, () => {
   console.log("App running on port " + port);
 });
 ```
+
   </div>
 </section>
 
@@ -393,6 +394,7 @@ app.listen(port, () => {
   console.log("App running on port " + port);
 });
 ```
+
   </div>
   <div id="tab2" class="tab-content">
 To monitor a specific axios request within the context of a web request handler, wrap your axios instance with the `observeAxios()` function, like so:
@@ -459,6 +461,7 @@ const response = await apitoolkitClient
   .get("http://localhost:8080/ping");
 console.log(response.data);
 ```
+
   </div>
 </section>
 
