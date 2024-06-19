@@ -28,25 +28,12 @@ pip install apitoolkit-pyramid
 
 ## Configuration
 
-Next, add the `APITOOLKIT_KEY` variable to your `development.ini` or `production.ini` file or settings, like so:
+Next, add the `APITOOLKIT_KEY` variable to your settings or `development.ini` or `production.ini` file, like so:
 
 <section class="tab-group" data-tab-group="group1">
-  <button class="tab-button" data-tab="tab1">.ini file</button>
-  <button class="tab-button" data-tab="tab2">settings</button>
-  <div id="tab1" class="tab-content">
-
-```sh
-APITOOLKIT_KEY = "{ENTER_YOUR_API_KEY_HERE}"
-
-APITOOLKIT_DEBUG = False
-APITOOLKIT_TAGS = environment: production, region: us-east-1
-APITOOLKIT_SERVICE_VERSION = "v2.0"
-APITOOLKIT_ROUTES_WHITELIST = /api/first, /api/second
-APITOOLKIT_IGNORE_HTTP_CODES = 404, 429
-```
-
-  </div>
-  <div id="tab2" class="tab-content">
+  <button class="tab-button" data-tab="tab1">settings</button>
+  <button class="tab-button" data-tab="tab2">.ini file</button>
+    <div id="tab1" class="tab-content">
 
 ```python
 settings = {
@@ -58,6 +45,19 @@ settings = {
     "APITOOLKIT_ROUTES_WHITELIST" = ["/api/first", "/api/second"]
     "APITOOLKIT_IGNORE_HTTP_CODES" = [404, 429]
 }
+```
+
+  </div>
+  <div id="tab2" class="tab-content">
+
+```sh
+APITOOLKIT_KEY = "{ENTER_YOUR_API_KEY_HERE}"
+
+APITOOLKIT_DEBUG = False
+APITOOLKIT_TAGS = environment: production, region: us-east-1
+APITOOLKIT_SERVICE_VERSION = "v2.0"
+APITOOLKIT_ROUTES_WHITELIST = /api/first, /api/second
+APITOOLKIT_IGNORE_HTTP_CODES = 404, 429
 ```
 
   </div>
@@ -83,6 +83,7 @@ if __name__ == '__main__':
     with Configurator(settings=setting) as config:
         # Initialize APItoolkit
         config.add_tween("apitoolkit_pyramid.APIToolkit")
+        # END Initialize APItoolkit
         config.add_route('home', '/')
         config.scan()
         app = config.make_wsgi_app()
@@ -168,24 +169,12 @@ Examples of valid JSONPaths would be:
 Here's an example of what the configuration would look like with redacted fields:
 
 <section class="tab-group" data-tab-group="group1">
-  <button class="tab-button" data-tab="tab1">.ini file</button>
-  <button class="tab-button" data-tab="tab2">settings</button>
+  <button class="tab-button" data-tab="tab1">settings</button>
+  <button class="tab-button" data-tab="tab2">.ini file</button>
   <div id="tab1" class="tab-content">
-
-```sh
-APITOOLKIT_KEY = "{ENTER_YOUR_API_KEY_HERE}"
-
-APITOOLKIT_REDACT_HEADERS: content-type, Authorization, HOST
-APITOOLKIT_REDACT_REQ_BODY: $.user.email, $.user.addresses
-APITOOLKIT_REDACT_RES_BODY: $.users[*].email, $.users[*].credit_card
-```
-
-  </div>
-  <div id="tab2" class="tab-content">
 
 ```python
 settings = {
-    "APITOOLKIT_KEY" = "{ENTER_YOUR_API_KEY_HERE}"
     "APITOOLKIT_REDACT_HEADERS": ["content-type", "Authorization", "HOST"],
     "APITOOLKIT_REDACT_REQ_BODY": ["$.user.email", "$.user.addresses"],
     "APITOOLKIT_REDACT_RES_BODY": ["$.users[*].email", "$.users[*].credit_card"]
@@ -193,7 +182,25 @@ settings = {
 ```
 
   </div>
+  <div id="tab2" class="tab-content">
+
+```sh
+APITOOLKIT_REDACT_HEADERS: content-type, Authorization, HOST
+APITOOLKIT_REDACT_REQ_BODY: $.user.email, $.user.addresses
+APITOOLKIT_REDACT_RES_BODY: $.users[*].email, $.users[*].credit_card
+```
+
+  </div>
 </section>
+
+<div class="callout">
+  <p><i class="fa-regular fa-circle-info"></i> <b>Note</b></p>
+  <ul>
+    <li>The `APITOOLKIT_REDACT_HEADERS` variable expects a list of <b>case-insensitive headers as strings</b>.</li>
+    <li>The `APITOOLKIT_REDACT_REQ_BODY` and `APITOOLKIT_REDACT_RES_BODY` variables expect a list of <b>JSONPaths as strings</b>.</li>
+    <li>The list of items to be redacted will be applied to all endpoint requests and responses on your server.</li>
+  </ul>
+</div>
 
 
 ## Error Reporting

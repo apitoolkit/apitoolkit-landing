@@ -36,14 +36,14 @@ from apitoolkit_flask import APIToolkit
 
 app = Flask(__name__)
 
+# Initialize APItoolkit
 apitoolkit = APIToolkit(
-    api_key = "{ENTER_YOUR_API_KEY_HERE}"
-    debug = False
-    tags = ["environment: production", "region: us-east-1"]
+    api_key = "{ENTER_YOUR_API_KEY_HERE}",
+    debug = False,
+    tags = ["environment: production", "region: us-east-1"],
     service_version = "v2.0"
 )
 
-# Initialize APItoolkit
 @app.before_request
 def before_request():
     apitoolkit.beforeRequest()
@@ -52,7 +52,7 @@ def before_request():
 def after_request(response):
     apitoolkit.afterRequest(response)
     return response
-
+# END Initialize APItoolkit
 
 @app.route('/hello', methods=['GET', 'POST'])
 def sample_route(subject):
@@ -61,24 +61,30 @@ def sample_route(subject):
 app.run(debug=True)
 ```
 
+In the configuration above, **only the `api_key` option is required**, but you can add the following optional fields:
+
+{class="docs-table"}
+:::
+| Option | Description |
+| ------ | ----------- |
+| `debug` | Set to `true` to enable debug mode. |
+| `tags` | A list of defined tags for your services (used for grouping and filtering data on the dashboard). |
+| `service_version` | A defined string version of your application (used for further debugging on the dashboard). |
+| `redact_headers` | A list of HTTP header keys to redact. |
+| `redact_response_body` | A list of JSONPaths from the request body to redact. |
+| `redact_request_body` | A list of JSONPaths from the response body to redact. |
+:::
+
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <ol>
-  <li>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</li>
-  <li class="mt-6">The `api_key` field is required but you can add the following optional fields:</li>
-  <ul>
-    <li>`debug`: Set to `true` to enable debug mode.</li>
-    <li>`tags`: A list of defined tags for your services (used for grouping and filtering data on the dashboard).</b></li>
-    <li>`service_version`: A defined string version of your application (used for further debugging on the dashboard).</li>
-  </ul>
-  </ol>
+  <p>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</p>
 </div>
 
 ## Redacting Sensitive Data
 
 If you have fields that are sensitive and should not be sent to APItoolkit servers, you can mark those fields to be redacted (the fields will never leave your servers).
 
-To mark a field for redacting via this SDK, you need to add some additional fields to the `apitoolkit` struct with paths to the fields that should be redacted. There are three variables you can provide to configure what gets redacted, namely:
+To mark a field for redacting via this SDK, you need to add some additional fields to the `apitoolkit` configuration object with paths to the fields that should be redacted. There are three variables you can provide to configure what gets redacted, namely:
 
 1. `redact_headers`: A list of HTTP header keys.
 2. `redact_response_body`: A list of JSONPaths from the request body.
@@ -177,7 +183,7 @@ app.run(debug=True)
 
 APItoolkit automatically detects different unhandled errors, API issues, and anomalies but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
 
-To report all uncaught errors that happened during a web request, use the `report_error()` function from the `apitoolkit_flask` module, passing in the `request` and `error`, like so:
+To report all uncaught errors and service exceptions that happened during a web request, use the `report_error()` function from the `apitoolkit_flask` module, passing in the `request` and `error`, like so:
 
 ```python
 from flask import Flask, request
@@ -198,7 +204,7 @@ async def sample_route(subject):
 
 Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="\_blank"} page. However, you can separate outgoing requests from others and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="\_blank"} page, alongside the incoming request that triggered them.
 
-To monitor outgoing HTTP requests from your application, use the `observe_request()` function from the `apitoolkit_flask` module, like so:
+To monitor outgoing HTTP requests from your application, use the `observe_request()` function from the `apitoolkit_flask` module, passing in the `request` argument, like so:
 
 ```python
 from flask import Flask, request
@@ -212,7 +218,7 @@ async def sample_route(subject):
 
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <p>The `observe_request()` function wraps an [HTTPX](https://python-httpx.org?utm_source=apitoolkit){target="\_blank"} client and you can use it just like you would normally use HTTPX for any request you need.</p>
+  <p>The `observe_request()` function wraps an [HTTPX](https://python-httpx.org?utm_source=apitoolkit){target="\_blank"} client and you can use it just like you would normally use HTTPX for any request.</p>
 </div>
 
 ```=html
