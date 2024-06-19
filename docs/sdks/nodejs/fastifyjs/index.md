@@ -173,7 +173,7 @@ fastify.listen({ port: 3000 }, function (err, address) {
 
 APItoolkit automatically detects different unhandled errors, API issues, and anomalies but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
 
-To manually report errors within the context of a web request handler, use the `ReportError()` function, passing in the `error` argument like so:
+To manually report errors within the context of a web request handler, use the `ReportError()` function, passing in the `error` argument, like so:
 
 ```js
 import Fastify from "fastify";
@@ -208,7 +208,7 @@ Outgoing requests are external API calls you make from your API. By default, API
   <button class="tab-button" data-tab="tab1">All Requests</button>
   <button class="tab-button" data-tab="tab2">Specific Requests</button>
   <div id="tab1" class="tab-content">
-    Then, add `monitorAxios` to the `defineConfig` configuration options in the `config/apitoolkit.js|ts` file, to enable global monitoring of all axios requests (for only Adonis v6), like so:
+    To enable global monitoring of all axios requests (**for only Adonis v6**), add `monitorAxios` to the `defineConfig` configuration options in the `config/apitoolkit.js|ts` file, like so:
 
 ```js
 import Fastify from "fastify";
@@ -233,7 +233,7 @@ app.get("/", async (request, reply) => {
 
   </div>
   <div id="tab2" class="tab-content">
-    Wrap your axios instance with the `observeAxios()` function to monitor a specific axios request within the context of a web request handler (for both Adonis v6 and v5), like so:
+    To monitor a specific axios request within the context of a web request handler (**for both Adonis v6 and v5**), wrap your axios instance with the `observeAxios()` function, like so:
 
 ```js
 import Fastify from "fastify";
@@ -248,10 +248,19 @@ const apitoolkitClient = APIToolkit.NewClient({
 });
 apitoolkitClient.init();
 
+const pathWildCard = "/users/{user_id}";
+const redactHeaders = ["Content-Type", "Authorization", "HOST"];
+const redactRequestBody = ["Content-Type", "Authorization", "HOST"];
+const redactResponseBody = ["$.users[*].email", "$.users[*].credit_card"];
+
 app.get("/", async (request, reply) => {
-  const res = await observeAxios(axios).get(
-    "https://jsonplaceholder.typicode.com/todos/1"
-  );
+  const res = await observeAxios(
+    axios,
+    pathWildCard,
+    redactHeaders,
+    redactRequestBody,
+    redactResponseBody
+    ).get(baseURL + "/users/user1234");
   return res.data;
 });
 ```

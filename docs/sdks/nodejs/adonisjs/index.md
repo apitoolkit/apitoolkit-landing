@@ -58,13 +58,12 @@ import APIToolkit from "apitoolkit-adonis"
 const client = new APIToolkit();
 
 server.use([
-() => import("#middleware/container_bindings_middleware"),
-() => import("#middleware/force_json_response_middleware"),
-() => import("@adonisjs/cors/cors_middleware"),
-() => client.middleware(),
+  () => import("#middleware/container_bindings_middleware"),
+  () => import("#middleware/force_json_response_middleware"),
+  () => import("@adonisjs/cors/cors_middleware"),
+  () => client.middleware(),
 ])
-
-````
+```
 
   Then, create an `apitoolkit.js|ts` file in the `/conf` directory and export the `defineConfig` object with some properties, like so:
 
@@ -77,7 +76,7 @@ export default defineConfig({
   tags: ["environment: production", "region: us-east-1"],
   serviceVersion: "v2.0",
 });
-````
+```
 
   </div>
   <div id="tab2" class="tab-content">
@@ -223,7 +222,7 @@ export const http = defineConfig({
 
 ```js
 export const http: ServerConfig = {
-  useAsyncLocalStorage: true
+  useAsyncLocalStorage: true,
   // Other configs...
 }
 ```
@@ -325,7 +324,7 @@ export default defineConfig({
 
   </div>
   <div id="tab2" class="tab-content">
-    Then, wrap your axios instance with the `observeAxios()` function to monitor a specific axios request within the context of a web request handler (for both Adonis v6 and v5), like so:
+    Then, wrap your axios instance with the `observeAxios()` function to monitor a specific axios request within the context of a web request handler (**for both Adonis v6 and v5**), like so:
 
 ```js
 import { observeAxios } from "apitoolkit-adonis";
@@ -348,9 +347,6 @@ Route.get("/observer", async () => {
 });
 ```
 
-  </div>
-</section>
-
 The `observeAxios` function above accepts a **required `axios` instance** and the following optional fields:
 
 {class="docs-table"}
@@ -362,6 +358,9 @@ The `observeAxios` function above accepts a **required `axios` instance** and th
 | `redactResponseBody` | A list of JSONPaths from the request body to redact. |
 | `redactRequestBody` | A list of JSONPaths from the response body to redact. |
 :::
+
+  </div>
+</section>
 
 ```=html
 <hr />
