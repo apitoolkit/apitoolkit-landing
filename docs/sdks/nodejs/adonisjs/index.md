@@ -49,7 +49,7 @@ Then, register the middleware, like so:
   <button class="tab-button" data-tab="tab1">Adonis v6 (latest)</button>
   <button class="tab-button" data-tab="tab2">Adonis v5</button>
   <div id="tab1" class="tab-content">
-    Add apitoolkit-adonis client to your global middleware list in the `start/kernel.js|ts` file, like so:
+    Add the `apitoolkit-adonis` client to your global middleware list in the `start/kernel.js|ts` file, like so:
         
 ```js
 import server from '@adonisjs/core/services/server'
@@ -63,10 +63,9 @@ server.use([
 () => import('@adonisjs/cors/cors_middleware'),
 () => client.middleware(),
 ])
+```
 
-````
-
-    Then, create an `apitoolkit.js|ts` file in the `/conf` directory and export the `defineConfig` object with some properties, like so:
+  Then, create an `apitoolkit.js|ts` file in the `/conf` directory and export the `defineConfig` object with some properties, like so:
 
 ```js
 import { defineConfig } from "apitoolkit-adonis";
@@ -75,9 +74,9 @@ export default defineConfig({
   apiKey: "{ENTER_YOUR_API_KEY_HERE}",
   debug: false,
   tags: ["environment: production", "region: us-east-1"],
-  serviceVersion: "v2.0"
+  serviceVersion: "v2.0",
 });
-````
+```
 
   </div>
   <div id="tab2" class="tab-content">
@@ -242,9 +241,9 @@ router.get("/observer", async () => {
 });
 ```
 
-To automatically report service exceptions call `reportError` in your applications exception handler, like so:
+To automatically report service exceptions, use the `reportError()` function in your application's exception handler, like so:
 
-```ts
+```js
 import { HttpContext, ExceptionHandler } from "@adonisjs/core/http";
 import { reportError } from "apitoolkit-adonis";
 
