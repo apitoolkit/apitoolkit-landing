@@ -56,11 +56,13 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 // Import APItoolkit annotation
 import io.apitoolkit.springboot.annotations.EnableAPIToolkit;
+// END Import APItoolkit annotation
 import org.springframework.web.bind.annotation.*;
 
 @SpringBootApplication
 // Add APIToolkit custom annotation
 @EnableAPIToolkit
+// END Add APIToolkit custom annotation
 @RestController
 public class DemoApplication {
 
@@ -132,8 +134,6 @@ Examples of valid JSONPaths would be:
 Here's an example of what the configuration would look like with redacted fields:
 
 ```sh
-apitoolkit.apikey={ENTER_YOUR_API_KEY_HERE};
-
 apitoolkit.redactHeaders=content-type,Authorization,HOST
 apitoolkit.redactRequestBody=$.user.email,$.user.addresses
 apitoolkit.redactResponseBody=$.users[*].email,$.users[*].credit_card
@@ -142,8 +142,8 @@ apitoolkit.redactResponseBody=$.users[*].email,$.users[*].credit_card
 <div class="callout">
   <p><i class="fa-regular fa-circle-info"></i> <b>Note</b></p>
   <ul>
-    <li>The `redactHeaders` config field expects a list of <b>case-insensitive headers as strings</b>.</li>
-    <li>The `redactRequestBody` and `redactResponseBody` config fields expect a list of <b>JSONPaths as strings</b>.</li>
+    <li>The `apitoolkit.redactHeaders` config field expects a list of <b>case-insensitive headers as strings</b>.</li>
+    <li>The `apitoolkit.redactRequestBody` and `apitoolkit.redactResponseBody` config fields expect a list of <b>JSONPaths as strings</b>.</li>
     <li>The list of items to be redacted will be applied to all endpoint requests and responses on your server.</li>
   </ul>
 </div>
@@ -190,7 +190,7 @@ public class DemoApplication {
 
 Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="\_blank"} page. However, you can separate outgoing requests from others and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="\_blank"} page, alongside the incoming request that triggered them.
 
-The Spring Boot SDK provides the `ObserveRequest` class for monitoring outgoing requests using the Apache HTTP client. First, you will create an instance of the `ObserveRequest` class (you can also pass optional parameters to redact headers and request/response body). Then use the `observingClient` to create a new HTTP client, passing in the current request context and an optional path pattern if the route has dynamic parameters. Here's an example of outgoing requests configuration with this SDK:
+The Springboot SDK provides the `ObserveRequest` class for monitoring outgoing requests using the Apache HTTP client. First, you will create an instance of the class, then use the instance to create a new HTTP client, passing in the current `request` context and an optional `url_path` (for URLs with path parameters), like so:
 
 ```java
 package com.example.demo;
@@ -203,7 +203,6 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.util.EntityUtils;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-// Import APItoolkit annotation
 import io.apitoolkit.springboot.annotations.EnableAPIToolkit;
 import io.apitoolkit.springboot.integrations.ObserveRequest;
 import jakarta.servlet.http.HttpServletRequest;
@@ -211,34 +210,36 @@ import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.*;
 
 @SpringBootApplication
-// Add APIToolkit custom annotation
 @EnableAPIToolkit
 @RestController
 public class DemoApplication {
+  
+  public static void main(String[] args) {
+    SpringApplication.run(DemoApplication.class, args);
+  }
 
-	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
-	}
-
-	private ObserveRequest observingClient = new ObserveRequest(
-			List.of("cookies", "authorization", "x-api-key"),
-			List.of("$.title", "$.id"),
-			List.of("$.body"));
-
-	@GetMapping("/hello")
-	public String hello(HttpServletRequest request) {
-		// Use observingClient to Create an HTTP Client
-		CloseableHttpClient httpClient = observingClient.createHttpClient(request, "/posts/{post_id}");
-		try {
-			HttpGet httpGet = new HttpGet("https://jsonplaceholder.typicode.com/posts/1");
-			CloseableHttpResponse response = httpClient.execute(httpGet);
-			String responseStr = EntityUtils.toString(response.getEntity());
-			return responseStr;
-		} catch (Exception e) {
-			e.printStackTrace();
-			return "Error occurred while processing the request";
-		}
-	}
+  // Create an instance of the ObserveRequest class
+  private ObserveRequest observingClient = new ObserveRequest(
+    // Optional parameters to redact headers and request/response body
+    List.of("content-type", "Authorization", "HOST"),
+    List.of("$.user.email", "$.user.addresses"),
+    List.of("$.users[*].email", "$.users[*].credit_card")
+  );
+  
+  @GetMapping("/hello")
+  public String hello(HttpServletRequest request) {
+    // Use the observingClient instance to create an HTTP Client
+    CloseableHttpClient httpClient = observingClient.createHttpClient(request, "/posts/{post_id}");
+    try {
+      HttpGet httpGet = new HttpGet("https://jsonplaceholder.typicode.com/posts/1");
+      CloseableHttpResponse response = httpClient.execute(httpGet);
+      String responseStr = EntityUtils.toString(response.getEntity());
+      return responseStr;
+    } catch (Exception e) {
+      e.printStackTrace();
+      return "Error occurred while processing the request...";
+    }
+  }
 }
 ```
 
