@@ -40,6 +40,7 @@ var config = new Config
 };
 // Initialize the APItoolkit client
 var client = await APIToolkit.NewClientAsync(config);
+// END Initialize the APItoolkit client
 
 // Register APItoolkit's middleware
 app.Use(async (context, next) =>
@@ -47,6 +48,7 @@ app.Use(async (context, next) =>
     var apiToolkit = new APIToolkit(next, client);
     await apiToolkit.InvokeAsync(context);
 });
+// END Register APItoolkit's middleware
 
 # app.UseEndpoint(...) 
 # Other middleware and logic
@@ -56,7 +58,7 @@ app.Use(async (context, next) =>
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
   <ul>
-    <li>Please make sure the APItoolkit middleware is added before `UseEndpoint` and other middleware are initialized.</li>
+    <li>Please ensure the APItoolkit middleware is added before `UseEndpoint` and other middleware are initialized.</li>
     <li>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</li>
   </ul>
 </div>
@@ -232,16 +234,17 @@ app.MapGet("/monitor-requests", async (context) =>
 });
 ```
 
-<div class="callout">
-  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <p class="mt-6">The `client.APIToolkitObservingHandler` handler accepts a required `context` field and the following optional fields:</p>
-  <ul>
-    <li>`PathWildCard`: The `url_path` for URLs with path parameters.</li>
-    <li>`RedactHeaders`: A string list of headers to redact.</b></li>
-    <li>`RedactResponseBody`: A string list of JSONPaths to redact from the response body.</li>
-    <li>`RedactRequestBody`: A string list of JSONPaths to redact from the request body.</li>
-  </ul>
-</div>
+The `client.APIToolkitObservingHandler` handler accepts a required `context` field and the following optional fields:
+
+{class="docs-table"}
+:::
+| Option | Description |
+| ------ | ----------- |
+| `pathWildCard` | The `url_path` for URLs with path parameters. |
+| `RedactHeaders` | A list of HTTP header keys to redact. |
+| `RedactResponseBody` | A list of JSONPaths from the request body to redact. |
+| `RedactRequestBody` | A list of JSONPaths from the response body to redact. |
+:::
 
 ```=html
 <hr />
