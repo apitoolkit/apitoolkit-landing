@@ -261,7 +261,7 @@ Route::get('/user', function (Request $request) {
 
 Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="\_blank"} page. However, you can separate outgoing requests from others and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="\_blank"} page, alongside the incoming request that triggered them.
 
-To monitor outgoing HTTP requests from your application, use the `observeGuzzle` method of the `APIToolkitLaravel` class, passing in the `$request` (and optionally `$options`) object, like so:
+To monitor outgoing HTTP requests from your application, use the `observeGuzzle` method of the `APIToolkitLaravel` class, passing in the `$request` and `$options` object, like so:
 
 ```php
 use Illuminate\Http\Request;
@@ -283,16 +283,17 @@ Route::get('/user', function (Request $request) {
 })
 ```
 
-<div class="callout">
-  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <p class="mt-6">The `$options` list accepts the following optional fields:</p>
-  <ul>
-    <li>`pathWildCard`: The `url_path` for URLs with path parameters.</li>
-    <li>`redactHeaders`: A string list of headers to redact.</b></li>
-    <li>`redactResponseBody`: A string list of JSONPaths to redact from the response body.</li>
-    <li>`redactRequestBody`: A string list of JSONPaths to redact from the request body.</li>
-  </ul>
-</div>
+The `$options` list accepts the following optional fields:
+
+{class="docs-table"}
+:::
+| Option | Description |
+| ------ | ----------- |
+| `pathWildCard` | The `url_path` for URLs with path parameters. |
+| `redactHeaders` | A list of HTTP header keys to redact. |
+| `redactResponseBody` | A list of JSONPaths from the request body to redact. |
+| `redactRequestBody` | A list of JSONPaths from the response body to redact. |
+:::
 
 ```=html
 <hr />
