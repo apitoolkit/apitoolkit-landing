@@ -41,10 +41,16 @@ $app = AppFactory::create();
 // Initialize the APItoolkit client
 $apitoolkitMiddleware = new APIToolkitMiddleware(
   "{ENTER_YOUR_API_KEY_HERE}",
+  $rootUrl=null,
+  $redactHeaders=[],
+  $redactRequestBody=[],
+  $redactResponseBody=[],
   $debug=false,
   $serviceVersion="v2.0",
   $tags=["environment: production", "region: us-east-1"],
 );
+// IMPORTANT: all the options above must be configured
+// in that exact order to avoid a type error
 
 $app->add($apitoolkitMiddleware);
 // END Initialize the APItoolkit client
@@ -142,9 +148,10 @@ $app = AppFactory::create();
 
 $apitoolkitMiddleware = new APIToolkitMiddleware(
     "{ENTER_YOUR_API_KEY_HERE}",
-    redactHeaders = ["content-type", "Authorization", "HOST"],
-    redactRequestBody = ["$.user.email", "$.user.addresses"],
-    redactResponseBody = ["$.users[*].email", "$.users[*].credit_card"]
+    $rootUrl=null,
+    $redactHeaders=["content-type", "Authorization", "HOST"],
+    $redactRequestBody=["$.user.email", "$.user.addresses"],
+    $redactResponseBody=["$.users[*].email", "$.users[*].credit_card"]
 );
 
 $app->add($apitoolkitMiddleware);
