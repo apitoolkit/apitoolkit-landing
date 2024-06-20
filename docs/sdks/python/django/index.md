@@ -176,10 +176,8 @@ from apitoolkit_django import observe_request, report_error
 
 def hello_world(request, name):
     try:
-        resp = observe_request(request).get(
-            "https://jsonplaceholder.typicode.com/todos/2")
-        resp.read()
-        return JsonResponse({"hello": "world"})
+        value = 1/0 
+        return JsonResponse({"hello": value})
     except Exception as e:
         report_error(request, e)
         return JsonResponse({"Error": "Something went wrong..."})
@@ -202,6 +200,18 @@ def hello_world(request, name):
     resp.read()
     return JsonResponse({"data": resp.read()})
 ```
+
+The `observe_request()` function accepts a **required `request` argument**, and the following optional arguments:
+
+{class="docs-table"}
+:::
+| Option | Description |
+| ------ | ----------- |
+| `url_wildcard` | The `url_path` string for URLs with path parameters. |
+| `redact_headers` | A list of HTTP header keys to redact. |
+| `redact_response_body` | A list of JSONPaths from the request body to redact. |
+| `redact_request_body` | A list of JSONPaths from the response body to redact. |
+:::
 
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>

@@ -451,13 +451,13 @@ const response = await apitoolkitClient
 console.log(response.data);
 ```
 
-The `observeAxios` function above accepts a **required `axios` instance** and the following optional fields:
+The `observeAxios` function above accepts a **required `axios` instance** and the following optional arguments:
 
 {class="docs-table"}
 :::
 | Option | Description |
 | ------ | ----------- |
-| `pathWildCard` | The `url_path` for URLs with path parameters. |
+| `pathWildCard` | The `url_path` string for URLs with path parameters. |
 | `redactHeaders` | A list of HTTP header keys to redact. |
 | `redactResponseBody` | A list of JSONPaths from the request body to redact. |
 | `redactRequestBody` | A list of JSONPaths from the response body to redact. |

@@ -240,7 +240,7 @@ The `client.APIToolkitObservingHandler` handler accepts a required `context` fie
 :::
 | Option | Description |
 | ------ | ----------- |
-| `pathWildCard` | The `url_path` for URLs with path parameters. |
+| `pathWildCard` | The `url_path` string for URLs with path parameters. |
 | `RedactHeaders` | A list of HTTP header keys to redact. |
 | `RedactResponseBody` | A list of JSONPaths from the request body to redact. |
 | `RedactRequestBody` | A list of JSONPaths from the response body to redact. |

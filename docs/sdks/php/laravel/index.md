@@ -46,7 +46,7 @@ APITOOLKIT_SERVICE_VERSION=v2.0
     Next, register the middleware in the `app/Http/Kernel.php` file under the correct middleware group (e.g., `api`) or at the root, like so:
 
 ```php
-<?php
+&lt;?php
 
 namespace App\Http;
 
@@ -54,53 +54,35 @@ use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
 {
-    ...
-    /**
-     * The application's route middleware groups.
-     *
-     * @var array
-     */
     protected $middlewareGroups = [
-        ...
         'api' => [
-            ...
+            // Other middleware here...
             \APIToolkit\Http\Middleware\APIToolkit::class, // Initialize the APItoolkit client
-            ...
         ],
     ];
-    ...
 }
 ```
-
-    Then you can use the `apitoolkit` middleware in your routes like so:
-
-```php
-Route::get('/', function () {
-    return response()->json([
-        'message' => 'Welcome to your new application!'
-    ]);
-})->middleware('apitoolkit');
-```
-
   </div>
   <div id="tab2" class="tab-content">
     Alternatively, if you want to monitor specific routes, you can register the middleware, like so:
 
 ```php
-    /**
-     * The application's route middleware.
-     *
-     * These middleware may be assigned to groups or used individually.
-     *
-     * @var array
-     */
+&lt;?php
+
+namespace App\Http;
+
+use Illuminate\Foundation\Http\Kernel as HttpKernel;
+
+class Kernel extends HttpKernel
+{
     protected $routeMiddleware = [
-        ...
+        // Other middleware here...
         'apitoolkit' => \APIToolkit\Http\Middleware\APIToolkit::class,
     ];
+}
 ```
 
-    Then you can use the `apitoolkit` middleware in your routes like so:
+  Then you can use the `apitoolkit` middleware in your routes like so:
 
 ```php
 Route::get('/', function () {
@@ -220,9 +202,6 @@ use Throwable;
 
 class Handler extends ExceptionHandler
 {
-    /**
-     * Register the exception handling callbacks for the application.
-     */
     public function register(): void
     {
         $this->reportable(function (Throwable $e) {
@@ -283,13 +262,13 @@ Route::get('/user', function (Request $request) {
 })
 ```
 
-The `$options` list accepts the following optional fields:
+The `$options` associative array accepts the following optional fields:
 
 {class="docs-table"}
 :::
 | Option | Description |
 | ------ | ----------- |
-| `pathWildCard` | The `url_path` for URLs with path parameters. |
+| `pathWildCard` | The `url_path` string for URLs with path parameters. |
 | `redactHeaders` | A list of HTTP header keys to redact. |
 | `redactResponseBody` | A list of JSONPaths from the request body to redact. |
 | `redactRequestBody` | A list of JSONPaths from the response body to redact. |

@@ -167,19 +167,19 @@ To report all uncaught errors and service exceptions that happened during a web 
 
 ```python
 from fastapi import FastAPI, Request
-from apitoolkit_fastapi import observe_request, report_error
+from apitoolkit_fastapi import report_error
 
 app = FastAPI()
 
-@app.get('/sample/{subject}')
-async def sample_route(subject: str, request: Request):
+@app.get('/')
+async def sample_route(request: Request):
     try:
-        resp = observe_request(request).get("https://jsonplaceholder.typicode.com/todos/2")
-        return resp.read()
+        v = 1/ 0
+        return {"zero_division": v}
     except Exception as e:
         # Report the error to APItoolkit
         report_error(request, e)
-        return "Something went wrong"
+        return {"message": "Something went wrong"}
 ```
 
 ## Monitoring Outgoing Requests
@@ -190,15 +190,27 @@ To monitor outgoing HTTP requests from your application, use the `observe_reques
 
 ```python
 from fastapi import FastAPI, Request
-from apitoolkit_fastapi import observe_request, report_error
+from apitoolkit_fastapi import observe_request
 
 app = FastAPI()
 
-@app.get('/sample/{subject}')
-async def sample_route(subject: str, request: Request):
+@app.get('/')
+async def sample_route(request: Request):
     resp = observe_request(request).get("https://jsonplaceholder.typicode.com/todos/2")
     return resp.read()
 ```
+
+The `observe_request()` function accepts a **required `request` argument**, and the following optional arguments:
+
+{class="docs-table"}
+:::
+| Option | Description |
+| ------ | ----------- |
+| `url_wildcard` | The `url_path` string for URLs with path parameters. |
+| `redact_headers` | A list of HTTP header keys to redact. |
+| `redact_response_body` | A list of JSONPaths from the request body to redact. |
+| `redact_request_body` | A list of JSONPaths from the response body to redact. |
+:::
 
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
