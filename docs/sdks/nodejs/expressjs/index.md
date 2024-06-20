@@ -54,6 +54,7 @@ const apitoolkitClient = APIToolkit.NewClient({
   debug: false,
   tags: ["environment: production", "region: us-east-1"],
   serviceVersion: "v2.0",
+  ignoreEndpoints: ["/products", "POST /categories", "GET /user/:name"],
 });
 
 app.use(express.json());
@@ -89,6 +90,7 @@ const apitoolkitClient = APIToolkit.NewClient({
   debug: false,
   tags: ["environment: production", "region: us-east-1"],
   serviceVersion: "v2.0",
+  ignoreEndpoints: ["/products", "POST /categories", "GET /user/:name"],
 });
 
 app.use(express.json());
@@ -121,10 +123,10 @@ In the configuration above, **only the `apiKey` option is required**, but you ca
 | `debug` | Set to `true` to enable debug mode. |
 | `tags` | A list of defined tags for your services (used for grouping and filtering data on the dashboard). |
 | `serviceVersion` | A defined string version of your application (used for further debugging on the dashboard). |
+| `ignoreEndpoints` | A list of endpoints that should not be captured. |
 | `redactHeaders` | A list of HTTP header keys to redact. |
 | `redactResponseBody` | A list of JSONPaths from the request body to redact. |
 | `redactRequestBody` | A list of JSONPaths from the response body to redact. |
-| `ignoreEndpoints` | A list of endpoints to exclude from monitoring eg `["/products", "POST /categories", "GET /user/:name"]`. |
 :::
 
 <div class="callout">
@@ -171,6 +173,7 @@ JSONPath is a query language used to select and extract data from JSON files. Fo
         "state": "CA",
         "zip": "12345"
       },
+      ...
     ],
     "credit_card": {
       "number": "4111111111111111",
@@ -178,6 +181,7 @@ JSONPath is a query language used to select and extract data from JSON files. Fo
       "cvv": "123"
     }
   },
+  ...
 }
 ```
 
@@ -420,13 +424,13 @@ app.listen(port, () => {
 });
 ```
 
-The `observeAxios` function above accepts a **required `axios` instance** and the following optional fields:
+The `observeAxios` function above accepts a **required `axios` instance** and the following optional arguments:
 
 {class="docs-table"}
 :::
 | Option | Description |
 | ------ | ----------- |
-| `pathWildCard` | The `url_path` for URLs with path parameters. |
+| `pathWildCard` | The `url_path` string for URLs with path parameters. |
 | `redactHeaders` | A list of HTTP header keys to redact. |
 | `redactResponseBody` | A list of JSONPaths from the request body to redact. |
 | `redactRequestBody` | A list of JSONPaths from the response body to redact. |
