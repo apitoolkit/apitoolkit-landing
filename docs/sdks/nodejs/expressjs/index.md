@@ -124,6 +124,7 @@ In the configuration above, **only the `apiKey` option is required**, but you ca
 | `redactHeaders` | A list of HTTP header keys to redact. |
 | `redactResponseBody` | A list of JSONPaths from the request body to redact. |
 | `redactRequestBody` | A list of JSONPaths from the response body to redact. |
+| `ignoreEndpoints` | A list of endpoints to exclude from monitoring eg `["/products", "POST /categories", "GET /user/:name"]`. |
 :::
 
 <div class="callout">
@@ -135,7 +136,7 @@ In the configuration above, **only the `apiKey` option is required**, but you ca
   <p><i class="fa-solid fa-triangle-exclamation"></i> <b>Warning</b></p>
   <ul>
     <li>`apitoolkitClient` must be declared BEFORE all controllers and middleware in your application.</li>
-    <li>`apitoolkitClient.errorHandler` must be declared AFTER `apitoolkitClient.expressMiddleware` and all other controllers and BEFORE any other error middleware.</li>
+    <li>`apitoolkitClient.errorHandler` must be declared AFTER `apitoolkitClient.expressMiddleware` and all other controllers and BEFORE any other error middleware.</li>`
   </ul>
 </div>
 
@@ -170,7 +171,6 @@ JSONPath is a query language used to select and extract data from JSON files. Fo
         "state": "CA",
         "zip": "12345"
       },
-      ...
     ],
     "credit_card": {
       "number": "4111111111111111",
@@ -178,7 +178,6 @@ JSONPath is a query language used to select and extract data from JSON files. Fo
       "cvv": "123"
     }
   },
-  ...
 }
 ```
 
@@ -451,13 +450,13 @@ const response = await apitoolkitClient
 console.log(response.data);
 ```
 
-The `observeAxios` function above accepts a **required `axios` instance** and the following optional arguments:
+The `observeAxios` function above accepts a **required `axios` instance** and the following optional fields:
 
 {class="docs-table"}
 :::
 | Option | Description |
 | ------ | ----------- |
-| `pathWildCard` | The `url_path` string for URLs with path parameters. |
+| `pathWildCard` | The `url_path` for URLs with path parameters. |
 | `redactHeaders` | A list of HTTP header keys to redact. |
 | `redactResponseBody` | A list of JSONPaths from the request body to redact. |
 | `redactRequestBody` | A list of JSONPaths from the response body to redact. |
