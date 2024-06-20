@@ -205,10 +205,10 @@ The `observe_request()` function also takes the following optional arguments.
 :::
 | Option | Description |
 | ------ | ----------- |
-| `pathWildCard` | The `url_path` for URLs with path parameters. |
-| `redactHeaders` | A list of HTTP header keys to redact. |
-| `redactResponseBody` | A list of JSONPaths from the request body to redact. |
-| `redactRequestBody` | A list of JSONPaths from the response body to redact. |
+| `url_wildcard` | The `url_path` for URLs with path parameters. |
+| `redact_headers` | A list of HTTP header keys to redact. |
+| `redact_response_body` | A list of JSONPaths from the request body to redact. |
+| `redact_request_body` | A list of JSONPaths from the response body to redact. |
 :::
 
 Putting it all together 
@@ -218,11 +218,11 @@ from django.http import JsonResponse
 from apitoolkit_django import observe_request, report_error
 
 def hello_world(request, name):
-    pathWildcard = "/todos/{id}"
-    redactHeaders = ["content-type", "Authorization", "HOST"]
-    redactResponseBody = ["$.users[*].email", "$.users[*].credit_card"]
-    redactRequestBody = ["$.user.email", "$.user.addresses"]
-    resp = observe_request(request, pathWildcard, redactHeaders, redactRequestBody, redactResponseBody).get(
+    url_wildcard = "/todos/{id}"
+    redact_headers = ["content-type", "Authorization", "HOST"]
+    redact_response_body = ["$.users[*].email", "$.users[*].credit_card"]
+    redact_request_body = ["$.user.email", "$.user.addresses"]
+    resp = observe_request(request, url_wildcard, redact_headers, redact_request_body, redact_response_body).get(
         "https://jsonplaceholder.typicode.com/todos/2")
     resp.read()
     return JsonResponse({"data": resp.read()})
