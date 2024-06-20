@@ -55,7 +55,7 @@ def after_request(response):
 # END Initialize APItoolkit
 
 @app.route('/hello', methods=['GET', 'POST'])
-def sample_route(subject):
+def sample_route():
     return {"Hello": "World"}
 
 app.run(debug=True)
@@ -110,16 +110,14 @@ JSONPath is a query language used to select and extract data from JSON files. Fo
         "city": "Anytown",
         "state": "CA",
         "zip": "12345"
-      },
-      ...
+      }
     ],
     "credit_card": {
       "number": "4111111111111111",
       "expiration": "12/28",
       "cvv": "123"
     }
-  },
-  ...
+  }
 }
 ```
 
@@ -164,7 +162,7 @@ def after_request(response):
 
 
 @app.route('/hello', methods=['GET', 'POST'])
-def sample_route(subject):
+def sample_route():
     return {"Hello": "World"}
 
 app.run(debug=True)
@@ -186,18 +184,18 @@ APItoolkit automatically detects different unhandled errors, API issues, and ano
 To report all uncaught errors and service exceptions that happened during a web request, use the `report_error()` function from the `apitoolkit_flask` module, passing in the `request` and `error`, like so:
 
 ```python
-from flask import Flask, request
-from apitoolkit_flask import observe_request, report_error
+from flask import Flask
+from apitoolkit_flask import APIToolkit, report_error
 
-@app.route('/sample/<subject>', methods=['GET', 'POST'])
-async def sample_route(subject):
+@app.route('/', methods=['GET', 'POST'])
+def sample_route():
     try:
-        resp = observe_request(request).get("https://jsonplaceholder.typicode.com/todos/2")
-        return resp.read()
+        value = 1/ 0
+        return {"zero_division": value}
     except Exception as e:
         # Report the error to APItoolkit
         report_error(request, e)
-        return "Something went wrong"
+        return {"message": "Something went wrong"}
 ```
 
 ## Monitoring Outgoing Requests
@@ -208,13 +206,43 @@ To monitor outgoing HTTP requests from your application, use the `observe_reques
 
 ```python
 from flask import Flask, request
-from apitoolkit_flask import observe_request
+from apitoolkit_flask import APIToolkit, observe_request
 
-@app.route('/sample/<subject>', methods=['GET', 'POST'])
-async def sample_route(subject):
+@app.route('/', methods=['GET', 'POST'])
+async def sample_route():
     resp = observe_request(request).get("https://jsonplaceholder.typicode.com/todos/2")
     return resp.read()
 ```
+The `observe_request()` function also takes the following optional arguments.
+
+{class="docs-table"}
+:::
+| Option | Description |
+| ------ | ----------- |
+| `pathWildCard` | The `url_path` for URLs with path parameters. |
+| `redactHeaders` | A list of HTTP header keys to redact. |
+| `redactResponseBody` | A list of JSONPaths from the request body to redact. |
+| `redactRequestBody` | A list of JSONPaths from the response body to redact. |
+:::
+
+Putting it all together 
+
+```python
+from flask import Flask, request
+from apitoolkit_flask import APIToolkit, observe_request
+
+@app.route('/', methods=['GET', 'POST'])
+async def sample_route():
+    pathWildcard = "/todos/{id}"
+    redactHeaders = ["content-type", "Authorization", "HOST"]
+    redactResponseBody = ["$.users[*].email", "$.users[*].credit_card"]
+    redactRequestBody = ["$.user.email", "$.user.addresses"]
+    resp = observe_request(request, pathWildcard, redactHeaders, redactRequestBody, redactResponseBody).get(
+        "https://jsonplaceholder.typicode.com/todos/2")
+    resp.read()
+    return JsonResponse({"data": resp.read()})
+```
+
 
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
