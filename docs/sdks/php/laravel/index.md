@@ -268,7 +268,7 @@ The `$options` associative array accepts the following optional fields:
 :::
 | Option | Description |
 | ------ | ----------- |
-| `pathWildCard` | The `url_path` for URLs with path parameters. |
+| `pathWildCard` | The `url_path` string for URLs with path parameters. |
 | `redactHeaders` | A list of HTTP header keys to redact. |
 | `redactResponseBody` | A list of JSONPaths from the request body to redact. |
 | `redactRequestBody` | A list of JSONPaths from the response body to redact. |

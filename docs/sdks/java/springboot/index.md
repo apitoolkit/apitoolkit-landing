@@ -190,7 +190,7 @@ public class DemoApplication {
 
 Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="\_blank"} page. However, you can separate outgoing requests from others and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="\_blank"} page, alongside the incoming request that triggered them.
 
-The Springboot SDK provides the `ObserveRequest` class for monitoring outgoing requests using the Apache HTTP client. First, you will create an instance of the class, then use the instance to create a new HTTP client, passing in the current `request` context and an optional `url_path` (for URLs with path parameters), like so:
+The Springboot SDK provides the `ObserveRequest` class for monitoring outgoing requests using the Apache HTTP client. First, you will create an instance of the class, then use the instance to create a new HTTP client, passing in the current `request` context and an optional `url_path` string (for URLs with path parameters), like so:
 
 ```java
 package com.example.demo;
