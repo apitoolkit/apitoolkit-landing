@@ -56,7 +56,7 @@ class Kernel extends HttpKernel
 {
     protected $middlewareGroups = [
         'api' => [
-            // Other middlewares
+            // Other middleware here...
             \APIToolkit\Http\Middleware\APIToolkit::class, // Initialize the APItoolkit client
         ],
     ];
@@ -76,13 +76,13 @@ use Illuminate\Foundation\Http\Kernel as HttpKernel;
 class Kernel extends HttpKernel
 {
     protected $routeMiddleware = [
-        // Other middlewares
+        // Other middleware here...
         'apitoolkit' => \APIToolkit\Http\Middleware\APIToolkit::class,
     ];
 }
 ```
 
-Then you can use the `apitoolkit` middleware in your routes like so:
+  Then you can use the `apitoolkit` middleware in your routes like so:
 
 ```php
 Route::get('/', function () {

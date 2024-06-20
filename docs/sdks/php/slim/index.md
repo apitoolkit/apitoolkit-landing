@@ -38,18 +38,14 @@ require __DIR__ . '/vendor/autoload.php';
 
 $app = AppFactory::create();
 
+// Initialize the APItoolkit client
 $apitoolkitMiddleware = new APIToolkitMiddleware(
-    "{ENTER_YOUR_API_KEY_HERE}",
-	  $rootUrl=null,
-	  $redactHeaders=[],
-	  $redactRequestBody=[],
-	  $redactResponseBody=[],
-    $debug=false,
-    $serviceVersion="v2.0",
-    $tags=["environment: production", "region: us-east-1"],
+  "{ENTER_YOUR_API_KEY_HERE}",
+  $debug=false,
+  $serviceVersion="v2.0",
+  $tags=["environment: production", "region: us-east-1"],
 );
 
-// Initialize the APItoolkit client
 $app->add($apitoolkitMiddleware);
 // END Initialize the APItoolkit client
 
