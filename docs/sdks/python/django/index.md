@@ -124,7 +124,6 @@ JSONPath is a query language used to select and extract data from JSON files. Fo
         "state": "CA",
         "zip": "12345"
       },
-      ...
     ],
     "credit_card": {
       "number": "4111111111111111",
@@ -132,7 +131,6 @@ JSONPath is a query language used to select and extract data from JSON files. Fo
       "cvv": "123"
     }
   },
-  ...
 }
 ```
 
@@ -176,10 +174,8 @@ from apitoolkit_django import observe_request, report_error
 
 def hello_world(request, name):
     try:
-        resp = observe_request(request).get(
-            "https://jsonplaceholder.typicode.com/todos/2")
-        resp.read()
-        return JsonResponse({"hello": "world"})
+        value = 1/0
+        return JsonResponse({"hello": value})
     except Exception as e:
         report_error(request, e)
         return JsonResponse({"Error": "Something went wrong..."})
@@ -198,6 +194,35 @@ from apitoolkit_django import observe_request, report_error
 
 def hello_world(request, name):
     resp = observe_request(request).get(
+        "https://jsonplaceholder.typicode.com/todos/2")
+    resp.read()
+    return JsonResponse({"data": resp.read()})
+```
+
+The `observe_request()` function also takes the following optional arguments.
+
+{class="docs-table"}
+:::
+| Option | Description |
+| ------ | ----------- |
+| `pathWildCard` | The `url_path` for URLs with path parameters. |
+| `redactHeaders` | A list of HTTP header keys to redact. |
+| `redactResponseBody` | A list of JSONPaths from the request body to redact. |
+| `redactRequestBody` | A list of JSONPaths from the response body to redact. |
+:::
+
+Putting it all together 
+
+```python
+from django.http import JsonResponse
+from apitoolkit_django import observe_request, report_error
+
+def hello_world(request, name):
+    pathWildcard = "/todos/{id}"
+    redactHeaders = ["content-type", "Authorization", "HOST"]
+    redactResponseBody = ["$.users[*].email", "$.users[*].credit_card"]
+    redactRequestBody = ["$.user.email", "$.user.addresses"]
+    resp = observe_request(request, pathWildcard, redactHeaders, redactRequestBody, redactResponseBody).get(
         "https://jsonplaceholder.typicode.com/todos/2")
     resp.read()
     return JsonResponse({"data": resp.read()})
