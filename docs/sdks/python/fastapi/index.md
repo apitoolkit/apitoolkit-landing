@@ -100,14 +100,16 @@ JSONPath is a query language used to select and extract data from JSON files. Fo
         "city": "Anytown",
         "state": "CA",
         "zip": "12345"
-      }
+      },
+      ...
     ],
     "credit_card": {
       "number": "4111111111111111",
       "expiration": "12/28",
       "cvv": "123"
     }
-  }
+  },
+  ...
 }
 ```
 
@@ -198,39 +200,17 @@ async def sample_route(request: Request):
     return resp.read()
 ```
 
-The `observe_request()` function also takes the following optional arguments.
+The `observe_request()` function accepts a **required `request` argument**, and the following optional arguments:
 
 {class="docs-table"}
 :::
 | Option | Description |
 | ------ | ----------- |
-| `url_wildcard` | The `url_path` for URLs with path parameters. |
+| `url_wildcard` | The `url_path` string for URLs with path parameters. |
 | `redact_headers` | A list of HTTP header keys to redact. |
 | `redact_response_body` | A list of JSONPaths from the request body to redact. |
 | `redact_request_body` | A list of JSONPaths from the response body to redact. |
 :::
-
-
-Putting it all together 
-
-```python
-from fastapi import FastAPI, Request
-from apitoolkit_fastapi import observe_request
-
-app = FastAPI()
-
-@app.route('/', methods=['GET', 'POST'])
-async def sample_route():
-    url_wildcard = "/todos/{id}"
-    redact_headers = ["content-type", "Authorization", "HOST"]
-    redact_response_body = ["$.users[*].email", "$.users[*].credit_card"]
-    redact_request_body = ["$.user.email", "$.user.addresses"]
-    resp = observe_request(request, url_wildcard, redact_headers, redact_request_body, redact_response_body).get(
-        "https://jsonplaceholder.typicode.com/todos/2")
-    resp.read()
-    return JsonResponse({"data": resp.read()})
-```
-
 
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
