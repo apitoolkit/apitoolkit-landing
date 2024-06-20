@@ -420,7 +420,7 @@ app.listen(port, () => {
 });
 ```
 
-The `observeAxios` function above accepts a **required `axios` instance** and the following optional arguments:
+The `observeAxios` function above accepts a **required `axios` instance** and the following optional fields:
 
 {class="docs-table"}
 :::
@@ -450,7 +450,7 @@ const response = await apitoolkitClient
 console.log(response.data);
 ```
 
-The `observeAxios` function above accepts a **required `axios` instance** and the following optional fields:
+The `observeAxios` function above accepts a **required `axios` instance** and the following optional arguments:
 
 {class="docs-table"}
 :::
