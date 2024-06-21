@@ -18,7 +18,7 @@ hide-date: true
 These logs give you an in-depth overview of your server-side API calls, including events, pageviews, clicks, and choose variation calls. They enable you to verify that your API calls are correct and identify implementation issues. You can also use logs to troubleshoot unexpected behavior and find the root cause
 
 {class="space-y-2 text-sm sm:pt-1 not-prose" id="waitlist-form-1"}
-[Get Started for Free](https://app.apitoolkit.io){class="drop-shadow hover:drop-shadow-lg transition-all rounded-md hover:bg-yellow-300 bg-amber-300 text-black border border-amber-400 font-semibold inline-block px-4 py-2 mt-2 sm:mt-0 hs-init hs-inview"}
+[Start for free](https://app.apitoolkit.io){class="drop-shadow hover:drop-shadow-lg transition-all rounded-md hover:bg-yellow-300 bg-amber-300 text-black border border-amber-400 font-semibold inline-block px-4 py-2 mt-2 sm:mt-0 hs-init hs-inview"}
 [OR]{.inline-block .px-5}
 [Get a Demo](https://calendar.app.google/1a4HG5GZYv1sjjZG6){target="\_blank" class="drop-shadow rounded-md border border-gray-200 bg-gray-100 hover:bg-gray-200 text-xs text-gray-900 inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0 hs-init hs-inview"}
 
@@ -43,7 +43,7 @@ These logs give you an in-depth overview of your server-side API calls, includin
 No more waiting for problems to snowball. Identify and fix issues as they happen, ensuring flawless performance and a seamless user experience.
 
 {class="space-y-2 text-sm sm:pt-1 not-prose" id="waitlist-form-1"}
-[Get Started for Free](https://app.apitoolkit.io){class="drop-shadow hover:drop-shadow-lg transition-all rounded-md hover:bg-yellow-300 bg-amber-300 text-black border border-amber-400 font-semibold inline-block px-4 py-2 mt-2 sm:mt-0 hs-init hs-inview"}
+[Start for free](https://app.apitoolkit.io){class="drop-shadow hover:drop-shadow-lg transition-all rounded-md hover:bg-yellow-300 bg-amber-300 text-black border border-amber-400 font-semibold inline-block px-4 py-2 mt-2 sm:mt-0 hs-init hs-inview"}
 [OR]{.inline-block .px-5}
 [Get a Demo](https://calendar.app.google/1a4HG5GZYv1sjjZG6){target="\_blank" class="drop-shadow rounded-md border border-gray-200 bg-gray-100 hover:bg-gray-200 text-xs text-gray-900 inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0 hs-init hs-inview"}
 ::::
@@ -60,7 +60,7 @@ No more waiting for problems to snowball. Identify and fix issues as they happen
 Effortlessly capture the entire request-response chain, allowing you to reproduce complex issues with ease and get to the bottom of them fast.
 
 {class="space-y-2 text-sm sm:pt-1 not-prose" id="waitlist-form-1"}
-[Get Started for Free](https://app.apitoolkit.io){class="drop-shadow hover:drop-shadow-lg transition-all rounded-md hover:bg-yellow-300 bg-amber-300 text-black border border-amber-400 font-semibold inline-block px-4 py-2 mt-2 sm:mt-0 hs-init hs-inview"}
+[Start for free](https://app.apitoolkit.io){class="drop-shadow hover:drop-shadow-lg transition-all rounded-md hover:bg-yellow-300 bg-amber-300 text-black border border-amber-400 font-semibold inline-block px-4 py-2 mt-2 sm:mt-0 hs-init hs-inview"}
 [OR]{.inline-block .px-5}
 [Get a Demo](https://calendar.app.google/1a4HG5GZYv1sjjZG6){target="\_blank" class="drop-shadow rounded-md border border-gray-200 bg-gray-100 hover:bg-gray-200 text-xs text-gray-900 inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0 hs-init hs-inview"}
 ::::
@@ -83,7 +83,7 @@ Effortlessly capture the entire request-response chain, allowing you to reproduc
 Catch errors from any source, whether it's the API itself, a dependent service, or an underlying infrastructure component. Track them back to the specific request that triggered the issue.
 
 {class="space-y-2 text-sm sm:pt-1 not-prose" id="waitlist-form-1"}
-[Get Started for Free](https://app.apitoolkit.io){class="drop-shadow hover:drop-shadow-lg transition-all rounded-md hover:bg-yellow-300 bg-amber-300 text-black border border-amber-400 font-semibold inline-block px-4 py-2 mt-2 sm:mt-0 hs-init hs-inview"}
+[Start for free](https://app.apitoolkit.io){class="drop-shadow hover:drop-shadow-lg transition-all rounded-md hover:bg-yellow-300 bg-amber-300 text-black border border-amber-400 font-semibold inline-block px-4 py-2 mt-2 sm:mt-0 hs-init hs-inview"}
 [OR]{.inline-block .px-5}
 [Get a Demo](https://calendar.app.google/1a4HG5GZYv1sjjZG6){target="\_blank" class="drop-shadow rounded-md border border-gray-200 bg-gray-100 hover:bg-gray-200 text-xs text-gray-900 inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0 hs-init hs-inview"}
 ::::

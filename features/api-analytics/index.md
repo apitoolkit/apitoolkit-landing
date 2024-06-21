@@ -19,7 +19,7 @@ Build great API products with a deep understanding of API usage and user behavio
 Answer critical business and engineering questions about your APIs needed to drive the right outcomes.
 
 {class="space-y-2 text-sm sm:pt-1 not-prose" id="waitlist-form-1"}
-[Get Started for Free](https://app.apitoolkit.io){class="drop-shadow hover:drop-shadow-lg transition-all rounded-md hover:bg-yellow-300 bg-amber-300 text-black border border-amber-400 font-semibold inline-block px-4 py-2 mt-2 sm:mt-0 hs-init hs-inview"}
+[Start for free](https://app.apitoolkit.io){class="drop-shadow hover:drop-shadow-lg transition-all rounded-md hover:bg-yellow-300 bg-amber-300 text-black border border-amber-400 font-semibold inline-block px-4 py-2 mt-2 sm:mt-0 hs-init hs-inview"}
 [OR]{.inline-block .px-5}
 [Get a Demo](https://calendar.app.google/1a4HG5GZYv1sjjZG6){target="\_blank" class="drop-shadow rounded-md border border-gray-200 bg-gray-100 hover:bg-gray-200 text-xs text-gray-900 inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0 hs-init hs-inview"}
 
@@ -46,7 +46,7 @@ Track API usage time series, with performance and metric charts, and more.
 Segment and aggregate by URI request, endpoints, HTTP headers, body fields, or customer demographics.
 
 {class="space-y-2 text-sm sm:pt-1 not-prose" id="waitlist-form-1"}
-[Get Started for Free](https://app.apitoolkit.io){class="drop-shadow hover:drop-shadow-lg transition-all rounded-md hover:bg-yellow-300 bg-amber-300 text-black border border-amber-400 font-semibold inline-block px-4 py-2 mt-2 sm:mt-0 hs-init hs-inview"}
+[Start for free](https://app.apitoolkit.io){class="drop-shadow hover:drop-shadow-lg transition-all rounded-md hover:bg-yellow-300 bg-amber-300 text-black border border-amber-400 font-semibold inline-block px-4 py-2 mt-2 sm:mt-0 hs-init hs-inview"}
 [OR]{.inline-block .px-5}
 [Get a Demo](https://calendar.app.google/1a4HG5GZYv1sjjZG6){target="\_blank" class="drop-shadow rounded-md border border-gray-200 bg-gray-100 hover:bg-gray-200 text-xs text-gray-900 inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0 hs-init hs-inview"}
 ::::
@@ -63,7 +63,7 @@ Segment and aggregate by URI request, endpoints, HTTP headers, body fields, or c
 View the problematic endpoints, their performance and latency distributions, and enough context to debug and resolve issues.
 
 {class="space-y-2 text-sm sm:pt-1 not-prose" id="waitlist-form-1"}
-[Get Started for Free](https://app.apitoolkit.io){class="drop-shadow hover:drop-shadow-lg transition-all rounded-md hover:bg-yellow-300 bg-amber-300 text-black border border-amber-400 font-semibold inline-block px-4 py-2 mt-2 sm:mt-0 hs-init hs-inview"}
+[Start for free](https://app.apitoolkit.io){class="drop-shadow hover:drop-shadow-lg transition-all rounded-md hover:bg-yellow-300 bg-amber-300 text-black border border-amber-400 font-semibold inline-block px-4 py-2 mt-2 sm:mt-0 hs-init hs-inview"}
 [OR]{.inline-block .px-5}
 [Get a Demo](https://calendar.app.google/1a4HG5GZYv1sjjZG6){target="\_blank" class="drop-shadow rounded-md border border-gray-200 bg-gray-100 hover:bg-gray-200 text-xs text-gray-900 inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0 hs-init hs-inview"}
 ::::
@@ -87,7 +87,7 @@ Sometimes, you need to see what payloads customers were sending, to debug why so
 You can even see the locations a request was made from and the latency of that specific request.
 
 {class="space-y-2 text-sm sm:pt-1 not-prose" id="waitlist-form-1"}
-[Get Started for Free](https://app.apitoolkit.io){class="drop-shadow hover:drop-shadow-lg transition-all rounded-md hover:bg-yellow-300 bg-amber-300 text-black border border-amber-400 font-semibold inline-block px-4 py-2 mt-2 sm:mt-0 hs-init hs-inview"}
+[Start for free](https://app.apitoolkit.io){class="drop-shadow hover:drop-shadow-lg transition-all rounded-md hover:bg-yellow-300 bg-amber-300 text-black border border-amber-400 font-semibold inline-block px-4 py-2 mt-2 sm:mt-0 hs-init hs-inview"}
 [OR]{.inline-block .px-5}
 [Get a Demo](https://calendar.app.google/1a4HG5GZYv1sjjZG6){target="\_blank" class="drop-shadow rounded-md border border-gray-200 bg-gray-100 hover:bg-gray-200 text-xs text-gray-900 inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0 hs-init hs-inview"}
 ::::

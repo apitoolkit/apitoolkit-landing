@@ -18,7 +18,7 @@ hide-date: true
 Error monitoring is not enough. Catch breaking changes in your APIs and third-party integrations with enough context to reproduce the issues, and narrow down the root cause.
 
 {class="space-y-2 text-sm sm:pt-1 not-prose" id="waitlist-form-1"}
-[Get Started for Free](https://app.apitoolkit.io){class="drop-shadow hover:drop-shadow-lg transition-all rounded-md hover:bg-yellow-300 bg-amber-300 text-black border border-amber-400 font-semibold inline-block px-4 py-2 mt-2 sm:mt-0 hs-init hs-inview"}
+[Start for free](https://app.apitoolkit.io){class="drop-shadow hover:drop-shadow-lg transition-all rounded-md hover:bg-yellow-300 bg-amber-300 text-black border border-amber-400 font-semibold inline-block px-4 py-2 mt-2 sm:mt-0 hs-init hs-inview"}
 [OR]{.inline-block .px-5}
 [Get a Demo](https://calendar.app.google/1a4HG5GZYv1sjjZG6){target="\_blank" class="drop-shadow rounded-md border border-gray-200 bg-gray-100 hover:bg-gray-200 text-xs text-gray-900 inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0 hs-init hs-inview"}
 
@@ -42,7 +42,7 @@ Error monitoring is not enough. Catch breaking changes in your APIs and third-pa
 Seeing all changes and issues at a glance to help you prioritize what issues need to be fixed, and what changes are benign and can be safely acknowledged.
 
 {class="space-y-2 text-sm sm:pt-1 not-prose" id="waitlist-form-1"}
-[Get Started for Free](https://app.apitoolkit.io){class="drop-shadow hover:drop-shadow-lg transition-all rounded-md hover:bg-yellow-300 bg-amber-300 text-black border border-amber-400 font-semibold inline-block px-4 py-2 mt-2 sm:mt-0 hs-init hs-inview"}
+[Start for free](https://app.apitoolkit.io){class="drop-shadow hover:drop-shadow-lg transition-all rounded-md hover:bg-yellow-300 bg-amber-300 text-black border border-amber-400 font-semibold inline-block px-4 py-2 mt-2 sm:mt-0 hs-init hs-inview"}
 [OR]{.inline-block .px-5}
 [Get a Demo](https://calendar.app.google/1a4HG5GZYv1sjjZG6){target="\_blank" class="drop-shadow rounded-md border border-gray-200 bg-gray-100 hover:bg-gray-200 text-xs text-gray-900 inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0 hs-init hs-inview"}
 ::::
@@ -65,7 +65,7 @@ Seeing all changes and issues at a glance to help you prioritize what issues nee
 Don't just track errors and stack traces, but also record the incoming and outgoing requests that triggered the error. Good for customer support or reproducing the bug.
 
 {class="space-y-2 text-sm sm:pt-1 not-prose" id="waitlist-form-1"}
-[Get Started for Free](https://app.apitoolkit.io){class="drop-shadow hover:drop-shadow-lg transition-all rounded-md hover:bg-yellow-300 bg-amber-300 text-black border border-amber-400 font-semibold inline-block px-4 py-2 mt-2 sm:mt-0 hs-init hs-inview"}
+[Start for free](https://app.apitoolkit.io){class="drop-shadow hover:drop-shadow-lg transition-all rounded-md hover:bg-yellow-300 bg-amber-300 text-black border border-amber-400 font-semibold inline-block px-4 py-2 mt-2 sm:mt-0 hs-init hs-inview"}
 [OR]{.inline-block .px-5}
 [Get a Demo](https://calendar.app.google/1a4HG5GZYv1sjjZG6){target="\_blank" class="drop-shadow rounded-md border border-gray-200 bg-gray-100 hover:bg-gray-200 text-xs text-gray-900 inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0 hs-init hs-inview"}
 ::::
@@ -83,7 +83,7 @@ Don't just track errors and stack traces, but also record the incoming and outgo
 Catch breaking changes in your APIs and in any third-party APIs you depend on. No other platform can detect arbitrary breaking changes in your APIs or any APIs you call.
 
 {class="space-y-2 text-sm sm:pt-1 not-prose" id="waitlist-form-1"}
-[Get Started for Free](https://app.apitoolkit.io){class="drop-shadow hover:drop-shadow-lg transition-all rounded-md hover:bg-yellow-300 bg-amber-300 text-black border border-amber-400 font-semibold inline-block px-4 py-2 mt-2 sm:mt-0 hs-init hs-inview"}
+[Start for free](https://app.apitoolkit.io){class="drop-shadow hover:drop-shadow-lg transition-all rounded-md hover:bg-yellow-300 bg-amber-300 text-black border border-amber-400 font-semibold inline-block px-4 py-2 mt-2 sm:mt-0 hs-init hs-inview"}
 [OR]{.inline-block .px-5}
 [Get a Demo](https://calendar.app.google/1a4HG5GZYv1sjjZG6){target="\_blank" class="drop-shadow rounded-md border border-gray-200 bg-gray-100 hover:bg-gray-200 text-xs text-gray-900 inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0 hs-init hs-inview"}
 ::::
@@ -106,7 +106,7 @@ Catch breaking changes in your APIs and in any third-party APIs you depend on. N
 Integrate Alerts into your current workflow through Slack, email, teams, pagerduty, opsgenie, or any preferred alerting or incident management integration.
 
 {class="space-y-2 text-sm sm:pt-1 not-prose" id="waitlist-form-1"}
-[Get Started for Free](https://app.apitoolkit.io){class="drop-shadow hover:drop-shadow-lg transition-all rounded-md hover:bg-yellow-300 bg-amber-300 text-black border border-amber-400 font-semibold inline-block px-4 py-2 mt-2 sm:mt-0 hs-init hs-inview"}
+[Start for free](https://app.apitoolkit.io){class="drop-shadow hover:drop-shadow-lg transition-all rounded-md hover:bg-yellow-300 bg-amber-300 text-black border border-amber-400 font-semibold inline-block px-4 py-2 mt-2 sm:mt-0 hs-init hs-inview"}
 [OR]{.inline-block .px-5}
 [Get a Demo](https://calendar.app.google/1a4HG5GZYv1sjjZG6){target="\_blank" class="drop-shadow rounded-md border border-gray-200 bg-gray-100 hover:bg-gray-200 text-xs text-gray-900 inline-block px-4 py-2 sm:ml-1 mt-2 sm:mt-0 hs-init hs-inview"}
 ::::
