@@ -17,5 +17,3 @@ date: 2024-06-06
     </header>   
 </div>
 ```
-
-</section>

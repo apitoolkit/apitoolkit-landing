@@ -10,6 +10,7 @@ layouts:
   "./docs/**/index.md": docs/page.liquid
   "./events/**/index.md": default/index.liquid
   "./thanks/index.md": default/index.liquid
+  "./tools/*/index.md": default/tools.liquid
   "./*/index.md": default/prose.liquid
   "./**/*.md": default/index.liquid
   "./**/*.liquid": default/empty.liquid
