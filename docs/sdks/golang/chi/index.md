@@ -259,13 +259,10 @@ func main() {
 	router.Use(apitoolkitClient.ChiMiddleware)
 
 	router.Get("/test", func(w http.ResponseWriter, r *http.Request) {
+		
 		// Create a new HTTP client
-		HTTPClient := http.DefaultClient
-
-		// Replace the transport with the custom RoundTripper
-		HTTPClient.Transport = apitoolkitClient.WrapRoundTripper(
-			r.Context(),
-			HTTPClient.Transport,
+		HTTPClient := apitoolkit.HTTPClient(
+			c.Request.Context(),
 			apitoolkit.WithRedactHeaders("content-type", "Authorization", "HOST"),
 			apitoolkit.WithRedactRequestBody("$.user.email", "$.user.addresses"),
 			apitoolkit.WithRedactResponseBody("$.users[*].email", "$.users[*].credit_card"),
@@ -274,7 +271,7 @@ func main() {
 		// Make an outgoing HTTP request using the modified HTTPClient
 		_, _ = HTTPClient.Get("https://jsonplaceholder.typicode.com/posts/1")
 
-		// Respond to the request
+        // Respond to the request
 		w.WriteHeader(http.StatusOK)
 		w.Write([]byte("Ok, success!"))
 	})

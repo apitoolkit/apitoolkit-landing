@@ -243,20 +243,17 @@ func main() {
   }
 
   http.HandleFunc("/test", apitoolkitClient.Middleware(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-    // Create a new HTTP client
-    HTTPClient := http.DefaultClient
+    
+		// Create a new HTTP client
+		HTTPClient := apitoolkit.HTTPClient(
+			c.Request.Context(),
+			apitoolkit.WithRedactHeaders("content-type", "Authorization", "HOST"),
+			apitoolkit.WithRedactRequestBody("$.user.email", "$.user.addresses"),
+			apitoolkit.WithRedactResponseBody("$.users[*].email", "$.users[*].credit_card"),
+		)
 
-    // Replace the transport with the custom RoundTripper
-    HTTPClient.Transport = apitoolkitClient.WrapRoundTripper(
-      r.Context(),
-      HTTPClient.Transport,
-      apitoolkit.WithRedactHeaders("content-type", "Authorization", "HOST"),
-      apitoolkit.WithRedactRequestBody("$.user.email", "$.user.addresses"),
-      apitoolkit.WithRedactResponseBody("$.users[*].email", "$.users[*].credit_card")
-    )
-
-    // Make an outgoing HTTP request using the modified HTTPClient
-    resp, err = HTTPClient.Get("https://jsonplaceholder.typicode.com/posts/1")
+		// Make an outgoing HTTP request using the modified HTTPClient
+		_, _ = HTTPClient.Get("https://jsonplaceholder.typicode.com/posts/1")
 
     // Respond to the request
     w.WriteHeader(http.StatusOK)

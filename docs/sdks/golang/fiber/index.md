@@ -269,13 +269,10 @@ func main() {
 	router.Use(apitoolkitClient.FiberMiddleware)
 
 	router.Get("/test", func(c *fiber.Ctx) error {
+		
 		// Create a new HTTP client
-		HTTPClient := http.DefaultClient
-
-		// Replace the transport with the custom RoundTripper
-		HTTPClient.Transport = apitoolkitClient.WrapRoundTripper(
-			c.Context(),
-			HTTPClient.Transport,
+		HTTPClient := apitoolkit.HTTPClient(
+			c.Request.Context(),
 			apitoolkit.WithRedactHeaders("content-type", "Authorization", "HOST"),
 			apitoolkit.WithRedactRequestBody("$.user.email", "$.user.addresses"),
 			apitoolkit.WithRedactResponseBody("$.users[*].email", "$.users[*].credit_card"),

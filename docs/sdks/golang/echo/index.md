@@ -260,13 +260,10 @@ func main() {
 	router.Use(apitoolkitClient.EchoMiddleware)
 
 	router.POST("/:slug/test", func(c echo.Context) (err error) {
-		// Create a new HTTP client
-		HTTPClient := http.DefaultClient
 
-		// Replace the transport with the custom RoundTripper
-		HTTPClient.Transport = apitoolkitClient.WrapRoundTripper(
-			c.Request().Context(),
-			HTTPClient.Transport,
+		// Create a new HTTP client
+		HTTPClient := apitoolkit.HTTPClient(
+			c.Request.Context(),
 			apitoolkit.WithRedactHeaders("content-type", "Authorization", "HOST"),
 			apitoolkit.WithRedactRequestBody("$.user.email", "$.user.addresses"),
 			apitoolkit.WithRedactResponseBody("$.users[*].email", "$.users[*].credit_card"),

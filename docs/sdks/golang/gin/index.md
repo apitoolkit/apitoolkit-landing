@@ -263,12 +263,8 @@ func main() {
 
 	router.GET("/test", func(c *gin.Context) {
 		// Create a new HTTP client
-		HTTPClient := http.DefaultClient
-
-		// Replace the transport with the custom RoundTripper
-		HTTPClient.Transport = apitoolkitClient.WrapRoundTripper(
+		HTTPClient := apitoolkit.HTTPClient(
 			c.Request.Context(),
-			HTTPClient.Transport,
 			apitoolkit.WithRedactHeaders("content-type", "Authorization", "HOST"),
 			apitoolkit.WithRedactRequestBody("$.user.email", "$.user.addresses"),
 			apitoolkit.WithRedactResponseBody("$.users[*].email", "$.users[*].credit_card"),
@@ -277,7 +273,6 @@ func main() {
 		// Make an outgoing HTTP request using the modified HTTPClient
 		_, _ = HTTPClient.Get("https://jsonplaceholder.typicode.com/posts/1")
 
-		// Respond to the request
 		c.String(http.StatusOK, "Ok, success!")
 	})
 
