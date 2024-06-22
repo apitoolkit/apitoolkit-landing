@@ -71,6 +71,13 @@ npm run build:watch
 
 ## Directories Overview
 
+Click the toggle below to explore the list of important files and directories.
+
+<br />
+
+<details>
+<summary>Click Me Please 🥹</summary>
+
 | Path | Description |
 | --- | --- |
 | `_quickstatic/themes` | QuickStatic themes and components (default and docs). |
@@ -95,30 +102,36 @@ npm run build:watch
 | `Makefile` | Manage tasks related to Tailwind CSS processing. |
 | `quickstatic.yaml` | QuickStatic configuration options. |
 | `tailwind.config.js` | Tailwind CSS configuration options. |
+</details>
 
 ## Docs Style Guide
 
-Our documentation is a garden and we will continue to prune and maintain it. Feel free to share your feedback, let us know if something is broken or not working as it ought, and contribute too as we improve things. We have quite some internal guidelines with some processes we will eventually refactor, however, here are a few important tips to keep in mind:
+Our documentation is a blooming garden and we will continue to prune and maintain it. Feel free to share your feedback, let us know if something is broken or not working as it ought, and contribute too as we improve things. This style guide document is a WIP and we'll continue to update it. We have some internal guidelines on how things work (we hope to document all of them eventually), however, the sections below cover a few important things to note.
 
 ### Style Guide
 
-Everything is written in Markdown/Djot and we have a few custom interactive components (some of which we will improve as time goes on). We're currently adapting the [Google developer documentation style guide](https://developers.google.com/style) and using some principles from it to structure and write our documentation. A few quick writing tips:
+Everything is written in Markdown/Djot and we have a few custom interactive components (some of which we will improve as time goes on). We're currently adapting the [Google Developer Documentation Style Guide](https://developers.google.com/style) and [Diátaxis Documentation System](https://diataxis.fr/), using some principles from both to structure and write our documentation. A few quick writing tips:
 
+- Create a new pull request for any docs changes (including team members and external contributors), so the docs maintainer can review to ensure everything aligns with existing principles and no inconsistency sneaks in.
 - Follow existing patterns for structure, writing flow, code snippets comments, interactive components, etc. based on the category of docs in context (we currently have the [onboarding](https://apitoolkit.io/docs/onboarding/), [SDK guides](https://apitoolkit.io/docs/sdks/), [dashboard guides](https://apitoolkit.io/docs/dashboard/), and [features](https://apitoolkit.io/docs/features/) pages —with more coming soon) to ensure consistency and sustainable docs.
 - Run your writing through grammar checkers (like Grammarly) to catch typos and other minor issues.
 - DO NOT use tabs for code snippets but instead use two spaces.
-- Indicate omitted code in click-to-copy snippets by using a comment and not ellipsis (use comments as much as possible).
+- Indicate omitted code in click-to-copy snippets by using a comment and not an ellipsis points (use comments as much as possible).
 - Always include alt tags in markdown images.
-- Always include the `rel="noopener noreferrer"` attribute in links that should open in a new tab (e.g., `[link text](/link){target="_blank" rel="noopener noreferrer"}`).
+- Always include the `rel="noopener noreferrer"` attribute in links that should open in a new tab (e.g., `[link text](https://link.com){target="_blank" rel="noopener noreferrer"}`).
 - Don't remove something (styling, configuration, element, etc.) if you don't know what it does; ask someone first instead.
+- If you make any additions or adjustments to anything, explain it in detail in your pull request.
+- For helpful resources and other general stuff we use, see this [awesome technical writing list](https://github.com/BolajiAyodeji/awesome-technical-writing).
 
 ### Frontmatter
 
-Here's an example of the `frontmatter` for the docs pages:
+Here's an example of the `frontmatter` for the docs pages with the common options used differently in different docs page context:
 
 ```markdown
 ---
 title: Home
+ogTitle: Sample Home Guide
+faLogo: folder-tree
 date: 2022-03-23
 updatedDate: 2024-05-04
 linkTitle: "Documentation"
@@ -131,7 +144,9 @@ pageFullWidth: true
 
 ### Callout Icon Keys
 
-We use [Font Awesome](https://fontawesome.com) icons for our callout component. The format and icon keys are described below. In the dashboard pages docs, we use only the icon while in the SDK Guides, we use the icon and an accompanying text (e.g., `Tip`, `Warning`, etc.).
+We use [Font Awesome](https://fontawesome.com) icons for our callout component. In the Dashboard Guides, we use only the icon while in the SDK Guides, we use the icon and an accompanying text (e.g., `Tip`, `Warning`, etc.).
+
+**Format**:
 
 ```markdown
 <div class="callout">
@@ -147,10 +162,7 @@ We use [Font Awesome](https://fontawesome.com) icons for our callout component. 
 </div>
 ```
 
-<br />
-
-<details>
-<summary>Icon keys</summary>
+**Icon keys**:
 
 | Icon Key | Description |
 | -------- | ----------- |
@@ -159,7 +171,6 @@ We use [Font Awesome](https://fontawesome.com) icons for our callout component. 
 | `fa-solid fa-book` | Definition of a term. |
 | `fa-solid fa-forward` | Suggested next action (CTA). |
 | `fa-solid fa-triangle-exclamation` | Important warning. |
-</details>
 
 ### Tab Toggle Component
 
