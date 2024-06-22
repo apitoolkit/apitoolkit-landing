@@ -55,7 +55,10 @@ func main() {
 	ctx := context.Background()
 
 	// Initialize the APItoolkit client
-	apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"})
+	apitoolkitClient, err := apitoolkit.NewClient(
+	  ctx,
+	  apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"},
+	)
 	if err != nil {
 		panic(err)
 	}
@@ -152,10 +155,10 @@ func main() {
   ctx := context.Background()
 
   apitoolkitCfg := apitoolkit.Config {
+	APIKey:             "{ENTER_YOUR_API_KEY_HERE}",
     RedactHeaders:      []string{"content-type", "Authorization", "HOST"},
     RedactRequestBody:  []string{"$.user.email", "$.user.addresses"},
     RedactResponseBody: []string{"$.users[*].email", "$.users[*].credit_card"},
-    APIKey:             "{ENTER_YOUR_API_KEY_HERE}",
   }
   apitoolkitClient, _ := apitoolkit.NewClient(ctx, apitoolkitCfg)
 
@@ -201,7 +204,10 @@ func main() {
 	ctx := context.Background()
 
 	// Initialize the client
-	apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"})
+	apitoolkitClient, err := apitoolkit.NewClient(
+	  ctx,
+	  apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"}
+	)
 	if err != nil {
 		panic(err)
 	}
@@ -247,13 +253,16 @@ import (
 	"context"
 	"net/http"
 
-	apitoolkit "github.com/apitoolkit/apitoolkit-go"
 	"github.com/gin-gonic/gin"
+	apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
 
 func main() {
 	ctx := context.Background()
-	apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"})
+	apitoolkitClient, err := apitoolkit.NewClient(
+	  ctx,
+	  apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"},
+	)
 	if err != nil {
 		panic(err)
 	}
@@ -263,12 +272,8 @@ func main() {
 
 	router.GET("/test", func(c *gin.Context) {
 		// Create a new HTTP client
-		HTTPClient := http.DefaultClient
-
-		// Replace the transport with the custom RoundTripper
-		HTTPClient.Transport = apitoolkitClient.WrapRoundTripper(
+		HTTPClient := apitoolkit.HTTPClient(
 			c.Request.Context(),
-			HTTPClient.Transport,
 			apitoolkit.WithRedactHeaders("content-type", "Authorization", "HOST"),
 			apitoolkit.WithRedactRequestBody("$.user.email", "$.user.addresses"),
 			apitoolkit.WithRedactResponseBody("$.users[*].email", "$.users[*].credit_card"),
@@ -277,7 +282,6 @@ func main() {
 		// Make an outgoing HTTP request using the modified HTTPClient
 		_, _ = HTTPClient.Get("https://jsonplaceholder.typicode.com/posts/1")
 
-		// Respond to the request
 		c.String(http.StatusOK, "Ok, success!")
 	})
 

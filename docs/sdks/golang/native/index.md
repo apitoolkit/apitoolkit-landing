@@ -55,7 +55,10 @@ func main() {
   ctx := context.Background()
 
   // Initialize the APItoolkit client
-  apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"})
+  apitoolkitClient, err := apitoolkit.NewClient(
+    ctx,
+    apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"},
+  )
   if err != nil {
     panic(err)
   }
@@ -145,10 +148,10 @@ func main() {
   ctx := context.Background()
 
   apitoolkitCfg := apitoolkit.Config {
+    APIKey:             "{ENTER_YOUR_API_KEY_HERE}",
     RedactHeaders:      []string{"content-type", "Authorization", "HOST"},
     RedactRequestBody:  []string{"$.user.email", "$.user.addresses"},
     RedactResponseBody: []string{"$.users[*].email", "$.users[*].credit_card"},
-    APIKey:             "{ENTER_YOUR_API_KEY_HERE}",
   }
   apitoolkitClient, _ := apitoolkit.NewClient(ctx, apitoolkitCfg)
 
@@ -190,7 +193,11 @@ import (
 
 func main() {
   ctx := context.Background()
-  apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"})
+
+  apitoolkitClient, err := apitoolkit.NewClient(
+    ctx,
+    apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"},
+  )
   if err != nil {
     panic(err)
   }
@@ -237,26 +244,27 @@ import (
 
 func main() {
   ctx := context.Background()
-  apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"})
+
+  apitoolkitClient, err := apitoolkit.NewClient(
+    ctx,
+    apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"},
+  )
   if err != nil {
     panic(err)
   }
 
   http.HandleFunc("/test", apitoolkitClient.Middleware(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+    
     // Create a new HTTP client
-    HTTPClient := http.DefaultClient
-
-    // Replace the transport with the custom RoundTripper
-    HTTPClient.Transport = apitoolkitClient.WrapRoundTripper(
-      r.Context(),
-      HTTPClient.Transport,
+    HTTPClient := apitoolkit.HTTPClient(
+      c.Request.Context(),
       apitoolkit.WithRedactHeaders("content-type", "Authorization", "HOST"),
       apitoolkit.WithRedactRequestBody("$.user.email", "$.user.addresses"),
-      apitoolkit.WithRedactResponseBody("$.users[*].email", "$.users[*].credit_card")
+      apitoolkit.WithRedactResponseBody("$.users[*].email", "$.users[*].credit_card"),
     )
-
+    
     // Make an outgoing HTTP request using the modified HTTPClient
-    resp, err = HTTPClient.Get("https://jsonplaceholder.typicode.com/posts/1")
+    _, _ = HTTPClient.Get("https://jsonplaceholder.typicode.com/posts/1")
 
     // Respond to the request
     w.WriteHeader(http.StatusOK)
