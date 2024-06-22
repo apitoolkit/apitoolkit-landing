@@ -35,8 +35,8 @@ using ApiToolkit.Net;
 
 var config = new Config
 {
-    Debug = true, # Set debug flags to false in production
-    ApiKey = "{ENTER_YOUR_API_KEY_HERE}"
+  Debug = true, // Set debug flags to false in production
+  ApiKey = "{ENTER_YOUR_API_KEY_HERE}"
 };
 // Initialize the APItoolkit client
 var client = await APIToolkit.NewClientAsync(config);
@@ -45,14 +45,14 @@ var client = await APIToolkit.NewClientAsync(config);
 // Register APItoolkit's middleware
 app.Use(async (context, next) =>
 {
-    var apiToolkit = new APIToolkit(next, client);
-    await apiToolkit.InvokeAsync(context);
+  var apiToolkit = new APIToolkit(next, client);
+  await apiToolkit.InvokeAsync(context);
 });
 // END Register APItoolkit's middleware
 
-# app.UseEndpoint(...) 
-# Other middleware and logic
-# ...
+// app.UseEndpoint(...)
+// Other middleware and logic
+// ...
 ```
 
 <div class="callout">
@@ -124,19 +124,19 @@ using ApiToolkit.Net;
 
 var config = new Config
 {
-    Debug = true, // Set debug flags to false in production
-    ApiKey = "{ENTER_YOUR_API_KEY_HERE}",
-    RedactHeaders = new List<string> { "content-type", "Authorization", "HOST" },
-    RedactRequestBody = new List<string> { "$.user.email", "$.user.addresses" },
-    RedactResponseBody = new List<string> { "$.users[*].email", "$.users[*].credit_card" }
+  Debug = true, // Set debug flags to false in production
+  ApiKey = "{ENTER_YOUR_API_KEY_HERE}",
+  RedactHeaders = new List<string> { "content-type", "Authorization", "HOST" },
+  RedactRequestBody = new List<string> { "$.user.email", "$.user.addresses" },
+  RedactResponseBody = new List<string> { "$.users[*].email", "$.users[*].credit_card" }
 };
 var client = await APIToolkit.NewClientAsync(config);
 
 # Register the middleware to use the initialized client
 app.Use(async (context, next) =>
 {
-    var apiToolkit = new APIToolkit(next, client);
-    await apiToolkit.InvokeAsync(context);
+  var apiToolkit = new APIToolkit(next, client);
+  await apiToolkit.InvokeAsync(context);
 })
 ```
 
@@ -163,33 +163,33 @@ var app = builder.Build();
 
 var config = new Config
 {
-    ApiKey = "{ENTER_YOUR_API_KEY_HERE}"
+  ApiKey = "{ENTER_YOUR_API_KEY_HERE}"
 };
 var client = await APIToolkit.NewClientAsync(config);
 
 app.Use(async (context, next) =>
 {
-    var apiToolkit = new APIToolkit(next, client);
-    await apiToolkit.InvokeAsync(context);
+  var apiToolkit = new APIToolkit(next, client);
+  await apiToolkit.InvokeAsync(context);
 });
 
 app.MapGet("/error-tracking", async context =>
 {
-    try
+  try
+  {
+    // Attempt to open a non-existing file
+    using (var fileStream = System.IO.File.OpenRead("non_existing_file.txt"))
     {
-        // Attempt to open a non-existing file
-        using (var fileStream = System.IO.File.OpenRead("non_existing_file.txt"))
-        {
-            // File opened successfully, do something if needed.
-        }
-        await context.Response.WriteAsync($"Hello");
+      // File opened successfully, do something if needed.
     }
-    catch (Exception error)
-    {
-        // Report the error to APItoolkit
-        client.ReportError(context, error);
-        await context.Response.WriteAsync("Error reported!");
-    }
+    await context.Response.WriteAsync($"Hello");
+  }
+  catch (Exception error)
+  {
+    // Report the error to APItoolkit
+    client.ReportError(context, error);
+    await context.Response.WriteAsync("Error reported!");
+  }
 });
 ```
 
@@ -207,30 +207,30 @@ var app = builder.Build();
 
 var config = new Config
 {
-    ApiKey = "{ENTER_YOUR_API_KEY_HERE}"
+  ApiKey = "{ENTER_YOUR_API_KEY_HERE}"
 };
 var client = await APIToolkit.NewClientAsync(config);
 
 app.Use(async (context, next) =>
 {
-    var apiToolkit = new APIToolkit(next, client);
-    await apiToolkit.InvokeAsync(context);
+  var apiToolkit = new APIToolkit(next, client);
+  await apiToolkit.InvokeAsync(context);
 });
 
 app.MapGet("/monitor-requests", async (context) =>
 {
-    var observingHandlerOptions = new ATOptions
-    {
-        PathWildCard = "/posts/{id}",
-        RedactHeaders = ["User-Agent"],
-        RedactRequestBody = ["$.user.password"],
-        RedactResponseBody = ["$.user.data.email"]
-    };
+  var observingHandlerOptions = new ATOptions
+  {
+    PathWildCard = "/posts/{id}",
+    RedactHeaders = ["User-Agent"],
+    RedactRequestBody = ["$.user.password"],
+    RedactResponseBody = ["$.user.data.email"]
+  };
 
-    using var httpClient = new HttpClient(client.APIToolkitObservingHandler(context, observingHandlerOptions));
-    var response = await httpClient.GetAsync("https://jsonplaceholder.typicode.com/posts/1");
-    var body = await response.Content.ReadAsStringAsync();
-    await context.Response.WriteAsync(body);
+  using var httpClient = new HttpClient(client.APIToolkitObservingHandler(context, observingHandlerOptions));
+  var response = await httpClient.GetAsync("https://jsonplaceholder.typicode.com/posts/1");
+  var body = await response.Content.ReadAsStringAsync();
+  await context.Response.WriteAsync(body);
 });
 ```
 
