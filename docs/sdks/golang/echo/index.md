@@ -56,7 +56,10 @@ func main() {
   ctx := context.Background()
 
   // Initialize the client
-  apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"})
+  apitoolkitClient, err := apitoolkit.NewClient(
+    ctx,
+    apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"},
+  )
   if err != nil {
     panic(err)
   }
@@ -153,10 +156,10 @@ func main() {
   ctx := context.Background()
 
   apitoolkitCfg := apitoolkit.Config {
+    APIKey:             "{ENTER_YOUR_API_KEY_HERE}",
     RedactHeaders:      []string{"content-type", "Authorization", "HOST"},
     RedactRequestBody:  []string{"$.user.email", "$.user.addresses"},
     RedactResponseBody: []string{"$.users[*].email", "$.users[*].credit_card"},
-    APIKey:             "{ENTER_YOUR_API_KEY_HERE}",
   }
   apitoolkitClient, _ := apitoolkit.NewClient(ctx, apitoolkitCfg)
 
@@ -194,18 +197,21 @@ import (
 	"net/http"
 	"os"
 
-	apitoolkit "github.com/apitoolkit/apitoolkit-go"
 	"github.com/labstack/echo/v4"
+	apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
 
 func main() {
-	ctx := context.Background()
+  ctx := context.Background()
 
-  // Initialize the APItoolkit client
-	apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"})
-	if err != nil {
-		panic(err)
-	}
+  // Initialize the client
+  apitoolkitClient, err := apitoolkit.NewClient(
+    ctx,
+    apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"},
+  )
+  if err != nil {
+    panic(err)
+  }
 
 	router := echo.New()
 	router.Use(apitoolkitClient.EchoMiddleware)
@@ -245,38 +251,43 @@ import (
 	"context"
 	"net/http"
 
-	apitoolkit "github.com/apitoolkit/apitoolkit-go"
 	"github.com/labstack/echo/v4"
+	apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
 
 func main() {
-	ctx := context.Background()
-	apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"})
-	if err != nil {
-		panic(err)
-	}
+  ctx := context.Background()
 
-	router := echo.New()
-	router.Use(apitoolkitClient.EchoMiddleware)
+  // Initialize the client
+  apitoolkitClient, err := apitoolkit.NewClient(
+    ctx,
+    apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"},
+  )
+  if err != nil {
+    panic(err)
+  }
 
-	router.POST("/:slug/test", func(c echo.Context) (err error) {
+  router := echo.New()
+  router.Use(apitoolkitClient.EchoMiddleware)
 
-		// Create a new HTTP client
-		HTTPClient := apitoolkit.HTTPClient(
-			c.Request.Context(),
-			apitoolkit.WithRedactHeaders("content-type", "Authorization", "HOST"),
-			apitoolkit.WithRedactRequestBody("$.user.email", "$.user.addresses"),
-			apitoolkit.WithRedactResponseBody("$.users[*].email", "$.users[*].credit_card"),
-		)
+  router.POST("/:slug/test", func(c echo.Context) (err error) {
+  
+  // Create a new HTTP client
+	HTTPClient := apitoolkit.HTTPClient(
+    	c.Request.Context(),
+		apitoolkit.WithRedactHeaders("content-type", "Authorization", "HOST"),
+		apitoolkit.WithRedactRequestBody("$.user.email", "$.user.addresses"),
+		apitoolkit.WithRedactResponseBody("$.users[*].email", "$.users[*].credit_card"),
+	)
 
-		// Make an outgoing HTTP request using the modified HTTPClient
-		_, _ = HTTPClient.Get("https://jsonplaceholder.typicode.com/posts/1")
+	// Make an outgoing HTTP request using the modified HTTPClient
+	_, _ = HTTPClient.Get("https://jsonplaceholder.typicode.com/posts/1")
 
-		// Respond to the request
-		return c.String(http.StatusOK, "Ok, success!")
-	})
+	// Respond to the request
+	return c.String(http.StatusOK, "Ok, success!")
+  })
 
-	router.Start(":8080")
+  router.Start(":8080")
 }
 ```
 

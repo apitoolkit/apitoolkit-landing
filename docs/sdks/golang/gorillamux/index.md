@@ -55,7 +55,10 @@ func main() {
   ctx := context.Background()
 
   // Initialize the APItoolkit client
-  apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"})
+  apitoolkitClient, err := apitoolkit.NewClient(
+    ctx,
+    apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"},
+  )
   if err != nil {
     panic(err)
   }
@@ -154,10 +157,10 @@ func main() {
   ctx := context.Background()
 
   apitoolkitCfg := apitoolkit.Config {
+    APIKey:             "{ENTER_YOUR_API_KEY_HERE}",
     RedactHeaders:      []string{"content-type", "Authorization", "HOST"},
     RedactRequestBody:  []string{"$.user.email", "$.user.addresses"},
     RedactResponseBody: []string{"$.users[*].email", "$.users[*].credit_card"},
-    APIKey:             "{ENTER_YOUR_API_KEY_HERE}",
   }
   apitoolkitClient, _ := apitoolkit.NewClient(ctx, apitoolkitCfg)
 
@@ -204,7 +207,10 @@ import (
 
 func main() {
   ctx := context.Background()
-  apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"})
+  apitoolkitClient, err := apitoolkit.NewClient(
+    ctx,
+    apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"},
+  )
   if err != nil {
     panic(err)
   }
@@ -253,7 +259,11 @@ import (
 
 func main() {
   ctx := context.Background()
-  apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"})
+  
+  apitoolkitClient, err := apitoolkit.NewClient(
+    ctx,
+    apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"},
+  )
   if err != nil {
     panic(err)
   }
