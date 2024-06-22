@@ -15,6 +15,9 @@ pages:
   - title: API Keys
     slug: /docs/dashboard/settings-pages/api-keys
     icon: key
+  - title: Integrations
+    slug: /docs/dashboard/settings-pages/integrations
+    icon: arrows-turn-right
 ---
 
 # Settings Pages

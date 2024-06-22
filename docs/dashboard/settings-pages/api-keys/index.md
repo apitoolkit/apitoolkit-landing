@@ -21,10 +21,10 @@ To get to this page, kindly click on the project name at the top-left section of
 
 ![Screenshot of APItoolkit's API keys page](/docs/dashboard/settings-pages/api-keys/screen-2.png)
 
-<!-- ```=html
+```=html
 <hr />
-<a href="/docs/dashboard/settings-pages/api-keys/" class="w-full btn btn-outline link link-hover">
-    Next: API Keys
+<a href="/docs/dashboard/settings-pages/integrations/" class="w-full btn btn-outline link link-hover">
+    Next: Integrations
     <i class="fa-regular fa-arrow-right mr-4"></i>
 </a>
-``` -->
+```
