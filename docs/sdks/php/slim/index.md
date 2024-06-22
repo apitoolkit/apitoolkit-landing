@@ -41,7 +41,9 @@ $app = AppFactory::create();
 // Initialize the APItoolkit client
 $apitoolkitMiddleware = new APIToolkitMiddleware([
   'apiKey' => "{ENTER_YOUR_API_KEY_HERE}",
-  'debug' => false
+  'debug' => false,
+  'tags' => ["environment: production", "region: us-east-1"],
+  'serviceVersion' => "v2.0",
 ]);
 
 $app->add($apitoolkitMiddleware);
@@ -143,9 +145,6 @@ $apitoolkitMiddleware = new APIToolkitMiddleware([
   'redactHeaders' => [],
   'redactRequestBody' => [],
   'redactResponseBody' => [],
-  'debug' => false,
-  'serviceVersion' => null,
-  'tags' => []
 ]);
 
 $app->add($apitoolkitMiddleware);
