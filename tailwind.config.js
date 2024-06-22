@@ -40,8 +40,8 @@ module.exports = {
       {
         sunset: {
           "color-scheme": "dark",
-          primary: "#FF865B",
-          secondary: "#377cfb",
+          primary: "#0068ff",
+          secondary: "#567bd6",
           "secondary-content": "#fff",
           accent: "#B387FA",
           neutral: "oklch(26% 0.019 237.69)",

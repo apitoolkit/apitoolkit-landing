@@ -10,6 +10,8 @@ hide_date: true
 
 ## Test JSON Redaction via JSONPath
 
+This tool allows you to visualize what the final JSON sent to the APItoolkit servers looks like after redacting with JSONPaths. 
+
 ```=html
 <script src="jsonpath.min.js"></script>
 <script src="jsonpath-plus-umd.min.cjs"></script>
@@ -70,9 +72,10 @@ hide_date: true
         adjustTextareaHeight(document.getElementById('expressions'));
     });
 </script>
-<div class="collapse bg-base-200 "> 
+
+<div class="collapse bg-base-200"> 
   <input type="checkbox" /> 
-  <div class="collapse-title text-xl font-medium">
+  <div class="collapse-title text-md font-medium">
     Expand quick JSONPath cheat sheet &nbsp; <i class="fa-solid fa-angles-down"></i>
   </div>
   <div class="collapse-content"> 
@@ -80,10 +83,11 @@ hide_date: true
   </div>
 </div>
 
+<hr />
 
-<section class="flex flex-row gap-8 pt-5">
+<section class="flex flex-row gap-8 pt-5 mt-4">
     <div class="flex-1">
-        Your JSON content
+        Enter your JSON content here:
         <textarea class="textarea textarea-bordered w-full" id="jsonToRedact" oninput="adjustTextareaHeight(this)" rows="1" style="overflow:hidden;">
 {
   "store": {
@@ -110,12 +114,12 @@ hide_date: true
         </textarea>
     </div>
     <div class="flex-1">
-        JSONpath Expressions. 1 per line.
+        Enter your JSONPath Expressions here (1 per line):
 <textarea class="textarea textarea-bordered w-full" id="expressions">
 $.store.book[*].*
 $.store.bicycle.color
 </textarea>
-        <button class="btn btn-primary" onclick="redact()">Redact</button>
+        <button class="btn btn-secondary" onclick="redact()">Redact</button>
         <code class="language-js block" id="redactedResultError"></code>
         <pre><code class="language-js" id="redactedResult"></code></pre>
     </div>
