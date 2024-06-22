@@ -5,9 +5,9 @@
 
 ## Marketing Website and Developer Documentation
 
-[![QuickStatic](https://img.shields.io/badge/QuickStatic-Generator-0068ff?logo=rust)](https://github.com/topics/apitoolkit-sdk) [![APItoolkit SDK](https://img.shields.io/badge/APItoolkit-SDK-0068ff?logo=github)](https://github.com/topics/apitoolkit-sdk) [![Join Discord Server](https://img.shields.io/badge/Chat-Discord-7289da)](https://discord.gg/dEB6EjQnKB) [![APItoolkit Docs](https://img.shields.io/badge/Read-Docs-0068ff)](https://apitoolkit.io/docs?utm_source=github-sdks) 
+[![QuickStatic](https://img.shields.io/badge/QuickStatic-Generator-f1541c?logo=rust)](https://github.com/topics/apitoolkit-sdk) [![APItoolkit SDK](https://img.shields.io/badge/APItoolkit-SDK-0068ff?logo=github)](https://github.com/topics/apitoolkit-sdk) [![Join Discord Server](https://img.shields.io/badge/Chat-Discord-7289da)](https://discord.gg/dEB6EjQnKB) [![APItoolkit Docs](https://img.shields.io/badge/Read-Docs-0068ff)](https://apitoolkit.io/docs?utm_source=github-sdks) 
 
-APItoolkit is an end-to-end API and web services management toolkit for engineers and customer support teams. This repository houses our [marketing website](https://apitoolkit.io) and [developer documentation](https://apitoolkit.io/docs) built by our in-house [QuickStatic](https://github.com/tonyalaribe/quickstatic) static site generator.
+[APItoolkit](https://app.apitoolkit.io) is an end-to-end API and web services management toolkit for engineers and customer support teams. This repository houses our [marketing website](https://apitoolkit.io) and [developer documentation](https://apitoolkit.io/docs) built using our in-house [QuickStatic](https://github.com/tonyalaribe/quickstatic) static site generator.
 
 </div>
 
@@ -15,14 +15,65 @@ APItoolkit is an end-to-end API and web services management toolkit for engineer
 
 ## Table of Contents
 
-- [Installation](#installation)
-- [Configuration](#configuration)
+- [Setup and Installation](#setup-and-installation)
+- [Directories Overview](#directories-overview)
+- [QuickStatic Tip](#quickstatic-tip)
+- [Docs Style Guide](#docs-style-guide)
 - [Contributing and Help](#contributing-and-help)
 - [License](#license)
 
 ---
 
-## Getting Started
+## Setup and Installation
+
+Kindly follow the steps below to run this project locally:
+
+1. Install QuickStatic using [Rust Cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html) like so:
+
+```sh
+cargo install quickstatic
+```
+
+2. Run the command below to install the styling dependencies:
+
+```sh
+npm run install
+```
+
+3. Run the command below to build the site:
+
+```sh
+npm run serve
+```
+
+4. Run the command below to build Tailwind CSS:
+
+```sh
+npm run build
+
+# Or
+
+npm run build:watch
+```
+
+## Directories Overview
+
+TBA
+
+## QuickStatic Tip
+
+Everything in the root directory gets copied into the output directory in the exact order it appears, while markdown files are compiled into HTML files. QuickStatic themes can be written using the [Shopify liquid templating language](https://github.com/Shopify/liquid/wiki/Liquid-for-Designers). To use any given template file for a particular page, simply reference the template file from the `frontmatter` like so:
+
+```markdown
+---
+title: Page title
+layout: themeName/blog/index.liquid
+---
+
+Page Content...
+```
+
+## Docs Style Guide
 
 TBA
 
