@@ -205,31 +205,35 @@ import { APIToolkit } from "apitoolkit-express";
 const app = express();
 const port = 3000;
 
-const apiKey = "{ENTER_YOUR_API_KEY_HERE}";
-const redactHeaders = ["content-type", "Authorization", "HOST"];
-const redactRequestBody = ["$.user.email", "$.user.addresses"];
-const redactResponseBody = ["$.users[*].email", "$.users[*].credit_card"];
+const startServer = async () => {
+  const apiKey = "{ENTER_YOUR_API_KEY_HERE}";
+  const redactHeaders = ["content-type", "Authorization", "HOST"];
+  const redactRequestBody = ["$.user.email", "$.user.addresses"];
+  const redactResponseBody = ["$.users[*].email", "$.users[*].credit_card"];
 
-const apitoolkitClient = await APIToolkit.NewClient({
-  apiKey,
-  redactHeaders,
-  redactRequestBody,
-  redactResponseBody,
-});
+  const apitoolkitClient = await APIToolkit.NewClient({
+    apiKey,
+    redactHeaders,
+    redactRequestBody,
+    redactResponseBody,
+  });
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(apitoolkitClient.expressMiddleware);
+  app.use(express.json());
+  app.use(express.urlencoded({ extended: true }));
+  app.use(apitoolkitClient.expressMiddleware);
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
+  app.get("/", (req, res) => {
+    res.send("Hello World!");
+  });
 
-app.use(apitoolkitClient.errorHandler);
+  app.use(apitoolkitClient.errorHandler);
 
-app.listen(port, () => {
-  console.log("App running on port " + port);
-});
+  app.listen(port, () => {
+    console.log("App running on port " + port);
+  });
+};
+
+startServer();
 ```
 
 <div class="callout">
@@ -307,7 +311,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(apitoolkitClient.expressMiddleware);
 
 // All controllers
-app.get("/", (req, res) => {});
+app.get("/", (req, res) => {
+  // Controller logic here
+});
+
 // Other controllers...
 
 // Add the error handler
@@ -345,7 +352,7 @@ app.use(apitoolkitClient.expressMiddleware);
 app.get("/", (req, res) => {
   try {
     throw new Error("Deliberate error");
-    res.send("Hello");
+    res.send("Hello"); // This line will not be reached due to the error thrown above
   } catch (error) {
     // Report the error to APItoolkit
     ReportError(error);
@@ -414,9 +421,14 @@ const apitoolkitClient = APIToolkit.NewClient({ apiKey: "{ENTER_YOUR_API_KEY_HER
 
 app.use(apitoolkitClient.expressMiddleware);
 
-app.get("/", (req, res) => {
-  const response = await observeAxios(axios).get(baseURL + "/users/user1234");
-  res.send(response.data);
+app.get("/", async (req, res) => {
+  try {
+    const response = await observeAxios(axios).get(baseURL + "/users/user1234");
+    res.send(response.data);
+  } catch (error) {
+    console.error("Error occurred:", error);
+    res.status(500).send("Error occurred while fetching data");
+  }
 });
 
 app.listen(port, () => {
@@ -444,14 +456,21 @@ If your outgoing request is called from a background job for example (outside th
 import axios from "axios";
 import { APIToolkit } from "apitoolkit-express";
 
-const apitoolkitClient = APIToolkit.NewClient({
-  apiKey: "{ENTER_YOUR_API_KEY_HERE}",
-});
+async function fetchData() {
+  const apitoolkitClient = APIToolkit.NewClient({
+    apiKey: "{ENTER_YOUR_API_KEY_HERE}",
+  });
 
-const response = await apitoolkitClient
-  .observeAxios(axios)
-  .get("http://localhost:8080/ping");
-console.log(response.data);
+  try {
+    const response = await apitoolkitClient.observeAxios(axios).get("http://localhost:8080/ping");
+    console.log(response.data);
+  } catch (error) {
+    console.error("Error occurred:", error);
+  }
+}
+
+// Call the async function to execute the code
+fetchData();
 ```
 
 The `observeAxios` function above accepts a **required `axios` instance** and the following optional arguments:

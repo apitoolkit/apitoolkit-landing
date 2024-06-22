@@ -24,9 +24,9 @@ To install the SDK, kindly add the following dependency to your `pom.xml` file w
 
 ```xml
 &lt;dependency&gt;
-    &lt;groupId&gt;io.apitoolkit.springboot&lt;/groupId&gt;
-    &lt;artifactId&gt;apitoolkit-springboot&lt;/artifactId&gt;
-    &lt;version&gt;1.0.6&lt;/version&gt;
+  &lt;groupId&gt;io.apitoolkit.springboot&lt;/groupId&gt;
+  &lt;artifactId&gt;apitoolkit-springboot&lt;/artifactId&gt;
+  &lt;version&gt;1.0.6&lt;/version&gt;
 &lt;/dependency&gt;
 ```
 
@@ -66,14 +66,14 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class DemoApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
-	}
+  public static void main(String[] args) {
+    SpringApplication.run(DemoApplication.class, args);
+  }
 
-	@GetMapping("/greet/{name}")
-	public String getUser(@PathVariable String name) {
-		return "Hello, " + name;
-	}
+  @GetMapping("/greet/{name}")
+  public String getUser(@PathVariable String name) {
+    return "Hello, " + name;
+  }
 }
 ```
 
@@ -169,20 +169,20 @@ import io.apitoolkit.springboot.annotations.EnableAPIToolkit;
 @SpringBootApplication
 public class DemoApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(DemoApplication.class, args);
-    }
+  public static void main(String[] args) {
+    SpringApplication.run(DemoApplication.class, args);
+  }
 
-    @GetMapping("/hello")
-    public String hello(@RequestParam(value = "name", defaultValue = "World") String name, HttpServletRequest request) {
-        try {
-            System.out.print(1 / 0); // This will throw an ArithmeticException
-        } catch (Exception e) {
-            // Report the error to APItoolkit
-            APErrors.reportError(request, e);
-        }
-        return String.format("Hello %s!", name);
+  @GetMapping("/hello")
+  public String hello(@RequestParam(value = "name", defaultValue = "World") String name, HttpServletRequest request) {
+    try {
+      System.out.print(1 / 0); // This will throw an ArithmeticException
+    } catch (Exception e) {
+      // Report the error to APItoolkit
+      APErrors.reportError(request, e);
     }
+    return String.format("Hello %s!", name);
+  }
 }
 ```
 

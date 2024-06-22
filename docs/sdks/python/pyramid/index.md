@@ -37,13 +37,12 @@ Next, add the `APITOOLKIT_KEY` variable to your settings or `development.ini` or
 
 ```python
 settings = {
-    "APITOOLKIT_KEY" = "{ENTER_YOUR_API_KEY_HERE}"
-
-    "APITOOLKIT_DEBUG" = False
-    "APITOOLKIT_TAGS" = ["environment: production", "region: us-east-1"]
-    "APITOOLKIT_SERVICE_VERSION" = "v2.0"
-    "APITOOLKIT_ROUTES_WHITELIST" = ["/api/first", "/api/second"]
-    "APITOOLKIT_IGNORE_HTTP_CODES" = [404, 429]
+  "APITOOLKIT_KEY": "{ENTER_YOUR_API_KEY_HERE}",
+  "APITOOLKIT_DEBUG": False,
+  "APITOOLKIT_TAGS": ["environment: production", "region: us-east-1"],
+  "APITOOLKIT_SERVICE_VERSION": "v2.0",
+  "APITOOLKIT_ROUTES_WHITELIST": ["/api/first", "/api/second"],
+  "APITOOLKIT_IGNORE_HTTP_CODES": [404, 429]
 }
 ```
 
@@ -71,24 +70,23 @@ from pyramid.config import Configurator
 from pyramid.response import Response
 from pyramid.view import view_config
 
-
-@view_config(
-    route_name='home'
-)
+@view_config(route_name='home')
 def home(request):
-    return Response('Welcome!')
+  return Response('Welcome!')
 
 if __name__ == '__main__':
-    setting = {"APITOOLKIT_KEY": "{ENTER_YOUR_API_KEY_HERE}"}
-    with Configurator(settings=setting) as config:
-        # Initialize APItoolkit
-        config.add_tween("apitoolkit_pyramid.APIToolkit")
-        # END Initialize APItoolkit
-        config.add_route('home', '/')
-        config.scan()
-        app = config.make_wsgi_app()
-    server = make_server('0.0.0.0', 6543, app)
-    server.serve_forever()
+  settings = {
+    "APITOOLKIT_KEY": "{ENTER_YOUR_API_KEY_HERE}"
+  }
+  with Configurator(settings=settings) as config:
+    # Initialize APItoolkit
+    config.add_tween("apitoolkit_pyramid.APIToolkit")
+    # END Initialize APItoolkit
+    config.add_route('home', '/')
+    config.scan()
+    app = config.make_wsgi_app()
+  server = make_server('0.0.0.0', 6543, app)
+  server.serve_forever()
 ```
 
 In the configuration above, **only the `APITOOLKIT_KEY` option is required**, but you can add the following optional fields:
@@ -175,9 +173,9 @@ Here's an example of what the configuration would look like with redacted fields
 
 ```python
 settings = {
-    "APITOOLKIT_REDACT_HEADERS": ["content-type", "Authorization", "HOST"],
-    "APITOOLKIT_REDACT_REQ_BODY": ["$.user.email", "$.user.addresses"],
-    "APITOOLKIT_REDACT_RES_BODY": ["$.users[*].email", "$.users[*].credit_card"]
+  "APITOOLKIT_REDACT_HEADERS": ["content-type", "Authorization", "HOST"],
+  "APITOOLKIT_REDACT_REQ_BODY": ["$.user.email", "$.user.addresses"],
+  "APITOOLKIT_REDACT_RES_BODY": ["$.users[*].email", "$.users[*].credit_card"]
 }
 ```
 
@@ -214,12 +212,11 @@ from pyramid.response import Response
 from pyramid.view import view_config
 from apitoolkit_pyramid import observe_request, report_error
 
-
 @view_config(route_name='home')
 def home(request):
   try:
     resp = observe_request(request).get(
-        "https://jsonplaceholder.typicode.com/todos/2")
+      "https://jsonplaceholder.typicode.com/todos/2")
     return Response(resp.read())
   except Exception as e:
     report_error(request, e)
@@ -239,9 +236,9 @@ from apitoolkit_pyramid import observe_request
 
 @view_config(route_name='home')
 def home(request):
-    resp = observe_request(request).get(
-        "https://jsonplaceholder.typicode.com/todos/2")
-    return Response(resp.read())
+  resp = observe_request(request).get(
+    "https://jsonplaceholder.typicode.com/todos/2")
+  return Response(resp.read())
 ```
 
 The `observe_request()` function accepts a **required `request` argument**, and the following optional arguments:

@@ -78,7 +78,7 @@ import { AppModule } from "./app.module";
 
 async function bootstrap() {
   const apiToolkitClient = APIToolkit.NewClient({
-    apikey: "{ENTER_YOUR_API_KEY_HERE}",
+    apiKey: "{ENTER_YOUR_API_KEY_HERE}",
     debug: false,
     tags: ["environment: production", "region: us-east-1"],
     serviceVersion: "v2.0",
@@ -101,20 +101,20 @@ bootstrap();
 ```js
 import { NestFactory } from "@nestjs/core";
 import { AppModule } from "./app.module";
-import {
-  FastifyAdapter,
-  NestFastifyApplication,
-} from "@nestjs/platform-fastify";
+import { FastifyAdapter, NestFastifyApplication } from "@nestjs/platform-fastify";
 import fastify from "fastify";
 import APIToolkit from "apitoolkit-fastify";
 
 async function bootstrap() {
-  const fastify = fastify();
-  const app = await NestFactory.create(AppModule, new FastifyAdapter(fastify));
+  const fastifyInstance = fastify();
+  const app = await NestFactory.create(
+    AppModule,
+    new FastifyAdapter(fastifyInstance)
+  );
 
   // Initialize the APItoolkit client
   const apiToolkitClient = await APIToolkit.NewClient({
-    fastify,
+    fastify: fastifyInstance,
     apiKey: "{ENTER_YOUR_API_KEY_HERE}",
     debug: false,
     tags: ["environment: production", "region: us-east-1"],
@@ -222,16 +222,18 @@ async function bootstrap() {
   const redactResponseBody = ["$.users[*].email", "$.users[*].credit_card"];
 
   const apiToolkitClient = APIToolkit.NewClient({
-    apikey: "{ENTER_YOUR_API_KEY_HERE}",
+    apiKey: "{ENTER_YOUR_API_KEY_HERE}",
     redactHeaders,
     redactRequestBody,
     redactResponseBody,
   });
+  
   const app = await NestFactory.create(AppModule);
   app.use(apiToolkitClient.expressMiddleware);
 
   await app.listen(3000);
 }
+
 bootstrap();
 ```
 
@@ -240,10 +242,7 @@ bootstrap();
 
 ```js
 import { NestFactory } from "@nestjs/core";
-import {
-  FastifyAdapter,
-  NestFastifyApplication,
-} from "@nestjs/platform-fastify";
+import { FastifyAdapter, NestFastifyApplication } from "@nestjs/platform-fastify";
 import APIToolkit from "apitoolkit-fastify";
 import Fastify from "fastify";
 import { AppModule } from "./app.module";
@@ -268,6 +267,7 @@ async function bootstrap() {
 
   await app.listen(3000);
 }
+
 bootstrap();
 ```
 

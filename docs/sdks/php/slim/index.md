@@ -50,8 +50,8 @@ $app->add($apitoolkitMiddleware);
 // END Initialize the APItoolkit client
 
 $app->get('/', function ($request, $response) {
-    $response->getBody()->write('Hello, World!');
-    return $response;
+  $response->getBody()->write('Hello, World!');
+  return $response;
 });
 
 $app->run();
@@ -150,8 +150,8 @@ $apitoolkitMiddleware = new APIToolkitMiddleware([
 $app->add($apitoolkitMiddleware);
 
 $app->get('/', function ($request, $response) {
-    $response->getBody()->write('Hello, World!');
-    return $response;
+  $response->getBody()->write('Hello, World!');
+  return $response;
 });
 
 $app->run();
@@ -182,19 +182,18 @@ require __DIR__ . '/vendor/autoload.php';
 $app = AppFactory::create();
 
 $apitoolkitMiddleware = new APIToolkitMiddleware(['apiKey' => "{ENTER_YOUR_API_KEY_HERE}"]);
-
 $app->add($apitoolkitMiddleware);
 
 $app->get('/', function (Request $request, Response $response) {
-    try {
-        throw new Exception("Custom user error...");
-        return $response;
-    } catch (Exception $e) {
-        // Report the error to APItoolkit
-        APIToolkitSlim::reportError($e, $request);
-        $response->getBody()->write($e->getMessage());
-        return $response;
-    }
+  try {
+    throw new Exception("Custom user error...");
+    return $response;
+  } catch (Exception $e) {
+    // Report the error to APItoolkit
+    APIToolkitSlim::reportError($e, $request);
+    $response->getBody()->write($e->getMessage());
+    return $response;
+  }
 });
 
 $app->run();
@@ -216,21 +215,20 @@ require __DIR__ . '/vendor/autoload.php';
 $app = AppFactory::create();
 
 $apitoolkitMiddleware = new APIToolkitMiddleware(['apiKey' => "{ENTER_YOUR_API_KEY_HERE}"]);
-
 $app->add($apitoolkitMiddleware);
 
 $app->get('/user', function (Request $request, Response $response) {
-    $options = [
-        "pathWildCard" => "/repos/{owner}/{repo}",
-        "redactHeaders" => ["Content-Type", "Authorization", "HOST"],
-        "redactRequestBody" => ["$.users[*].email", "$.users[*].credit_card"],
-        "redactResponseBody" => ["$.users[*].email", "$.users[*].credit_card"]
-    ];
+  $options = [
+    "pathWildCard" => "/repos/{owner}/{repo}",
+    "redactHeaders" => ["Content-Type", "Authorization", "HOST"],
+    "redactRequestBody" => ["$.users[*].email", "$.users[*].credit_card"],
+    "redactResponseBody" => ["$.users[*].email", "$.users[*].credit_card"]
+  ];
 
-    $guzzleClient = APIToolkitSlim::observeGuzzle($request, $options);
-    $responseFromGuzzle = $guzzleClient->request('GET', 'https://api.github.com/repos/apitoolkit/apitoolkit-slim?foobar=123');
-    $response->getBody()->write($responseFromGuzzle->getBody()->getContents());
-    return $response;
+  $guzzleClient = APIToolkitSlim::observeGuzzle($request, $options);
+  $responseFromGuzzle = $guzzleClient->request('GET', 'https://api.github.com/repos/apitoolkit/apitoolkit-slim?foobar=123');
+  $response->getBody()->write($responseFromGuzzle->getBody()->getContents());
+  return $response;
 });
 
 $app->run();

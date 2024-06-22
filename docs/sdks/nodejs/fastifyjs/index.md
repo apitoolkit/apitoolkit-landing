@@ -188,7 +188,7 @@ const apitoolkitClient = APIToolkit.NewClient({
 });
 apitoolkitClient.init();
 
-app.get("/", async (request, reply) => {
+fastify.get("/", async (request, reply) => {
   try {
     const response = await observeAxios(axios).get(
       baseURL + "/non-existing-endpoint"
@@ -224,8 +224,8 @@ const apitoolkitClient = APIToolkit.NewClient({
 });
 apitoolkitClient.init();
 
-app.get("/", async (request, reply) => {
-  // This axios request get's monitored
+fastify.get("/", async (request, reply) => {
+  // This axios request gets monitored
   const res = await axios.get("https://jsonplaceholder.typicode.com/todos/1");
   return res.data;
 });
@@ -248,7 +248,7 @@ const apitoolkitClient = APIToolkit.NewClient({
 });
 apitoolkitClient.init();
 
-app.get("/", async (request, reply) => {
+fastify.get("/", async (request, reply) => {
   const res = await observeAxios(axios).get(baseURL + "/users/user1234");
   return res.data;
 });

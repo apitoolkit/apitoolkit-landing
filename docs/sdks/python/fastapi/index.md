@@ -38,17 +38,17 @@ app = FastAPI()
 
 # Initialize APItoolkit
 apitoolkit = APIToolkit(
-    api_key = "{ENTER_YOUR_API_KEY_HERE}",
-    debug = False,
-    tags = ["environment: production", "region: us-east-1"],
-    service_version = "v2.0"
+  api_key="{ENTER_YOUR_API_KEY_HERE}",
+  debug=False,
+  tags=["environment: production", "region: us-east-1"],
+  service_version="v2.0"
 )
 app.middleware("http")(apitoolkit.middleware)
 # END Initialize APItoolkit
 
 @app.get("/")
 def read_root():
-    return {"Hello": "World"}
+  return {"Hello": "World"}
 ```
 
 In the configuration above, **only the `api_key` option is required**, but you can add the following optional fields:
@@ -137,17 +137,17 @@ redact_response_body = ["$.user.email", "$.user.addresses"]
 redact_request_body = ["$.users[*].email", "$.users[*].credit_card"]
 
 apitoolkit = APIToolkit(
-    api_key= '{ENTER_YOUR_API_KEY_HERE}',
-    redact_headers = redact_headers,
-    redact_response_body = redact_response_body,
-    redact_request_body = redact_request_body
+  api_key="{ENTER_YOUR_API_KEY_HERE}",
+  redact_headers=redact_headers,
+  redact_response_body=redact_response_body,
+  redact_request_body=redact_request_body
 )
 
-app.middleware('http')(apitoolkit.middleware)
+app.middleware("http")(apitoolkit.middleware)
 
 @app.get("/")
 def read_root():
-    return {"Hello": "World"}
+  return {"Hello": "World"}
 ```
 
 <div class="callout">
@@ -171,15 +171,18 @@ from apitoolkit_fastapi import report_error
 
 app = FastAPI()
 
+apitoolkit = APIToolkit(api_key="{ENTER_YOUR_API_KEY_HERE}")
+app.middleware("http")(apitoolkit.middleware)
+
 @app.get('/')
 async def sample_route(request: Request):
-    try:
-        v = 1/ 0
-        return {"zero_division": v}
-    except Exception as e:
-        # Report the error to APItoolkit
-        report_error(request, e)
-        return {"message": "Something went wrong"}
+  try:
+    v = 1 / 0
+    return {"zero_division": v}
+  except Exception as e:
+    # Report the error to APItoolkit
+    report_error(request, e)
+    return {"message": "Something went wrong"}
 ```
 
 ## Monitoring Outgoing Requests
@@ -194,10 +197,13 @@ from apitoolkit_fastapi import observe_request
 
 app = FastAPI()
 
+apitoolkit = APIToolkit(api_key="{ENTER_YOUR_API_KEY_HERE}")
+app.middleware("http")(apitoolkit.middleware)
+
 @app.get('/')
 async def sample_route(request: Request):
-    resp = observe_request(request).get("https://jsonplaceholder.typicode.com/todos/2")
-    return resp.read()
+  resp = observe_request(request).get("https://jsonplaceholder.typicode.com/todos/2")
+  return resp.read()
 ```
 
 The `observe_request()` function accepts a **required `request` argument**, and the following optional arguments:

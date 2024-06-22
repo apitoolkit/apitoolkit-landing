@@ -50,9 +50,11 @@ services:
         autowire: true      # Automatically injects dependencies in your services.
         autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
 
-    APIToolkit\EventSubscriber\APIToolkitService: # Initialize the APItoolkit client
+    # Initialize the APItoolkit client
+    APIToolkit\EventSubscriber\APIToolkitService:
       arguments:
         $apiKey: '%env(APITOOLKIT_KEY)%'
+    # END Initialize the APItoolkit client
 
     # makes classes in src/ available to be used as services
     # this creates a service per class whose id is the fully-qualified class name

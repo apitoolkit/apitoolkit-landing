@@ -54,12 +54,12 @@ use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
 {
-    protected $middlewareGroups = [
-        'api' => [
-            // Other middleware here...
-            \APIToolkit\Http\Middleware\APIToolkit::class, // Initialize the APItoolkit client
-        ],
-    ];
+  protected $middlewareGroups = [
+    'api' => [
+      // Other middleware here...
+      \APIToolkit\Http\Middleware\APIToolkit::class, // Initialize the APItoolkit client
+    ],
+  ];
 }
 ```
   </div>
@@ -75,10 +75,10 @@ use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
 {
-    protected $routeMiddleware = [
-        // Other middleware here...
-        'apitoolkit' => \APIToolkit\Http\Middleware\APIToolkit::class,
-    ];
+  protected $routeMiddleware = [
+    // Other middleware here...
+    'apitoolkit' => \APIToolkit\Http\Middleware\APIToolkit::class,
+  ];
 }
 ```
 
@@ -86,9 +86,9 @@ class Kernel extends HttpKernel
 
 ```php
 Route::get('/', function () {
-    return response()->json([
-        'message' => 'Welcome to your new application!'
-    ]);
+  return response()->json([
+    'message' => 'Welcome to your new application!'
+  ]);
 })->middleware('apitoolkit');
 ```
 
@@ -196,20 +196,26 @@ APItoolkit automatically detects different unhandled errors, API issues, and ano
 To report all uncaught errors and service exceptions that happened during a web request, modify your Laravel Exceptions handler, passing in the `error` and the `request` as arguments, like so:
 
 ```php
+&lt;?php
+
+namespace App\Exceptions;
+
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use APIToolkit\APIToolkitLaravel;
 use Throwable;
 
 class Handler extends ExceptionHandler
 {
-    public function register(): void
-    {
-        $this->reportable(function (Throwable $e) {
-            // Report the error to APItoolkit
-            $request = request();
-            APIToolkitLaravel::reportError($e, $request);
-        });
-    }
+  protected $dontReport = [];
+
+  public function register()
+  {
+    $this->reportable(function (Throwable $e) {
+      // Report the error to APItoolkit
+      $request = request();
+      APIToolkitLaravel::reportError($e, $request);
+    });
+  }
 }
 ```
 
@@ -223,14 +229,19 @@ use Illuminate\Support\Facades\Route;
 use APIToolkit\APIToolkitLaravel;
 
 Route::get('/user', function (Request $request) {
-    try {
-        throw new Exception("Custom user error");
-        return response()->json(["hello" => "world"]);
-    } catch (Exception $e) {
-        // Report the error to APItoolkit
-        APIToolkitLaravel::reportError($e, $request);
-        return response()->json(["error" => $e->getMessage()]);
-    }
+  try {
+    // Simulate a custom user error
+    throw new Exception("Custom user error");
+
+    // This line will not execute if an exception is thrown
+    return response()->json(["hello" => "world"]);
+  } catch (Exception $e) {
+    // Report the error to APItoolkit
+    APIToolkitLaravel::reportError($e, $request);
+
+    // Return a JSON response with the error message
+    return response()->json(["error" => $e->getMessage()]);
+  }
 });
 ```
   </div>
@@ -248,18 +259,18 @@ use Illuminate\Support\Facades\Route;
 use APIToolkit\APIToolkitLaravel;
 
 Route::get('/user', function (Request $request) {
-    $options = [
-        "pathWildCard" => "/repos/{owner}/{repo}",
-        "redactHeaders" => ["content-type", "Authorization", "HOST"],
-        "redactRequestBody" => ["$.user.email", "$.user.addresses"],
-        "redactResponseBody" => ["$.users[*].email", "$.users[*].credit_card"]
-    ];
-    $guzzleClient = APIToolkitLaravel::observeGuzzle($request, $options);
-    $responseFromGuzzle = $guzzleClient->request('GET', 'https://api.github.com/repos/apitoolkit/apitoolkit-laravel?foobar=123');
-    $response = $responseFromGuzzle->getBody()->getContents();
+  $options = [
+    "pathWildCard" => "/repos/{owner}/{repo}",
+    "redactHeaders" => ["content-type", "Authorization", "HOST"],
+    "redactRequestBody" => ["$.user.email", "$.user.addresses"],
+    "redactResponseBody" => ["$.users[*].email", "$.users[*].credit_card"]
+  ];
+  $guzzleClient = APIToolkitLaravel::observeGuzzle($request, $options);
+  $responseFromGuzzle = $guzzleClient->request('GET', 'https://api.github.com/repos/apitoolkit/apitoolkit-laravel?foobar=123');
+  $response = $responseFromGuzzle->getBody()->getContents();
 
-    return $response;
-})
+  return $response;
+});
 ```
 
 The `$options` associative array accepts the following optional fields:

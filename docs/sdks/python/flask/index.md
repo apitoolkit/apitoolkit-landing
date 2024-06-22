@@ -38,25 +38,25 @@ app = Flask(__name__)
 
 # Initialize APItoolkit
 apitoolkit = APIToolkit(
-    api_key = "{ENTER_YOUR_API_KEY_HERE}",
-    debug = False,
-    tags = ["environment: production", "region: us-east-1"],
-    service_version = "v2.0"
+  api_key="{ENTER_YOUR_API_KEY_HERE}",
+  debug=False,
+  tags=["environment: production", "region: us-east-1"],
+  service_version="v2.0"
 )
 
 @app.before_request
 def before_request():
-    apitoolkit.beforeRequest()
+  apitoolkit.beforeRequest()
 
 @app.after_request
 def after_request(response):
-    apitoolkit.afterRequest(response)
-    return response
+  apitoolkit.afterRequest(response)
+  return response
 # END Initialize APItoolkit
 
 @app.route('/hello', methods=['GET', 'POST'])
 def sample_route():
-    return {"Hello": "World"}
+  return {"Hello": "World"}
 
 app.run(debug=True)
 ```
@@ -147,25 +147,24 @@ redact_response_body = ["$.user.email", "$.user.addresses"]
 redact_request_body = ["$.users[*].email", "$.users[*].credit_card"]
 
 apitoolkit = APIToolkit(
-    api_key= '{ENTER_YOUR_API_KEY_HERE}',
-    redact_headers = redact_headers,
-    redact_response_body = redact_response_body,
-    redact_request_body = redact_request_body
+  api_key='{ENTER_YOUR_API_KEY_HERE}',
+  redact_headers=redact_headers,
+  redact_response_body=redact_response_body,
+  redact_request_body=redact_request_body
 )
 
 @app.before_request
 def before_request():
-    apitoolkit.beforeRequest()
+  apitoolkit.beforeRequest()
 
 @app.after_request
 def after_request(response):
-    apitoolkit.afterRequest(response)
-    return response
-
+  apitoolkit.afterRequest(response)
+  return response
 
 @app.route('/hello', methods=['GET', 'POST'])
 def sample_route():
-    return {"Hello": "World"}
+  return {"Hello": "World"}
 
 app.run(debug=True)
 ```
@@ -186,18 +185,34 @@ APItoolkit automatically detects different unhandled errors, API issues, and ano
 To report all uncaught errors and service exceptions that happened during a web request, use the `report_error()` function from the `apitoolkit_flask` module, passing in the `request` and `error`, like so:
 
 ```python
-from flask import Flask
+from flask import Flask, request
 from apitoolkit_flask import APIToolkit, report_error
+
+app = Flask(__name__)
+
+apitoolkit = APIToolkit(api_key="{ENTER_YOUR_API_KEY_HERE}")
+
+@app.before_request
+def before_request():
+  apitoolkit.beforeRequest()
+
+@app.after_request
+def after_request(response):
+  apitoolkit.afterRequest(response)
+  return response
 
 @app.route('/', methods=['GET', 'POST'])
 def sample_route():
-    try:
-        value = 1/ 0
-        return {"zero_division": value}
-    except Exception as e:
-        # Report the error to APItoolkit
-        report_error(request, e)
-        return {"message": "Something went wrong"}
+  try:
+    value = 1 / 0
+    return {"zero_division": value}
+  except Exception as e:
+    # Report the error to APItoolkit
+    report_error(request, e)
+    return {"message": "Something went wrong"}
+
+if __name__ == "__main__":
+  app.run(debug=True)
 ```
 
 ## Monitoring Outgoing Requests
@@ -210,10 +225,26 @@ To monitor outgoing HTTP requests from your application, use the `observe_reques
 from flask import Flask, request
 from apitoolkit_flask import APIToolkit, observe_request
 
+app = Flask(__name__)
+
+apitoolkit = APIToolkit(api_key="{ENTER_YOUR_API_KEY_HERE}")
+
+@app.before_request
+def before_request():
+  apitoolkit.beforeRequest()
+
+@app.after_request
+def after_request(response):
+  apitoolkit.afterRequest(response)
+  return response
+
 @app.route('/', methods=['GET', 'POST'])
-async def sample_route():
-    resp = observe_request(request).get("https://jsonplaceholder.typicode.com/todos/2")
-    return resp.read()
+def sample_route():
+  resp = observe_request(request).get("https://jsonplaceholder.typicode.com/todos/2")
+  return resp.read()
+
+if __name__ == "__main__":
+  app.run(debug=True)
 ```
 
 The `observe_request()` function accepts a **required `request` argument**, and the following optional arguments:

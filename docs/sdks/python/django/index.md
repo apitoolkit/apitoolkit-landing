@@ -54,23 +54,21 @@ APITOOLKIT_SERVICE_VERSION = "v2.0"
 
 # Application definition
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.sessions',
+  'django.contrib.admin',
+  'django.contrib.auth',
+  'django.contrib.sessions',
 ]
-
-...
 ```
 
 Then add the `apitoolkit_django.APIToolkit` middleware into the `settings.py` middleware list, like so:
 
 ```python
 MIDDLEWARE = [
-    'apitoolkit_django.APIToolkit', # Initialize APItoolkit
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    ...,
+  'apitoolkit_django.APIToolkit',  # Initialize APItoolkit
+  'django.middleware.security.SecurityMiddleware',
+  'django.contrib.sessions.middleware.SessionMiddleware',
+  'django.middleware.common.CommonMiddleware',
+  # Add other middleware as needed
 ]
 ```
 
@@ -175,12 +173,12 @@ from django.http import JsonResponse
 from apitoolkit_django import observe_request, report_error
 
 def hello_world(request, name):
-    try:
-        value = 1/0 
-        return JsonResponse({"hello": value})
-    except Exception as e:
-        report_error(request, e)
-        return JsonResponse({"Error": "Something went wrong..."})
+  try:
+    value = 1/0
+    return JsonResponse({"hello": value})
+  except Exception as e:
+    report_error(request, e)
+    return JsonResponse({"Error": "Something went wrong..."})
 ```
 
 ## Monitoring Outgoing Requests
@@ -193,12 +191,11 @@ To monitor outgoing HTTP requests from your application, use the `observe_reques
 from django.http import JsonResponse
 from apitoolkit_django import observe_request, report_error
 
-
 def hello_world(request, name):
-    resp = observe_request(request).get(
-        "https://jsonplaceholder.typicode.com/todos/2")
-    resp.read()
-    return JsonResponse({"data": resp.read()})
+  resp = observe_request(request).get(
+      "https://jsonplaceholder.typicode.com/todos/2")
+  resp.read()
+  return JsonResponse({"data": resp.read()})
 ```
 
 The `observe_request()` function accepts a **required `request` argument**, and the following optional arguments:
