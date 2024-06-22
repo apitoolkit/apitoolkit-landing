@@ -98,7 +98,7 @@ To mark a field for redacting via this SDK, you need to provide additional argum
 <hr />
 JSONPath is a query language used to select and extract data from JSON files. For example, given the following sample user data JSON object:
 
-```JSON
+```json
 {
   "user": {
     "name": "John Martha",
@@ -115,27 +115,31 @@ JSONPath is a query language used to select and extract data from JSON files. Fo
         "city": "Anytown",
         "state": "CA",
         "zip": "12345"
-      },
-      ...
+      }
     ],
     "credit_card": {
       "number": "4111111111111111",
       "expiration": "12/28",
       "cvv": "123"
     }
-  },
-  ...
+  }
 }
 ```
 
-Examples of valid JSONPaths would be:
+Examples of valid JSONPath expressions would be:
 
-- `$.user.credit_card` (In this case, APItoolkit will replace the `addresses` field inside the `user` object with the string `[CLIENT_REDACTED]`).
-- `$.user.addresses[*].zip` (In this case, APItoolkit will replace the `zip` field in all the objects of the `addresses` list inside the `user` object with the string `[CLIENT_REDACTED]`).
+{class="docs-table"}
+:::
+| JSONPath | Description |
+| -------- | ----------- |
+| `$.user.addresses[*].zip` | In this case, APItoolkit will replace the `zip` field in all the objects of the `addresses` list inside the `user` object with the string `[CLIENT_REDACTED]`. |
+| `$.user.credit_card` | In this case, APItoolkit will replace the entire `credit_card` object inside the `user` object with the string `[CLIENT_REDACTED]`. |
+:::
 
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <p>To learn more about JSONPaths, please take a look at the [official docs](https://github.com/json-path/JsonPath/blob/master/README.md){target="_blank"}. You can also use this [JSONPath Evaluator](https://jsonpath.com?utm_source=apitoolkit){target="_blank"} to validate your JSONPaths.</p>
+  <p>To learn more about JSONPaths, please take a look at the [official docs](https://github.com/json-path/JsonPath/blob/master/README.md){target="_blank"} or use this [JSONPath Evaluator](https://jsonpath.com?utm_source=apitoolkit){target="_blank"} to validate your JSONPath expressions. </p>
+  <p>**You can also use our [JSON Redaction Tool](/tools/json-redacter/) <i class="fa-regular fa-screwdriver-wrench"></i> to preview what the final data sent from your API to APItoolkit will look like, after redacting any given JSON object**.</p>
 </div>
 <hr />
 
