@@ -44,38 +44,38 @@ Next, initialize APItoolkit in your application's entry point (e.g., `main.go`),
 package main
 
 import (
-	"context"
+  "context"
 
-	"github.com/gofiber/fiber/v2"
-	apitoolkit "github.com/apitoolkit/apitoolkit-go"
+  "github.com/gofiber/fiber/v2"
+  apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
 
 func main() {
-	ctx := context.Background()
+  ctx := context.Background()
 
-	// Initialize the APItoolkit client
-	apitoolkitClient, err := apitoolkit.NewClient(
-		ctx,
-		apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE"},
-	)
-	if err != nil {
-		panic(err)
-	}
+  // Initialize the APItoolkit client
+  apitoolkitClient, err := apitoolkit.NewClient(
+    ctx,
+    apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"},
+  )
+  if err != nil {
+    panic(err)
+  }
 
-	router := fiber.New()
+  router := fiber.New()
 
-	// Register APItoolkit's middleware
-	router.Use(apitoolkitClient.FiberMiddleware)
+  // Register APItoolkit's middleware
+  router.Use(apitoolkitClient.FiberMiddleware)
 
-	// router.Use(...)
-	// Other middleware
+  // router.Use(...)
+  // Other middleware
 
-	router.Get("/greet", func(c *fiber.Ctx) error {
-		name := c.Query("name", "jon")
-		return c.SendString("Hello " + name)
-	})
+  router.Get("/greet", func(c *fiber.Ctx) error {
+    name := c.Query("name", "jon")
+    return c.SendString("Hello " + name)
+  })
 
-	router.Listen(":3000")
+  router.Listen(":3000")
 }
 ```
 
@@ -144,44 +144,44 @@ Here's an example of what the configuration would look like with redacted fields
 package main
 
 import (
-	"context"
-	"os"
+  "context"
+  "os"
 
-	"github.com/gofiber/fiber/v2"
-	apitoolkit "github.com/apitoolkit/apitoolkit-go"
+  "github.com/gofiber/fiber/v2"
+  apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
 
 func main() {
-	ctx := context.Background()
+  ctx := context.Background()
 
-	apitoolkitCfg := apitoolkit.Config{
-		APIKey:             "{ENTER_YOUR_API_KEY_HERE}",
-		RedactHeaders:      []string{"content-type", "Authorization", "HOST"},
-		RedactRequestBody:  []string{"$.user.email", "$.user.addresses"},
-		RedactResponseBody: []string{"$.users[*].email", "$.users[*].credit_card"},
-	}
-	apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkitCfg)
-	if err != nil {
-		panic(err)
-	}
+  apitoolkitCfg := apitoolkit.Config{
+    APIKey:             "{ENTER_YOUR_API_KEY_HERE}",
+    RedactHeaders:      []string{"content-type", "Authorization", "HOST"},
+    RedactRequestBody:  []string{"$.user.email", "$.user.addresses"},
+    RedactResponseBody: []string{"$.users[*].email", "$.users[*].credit_card"},
+  }
+  apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkitCfg)
+  if err != nil {
+    panic(err)
+  }
 
-	router := fiber.New()
-	router.Use(apitoolkitClient.FiberMiddleware)
+  router := fiber.New()
+  router.Use(apitoolkitClient.FiberMiddleware)
 
-	router.Get("/", hello)
+  router.Get("/", hello)
 
-	router.Listen(":3000")
+  router.Listen(":3000")
 }
 
 func hello(c *fiber.Ctx) error {
-	// Attempt to open a non-existing file
-	file, err := os.Open("non-existing-file.txt")
-	if err != nil {
-		// Report the error to APItoolkit
-		apitoolkit.ReportError(c.Context(), err)
-		return c.SendString("Something went wrong")
-	}
-	return c.SendString("Hello file, " + file.Name())
+  // Attempt to open a non-existing file
+  file, err := os.Open("non-existing-file.txt")
+  if err != nil {
+    // Report the error to APItoolkit
+    apitoolkit.ReportError(c.Context(), err)
+    return c.SendString("Something went wrong")
+  }
+  return c.SendString("Hello file, " + file.Name())
 }
 ```
 
@@ -216,8 +216,8 @@ func main() {
   ctx := context.Background()
 
   apitoolkitClient, err := apitoolkit.NewClient(
-	ctx,
-	apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"},
+    ctx,
+    apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"},
   )
   if err != nil {
     panic(err)
@@ -239,7 +239,7 @@ func hello(c *fiber.Ctx) error {
     apitoolkit.ReportError(c.Context(), err)
     return c.SendString("Something went wrong")
   }
-  return c.SendString("Hello file, ", file.Name())
+  return c.SendString("Hello file, " + file.Name())
 }
 ```
 
@@ -258,45 +258,45 @@ To monitor outgoing HTTP requests from your application, replace the default HTT
 package main
 
 import (
-	"context"
-	"net/http"
+  "context"
+  "net/http"
 
-	"github.com/gofiber/fiber/v2"
-	apitoolkit "github.com/apitoolkit/apitoolkit-go"
+  "github.com/gofiber/fiber/v2"
+  apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
 
 func main() {
-	ctx := context.Background()
+  ctx := context.Background()
 
-	apitoolkitClient, err := apitoolkit.NewClient(
-	  ctx,
-	  apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"},
-	)
-	if err != nil {
-		panic(err)
-	}
+  apitoolkitClient, err := apitoolkit.NewClient(
+    ctx,
+    apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"},
+  )
+  if err != nil {
+    panic(err)
+  }
 
-	router := fiber.New()
-	router.Use(apitoolkitClient.FiberMiddleware)
+  router := fiber.New()
+  router.Use(apitoolkitClient.FiberMiddleware)
 
-	router.Get("/test", func(c *fiber.Ctx) error {
-		
-		// Create a new HTTP client
-		HTTPClient := apitoolkit.HTTPClient(
-			c.Request.Context(),
-			apitoolkit.WithRedactHeaders("content-type", "Authorization", "HOST"),
-			apitoolkit.WithRedactRequestBody("$.user.email", "$.user.addresses"),
-			apitoolkit.WithRedactResponseBody("$.users[*].email", "$.users[*].credit_card"),
-		)
+  router.Get("/test", func(c *fiber.Ctx) error {
 
-		// Make an outgoing HTTP request using the modified HTTPClient
-		_, _ = HTTPClient.Get("https://jsonplaceholder.typicode.com/posts/1")
+    // Create a new HTTP client
+    HTTPClient := apitoolkit.HTTPClient(
+      c.Request().Context(),
+      apitoolkit.WithRedactHeaders("content-type", "Authorization", "HOST"),
+      apitoolkit.WithRedactRequestBody("$.user.email", "$.user.addresses"),
+      apitoolkit.WithRedactResponseBody("$.users[*].email", "$.users[*].credit_card"),
+    )
 
-		// Respond to the request
-		return c.SendString("Ok, success!")
-	})
+    // Make an outgoing HTTP request using the modified HTTPClient
+    _, _ = HTTPClient.Get("https://jsonplaceholder.typicode.com/posts/1")
 
-	router.Listen(":3000")
+    // Respond to the request
+    return c.SendString("Ok, success!")
+  })
+
+  router.Listen(":3000")
 }
 ```
 

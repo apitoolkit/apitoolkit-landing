@@ -156,7 +156,7 @@ import (
 func main() {
   ctx := context.Background()
 
-  apitoolkitCfg := apitoolkit.Config {
+  apitoolkitCfg := apitoolkit.Config{
     APIKey:             "{ENTER_YOUR_API_KEY_HERE}",
     RedactHeaders:      []string{"content-type", "Authorization", "HOST"},
     RedactRequestBody:  []string{"$.user.email", "$.user.addresses"},
@@ -200,6 +200,7 @@ import (
   "fmt"
   "net/http"
   "os"
+  "log"
 
   "github.com/gorilla/mux"
   apitoolkit "github.com/apitoolkit/apitoolkit-go"
@@ -220,7 +221,8 @@ func main() {
 
   router.HandleFunc("/", hello)
 
-  log.Fatal(http.ListenAndServe(":8080", router))
+  http.Handle("/", router)
+  log.Fatal(http.ListenAndServe(":8080", nil))
 }
 
 func hello(w http.ResponseWriter, r *http.Request) {
@@ -231,7 +233,7 @@ func hello(w http.ResponseWriter, r *http.Request) {
     apitoolkit.ReportError(r.Context(), err)
   }
   fmt.Fprintln(w, "Hello, World!")
- }
+}
 ```
 
 <div class="callout">
@@ -259,7 +261,7 @@ import (
 
 func main() {
   ctx := context.Background()
-  
+
   apitoolkitClient, err := apitoolkit.NewClient(
     ctx,
     apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"},
@@ -272,17 +274,16 @@ func main() {
   router.Use(apitoolkitClient.GorillaMuxMiddleware)
 
   router.HandleFunc("/{slug}/test", func(w http.ResponseWriter, r *http.Request) {
-    
-		// Create a new HTTP client
-		HTTPClient := apitoolkit.HTTPClient(
-			c.Request.Context(),
-			apitoolkit.WithRedactHeaders("content-type", "Authorization", "HOST"),
-			apitoolkit.WithRedactRequestBody("$.user.email", "$.user.addresses"),
-			apitoolkit.WithRedactResponseBody("$.users[*].email", "$.users[*].credit_card"),
-		)
+    // Create a new HTTP client
+    HTTPClient := apitoolkit.HTTPClient(
+      r.Context(),
+      apitoolkit.WithRedactHeaders("content-type", "Authorization", "HOST"),
+      apitoolkit.WithRedactRequestBody("$.user.email", "$.user.addresses"),
+      apitoolkit.WithRedactResponseBody("$.users[*].email", "$.users[*].credit_card"),
+    )
 
-		// Make an outgoing HTTP request using the modified HTTPClient
-		_, _ = HTTPClient.Get("https://jsonplaceholder.typicode.com/posts/1")
+    // Make an outgoing HTTP request using the modified HTTPClient
+    _, _ = HTTPClient.Get("https://jsonplaceholder.typicode.com/posts/1")
 
     // Respond to the request
     w.WriteHeader(http.StatusOK)

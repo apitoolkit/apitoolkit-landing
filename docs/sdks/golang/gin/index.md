@@ -44,38 +44,38 @@ Next, initialize APItoolkit in your application's entry point (e.g., `main.go`),
 package main
 
 import (
-	"context"
-	"net/http"
+  "context"
+  "net/http"
 
-	"github.com/gin-gonic/gin"
-	apitoolkit "github.com/apitoolkit/apitoolkit-go"
+  "github.com/gin-gonic/gin"
+  apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
 
 func main() {
-	ctx := context.Background()
+  ctx := context.Background()
 
-	// Initialize the APItoolkit client
-	apitoolkitClient, err := apitoolkit.NewClient(
-	  ctx,
-	  apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"},
-	)
-	if err != nil {
-		panic(err)
-	}
+  // Initialize the APItoolkit client
+  apitoolkitClient, err := apitoolkit.NewClient(
+    ctx,
+    apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"},
+  )
+  if err != nil {
+    panic(err)
+  }
 
-	router := gin.New()
+  router := gin.New()
 
-	// Register APItoolkit's middleware
-	router.Use(apitoolkitClient.GinMiddleware)
+  // Register APItoolkit's middleware
+  router.Use(apitoolkitClient.GinMiddleware)
 
-	// router.Use(...)
-	// Other middleware
+  // router.Use(...)
+  // Other middleware
 
-	router.GET("/:slug/test", func(c *gin.Context) {
-		c.JSON(http.StatusOK, gin.H{"message": "hello world"})
-	})
+  router.GET("/:slug/test", func(c *gin.Context) {
+    c.JSON(http.StatusOK, gin.H{"message": "hello world"})
+  })
 
-	router.Run(":8080")
+  router.Run(":8080")
 }
 ```
 
@@ -146,7 +146,7 @@ package main
 import (
   "context"
   "net/http"
-  
+
   "github.com/gin-gonic/gin"
   apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
@@ -154,8 +154,8 @@ import (
 func main() {
   ctx := context.Background()
 
-  apitoolkitCfg := apitoolkit.Config {
-	APIKey:             "{ENTER_YOUR_API_KEY_HERE}",
+  apitoolkitCfg := apitoolkit.Config{
+    APIKey:             "{ENTER_YOUR_API_KEY_HERE}",
     RedactHeaders:      []string{"content-type", "Authorization", "HOST"},
     RedactRequestBody:  []string{"$.user.email", "$.user.addresses"},
     RedactResponseBody: []string{"$.users[*].email", "$.users[*].credit_card"},
@@ -165,9 +165,9 @@ func main() {
   router := gin.New()
   router.Use(apitoolkitClient.GinMiddleware)
 
-	router.GET("/:slug/test", func(c *gin.Context) {
-		c.JSON(http.StatusOK, gin.H{"message": "hello world"})
-	})
+  router.GET("/:slug/test", func(c *gin.Context) {
+    c.JSON(http.StatusOK, gin.H{"message": "hello world"})
+  })
 
   router.Run(":8080")
 }
@@ -192,46 +192,46 @@ To report errors, use the `ReportError()` method, passing in the `context` and `
 package main
 
 import (
-	"context"
-	"net/http"
-	"os"
+  "context"
+  "net/http"
+  "os"
 
-	"github.com/gin-gonic/gin"
-	apitoolkit "github.com/apitoolkit/apitoolkit-go"
+  "github.com/gin-gonic/gin"
+  apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
 
 func main() {
-	ctx := context.Background()
+  ctx := context.Background()
 
-	// Initialize the client
-	apitoolkitClient, err := apitoolkit.NewClient(
-	  ctx,
-	  apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"}
-	)
-	if err != nil {
-		panic(err)
-	}
+  // Initialize the client
+  apitoolkitClient, err := apitoolkit.NewClient(
+    ctx,
+    apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"},
+  )
+  if err != nil {
+    panic(err)
+  }
 
-	router := gin.New()
+  router := gin.New()
 
-	// Register APItoolkit's middleware
-	router.Use(apitoolkitClient.GinMiddleware)
+  // Register APItoolkit's middleware
+  router.Use(apitoolkitClient.GinMiddleware)
 
-	router.GET("/", hello)
+  router.GET("/", hello)
 
-	router.Run(":8000")
+  router.Run(":8000")
 }
 
 func hello(c *gin.Context) {
-	// Attempt to open a non-existing file
-	file, err := os.Open("non-existing-file.txt")
-	if err != nil {
-		// Report the error to APItoolkit
-		apitoolkit.ReportError(c.Request.Context(), err)
-		c.JSON(http.StatusInternalServerError, gin.H{"message": "Something went wrong"})
-		return
-	}
-	c.JSON(http.StatusOK, gin.H{"message": file.Name()})
+  // Attempt to open a non-existing file
+  file, err := os.Open("non-existing-file.txt")
+  if err != nil {
+    // Report the error to APItoolkit
+    apitoolkit.ReportError(c.Request.Context(), err)
+    c.JSON(http.StatusInternalServerError, gin.H{"message": "Something went wrong"})
+    return
+  }
+  c.JSON(http.StatusOK, gin.H{"message": file.Name()})
 }
 ```
 
@@ -250,44 +250,43 @@ To monitor outgoing HTTP requests from your application, replace the default HTT
 package main
 
 import (
-	"context"
-	"net/http"
+  "context"
+  "net/http"
 
-	"github.com/gin-gonic/gin"
-	apitoolkit "github.com/apitoolkit/apitoolkit-go"
+  "github.com/gin-gonic/gin"
+  apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
 
 func main() {
-	ctx := context.Background()
-	apitoolkitClient, err := apitoolkit.NewClient(
-	  ctx,
-	  apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"},
-	)
-	if err != nil {
-		panic(err)
-	}
+  ctx := context.Background()
+  apitoolkitClient, err := apitoolkit.NewClient(
+    ctx,
+    apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"},
+  )
+  if err != nil {
+    panic(err)
+  }
 
-	router := gin.New()
-	router.Use(apitoolkitClient.GinMiddleware)
+  router := gin.New()
+  router.Use(apitoolkitClient.GinMiddleware)
 
-	router.GET("/test", func(c *gin.Context) {
-		// Create a new HTTP client
-		HTTPClient := apitoolkit.HTTPClient(
-			c.Request.Context(),
-			apitoolkit.WithRedactHeaders("content-type", "Authorization", "HOST"),
-			apitoolkit.WithRedactRequestBody("$.user.email", "$.user.addresses"),
-			apitoolkit.WithRedactResponseBody("$.users[*].email", "$.users[*].credit_card"),
-		)
+  router.GET("/test", func(c *gin.Context) {
+    // Create a new HTTP client
+    HTTPClient := apitoolkit.HTTPClient(
+      c.Request.Context(),
+      apitoolkit.WithRedactHeaders("content-type", "Authorization", "HOST"),
+      apitoolkit.WithRedactRequestBody("$.user.email", "$.user.addresses"),
+      apitoolkit.WithRedactResponseBody("$.users[*].email", "$.users[*].credit_card"),
+    )
 
-		// Make an outgoing HTTP request using the modified HTTPClient
-		_, _ = HTTPClient.Get("https://jsonplaceholder.typicode.com/posts/1")
+    // Make an outgoing HTTP request using the modified HTTPClient
+    _, _ = HTTPClient.Get("https://jsonplaceholder.typicode.com/posts/1")
 
-		c.String(http.StatusOK, "Ok, success!")
-	})
+    c.String(http.StatusOK, "Ok, success!")
+  })
 
-	router.Run(":8088")
+  router.Run(":8088")
 }
-
 ```
 
 <div class="callout">

@@ -155,7 +155,7 @@ import (
 func main() {
   ctx := context.Background()
 
-  apitoolkitCfg := apitoolkit.Config {
+  apitoolkitCfg := apitoolkit.Config{
     APIKey:             "{ENTER_YOUR_API_KEY_HERE}",
     RedactHeaders:      []string{"content-type", "Authorization", "HOST"},
     RedactRequestBody:  []string{"$.user.email", "$.user.addresses"},
@@ -193,12 +193,12 @@ To report errors, use the `ReportError()` method, passing in the `context` and `
 package main
 
 import (
-	"context"
-	"net/http"
-	"os"
+  "context"
+  "net/http"
+  "os"
 
-	"github.com/labstack/echo/v4"
-	apitoolkit "github.com/apitoolkit/apitoolkit-go"
+  "github.com/labstack/echo/v4"
+  apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
 
 func main() {
@@ -213,23 +213,23 @@ func main() {
     panic(err)
   }
 
-	router := echo.New()
-	router.Use(apitoolkitClient.EchoMiddleware)
+  router := echo.New()
+  router.Use(apitoolkitClient.EchoMiddleware)
 
-	router.GET("/", hello)
+  router.GET("/", hello)
 
-	router.Start(":8080")
+  router.Start(":8080")
 }
 
 func hello(c echo.Context) error {
-	// Attempt to open a non-existing file
-	file, err := os.Open("non-existing-file.txt")
-	if err != nil {
-		// Report the error to APItoolkit
-		apitoolkit.ReportError(c.Request().Context(), err)
-		return c.String(http.StatusInternalServerError, "Something went wrong")
-	}
-	return c.String(http.StatusOK, "File: "+file.Name())
+  // Attempt to open a non-existing file
+  file, err := os.Open("non-existing-file.txt")
+  if (err != nil) {
+    // Report the error to APItoolkit
+    apitoolkit.ReportError(c.Request().Context(), err)
+    return c.String(http.StatusInternalServerError, "Something went wrong")
+  }
+  return c.String(http.StatusOK, "File: " + file.Name())
 }
 ```
 
@@ -248,11 +248,11 @@ To monitor outgoing HTTP requests from your application, replace the default HTT
 package main
 
 import (
-	"context"
-	"net/http"
+  "context"
+  "net/http"
 
-	"github.com/labstack/echo/v4"
-	apitoolkit "github.com/apitoolkit/apitoolkit-go"
+  "github.com/labstack/echo/v4"
+  apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
 
 func main() {
@@ -271,20 +271,20 @@ func main() {
   router.Use(apitoolkitClient.EchoMiddleware)
 
   router.POST("/:slug/test", func(c echo.Context) (err error) {
-  
-  // Create a new HTTP client
-	HTTPClient := apitoolkit.HTTPClient(
-    	c.Request.Context(),
-		apitoolkit.WithRedactHeaders("content-type", "Authorization", "HOST"),
-		apitoolkit.WithRedactRequestBody("$.user.email", "$.user.addresses"),
-		apitoolkit.WithRedactResponseBody("$.users[*].email", "$.users[*].credit_card"),
-	)
 
-	// Make an outgoing HTTP request using the modified HTTPClient
-	_, _ = HTTPClient.Get("https://jsonplaceholder.typicode.com/posts/1")
+    // Create a new HTTP client
+    HTTPClient := apitoolkit.HTTPClient(
+      c.Request().Context(),
+      apitoolkit.WithRedactHeaders("content-type", "Authorization", "HOST"),
+      apitoolkit.WithRedactRequestBody("$.user.email", "$.user.addresses"),
+      apitoolkit.WithRedactResponseBody("$.users[*].email", "$.users[*].credit_card"),
+    )
 
-	// Respond to the request
-	return c.String(http.StatusOK, "Ok, success!")
+    // Make an outgoing HTTP request using the modified HTTPClient
+    _, _ = HTTPClient.Get("https://jsonplaceholder.typicode.com/posts/1")
+
+    // Respond to the request
+    return c.String(http.StatusOK, "Ok, success!")
   })
 
   router.Start(":8080")

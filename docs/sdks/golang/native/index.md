@@ -69,7 +69,7 @@ func main() {
     w.Write([]byte("Hello, World!"))
   })))
 
-  http.ListenAndServe(":8080", nil)
+  log.Fatal(http.ListenAndServe(":8080", nil))
 }
 ```
 
@@ -147,7 +147,7 @@ import (
 func main() {
   ctx := context.Background()
 
-  apitoolkitCfg := apitoolkit.Config {
+  apitoolkitCfg := apitoolkit.Config{
     APIKey:             "{ENTER_YOUR_API_KEY_HERE}",
     RedactHeaders:      []string{"content-type", "Authorization", "HOST"},
     RedactRequestBody:  []string{"$.user.email", "$.user.addresses"},
@@ -202,21 +202,21 @@ func main() {
     panic(err)
   }
 
- helloHandler := func(w http.ResponseWriter, r *http.Request) {
-  // Attempt to open a non-existing file
-  file, err := os.Open("non-existing-file.txt")
-  if err!= nil {
-   // Report the error to APItoolkit
-   apitoolkit.ReportError(r.Context(), err)
+  helloHandler := func(w http.ResponseWriter, r *http.Request) {
+    // Attempt to open a non-existing file
+    file, err := os.Open("non-existing-file.txt")
+    if err != nil {
+      // Report the error to APItoolkit
+      apitoolkit.ReportError(r.Context(), err)
+    }
+    fmt.Fprintln(w, "{\"Hello\": \"World!\"}")
   }
-  fmt.Fprintln(w, "{\"Hello\": \"World!\"}")
- }
 
- http.Handle("/", apitoolkitClient.Middleware(http.HandlerFunc(helloHandler)))
+  http.Handle("/", apitoolkitClient.Middleware(http.HandlerFunc(helloHandler)))
 
- if err := http.ListenAndServe(":8089", nil); err != nil {
-  fmt.Println("Server error:", err)
- }
+  if err := http.ListenAndServe(":8089", nil); err != nil {
+    fmt.Println("Server error:", err)
+  }
 }
 ```
 
@@ -257,7 +257,7 @@ func main() {
     
     // Create a new HTTP client
     HTTPClient := apitoolkit.HTTPClient(
-      c.Request.Context(),
+      r.Context(),
       apitoolkit.WithRedactHeaders("content-type", "Authorization", "HOST"),
       apitoolkit.WithRedactRequestBody("$.user.email", "$.user.addresses"),
       apitoolkit.WithRedactResponseBody("$.users[*].email", "$.users[*].credit_card"),
@@ -269,9 +269,9 @@ func main() {
     // Respond to the request
     w.WriteHeader(http.StatusOK)
     w.Write([]byte("Hello, World!"))
- })))
+  })))
 
-  http.ListenAndServe(":8080", router)
+  http.ListenAndServe(":8080", nil)
 }
 ```
 

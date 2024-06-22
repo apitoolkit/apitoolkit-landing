@@ -40,43 +40,45 @@ import (
 
 Next, initialize APItoolkit in your application's entry point (e.g., `main.go`), like so:
 
+Here is your Go code formatted with two spaces instead of tabs:
+
 ```go
 package main
 
 import (
-	"context"
-	"net/http"
+  "context"
+  "net/http"
 
-	"github.com/go-chi/chi/v5"
-	apitoolkit "github.com/apitoolkit/apitoolkit-go"
+  "github.com/go-chi/chi/v5"
+  apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
 
 func main() {
-	ctx := context.Background()
+  ctx := context.Background()
 
-	// Initialize the APItoolkit client
-	apitoolkitClient, err := apitoolkit.NewClient(
-		ctx,
-		apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"},
-	)
-	if err != nil {
-		panic(err)
-	}
+  // Initialize the APItoolkit client
+  apitoolkitClient, err := apitoolkit.NewClient(
+    ctx,
+    apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"},
+  )
+  if err != nil {
+    panic(err)
+  }
 
-	router := chi.NewRouter()
+  router := chi.NewRouter()
 
-	// Register APItoolkit's middleware
-	router.Use(apitoolkitClient.ChiMiddleware)
+  // Register APItoolkit's middleware
+  router.Use(apitoolkitClient.ChiMiddleware)
 
-	// router.Use(...)
-	// Other middleware
+  // router.Use(...)
+  // Other middleware
 
-	router.Get("/test", func(w http.ResponseWriter, r *http.Request) {
-		w.WriteHeader(http.StatusOK)
-		w.Write([]byte("ok"))
-	})
+  router.Get("/test", func(w http.ResponseWriter, r *http.Request) {
+    w.WriteHeader(http.StatusOK)
+    w.Write([]byte("ok"))
+  })
 
-	http.ListenAndServe(":3000", router)
+  http.ListenAndServe(":3000", router)
 }
 ```
 
@@ -145,33 +147,33 @@ Here's an example of what the configuration would look like with redacted fields
 package main
 
 import (
-	"context"
-	"net/http"
+  "context"
+  "net/http"
 
-	"github.com/go-chi/chi/v5"
-	apitoolkit "github.com/apitoolkit/apitoolkit-go"
+  "github.com/go-chi/chi/v5"
+  apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
 
 func main() {
-	ctx := context.Background()
+  ctx := context.Background()
 
-	apitoolkitCfg := apitoolkit.Config{
-		APIKey:             "{ENTER_YOUR_API_KEY_HERE}",
-		RedactHeaders:      []string{"content-type", "Authorization", "HOST"},
-		RedactRequestBody:  []string{"$.user.email", "$.user.addresses"},
-		RedactResponseBody: []string{"$.users[*].email", "$.users[*].credit_card"},
-	}
-	apitoolkitClient, _ := apitoolkit.NewClient(ctx, apitoolkitCfg)
+  apitoolkitCfg := apitoolkit.Config{
+    APIKey:             "{ENTER_YOUR_API_KEY_HERE}",
+    RedactHeaders:      []string{"content-type", "Authorization", "HOST"},
+    RedactRequestBody:  []string{"$.user.email", "$.user.addresses"},
+    RedactResponseBody: []string{"$.users[*].email", "$.users[*].credit_card"},
+  }
+  apitoolkitClient, _ := apitoolkit.NewClient(ctx, apitoolkitCfg)
 
-	router := chi.NewRouter()
-	router.Use(apitoolkitClient.ChiMiddleware)
+  router := chi.NewRouter()
+  router.Use(apitoolkitClient.ChiMiddleware)
 
-	router.Get("/test", func(w http.ResponseWriter, r *http.Request) {
-		w.WriteHeader(http.StatusOK)
-		w.Write([]byte("ok"))
-	})
+  router.Get("/test", func(w http.ResponseWriter, r *http.Request) {
+    w.WriteHeader(http.StatusOK)
+    w.Write([]byte("ok"))
+  })
 
-	http.ListenAndServe(":3000", router)
+  http.ListenAndServe(":3000", router)
 }
 ```
 
@@ -194,42 +196,42 @@ To report errors, use the `ReportError()` method, passing in the `context` and `
 package main
 
 import (
-	"context"
-	"fmt"
-	"net/http"
-	"os"
+  "context"
+  "fmt"
+  "net/http"
+  "os"
 
-	"github.com/go-chi/chi/v5"
-	apitoolkit "github.com/apitoolkit/apitoolkit-go"
+  "github.com/go-chi/chi/v5"
+  apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
 
 func main() {
-	ctx := context.Background()
+  ctx := context.Background()
 
-	apitoolkitClient, err := apitoolkit.NewClient(
-		ctx,
-		apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"},
-	)
-	if err != nil {
-		panic(err)
-	}
+  apitoolkitClient, err := apitoolkit.NewClient(
+    ctx,
+    apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"},
+  )
+  if err != nil {
+    panic(err)
+  }
 
-	router := chi.NewRouter()
-	router.Use(apitoolkitClient.ChiMiddleware)
+  router := chi.NewRouter()
+  router.Use(apitoolkitClient.ChiMiddleware)
 
-	router.Get("/greet", hello)
+  router.Get("/greet", hello)
 
-	http.ListenAndServe(":3000", router)
+  http.ListenAndServe(":3000", router)
 }
 
 func hello(w http.ResponseWriter, r *http.Request) {
-	// Attempt to open a non-existing file
-	_, err := os.Open("non-existing-file.txt")
-	if err != nil {
-		// Report the error to APItoolkit
-		apitoolkit.ReportError(r.Context(), err)
-	}
-	fmt.Fprintln(w, "Hello, World!")
+  // Attempt to open a non-existing file
+  _, err := os.Open("non-existing-file.txt")
+  if err != nil {
+    // Report the error to APItoolkit
+    apitoolkit.ReportError(r.Context(), err)
+  }
+  fmt.Fprintln(w, "Hello, World!")
 }
 ```
 
@@ -248,46 +250,46 @@ To monitor outgoing HTTP requests from your application, replace the default HTT
 package main
 
 import (
-	"context"
-	"net/http"
+  "context"
+  "net/http"
 
-	"github.com/go-chi/chi/v5"
-	apitoolkit "github.com/apitoolkit/apitoolkit-go"
+  "github.com/go-chi/chi/v5"
+  apitoolkit "github.com/apitoolkit/apitoolkit-go"
 )
 
 func main() {
-	ctx := context.Background()
+  ctx := context.Background()
 
-	apitoolkitClient, err := apitoolkit.NewClient(
-		ctx,
-		apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"},
-	)
-	if err != nil {
-		panic(err)
-	}
+  apitoolkitClient, err := apitoolkit.NewClient(
+    ctx,
+    apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"},
+  )
+  if err != nil {
+    panic(err)
+  }
 
-	router := chi.NewRouter()
-	router.Use(apitoolkitClient.ChiMiddleware)
+  router := chi.NewRouter()
+  router.Use(apitoolkitClient.ChiMiddleware)
 
-	router.Get("/test", func(w http.ResponseWriter, r *http.Request) {
-		
-		// Create a new HTTP client
-		HTTPClient := apitoolkit.HTTPClient(
-			c.Request.Context(),
-			apitoolkit.WithRedactHeaders("content-type", "Authorization", "HOST"),
-			apitoolkit.WithRedactRequestBody("$.user.email", "$.user.addresses"),
-			apitoolkit.WithRedactResponseBody("$.users[*].email", "$.users[*].credit_card"),
-		)
+  router.Get("/test", func(w http.ResponseWriter, r *http.Request) {
 
-		// Make an outgoing HTTP request using the modified HTTPClient
-		_, _ = HTTPClient.Get("https://jsonplaceholder.typicode.com/posts/1")
+    // Create a new HTTP client
+    HTTPClient := apitoolkit.HTTPClient(
+      r.Context(),
+      apitoolkit.WithRedactHeaders("content-type", "Authorization", "HOST"),
+      apitoolkit.WithRedactRequestBody("$.user.email", "$.user.addresses"),
+      apitoolkit.WithRedactResponseBody("$.users[*].email", "$.users[*].credit_card"),
+    )
 
-        // Respond to the request
-		w.WriteHeader(http.StatusOK)
-		w.Write([]byte("Ok, success!"))
-	})
+    // Make an outgoing HTTP request using the modified HTTPClient
+    _, _ = HTTPClient.Get("https://jsonplaceholder.typicode.com/posts/1")
 
-	http.ListenAndServe(":3000", router)
+    // Respond to the request
+    w.WriteHeader(http.StatusOK)
+    w.Write([]byte("Ok, success!"))
+  })
+
+  http.ListenAndServe(":3000", router)
 }
 ```
 
