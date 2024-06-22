@@ -98,7 +98,81 @@ npm run build:watch
 
 ## Docs Style Guide
 
-TBA
+Our documentation is a garden and we will continue to prune and maintain it. Feel free to share your feedback, let us know if something is broken or not working as it ought, and contribute too as we improve things. We have quite some internal guidelines with some processes we will eventually refactor, however, here are a few important tips to keep in mind:
+
+### Style Guide
+
+Everything is written in Markdown/Djot and we have a few custom interactive components (some of which we will improve as time goes on). We're currently adapting the [Google developer documentation style guide](https://developers.google.com/style) and using some principles from it to structure and write our documentation. A few quick writing tips:
+
+- Follow existing patterns for structure, writing flow, code snippets comments, interactive components, etc. based on the category of docs in context (we currently have the [onboarding](https://apitoolkit.io/docs/onboarding/), [SDK guides](https://apitoolkit.io/docs/sdks/), [dashboard guides](https://apitoolkit.io/docs/dashboard/), and [features](https://apitoolkit.io/docs/features/) pages —with more coming soon) to ensure consistency and sustainable docs.
+- Run your writing through grammar checkers (like Grammarly) to catch typos and other minor issues.
+- DO NOT use tabs for code snippets but instead use two spaces.
+- Indicate omitted code in click-to-copy snippets by using a comment and not ellipsis (use comments as much as possible).
+- Always include alt tags in markdown images.
+- Always include the `rel="noopener noreferrer"` attribute in links that should open in a new tab (e.g., `[link text](/link){target="_blank" rel="noopener noreferrer"}`).
+- Don't remove something (styling, configuration, element, etc.) if you don't know what it does; ask someone first instead.
+
+### Frontmatter
+
+Here's an example of the `frontmatter` for the docs pages:
+
+```markdown
+---
+title: Home
+date: 2022-03-23
+updatedDate: 2024-05-04
+linkTitle: "Documentation"
+menuWeight: 20
+hideFileTree: true
+hideToc: true
+pageFullWidth: true
+---
+```
+
+### Callout Icon Keys
+
+We use [Font Awesome](https://fontawesome.com) icons for our callout component. The format and icon keys are described below. In the dashboard pages docs, we use only the icon while in the SDK Guides, we use the icon and an accompanying text (e.g., `Tip`, `Warning`, etc.).
+
+```markdown
+<div class="callout">
+  <i class="fa-solid fa-forward"></i>
+  <p>Content here....</p>
+</div>
+```
+
+```markdown
+<div class="callout">
+  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
+  <p>Content here...</p>
+</div>
+```
+
+<br />
+
+<details>
+<summary>Icon keys</summary>
+
+| Icon Key | Description |
+| -------- | ----------- |
+| `fa-regular fa-lightbulb` | Optional information to help a user be more successful. |
+| `fa-regular fa-circle-info` | Highlights information that users should take into account, even when skimming. |
+| `fa-solid fa-book` | Definition of a term. |
+| `fa-solid fa-forward` | Suggested next action (CTA). |
+| `fa-solid fa-triangle-exclamation` | Important warning. |
+</details>
+
+### Tab Toggle Component
+
+You can have more than one tab in the tab group toggle component but keep things max at three to ensure a good visual display on most screens. If you want to have multiple tab groups, ensure to increment the `data-tab-group` value (i.e., group1, group2, etc.) to avoid conflicts.
+
+```markdown
+<section class="tab-group" data-tab-group="group1">
+  <button class="tab-button" data-tab="tab1">Tab A</button>
+  <button class="tab-button" data-tab="tab2">Tab B</button>
+  <div id="tab1" class="tab-content">Content A</div>
+  <div id="tab2" class="tab-content">Content B</div>
+</section>
+```
 
 ## Contributing and Help
 
