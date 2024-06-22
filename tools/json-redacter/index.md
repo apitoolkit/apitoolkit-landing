@@ -10,8 +10,6 @@ hide_date: true
 
 ## Test JSON Redaction via JSONPath
 
-This tool allows you to visualize what the final JSON sent to the APItoolkit servers looks like after redacting with JSONPaths. 
-
 ```=html
 <script src="jsonpath.min.js"></script>
 <script src="jsonpath-plus-umd.min.cjs"></script>
@@ -85,7 +83,7 @@ This tool allows you to visualize what the final JSON sent to the APItoolkit ser
 
 <hr />
 
-<section class="flex flex-row gap-8 pt-5 mt-4">
+<section class="flex flex-row gap-8 pt-5">
     <div class="flex-1">
         Enter your JSON content here:
         <textarea class="textarea textarea-bordered w-full" id="jsonToRedact" oninput="adjustTextareaHeight(this)" rows="1" style="overflow:hidden;">
