@@ -15,14 +15,27 @@
 
 ## Table of Contents
 
+- [Getting Started](#getting-started)
 - [Setup and Installation](#setup-and-installation)
 - [Directories Overview](#directories-overview)
-- [QuickStatic Tip](#quickstatic-tip)
 - [Docs Style Guide](#docs-style-guide)
 - [Contributing and Help](#contributing-and-help)
 - [License](#license)
 
 ---
+
+## Getting Started
+
+The content for every page is written in the [Djot](https://djot.net/) markup syntax (Same as Markdown but with some stricter rules) and each page is built using the [Shopify liquid templating language](https://github.com/Shopify/liquid/wiki/Liquid-for-Designers) and a mix of HTML, CSS, and JavaScript. Everything in the root directory gets copied into the output directory in the exact order it appears, while markdown files are compiled into HTML files. To use any given template file for a particular page, simply reference the template file from the `frontmatter` like so:
+
+```markdown
+---
+title: Page title
+layout: themeName/blog/index.liquid
+---
+
+Page Content...
+```
 
 ## Setup and Installation
 
@@ -58,20 +71,30 @@ npm run build:watch
 
 ## Directories Overview
 
-TBA
-
-## QuickStatic Tip
-
-Everything in the root directory gets copied into the output directory in the exact order it appears, while markdown files are compiled into HTML files. QuickStatic themes can be written using the [Shopify liquid templating language](https://github.com/Shopify/liquid/wiki/Liquid-for-Designers). To use any given template file for a particular page, simply reference the template file from the `frontmatter` like so:
-
-```markdown
----
-title: Page title
-layout: themeName/blog/index.liquid
----
-
-Page Content...
-```
+| Path | Description |
+| --- | --- |
+| `_quickstatic/themes` | QuickStatic themes and components (default and docs). |
+| `_quickstatic/public` | QuickStatic public build. |
+| `index` | The home page. |
+| `about` | The `/about` page. |
+| `assets` | All image/video assets, fonts, CSS files, JS files, etc. |
+| `blog` | The `/blog` pages. |
+| `contact` | The `/contact` page. |
+| `docs` | The `/docs` pages and content. |
+| `events` | The `/events` pages. |
+| `faq` | The `/faq` page. |
+| `features` | The `/features` pages. |
+| `pricing` | The `/pricing` page. |
+| `privacy-policy` | The `/privacy-policy` page. |
+| `refund-policy` | The `/refund-policy` page. |
+| `static` | Some images and manifest files. |
+| `terms-and-conditions` | The `/terms-and-conditions` page. |
+| `thanks` | The `/thanks` page. |
+| `tools` | The `/tools` pages. |
+| `build.sh` | Script to fetch abd update the latest version of QuickStatic. |
+| `Makefile` | Manage tasks related to Tailwind CSS processing. |
+| `quickstatic.yaml` | QuickStatic configuration options. |
+| `tailwind.config.js` | Tailwind CSS configuration options. |
 
 ## Docs Style Guide
 
