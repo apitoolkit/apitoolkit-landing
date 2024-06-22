@@ -12,6 +12,7 @@ hide_date: true
 
 ```=html
 <script src="jsonpath.min.js"></script>
+<script src="jsonpath-plus-umd.min.cjs"></script>
 <script>
     // Source: https://github.com/apitoolkit/apitoolkit-js/blob/main/src/payload.ts
     function redactFields(body, fieldsToRedact) {
@@ -25,6 +26,27 @@ hide_date: true
         return JSON.stringify(bodyOB, null, 2);
       } catch (err) {
         console.error(err)
+        return body;
+      }
+    }
+
+
+    function redactFieldsPlus(body, fieldsToRedact) {
+      try {
+        const bodyOB = JSON.parse(body);
+        fieldsToRedact.forEach((path) => {
+          JSONPath.JSONPath({
+            path,
+            json: bodyOB,
+            callback: (value, type, payload) => {
+              payload.parent[payload.parentProperty] = "[CLIENT_REDACTED]";
+            }
+          });
+        });
+        return JSON.stringify(bodyOB, null, 2);
+      } catch (err) {
+        console.error(err);
+        document.getElementById('redactedResultError').innerHTML = err;
         return body;
       }
     }
@@ -44,8 +66,8 @@ hide_date: true
 
     // Optionally, you can also call the function initially to adjust the height based on the initial content
     document.addEventListener('DOMContentLoaded', function() {
-        const textarea = document.getElementById('jsonToRedact');
-        adjustTextareaHeight(textarea);
+        adjustTextareaHeight(document.getElementById('jsonToRedact'));
+        adjustTextareaHeight(document.getElementById('expressions'));
     });
 </script>
 <section class="flex flex-row gap-8">
@@ -83,7 +105,7 @@ $.store.book[*].*
 $.store.bicycle.color
 </textarea>
         <button class="btn btn-primary" onclick="redact()">Redact</button>
-        <!-- <div id="redactedResult"></div> -->
+        <code class="language-js block" id="redactedResultError"></code>
         <pre><code class="language-js" id="redactedResult"></code></pre>
     </div>
 </section>
