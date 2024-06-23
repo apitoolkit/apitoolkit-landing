@@ -107,17 +107,18 @@ Everything is written in Markdown/Djot and we have a few custom interactive comp
 - Create a new pull request for any docs changes (including team members and external contributors), so the docs maintainer can review to ensure everything aligns with existing principles and no inconsistency sneaks in.
 - Follow existing patterns for structure, writing flow, code snippets comments, interactive components, etc. based on the category of docs in context (we currently have the [onboarding](https://apitoolkit.io/docs/onboarding/), [SDK guides](https://apitoolkit.io/docs/sdks/), [dashboard guides](https://apitoolkit.io/docs/dashboard/), and [features](https://apitoolkit.io/docs/features/) pages —with more coming soon) to ensure consistency and sustainable docs.
 - Run your writing through grammar checkers (like Grammarly) to catch typos and other minor issues.
+- Use title case for headings.
 - DO NOT use tabs for code snippets but instead use two spaces.
 - Indicate omitted code in click-to-copy snippets by using a comment and not an ellipsis points (use comments as much as possible).
 - Always include alt tags in markdown images.
 - Always include the `rel="noopener noreferrer"` attribute in links that should open in a new tab (e.g., `[link text](https://link.com){target="_blank" rel="noopener noreferrer"}`).
-- Don't remove something (styling, configuration, element, etc.) if you don't know what it does; ask someone first instead.
+- Don't remove or adjust something (styling, configuration, element, image, etc.) if you don't know what it currently does; ask someone first instead.
 - If you make any additions or adjustments to anything, explain it in detail in your pull request.
 - For helpful resources and other general stuff we use, see this [awesome technical writing list](https://github.com/BolajiAyodeji/awesome-technical-writing).
 
 ### Frontmatter
 
-Here's an example of the `frontmatter` for the docs pages with the common options used differently in different docs page context:
+Here's an example of the `frontmatter` for the docs pages with the common options used differently in different docs page contexts:
 
 ```markdown
 ---
@@ -136,7 +137,7 @@ pageFullWidth: true
 
 ### Callout Icon Keys
 
-We use [Font Awesome](https://fontawesome.com) icons for our callout component. In the Dashboard Guides, we use only the icon while in the SDK Guides, we use the icon and an accompanying text (e.g., `Tip`, `Warning`, etc.).
+We use [Font Awesome](https://fontawesome.com) icons for our callout component. In the Dashboard Guides, we use only the icon; in the SDK Guides, we use the icon and an accompanying text (e.g., `Tip`, `Warning`, etc.).
 
 **Format**:
 
@@ -166,7 +167,7 @@ We use [Font Awesome](https://fontawesome.com) icons for our callout component. 
 
 ### Tab Toggle Component
 
-You can have more than one tab in the tab group toggle component but keep things max at three to ensure a good visual display on most screens. If you want to have multiple tab groups, ensure to increment the `data-tab-group` value (i.e., group1, group2, etc.) to avoid conflicts.
+You can have more than one tab in the tab group toggle component but keep things max at three to ensure a good visual display on most screens. If you want to have multiple tab groups, ensure to increment the `data-tab-group` value (i.e., group1, group2, etc.) to avoid conflicts. Also, ensure to start all block of code inside a tab content at the beginning of the line instead of nesting it under the `<div>` element in use; this will avoid extra whitespaces when it is rendered on the site.
 
 ```markdown
 <section class="tab-group" data-tab-group="group1">
