@@ -26,16 +26,7 @@
 
 ## Getting Started
 
-The content for every page is written in the [Djot](https://djot.net/) markup syntax (Same as Markdown but with some stricter rules) and each page is built using the [Shopify liquid templating language](https://github.com/Shopify/liquid/wiki/Liquid-for-Designers) and a mix of HTML, CSS, and JavaScript. Everything in the root directory gets copied into the output directory in the exact order it appears, while markdown files are compiled into HTML files. To use any given template file for a particular page, simply reference the template file from the `frontmatter` like so:
-
-```markdown
----
-title: Page title
-layout: themeName/blog/index.liquid
----
-
-Page Content...
-```
+The content for every page is written in the [Djot](https://djot.net/) markup syntax (Same as Markdown but with some stricter rules) and each page is built using the [Shopify liquid templating language](https://github.com/Shopify/liquid/wiki/Liquid-for-Designers) and a mix of HTML, CSS, and JavaScript. Everything in the root directory gets copied into the output directory in the exact order it appears, while markdown files are compiled into HTML files.
 
 ## Setup and Installation
 
@@ -71,12 +62,10 @@ npm run build:watch
 
 ## Directories Overview
 
-Click the toggle below to explore the list of important files and directories.
-
-<br />
+Kindly click the toggle below to explore the list of important files and directories.
 
 <details>
-<summary>Click Me Please 🥹</summary>
+<summary>📂 Open Directories Overview</summary>
 
 | Path | Description |
 | --- | --- |
@@ -106,7 +95,10 @@ Click the toggle below to explore the list of important files and directories.
 
 ## Docs Style Guide
 
-Our documentation is a blooming garden and we will continue to prune and maintain it. Feel free to share your feedback, let us know if something is broken or not working as it ought, and contribute too as we improve things. This style guide document is a WIP and we'll continue to update it. We have some internal guidelines on how things work (we hope to document all of them eventually), however, the sections below cover a few important things to note.
+Our documentation is a blooming garden and we will continue to prune and maintain it. Feel free to share your feedback, let us know if something is broken or not working as it ought, and contribute too as we improve things. This style guide document is a WIP and we'll continue to update it. We have some internal guidelines on how things work (we hope to document all of them eventually), however, the sections in the clickable toggle below cover a few important things to note.
+
+<details>
+<summary>📒 Open Docs Style Guide</summary>
 
 ### Style Guide
 
@@ -184,6 +176,7 @@ You can have more than one tab in the tab group toggle component but keep things
   <div id="tab2" class="tab-content">Content B</div>
 </section>
 ```
+</details>
 
 ## Contributing and Help
 
