@@ -15,7 +15,7 @@ updatedDate: 2024-06-15
         </div>
     </header>
     <div class="width-control mx-auto px-2">
-        <section class="w-full grid md:grid-cols-2 lg:grid-cols-2  gap-8 py-24">
+        <section class="w-full grid md:grid-cols-2 lg:grid-cols-3 gap-8 py-24">
             <!-- FREE PLAN -->
             <a href="https://app.apitoolkit.io/p/new"
                 class="group rounded-2xl border p-6 flex duration-300 flex-col justify-start gap-6 text-left bg-base-100 shadow-md hover:-translate-y-3">
@@ -59,14 +59,14 @@ updatedDate: 2024-06-15
                 <button as="button" class="mt-auto rounded-xl flex flex-row justify-center px-4 py-[7px] border"><span class="z-1 relative">Get Started</span></button>
             </a>
             <!-- PAY AS YOU USE PLAN -->
-            <a href="https://app.apitoolkit.io/p/new"
+            <!-- <a href="https://app.apitoolkit.io/p/new"
                 class="group rounded-2xl border p-6 flex duration-300 flex-col text-gray-50 justify-start gap-6 text-left bg-blue-600 shadow-md hover:-translate-y-3">
                 <div class="flex flex-col gap-3 pb-1">
                     <h3 class="font-medium text-3xl">Pay as You Use</h3>
                     <div>
                         <div class="flex flex-row items-start gap-8px">
                             <div class="font-bold text-6xl">
-                                $1 <small class="text-sm">per additional 10,000 requests.</small>
+                                $1 <small class="text-sm">per 10,000 requests.</small>
                             </div>
                         </div>
                         <div class="text-sm leading-120 font-medium text-gray-200">
@@ -119,21 +119,31 @@ updatedDate: 2024-06-15
                     Get Started
                 </button>
             </a>
-            <!-- GRADUATED PLAN -->
-            <a href="https://app.apitoolkit.io/p/new"
-                class="group rounded-2xl border p-6 flex duration-300 flex-col text-gray-50 justify-start gap-6 text-left bg-yellow-600 shadow-md hover:-translate-y-3">
+            GRADUATED PLAN -->
+            <div
+                class="group rounded-2xl border p-6 flex duration-300 flex-col text-gray-50 justify-start gap-6 text-left bg-blue-600 shadow-md">
                 <div class="flex flex-col gap-3 pb-1">
-                    <h3 class="font-medium text-3xl">Graduated</h3>
+                <div class="flex justify-between items-center">
+                 <h3 class="font-medium text-[25px]">Pay as You Use</h3>
+                <div role="tablist" class="tabs tabs-boxed tabs-xs">
+                   <input onchange="handlePlanToggle()" value="month" type="radio" name="plans" role="tab" class="tab" aria-label="Monthly" checked>
+                   <input onchange="handlePlanToggle()" value="annual" type="radio" name="plans" role="tab" class="tab" aria-label="Annual">
+                </div>
+                </div>
                     <div>
                         <div class="flex flex-row items-start gap-8px">
-                            <div class="font-bold text-6xl">
-                                $x <small class="text-sm">per defined amount of requests.</small>
+                            <div class="">
+                               <span class="font-bold text-6xl" id="price">$19</span>
+                               <span class="" id="num_requests">/200k requests</span>
+                               <br>
+                               <small class="text-sm">then $1 per 10k requests</small>
+                               <span id="save_container" class="text-yellow-200 font-bold"></span>
                             </div>
                         </div>
-                        <div class="text-sm leading-120 font-medium text-gray-200">
-                            Configure custom fixed amount of requests (monthly or yearly).
-                        </div>
                     </div>
+                </div>
+                <div>
+                  <input type="range" min="0" max="5" step="1" value="0" class="range range-primary range-sm" id="price_range">
                 </div>
                 <div class="text-gray-50">
                     <p class="font-bold mb-3">For Growing Companies</p>
@@ -175,11 +185,11 @@ updatedDate: 2024-06-15
                         </li>
                     </ul>
                 </div>
-                <button as="button"
+                <a  href="https://app.apitoolkit.io/p/new"
                     class="mt-auto rounded-xl text-white flex flex-row justify-center px-4 py-[7px] border">
                     Get Started
-                </button>
-            </a>
+                </a>
+            </div>
             <!-- ENTERPRISE PLAN -->
             <a href="mailto:hello@apitoolkit.io"
                 class="group rounded-2xl border p-6 flex duration-300 flex-col text-gray-50 justify-start gap-6 text-left bg-slate-900 shadow-md hover:-translate-y-3">

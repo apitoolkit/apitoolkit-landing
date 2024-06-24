@@ -1,51 +1,69 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
   <head itemscope>
     <title>
       {% if this.frontmatter.title %}
-        {{ this.frontmatter.title }} | APItoolkit{% endif %}
+        {{ this.frontmatter.title }} | APItoolkit
+      {%- endif %}
     </title>
-    <meta name="description" content="APItoolkit is an end-to-end API and web services management toolkit for engineers and customer support teams. We use AI to help engineering teams observe, manage, monitor, and test their backend systems and any APIs they depend on.">
+    <meta
+      name="description"
+      content="APItoolkit is an end-to-end API and web services management toolkit for engineers and customer support teams. We use AI to help engineering teams observe, manage, monitor, and test their backend systems and any APIs they depend on."
+    >
     <link rel="canonical" href="https://apitoolkit.io{{this.permalink}}">
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="QuickStatic">
-      <!-- This documentation site was built with QuickStatic, https://github.com/tonyalaribe/quickstatic -->
-    <meta property="og:title" content="{% if this.frontmatter.title %}{{this.frontmatter.title | escape}} | APItoolkit{% endif %}">
-    <meta property="og:description" content="APItoolkit is an end-to-end API and web services management toolkit for engineers and customer support teams. We use AI to help engineering teams observe, manage, monitor, and test their backend systems and any APIs they depend on.">
-    <meta property="og:image" content="{% if this.frontmatter.ogImage %}{{this.frontmatter.ogImage}}{% else %}https://raw.githubusercontent.com/apitoolkit/.github/main/images/main-og.png{% endif %}">
-    <meta property="og:type" content="{% if this.frontmatter.og_type %}{{this.frontmatter.og_type}}{% else %}article{% endif %}">
+    <!-- This documentation site was built with QuickStatic, https://github.com/tonyalaribe/quickstatic -->
+    <meta
+      property="og:title"
+      content="{% if this.frontmatter.title %}{{this.frontmatter.title | escape}} | APItoolkit{% endif %}"
+    >
+    <meta
+      property="og:description"
+      content="APItoolkit is an end-to-end API and web services management toolkit for engineers and customer support teams. We use AI to help engineering teams observe, manage, monitor, and test their backend systems and any APIs they depend on."
+    >
+    <meta
+      property="og:image"
+      content="{% if this.frontmatter.ogImage %}{{this.frontmatter.ogImage}}{% else %}https://raw.githubusercontent.com/apitoolkit/.github/main/images/main-og.png{% endif %}"
+    >
+    <meta
+      property="og:type"
+      content="{% if this.frontmatter.og_type %}{{this.frontmatter.og_type}}{% else %}article{% endif %}"
+    >
 
-
-      <!-- favicon items -->
+    <!-- favicon items -->
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="/static/apple-touch-icon.png" />
+      href="/static/apple-touch-icon.png"
+    >
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="/static/favicon-32x32.png" />
+      href="/static/favicon-32x32.png"
+    >
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="/static/favicon-16x16.png" />
-    <link rel="manifest" href="/static/site.webmanifest" />
+      href="/static/favicon-16x16.png"
+    >
+    <link rel="manifest" href="/static/site.webmanifest">
     <link
       rel="mask-icon"
       href="/static/safari-pinned-tab.svg"
-      color="#5bbad5" />
-    <meta name="msapplication-TileColor" content="#da532c" />
-    <meta name="theme-color" content="#ffffff" />
-    <base href="{{ this.permalink }}" />
+      color="#5bbad5"
+    >
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <base href="{{ this.permalink }}">
 
-
-      <!-- end of meta tags and favicons -->
-    <link rel="stylesheet" href="/assets/css/tailwind.min.css" />
+    <!-- end of meta tags and favicons -->
+    <link rel="stylesheet" href="/assets/css/tailwind.min.css">
+    <script defer src="/assets/js/main.js"></script>
 
     <style>
       body {
@@ -98,146 +116,218 @@
       fetchpriority="high"
       as="image"
       href="/assets/img/svgs/grid.svg"
-      type="image/webp">
+      type="image/webp"
+    >
 
     <style>
       @font-face {
-        font-family: "Bakemono";
-        src: url("/assets/deps/bakemono/Bakemono-Variable.woff2") format("woff2-variations")
-        , url("/assets/deps/bakemono/Bakemono-Variable.woff") format("woff-variations")
-        , url("/assets/deps/bakemono/Bakemono-Variable.ttf") format("ttf-variations"), }
+        font-family: 'Bakemono';
+        src: url('/assets/deps/bakemono/Bakemono-Variable.woff2') format('woff2-variations'),
+          url('/assets/deps/bakemono/Bakemono-Variable.woff') format('woff-variations'),
+          url('/assets/deps/bakemono/Bakemono-Variable.ttf') format('ttf-variations');
+      }
 
       :root {
-        font-family: 'Bakemono'
-        , sans-serif;
+        font-family: 'Bakemono', sans-serif;
       }
 
       h1 {
-        font-variation-settings: 'wght' 700
-        , 'MONO' 500;
+        font-variation-settings: 'wght' 700, 'MONO' 500;
       }
 
       h2 {
-        font-variation-settings: 'wght' 600
-        , 'MONO' 500;
+        font-variation-settings: 'wght' 600, 'MONO' 500;
       }
 
-      body[data-theme="sunset"] h2 {
+      body[data-theme='sunset'] h2 {
         color: white;
       }
 
-      body[data-theme="sunset"] formkit-input {
+      body[data-theme='sunset'] formkit-input {
         background-color: gray;
       }
 
       h3,
       h4,
       h5 {
-        font-variation-settings: 'wght' 500
-        , 'MONO' 500;
+        font-variation-settings: 'wght' 500, 'MONO' 500;
       }
 
       .monospace {
-        font-family: 'Bakemono'
-        , monospace;
+        font-family: 'Bakemono', monospace;
         font-variation-settings: 'MONO' 1000;
-
       }
     </style>
 
     <!-- Google Tag Manager -->
     <script>
       (function (w, d, s, l, i) {
-      w[l] = w[l] || []; w[l].push({
-        'gtm.start':
-          new Date().getTime(), event: 'gtm.js'
-      }); var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-          })(window, document, 'script', 'dataLayer', 'GTM-TF4BQQ3D');
+        w[l] = w[l] || [];
+        w[l].push({
+          'gtm.start': new Date().getTime(),
+          event: 'gtm.js',
+        });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-TF4BQQ3D');
     </script>
     <!-- End Google Tag Manager -->
 
     <!-- PostHog -->
     <script>
-      !function (t, e) { var o, n, p, r; e.__SV || (window.posthog = e, e._i = [], e.init = function (i, s, a) { function g(t, e) { var o = e.split("."); 2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } } (p = t.createElement("script")).type = "text/javascript", p.async = !0, p.src = s.api_host + "/static/array.js", (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r); var u = e; for (void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function (t) { var e = "posthog"; return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e }, u.people.toString = function () { return u.toString(1) + ".people (stub)" }, o = "capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId".split(" "), n = 0; n < o.length; n++)g(u, o[n]); e._i.push([i, s, a]) }, e.__SV = 1) }(document, window.posthog || []);
-          posthog.init('phc_XrCcXiHIfUzWzwXz0dMWSw19iGZsfk5VQ0VyJoiAIuA', { api_host: 'https://app.posthog.com' })
+      !(function (t, e) {
+        var o, n, p, r;
+        e.__SV ||
+          ((window.posthog = e),
+          (e._i = []),
+          (e.init = function (i, s, a) {
+            function g(t, e) {
+              var o = e.split('.');
+              2 == o.length && ((t = t[o[0]]), (e = o[1])),
+                (t[e] = function () {
+                  t.push([e].concat(Array.prototype.slice.call(arguments, 0)));
+                });
+            }
+            ((p = t.createElement('script')).type = 'text/javascript'),
+              (p.async = !0),
+              (p.src = s.api_host + '/static/array.js'),
+              (r = t.getElementsByTagName('script')[0]).parentNode.insertBefore(p, r);
+            var u = e;
+            for (
+              void 0 !== a ? (u = e[a] = []) : (a = 'posthog'),
+                u.people = u.people || [],
+                u.toString = function (t) {
+                  var e = 'posthog';
+                  return 'posthog' !== a && (e += '.' + a), t || (e += ' (stub)'), e;
+                },
+                u.people.toString = function () {
+                  return u.toString(1) + '.people (stub)';
+                },
+                o =
+                  'capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId'.split(
+                    ' '
+                  ),
+                n = 0;
+              n < o.length;
+              n++
+            )
+              g(u, o[n]);
+            e._i.push([i, s, a]);
+          }),
+          (e.__SV = 1));
+      })(document, window.posthog || []);
+      posthog.init('phc_XrCcXiHIfUzWzwXz0dMWSw19iGZsfk5VQ0VyJoiAIuA', { api_host: 'https://app.posthog.com' });
     </script>
 
     <!-- Twitter conversion tracking base code -->
     <script>
-    !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
-    },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
-    a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
-    twq('config','om5gt');
+      !(function (e, t, n, s, u, a) {
+        e.twq ||
+          ((s = e.twq =
+            function () {
+              s.exe ? s.exe.apply(s, arguments) : s.queue.push(arguments);
+            }),
+          (s.version = '1.1'),
+          (s.queue = []),
+          (u = t.createElement(n)),
+          (u.async = !0),
+          (u.src = 'https://static.ads-twitter.com/uwt.js'),
+          (a = t.getElementsByTagName(n)[0]),
+          a.parentNode.insertBefore(u, a));
+      })(window, document, 'script');
+      twq('config', 'om5gt');
     </script>
     <!-- End Twitter conversion tracking base code -->
 
     <!-- Facebook Pixel Code -->
     <script>
-          !function (f, b, e, v, n, t, s) {
-      if (f.fbq) return; n = f.fbq = function () {
-        n.callMethod ?
-          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-      };
-      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-      n.queue = []; t = b.createElement(e); t.async = !0;
-      t.src = v; s = b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t, s)
-          }(window, document, 'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-          fbq('init', '1135987380886994');
-          fbq('track', 'PageView');
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1135987380886994');
+      fbq('track', 'PageView');
     </script>
     <noscript>
       <img
         height="1"
         width="1"
-        src="https://www.facebook.com/tr?id=1135987380886994&ev=PageView
-  &noscript=1" />
+        src="
+          https://www.facebook.com/tr?id=1135987380886994&ev=PageView
+          &noscript=1
+        "
+      >
     </noscript>
-    <!-- End Facebook Pixel Code -->    
+    <!-- End Facebook Pixel Code -->
 
     <!-- Facebook Pixel Code 2 -->
     <script>
-          !function (f, b, e, v, n, t, s) {
-      if (f.fbq) return; n = f.fbq = function () {
-        n.callMethod ?
-          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-      }; if (!f._fbq) f._fbq = n;
-      n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0;
-      t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s)
-          }(window,
-      document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-          fbq('init', '3674513372787915');
-          fbq('track', 'PageView');
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '3674513372787915');
+      fbq('track', 'PageView');
     </script>
-    <noscript><img
+    <noscript
+      ><img
         height="1"
         width="1"
         style="display:none"
-        src="https://www.facebook.com/tr?id=3674513372787915&ev=PageView&noscript=1" /></noscript>
+        src="https://www.facebook.com/tr?id=3674513372787915&ev=PageView&noscript=1"
+    ></noscript>
     <!-- DO NOT MODIFY -->
     <!-- End Facebook Pixel Code -->
 
     <!-- START LINKEDIN -->
     <script type="text/javascript">
-          _linkedin_partner_id = "5779626";
-          window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
-          window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+      _linkedin_partner_id = '5779626';
+      window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+      window._linkedin_data_partner_ids.push(_linkedin_partner_id);
     </script>
     <script type="text/javascript">
-          (function (l) {
-      if (!l) {
-        window.lintrk = function (a, b) { window.lintrk.q.push([a, b]) };
-        window.lintrk.q = []
-      }
-      var s = document.getElementsByTagName("script")[0];
-      var b = document.createElement("script");
-      b.type = "text/javascript"; b.async = true;
-      b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
-      s.parentNode.insertBefore(b, s);
-          })(window.lintrk);
+      (function (l) {
+        if (!l) {
+          window.lintrk = function (a, b) {
+            window.lintrk.q.push([a, b]);
+          };
+          window.lintrk.q = [];
+        }
+        var s = document.getElementsByTagName('script')[0];
+        var b = document.createElement('script');
+        b.type = 'text/javascript';
+        b.async = true;
+        b.src = 'https://snap.licdn.com/li.lms-analytics/insight.min.js';
+        s.parentNode.insertBefore(b, s);
+      })(window.lintrk);
     </script>
     <noscript>
       <img
@@ -245,9 +335,10 @@
         width="1"
         style="display:none;"
         alt=""
-        src="https://px.ads.linkedin.com/collect/?pid=5779626&fmt=gif" />
+        src="https://px.ads.linkedin.com/collect/?pid=5779626&fmt=gif"
+      >
     </noscript>
-  <!-- END LINKEDIN -->
+    <!-- END LINKEDIN -->
   </head>
 
   <body
@@ -255,10 +346,12 @@
     hx-boost="true"
     hx-ext="preload,head-support"
     class=""
-    preload>
+    preload
+  >
     <script>
-          if (localStorage.getItem("darkMode") === 'true') { document.body.setAttribute("data-theme", "sunset") }
+      if (localStorage.getItem('darkMode') === 'true') {
+        document.body.setAttribute('data-theme', 'sunset');
+      }
     </script>
   </body>
-
 </html>

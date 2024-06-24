@@ -2,11 +2,12 @@
 <html lang="en">
   <head>
     <title>
-    {% if this.frontmatter.ogTitle %}
-      {{this.frontmatter.ogTitle}}
-    {% else %}
-      {{this.frontmatter.title}}
-    {% endif %} | APItoolkit Docs
+      {% if this.frontmatter.ogTitle %}
+        {{ this.frontmatter.ogTitle }}
+      {% else %}
+        {{ this.frontmatter.title }}
+      {% endif %}
+      | APItoolkit Docs
     </title>
     <meta name="description" content="APItoolkit product and SDKs documentation">
     <link rel="canonical" href="https://apitoolkit.io{{this.permalink}}">
@@ -166,15 +167,15 @@
       }
 
       .callout-red {
-        border-left: 6px solid #FF3131 !important;
+        border-left: 6px solid #ff3131 !important;
       }
 
-      [data-theme="sunset"] .callout {
+      [data-theme='sunset'] .callout {
         background-color: #c5c5c5;
-        color: 	#36454F;
+        color: #36454f;
       }
 
-      [data-theme="sunset"] .callout code {
+      [data-theme='sunset'] .callout code {
         background: #282c34;
       }
 
@@ -202,7 +203,7 @@
       }
 
       .t-white {
-        color: #FFFFFF !important;
+        color: #ffffff !important;
       }
 
       .t-black {
@@ -245,13 +246,24 @@
     </style>
 
     <!-- Twitter conversion tracking base code -->
-<script>
-!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
-},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
-a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
-twq('config','om5gt');
-</script>
-<!-- End Twitter conversion tracking base code -->
+    <script>
+      !(function (e, t, n, s, u, a) {
+        e.twq ||
+          ((s = e.twq =
+            function () {
+              s.exe ? s.exe.apply(s, arguments) : s.queue.push(arguments);
+            }),
+          (s.version = '1.1'),
+          (s.queue = []),
+          (u = t.createElement(n)),
+          (u.async = !0),
+          (u.src = 'https://static.ads-twitter.com/uwt.js'),
+          (a = t.getElementsByTagName(n)[0]),
+          a.parentNode.insertBefore(u, a));
+      })(window, document, 'script');
+      twq('config', 'om5gt');
+    </script>
+    <!-- End Twitter conversion tracking base code -->
 
     <!-- Google Tag Manager -->
     <script>
@@ -622,7 +634,7 @@ twq('config','om5gt');
               class="
                 text-left pb-12 prose prose-slate dark:prose-invert prose-headings:font-medium prose-a:text-secondary prose-a:underline prose-a:underline-offset-4
                 prose-img:w-full prose-img:rounded-md prose-img:drop-shadow-md prose-img:border prose-img:border-base-200  prose-p:leading-relaxed
-                prose-headings:scroll-mt-40 prose-pre:p-0 
+                prose-headings:scroll-mt-40 prose-pre:p-0
                 before:prose-li:bg-secondary before:prose-li:text-secondary
                 prose-strong:font-medium prose-secondary w-full {%if this.frontmatter.pageFullWidth%}max-w-none {%endif%}
               "
@@ -690,6 +702,7 @@ twq('config','om5gt');
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/elixir.min.js"></script>
     <script defer src="/assets/js/tabs.js"></script>
+
     <script defer type="text/javascript">
       document.addEventListener('DOMContentLoaded', function () {
         hljs.highlightAll();
