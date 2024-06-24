@@ -143,7 +143,7 @@ updatedDate: 2024-06-15
                     </div>
                 </div>
                 <div>
-                  <input type="range" min="0" max="5" step="1" value="0" class="range range-primary range-sm" id="price_range">
+                  <input type="range" min="0" max="6" step="1" value="0" class="range range-primary range-sm" id="price_range">
                 </div>
                 <div class="text-gray-50">
                     <p class="font-bold mb-3">For Growing Companies</p>
