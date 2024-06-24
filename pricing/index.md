@@ -131,7 +131,8 @@ updatedDate: 2024-06-15
                 </div>
                 </div>
                     <div>
-                        <div class="flex flex-row items-start gap-8px">
+                        <div class="flex flex-col items-start gap-8px">
+                            <span class="text-sm font-bold text-yellow-200" id="starts_at">Starts at ...</span>
                             <div class="">
                                <span class="font-bold text-6xl" id="price">$19</span>
                                <span class="" id="num_requests">/200k requests</span>

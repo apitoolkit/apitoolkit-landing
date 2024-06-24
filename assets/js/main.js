@@ -9,6 +9,7 @@ const reqsYr = ["2.4M", "6.6M", "12M", "30M", "60M", "60M", "60M"]
 const priceContainer = document.querySelector("#price")
 const reqsContainer = document.querySelector("#num_requests")
 const saveContainer = document.querySelector("#save_container")
+const startsAtContainer = document.querySelector("#starts_at")
 function priceChange() {
   const value = price_indicator.value
   let price = prices[value]
@@ -16,12 +17,22 @@ function priceChange() {
   let sav = "save $" + saves[value] + "/month"
   if(saves[value] === 1) {
     sav = ""
+    startsAtContainer.innerText = "Starts at ..."
+  } else {
+    startsAtContainer.innerText = "Starts at $19/200k requests"
   }
+
   if(plan === "annual") {
      price = pricesYr[value]
      num_reqs = reqsYr[value]
      sav = "save $" + savesYr[value] + "/year"
-   }
+     if(saves[value] === 1) {
+        startsAtContainer.innerText = "Starts at ..."
+      } else {
+        startsAtContainer.innerText = "Starts at $200/2.4M requests"
+      }
+    
+  }
   priceContainer.innerText = "$" + price
   reqsContainer.innerText = "/" + num_reqs + " requests"
   saveContainer.innerText = sav 

@@ -8639,10 +8639,6 @@ html:has(.drawer-toggle:checked) {
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 
-.\[--tab-bg\:yellow\] {
-  --tab-bg: yellow;
-}
-
 .ul-1 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
