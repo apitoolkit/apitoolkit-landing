@@ -5429,6 +5429,10 @@ details.collapse summary::-webkit-details-marker {
   --range-shdw: var(--fallback-p,oklch(var(--p)/1));
 }
 
+.range-accent {
+  --range-shdw: var(--fallback-a,oklch(var(--a)/1));
+}
+
 .rating input {
   -moz-appearance: none;
        appearance: none;
