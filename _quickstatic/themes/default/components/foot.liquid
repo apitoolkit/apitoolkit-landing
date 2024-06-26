@@ -140,7 +140,7 @@
         alt="APItoolkit white logo" />
 
       <p class="py-4 text-xs text-black dark:text-base-content">
-        &copy; 2022 APItoolkit (<a href="mailto:hello@apitoolkit.io">hello@apitoolkit.io</a>). All rights reserved.
+        &copy; 2022 - <span id="currentYear"></span>. APItoolkit (<a href="mailto:hello@apitoolkit.io">hello@apitoolkit.io</a>). All rights reserved.
       </p>
       <div class="flex space-x-6 md:order-2">
         <a
@@ -224,6 +224,11 @@
     </div>
   </section>
 </footer>
+
+<script>
+  const year = new Date().getFullYear();
+  document.getElementById("currentYear").textContent = year;
+</script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FZERLHDJ7J"></script>
