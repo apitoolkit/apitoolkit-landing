@@ -109,6 +109,7 @@ Everything is written in Markdown/Djot and we have a few custom interactive comp
 - Run your writing through grammar checkers (like Grammarly) to catch typos and other minor issues.
 - Use title case for headings.
 - DO NOT use tabs for code snippets but instead use two spaces.
+- The `<` and `>` characters will be omitted by the markdown parser if used in a code snippet, so ensure to replace that with the HTML entity code equivalence (`&lt;` and `&gt;`).
 - Indicate omitted code in click-to-copy snippets by using a comment and not an ellipsis points (use comments as much as possible).
 - Always include alt tags in markdown images.
 - Always include the `rel="noopener noreferrer"` attribute in links that should open in a new tab (e.g., `[link text](https://link.com){target="_blank" rel="noopener noreferrer"}`).
