@@ -21,7 +21,7 @@ pageFullWidth: true
 <div class="items-center text-center justify-center mt-8">
     <a href="/docs/onboarding/" class="btn btn-secondary t-white sm:w-56">Get Started</a>
     <p class="inline-block px-5">|</p>
-    <a href="https://calendar.app.google/1a4HG5GZYv1sjjZG6" target="_blank" rel="noopener noreferrer" class="btn btn-outline sm:w-56">Get a Demo</a>
+    <a href="https://apitoolkit.io/demo" target="_blank" rel="noopener noreferrer" class="btn btn-outline sm:w-56">Get a Demo</a>
 </div>
 ```
 
