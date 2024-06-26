@@ -59,7 +59,12 @@ func main() {
   // Initialize the APItoolkit client
   apitoolkitClient, err := apitoolkit.NewClient(
     ctx,
-    apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"},
+    apitoolkit.Config{
+      APIKey: "{ENTER_YOUR_API_KEY_HERE}",
+      Debug = false,
+      Tags = []string{"environment: production", "region: us-east-1"},
+      ServiceVersion: "v2.0",
+    },
   )
   if err != nil {
     panic(err)
@@ -81,6 +86,20 @@ func main() {
   http.ListenAndServe(":3000", router)
 }
 ```
+
+In the configuration above, **only the `APIKey` option is required**, but you can add the following optional fields:
+
+{class="docs-table"}
+:::
+| Option | Description |
+| ------ | ----------- |
+| `Debug` | Set to `true` to enable debug mode. |
+| `Tags` | A list of defined tags for your services (used for grouping and filtering data on the dashboard). |
+| `ServiceVersion` | A defined string version of your application (used for further debugging on the dashboard). |
+| `RedactHeaders` | A list of HTTP header keys to redact. |
+| `RedactResponseBody` | A list of JSONPaths from the request body to redact. |
+| `RedactRequestBody` | A list of JSONPaths from the response body to redact. |
+:::
 
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
@@ -194,7 +213,7 @@ func main() {
 
 APItoolkit automatically detects different unhandled errors, API issues, and anomalies but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
 
-To report errors, use the `ReportError()` method, passing in the `context` and `error` arguments, like so:
+To manually report specific errors at different parts of your application, use the `ReportError()` method, passing in the `context` and `error` arguments, like so:
 
 ```go
 package main

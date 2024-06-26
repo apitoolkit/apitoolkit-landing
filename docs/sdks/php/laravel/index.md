@@ -225,7 +225,7 @@ class Handler extends ExceptionHandler
 
   </div>
   <div id="tab2" class="tab-content">
-To report specific errors at different parts of your application, use the `reportError` method of the `APIToolkitLaravel` class, passing in the `error` and the `request` as arguments, like so:
+To manually report specific errors at different parts of your application, use the `reportError` method of the `APIToolkitLaravel` class, passing in the `error` and the `request` as arguments, like so:
 
 ```php
 use Illuminate\Http\Request;

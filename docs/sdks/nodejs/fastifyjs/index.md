@@ -177,7 +177,7 @@ fastify.listen({ port: 3000 }, function (err, address) {
 
 APItoolkit automatically detects different unhandled errors, API issues, and anomalies but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
 
-To manually report errors within the context of a web request handler, use the `ReportError()` function, passing in the `error` argument, like so:
+To manually report specific errors at different parts of your application (within the context of a web request handler), use the `ReportError()` function, passing in the `error` argument, like so:
 
 ```js
 import Fastify from "fastify";

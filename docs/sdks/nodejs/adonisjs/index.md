@@ -259,7 +259,7 @@ export default class HttpExceptionHandler extends ExceptionHandler {
 
   </div>
   <div id="tab2" class="tab-content">
-    Then, use the `reportError()` function, passing in the `error` argument, to manually report errors within the context of a web request handler, like so:
+    Then, use the `reportError()` function, passing in the `error` argument, to manually report specific errors at different parts of your application (within the context of a web request handler), like so:
 
 ```js
 import router from "@adonisjs/core/services/router";

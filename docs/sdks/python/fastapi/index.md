@@ -167,7 +167,7 @@ def read_root():
 
 APItoolkit automatically detects different unhandled errors, API issues, and anomalies but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
 
-To report all uncaught errors and service exceptions that happened during a web request, use the `report_error()` function from the `apitoolkit_fastapi` module, passing in the `request` and `error`, like so:
+To manually report specific errors at different parts of your application, use the `report_error()` function from the `apitoolkit_fastapi` module, passing in the `request` and `error`, like so:
 
 ```python
 from fastapi import FastAPI, Request

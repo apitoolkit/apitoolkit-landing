@@ -56,7 +56,12 @@ func main() {
   // Initialize the APItoolkit client
   apitoolkitClient, err := apitoolkit.NewClient(
     ctx,
-    apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"},
+    apitoolkit.Config{
+      APIKey: "{ENTER_YOUR_API_KEY_HERE}",
+      Debug = false,
+      Tags = []string{"environment: production", "region: us-east-1"},
+      ServiceVersion: "v2.0",
+    },
   )
   if err != nil {
     panic(err)
@@ -202,7 +207,7 @@ func hello(c *fiber.Ctx) error {
 
 APItoolkit automatically detects different unhandled errors, API issues, and anomalies but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
 
-To report errors, use the `ReportError()` method, passing in the `context` and `error` arguments, like so:
+To manually report specific errors at different parts of your application, use the `ReportError()` method, passing in the `context` and `error` arguments, like so:
 
 ```go
 package main

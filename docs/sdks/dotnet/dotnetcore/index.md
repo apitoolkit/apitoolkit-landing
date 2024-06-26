@@ -33,12 +33,14 @@ Next, initialize APItoolkit in your application's entry point (e.g., `Program.cs
 ```csharp
 using ApiToolkit.Net;
 
+// Initialize the APItoolkit client
 var config = new Config
 {
-  Debug = true, // Set debug flags to false in production
-  ApiKey = "{ENTER_YOUR_API_KEY_HERE}"
+  ApiKey = "{ENTER_YOUR_API_KEY_HERE}",
+  Debug = false,
+  Tags = new List&lt;string&gt; { "environment: production", "region: us-east-1" },
+  ServiceVersion: "v2.0",
 };
-// Initialize the APItoolkit client
 var client = await APIToolkit.NewClientAsync(config);
 // END Initialize the APItoolkit client
 
@@ -54,6 +56,20 @@ app.Use(async (context, next) =>
 // Other middleware and logic
 // ...
 ```
+
+In the configuration above, **only the `ApiKey` option is required**, but you can add the following optional fields:
+
+{class="docs-table"}
+:::
+| Option | Description |
+| ------ | ----------- |
+| `Debug` | Set to `true` to enable debug mode. |
+| `Tags` | A list of defined tags for your services (used for grouping and filtering data on the dashboard). |
+| `ServiceVersion` | A defined string version of your application (used for further debugging on the dashboard). |
+| `RedactHeaders` | A list of HTTP header keys to redact. |
+| `RedactResponseBody` | A list of JSONPaths from the request body to redact. |
+| `RedactRequestBody` | A list of JSONPaths from the response body to redact. |
+:::
 
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
@@ -130,9 +146,9 @@ var config = new Config
 {
   Debug = true, // Set debug flags to false in production
   ApiKey = "{ENTER_YOUR_API_KEY_HERE}",
-  RedactHeaders = new List<string> { "content-type", "Authorization", "HOST" },
-  RedactRequestBody = new List<string> { "$.user.email", "$.user.addresses" },
-  RedactResponseBody = new List<string> { "$.users[*].email", "$.users[*].credit_card" }
+  RedactHeaders = new List&lt;string&gt; { "content-type", "Authorization", "HOST" },
+  RedactRequestBody = new List&lt;string&gt; { "$.user.email", "$.user.addresses" },
+  RedactResponseBody = new List&lt;string&gt; { "$.users[*].email", "$.users[*].credit_card" }
 };
 var client = await APIToolkit.NewClientAsync(config);
 
@@ -157,7 +173,7 @@ app.Use(async (context, next) =>
 
 APItoolkit automatically detects different unhandled errors, API issues, and anomalies but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
 
-To report errors, use the `ReportError()` handler, passing in the `context` and `error` arguments, like so:
+To manually report specific errors at different parts of your application, use the `ReportError()` handler, passing in the `context` and `error` arguments, like so:
 
 ```csharp
 using ApiToolkit.Net;

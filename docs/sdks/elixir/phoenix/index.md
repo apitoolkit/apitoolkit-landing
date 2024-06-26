@@ -47,11 +47,24 @@ defmodule HelloWeb.Router do
     plug ApitoolkitPhoenix,
       config: %{
         api_key: "{ENTER_YOUR_API_KEY_HERE}",
+        debug: false,
       }
     # Other plugs...
   end
 end
 ```
+
+In the configuration above, **only the `api_key` option is required**, but you can add the following optional fields:
+
+{class="docs-table"}
+:::
+| Option | Description |
+| ------ | ----------- |
+| `debug` | Set to `true` to enable debug mode. |
+| `redact_headers` | A list of HTTP header keys to redact. |
+| `redact_response_body` | A list of JSONPaths from the request body to redact. |
+| `redact_request_body` | A list of JSONPaths from the response body to redact. |
+:::
 
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
@@ -167,7 +180,7 @@ end
 
   </div>
   <div id="tab2" class="tab-content">
-To report errors manually, call the `report_error()` method anywhere within a controller, also passing in the `connection`, `error`, and `__STACKTRACE__` arguments, like so:
+To manually report specific errors at different parts of your application, call the `report_error()` method anywhere within a controller, also passing in the `connection`, `error`, and `__STACKTRACE__` arguments, like so:
 
 ```elixir
 defmodule HelloWeb.PageController do

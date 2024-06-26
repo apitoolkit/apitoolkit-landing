@@ -336,7 +336,7 @@ app.listen(port, () => {
 </div>
   </div>
   <div id="tab2" class="tab-content">
-To manually report errors within the context of a web request handler, use the `ReportError()` function, passing in the `error` argument, like so:
+To manually report specific errors at different parts of your application (within the context of a web request handler), use the `ReportError()` function, passing in the `error` argument, like so:
 
 ```js
 import { APIToolkit, ReportError } from "apitoolkit-express";
