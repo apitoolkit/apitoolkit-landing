@@ -113,7 +113,7 @@ Everything is written in Markdown/Djot and we have a few custom interactive comp
 - Indicate omitted code in click-to-copy snippets by using a comment and not an ellipsis points (use comments as much as possible).
 - Always include alt tags in markdown images.
 - Always include the `rel="noopener noreferrer"` attribute in links that should open in a new tab (e.g., `[link text](https://link.com){target="_blank" rel="noopener noreferrer"}`).
-- Don't remove or adjust something (styling, configuration, element, image, etc.) if you don't know what it currently does; ask someone first instead.
+- Don't remove or adjust something (styling, configuration, element, image, etc.) if you don't know what it currently does; ask someone first instead (create an issue or ask in Discord).
 - If you make any additions or adjustments to anything, explain it in detail in your pull request.
 - For helpful resources and other general stuff we use, see this [awesome technical writing list](https://github.com/BolajiAyodeji/awesome-technical-writing).
 
