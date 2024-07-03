@@ -172,7 +172,7 @@ $app->run();
 
 ## Error Reporting
 
-APItoolkit automatically detects different unhandled errors, API issues, and anomalies but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
+With APItoolkit, you can track and report different unhandled or uncaught errors, API issues, and anomalies at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
 
 To manually report specific errors at different parts of your application, use the `reportError` method of the `APIToolkitSlim` class, passing in the `error` and the `request` as arguments, like so:
 

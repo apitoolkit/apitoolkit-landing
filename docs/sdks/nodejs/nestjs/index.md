@@ -289,9 +289,9 @@ bootstrap();
 
 ## Error Reporting
 
-APItoolkit automatically detects different unhandled errors, API issues, and anomalies but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
+With APItoolkit, you can track and report different unhandled or uncaught errors, API issues, and anomalies at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
 
-Since the configuration process is the same with our ExpressJS and FastifyJS SDK, you can read their respective documentation by clicking any of the buttons below:
+The configuration process depends on whether you choose ExpressJS or FastifyJS as your framework. Hence, you can read our SDK documentation for both options by clicking any of the buttons below:
 
 <section class="tab-group" data-tab-group="group4">
   <button class="tab-button" data-tab="tab1">Express (Default)</button>
@@ -312,7 +312,7 @@ Since the configuration process is the same with our ExpressJS and FastifyJS SDK
 
 Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="\_blank"} page. However, you can separate outgoing requests from others and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="\_blank"} page, alongside the incoming request that triggered them.
 
-Since the configuration process is the same with our ExpressJS and FastifyJS SDK, you can read their respective documentation by clicking any of the buttons below:
+The configuration process depends on whether you choose ExpressJS or FastifyJS as your framework. Hence, you can read our SDK documentation for both options by clicking any of the buttons below:
 
 <section class="tab-group" data-tab-group="group4">
   <button class="tab-button" data-tab="tab1">Express (Default)</button>

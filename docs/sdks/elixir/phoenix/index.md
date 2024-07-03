@@ -162,7 +162,7 @@ end
 
 ## Error Reporting
 
-APItoolkit automatically detects different unhandled errors, API issues, and anomalies but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
+With APItoolkit, you can track and report different unhandled or uncaught errors, API issues, and anomalies at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
 
 <section class="tab-group" data-tab-group="group1">
   <button class="tab-button" data-tab="tab1">Report All Errors</button>
