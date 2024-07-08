@@ -67,7 +67,7 @@ Once you are redirected to the dashboard, you have to create a new project to be
 ```=html
 <div class="callout">
   <i class="fa-solid fa-forward"></i>
-  <p>Once you are done providing the required values and your payment details (if you chose the <b>Pay as you use</b> or <b>Graduated</b> plan), click the <b>Proceed</b> button. Your new project will then be created and you will be redirected to a survey form; kindly fill out the form displayed to proceed further.</p>
+  <p>Once you are done providing the required values and your payment details (if you chose the <b>Pay as you use</b> plan), click the <b>Proceed</b> button. Your new project will then be created and you will be redirected to a survey form; kindly fill out the form displayed to proceed further.</p>
 </div>
 ```
 
