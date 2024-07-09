@@ -17,10 +17,9 @@ In this guide, we will walk you through the process of integrating APItoolkit in
 ```=html
 <iframe
   class="w-full h-48 md:h-96 lg:h-96 xl:h-96"
-  src="https://www.youtube.com/embed/_uqxNTpcEOI?si=-628ljUJTkVuPGwX"
+  src="https://www.youtube.com/embed/_uqxNTpcEOI?si=-628ljUJTkVuPGwX?enablejsapi=1"
   title="YouTube Video Player: APItoolkit Quickstart Onboarding"
   frameborder="0"
-  enablejsapi="1"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"
   allowfullscreen
   ></iframe>
