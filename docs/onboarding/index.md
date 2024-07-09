@@ -20,6 +20,7 @@ In this guide, we will walk you through the process of integrating APItoolkit in
   src="https://www.youtube.com/embed/_uqxNTpcEOI?si=-628ljUJTkVuPGwX"
   title="YouTube Video Player: APItoolkit Quickstart Onboarding"
   frameborder="0"
+  enablejsapi="1"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"
   allowfullscreen
   ></iframe>
