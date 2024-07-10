@@ -135,9 +135,9 @@ updatedDate: 2024-06-15
                             <span class="text-sm font-bold text-yellow-200" id="starts_at">Starts at ...</span>
                             <div class="">
                                <span class="font-bold text-6xl" id="price">$19</span>
-                               <span class="" id="num_requests">/200k requests</span>
+                               <span class="" id="num_requests">/400k requests</span>
                                <br>
-                               <small class="text-sm">then $1 per 10k requests</small>
+                               <small class="text-sm">then $1 per 20k requests</small>
                                <span id="save_container" class="text-yellow-200 font-bold"></span>
                             </div>
                         </div>
