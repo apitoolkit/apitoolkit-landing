@@ -19,6 +19,8 @@ As tech teams, especially backend teams, rely heavily on third-party integration
 
 In this webinar, Anthony Alaribe, Founder of APItoolkit, will delve into the common issues introduced by third-party API integrations and share effective techniques and strategies for building resilient backend systems to be ahead of the curve. You will learn how to ensure your systems can quickly recover from setbacks or provide comprehensive insights into the root causes of any issues before they create costly and damaging effects.
 
+<hr />
+
 **Date**: 29th, March 2024.
 
 **Time**: 06:00 PM CET.
