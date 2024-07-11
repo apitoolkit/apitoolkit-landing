@@ -17,7 +17,7 @@ To integrate your Laravel application with APItoolkit, you need to use this SDK 
 ## Prerequisites
 
 - Ensure you have already completed the first three steps of the [onboarding guide](/docs/onboarding/){target="_blank"}.
-- APItoolkit uses the Laravel cache to prevent reinitializing the SDK for each request. So, ensure you have [Laravel cache](https://laravel.com/docs/10.x/cache?utm_source=APItoolkit){target="\_blank"} set up in your application.
+- APItoolkit uses the Laravel cache to prevent reinitializing the SDK for each request. So, ensure you have [Laravel cache](https://laravel.com/docs/10.x/cache?ref=APItoolkit){target="\_blank"} set up in your application.
 
 ## Installation
 
@@ -167,7 +167,7 @@ Examples of valid JSONPath expressions would be:
 
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <p>To learn more about JSONPaths, please take a look at the [official docs](https://github.com/json-path/JsonPath/blob/master/README.md){target="_blank"} or use this [JSONPath Evaluator](https://jsonpath.com?utm_source=apitoolkit){target="_blank"} to validate your JSONPath expressions. </p>
+  <p>To learn more about JSONPaths, please take a look at the [official docs](https://github.com/json-path/JsonPath/blob/master/README.md){target="_blank"} or use this [JSONPath Evaluator](https://jsonpath.com?ref=apitoolkit){target="_blank"} to validate your JSONPath expressions. </p>
   <p>**You can also use our [JSON Redaction Tool](/tools/json-redacter/) <i class="fa-regular fa-screwdriver-wrench"></i> to preview what the final data sent from your API to APItoolkit will look like, after redacting any given JSON object**.</p>
 </div>
 <hr />
