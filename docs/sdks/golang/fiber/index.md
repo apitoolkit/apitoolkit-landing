@@ -23,16 +23,16 @@ Ensure you have already completed the first three steps of the [onboarding guide
 Kindly run the command below to install the SDK:
 
 ```sh
-go get github.com/apitoolkit/apitoolkit-go
+go get github.com/apitoolkit/apitoolkit-go/fiber
 ```
 
-Then add `github.com/apitoolkit/apitoolkit-go` to the list of imports, like so:
+Then add `github.com/apitoolkit/apitoolkit-go/fiber` to the list of imports, like so:
 
 ```go
 package main
 
 import (
-  apitoolkit "github.com/apitoolkit/apitoolkit-go"
+  apitoolkit "github.com/apitoolkit/apitoolkit-go/fiber"
 )
 ```
 
@@ -47,7 +47,7 @@ import (
   "context"
 
   "github.com/gofiber/fiber/v2"
-  apitoolkit "github.com/apitoolkit/apitoolkit-go"
+  apitoolkit "github.com/apitoolkit/apitoolkit-go/fiber"
 )
 
 func main() {
@@ -70,7 +70,7 @@ func main() {
   router := fiber.New()
 
   // Register APItoolkit's middleware
-  router.Use(apitoolkitClient.FiberMiddleware)
+  router.Use(apitoolkit.FiberMiddleware(apitoolkitClient))
 
   // router.Use(...)
   // Other middleware
@@ -157,7 +157,7 @@ import (
   "os"
 
   "github.com/gofiber/fiber/v2"
-  apitoolkit "github.com/apitoolkit/apitoolkit-go"
+  apitoolkit "github.com/apitoolkit/apitoolkit-go/fiber"
 )
 
 func main() {
@@ -175,7 +175,7 @@ func main() {
   }
 
   router := fiber.New()
-  router.Use(apitoolkitClient.FiberMiddleware)
+  router.Use(apitoolkit.FiberMiddleware(apitoolkitClient))
 
   router.Get("/", hello)
 
@@ -218,7 +218,7 @@ import (
   "os"
 
   "github.com/gofiber/fiber/v2"
-  apitoolkit "github.com/apitoolkit/apitoolkit-go"
+  apitoolkit "github.com/apitoolkit/apitoolkit-go/fiber"
 )
 
 func main() {
@@ -233,7 +233,7 @@ func main() {
   }
 
   router := fiber.New()
-  router.Use(apitoolkitClient.FiberMiddleware)
+  router.Use(apitoolkit.FiberMiddleware(apitoolkitClient))
 
   router.GET("/", hello)
 
@@ -271,7 +271,7 @@ import (
   "net/http"
 
   "github.com/gofiber/fiber/v2"
-  apitoolkit "github.com/apitoolkit/apitoolkit-go"
+  apitoolkit "github.com/apitoolkit/apitoolkit-go/fiber"
 )
 
 func main() {
@@ -286,7 +286,7 @@ func main() {
   }
 
   router := fiber.New()
-  router.Use(apitoolkitClient.FiberMiddleware)
+  router.Use(apitoolkit.FiberMiddleware(apitoolkitClient))
 
   router.Get("/test", func(c *fiber.Ctx) error {
 
@@ -316,7 +316,7 @@ func main() {
 
 ```=html
 <hr />
-<a href="https://github.com/apitoolkit/apitoolkit-go" target="_blank" rel="noopener noreferrer" class="w-full btn btn-outline link link-hover">
+<a href="https://github.com/apitoolkit/apitoolkit-go/fiber" target="_blank" rel="noopener noreferrer" class="w-full btn btn-outline link link-hover">
     <i class="fa-brands fa-github"></i>
     Explore the Golang SDK
 </a>

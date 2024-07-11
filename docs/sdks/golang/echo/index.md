@@ -23,16 +23,16 @@ Ensure you have already completed the first three steps of the [onboarding guide
 Kindly run the command below to install the SDK:
 
 ```sh
-go get github.com/apitoolkit/apitoolkit-go
+go get github.com/apitoolkit/apitoolkit-go/echo
 ```
 
-Then add `github.com/apitoolkit/apitoolkit-go` to the list of imports, like so:
+Then add `github.com/apitoolkit/apitoolkit-go/echo` to the list of imports, like so:
 
 ```go
 package main
 
 import (
-  apitoolkit "github.com/apitoolkit/apitoolkit-go"
+  apitoolkit "github.com/apitoolkit/apitoolkit-go/echo"
 )
 ```
 
@@ -49,7 +49,7 @@ import (
   "net/http"
 
   "github.com/labstack/echo/v4"
-  apitoolkit "github.com/apitoolkit/apitoolkit-go"
+  apitoolkit "github.com/apitoolkit/apitoolkit-go/echo"
 )
 
 func main() {
@@ -72,7 +72,7 @@ func main() {
   router := echo.New()
 
   // Register APItoolkit's middleware
-  router.Use(apitoolkitClient.EchoMiddleware)
+  router.Use(apitoolkit.EchoMiddleware(apitoolkitClient))
 
   // router.Use(...)
   // Other middleware
@@ -172,7 +172,7 @@ import (
   "net/http"
 
   "github.com/labstack/echo/v4"
-  apitoolkit "github.com/apitoolkit/apitoolkit-go"
+  apitoolkit "github.com/apitoolkit/apitoolkit-go/echo"
 )
 
 func main() {
@@ -187,7 +187,7 @@ func main() {
   apitoolkitClient, _ := apitoolkit.NewClient(ctx, apitoolkitCfg)
 
   router := echo.New()
-  router.Use(apitoolkitClient.EchoMiddleware)
+  router.Use(apitoolkit.EchoMiddleware(apitoolkitClient))
 
   router.POST("/:slug/test", func(c echo.Context) error {
     return c.String(http.StatusOK, "Ok, success!")
@@ -221,7 +221,7 @@ import (
   "os"
 
   "github.com/labstack/echo/v4"
-  apitoolkit "github.com/apitoolkit/apitoolkit-go"
+  apitoolkit "github.com/apitoolkit/apitoolkit-go/echo"
 )
 
 func main() {
@@ -237,7 +237,7 @@ func main() {
   }
 
   router := echo.New()
-  router.Use(apitoolkitClient.EchoMiddleware)
+  router.Use(apitoolkit.EchoMiddleware(apitoolkitClient))
 
   router.GET("/", hello)
 
@@ -275,7 +275,7 @@ import (
   "net/http"
 
   "github.com/labstack/echo/v4"
-  apitoolkit "github.com/apitoolkit/apitoolkit-go"
+  apitoolkit "github.com/apitoolkit/apitoolkit-go/echo"
 )
 
 func main() {
@@ -291,7 +291,7 @@ func main() {
   }
 
   router := echo.New()
-  router.Use(apitoolkitClient.EchoMiddleware)
+  router.Use(apitoolkit.EchoMiddleware(apitoolkitClient))
 
   router.POST("/:slug/test", func(c echo.Context) (err error) {
 
@@ -321,7 +321,7 @@ func main() {
 
 ```=html
 <hr />
-<a href="https://github.com/apitoolkit/apitoolkit-go" target="_blank" rel="noopener noreferrer" class="w-full btn btn-outline link link-hover">
+<a href="https://github.com/apitoolkit/apitoolkit-go/echo" target="_blank" rel="noopener noreferrer" class="w-full btn btn-outline link link-hover">
     <i class="fa-brands fa-github"></i>
     Explore the Golang SDK
 </a>

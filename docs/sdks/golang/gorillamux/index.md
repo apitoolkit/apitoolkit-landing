@@ -23,16 +23,16 @@ Ensure you have already completed the first three steps of the [onboarding guide
 Kindly run the command below to install the SDK:
 
 ```sh
-go get github.com/apitoolkit/apitoolkit-go
+go get github.com/apitoolkit/apitoolkit-go/gorilla
 ```
 
-Then add `github.com/apitoolkit/apitoolkit-go` to the list of imports, like so:
+Then add `github.com/apitoolkit/apitoolkit-go/gorilla` to the list of imports, like so:
 
 ```go
 package main
 
 import (
-  apitoolkit "github.com/apitoolkit/apitoolkit-go"
+  apitoolkit "github.com/apitoolkit/apitoolkit-go/gorilla"
 )
 ```
 
@@ -48,7 +48,7 @@ import (
   "net/http"
 
   "github.com/gorilla/mux"
-  apitoolkit "github.com/apitoolkit/apitoolkit-go"
+  apitoolkit "github.com/apitoolkit/apitoolkit-go/gorilla"
 )
 
 func main() {
@@ -71,7 +71,7 @@ func main() {
   router := mux.NewRouter()
 
   // Register APItoolkit's middleware
-  router.Use(apitoolkitClient.GorillaMuxMiddleware)
+  router.Use(apitoolkit.GorillaMuxMiddleware(apitoolkitClient))
 
   // router.Use(...)
   // Other middleware
@@ -173,7 +173,7 @@ import (
   "net/http"
 
   "github.com/gorilla/mux"
-  apitoolkit "github.com/apitoolkit/apitoolkit-go"
+  apitoolkit "github.com/apitoolkit/apitoolkit-go/gorilla"
 )
 
 func main() {
@@ -188,7 +188,7 @@ func main() {
   apitoolkitClient, _ := apitoolkit.NewClient(ctx, apitoolkitCfg)
 
   router := mux.NewRouter()
-  router.Use(apitoolkitClient.GorillaMuxMiddleware)
+  router.Use(apitoolkit.GorillaMuxMiddleware(apitoolkitClient))
 
   router.HandleFunc("/test", func(w http.ResponseWriter, r *http.Request) {
     w.WriteHeader(http.StatusOK)
@@ -226,7 +226,7 @@ import (
   "log"
 
   "github.com/gorilla/mux"
-  apitoolkit "github.com/apitoolkit/apitoolkit-go"
+  apitoolkit "github.com/apitoolkit/apitoolkit-go/gorilla"
 )
 
 func main() {
@@ -240,7 +240,7 @@ func main() {
   }
 
   router := mux.NewRouter()
-  router.Use(apitoolkitClient.GorillaMuxMiddleware)
+  router.Use(apitoolkit.GorillaMuxMiddleware(apitoolkitClient))
 
   router.HandleFunc("/", hello)
 
@@ -279,7 +279,7 @@ import (
   "net/http"
 
   "github.com/gorilla/mux"
-  apitoolkit "github.com/apitoolkit/apitoolkit-go"
+  apitoolkit "github.com/apitoolkit/apitoolkit-go/gorilla"
 )
 
 func main() {
@@ -294,7 +294,7 @@ func main() {
   }
 
   router := mux.NewRouter()
-  router.Use(apitoolkitClient.GorillaMuxMiddleware)
+  router.Use(apitoolkit.GorillaMuxMiddleware(apitoolkitClient))
 
   router.HandleFunc("/{slug}/test", func(w http.ResponseWriter, r *http.Request) {
     // Create a new HTTP client
@@ -324,7 +324,7 @@ func main() {
 
 ```=html
 <hr />
-<a href="https://github.com/apitoolkit/apitoolkit-go" target="_blank" rel="noopener noreferrer" class="w-full btn btn-outline link link-hover">
+<a href="https://github.com/apitoolkit/apitoolkit-go/gorilla" target="_blank" rel="noopener noreferrer" class="w-full btn btn-outline link link-hover">
     <i class="fa-brands fa-github"></i>
     Explore the Golang SDK
 </a>
