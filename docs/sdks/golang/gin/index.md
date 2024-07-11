@@ -317,6 +317,75 @@ func main() {
   <p class="mt-6">You can also redact data with the custom RoundTripper for outgoing requests.</p>
 </div>
 
+#### Using TLS CLIENT
+
+If you are using tls client for your http requests you'll need to use the `apitoolkit-go/tls_client` package to monitor those requests
+
+First install it using `go get github.com/apitoolkit/apitoolkit-go/tls_client`
+
+###### Example
+
+```go
+package main
+
+import (
+  "context"
+  "net/http"
+  "github.com/gin-gonic/gin"
+
+  apitoolkitTlsClient "github.com/apitoolkit/apitoolkit-go/tls_client"
+	fhttp "github.com/bogdanfinn/fhttp"
+	tls_client "github.com/bogdanfinn/tls-client"
+  apitoolkit "github.com/apitoolkit/apitoolkit-go/gin"
+)
+
+func main() {
+  ctx := context.Background()
+  apitoolkitClient, err := apitoolkit.NewClient(
+    ctx,
+    apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"},
+  )
+  if err != nil {
+    panic(err)
+  }
+
+  router := gin.New()
+  router.Use(apitoolkit.GinMiddleware(apitoolkitClient))
+
+  jar := tls_client.NewCookieJar()
+	options := []tls_client.HttpClientOption{
+		tls_client.WithTimeoutSeconds(30),
+		tls_client.WithNotFollowRedirects(),
+		tls_client.WithCookieJar(jar), // create cookieJar instance and pass it as argument
+	}
+
+	clientTLS, err := tls_client.NewHttpClient(tls_client.NewNoopLogger(), options...)
+	if err != nil {
+		panic(err)
+	}
+
+  router.GET("/test", func(c *gin.Context) {
+    // Create a new apitoolkit custom TLS Client
+		tclient := apitoolkitTlsClient.NewHttpClient(c.Request.Context(), clientTLS, apitoolkitClient)
+		req, err := fhttp.NewRequest(http.MethodGet, "https://jsonplaceholder.typicode.com/posts/1", nil)
+		if err != nil {
+			panic(err)
+		}
+
+    // Make an outgoing HTTP request using the modified TLS Client
+		resp, err := tclient.Do(req)
+		if err != nil {
+			panic(err)
+		}
+		log.Printf("status code: %d", resp.StatusCode)
+
+    c.String(http.StatusOK, "Ok, success!")
+  })
+
+  router.Run(":8088")
+}
+```
+
 ```=html
 <hr />
 <a href="https://github.com/apitoolkit/apitoolkit-go/gin" target="_blank" rel="noopener noreferrer" class="w-full btn btn-outline link link-hover">
