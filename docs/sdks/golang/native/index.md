@@ -23,16 +23,16 @@ Ensure you have already completed the first three steps of the [onboarding guide
 Kindly run the command below to install the SDK:
 
 ```sh
-go get github.com/apitoolkit/apitoolkit-go
+go get github.com/apitoolkit/apitoolkit-go/native
 ```
 
-Then add `github.com/apitoolkit/apitoolkit-go` to the list of dependencies, like so:
+Then add `github.com/apitoolkit/apitoolkit-go/native` to the list of dependencies, like so:
 
 ```go
 package main
 
 import (
-  apitoolkit "github.com/apitoolkit/apitoolkit-go"
+  apitoolkit "github.com/apitoolkit/apitoolkit-go/native"
 )
 ```
 
@@ -48,7 +48,7 @@ import (
   "log"
   "net/http"
 
-  apitoolkit "github.com/apitoolkit/apitoolkit-go"
+  apitoolkit "github.com/apitoolkit/apitoolkit-go/native"
 )
 
 func main() {
@@ -69,7 +69,7 @@ func main() {
   }
 
   // Register APItoolkit's middleware
-  http.Handle("/", apitoolkitClient.Middleware(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+  http.Handle("/", apitoolkit.Middleware(apitoolkitClient)(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
     w.WriteHeader(http.StatusOK)
     w.Write([]byte("Hello, World!"))
   })))
@@ -164,7 +164,7 @@ import (
   "context"
   "net/http"
 
-  apitoolkit "github.com/apitoolkit/apitoolkit-go"
+  apitoolkit "github.com/apitoolkit/apitoolkit-go/native"
 )
 
 func main() {
@@ -178,7 +178,7 @@ func main() {
   }
   apitoolkitClient, _ := apitoolkit.NewClient(ctx, apitoolkitCfg)
 
-  http.HandleFunc("/:slug/test", apitoolkitClient.Middleware(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+  http.HandleFunc("/:slug/test", apitoolkit.Middleware(apitoolkitClient)(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
     w.WriteHeader(http.StatusOK)
     w.Write([]byte("Ok, success!"))
   })))
@@ -211,7 +211,7 @@ import (
   "net/http"
   "os"
 
-  apitoolkit "github.com/apitoolkit/apitoolkit-go"
+  apitoolkit "github.com/apitoolkit/apitoolkit-go/native"
 )
 
 func main() {
@@ -235,7 +235,7 @@ func main() {
     fmt.Fprintln(w, "{\"Hello\": \"World!\"}")
   }
 
-  http.Handle("/", apitoolkitClient.Middleware(http.HandlerFunc(helloHandler)))
+  http.Handle("/", apitoolkit.Middleware(apitoolkitClient)(http.HandlerFunc(helloHandler)))
 
   if err := http.ListenAndServe(":8089", nil); err != nil {
     fmt.Println("Server error:", err)
@@ -252,7 +252,13 @@ func main() {
 
 Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="\_blank"} page. However, you can separate outgoing requests from others and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="\_blank"} page, alongside the incoming request that triggered them.
 
-To monitor outgoing HTTP requests from your application, replace the default HTTP client transport with a custom RoundTripper. This allows you to capture and send copies of all incoming and outgoing requests to APItoolkit. Here's an example of outgoing requests configuration with this SDK:
+<section class="tab-group" data-tab-group="group1">
+  <button class="tab-button" data-tab="tab1">Custom RoundTripper</button>
+  <button class="tab-button" data-tab="tab2">TLS Client</button>
+  <div id="tab1" class="tab-content">
+  To monitor outgoing HTTP requests from your application, replace the default HTTP client transport with a custom RoundTripper. This allows you to capture and send copies of all incoming and outgoing requests to APItoolkit.
+  
+  Here's an example of the configuration with a custom RoundTripper:
 
 ```go
 package main
@@ -262,7 +268,7 @@ import (
   "log"
   "net/http"
 
-  apitoolkit "github.com/apitoolkit/apitoolkit-go"
+  apitoolkit "github.com/apitoolkit/apitoolkit-go/native"
 )
 
 func main() {
@@ -276,8 +282,8 @@ func main() {
     panic(err)
   }
 
-  http.HandleFunc("/test", apitoolkitClient.Middleware(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-    
+  http.HandleFunc("/test", apitoolkit.Middleware(apitoolkitClient)(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+
     // Create a new HTTP client
     HTTPClient := apitoolkit.HTTPClient(
       r.Context(),
@@ -285,7 +291,7 @@ func main() {
       apitoolkit.WithRedactRequestBody("$.user.email", "$.user.addresses"),
       apitoolkit.WithRedactResponseBody("$.users[*].email", "$.users[*].credit_card"),
     )
-    
+
     // Make an outgoing HTTP request using the modified HTTPClient
     _, _ = HTTPClient.Get("https://jsonplaceholder.typicode.com/posts/1")
 
@@ -302,6 +308,80 @@ func main() {
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
   <p class="mt-6">You can also redact data with the custom RoundTripper for outgoing requests.</p>
 </div>
+
+  </div>
+  <div id="tab2" class="tab-content">
+  If you are using a TLS client for your HTTP requests, you will need to use the [apitoolkit-go/tls_client](https://github.com/apitoolkit/apitoolkit-go-tlsclient){target="_blank" rel="noopener noreferrer"} package to monitor those requests. To use the package, you must first install it using the command below:
+
+```sh
+go get github.com/apitoolkit/apitoolkit-go-tlsclient
+```
+
+  Here's an example of the configuration with a TLS client:
+
+```go
+package main
+
+import (
+  "context"
+  "log"
+  "net/http"
+
+  fhttp "github.com/bogdanfinn/fhttp"
+  tls_client "github.com/bogdanfinn/tls-client"
+
+  apitoolkit "github.com/apitoolkit/apitoolkit-go/native"
+  apitoolkitTlsClient "github.com/apitoolkit/apitoolkit-go/tls_client"
+)
+
+func main() {
+  ctx := context.Background()
+
+  apitoolkitClient, err := apitoolkit.NewClient(
+    ctx,
+    apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"},
+  )
+  if err != nil {
+    panic(err)
+  }
+
+  jar := tls_client.NewCookieJar()
+  options := []tls_client.HttpClientOption{
+    tls_client.WithTimeoutSeconds(30),
+    tls_client.WithNotFollowRedirects(),
+    tls_client.WithCookieJar(jar), // create cookieJar instance and pass it as argument
+  }
+
+  clientTLS, err := tls_client.NewHttpClient(tls_client.NewNoopLogger(), options...)
+  if err != nil {
+    panic(err)
+  }
+
+  http.HandleFunc("/test", apitoolkit.Middleware(apitoolkitClient)(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+
+    tclient := apitoolkitTlsClient.NewHttpClient(r.Context(), clientTLS, apitoolkitClient)
+    req, err := fhttp.NewRequest(http.MethodGet, "https://jsonplaceholder.typicode.com/posts/1", nil)
+    if err != nil {
+      panic(err)
+    }
+
+    resp, err := tclient.Do(req)
+    if err != nil {
+      panic(err)
+    }
+
+    log.Printf("status code: %d", resp.StatusCode)
+
+    // Respond to the request
+    w.WriteHeader(http.StatusOK)
+    w.Write([]byte("Hello, World!"))
+  })))
+
+  http.ListenAndServe(":8080", nil)
+}
+```
+  </div>
+</section>
 
 ```=html
 <hr />
