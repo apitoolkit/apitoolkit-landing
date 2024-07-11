@@ -252,7 +252,13 @@ func main() {
 
 Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="\_blank"} page. However, you can separate outgoing requests from others and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="\_blank"} page, alongside the incoming request that triggered them.
 
-To monitor outgoing HTTP requests from your application, replace the default HTTP client transport with a custom RoundTripper. This allows you to capture and send copies of all incoming and outgoing requests to APItoolkit. Here's an example of outgoing requests configuration with this SDK:
+<section class="tab-group" data-tab-group="group1">
+  <button class="tab-button" data-tab="tab1">Custom RoundTripper</button>
+  <button class="tab-button" data-tab="tab2">TLS Client</button>
+  <div id="tab1" class="tab-content">
+  To monitor outgoing HTTP requests from your application, replace the default HTTP client transport with a custom RoundTripper. This allows you to capture and send copies of all incoming and outgoing requests to APItoolkit.
+  
+  Here's an example of the configuration with a custom RoundTripper:
 
 ```go
 package main
@@ -303,13 +309,15 @@ func main() {
   <p class="mt-6">You can also redact data with the custom RoundTripper for outgoing requests.</p>
 </div>
 
-#### Using TLS CLIENT
+  </div>
+  <div id="tab2" class="tab-content">
+  If you are using a TLS client for your HTTP requests, you will need to use the [apitoolkit-go/tls_client](https://github.com/apitoolkit/apitoolkit-go-tlsclient){target="_blank" rel="noopener noreferrer"} package to monitor those requests. To use the package, you must first install it using the command below:
 
-If you are using tls client for your http requests you'll need to use the `apitoolkit-go/tls_client` package to monitor those requests
+```sh
+go get github.com/apitoolkit/apitoolkit-go-tlsclient
+```
 
-First install it using `go get github.com/apitoolkit/apitoolkit-go/tls_client`
-
-###### Example
+  Here's an example of the configuration with a TLS client:
 
 ```go
 package main
@@ -318,10 +326,12 @@ import (
   "context"
   "log"
   "net/http"
-	apitoolkitTlsClient "github.com/apitoolkit/apitoolkit-go/tls_client"
-	fhttp "github.com/bogdanfinn/fhttp"
-	tls_client "github.com/bogdanfinn/tls-client"
+
+  fhttp "github.com/bogdanfinn/fhttp"
+  tls_client "github.com/bogdanfinn/tls-client"
+
   apitoolkit "github.com/apitoolkit/apitoolkit-go/native"
+  apitoolkitTlsClient "github.com/apitoolkit/apitoolkit-go/tls_client"
 )
 
 func main() {
@@ -336,32 +346,31 @@ func main() {
   }
 
   jar := tls_client.NewCookieJar()
-	options := []tls_client.HttpClientOption{
-		tls_client.WithTimeoutSeconds(30),
-		tls_client.WithNotFollowRedirects(),
-		tls_client.WithCookieJar(jar), // create cookieJar instance and pass it as argument
-	}
+  options := []tls_client.HttpClientOption{
+    tls_client.WithTimeoutSeconds(30),
+    tls_client.WithNotFollowRedirects(),
+    tls_client.WithCookieJar(jar), // create cookieJar instance and pass it as argument
+  }
 
-	clientTLS, err := tls_client.NewHttpClient(tls_client.NewNoopLogger(), options...)
-	if err != nil {
-		panic(err)
-	}
-
+  clientTLS, err := tls_client.NewHttpClient(tls_client.NewNoopLogger(), options...)
+  if err != nil {
+    panic(err)
+  }
 
   http.HandleFunc("/test", apitoolkit.Middleware(apitoolkitClient)(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 
-		tclient := apitoolkitTlsClient.NewHttpClient(c.Request.Context(), clientTLS, apitoolkitClient)
-		req, err := fhttp.NewRequest(http.MethodGet, "https://jsonplaceholder.typicode.com/posts/1", nil)
-		if err != nil {
-			panic(err)
-		}
+    tclient := apitoolkitTlsClient.NewHttpClient(r.Context(), clientTLS, apitoolkitClient)
+    req, err := fhttp.NewRequest(http.MethodGet, "https://jsonplaceholder.typicode.com/posts/1", nil)
+    if err != nil {
+      panic(err)
+    }
 
-		resp, err := tclient.Do(req)
-		if err != nil {
-			panic(err)
-		}
+    resp, err := tclient.Do(req)
+    if err != nil {
+      panic(err)
+    }
 
-		log.Printf("status code: %d", resp.StatusCode)
+    log.Printf("status code: %d", resp.StatusCode)
 
     // Respond to the request
     w.WriteHeader(http.StatusOK)
@@ -370,12 +379,13 @@ func main() {
 
   http.ListenAndServe(":8080", nil)
 }
-
 ```
+  </div>
+</section>
 
 ```=html
 <hr />
-<a href="https://github.com/apitoolkit/apitoolkit-go/native" target="_blank" rel="noopener noreferrer" class="w-full btn btn-outline link link-hover">
+<a href="https://github.com/apitoolkit/apitoolkit-go" target="_blank" rel="noopener noreferrer" class="w-full btn btn-outline link link-hover">
     <i class="fa-brands fa-github"></i>
     Explore the Golang SDK
 </a>

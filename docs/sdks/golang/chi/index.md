@@ -335,7 +335,7 @@ func main() {
 go get github.com/apitoolkit/apitoolkit-go-tlsclient
 ```
 
-Here's an example of the configuration with a TLS client:
+  Here's an example of the configuration with a TLS client:
 
 ```go
 package main
@@ -343,10 +343,11 @@ package main
 import (
   "context"
   "net/http"
-  "github.com/go-chi/chi/v5"
 
+  "github.com/go-chi/chi/v5"
   fhttp "github.com/bogdanfinn/fhttp"
   tls_client "github.com/bogdanfinn/tls-client"
+  
   apitoolkit "github.com/apitoolkit/apitoolkit-go/chi"
   apitoolkitTlsClient "github.com/apitoolkit/apitoolkit-go-tlsclient"
 )
