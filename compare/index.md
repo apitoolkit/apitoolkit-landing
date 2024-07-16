@@ -34,7 +34,7 @@ pages:
 ```
 
 ```=html
-   <section class="mt-8 md:mt-16 py-10 md:py-20">
+   <section class="mt-8 py-10 md:py-20">
       <div class="width-control px-2 mx-auto flex flex-col items-center bg-[url('/assets/img/svgs/grid.svg')] dark:bg-none">
          <h1
             class="text-center mt-[20px] text-4xl md:text-6xl tracking-tight sm:leading-normal font-bold dark:text-white ">
@@ -45,8 +45,8 @@ pages:
             There are many monitoring and observability platforms in the market today, each with its unique offerings. Here’s what APItoolkit does better and offers differently compared to a few of the others.
          <p>
          <div class="mt-[30px] flex items-center gap-4 text-center">
-            <a href="https://app.apitoolkit.io" class="btn btn-secondary sm:w-56">GET STARTED</a>
-            <a href="https://apitoolkit.io/demo" class="btn btn-outline btn-neutral sm:w-56">BOOK A CALL</a>
+            <a href="https://app.apitoolkit.io" class="btn btn-secondary sm:w-56 hover:animate-pulse">GET STARTED <i class="fa-solid fa-angle-right ml-6"></i></a>
+            <a href="https://apitoolkit.io/demo" class="btn btn-outline btn-neutral sm:w-56">BOOK A CALL <span class="text-xs">- for free</span></a>
          </div>
       </div>
       <hr class="mt-12 w-full" />
@@ -68,7 +68,7 @@ pages:
                 <a href="{{ page.slug }}" class="group rounded-2xl border p-6 flex flex-col items-center gap-6 text-left shadow-md duration-300 hover:-translate-y-3 bg-white dark:bg-white">
                     <img class="h-6" src="/assets/brand/logo_full_color.svg" alt="APItoolkit's logo" />
 
-                    <span class="bg-gray-300 p-2 rounded-2xl">VS</span>
+                    <span class="text-black dark:text-black">VS</span>
 
                     <img class="h-6" src="{{ page.img }}" alt="{{ page.name }}'s logo" />
                 </a>
@@ -78,17 +78,10 @@ pages:
 ```
 
 ```=html
-   <div class="w-full width-control mx-auto px-2">
-      <div class="w-full flex flex-col items-center text-center gap-4">
-         <p class="max-w-[300px] md:max-w-[800px] lg:max-w-[800px] text-base-content font-medium text-base md:text-lg">With APItoolkit, you can watch errors, stack traces, performance stats, and other metrics that matter using our API Log Explorer and rich analytics graphs, so you can pinpoint API issues, understand the root cause(s), and fix them in real-time before they affect your users.</p>
-      </div>
-   </div>
-```
-
-```=html
    <div class="w-full my-12 width-control mx-auto px-2">
-      <div class="w-full flex flex-col items-center text-center gap-4 bg-[url('/assets/img/svgs/grid.svg')] dark:bg-none">
-         <p class="max-w-[300px] md:max-w-[800px] lg:max-w-[800px] text-base-content font-medium text-base md:text-lg">If you’re building an API-driven application on the web, mobile, IoT, etc., and you need to observe the API usage data from live users’ payload for any reason, then you should be using APItoolkit.</p>
+      <div class="w-full flex flex-col items-center text-center bg-blue-500 py-16 rounded-3xl gap-8">
+         <p class="font-medium text-3xl text-white px-16">If you’re building an API-driven application on the web, mobile, IoT, etc., and you need to observe the API usage data from live users’ payload for any reason, then you should be using APItoolkit.</p>
+         <a href="https://app.apitoolkit.io" class="btn btn-neutral sm:w-56 text-white">GET STARTED </a>
       </div>
    </div>
 ```
