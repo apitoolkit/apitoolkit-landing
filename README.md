@@ -75,6 +75,7 @@ Kindly click the toggle below to explore the list of important files and directo
 | `about` | The `/about` page. |
 | `assets` | All image/video assets, fonts, CSS files, JS files, etc. |
 | `blog` | The `/blog` pages. |
+| `compare` | The `/compare` page. |
 | `contact` | The `/contact` page. |
 | `docs` | The `/docs` pages and content. |
 | `events` | The `/events` pages. |
