@@ -2,7 +2,7 @@
 date: 2024-17-07
 title: Why Choose APItoolkit?
 description: There are many monitoring and observability platforms in the market today, each with its unique offerings. Here’s what APItoolkit does better and offers differently compared to a few of the others.
-ogImage: https://raw.githubusercontent.com/apitoolkit/.github/main/images/events-og.png
+ogImage: https://raw.githubusercontent.com/apitoolkit/.github/main/images/compare-og.png
 pages:
   - name: Datadog
     slug: /compare/datadog

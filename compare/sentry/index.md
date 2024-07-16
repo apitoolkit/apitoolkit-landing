@@ -1,7 +1,7 @@
 ---
 date: 2024-17-07
-title: APItoolkit vs Datadog
-description: There are many monitoring and observability platforms in the market today, each with its unique offerings. Here’s what APItoolkit does better and offers differently compared to Datadog.
+title: APItoolkit vs Sentry
+description: There are many monitoring and observability platforms in the market today, each with its unique offerings. Here’s what APItoolkit does better and offers differently compared to Sentry.
 ogImage: https://raw.githubusercontent.com/apitoolkit/.github/main/images/compare-og.png
 ---
 
@@ -14,7 +14,7 @@ ogImage: https://raw.githubusercontent.com/apitoolkit/.github/main/images/compar
       <div class="width-control px-2 mx-auto flex flex-col items-center bg-[url('/assets/img/svgs/grid.svg')] dark:bg-none">
          <h1
             class="text-center mt-[20px] text-4xl md:text-6xl tracking-tight sm:leading-normal font-bold dark:text-white">
-            <span class="text-blue-500">APItoolkit</span> vs. Datadog
+            <span class="text-blue-500">APItoolkit</span> vs. Sentry
          </h1>
          <p
             class="mt-8 text-gray-700 dark:text-inherit text-lg tracking-tight leading-relaxed max-w-[800px]  text-center">
@@ -35,7 +35,7 @@ ogImage: https://raw.githubusercontent.com/apitoolkit/.github/main/images/compar
         <tr>
             <th class="py-6 font-bold"></th>
             <th class="py-6 font-bold text-lg border border-blue-500 bg-slate-50 dark:bg-inherit text-center">APItoolkit</th>
-            <th class="py-6 font-bold text-lg border text-center">Datadog</th>
+            <th class="py-6 font-bold text-lg border text-center">Sentry</th>
         </tr>
 
         <tr>
@@ -49,9 +49,9 @@ ogImage: https://raw.githubusercontent.com/apitoolkit/.github/main/images/compar
             </td>
             <td class="border prose">
                 <ul class="list-disc">
-                    <li>14-day free trial (up to 5 projects) for new users.</li>
-                    <li>1-day data retention with limited features.</li>
-                    <li>The paid pro plan differs based on the numerous features and usage, but starts at $18 per month, with separate extra costs for add-ons.</li>
+                    <li>14-day business plan free trial for new users, then free for up to 5k errors per month with limited features.</li>
+                    <li>30 days of data retention and one team member on the free plan.</li>
+                    <li>The paid team plan starts at $26 per month.</li>
                 </ul>
             </td>
          </tr>
@@ -64,7 +64,7 @@ ogImage: https://raw.githubusercontent.com/apitoolkit/.github/main/images/compar
             </td>
             <td class="border prose text-center">
                 <img class="h-6 mt-2 mb-4 block mx-auto" src="/assets/img/compare-logos/check2.svg" alt="Icon that indicates this feature is supported." />
-                <p>More focused on different types of monitoring and log management for servers, applications, containers, and networks, including infrastructure, databases, incidents, etc.</p>
+                <p>More focused on monitoring errors, tracing, sessions, and code coverages for applications.</p>
             </td>
          </tr>
          <tr>
@@ -99,7 +99,7 @@ ogImage: https://raw.githubusercontent.com/apitoolkit/.github/main/images/compar
                 Detects different user activity (requests) on your API that is significantly different from previously tracked activities using AI, to enable you resolve server issues and potential security threats.
             </td>
             <td class="border prose text-center">
-                <img class="h-6 mt-2 mb-4 block mx-auto" src="/assets/img/compare-logos/check2.svg" alt="Icon that indicates this feature is not supported." />
+                <img class="h-6 mt-2 mb-4 block mx-auto" src="/assets/img/compare-logos/check2-x.svg" alt="Icon that indicates this feature is not supported." />
             </td>
          </tr>
          <tr>
@@ -132,7 +132,7 @@ ogImage: https://raw.githubusercontent.com/apitoolkit/.github/main/images/compar
                 Coming soon.
             </td>
             <td class="border prose text-center">
-                <img class="h-6 mt-2 mb-4 block mx-auto" src="/assets/img/compare-logos/check2.svg" alt="Icon that indicates this feature is supported." />
+                <img class="h-6 mt-2 mb-4 block mx-auto" src="/assets/img/compare-logos/check2-x.svg" alt="Icon that indicates this feature is supported." />
             </td>
          </tr>
          <tr>
@@ -143,9 +143,7 @@ ogImage: https://raw.githubusercontent.com/apitoolkit/.github/main/images/compar
                 Create synthetic monitors (tests and assertions) for your API endpoints and execute them at defined periods in real-time against different parameters on your endpoints.
             </td>
             <td class="border prose text-center">
-                <img class="h-6 mt-2 mb-4 block mx-auto" src="/assets/img/compare-logos/check2.svg" alt="Icon that indicates this feature is supported." />
-
-                Supports browser, API, and mobile tests for applications, endpoints, and network layers.
+                <img class="h-6 mt-2 mb-4 block mx-auto" src="/assets/img/compare-logos/check2-x.svg" alt="Icon that indicates this feature is supported." />
             </td>
          </tr>
          <tr>
@@ -187,7 +185,7 @@ ogImage: https://raw.githubusercontent.com/apitoolkit/.github/main/images/compar
                 Users on any plan can <a href="https://apitoolkit.io/demo" target="_blank" rel="noopener noreferrer" class="text-slate-500">schedule a call</a> with an engineer on the team, join the <a href="https://apitoolkit.io/discord" target="_blank" rel="noopener noreferrer" class="text-slate-500">community Discord server</a>, write via email, or submit issues on <a href="https://github.com/apitoolkit" target="_blank" rel="noopener noreferrer" class="text-slate-500">GitHub</a>. Our support team is always ready to help, swiftly!
             </td>
             <td class="border prose text-center">
-                Users on the free plan can get support via Slack and only the paid users get email and chat support.
+                Users on the free plan can get support via GitHub issues and only the paid users get email support.
             </td>
          </tr>
       </table>
