@@ -40,7 +40,7 @@ pages:
         <section class="w-full grid md:grid-cols-2 lg:grid-cols-2 gap-8 py-24">
             {% for page in this.frontmatter.pages %}
                 <a href="{{ page.slug }}"
-                    class="group rounded-2xl border p-6 flex flex-col justify-start gap-6 text-left bg-base-100 shadow-md duration-300 hover:-translate-y-3">
+                    class="group rounded-2xl border p-6 flex flex-col gap-6 text-left bg-base-100 shadow-md duration-300 hover:-translate-y-3">
                     <div class="flex flex-col gap-3 pb-1">
                         <h3 class="font-medium text-3xl">{{ page.title }}</h3>
                     </div>

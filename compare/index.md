@@ -1,6 +1,7 @@
 ---
-title: Why Choose APItoolkit?
 date: 2024-17-07
+title: Why Choose APItoolkit?
+description: There are many monitoring and observability platforms in the market today, each with its unique offerings. Here’s what APItoolkit does better and offers differently compared to a few of the others.
 ogImage: https://raw.githubusercontent.com/apitoolkit/.github/main/images/events-og.png
 pages:
   - name: Datadog
@@ -45,7 +46,7 @@ pages:
             There are many monitoring and observability platforms in the market today, each with its unique offerings. Here’s what APItoolkit does better and offers differently compared to a few of the others.
          <p>
          <div class="mt-[30px] flex items-center gap-4 text-center">
-            <a href="https://app.apitoolkit.io" class="btn btn-secondary sm:w-56 hover:animate-pulse">GET STARTED <i class="fa-solid fa-angle-right ml-6"></i></a>
+            <a href="https://app.apitoolkit.io" class="btn btn-secondary sm:w-56">GET STARTED <i class="fa-solid fa-angle-right ml-5"></i></a>
             <a href="https://apitoolkit.io/demo" class="btn btn-outline btn-neutral sm:w-56">BOOK A CALL <span class="text-xs">- for free</span></a>
          </div>
       </div>
@@ -56,7 +57,10 @@ pages:
 ```=html
    <div class="w-full width-control mx-auto px-2">
       <div class="w-full flex flex-col items-center text-center gap-4">
-         <p class="max-w-[300px] md:max-w-[800px] lg:max-w-[800px] text-base-content font-medium text-base md:text-lg">APItoolkit is an <span class="bg-blue-500 text-white border border-none rounded-xl px-2">API-first monitoring and observability platform</span>. We tracks all the live requests from users that come in and out (for both internal and external APIs) of your application and analyzes the requests to catch bugs and breaking changes, while also tracking all the errors and exceptions that happen while we are processing the requests.</p>
+         <p class="max-w-[400px] md:max-w-[800px] lg:max-w-[800px] text-lg">
+         <span class="mb-2">APItoolkit is an <span class="bg-blue-500 text-white border border-none rounded-xl px-2">API-first monitoring and observability platform</span>.</span>
+         <br />
+         <span>We tracks all the live requests from users that come in and out (for both internal and external APIs) of your application and analyzes the requests to catch bugs and breaking changes, while also tracking all the errors and exceptions that happen while we are processing the requests.</span></p>
       </div>
    </div>
 ```
@@ -80,13 +84,17 @@ pages:
 ```=html
    <div class="w-full my-12 width-control mx-auto px-2">
       <div class="w-full flex flex-col items-center text-center bg-blue-500 py-16 rounded-3xl gap-8">
-         <p class="font-medium text-3xl text-white px-16">If you’re building an API-driven application on the web, mobile, IoT, etc., and you need to observe the API usage data from live users’ payload for any reason, then you should be using APItoolkit.</p>
-         <a href="https://app.apitoolkit.io" class="btn btn-neutral sm:w-56 text-white">GET STARTED </a>
+         <p class="font-medium text-3xl text-white px-16 leading-normal">If you’re building an API-driven application on the web, mobile, IoT, etc., and you need to observe the API usage data from live users’ payload for any reason, then you should consider using APItoolkit.</p>
+         <a href="https://app.apitoolkit.io" class="btn btn-neutral sm:w-56 text-white">GET STARTED <i class="fa-solid fa-angle-right ml-5"></i></a>
       </div>
    </div>
 ```
 
-{% render "default/components/customers" %}
+```=html
+   <div class="width-control mx-auto px-2">
+      {% render "default/components/customers" %}
+   </div>
+```
 
 ```=html
 </div>
