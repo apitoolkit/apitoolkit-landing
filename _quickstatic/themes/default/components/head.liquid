@@ -8,7 +8,7 @@
     </title>
     <meta
       name="description"
-      content="APItoolkit is an end-to-end API and web services management toolkit for engineers and customer support teams. We use AI to help engineering teams observe, manage, monitor, and test their backend systems and any APIs they depend on."
+      content="{% if this.frontmatter.description %}{{ this.frontmatter.description }}{% else %}APItoolkit is an end-to-end API and web services management toolkit for engineers and customer support teams. We use AI to help engineering teams observe, manage, monitor, and test their backend systems and any APIs they depend on.{%- endif %}"
     >
     <link rel="canonical" href="https://apitoolkit.io{{this.permalink}}">
     <meta charset="UTF-8">
@@ -22,7 +22,7 @@
     >
     <meta
       property="og:description"
-      content="APItoolkit is an end-to-end API and web services management toolkit for engineers and customer support teams. We use AI to help engineering teams observe, manage, monitor, and test their backend systems and any APIs they depend on."
+      content="{% if this.frontmatter.description %}{{ this.frontmatter.description }}{% else %}APItoolkit is an end-to-end API and web services management toolkit for engineers and customer support teams. We use AI to help engineering teams observe, manage, monitor, and test their backend systems and any APIs they depend on.{%- endif %}"
     >
     <meta
       property="og:image"

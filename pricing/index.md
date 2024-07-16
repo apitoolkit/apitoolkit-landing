@@ -238,17 +238,7 @@ updatedDate: 2024-06-15
             </a>
         </section>
         <section class="w-full py-8">
-            <div class="width-control w-full mx-auto mt-[54px] py-12 relative text-center">
-                <p class="text-xl pb-8">Trusted by 3000+ Developers at Companies Like:</p>
-                <div class="flex gap-6  w-full justify-center flex-wrap items-center [&>*]:brightness-0 [&>*]:dark:invert">
-                    <img src="/assets/img/c1.png" alt="Andela Logo" class="h-5 sm:h-8">
-                    <img src="/assets/img/c2.png" alt="Thepeer Logo" class="h-5 sm:h-8">
-                    <img src="/assets/img/c3.png" alt="Grovepay Logo" class="h-5 sm:h-8">
-                    <img src="/assets/img/c4.png" alt="Same Day Customs Logo" class="h-5 sm:h-8">
-                    <img src="/assets/img/customers/platnova.png" alt="Platnova Logo" class="h-5 sm:h-8">
-                    <img src="/assets/img/customers/payfonte.svg" alt="Payfonte Logo" class="h-5 sm:h-8">
-                </div>
-            </div>
+        {% render "default/components/customers" %}
         </section>
         <section class="py-16 space-y-4">
             <h4 class="font-semibold text-3xl mb-6 w-full">Your questions, answered.</h4>
