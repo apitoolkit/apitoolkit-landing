@@ -41,14 +41,14 @@ ogImage: https://raw.githubusercontent.com/apitoolkit/.github/main/images/compar
         <tr>
             <td class="font-bold text-lg text-center">Pricing</td>
             <td class="border border-blue-500 bg-slate-50 dark:bg-inherit prose">
-                <ul class="">
+                <ul>
                     <li>Free for up to 20k requests per month (unlimited projects).</li>
                     <li>7 days of data retention and two team members on the free <a href="/pricing" target="_blank" rel="noopener noreferrer" class="text-slate-500">plan</a>.</li>
                     <li>The PAYU (pay-as-you-use) plan starts at $19 per month for 400k requests.</li>
                 </ul>
             </td>
             <td class="border prose">
-                <ul class="list-disc">
+                <ul>
                     <li>30-day team plan free trial for new users, then free for up to 5k errors per month with limited features.</li>
                     <li>15 days of data retention for errors and 7 days for logs, plus one team member on the free plan.</li>
                     <li>The paid team plan starts at $39 per month.</li>
@@ -60,11 +60,13 @@ ogImage: https://raw.githubusercontent.com/apitoolkit/.github/main/images/compar
             <td class="font-bold text-lg text-center">API Monitoring and Observability</td>
             <td class="border border-blue-500 bg-slate-50 dark:bg-inherit prose text-center">
                 <img class="h-6 mt-2 mb-4 block mx-auto" src="/assets/img/compare-logos/check.svg" alt="Icon that indicates this feature is supported." />
-                <p>Focused on <b>API-first</b> monitoring, observability, and application performance management (APM). Track and trace incoming and outgoing requests and capture the entire request-response chain of all endpoints on your API.</p>
+                
+                Focused on <b>API-first</b> monitoring, observability, and application performance management (APM). Track and trace incoming and outgoing requests and capture the entire request-response chain of all endpoints on your API.
             </td>
             <td class="border prose text-center">
                 <img class="h-6 mt-2 mb-4 block mx-auto" src="/assets/img/compare-logos/check2.svg" alt="Icon that indicates this feature is supported." />
-                <p>More focused on application uptime monitoring, errors, and logs.</p>
+                
+                More focused on application uptime monitoring, errors, and logs.
             </td>
          </tr>
          <tr>
