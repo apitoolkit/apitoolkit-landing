@@ -1,7 +1,7 @@
 ---
 date: 2024-17-07
-title: APItoolkit vs Honeybadger
-description: There are many monitoring and observability platforms in the market today, each with its unique offerings. Here’s what APItoolkit does better and offers differently compared to Honeybadger.
+title: APItoolkit vs New Relic
+description: There are many monitoring and observability platforms in the market today, each with its unique offerings. Here’s what APItoolkit does better and offers differently compared to New Relic.
 ogImage: https://raw.githubusercontent.com/apitoolkit/.github/main/images/compare-og.png
 ---
 
@@ -14,7 +14,7 @@ ogImage: https://raw.githubusercontent.com/apitoolkit/.github/main/images/compar
       <div class="width-control px-2 mx-auto flex flex-col items-center bg-[url('/assets/img/svgs/grid.svg')] dark:bg-none">
          <h1
             class="text-center mt-[20px] text-4xl md:text-6xl tracking-tight sm:leading-normal font-bold dark:text-white">
-            <span class="text-blue-500">APItoolkit</span> vs. Honeybadger
+            <span class="text-blue-500">APItoolkit</span> vs. New Relic
          </h1>
          <p
             class="mt-8 text-gray-700 dark:text-inherit text-lg tracking-tight leading-relaxed max-w-[800px]  text-center">
@@ -35,7 +35,7 @@ ogImage: https://raw.githubusercontent.com/apitoolkit/.github/main/images/compar
         <tr>
             <th class="py-6 font-bold"></th>
             <th class="py-6 font-bold text-lg border border-blue-500 bg-slate-50 dark:bg-inherit text-center">APItoolkit</th>
-            <th class="py-6 font-bold text-lg border text-center">Honeybadger</th>
+            <th class="py-6 font-bold text-lg border text-center">New Relic</th>
         </tr>
 
         <tr>
@@ -49,9 +49,9 @@ ogImage: https://raw.githubusercontent.com/apitoolkit/.github/main/images/compar
             </td>
             <td class="border prose">
                 <ul class="list-disc">
-                    <li>30-day team plan free trial for new users, then free for up to 5k errors per month with limited features.</li>
-                    <li>15 days of data retention for errors and 7 days for logs, plus one team member on the free plan.</li>
-                    <li>The paid team plan starts at $39 per month.</li>
+                    <li>Free for up to 100GB data ingest (unlimited projects) with limited features.</li>
+                    <li>30 days of data retention and one full platform member on the free plan.</li>
+                    <li>The paid plan starts at $0.35/GB beyond the free 100GB limit.</li>
                 </ul>
             </td>
          </tr>
@@ -64,7 +64,7 @@ ogImage: https://raw.githubusercontent.com/apitoolkit/.github/main/images/compar
             </td>
             <td class="border prose text-center">
                 <img class="h-6 mt-2 mb-4 block mx-auto" src="/assets/img/compare-logos/check2.svg" alt="Icon that indicates this feature is supported." />
-                <p>More focused on application uptime monitoring, errors, and logs.</p>
+                <p>More focused on different types of monitoring and log management for servers, applications, serverless, Kubernetes, and networks, including infrastructure, databases, etc.</p>
             </td>
          </tr>
          <tr>
@@ -121,7 +121,7 @@ ogImage: https://raw.githubusercontent.com/apitoolkit/.github/main/images/compar
                 Capture the entire request-response chain of external APIs your application depends on.
             </td>
             <td class="border prose text-center">
-                <img class="h-6 mt-2 mb-4 block mx-auto" src="/assets/img/compare-logos/check2-x.svg" alt="Icon that indicates this feature is not supported." />
+                <img class="h-6 mt-2 mb-4 block mx-auto" src="/assets/img/compare-logos/check2.svg" alt="Icon that indicates this feature is supported." />
             </td>
          </tr>
          <tr>
@@ -143,7 +143,9 @@ ogImage: https://raw.githubusercontent.com/apitoolkit/.github/main/images/compar
                 Create synthetic monitors (tests and assertions) for your API endpoints and execute them at defined periods in real-time against different parameters on your endpoints.
             </td>
             <td class="border prose text-center">
-                <img class="h-6 mt-2 mb-4 block mx-auto" src="/assets/img/compare-logos/check2-x.svg" alt="Icon that indicates this feature is not supported." />
+                <img class="h-6 mt-2 mb-4 block mx-auto" src="/assets/img/compare-logos/check2.svg" alt="Icon that indicates this feature is supported." />
+
+                Supports browser, API, and mobile tests for applications, endpoints, and network layers.
             </td>
          </tr>
          <tr>
@@ -185,7 +187,7 @@ ogImage: https://raw.githubusercontent.com/apitoolkit/.github/main/images/compar
                 Users on any plan can <a href="https://apitoolkit.io/demo" target="_blank" rel="noopener noreferrer" class="text-slate-500">schedule a call</a> with an engineer on the team, join the <a href="https://apitoolkit.io/discord" target="_blank" rel="noopener noreferrer" class="text-slate-500">community Discord server</a>, write via email, or submit issues on <a href="https://github.com/apitoolkit" target="_blank" rel="noopener noreferrer" class="text-slate-500">GitHub</a>. Our support team is always ready to help, swiftly!
             </td>
             <td class="border prose text-center">
-                Users get support via email and only the paid users get priority and real-time chat support.
+                Users get support via GitHub issues, forum, and their Slack community and only the paid users get ticketed support.
             </td>
          </tr>
       </table>
