@@ -56,9 +56,9 @@ pages:
 
 ```=html
    <div class="w-full width-control mx-auto px-2">
-      <div class="w-full flex flex-col items-center text-center gap-4">
-         <p class="max-w-[400px] md:max-w-[800px] lg:max-w-[800px] text-lg">
-         <span class="mb-2">APItoolkit is an <span class="bg-blue-500 text-white border border-none rounded-xl px-2">API-first monitoring and observability platform</span>.</span>
+      <div class="w-full flex flex-col items-center text-center">
+         <p class="max-w-[400px] md:max-w-[800px] lg:max-w-[800px] text-lg prose">
+         <span class="mb-3">For a start, APItoolkit is an <span class="bg-blue-500 text-white border border-none rounded-xl px-2">API-first monitoring and observability platform</span>.</span>
          <br />
          <span>We tracks all the live requests from users that come in and out (for both internal and external APIs) of your application and analyzes the requests to catch bugs and breaking changes, while also tracking all the errors and exceptions that happen while we are processing the requests.</span></p>
       </div>
