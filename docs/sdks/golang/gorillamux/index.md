@@ -330,7 +330,7 @@ func main() {
 
   </div>
   <div id="tab2" class="tab-content">
-  If you are using a TLS client for your HTTP requests, you will need to use the [apitoolkit-go/tls_client](https://github.com/apitoolkit/apitoolkit-go/tls_client){target="_blank" rel="noopener noreferrer"} package to monitor those requests. To use the package, you must first install it using the command below:
+  If you are using a TLS client for your HTTP requests, you will need to use the [apitoolkit-go/tls_client](https://github.com/apitoolkit/apitoolkit-go/tree/main/tls_client){target="_blank" rel="noopener noreferrer"} package to monitor those requests. To use the package, you must first install it using the command below:
 
 ```sh
 go get github.com/apitoolkit/apitoolkit-go/tls_client
