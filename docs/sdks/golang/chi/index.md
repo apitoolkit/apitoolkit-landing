@@ -329,13 +329,13 @@ func main() {
 
   </div>
   <div id="tab2" class="tab-content">
-  If you are using a TLS client for your HTTP requests, you will need to use the [apitoolkit-go/tls_client](https://github.com/apitoolkit/apitoolkit-go-tlsclient){target="_blank" rel="noopener noreferrer"} package to monitor those requests. To use the package, you must first install it using the command below:
+  If you are using a TLS client for your HTTP requests, you will need to use the [apitoolkit-go/tls_client](https://github.com/apitoolkit/apitoolkit-go/tls_client){target="_blank" rel="noopener noreferrer"} package to monitor those requests. To use the package, you must first install it using the command below:
 
 ```sh
 go get github.com/apitoolkit/apitoolkit-go-tlsclient
 ```
 
-  Here's an example of the configuration with a TLS client:
+Here's an example of the configuration with a TLS client:
 
 ```go
 package main
@@ -347,7 +347,7 @@ import (
   "github.com/go-chi/chi/v5"
   fhttp "github.com/bogdanfinn/fhttp"
   tls_client "github.com/bogdanfinn/tls-client"
-  
+
   apitoolkit "github.com/apitoolkit/apitoolkit-go/chi"
   apitoolkitTlsClient "github.com/apitoolkit/apitoolkit-go-tlsclient"
 )
@@ -401,6 +401,7 @@ func main() {
   http.ListenAndServe(":3000", router)
 }
 ```
+
   </div>
 </section>
 
