@@ -42,7 +42,7 @@ pages:
             Why Choose APItoolkit?
          </h1>
          <p
-            class="mt-8 text-gray-700 dark:text-inherit md:text-[26px] tracking-tight leading-tight max-w-[800px]  text-center font-medium">
+            class="mt-8 text-gray-700 dark:text-inherit text-[26px] tracking-tight leading-normal max-w-[800px]  text-center font-medium">
             There are many monitoring and observability platforms in the market today, each with its unique offerings. Here’s what APItoolkit does better and offers differently compared to a few of the others.
          <p>
          <div class="mt-[30px] flex items-center gap-4 text-center">
@@ -58,7 +58,7 @@ pages:
    <div class="w-full width-control mx-auto px-2">
       <div class="w-full flex flex-col items-center text-center">
          <p class="max-w-[400px] md:max-w-[800px] lg:max-w-[800px] text-lg prose">
-         <span class="mb-3">For a start, APItoolkit is an <span class="bg-blue-500 text-white border border-none rounded-xl px-2">API-first monitoring and observability platform</span>.</span>
+         <span class="mb-3">For a start, APItoolkit is an <span class="bg-blue-500 text-white border border-none rounded-xl px-2 py-0.5">API-first monitoring and observability platform</span>.</span>
          <br />
          <span>We tracks all the live requests from users that come in and out (for both internal and external APIs) of your application and analyzes the requests to catch bugs and breaking changes, while also tracking all the errors and exceptions that happen while we are processing the requests.</span></p>
       </div>
