@@ -184,7 +184,7 @@ ogImage: https://raw.githubusercontent.com/apitoolkit/.github/main/images/compar
          <tr>
             <td class="font-bold text-base md:text-lg lg:text-lg text-center">Customer Support</td>
             <td class="border border-blue-500 bg-slate-50 dark:bg-inherit prose text-sm md:text-base lg:text-base leading-relaxed text-center">
-                Users on any plan can <a href="https://apitoolkit.io/demo" target="_blank" rel="noopener noreferrer" class="text-slate-500">schedule a call</a> with an engineer on the team, join the <a href="https://apitoolkit.io/discord" target="_blank" rel="noopener noreferrer" class="text-slate-500">community Discord server</a>, write via email, or submit issues on <a href="https://github.com/apitoolkit" target="_blank" rel="noopener noreferrer" class="text-slate-500">GitHub</a>. Our support team is always ready to help, swiftly!
+                Users on any plan can <a href="https://apitoolkit.io/demo" target="_blank" rel="noopener noreferrer" class="text-slate-500">schedule a call</a> with an engineer on the team, join the community <a href="https://apitoolkit.io/discord" target="_blank" rel="noopener noreferrer" class="text-slate-500">Discord server</a>, write via email, or submit issues on <a href="https://github.com/apitoolkit" target="_blank" rel="noopener noreferrer" class="text-slate-500">GitHub</a>. Our support team is always ready to help, swiftly!
             </td>
             <td class="border prose text-sm md:text-base lg:text-base leading-relaxed text-center">
                 Users get community and live chat support.
