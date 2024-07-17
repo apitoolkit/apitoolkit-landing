@@ -77,3 +77,11 @@ func main() {
   http.ListenAndServe(":8080", nil)
 }
 ```
+
+```=html
+<hr />
+<a href="https://github.com/apitoolkit/apitoolkit-go/tls_client" target="_blank" rel="noopener noreferrer" class="w-full btn btn-outline link link-hover">
+    <i class="fa-brands fa-github"></i>
+    Explore the Golang TLS Client SDK
+</a>
+```
