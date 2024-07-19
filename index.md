@@ -1,5 +1,5 @@
 ---
-title: "The API Developer's Toolbox"
+title: "API first monitoring and Observability"
 date: 2022-03-23
 updatedDate: 2024-07-17
 hidenav: true
@@ -7,7 +7,7 @@ monitoring-carousel:
   name: "monitoring-carousel"
   pre-title: "Monitoring & Observability"
   title: "Monitor Critical Systems and Third Parties"
-  description: "Gain data-driven insights into your APIs and APIs you depend on. Query user behavior and see all requests made by users or requests you made to third parties."
+  description: "Query user behavior and see all requests made by users or requests you made to third parties."
   items:
     - title: Log Explorer to Query Incoming and Outgoing Requests
       img: /assets/img/screenshots/log_explorer_zoom.png
@@ -23,9 +23,7 @@ errors-carousel:
   title: "No More Guessing Games. Track Code Errors and Breaking Changes with More Context"
   description: >
     Get to the root cause of every issue. 
-    Whether it is caused by runtime errors, 
-    breaking API changes introduced by third-party integrations, 
-    or unintended API-breaking changes by your team."
+    Whether runtime errors or breaking API changes"
   items:
     - title: See Errors and API Issues at a Glance
       img: /assets/img/screenshots/errors_zoomed.png
@@ -35,12 +33,10 @@ errors-carousel:
       img: /features/error-tracking/changes_details.png
 testing-carousel:
   name: "testing-carousel"
-  pre-title: "E2E API Testing & Synthetic Monitors"
+  pre-title: "Healthchecks & Synthetic Monitors"
   title: "Run Active E2E Monitors on any APIs, and Assert if Key Use Cases Work as Expected"
   description: >
-    Our AI even generates these tests and monitors for you, 
-    from your OpenAPI/Swagger spec, or API request logs.
-    Schedule them to run at intervals and configure specific checks and assertions.
+    Schedule Health checks and multistep API tests from your OpenAPI/Swagger spec, or API request logs.
   items:
     - title: Be the First to Know When Your APIs are Down or Slow
       img: /assets/img/dashboard.png
@@ -264,6 +260,7 @@ _David Odohi_
   </section>
 ```
 
+{% comment %}
 ```=html
     <br/><br/>
   <section class="width-control mx-auto mt-[54px] pb-16 relative">
@@ -302,6 +299,7 @@ _Michael Akinwonmi_
     </div>
   </section>
 ```
+{% endcomment %}
 
 ```=html
   <section class="py-10 my-16">
