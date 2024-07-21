@@ -24,6 +24,9 @@ pages:
   - title: Outgoing Integrations
     slug: /docs/dashboard/dashboard-pages/outgoing-integrations
     icon: arrows-turn-right
+  - title: API Tests
+    slug: /docs/dashboard/dashboard-pages/api-tests
+    icon: list-check
   - title: OpenAPI/Swagger
     slug: /docs/dashboard/dashboard-pages/openapi-docs
     icon: brackets-curly
@@ -44,4 +47,3 @@ pages:
 {% endfor %}
 </div>
 ```
-
