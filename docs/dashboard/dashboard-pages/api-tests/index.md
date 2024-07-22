@@ -1,8 +1,8 @@
 ---
 title: API Tests
-date: 2024-07-21
-updatedDate: 2024-05-03
-menuWeight: 2
+date: 2024-07-22
+updatedDate: 2024-07-22
+menuWeight: 7
 ---
 
 # API Tests Page
@@ -279,3 +279,11 @@ Here's some example dates and their correct formats:
 | 1987/03/10 06:30 AM UTC         | `%Y/%m/%d %I:%M %p %Z`     |
 
 In this table, the "Date String" column represents the example date string, and the "Format" column contains the corresponding format string to parse the given date string.
+
+```=html
+<hr />
+<a href="/docs/dashboard/dashboard-pages/openapi-docs/" class="w-full btn btn-outline link link-hover">
+    Next: OpenAPI/Swagger Page
+    <i class="fa-regular fa-arrow-right mr-4"></i>
+</a>
+```
