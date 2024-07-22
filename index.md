@@ -1,5 +1,5 @@
 ---
-title: "API first monitoring and Observability"
+title: "API-first Monitoring and Observability"
 date: 2022-03-23
 updatedDate: 2024-07-17
 hidenav: true
