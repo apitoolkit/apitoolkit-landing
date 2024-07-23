@@ -2,7 +2,7 @@
 title: OpenAPI/Swagger
 date: 2024-04-22
 updatedDate: 2024-05-28
-menuWeight: 7
+menuWeight: 8
 ---
 
 # OpenAPI/Swagger Page
