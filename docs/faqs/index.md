@@ -31,12 +31,12 @@ faqs:
 
     <div class="flex w-full md:w-[40%] flex-col gap-4 text-gray-700 dark:text-base-content">
         {% for faq in this.frontmatter.faqs %}
-        <div class="bg-base-100 px-6 py-3 shadow-sm">
-            <button class="flex gap-4 items-center text-left hover:text-gray-800 dark:hover:text-white bg-secondary" onclick="toggleFaq(event)">
+        <div class="bg-secondary text-white px-6 py-3 shadow-sm">
+            <button class="flex gap-4 items-center text-left" onclick="toggleFaq(event)">
             <svg class="flex-shrink-0 icon h-5 w-5 text-current fill-current stroke-current opacity-70"><use xlink:href="/assets/deps/fontawesome/solid.svg#caret-right"></use></svg>
             {{faq.q}}
             </button>
-            <div class="pl-4 py-4 hidden text-gray-600 dark:text-base-content">{{faq.a}}</div>
+            <div class="pl-4 py-4 hidden text-white dark:text-base-content faq-answer">{{faq.a}}</div>
         </div>
         {% endfor %}
         </div>
