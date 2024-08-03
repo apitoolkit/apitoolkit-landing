@@ -756,6 +756,11 @@
             observer.observe(heading);
           });
       }
+      
+      function toggleFaq(e) {
+        e.currentTarget.nextElementSibling.classList.toggle('hidden')
+        e.currentTarget.firstElementChild.classList.toggle('rotate-90')
+      }
       init();
 
       document.body.addEventListener('htmx:afterSwap', function (event) {
