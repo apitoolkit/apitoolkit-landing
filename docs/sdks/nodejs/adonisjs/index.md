@@ -50,10 +50,10 @@ Then, register the middleware, like so:
   <button class="tab-button" data-tab="tab2">Adonis v5</button>
   <div id="tab1" class="tab-content">
     Add the `apitoolkit-adonis` client to your global middleware list in the `start/kernel.js|ts` file, like so:
-        
+
 ```js
-import server from "@adonisjs/core/services/server"
-import APIToolkit from "apitoolkit-adonis"
+import server from "@adonisjs/core/services/server";
+import APIToolkit from "apitoolkit-adonis";
 
 const client = new APIToolkit();
 
@@ -62,10 +62,10 @@ server.use([
   () => import("#middleware/force_json_response_middleware"),
   () => import("@adonisjs/cors/cors_middleware"),
   () => client.middleware(),
-])
+]);
 ```
 
-  Then, create an `apitoolkit.js|ts` file in the `/conf` directory and export the `defineConfig` object with some properties, like so:
+Then, create an `apitoolkit.js|ts` file in the `/conf` directory and export the `defineConfig` object with some properties, like so:
 
 ```js
 import { defineConfig } from "apitoolkit-adonis";
@@ -81,12 +81,12 @@ export default defineConfig({
   </div>
   <div id="tab2" class="tab-content">
     Add `@ioc:APIToolkit` to your global middleware list in the `start/kernel.js|ts` file, like so:
-          
+
 ```js
 Server.middleware.register([
   () => import("@ioc:Adonis/Core/BodyParser"),
   () => import("@ioc:APIToolkit"),
-])
+]);
 ```
 
     Then, create an `apitoolkit.js|ts` file in the `/conf` directory and export an `apitoolkitConfig` object with some properties, like so:
@@ -234,32 +234,7 @@ export const http: ServerConfig = {
   </div>
 </section>
 
-<section class="tab-group" data-tab-group="group3">
-  <button class="tab-button" data-tab="tab1">Report All Errors</button>
-  <button class="tab-button" data-tab="tab2">Report Specific Errors</button>
-  <div id="tab1" class="tab-content">
-    Then, use the `reportError()` function in your application's exception handler, passing in the `error` argument, to report all uncaught errors and service exceptions that happened during a request, like so:
-
-```js
-import { HttpContext, ExceptionHandler } from "@adonisjs/core/http";
-import { reportError } from "apitoolkit-adonis";
-
-export default class HttpExceptionHandler extends ExceptionHandler {
-  async handle(error: unknown, ctx: HttpContext) {
-    return super.handle(error, ctx);
-  }
-
-  async report(error: unknown, ctx: HttpContext) {
-    // Automatically report all uncaught errors to APItoolkit
-    reportError(error);
-    return super.report(error, ctx);
-  }
-}
-```
-
-  </div>
-  <div id="tab2" class="tab-content">
-    Then, use the `reportError()` function, passing in the `error` argument, to manually report specific errors at different parts of your application (within the context of a web request handler), like so:
+Unhandled server exceptions will be automatically monitored by apitoolkit but you can report specific errors by using the `reportError()` function, passing in the `error` argument, to manually report specific errors at different parts of your application (within the context of a web request handler), like so:
 
 ```js
 import router from "@adonisjs/core/services/router";
@@ -275,9 +250,6 @@ router.get("/observer", async () => {
   return { hello: "world" };
 });
 ```
-
-  </div>
-</section>
 
 ## Monitoring Outgoing Requests
 
