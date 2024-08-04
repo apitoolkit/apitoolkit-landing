@@ -60,7 +60,7 @@ pages:
          <p class="max-w-[400px] md:max-w-[800px] lg:max-w-[800px] text-lg prose">
          <span class="mb-3">For a start, APItoolkit is an <span class="bg-blue-500 text-white border border-none rounded-xl px-2 py-0.5">API-first monitoring and observability platform</span>.</span>
          <br />
-         <span>We tracks all the live requests from users that come in and out (for both internal and external APIs) of your application and analyzes the requests to catch bugs and breaking changes, while also tracking all the errors and exceptions that happen while we are processing the requests.</span></p>
+         <span>We track all the live users' requests that come in and out of your application (for both internal and external APIs in use) and analyze the requests to catch bugs and breaking changes, while also tracking all the errors and exceptions that happen while we are processing the requests.</span></p>
       </div>
    </div>
 ```

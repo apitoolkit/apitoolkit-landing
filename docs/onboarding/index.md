@@ -10,7 +10,7 @@ pageFullWidth: true
 
 # Onboarding Guide
 
-**APItoolkit** is an end-to-end API and web services management toolkit for engineers and customer support teams. We use AI to help engineering teams observe, manage, monitor, and test their backend systems and any external API they depend on. When you integrate APItoolkit into your application, you gain access to different features out-of-the-box, including but not limited to **API Monitoring and Observability**, **Error Tracking**, **Anomalies Detection**, **API Log Explorer**, **API Testing**, **API Management**, **API Analytics**, **Automatic OpenAPI Spec Generation**, and even more coming (we are always shipping!).
+**APItoolkit** is an API-first monitoring and observability platform for engineering and customer support teams. We use AI to help engineering teams observe, manage, monitor, and test their backend systems and any external API they depend on. When you integrate APItoolkit into your application, you gain access to different features out-of-the-box, including but not limited to **API Monitoring and Observability**, **Error Tracking**, **Anomalies Detection**, **API Log Explorer**, **API Testing**, **API Management**, **API Analytics**, **Automatic OpenAPI Spec Generation**, and even more coming (we are always shipping!).
 
 In this guide, we will walk you through the process of integrating APItoolkit into your API application. You will learn all the steps required to set up your account, fetch an API key, integrate with our SDK, and start monitoring requests on your API. If you prefer a video guide, here's one for you:
 

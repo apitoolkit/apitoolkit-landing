@@ -25,6 +25,9 @@ pages:
   - title: Outgoing Integrations
     slug: /docs/dashboard/dashboard-pages/outgoing-integrations
     icon: arrows-turn-right
+  - title: API Tests
+    slug: /docs/dashboard/dashboard-pages/api-tests
+    icon: list-check
   - title: OpenAPI/Swagger
     slug: /docs/dashboard/dashboard-pages/openapi-docs
     icon: brackets-curly
@@ -45,6 +48,10 @@ pages:
 # Dashboard Guides
 
 In these guides, you will learn how to effectively navigate through the APItoolkit dashboard and maximize all the powerful features accessible on different pages of the dashboard. Kindly click on any of the cards below to get started.
+
+```=html
+<hr />
+```
 
 ```=html
 <div class="mt-8 grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-8 text-center">

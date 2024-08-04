@@ -2,6 +2,17 @@
 title: Pricing
 date: 2022-03-23
 updatedDate: 2024-06-15
+faqs:
+  - q: What programming languages are supported?
+    a: We currently support 17+ web frameworks in different programming languages (Python, Golang, Javascript, PHP, C#, Java, etc.). If we don't support your framework, kindly email us at <a href="mailto:hello@apitoolkit.io">hello@apitoolkit.io</a> and we'll create an SDK for you ASAP!
+  - q: Do my requests have to leave my server to APItoolkit servers?
+    a: If you want to benefit from the API monitoring and the log explorer feature, yes. However, we offer an <a href="/pricing/">enterprise plan</a> that allows you to run APItoolkit on-prem (on your servers).
+  - q: Will your SDKs slow down my backend?
+    a: It depends. Most SDKs stream data asynchronously via Google PubSub, so your requests will see almost zero change in performance. However, if you use PHP you may pay a very tiny performance hit to send data to Google PubSub. This is because PHP doesn't support async workflows by default. But if you have the GRPC extension installed in your PHP environment, it will be used by PubSub to stream data asynchronously like in other languages. But this performance hit is barely noticeable and usually under 5ms added to every request.
+  - q: How do you handle security and sensitive data?
+    a: We take security seriously at APItoolkit. We employ encryption and authentication measures to ensure the security of your data during transmission and storage. All our SDKs also support redacting data. You can simply specify the JSONPath to the fields that you don't want the SDKs to forward to APItoolkit, and those sensitive fields will be stripped out/redacted before the data even leaves your servers and replaced with the text "[CLIENT REDACTED]" on our end. We will never see anything you don't want us to see.
+  - q: I really love what you're doing. How can I show support?
+    a: Give us a shout-out on X (Twitter), Discord, or any social media you use. We would also appreciate honest feedback about what we're building and suggestions for what functionality you would love to see next.
 ---
 
 ```=html
@@ -237,68 +248,15 @@ updatedDate: 2024-06-15
                 <button as="button" class="mt-auto rounded-xl flex flex-row justify-center px-4 py-[7px] border">Contact Sales</button>
             </a>
         </section>
-        <section class="w-full py-8">
+
+        <section class="w-full py-4">
         {% render "default/components/customers" %}
+
+        <hr />
+
+        {% render "default/components/faqs", this:this %}
         </section>
-        <section class="py-16 space-y-4">
-            <h4 class="font-semibold text-3xl mb-6 w-full">Your questions, answered.</h4>
-            <div>
-                <div class="flex w-full [&>div]:border flex-col gap-4 text-base-content">
-                    <div class="bg-base-100 px-6 py-3 shadow-sm">
-                        <button class="flex gap-4 items-center text-left hover:grow"
-                            onclick="toggleFaq(event)">
-                            <svg class="flex-shrink-0 icon h-5 w-5 text-current fill-current stroke-current opacity-70"><use xlink:href="/assets/deps/fontawesome/solid.svg#caret-right"></use></svg>
-                            What programming languages are supported?
-                        </button>
-                        <div class="pl-4 py-4 hidden text-base-content">
-                            Some services like the API testing does not need any SDK integration. But we have SDKs for multiple languages: Golang, PHP, C#, Java, etc. If we don't support your language or framework, please drop us a message at hello@apitoolkit.io. We can create one for you on-demand quite quickly.</div>
-                    </div>
-                    <div class="bg-base-100 px-6 py-3 shadow-sm">
-                        <button class="flex gap-4 items-center text-left hover:grow"
-                            onclick="toggleFaq(event)">
-                            <svg class="flex-shrink-0 icon h-5 w-5 text-current fill-current stroke-current opacity-70"><use xlink:href="/assets/deps/fontawesome/solid.svg#caret-right"></use></svg>
-                            Do my requests have to leave my server to APItoolkit servers?
-                        </button>
-                        <div class="pl-4 py-4 hidden text-content-base">
-                            Only if you want to benefit from the API metrics and the logs explorer. You can also enjoy all the other functionality which don't depend on your API traffic.
-                        </div>
-                    </div>
-                    <div class="bg-base-100 px-6 py-3 shadow-sm">
-                        <button class="flex gap-4 items-center text-left hover:grow"
-                            onclick="toggleFaq(event)">
-                            <svg class="flex-shrink-0 icon h-5 w-5 text-current fill-current stroke-current opacity-70"><use xlink:href="/assets/deps/fontawesome/solid.svg#caret-right"></use></svg>
-                            Can I prevent sending sensitive data to APItoolkit?
-                        </button>
-                        <div class="pl-4 py-4 hidden text-base-content">
-                            Yes. All our SDKs support redacting data. Simply specify the JSON path to the fields that you don't want the SDKs to forward to APItoolkit, and those fields will be stripped out/redacted before the data even leaves your servers. So we would never see them.
-                        </div>
-                    </div>
-                    <div class="bg-base-100 px-6 py-3 shadow-sm">
-                        <button class="flex gap-4 items-center text-left hover:grow"
-                            onclick="toggleFaq(event)">
-                            <svg class="flex-shrink-0 icon h-5 w-5 text-current fill-current stroke-current opacity-70"><use xlink:href="/assets/deps/fontawesome/solid.svg#caret-right"></use></svg>
-                            I really love what you're doing. How do I show support?
-                        </button>
-                        <div class="pl-4 py-4 hidden text-base-content">
-                            Give us a shout-out on X (Twitter) or Discord. We would also appreciate honest feedback about what we're building and suggestions for what functionality you would love to see next.
-                        </div>
-                    </div>
 
-                    <div class="bg-base-100 px-6 py-3 shadow-sm">
-                        <button class="flex gap-4 items-center rounded-lg text-left hover:grow"
-                            onclick="toggleFaq(event)">
-                            <svg class="flex-shrink-0 icon h-5 w-5 text-current fill-current stroke-current opacity-70"><use xlink:href="/assets/deps/fontawesome/solid.svg#caret-right"></use></svg>
-                            Will the SDKs slow down my backend?
-                        </button>
-                        <div class="pl-4 py-4 hidden text-base-content">
-                            It depends. Most SDKs stream data asynchronously via google pubsub streaming, so your requests will see almost zero change in performance, except if you use PHP. PHP doesn't support async workflows by default but if you have the GRPC extension installed in your PHP environment, the GRPC extension is used by pubsub to stream data asynchronously like in other languages. Otherwise, you pay a very tiny performance hit to send data to google pubsub. But this performance hit is barely noticeable and usually under 5ms added to every request.
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </section>
     </div>
 </div>
 ```

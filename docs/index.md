@@ -16,7 +16,7 @@ pageFullWidth: true
 # Welcome to the APItoolkit Documentation
 
 ```=html
-<p class="text-lg items-center text-center justify-center mt-4">APItoolkit is an end-to-end API and web services management toolkit for engineers and customer support teams. We use AI to help engineering teams observe, debug, monitor, and test their backend systems and any external API they depend on.</p>
+<p class="text-lg items-center text-center justify-center mt-4">APItoolkit is an API-first monitoring and observability platform for engineering and customer support teams. We use AI to help engineering teams observe, debug, monitor, and test their backend systems and any external API they depend on.</p>
 
 <div class="items-center text-center justify-center mt-8">
     <a href="/docs/onboarding/" class="btn btn-secondary t-white sm:w-56">Get Started</a>

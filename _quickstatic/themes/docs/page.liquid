@@ -243,6 +243,11 @@
       .tab-content.active {
         display: block;
       }
+
+      .faq-answer a {
+        color: #FFFFFF;
+        text-decoration: underline;
+      }
     </style>
 
     <!-- Twitter conversion tracking base code -->
@@ -682,10 +687,10 @@
           </div>
         </div>
         {% unless this.frontmatter.hideToc %}
-          <section class="w-56 hidden sm:block ">
-            <div class="w-56 my-48  fixed top-0 text-sm space-y-4">
+          <section class="w-56 hidden sm:block">
+            <div class="w-56 my-48 fixed top-0 text-sm space-y-4">
               <strong class="block font-medium">On this page:</strong>
-              <ul class="space-y-2 border-l " id="tableOfContents">
+              <ul class="space-y-2 border-l overflow-y-auto max-h-[calc(100vh-8rem)]" id="tableOfContents">
                 {% for toc in this.toc %}
                   <li class="hover:underline underline-offset-4 pl-{{toc.level | times: 3}}">
                     <a href="#{{toc.id}}">{{ toc.title }}</a>
@@ -755,6 +760,11 @@
           .forEach((heading) => {
             observer.observe(heading);
           });
+      }
+      
+      function toggleFaq(e) {
+        e.currentTarget.nextElementSibling.classList.toggle('hidden')
+        e.currentTarget.firstElementChild.classList.toggle('rotate-90')
       }
       init();
 
