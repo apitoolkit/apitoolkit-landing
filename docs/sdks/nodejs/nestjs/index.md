@@ -231,7 +231,7 @@ async function bootstrap() {
     redactRequestBody,
     redactResponseBody,
   });
-  
+
   const app = await NestFactory.create(AppModule);
   app.use(apiToolkitClient.expressMiddleware);
 
@@ -302,8 +302,64 @@ The configuration process depends on whether you choose ExpressJS or FastifyJS a
     </a>
   </div>
   <div id="tab2" class="tab-content">
-    <a href="/docs/sdks/nodejs/fastifyjs/#error-reporting" target="_blank" rel="noopener noreferrer" class="w-full btn glass">
-      FastifyJS Error Reporting Guide <i class="fa-regular fa-arrow-right"></i>
+To monitor all unhandled exceptions, add the APItoolkit `ReportError` function to you exceptions filter
+
+Example
+
+```ts
+import {ExceptionFilter, Catch, ArgumentsHost, HttpException} from '@nestjs/common';
+import { FastifyReply } from 'fastify';
+import { ReportError } from 'apitoolkit-fastify';
+
+@Catch()
+export class AllExceptionsFilter implements ExceptionFilter {
+catch(exception: unknown, host: ArgumentsHost) {
+// Report error to APIToolkit
+ReportError(exception);
+const ctx = host.switchToHttp();
+const response = ctx.getResponse<FastifyReply>();
+    const status =
+      exception instanceof HttpException ? exception.getStatus() : 500;
+
+    const message =
+      exception instanceof HttpException
+        ? exception.getResponse()
+        : 'Internal server error';
+
+    response.status(status).send({
+      statusCode: status,
+      message,
+    });
+  }
+}
+```
+
+Then register the filter in your application's entry file.
+
+```ts
+import { NestFactory } from '@nestjs/core';
+import { AppModule } from './app.module';
+import { FastifyAdapter, NestFastifyApplication} from '@nestjs/platform-fastify';
+import APIToolkit from 'apitoolkit-fastify';
+import { AllExceptionsFilter } from './app.filter';
+import Fastify from 'fastify';
+
+async function bootstrap() {
+  const fastify = Fastify();
+  const app = await NestFactory.create<NestFastifyApplication>(AppModule, new FastifyAdapter(fastify));
+  const apitoolkitClient = APIToolkit.NewClient({apiKey: '<API_KEY>', fastify});
+  apitoolkitClient.init();
+
+  // Register the exceptions filter as a global filter
+  app.useGlobalFilters(new AllExceptionsFilter());
+
+  await app.listen(3000);
+}
+bootstrap();
+```
+
+<a href="/docs/sdks/nodejs/fastifyjs/#error-reporting" target="_blank" rel="noopener noreferrer" class="w-full text-left btn glass">
+      FastifyJS Specific Error  Reporting Guide <i class="fa-regular fa-arrow-right"></i>
     </a>
   </div>
 </section>
