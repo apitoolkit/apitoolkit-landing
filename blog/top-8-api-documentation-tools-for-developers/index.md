@@ -94,6 +94,12 @@ This is a developer documentation tool that creates API documentation based on t
 
 Stoplight is a comprehensive platform for API documentation that prioritizes efficient API design, testing, and deployment. One standout feature of Stoplight is its style guide, promoting a design-first approach and enabling the creation of validation rules for API definitions while encouraging collaborative work. With versatile tools like Stoplight Documentation and open-source projects such as Stoplight Elements and Stoplight Dev Portal, it empowers users to build developer portals and seamlessly merge conceptual and reference documentation. Stoplight elevates API projects by providing robust solutions and fostering quality from inception.
 
+### [Document360](https://document360.com/)
+
+![document360](doc360.png)
+
+Document360 is a user-friendly documentation platform that provides a comprehensive solution for creating and managing interactive API documentation. Some notable features include the ability to import Swagger/OpenAPI, AI Powered search, and a "Try it" feature to test API endpoints directly within the platform. Document360 allows you to manage multiple API definitions and versions, setting up custom workflows and generating real-time code samples. Furthermore, it lets you add custom pages like getting started and step-by-step instructions, which makes it easy for end users to understand the API. With its resync functionality, Document360 ensures that your API documentation remains comprehensive and up-to-date.
+
 ### [Swagger](https://swagger.io/tools/swaggerhub/)
 
 ![swagger](swagger.png)
@@ -119,12 +125,6 @@ This is an open-source REST API documentation that generates documentation from 
 GitBook is an excellent choice for teams looking for a versatile and user-friendly documentation tool. Its emphasis on collaboration and ease of use makes it particularly beneficial for teams that include both technical and non-technical members. While it may not offer some of the specialized features found in tools dedicated solely to API documentation, its broad range of capabilities makes it a strong contender in the field.
 
 Any of the technologies listed above can help you create interactive, user-friendly, and easy-to-maintain online API documentation. When evaluating tools, keep your must-haves and nice-to-haves in mind to find the one that best meets your needs and fits your budget.
-
-### [Document360](https://document360.com/)
-
-![document360](doc360.png)
-
-Document360 is a user-friendly documentation platform that provides a comprehensive solution for creating and managing interactive API documentation. Some notable features include the ability to import Swagger/OpenAPI, AI Powered search, and a "Try it" feature to test API endpoints directly within the platform. Document360 allows you to manage multiple API definitions and versions, setting up custom workflows and generating real-time code samples. Furthermore, it lets you add custom pages like getting started and step-by-step instructions, which makes it easy for end users to understand the API. With its resync functionality, Document360 ensures that your API documentation remains comprehensive and up-to-date.
 
 ## Conclusion
 
