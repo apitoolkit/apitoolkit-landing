@@ -1,96 +1,40 @@
 ``` =html
 <header>
-    <section class="mt-8 md:mt-16 py-10 md:py-20">
-        <div class="width-control px-2 mx-auto flex flex-col items-center">
-            <a href="/blog/updates-october-2022/"
-                class="mb-32px  bg-base-200 group rounded-3xl bg-tertiary border border-opacity-0 hover:border-opacity-100 active:border-opacity-100 outline-none ring-0 hover:ring-[3px] focus:ring-[3px] active:ring-[1px] ring-opacity-0 hover:ring-opacity-30 focus:ring-opacity-30 active:ring-opacity-30 transition-all duration-500 ease-out"
-                href="">
-                <div class="typography-p6-medium flex items-center gap-[6px] p-[2px_7px_2px_2px]">
-                    <span class="rounded-3xl bg-[#2E3238] p-[3px_9px_3px_10px] text-white">New</span>
-                    <div class="flex items-center">Read latest updates! 🎉 &nbsp;&nbsp;
-                        <svg class="flex-shrink-0 icon h-5 w-5 text-current fill-current stroke-current opacity-70">
-                            <use xlink:href="/assets/deps/fontawesome/solid.svg#chevron-right"></use>
-                        </svg>
-                    </div>
-                </div>
-            </a>
-
+    <section class="mt-8 md:mt-20">
+        <div class="width-control px-2 mx-auto flex flex-col items-center gap-5">
+            <strong class="text-center block font-extrabold text-sm">MONITORING AND OBSERVABILITY SOFTWARE</strong>
             <h1
-                class="text-center mt-[20px] text-4xl md:text-6xl tracking-tight sm:leading-normal font-bold dark:text-white ">
-                API first Monitoring and Observability 
+                class="text-center text-4xl md:text-5xl font-extrabold dark:text-white">
+              Find and Fix Production issues<br/>before customers notice
             </h1>
             <p
-                class="mt-8 text-gray-700 dark:text-inherit md:text-[26px] tracking-tight leading-tight max-w-[800px]  text-center font-medium">
-                Observe, Debug & Test backend systems or any third party APIs. With Advanced Error & Breaking Change Detection.
+                class="text-gray-700 text-2xl dark:text-inherit leading-snug max-w-[800px]  text-center font-normal">
+            Observe, Debug & Test backend systems or any third party APIs.<br/>With Advanced Error & Breaking Change Detection in APIs.
             <p>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-10 pb-5">
-                {% capture badgecheck %}<svg
-                    class="text-secondary flex-shrink-0 icon h-5 w-5 fill-secondary stroke-secondar">
-                    <use xlink:href="/assets/deps/fontawesome/solid.svg#badge-check"></use>
-                </svg>{% endcapture %}
-                <div class="flex gap-2 items-center">{{badgecheck}}<p class="hover:underline underline-offset-2">Capture Logs, Metrics and Traces</p></div>
-                <div class="flex gap-2 items-center">{{badgecheck}}<p class="hover:underline underline-offset-2">Track All Backend Errors in One Place</p></div>
-                <div class="flex gap-2 items-center">{{badgecheck}}<p class="hover:underline underline-offset-2">Catch API Breaking Changes</p></div>
-                <div class="flex gap-2 items-center">{{badgecheck}}<p class="hover:underline underline-offset-2">Monitor Incoming & Outgoing Requests</p></div>
-            </div>
-            <div class="mt-[30px] flex items-center gap-4 text-center">
+            <div class="flex items-center gap-4 text-center">
                 <a href="https://app.apitoolkit.io" class="btn btn-secondary sm:w-56">Start for free</a>
-                <a href="https://apitoolkit.io/demo" class="btn btn-outline btn-neutral sm:w-56">Get a
+                <a href="https://apitoolkit.io/demo" class="btn btn-outline btn-neutral sm:w-56m">Get a
                     demo</a>
             </div>
-            <div class="mt-3 flex items-center gap-3 text-sm">
-                <p class=""><span class="text-green-600">✓</span> Privacy Controls</p>
-                <p class=""><span class="text-green-600">✓</span> GDPR Compliant</p>
-                <p class=""><span class="text-green-600">✓</span> Security First</p>
+            <div class="mt-2 flex items-center gap-3 text-sm">
+                <p><span class="text-green-600">✓</span> Privacy Controls</p>
+                <p><span class="text-green-600">✓</span> GDPR Compliant</p>
+                <p><span class="text-green-600">✓</span> Security First</p>
             </div>
             <!-- TrustBox Rating -->
-            <a class="mt-6 flex items-center gap-3" href="https://trustpilot.com/review/apitoolkit.io" target="_blank" rel="noopener noreferrer">
-                <img src="/assets/img/stars-4.svg" class="w-28" alt="APItoolkit Trustpilot Rating" />
+            <a class="mt-4 flex items-center gap-3" href="https://trustpilot.com/review/apitoolkit.io" target="_blank" rel="noopener noreferrer">
+                <img src="/assets/img/trustpilot-stars-4.5.svg" class="w-28" alt="APItoolkit Trustpilot Rating" />
                 <img class="w-20 dark:hidden" src="/assets/img/trustpilot-black.svg" alt="Trustpilot Logo" />
                 <img class="w-20 hidden dark:inline-block" src="/assets/img/trustpilot-white.svg" alt="Trustpilot Logo" />
             </a>
             <!-- End TrustBox Rating -->
         </div>
-        <div
-            class="hidden w-[min(100vw,1400px)] px-4 md:px-2 mx-auto mt-[54px] flex justify-center py-16 relative bg-[url('/assets/img/svgs/grid.svg')] dark:bg-none">
-            <div class="border-2 w-max shadow-xl  bg-base-100">
-                <video src="/assets/video/dashboard.mp4" loop id="main-demo-video" class="w-[1200px] min-w-0"></video>
-            </div>
-            <button onclick="playVideo(event)" id="playVideoButton" title="play demo video">
-                <div style="--animation-delay:.5s"
-                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full  bg-opacity-15 ripple">
-                </div>
-                <div style="--animation-delay:1.5s"
-                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full  bg-opacity-15 ripple">
-                </div>
-                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#2E3238] p-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path
-                            d="M19.6812 9.58609C20.9965 10.3455 21.6541 10.7251 21.8748 11.2209C22.0673 11.6532 22.0673 12.147 21.8748 12.5794C21.6541 13.075 20.9965 13.4548 19.6812 14.2141L10.1622 19.7099C8.847 20.4692 8.18936 20.849 7.64973 20.7922C7.17903 20.7428 6.75143 20.4958 6.47324 20.1129C6.1543 19.674 6.1543 18.9146 6.1543 17.3959V6.40433C6.1543 4.88559 6.1543 4.12621 6.47325 3.68724C6.75143 3.30434 7.17903 3.05746 7.64973 3.00799C8.18936 2.95127 8.847 3.33095 10.1622 4.09033L19.6812 9.58609Z"
-                            fill="white" />
-                    </svg>
-                </div>
-            </button>
+        <div class="text-center pt-20">
+          <img src="/assets/img/screenshot-tiles.png" class="max-w-[1024px] inline-block w-full"/>
         </div>
 
         {% render "default/components/customers" %}
         
     </section>
-    <script>
-        function playVideo(event) {
-            event.stopPropagation()
-            event.currentTarget.classList.add("hidden")
-            const video = document.querySelector("#main-demo-video")
-            if (video) {
-                video.play()
-                video.controls = true
-            }
-        }
-        const video = document.querySelector("#main-demo-video")
-        video.addEventListener("pause", () => {
-            document.querySelector("#playVideoButton").classList.remove("hidden")
-            video.controls = false
-        })
-    </script>
 </header>
 ```
