@@ -154,55 +154,115 @@ to automatically detect bugs, errors, breaking changes, etc.
 Or actively making healthcheck requests to API/web endpoints</p>
         </div>
 
-    <section class="mt-16 flex flex-col sm:grid sm:grid-cols-7 gap-10">
+    <section class="mt-16 flex flex-col sm:grid sm:grid-cols-7 gap-10 group">
     <div class="join join-vertical w-full col-span-2">
       <div class="collapse collapse-arrow join-item border-base-300 ">
-        <input type="radio" name="my-accordion-4" checked="checked" />
-        <div class="collapse-title text-lg font-bold">Logs, Metrics, Traces</div>
-        <div class="collapse-content">
+        <input type="radio" name="my-accordion-4" checked="checked" class="peer prod-acc1"/>
+        <div class="collapse-title text-lg font-bold peer-checked:bg-gray-100 dark:peer-checked:bg-gray-700 peer-checked:border-l-blue-600 border-l-8 border-l-transparent">Logs, Metrics, Traces</div>
+        <div class="collapse-content peer-checked:bg-gray-100 dark:peer-checked:bg-gray-700 peer-checked:border-l-blue-600 border-l-8 border-l-transparent">
         <p>Gather information you need to debug when things go wrong. Via our complete Open Telemetry support.</p>
         </div>
       </div>
       <div class="collapse collapse-arrow join-item ">
-        <input type="radio" name="my-accordion-4" />
-        <div class="collapse-title text-lg font-bold">Monitors and Healthchecks</div>
-        <div class="collapse-content">
+        <input type="radio" name="my-accordion-4" class="peer prod-acc2"/>
+        <div class="collapse-title text-lg font-bold peer-checked:bg-gray-100 dark:peer-checked:bg-gray-700 peer-checked:border-l-blue-600 border-l-8 border-l-transparent">Monitors and Healthchecks</div>
+        <div class="collapse-content peer-checked:bg-gray-100 dark:peer-checked:bg-gray-700 peer-checked:border-l-blue-600 border-l-8 border-l-transparent">
     <p>Create automated multistep tests that run at an interval and alert you if any services dont work as intended.</p>
         </div>
       </div>
       <div class="collapse collapse-arrow join-item ">
-        <input type="radio" name="my-accordion-4" />
-        <div class="collapse-title text-lg font-bold">Error Tracking</div>
-        <div class="collapse-content">
+        <input type="radio" name="my-accordion-4" class="peer prod-acc3" />
+        <div class="collapse-title text-lg font-bold peer-checked:bg-gray-100 dark:peer-checked:bg-gray-700 peer-checked:border-l-blue-600 border-l-8 border-l-transparent">Error Tracking</div>
+        <div class="collapse-content peer-checked:bg-gray-100 dark:peer-checked:bg-gray-700 peer-checked:border-l-blue-600 border-l-8 border-l-transparent">
           <p>Get an email, slack or other notification anytime a new error encountered in your code. Browse and manage all errors in one place </p>
         </div>
       </div>
       <div class="collapse collapse-arrow join-item ">
-        <input type="radio" name="my-accordion-4" />
-        <div class="collapse-title text-lg font-bold">API Payload logging</div>
-        <div class="collapse-content">
+        <input type="radio" name="my-accordion-4" class="peer prod-acc4" />
+        <div class="collapse-title text-lg font-bold peer-checked:bg-gray-100 dark:peer-checked:bg-gray-700 peer-checked:border-l-blue-600 border-l-8 border-l-transparent">API Payload logging</div>
+        <div class="collapse-content peer-checked:bg-gray-100 dark:peer-checked:bg-gray-700 peer-checked:border-l-blue-600 border-l-8 border-l-transparent">
           <p>Log all request payloads you make to any third party service, for analytics, compliance or debugging purposes.</p>
         </div>
       </div>
       <div class="collapse collapse-arrow join-item ">
-        <input type="radio" name="my-accordion-4" />
-        <div class="collapse-title text-lg font-bold">API (Breaking) Change Tracking</div>
-        <div class="collapse-content">
+        <input type="radio" name="my-accordion-4" class="peer prod-acc5" />
+        <div class="collapse-title text-lg font-bold peer-checked:bg-gray-100 dark:peer-checked:bg-gray-700 peer-checked:border-l-blue-600 border-l-8 border-l-transparent">API (Breaking) Change Tracking</div>
+        <div class="collapse-content peer-checked:bg-gray-100 dark:peer-checked:bg-gray-700 peer-checked:border-l-blue-600 border-l-8 border-l-transparent">
           <p>Log all request payloads you make to any third party service, for analytics, compliance or debugging purposes.</p>
         </div>
       </div>
       <div class="collapse collapse-arrow join-item ">
-        <input type="radio" name="my-accordion-4" />
-        <div class="collapse-title text-lg font-bold">Endpoint & Performance Analytics</div>
-        <div class="collapse-content">
+        <input type="radio" name="my-accordion-4" class="peer prod-acc6" />
+        <div class="collapse-title text-lg font-bold peer-checked:bg-gray-100 dark:peer-checked:bg-gray-700 peer-checked:border-l-blue-600 border-l-8 border-l-transparent">Endpoint & Performance Analytics</div>
+        <div class="collapse-content peer-checked:bg-gray-100 dark:peer-checked:bg-gray-700 peer-checked:border-l-blue-600 border-l-8 border-l-transparent">
           <p>Log all request payloads you make to any third party service, for analytics, compliance or debugging purposes.</p>
         </div>
       </div>
     </div>
     <div class="col-span-5">
-        <img src="/assets/img/screenshots/log_explorer_zoom.png"/>
-    </div>
+        <!--ARCADE EMBED START-->
+        <div style="position: relative; padding-bottom: calc(56.220891550232864% + 41px); height: 0; width: 100%;" class="shadow-slate-200 shadow-lg hidden group-has-[.prod-acc1:checked]:block">
+          <iframe
+            src="https://demo.arcade.software/Nx6n70M9AY31sCeNC11Z?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true"
+            title="APItoolkit Logs and Traces Explorer"
+            frameborder="0"
+            loading="lazy"
+            webkitallowfullscreen
+            mozallowfullscreen
+            allowfullscreen
+            allow="clipboard-write"
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;"
+          ></iframe>
+        </div>
+        <!--ARCADE EMBED END-->
+        <!--ARCADE EMBED START-->
+        <div style="position: relative; padding-bottom: calc(56.220891550232864% + 41px); height: 0; width: 100%;" class="shadow-slate-200 shadow-lg hidden group-has-[.prod-acc2:checked]:block">
+          <iframe
+            src="https://demo.arcade.software/SBZSrKn7bLpY64T53RC7?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true"
+            title="Multistep API Tests (Beta)"
+            frameborder="0"
+            loading="lazy"
+            webkitallowfullscreen
+            mozallowfullscreen
+            allowfullscreen
+            allow="clipboard-write"
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;"
+          ></iframe>
+        </div>
+        <!--ARCADE EMBED END-->
+        <!--ARCADE EMBED START-->
+        <div style="position: relative; padding-bottom: calc(56.220891550232864% + 41px); height: 0; width: 100%;" class="shadow-slate-200 shadow-lg hidden group-has-[.prod-acc4:checked]:block">
+          <iframe
+            src="https://demo.arcade.software/McjsaY7L2gYuzosqLBHp?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true"
+            title="API Request Payload Explorer"
+            frameborder="0"
+            loading="lazy"
+            webkitallowfullscreen
+            mozallowfullscreen
+            allowfullscreen
+            allow="clipboard-write"
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;"
+          ></iframe>
+        </div>
+        <!--ARCADE EMBED END-->
+        <!--ARCADE EMBED START-->
+        <div style="position: relative; padding-bottom: calc(56.220891550232864% + 41px); height: 0; width: 100%;"  class="shadow-slate-200 shadow-lg hidden group-has-[.prod-acc6:checked]:block">
+          <iframe
+            src="https://demo.arcade.software/W2AExhRuzUSl4OveoRxd?embed&embed_mobile=tab&embed_desktop=inline&show_copy_link=true"
+            title="Endpoints Analytics"
+            frameborder="0"
+            loading="lazy"
+            webkitallowfullscreen
+            mozallowfullscreen
+            allowfullscreen
+            allow="clipboard-write"
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color-scheme: light;"
+          ></iframe>
+        </div>
+        <!--ARCADE EMBED END-->
 
+
+    </div>    
     </section>
 
     <div class="text-center mt-20 border-t border-base-200">
