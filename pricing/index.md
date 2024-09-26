@@ -152,7 +152,7 @@ faqs:
              <p class="flex flex-col gap-4">
              Kickstart your journey with APItoolkit and enjoy up to a 100% discount on your first year of subscription through our exclusive Startup Program. Whether you're building your first product or scaling your next big idea, our program is designed to support growing startups with all the APItoolkit features you need to succeed.
              </p>
-             <button class="btn btn-secondary">Apply now</button>
+             <a href="https://tally.so/r/n9vVkY" target="_BLANK" class="btn btn-secondary">Apply now</a>
           </div>
           <div class="flex flex-col gap-2" style="background-image: url('/assets/img/support-program.webp'); background-size: cover; background-position: center;">
           </div>
