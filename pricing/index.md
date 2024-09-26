@@ -147,7 +147,7 @@ faqs:
         </section>
 
         <div class="rounded-2xl grid grid-cols-2 border shadow-sm">
-          <div class="flex flex-col gap-6 p-8">
+          <div class="flex flex-col gap-8 p-10">
              <h1 class="font-medium text-2xl" >APItoolkit Startup Program</h1>
              <p class="flex flex-col gap-4">
              Kickstart your journey with APItoolkit and enjoy up to a 100% discount on your first year of subscription through our exclusive Startup Program. Whether you're building your first product or scaling your next big idea, our program is designed to support growing startups with all the APItoolkit features you need to succeed.
