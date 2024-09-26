@@ -26,113 +26,10 @@ faqs:
         </div>
     </header>
     <div class="width-control mx-auto px-2">
-        <section class="w-full grid md:grid-cols-2 lg:grid-cols-3 gap-8 py-24">
-            <!-- FREE PLAN -->
-            <a href="https://app.apitoolkit.io/p/new"
-                class="group rounded-2xl border p-6 flex duration-300 flex-col justify-start gap-6 text-left bg-base-100 shadow-md hover:-translate-y-3">
-                <div class="flex flex-col gap-3 pb-1">
-                    <h3 class="font-medium text-3xl">Free</h3>
-                    <div>
-                        <div class="flex flex-row items-start gap-8px">
-                            <div class="font-bold text-6xl">
-                               $0 <small class="text-sm">per month.</small>
-                            </div>
-                        </div>
-                        <div class="text-sm leading-120 font-medium text-base-content">
-                            20,000 requests/month included for free.
-                        </div>
-                    </div>
-                </div>
-                <div class="text-base-content">
-                    <p class="font-bold mb-3">For Developers</p>
-                    <ul class="flex flex-col gap-3 text-sm font-medium">
-                        <li class="flex flex-row gap-2">
-                            <div
-                                class="inline-block text-center font-bold bg-gray-200 text-green-500 rounded-md w-5 h-5">
-                                ✓
-                            </div>2 team members
-                        </li>
-                        <li class="flex flex-row gap-2">
-                            <div
-                                class="inline-block text-center font-bold bg-gray-200 text-green-500 rounded-md w-5 h-5">
-                                ✓
-                            </div>All free features
-                        </li>
-                        <li class="flex flex-row gap-2">
-                            <div
-                                class="inline-block text-center font-bold bg-gray-200 text-green-500 rounded-md w-5 h-5">
-                                ✓
-                            </div>
-                            Last 7 days data retention
-                        </li>
-                    </ul>
-                </div>
-                <button as="button" class="mt-auto rounded-xl flex flex-row justify-center px-4 py-[7px] border"><span class="z-1 relative">Get Started</span></button>
-            </a>
-            <!-- PAY AS YOU USE PLAN -->
-            <!-- <a href="https://app.apitoolkit.io/p/new"
-                class="group rounded-2xl border p-6 flex duration-300 flex-col text-gray-50 justify-start gap-6 text-left bg-blue-600 shadow-md hover:-translate-y-3">
-                <div class="flex flex-col gap-3 pb-1">
-                    <h3 class="font-medium text-3xl">Pay as You Use</h3>
-                    <div>
-                        <div class="flex flex-row items-start gap-8px">
-                            <div class="font-bold text-6xl">
-                                $1 <small class="text-sm">per 10,000 requests.</small>
-                            </div>
-                        </div>
-                        <div class="text-sm leading-120 font-medium text-gray-200">
-                            Get 40% off by pre-paying for up to a year.
-                        </div>
-                    </div>
-                </div>
-                <div class="text-gray-50">
-                    <p class="font-bold mb-3">For Small Teams</p>
-                    <ul class="flex flex-col gap-3 text-sm font-medium">
-                        <li class="flex flex-row gap-2">
-                            <div class="text-center font-bold bg-gray-200 text-green-500 rounded-md w-5 h-5">
-                                ✓
-                            </div>Unlimited team members
-                        </li>
-                        <li class="flex flex-row gap-2">
-                            <div class="text-center font-bold bg-gray-200 text-green-500 rounded-md w-5 h-5">
-                                ✓
-                            </div>
-                            API testing pipelines
-                        </li>
-                        <li class="flex flex-row gap-2">
-                            <div class="text-center font-bold bg-gray-200 text-green-500 rounded-md w-5 h-5">
-                                ✓
-                            </div>
-                            API swagger/OpenAPI hosting
-                        </li>
-                        <li class="flex flex-row gap-2">
-                            <div class="text-center font-bold bg-gray-200 text-green-500 rounded-md w-5 h-5">
-                                ✓
-                            </div>
-                            API metrics custom monitors
-                        </li>
-                        <li class="flex flex-row gap-2">
-                            <div class="text-center font-bold bg-gray-200 text-green-500 rounded-md w-5 h-5">
-                                ✓
-                            </div>
-                            API live traffic AI-based validations
-                        </li>
-                        <li class="flex flex-row gap-2">
-                            <div class="text-center font-bold bg-gray-200 text-green-500 rounded-md w-5 h-5">
-                                ✓
-                            </div>
-                            Last 14 days data retention
-                        </li>
-                    </ul>
-                </div>
-                <button as="button"
-                    class="mt-auto rounded-xl text-white flex flex-row justify-center px-4 py-[7px] border">
-                    Get Started
-                </button>
-            </a>
-            GRADUATED PLAN -->
+        <section class="w-full grid md:grid-cols-2 gap-8 py-24">
+           <!-- GRADUATED PLAN -->
             <div
-                class="group rounded-2xl border p-6 flex duration-300 flex-col text-gray-50 justify-start gap-6 text-left bg-blue-600 shadow-md">
+                class="group rounded-2xl border p-6 flex duration-300 flex-col text-gray-700 justify-start gap-6 text-lef shadow-md">
                 <div class="flex flex-col gap-3 pb-1">
                 <div class="flex justify-between items-center">
                  <h3 class="font-medium text-[25px]">Pay as You Use</h3>
@@ -143,13 +40,13 @@ faqs:
                 </div>
                     <div>
                         <div class="flex flex-col items-start gap-8px">
-                            <span class="text-sm font-bold text-yellow-200" id="starts_at">Starts at ...</span>
+                            <span class="text-sm font-bold text-gray-400" id="starts_at">Starts at ...</span>
                             <div class="">
                                <span class="font-bold text-6xl" id="price">$19</span>
                                <span class="" id="num_requests">/400k requests</span>
                                <br>
                                <small class="text-sm">then $1 per 20k requests</small>
-                               <span id="save_container" class="text-yellow-200 font-bold"></span>
+                               <span id="save_container" class="text-green-600 font-bold"></span>
                             </div>
                         </div>
                     </div>
@@ -157,7 +54,7 @@ faqs:
                 <div>
                   <input type="range" min="0" max="6" step="1" value="0" class="range range-primary range-sm" id="price_range">
                 </div>
-                <div class="text-gray-50">
+                <div class="text-gray-700">
                     <p class="font-bold mb-3">For Growing Companies</p>
                     <ul class="flex flex-col gap-3 text-sm font-medium">
                         <li class="flex flex-row gap-2">
@@ -198,7 +95,7 @@ faqs:
                     </ul>
                 </div>
                 <a  href="https://app.apitoolkit.io/p/new"
-                    class="mt-auto rounded-xl text-white flex flex-row justify-center px-4 py-[7px] border">
+                    class="mt-auto rounded-xl text-gray-700 flex flex-row justify-center px-4 py-[7px] border">
                     Get Started
                 </a>
             </div>
