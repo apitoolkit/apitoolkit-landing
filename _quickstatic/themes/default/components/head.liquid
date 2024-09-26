@@ -62,7 +62,7 @@
     <base href="{{ this.permalink }}">
 
     <!-- end of meta tags and favicons -->
-    <link rel="stylesheet" href="/assets/css/tailwind.min.css">
+    <link rel="stylesheet" href="/assets/css/tailwind.min.css?v=1">
     <script defer src="/assets/js/main.js"></script>
 
     <style>
@@ -128,12 +128,8 @@
         font-family: 'Bakemono', sans-serif;
       }
 
-      h1 {
-        font-variation-settings: 'wght' 700, 'MONO' 500;
-      }
-
-      h2 {
-        font-variation-settings: 'wght' 600, 'MONO' 500;
+      h1, h2, .strong {
+        font-variation-settings: 'wght' 700, 'mono' 600;
       }
 
       body[data-theme='sunset'] h2 {
@@ -147,12 +143,12 @@
       h3,
       h4,
       h5 {
-        font-variation-settings: 'wght' 500, 'MONO' 500;
+        font-variation-settings: 'wght' 500, 'mono' 500;
       }
 
       .monospace {
         font-family: 'Bakemono', monospace;
-        font-variation-settings: 'MONO' 1000;
+        font-variation-settings: 'mono' 1000;
       }
     </style>
 
