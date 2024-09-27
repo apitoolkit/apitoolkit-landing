@@ -148,10 +148,18 @@ faqs:
 
         <div class="rounded-2xl grid grid-cols-2 border shadow-sm">
           <div class="flex flex-col gap-8 p-10">
-             <h1 class="font-medium text-2xl" >APItoolkit Startup Program</h1>
-             <p class="flex flex-col gap-4">
-             Kickstart your journey with APItoolkit and enjoy up to a 100% discount on your first year of subscription through our exclusive Startup Program. Whether you're building your first product or scaling your next big idea, our program is designed to support growing startups with all the APItoolkit features you need to succeed.
-             </p>
+             <h1 class="font-medium text-2xl" >Apply for the APItoolkit Startup Program</h1>
+            <div class="space-y-3 text-lg">
+             <p> 
+             Enjoy 50 to 100% discount on your first year of subscription through our exclusive Startup Program. Qualification criteria:
+            </p>
+            <ul class="list-disc">
+                <li>Building a software based product or service</li>
+                <li>Founded within the last 2 years</li>
+                <li>Less than $100k in funding</li>
+                <li>Have fewer than 5 employees</li>
+            </ul>
+            </div>
              <a href="https://tally.so/r/n9vVkY" target="_BLANK" class="btn btn-secondary">Apply now</a>
           </div>
           <div class="flex flex-col gap-2" style="background-image: url('/assets/img/support-program.webp'); background-size: cover; background-position: center;">
