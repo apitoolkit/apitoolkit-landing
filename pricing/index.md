@@ -42,8 +42,8 @@ faqs:
                         <div class="flex flex-col items-start gap-8px">
                             <span class="text-sm font-bold text-gray-400" id="starts_at">Starts at ...</span>
                             <div class="">
-                               <span class="font-bold text-6xl" id="price">$19</span>
-                               <span class="" id="num_requests">/400k requests</span>
+                               <span class="font-bold text-6xl" id="price">$34</span>
+                               <span class="" id="num_requests">/400k requests per month</span>
                                <br>
                                <small class="text-sm">then $1 per 20k requests</small>
                                <span id="save_container" class="text-green-600 font-bold"></span>
