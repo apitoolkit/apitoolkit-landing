@@ -66,6 +66,12 @@ faqs:
                             <div class="text-center font-bold bg-gray-200 text-green-500 rounded-md w-5 h-5">
                                 ✓
                             </div>
+                            Opentelemetry Logs and Traces 
+                        </li>
+                        <li class="flex flex-row gap-2">
+                            <div class="text-center font-bold bg-gray-200 text-green-500 rounded-md w-5 h-5">
+                                ✓
+                            </div>
                             API testing pipelines
                         </li>
                         <li class="flex flex-row gap-2">
