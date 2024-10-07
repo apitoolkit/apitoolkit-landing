@@ -305,10 +305,10 @@ Or actively making healthcheck requests to API/web endpoints</p>
                 </svg>
             </div>
             <ul class="col-span-2 list-disc pl-5 space-y-2 sm:space-y-6 strong">
-                <li>Which of my Parters/Integrations are unreliable</li>
+                <li>Which of my Partners/Integrations are unreliable</li>
                 <li>What exact payloads did a given customer send?</li>
                 <li>What are the most common errors and incidents this week?</li>
-                <li>What breaking changes did a Parner/Integration introduce</li>
+                <li>What breaking changes did a Partner/Integration introduce</li>
                 <li>What is the impact on recent code changes on Performance?</li>
                 <li>Which service is down or faulty at the moment?</li>
             </ul>
