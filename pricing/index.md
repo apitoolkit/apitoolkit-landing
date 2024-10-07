@@ -105,9 +105,81 @@ faqs:
                     Get Started
                 </a>
             </div>
+            <!-- Critical Systems PLAN -->
+            <div
+                class="group rounded-2xl border p-6 flex duration-300 flex-col text-gray-700 justify-start gap-6 text-lef shadow-md">
+                <div class="flex flex-col gap-3 pb-1">
+                <div class="flex justify-between items-center">
+                 <h3 class="font-medium text-[25px]">Critical Systems</h3>
+                </div>
+                    <div>
+                        <div class="flex flex-col items-start gap-8px">
+                            <span class="text-sm font-bold text-gray-400" id="starts_at">Starts at ...</span>
+                            <div class="">
+                               <span class="font-bold text-6xl" id="price">$500</span>
+                               <span class="" id="num_requests"> per month</span>
+                               <br>
+                               <small class="text-sm">continuous support for your engineering teams</small>
+                               <span id="save_container" class="text-green-600 font-bold"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-gray-700">
+                    <p class="font-bold mb-3">For Companies building Critical Systems</p>
+                    <ul class="flex flex-col gap-3 text-sm font-medium">
+                        <li class="flex flex-row gap-2">
+                            <div class="text-center font-bold bg-gray-200 text-green-500 rounded-md w-5 h-5">
+                                ✓
+                            </div>Everything as in "Pay as you use plan"
+                        </li>
+                        <li class="flex flex-row gap-2">
+                            <div class="text-center font-bold bg-gray-200 text-green-500 rounded-md w-5 h-5">
+                                ✓
+                            </div>We help you setup observability and realtime monitors
+                             
+                        </li>
+                        <li class="flex flex-row gap-2">
+                            <div class="text-center font-bold bg-gray-200 text-green-500 rounded-md w-5 h-5">
+                                ✓
+                            </div>
+                            We setup uptime checks and multistep api tests for you 
+                        </li>
+                        <li class="flex flex-row gap-2">
+                            <div class="text-center font-bold bg-gray-200 text-green-500 rounded-md w-5 h-5">
+                                ✓
+                            </div>
+                            We will be on call for your projects to catch and analyze issues.
+                        </li>
+                        <li class="flex flex-row gap-2">
+                            <div class="text-center font-bold bg-gray-200 text-green-500 rounded-md w-5 h-5">
+                                ✓
+                            </div>
+                            Our Senior Engineers will jump on calls with your team to help them resolve issues 
+                        </li>
+                        <li class="flex flex-row gap-2">
+                            <div class="text-center font-bold bg-gray-200 text-green-500 rounded-md w-5 h-5">
+                                ✓
+                            </div>
+                            Capped at 20 hours of support calls/sessions per month 
+                        </li>
+                        <li class="flex flex-row gap-2">
+                            <div class="text-center font-bold bg-gray-200 text-green-500 rounded-md w-5 h-5">
+                                ✓
+                            </div>
+                            Weekly reports about everything that went wrong or might be broken. 
+                        </li>
+                    </ul>
+                </div>
+                <a  href="https://apitoolkit.lemonsqueezy.com/buy/6d1d07b5-85ab-4440-8d6a-4dd57db852de"
+                    class="mt-auto rounded-xl text-gray-700 flex flex-row justify-center px-4 py-[7px] border">
+                    Get Started
+                </a>
+            </div>
+
             <!-- ENTERPRISE PLAN -->
             <a href="mailto:hello@apitoolkit.io"
-                class="group rounded-2xl border p-6 flex duration-300 flex-col text-gray-50 justify-start gap-6 text-left bg-slate-900 shadow-md hover:-translate-y-3">
+                class="col-span-2 group rounded-2xl border p-6 flex duration-300 flex-col text-gray-50 justify-start gap-6 text-left bg-slate-900 shadow-md hover:-translate-y-3">
                 <div class="flex flex-col gap-3 pb-1">
                     <h3 class="font-medium text-3xl">Enterprise</h3>
                     <div>
