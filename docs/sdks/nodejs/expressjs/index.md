@@ -1,18 +1,18 @@
 ---
-title: ExpressJs
+title: ExpressJs, OpenTelemetry
 ogTitle: ExpressJs SDK Guide
 date: 2022-03-23
-updatedDate: 2024-06-10
+updatedDate: 2024-10-10
 menuWeight: 2
 ---
 
-# ExpressJs SDK Guide
+# OpenTelemetry, Express.js, and APIToolkit Integration
 
-To integrate your ExpressJs application with APItoolkit, you need to use this SDK to monitor incoming traffic, aggregate the requests, and then send them to APItoolkit's servers. Kindly follow this guide to get started and learn about all the supported features of APItoolkit's **ExpressJs SDK**.
+You can combine OpenTelemetry with your Express.js application and integrate it with APIToolkit to collect and export telemetry data. This integration provides valuable insights into your application's behavior and performance through traces, metrics, and logs.
 
-```=html
-<hr>
-```
+Adding distributed tracing capabilities to your Express.js applications is straightforward. You'll need the OpenTelemetry Node.js library and a few configurations to get started.
+
+---
 
 ## Prerequisites
 
@@ -20,484 +20,214 @@ Ensure you have already completed the first three steps of the [onboarding guide
 
 ## Installation
 
-Kindly run the command below to install the SDK:
+First, install the OpenTelemetry Node.js SDK and its instrumentations:
 
 ```sh
-npm install apitoolkit-express
+npm install @opentelemetry/sdk-node \
+  @opentelemetry/api \
+  @opentelemetry/auto-instrumentations-node \
+  @opentelemetry/sdk-metrics \
+  @opentelemetry/sdk-trace-node
 
 # Or
 
-yarn add apitoolkit-express
+yarn add @opentelemetry/sdk-node \
+  @opentelemetry/api \
+  @opentelemetry/auto-instrumentations-node \
+  @opentelemetry/sdk-metrics \
+  @opentelemetry/sdk-trace-node
 ```
 
 ## Configuration
 
-Next, initialize APItoolkit in your application's entry point (e.g., `index.js`), like so:
+Next, configure the OpenTelemetry SDK to export data to an OpenTelemetry backend like APIToolkit for storage and visualization. Create a configuration file named `otel.js` for this purpose.
 
-<section class="tab-group" data-tab-group="group1">
-  <button class="tab-button" data-tab="tab1">ESM</button>
-  <button class="tab-button" data-tab="tab2">CommonJs</button>
-  <div id="tab1" class="tab-content">
+<div class="tab-group" data-tab-group="group1">
+  <div class="tab-buttons">
+    <button class="tab-button" data-tab="tab1">ESM</button>
+    <button class="tab-button" data-tab="tab2">CommonJs</button>
+  </div>
+  <div class="tab-content" id="tab1">
 
-```js
-import { APIToolkit } from "apitoolkit-express";
-import express from "express";
-import axios from "axios";
+```javascript
+// Import required OpenTelemetry modules
+import otel from "@opentelemetry/api";
+import { NodeSDK } from "@opentelemetry/sdk-node";
+import { Resource } from "@opentelemetry/resources";
+import { BatchSpanProcessor } from "@opentelemetry/sdk-trace-base";
+import { HttpInstrumentation } from "@opentelemetry/instrumentation-http";
+import { OTLPTraceExporter } from "@opentelemetry/exporter-trace-otlp-grpc";
+import { ExpressInstrumentation } from "@opentelemetry/instrumentation-express";
 
-const app = express();
-const port = 3000;
+// Environment variables and configuration
+const dsn = process.env.UPTRACE_DSN || "";
+console.log("using dsn:", dsn);
+const serviceName = process.env.OTEL_SERVICE_NAME || "myservice";
+const projectKey = process.env.OTEL_RESOURCE_ATTRIBUTES?.split("=")?.[1] || "";
 
-// IMPORTANT: apitoolkitClient must be declared
-// BEFORE all controllers and middleware in your application.
-const apitoolkitClient = APIToolkit.NewClient({
-  apiKey: "{ENTER_YOUR_API_KEY_HERE}",
-  debug: false,
-  tags: ["environment: production", "region: us-east-1"],
-  serviceVersion: "v2.0",
-  ignoreEndpoints: ["/products", "POST /categories", "GET /user/:name"],
+// Create an OTLP exporter for sending traces
+// This uses gRPC as the transport protocol
+const exporter = new OTLPTraceExporter({
+  url: process.env.OTEL_EXPORTER_OTLP_ENDPOINT,
+  headers: { "uptrace-dsn": dsn }, // Include the Uptrace DSN in headers
+  compression: "gzip", // Use gzip compression for efficiency
 });
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(apitoolkitClient.expressMiddleware);
-
-app.get("/", (req, res) => {
-  res.json({ hello: "Hello world!" });
+// Create a batch span processor
+// This batches spans before sending them to the exporter
+const batchSpanProcessor = new BatchSpanProcessor(exporter, {
+  maxExportBatchSize: 1000, // Maximum number of spans to send in one batch
+  maxQueueSize: 1000, // Maximum number of spans to buffer in memory
 });
 
-// IMPORTANT: apitoolkitClient.errorHandler must be declared
-// AFTER declaring apitoolkitClient.expressMiddleware
-// and all controllers and BEFORE any other error middleware.
-app.use(apitoolkitClient.errorHandler);
-
-app.listen(port, () => console.log("App running on port: " + port));
-```
-
-</div>
-  <div id="tab2" class="tab-content">
-
-```js
-const express = require("express");
-const APIToolkit = require("apitoolkit-express").default;
-
-const app = express();
-const port = 3000;
-
-// IMPORTANT: apitoolkitClient must be declared
-// BEFORE all controllers and middleware in your application.
-const apitoolkitClient = APIToolkit.NewClient({
-  apiKey: "{ENTER_YOUR_API_KEY_HERE}",
-  debug: false,
-  tags: ["environment: production", "region: us-east-1"],
-  serviceVersion: "v2.0",
-  ignoreEndpoints: ["/products", "POST /categories", "GET /user/:name"],
+// Initialize the OpenTelemetry SDK
+const sdk = new NodeSDK({
+  traceExporter: exporter,
+  spanProcessor: batchSpanProcessor,
+  resource: new Resource({
+    "service.name": serviceName,
+    "service.version": "1.0.0", // Version of your service
+    "at-project-key": projectKey,
+  }),
+  instrumentations: [
+    new HttpInstrumentation(), // Automatically instrument HTTP requests
+    new ExpressInstrumentation(), // Automatically instrument Express.js
+  ],
 });
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(apitoolkitClient.expressMiddleware);
+// Start the OpenTelemetry SDK
+sdk.start();
 
-app.get("/", (req, res) => {
-  res.json({ hello: "Hello world!" });
+// Handle shutdown of the SDK on application exit
+process.on("SIGTERM", () => {
+  sdk
+    .shutdown()
+    .then(() => console.log("SDK shut down successfully"))
+    .catch(error => console.log("Error shutting down SDK", error))
+    .finally(() => process.exit(0));
 });
 
-// IMPORTANT: apitoolkitClient.errorHandler must be declared
-// AFTER declaring apitoolkitClient.expressMiddleware
-// and all controllers and BEFORE any other error middleware.
-app.use(apitoolkitClient.errorHandler);
-
-app.listen(port, () => {
-  console.log("App running on port: " + port);
-});
+export default sdk;
 ```
 
   </div>
-</section>
+  <div class="tab-content" id="tab2">
 
-In the configuration above, **only the `apiKey` option is required**, but you can add the following optional fields:
+```javascript
+"use strict";
 
-{class="docs-table"}
-:::
-| Option | Description |
-| ------ | ----------- |
-| `debug` | Set to `true` to enable debug mode. |
-| `tags` | A list of defined tags for your services (used for grouping and filtering data on the dashboard). |
-| `serviceVersion` | A defined string version of your application (used for further debugging on the dashboard). |
-| `ignoreEndpoints` | A list of endpoints that should not be captured. |
-| `redactHeaders` | A list of HTTP header keys to redact. |
-| `redactResponseBody` | A list of JSONPaths from the request body to redact. |
-| `redactRequestBody` | A list of JSONPaths from the response body to redact. |
-:::
+// Import required OpenTelemetry modules
+const otel = require("@opentelemetry/api");
+const { NodeSDK } = require("@opentelemetry/sdk-node");
+const { Resource } = require("@opentelemetry/resources");
+const { BatchSpanProcessor } = require("@opentelemetry/sdk-trace-base");
+const { HttpInstrumentation } = require("@opentelemetry/instrumentation-http");
+const { OTLPTraceExporter } = require("@opentelemetry/exporter-trace-otlp-grpc");
+const { ExpressInstrumentation } = require("@opentelemetry/instrumentation-express");
+
+// Environment variables and configuration
+const dsn = process.env.UPTRACE_DSN || "";
+console.log("using dsn:", dsn);
+const serviceName = process.env.OTEL_SERVICE_NAME || "myservice";
+const projectKey = process.env.OTEL_RESOURCE_ATTRIBUTES?.split("=")?.[1] || "";
+
+// Create an OTLP exporter for sending traces
+// This uses gRPC as the transport protocol
+const exporter = new OTLPTraceExporter({
+  url: process.env.OTEL_EXPORTER_OTLP_ENDPOINT,
+  headers: { "uptrace-dsn": dsn }, // Include the Uptrace DSN in headers
+  compression: "gzip", // Use gzip compression for efficiency
+});
+
+// Create a batch span processor
+// This batches spans before sending them to the exporter
+const batchSpanProcessor = new BatchSpanProcessor(exporter, {
+  maxExportBatchSize: 1000, // Maximum number of spans to send in one batch
+  maxQueueSize: 1000, // Maximum number of spans to buffer in memory
+});
+
+// Initialize the OpenTelemetry SDK
+const sdk = new NodeSDK({
+  traceExporter: exporter,
+  spanProcessor: batchSpanProcessor,
+  resource: new Resource({
+    "service.name": serviceName,
+    "service.version": "1.0.0",
+    "at-project-key": projectKey,
+  }),
+  instrumentations: [
+    new HttpInstrumentation(), // Automatically instrument HTTP requests
+    new ExpressInstrumentation(), // Automatically instrument Express.js
+  ],
+});
+
+// Start the OpenTelemetry SDK
+sdk.start();
+
+// Handle shutdown of the SDK on application exit
+process.on("SIGTERM", () => {
+  sdk
+    .shutdown()
+    .then(() => console.log("SDK shut down successfully"))
+    .catch(error => console.log("Error shutting down SDK", error))
+    .finally(() => process.exit(0));
+});
+
+module.exports = sdk;
+```
+
+  </div>
+</div>
+
+## Environment Variables
+
+Your `.env` file will typically contain the following environment variables:
+
+| Option                        | Description                                                             |
+| ----------------------------- | ----------------------------------------------------------------------- |
+| `OTEL_SERVICE_NAME`           | The name of your service.                                               |
+| `OTEL_TRACES_EXPORTER`        | The type of exporter to use for traces.                                 |
+| `OTEL_LOGS_EXPORTER`          | The type of exporter to use for logs.                                   |
+| `OTEL_RESOURCE_ATTRIBUTES`    | Your project key.                                                       |
+| `OTEL_EXPORTER_OTLP_PROTOCOL` | The protocol to use for OTLP export.                                    |
+| `OTEL_EXPORTER_OTLP_ENDPOINT` | The endpoint for the OTLP exporter (http://otelcol.apitoolkit.io:4317). |
+| `OTEL_PROPAGATORS`            | A list of propagators to use.                                           |
+
+## Best Practices
 
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <p>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</p>
+  <ul>
+    <li>
+      Place the OpenTelemetry initialization code in a separate file (e.g., `otel.js`) for better organization and maintainability
+    </li>
+  </ul>
 </div>
 
 <div class="callout callout-red">
   <p><i class="fa-solid fa-triangle-exclamation"></i> <b>Warning</b></p>
   <ul>
-    <li>`apitoolkitClient` must be declared BEFORE all controllers and middleware in your application.</li>
-    <li>`apitoolkitClient.errorHandler` must be declared AFTER `apitoolkitClient.expressMiddleware` and all other controllers and BEFORE any other error middleware.</li>
+    <li>
+      Use the `--require` flag to load the tracing code before the application code:
+    </li>
   </ul>
+
+For JavaScript:
+
+```bash
+node --require ./otel.js app.js
+```
+
+For TypeScript:
+
+```bash
+ts-node --require ./otel.ts app.ts
+```
+
 </div>
 
-## Redacting Sensitive Data
+## APIToolkit
 
-If you have fields that are sensitive and should not be sent to APItoolkit servers, you can mark those fields to be redacted (the fields will never leave your servers).
+APIToolkit is a monitoring and observability software that helps you find production issues so you can fix them before your customers notice. You can use it to observe, debug, and monitor backend systems or any third-party APIs with advanced error and breaking change detection in APIs.
 
-To mark a field for redacting via this SDK, you need to add some additional arguments to the `apitoolkitClient` configuration object with paths to the fields that should be redacted. There are three arguments you can provide to configure what gets redacted, namely:
-
-1. `redactHeaders`: A list of HTTP header keys.
-2. `redactRequestBody`: A list of JSONPaths from the request body.
-3. `redactResponseBody`: A list of JSONPaths from the response body.
-
-<hr />
-JSONPath is a query language used to select and extract data from JSON files. For example, given the following sample user data JSON object:
-
-```json
-{
-  "user": {
-    "name": "John Martha",
-    "email": "john.martha@example.com",
-    "addresses": [
-      {
-        "street": "123 Main St",
-        "city": "Anytown",
-        "state": "CA",
-        "zip": "12345"
-      },
-      {
-        "street": "123 Main St",
-        "city": "Anytown",
-        "state": "CA",
-        "zip": "12345"
-      }
-    ],
-    "credit_card": {
-      "number": "4111111111111111",
-      "expiration": "12/28",
-      "cvv": "123"
-    }
-  }
-}
-```
-
-Examples of valid JSONPath expressions would be:
-
-{class="docs-table"}
-:::
-| JSONPath | Description |
-| -------- | ----------- |
-| `$.user.addresses[*].zip` | In this case, APItoolkit will replace the `zip` field in all the objects of the `addresses` list inside the `user` object with the string `[CLIENT_REDACTED]`. |
-| `$.user.credit_card` | In this case, APItoolkit will replace the entire `credit_card` object inside the `user` object with the string `[CLIENT_REDACTED]`. |
-:::
-
-<div class="callout">
-  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <p>To learn more about JSONPaths, please take a look at the [official docs](https://github.com/json-path/JsonPath/blob/master/README.md){target="_blank"} or use this [JSONPath Evaluator](https://jsonpath.com?ref=apitoolkit){target="_blank"} to validate your JSONPath expressions. </p>
-  <p>**You can also use our [JSON Redaction Tool](/tools/json-redacter/) <i class="fa-regular fa-screwdriver-wrench"></i> to preview what the final data sent from your API to APItoolkit will look like, after redacting any given JSON object**.</p>
-</div>
-<hr />
-
-Here's an example of what the configuration would look like with redacted fields:
-
-```js
-import express from "express";
-import { APIToolkit } from "apitoolkit-express";
-
-const app = express();
-const port = 3000;
-
-const startServer = async () => {
-  const apiKey = "{ENTER_YOUR_API_KEY_HERE}";
-  const redactHeaders = ["content-type", "Authorization", "HOST"];
-  const redactRequestBody = ["$.user.email", "$.user.addresses"];
-  const redactResponseBody = ["$.users[*].email", "$.users[*].credit_card"];
-
-  const apitoolkitClient = await APIToolkit.NewClient({
-    apiKey,
-    redactHeaders,
-    redactRequestBody,
-    redactResponseBody,
-  });
-
-  app.use(express.json());
-  app.use(express.urlencoded({ extended: true }));
-  app.use(apitoolkitClient.expressMiddleware);
-
-  app.get("/", (req, res) => {
-    res.send("Hello World!");
-  });
-
-  app.use(apitoolkitClient.errorHandler);
-
-  app.listen(port, () => {
-    console.log("App running on port " + port);
-  });
-};
-
-startServer();
-```
-
-<div class="callout">
-  <p><i class="fa-regular fa-circle-info"></i> <b>Note</b></p>
-  <ul>
-    <li>The `redactHeaders` config field expects a list of <b>case-insensitive headers as strings</b>.</li>
-    <li>The `redactRequestBody` and `redactResponseBody` config fields expect a list of <b>JSONPaths as strings</b>.</li>
-    <li>The list of items to be redacted will be applied to all endpoint requests and responses on your server.</li>
-  </ul>
-</div>
-
-## Handling File Uploads
-
-If you handling file uploads in your application using a framework, you might need to add some extra configuration to ensure that the request object contains all the parsed data, enabling accurate monitoring of file uploads across your application.
-
-Working with file uploads using [multer](https://npmjs.com/package/multer){target="\_blank" rel="noopener noreferrer"} for example requires no extra work since the parsed data (`fields` and `files`) are attached to the request object in multipart/form-data requests. However, if you're using [formidable](https://npmjs.com/package/formidable){target="\_blank" rel="noopener noreferrer"}, you need to attach the parsed data yourself to ensure accurate monitoring. Here's an example:
-
-```js
-import express from "express";
-import { APIToolkit } from "apitoolkit-express";
-import formidable from "formidable";
-
-const app = express();
-const port = 3000;
-
-const client = APIToolkit.NewClient({
-  apiKey: "{ENTER_YOUR_API_KEY_HERE}",
-});
-
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(client.expressMiddleware);
-
-app.post("/upload-formidable", (req, res, next) => {
-  const form = formidable({});
-  form.parse(req, (err, fields, files) => {
-    // Attach fields to request body
-    req.body = fields;
-    // Attach files to request body
-    req.files = files;
-
-    res.json({ message: "Uploaded successfully!" });
-  });
-});
-
-app.listen(port, () => {
-  console.log("App running on port " + port);
-});
-```
-
-## Error Reporting
-
-With APItoolkit, you can track and report different unhandled or uncaught errors, API issues, and anomalies at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
-
-<section class="tab-group" data-tab-group="group2">
-  <button class="tab-button" data-tab="tab1"> Report All Errors</button>
-  <button class="tab-button" data-tab="tab2">Report Specific Errors</button>
-  <div id="tab1" class="tab-content">
-To report all uncaught errors and service exceptions that happened during a request, use the `errorHandler` middleware **immediately after** your app's controllers, like so:
-
-```js
-import { APIToolkit, ReportError } from "apitoolkit-express";
-import express from "express";
-import axios from "axios";
-
-const app = express();
-const port = 3000;
-
-const apitoolkitClient = APIToolkit.NewClient({
-  apiKey: "{ENTER_YOUR_API_KEY_HERE}",
-});
-
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(apitoolkitClient.expressMiddleware);
-
-// All controllers
-app.get("/", (req, res) => {
-  // Controller logic here
-});
-
-// Other controllers...
-
-// Add the error handler
-// to automatically report all uncaught errors to APItoolkit
-app.use(apitoolkitClient.errorHandler);
-
-app.listen(port, () => {
-  console.log("App running on port " + port);
-});
-```
-
-<div class="callout">
-  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <p>Ensure to add the `apitoolkitClient.errorHandler` after all controllers and before any other error middleware.</p>
-</div>
-  </div>
-  <div id="tab2" class="tab-content">
-To manually report specific errors at different parts of your application (within the context of a web request handler), use the `ReportError()` function, passing in the `error` argument, like so:
-
-```js
-import { APIToolkit, ReportError } from "apitoolkit-express";
-import express from "express";
-
-const app = express();
-const port = 3000;
-
-const apitoolkitClient = APIToolkit.NewClient({
-  apiKey: "{ENTER_YOUR_API_KEY_HERE}",
-});
-
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(apitoolkitClient.expressMiddleware);
-
-app.get("/", (req, res) => {
-  try {
-    throw new Error("Deliberate error");
-    res.send("Hello"); // This line will not be reached due to the error thrown above
-  } catch (error) {
-    // Report the error to APItoolkit
-    ReportError(error);
-    res.send("Something went wrong...");
-  }
-});
-
-app.listen(port, () => {
-  console.log("App running on port " + port);
-});
-```
-
-  </div>
-</section>
-
-## Monitoring Outgoing Requests
-
-Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="\_blank"} page. However, you can separate outgoing requests from others and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="\_blank"} page, alongside the incoming request that triggered them.
-
-<section class="tab-group" data-tab-group="group3">
-  <button class="tab-button" data-tab="tab1">All Requests</button>
-  <button class="tab-button" data-tab="tab2">Specific Requests</button>
-  <button class="tab-button" data-tab="tab3">Specific Requests (Background Job)</button>
-  <div id="tab1" class="tab-content">
-To enable global monitoring of all axios requests, add `monitorAxios` to the `apitoolkitClient` configuration options, like so:
-
-```js
-import APIToolkit from "apitoolkit-express";
-import axios from "axios";
-import express from "express";
-
-const app = express();
-const port = 3000;
-
-const apitoolkitClient = APIToolkit.NewClient({
-  apiKey: "{ENTER_YOUR_API_KEY_HERE}",
-  monitorAxios: axios,
-});
-
-app.use(apitoolkitClient.expressMiddleware);
-
-app.get("/", async (req, res) => {
-  // This outgoing axios request will be monitored
-  const response = await axios.get(baseURL + "users/123");
-  res.send(response.data);
-});
-
-app.listen(port, () => {
-  console.log("App running on port " + port);
-});
-```
-
-  </div>
-  <div id="tab2" class="tab-content">
-To monitor a specific axios request within the context of a web request handler, wrap your axios instance with the `observeAxios()` function, like so:
-
-```js
-import APIToolkit, { observeAxios } from "apitoolkit-express";
-import axios from "axios";
-import express from "express";
-
-const app = express();
-const port = 3000;
-
-const apitoolkitClient = APIToolkit.NewClient({
-  apiKey: "{ENTER_YOUR_API_KEY_HERE}",
-});
-
-app.use(apitoolkitClient.expressMiddleware);
-
-app.get("/", async (req, res) => {
-  try {
-    const response = await observeAxios(axios).get(baseURL + "/users/user1234");
-    res.send(response.data);
-  } catch (error) {
-    console.error("Error occurred:", error);
-    res.status(500).send("Error occurred while fetching data");
-  }
-});
-
-app.listen(port, () => {
-  console.log("App running on port " + port);
-});
-```
-
-The `observeAxios` function above accepts a **required `axios` instance** and the following optional arguments:
-
-{class="docs-table"}
-:::
-| Option | Description |
-| ------ | ----------- |
-| `pathWildCard` | The `url_path` string for URLs with path parameters. |
-| `redactHeaders` | A list of HTTP header keys to redact. |
-| `redactResponseBody` | A list of JSONPaths from the request body to redact. |
-| `redactRequestBody` | A list of JSONPaths from the response body to redact. |
-:::
-
-  </div>
-  <div id="tab3" class="tab-content">
-If your outgoing request is called from a background job for example (outside the web request handler and hence, not wrapped by APItoolkit's middleware), using the imported `observeAxios` directly from `apitoolkit-express` will not be available. Instead, call `observeAxios` directly from `apitoolkitClient`, like so:
-
-```js
-import axios from "axios";
-import { APIToolkit } from "apitoolkit-express";
-
-async function fetchData() {
-  const apitoolkitClient = APIToolkit.NewClient({
-    apiKey: "{ENTER_YOUR_API_KEY_HERE}",
-  });
-
-  try {
-    const response = await apitoolkitClient.observeAxios(axios).get("http://localhost:8080/ping");
-    console.log(response.data);
-  } catch (error) {
-    console.error("Error occurred:", error);
-  }
-}
-
-// Call the async function to execute the code
-fetchData();
-```
-
-The `observeAxios` function above accepts a **required `axios` instance** and the following optional arguments:
-
-{class="docs-table"}
-:::
-| Option | Description |
-| ------ | ----------- |
-| `pathWildCard` | The `url_path` for URLs with path parameters. |
-| `redactHeaders` | A list of HTTP header keys to redact. |
-| `redactResponseBody` | A list of JSONPaths from the request body to redact. |
-| `redactRequestBody` | A list of JSONPaths from the response body to redact. |
-:::
-
-  </div>
-</section>
-
-```=html
-<hr />
-<a href="https://github.com/apitoolkit/apitoolkit-express" target="_blank" rel="noopener noreferrer" class="w-full btn btn-outline link link-hover">
-    <i class="fa-brands fa-github"></i>
-    Explore the ExpressJS SDK
-</a>
-```
+By integrating OpenTelemetry with Express.js and APIToolkit, you gain comprehensive insights into your application's performance, making it easier to identify and resolve issues quickly.
