@@ -421,7 +421,9 @@ import express from "express";
 const app = express();
 const port = 3000;
 
-const apitoolkitClient = APIToolkit.NewClient({ apiKey: "{ENTER_YOUR_API_KEY_HERE}" });
+const apitoolkitClient = APIToolkit.NewClient({
+  apiKey: "{ENTER_YOUR_API_KEY_HERE}",
+});
 
 app.use(apitoolkitClient.expressMiddleware);
 
@@ -466,7 +468,9 @@ async function fetchData() {
   });
 
   try {
-    const response = await apitoolkitClient.observeAxios(axios).get("http://localhost:8080/ping");
+    const response = await apitoolkitClient
+      .observeAxios(axios)
+      .get("http://localhost:8080/ping");
     console.log(response.data);
   } catch (error) {
     console.error("Error occurred:", error);
