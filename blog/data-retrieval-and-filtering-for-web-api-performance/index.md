@@ -69,7 +69,7 @@ There are different ways to provide these elements for web APIs, depending on th
 - **Using response body**: This method uses a dedicated field or object in the response body to provide links and metadata for pagination navigation. For example, the server can use a `pagination` field or object to provide next, previous, first, and last links, and total count, page number, and page size metadata. This method is more accessible and visible for some clients or frameworks, but it may require additional parsing or processing of the response body.
 
 - **Using response envelope**: This method uses a wrapper or envelope object that contains both the data and the links and metadata for pagination navigation in the response body. For example, the server can use a `data` field or object to provide the actual result set, and a `links` field or object to provide next, previous, first, and last links, and a `meta` field or object to provide total count, page number, and page size metadata. This method is more structured and organized for some clients or frameworks, but it may require additional parsing or processing
-of the response body.
+  of the response body.
 
 Read: [Incident Management: How to Resolve API Downtime Issues Before It Escalates](https://apitoolkit.io/blog/api-downtime/)
 
@@ -83,7 +83,7 @@ Filtering and sorting can improve the performance of web APIs in several ways:
 - They reduce the server load and memory consumption by processing less data per request.
 - They improve the user experience by providing more relevant and customized data.
 
-To implement filtering and sorting for web APIs, there are two main aspects to consider: 
+To implement filtering and sorting for web APIs, there are two main aspects to consider:
 
 1. How to allow clients to specify query parameters for filtering and sorting
 2. How to optimize database queries for common filtering operations
@@ -131,7 +131,8 @@ Projection parameters can be implemented in different ways, depending on the dat
 
 Data retrieval and filtering are essential processes for web API performance. By applying the techniques and best practices discussed above, you can optimize your web API for efficient data retrieval and filtering, and provide a fast and satisfying experience to your users.
 
-***
+---
+
 Try [APIToolkit](https://apitoolkit.io) - a robust API management toolbox to build and manage the most reliable APIs.
 
 **Keep Reading**

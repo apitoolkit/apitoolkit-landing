@@ -92,11 +92,7 @@
     background: #eb3349; /* fallback for old browsers */
     /* background: -webkit-linear-gradient(to right, #F45C43, #EB3349);  /* Chrome 10-25, Safari 5.1-6 */
     /* background: linear-gradient(to right, #F45C43, #EB3349); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(
-      to right,
-      rgba(169, 208, 113, 0.05),
-      rgba(136, 173, 215, 0.15)
-    );
+    background: linear-gradient(to right, rgba(169, 208, 113, 0.05), rgba(136, 173, 215, 0.15));
   }
 
   .bg-gradient-yellow {
@@ -193,7 +189,7 @@
 .section-line::after {
   animation: movingline 6s ease infinite forwards;
   background: linear-gradient(180deg, #dde9ff, #266df0 86.46%, #dde9ff);
-  content: ' ';
+  content: " ";
   display: block;
   height: 0;
   position: absolute;
@@ -214,12 +210,18 @@
 }
 
 .light-shadow {
-  box-shadow: 0 0 0 0.5px #e4e5e9, 0 0 0 1px #e4e5e999, 0 0 0 3.5px #f9f9fb,
+  box-shadow:
+    0 0 0 0.5px #e4e5e9,
+    0 0 0 1px #e4e5e999,
+    0 0 0 3.5px #f9f9fb,
     0 0 0 4px #f3f4f7;
 }
 
 .dark-shadow {
-  box-shadow: 0 0 0 1px #3d414980, 0 0 0 3px #25272bcc, 0 0 0 4px #2d2f36cc;
+  box-shadow:
+    0 0 0 1px #3d414980,
+    0 0 0 3px #25272bcc,
+    0 0 0 4px #2d2f36cc;
 }
 .ripple {
   background: radial-gradient(white, #266df0);
@@ -247,7 +249,7 @@
   @apply [&>label]:p-2;
 }
 .carousel-img-parent {
-  @apply  [&>*]:rounded-lg [&>*]:border [&>*]:border-gray-200 [&>*]:drop-shadow-lg;
+  @apply [&>*]:rounded-lg [&>*]:border [&>*]:border-gray-200 [&>*]:drop-shadow-lg;
   @apply [&>*]:hidden [&>*]:object-contain [&>*]:w-full  [&>*]:aspect-[4/3];
 }
 .carousel-menu input:checked + label {

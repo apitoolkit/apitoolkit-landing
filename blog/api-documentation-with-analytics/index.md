@@ -100,7 +100,7 @@ However, Google Analytics is not perfect. It has some limitations and drawbacks 
 - It does not provide real-time data or alerts for your documentation
 - It does not comply with some privacy regulations or policies that may apply to your documentation
 - It may have some inaccuracies or discrepancies in the data due to sampling, caching, or filtering
-  
+
 **Read**: [Top Must-Know API Trends in 2023](https://apitoolkit.io/blog/api-trends/)
 
 ### Other Analytics Tools and Their Pros and Cons
@@ -110,7 +110,7 @@ Besides Google Analytics, there are other analytics tools that you can use for y
 - **Matomo**: [Matomo](https://matomo.org/) is an open-source web analytics platform that offers similar features as Google Analytics, but with more control and privacy. You can host Matomo on your own server or use a cloud-based service. Matomo allows you to track user behavior, conversions, events, goals, segments, custom variables, heatmaps, session recordings, and more. However, Matomo may require more technical skills and resources to set up and maintain than Google Analytics.
 - **Hotjar**: [Hotjar](https://hotjar.com/) is a behavior analytics tool that helps you understand how users interact with your website or app. You can use Hotjar to track user feedback, surveys, polls, heatmaps, scroll maps, click maps, session recordings, funnels, forms, and more. However, Hotjar may not provide enough data or insights for measuring developer success or content quality.
 - **Mixpanel**: [Mixpanel](https://mixpanel.com/) is a product analytics tool that helps you measure user engagement, retention, conversion, and growth. You can use Mixpanel to track user actions, events, properties, cohorts, funnels, retention curves, segmentation charts,
-and more. However, Mixpanel may not be suitable for tracking user behavior or feedback on static pages or documents.
+  and more. However, Mixpanel may not be suitable for tracking user behavior or feedback on static pages or documents.
 
 The choice of analytics tools depends on your goals, needs, and preferences. You may use one or more tools depending on what data you want to collect and analyze. You may also integrate different tools using APIs or plugins to get a more comprehensive view of your documentation performance.
 
@@ -171,7 +171,6 @@ Remember, the pursuit of effective API documentation is a continuous process. Th
 
 [Web API Performance Best Practices: the Ultimate Guide](https://apitoolkit.io/blog/web-api-performance/)
 
-[Best API Monitoring and Observability Tools in 2023](https://apitoolkit.io/blog/best-api-monitoring-and-observability-tools/) 
+[Best API Monitoring and Observability Tools in 2023](https://apitoolkit.io/blog/best-api-monitoring-and-observability-tools/)
 
 [How to Generate Automated API Documentation](https://apitoolkit.io/blog/how-to-generate-automated-api-documentation/)
-

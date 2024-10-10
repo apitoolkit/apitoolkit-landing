@@ -12,7 +12,7 @@ categories:
 
 ![Optimizing API security](./apitoolkitblog.png)
 
-Web APIs are the backbone of digital transformation, enabling organizations to leverage their data and functionality across different systems and applications. They form the crucial infrastructure that propels digital transformation, enabling seamless data and functionality integration across varied platforms and applications.  However, as the demand for APIs grows, so does the need for security and performance optimization. In this blog post, we will explore some of the best practices for securing and enhancing your [web API performance](https://apitoolkit.io/blog/web-api-performance/) in 2024.
+Web APIs are the backbone of digital transformation, enabling organizations to leverage their data and functionality across different systems and applications. They form the crucial infrastructure that propels digital transformation, enabling seamless data and functionality integration across varied platforms and applications. However, as the demand for APIs grows, so does the need for security and performance optimization. In this blog post, we will explore some of the best practices for securing and enhancing your [web API performance](https://apitoolkit.io/blog/web-api-performance/) in 2024.
 
 ## Why Security and Performance Matter for Web APIs
 

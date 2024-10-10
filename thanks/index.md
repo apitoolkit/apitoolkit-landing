@@ -14,6 +14,6 @@ date: 2024-06-06
                 <img src="./dancing-cat.gif" alt="A dancing cat" />
             </div>
         </div>
-    </header>   
+    </header>
 </div>
 ```

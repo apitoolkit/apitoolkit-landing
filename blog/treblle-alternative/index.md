@@ -6,7 +6,7 @@ author: jessica
 description: Explore the transformation in API monitoring with APIToolkit, an innovative alternative to Treblle, and discover its role in advancing software development practices.
 categories:
   - API Platform
---- 
+---
 
 # APIToolkit: Treblle Alternative for API Monitoring and Observability
 
@@ -16,7 +16,7 @@ Few years back monitoring an API meant just watching server logs and making sure
 
 ## The Rising Importance of API Monitoring in Modern Software Development
 
-Today, API monitoring is  a critical component of any software development and operational strategy. In our interconnected world, APIs act as the glue that binds different parts of an application together, and their performance can make or break a business. With the rise of microservices architectures, cloud-native technologies, and a focus on user experience, the need for robust, reliable, and responsive APIs has never been greater. Effective API monitoring, therefore, is not just about avoiding downtime; it's about optimizing [performance](https://apitoolkit.io/blog/frontend-api-performance/), ensuring security, and delivering a seamless user experience. This heightened importance of API monitoring is a testament to its evolving role, from a back-end operational tool to a front-and-center strategic asset in modern software development.
+Today, API monitoring is a critical component of any software development and operational strategy. In our interconnected world, APIs act as the glue that binds different parts of an application together, and their performance can make or break a business. With the rise of microservices architectures, cloud-native technologies, and a focus on user experience, the need for robust, reliable, and responsive APIs has never been greater. Effective API monitoring, therefore, is not just about avoiding downtime; it's about optimizing [performance](https://apitoolkit.io/blog/frontend-api-performance/), ensuring security, and delivering a seamless user experience. This heightened importance of API monitoring is a testament to its evolving role, from a back-end operational tool to a front-and-center strategic asset in modern software development.
 
 ## Treblle: Setting the Standard in API Monitoring
 

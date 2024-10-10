@@ -69,7 +69,7 @@ Frontend API performance problems can have a negative impact on your web app's u
 
 [10 Must-Know API Trends in 2023](https://apitoolkit.io/blog/api-trends/)
 
-[Ultimate Guide to API Testing Automation](https://apitoolkit.io/blog/api-testing-automation/) 
+[Ultimate Guide to API Testing Automation](https://apitoolkit.io/blog/api-testing-automation/)
 
 [Web API Performance Best Practices - the Ultimate Guide](https://apitoolkit.io/blog/web-api-performance/)
 

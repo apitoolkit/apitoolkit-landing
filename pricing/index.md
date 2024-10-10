@@ -66,7 +66,7 @@ faqs:
                             <div class="text-center font-bold bg-gray-200 text-green-500 rounded-md w-5 h-5">
                                 ✓
                             </div>
-                            Opentelemetry Logs and Traces 
+                            Opentelemetry Logs and Traces
                         </li>
                         <li class="flex flex-row gap-2">
                             <div class="text-center font-bold bg-gray-200 text-green-500 rounded-md w-5 h-5">
@@ -137,13 +137,13 @@ faqs:
                             <div class="text-center font-bold bg-gray-200 text-green-500 rounded-md w-5 h-5">
                                 ✓
                             </div>We help you setup observability and realtime monitors
-                             
+
                         </li>
                         <li class="flex flex-row gap-2">
                             <div class="text-center font-bold bg-gray-200 text-green-500 rounded-md w-5 h-5">
                                 ✓
                             </div>
-                            We setup uptime checks and multistep api tests for you 
+                            We setup uptime checks and multistep api tests for you
                         </li>
                         <li class="flex flex-row gap-2">
                             <div class="text-center font-bold bg-gray-200 text-green-500 rounded-md w-5 h-5">
@@ -155,19 +155,19 @@ faqs:
                             <div class="text-center font-bold bg-gray-200 text-green-500 rounded-md w-5 h-5">
                                 ✓
                             </div>
-                            Our Senior Engineers will jump on calls with your team to help them resolve issues 
+                            Our Senior Engineers will jump on calls with your team to help them resolve issues
                         </li>
                         <li class="flex flex-row gap-2">
                             <div class="text-center font-bold bg-gray-200 text-green-500 rounded-md w-5 h-5">
                                 ✓
                             </div>
-                            Capped at 20 hours of support calls/sessions per month 
+                            Capped at 20 hours of support calls/sessions per month
                         </li>
                         <li class="flex flex-row gap-2">
                             <div class="text-center font-bold bg-gray-200 text-green-500 rounded-md w-5 h-5">
                                 ✓
                             </div>
-                            Weekly reports about everything that went wrong or might be broken. 
+                            Weekly reports about everything that went wrong or might be broken.
                         </li>
                     </ul>
                 </div>
@@ -228,7 +228,7 @@ faqs:
           <div class="flex flex-col gap-8 p-10">
              <h1 class="font-medium text-2xl" >Apply for the APItoolkit Startup Program</h1>
             <div class="space-y-3 text-lg">
-             <p> 
+             <p>
              Enjoy 50 to 100% discount on your first year of subscription through our exclusive Startup Program. Qualification criteria:
             </p>
             <ul class="list-disc">

@@ -4,8 +4,8 @@ featured_image: api-testing.jpg
 date: 2023-08-13T01:33:53+02:00
 author: jessica
 description: "API testing is not just a procedural step in software development; it’s a crucial measure that ensures data consistency, optimal performance, and robust security"
-categories: 
-  - API Testing 
+categories:
+  - API Testing
 ---
 
 # What You Need to Know Before You Start API Testing
@@ -43,11 +43,11 @@ API testing is a meticulous process that requires a deep understanding of variou
 
 1. [API Documentation:](https://apitoolkit.io/blog/api-documentation-and-observability-the-truth-you-must-know/) This is the starting point for a developer looking to test an API. The documentation serves as a guidebook, offering a detailed overview of how the API functions. It outlines the available endpoints, describes the expected request and response formats, and lists potential error codes that might be encountered. By thoroughly reviewing the API documentation, API testers can gain a clear understanding of the API's design and intended behavior, ensuring that they approach testing with a well-informed perspective.
 
-2. Endpoint URLs: In the realm of APIs, endpoints are akin to destinations. They are specific URLs to which API requests are directed. Each endpoint corresponds to a particular function or resource. Knowing the correct endpoints is crucial because directing a request to the wrong endpoint or an invalid URL can lead to errors or unintended outcomes. Therefore, API  testers must be well-acquainted with all the available endpoints to ensure comprehensive testing coverage.
+2. Endpoint URLs: In the realm of APIs, endpoints are akin to destinations. They are specific URLs to which API requests are directed. Each endpoint corresponds to a particular function or resource. Knowing the correct endpoints is crucial because directing a request to the wrong endpoint or an invalid URL can lead to errors or unintended outcomes. Therefore, API testers must be well-acquainted with all the available endpoints to ensure comprehensive testing coverage.
 
 3. HTTP Methods: These are the verbs of API language, dictating the type of action to be performed. Common HTTP methods include GET (used to retrieve data), POST (used to send or submit data), PUT (used to update existing data), and DELETE (used to remove data). Each method has a specific purpose, and understanding these methods is fundamental to ensuring that the API can perform its intended actions correctly and efficiently.
 
-4. Input Payload: When sending a request to an API, often, specific data or parameters need to be included, known as the input payload. This data can vary in structure and format, depending on the API's design. API  Testers must be aware of the expected input payloads for different endpoints to ensure that the API can process the provided data correctly and return the desired response.
+4. Input Payload: When sending a request to an API, often, specific data or parameters need to be included, known as the input payload. This data can vary in structure and format, depending on the API's design. API Testers must be aware of the expected input payloads for different endpoints to ensure that the API can process the provided data correctly and return the desired response.
 
 5. Expected Output: Once a request is made to an API, it responds with data, known as the output. This output can come in various formats, such as JSON or XML. Knowing the expected output format is vital for API testers as it allows you to verify that the API is returning data in the correct structure and that the data itself is accurate and relevant.
 
@@ -61,9 +61,9 @@ API testing demands a unique blend of skills to ensure that APIs function as int
 1. Technical Proficiency: At its core, an API is a set of programming instructions and standards that allow applications to communicate with each other. Therefore, having a foundational understanding of the programming language in which the API is written becomes beneficial. This knowledge equips API testers to delve deeper into the API's code, identify potential issues at the source level, and understand the logic and flow of the API's operations. While you don’t need to be an expert coder, a basic grasp of the language can significantly enhance the testing process.
 
 2. Understanding of [REST](https://apitoolkit.io/blog/what-are-rest-apis/) and [SOAP APIs:](https://apitoolkit.io/blog/everything-about-soap-apis/) REST (Representational State Transfer) and SOAP (Simple Object Access Protocol) are two of the most widely adopted architectures for designing networked applications, especially APIs. While they both serve the purpose of communication, they have distinct methodologies and conventions.
-    a. REST is a set of architectural principles that use standard HTTP methods and status codes, URLs, and MIME types. It's known for its simplicity and scalability.
-    b. SOAP, on the other hand, is a protocol that relies on XML-based messaging patterns. It's known for its robustness and is often used in enterprise settings.
-Having a clear understanding of these architectures is crucial for you as an API  tester because it allows you to design tests that align with the API's architectural standards, ensuring more accurate and relevant testing outcomes.
+   a. REST is a set of architectural principles that use standard HTTP methods and status codes, URLs, and MIME types. It's known for its simplicity and scalability.
+   b. SOAP, on the other hand, is a protocol that relies on XML-based messaging patterns. It's known for its robustness and is often used in enterprise settings.
+   Having a clear understanding of these architectures is crucial for you as an API tester because it allows you to design tests that align with the API's architectural standards, ensuring more accurate and relevant testing outcomes.
 
 3. Database Knowledge: APIs often serve as intermediaries, fetching, updating, or deleting data from databases based on user requests. As such, they frequently interact with databases, making it imperative for API testers to understand how databases work. Knowledge of SQL (Structured Query Language), the standard language for database operations, is particularly advantageous. It enables API testers to verify if the API is executing the correct database operations, ensure data integrity, and even simulate different data scenarios to test the API's response.
 
@@ -74,9 +74,6 @@ In summary, while API testing might seem daunting at first, equipping yourself w
 **Also Read**
 
 [Writing API Documentation - Best Practices and Mistakes to Avoid](https://apitoolkit.io/blog/writing-api-documentation/)
-	
 [Best API Monitoring and Observability Tools in 2023](https://apitoolkit.io/blog/best-api-monitoring-and-observability-tools/)
-	
 [How to Generate Automated API Documentation](https://apitoolkit.io/blog/writing-api-documentation/)
-	
 [API Monitoring and Documentation: The Truth You Must Know](https://apitoolkit.io/blog/api-documentation-and-observability-the-truth-you-must-know/)

@@ -162,7 +162,7 @@ Database monitoring is a crucial process that can help you unlock key insights i
 
 [10 Must-Know API Trends in 2023](https://apitoolkit.io/blog/api-trends/)
 
-[Ultimate Guide to API Testing Automation](https://apitoolkit.io/blog/api-testing-automation/) 
+[Ultimate Guide to API Testing Automation](https://apitoolkit.io/blog/api-testing-automation/)
 
 [Web API Performance Best Practices - the Ultimate Guide](https://apitoolkit.io/blog/web-api-performance/)
 

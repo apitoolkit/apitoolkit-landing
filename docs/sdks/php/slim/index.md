@@ -16,7 +16,7 @@ To integrate your Slim application with APItoolkit, you need to use this SDK to 
 
 ## Prerequisites
 
-Ensure you have already completed the first three steps of the [onboarding guide](/docs/onboarding/){target="_blank"}.
+Ensure you have already completed the first three steps of the [onboarding guide](/docs/onboarding/){target="\_blank"}.
 
 ## Installation
 

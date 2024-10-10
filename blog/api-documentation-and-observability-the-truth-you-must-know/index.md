@@ -6,7 +6,7 @@ author: collins
 description: "Discover the importance of API Monitoring and Documentation. Learn key concepts, and tools for optimizing your API strategy"
 categories:
   - API Monitoring
---- 
+---
 
 # API Monitoring and Documentation: The Truth You Must Know
 
@@ -100,7 +100,7 @@ Read: [Key Benefits of API Integration for Developers](https://apitoolkit.io/blo
 
 ## API Monitoring and Documentation
 
-Gone are the days of just writing or following API documentation and calling it a wrap.  If your API connectivity is of any importance to you, then you have to make API monitoring and observability an integral part of your API framework.
+Gone are the days of just writing or following API documentation and calling it a wrap. If your API connectivity is of any importance to you, then you have to make API monitoring and observability an integral part of your API framework.
 
 Nowadays, API documentation and monitoring go hand-in-hand.
 
@@ -132,7 +132,7 @@ Read: [Top 7 Reasons Why Your Team Needs an API Monitoring Tool](https://apitool
 
 ## Major Causes of API Downtime
 
-Any company, big or small, may suffer [API downtime](https://apitoolkit.io/blog/api-downtime/) at some point, resulting in revenue loss and lost customer trust. This is generally bad for business. 
+Any company, big or small, may suffer [API downtime](https://apitoolkit.io/blog/api-downtime/) at some point, resulting in revenue loss and lost customer trust. This is generally bad for business.
 
 Discussed below are some of the major factors that cause API downtimes:
 
@@ -163,8 +163,8 @@ Discussed below are some of the major factors that cause API downtimes:
 API downtime can have a significant impact on businesses and organizations that rely on API services for critical operations. When APIs fail, in most cases the following is at stake:
 
 - Additional costs for businesses, such as the cost of fixing the issue.
-- The cost of lost productivity. 
-- The cost of providing compensation to affected customers. 
+- The cost of lost productivity.
+- The cost of providing compensation to affected customers.
 - In some cases, downtime can result in legal repercussions, such as lawsuits or penalties for breach of contract.
 - The cost of damage to brand reputation
 
@@ -228,7 +228,7 @@ Read: [Must-Know API Trends](https://apitoolkit.io/blog/api-trends/)
 6. **[Uber](https://www.uber.com/)**
 7. **[Slack](https://slack.com/)**
    <br>
-[And more](https://apitoolkit.io/blog/api-trends/)
+   [And more](https://apitoolkit.io/blog/api-trends/)
 
 #### Conclusion
 

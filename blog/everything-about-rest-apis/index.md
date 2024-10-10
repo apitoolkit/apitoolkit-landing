@@ -28,7 +28,7 @@ The communication can be done via a rest API
 1. They are a simple and standardized approach to communication. You don’t have to worry about what data is being used or how to format your requests
 
 2. [They are scalable and stateless](https://apitoolkit.io/blog/rest-api-scalability/)
-As your service grows in complexity, you can easily make modifications. Also, you don’t have to concern yourself with what data is in which state and keep track of data across client and server.
+   As your service grows in complexity, you can easily make modifications. Also, you don’t have to concern yourself with what data is in which state and keep track of data across client and server.
 
 3. High performance. In large part due to the fact that they support caching. As your service gets more complex, your performance stays high.
 
@@ -50,7 +50,7 @@ The [framework for some APIs](https://apitoolkit.io/blog/web-service-apis-struct
 
 ## How do REST APIs Work?
 
-REST APIs communicate using [HTTP requests](https://developer.mozilla.org/en-US/docs/Web/HTTP) to perform standard database functions like creating, reading, updating, and deleting records (CRUD) within a resource. 
+REST APIs communicate using [HTTP requests](https://developer.mozilla.org/en-US/docs/Web/HTTP) to perform standard database functions like creating, reading, updating, and deleting records (CRUD) within a resource.
 
 For instance, a [REST API](https://apitoolkit.io/blog/what-are-rest-apis/) would use a GET request to retrieve a record, a POST request to create one, a PUT request to update a record, and a DELETE request to delete one. All HTTP methods can be used in API calls. A well-designed REST API is similar to a website running in a web browser with built-in HTTP functionality.
 
@@ -70,6 +70,6 @@ JSON is popular because it’s readable by both humans and machines—and it is 
 
 ## Conclusion
 
-Although flexibility is a big advantage of REST API design, that same flexibility makes it easy to design an API that’s broken or performs poorly. For this reason, professional developers have supportive communities where they share best practices for building with REST. 
+Although flexibility is a big advantage of REST API design, that same flexibility makes it easy to design an API that’s broken or performs poorly. For this reason, professional developers have supportive communities where they share best practices for building with REST.
 
 Finally, to be sure you’re building APIs that won’t break, you can compare [API observability tools here](https://apitoolkit.io/blog/best-api-monitoring-and-observability-tools/).

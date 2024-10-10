@@ -16,7 +16,7 @@ To integrate .Net web services with APItoolkit, you need to use this SDK to moni
 
 ## Prerequisites
 
-Ensure you have already completed the first three steps of the [onboarding guide](/docs/onboarding/){target="_blank"}.
+Ensure you have already completed the first three steps of the [onboarding guide](/docs/onboarding/){target="\_blank"}.
 
 ## Installation
 
@@ -81,11 +81,11 @@ In the configuration above, **only the `ApiKey` option is required**, but you ca
 
 ## Redacting Sensitive Data
 
-If you have fields that are sensitive and should not be sent to APItoolkit servers, you can mark those fields to be redacted  (the fields will never leave your servers).
+If you have fields that are sensitive and should not be sent to APItoolkit servers, you can mark those fields to be redacted (the fields will never leave your servers).
 
 To mark a field for redacting via this SDK, you need to provide additional arguments to the `config` variable with paths to the fields that should be redacted. There are three arguments you can provide to configure what gets redacted, namely:
 
-1. `RedactHeaders`:  A list of HTTP header keys.
+1. `RedactHeaders`: A list of HTTP header keys.
 2. `RedactRequestBody`: A list of JSONPaths from the request body.
 3. `RedactResponseBody`: A list of JSONPaths from the response body.
 
@@ -215,7 +215,7 @@ app.MapGet("/error-tracking", async context =>
 
 ## Monitoring Outgoing Requests
 
-Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="_blank"} page. However, you can separate outgoing requests from others and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="_blank"} page, alongside the incoming request that triggered them.
+Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="\_blank"} page. However, you can separate outgoing requests from others and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="\_blank"} page, alongside the incoming request that triggered them.
 
 To monitor outgoing HTTP requests from your application, we provide the `APIToolkitObservingHandler()` handler. Here's an example of the outgoing requests configuration with this SDK on a sample `/monitor-requests` endpoint that makes an asynchronous `HttpClient` GET request to a sample public endpoint URL.
 

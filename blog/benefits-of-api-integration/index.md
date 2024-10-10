@@ -2,8 +2,8 @@
 title: "Key Benefits of API Integration for Developers (with Statistics)"
 featured_image: api-example.jpg
 date: 2023-10-25T10:48:25+01:00
-author: jessica 
-categories: 
+author: jessica
+categories:
   - APIs
 ---
 
@@ -78,17 +78,17 @@ Data security is at the forefront of every developer's mind, especially with the
 
 - **Transform Customer Experience**
 
-API integration has made businesses composable by allowing teams across the organization to compose, recompose, and adapt these APIs to meet the changing needs of the business making them discoverable, and then making them available for the business to self-serve. Imagine an importing company creating an internal Customer API  that includes details about registered customers, their address, email, purchase history, etc. from various System APIs in front of customer databases; in other words, it creates a single view of customers. This is an example of a customer experience transformation.
+API integration has made businesses composable by allowing teams across the organization to compose, recompose, and adapt these APIs to meet the changing needs of the business making them discoverable, and then making them available for the business to self-serve. Imagine an importing company creating an internal Customer API that includes details about registered customers, their address, email, purchase history, etc. from various System APIs in front of customer databases; in other words, it creates a single view of customers. This is an example of a customer experience transformation.
 
-One internal API can be used for a variety of purposes and can help the entire organization's business operations run more smoothly. Additionally, businesses can make their APIs available to partners, who can improve them and offer customers a more thorough, omnichannel engagement. Every API that is built continues to add value for future business requirements with API-led connectivity.  
+One internal API can be used for a variety of purposes and can help the entire organization's business operations run more smoothly. Additionally, businesses can make their APIs available to partners, who can improve them and offer customers a more thorough, omnichannel engagement. Every API that is built continues to add value for future business requirements with API-led connectivity.
 
 - **Competitiveness**
 
-Banks have embraced open banking APIs and standards, while Netflix, Stripe, AWS, and UBER  have all been successful that’s why they have put APIs first because they know that having APIs allow them to be competitive. A solid API allows your application and third parties, business partners, and customers to integrate a quick review sys with other system. As a company being able to provide these functionality quickly due to incredibly fast integration of files  is quite competitive to me and this can only be achieved with APIs. APIs also speedup the integration between services and they enable you deliver functionality quickly. 
+Banks have embraced open banking APIs and standards, while Netflix, Stripe, AWS, and UBER have all been successful that’s why they have put APIs first because they know that having APIs allow them to be competitive. A solid API allows your application and third parties, business partners, and customers to integrate a quick review sys with other system. As a company being able to provide these functionality quickly due to incredibly fast integration of files is quite competitive to me and this can only be achieved with APIs. APIs also speedup the integration between services and they enable you deliver functionality quickly.
 
 - **Reusability and Duplication**
 
-In the development world when you want to duplicate a file, you can either copy and paste, create shared libraries or create API functions. Creating API functions is much easy becasue you can call from any service just by updating one service/deployables when you need to modify logic as long as you are not making a break in change. APIs have become the building blocks which you can reuse in your architecture as a developer enabling quicker innovations and ability to change quickly.  
+In the development world when you want to duplicate a file, you can either copy and paste, create shared libraries or create API functions. Creating API functions is much easy becasue you can call from any service just by updating one service/deployables when you need to modify logic as long as you are not making a break in change. APIs have become the building blocks which you can reuse in your architecture as a developer enabling quicker innovations and ability to change quickly.
 
 - **Enhanced flexibility and Reduced costs**
 

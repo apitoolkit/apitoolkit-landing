@@ -2,11 +2,11 @@
 title: "How APIToolkit Can Help You Gain Insights Into Your API Usage and Behaviour with API Observability"
 featured_image: how-to-gain-insights.png
 date: 2023-08-28T08:00:00+00:00
-description: Api observability isn't just about knowing whether your API is up or down; it's about gaining a 360-degree view of its operations. 
+description: Api observability isn't just about knowing whether your API is up or down; it's about gaining a 360-degree view of its operations.
 author: jessica
 categories:
   - APIs Observability
---- 
+---
 
 # How APIToolkit Can Help You Gain Insights Into Your API Usage and Behaviour with API Observability
 
@@ -18,7 +18,7 @@ In today's complex tech ecosystem, [APIs](https://apitoolkit.io/blog/api-as-a-pr
 
 Now, you might be wondering, "How do I achieve this level of insight?" The answer is specialized tools designed for API observability, and one such tool that stands out is [APIToolkit](https://apitoolkit.io/). This article aims to guide you through the capabilities of APIToolkit in enhancing your API observability, providing you with actionable insights that can be a game-changer for your business.
 
-If you're new to this topic, we've already written articles that cover the basics of [API observability](https://apitoolkit.io/blog/api-observability-software-development-/) and the key  [APIToolkit features](https://apitoolkit.io/blog/how-to-troubleshoot-and-debug-your-apis/). These articles are a great starting point to quickly get you familiar with the subject.
+If you're new to this topic, we've already written articles that cover the basics of [API observability](https://apitoolkit.io/blog/api-observability-software-development-/) and the key [APIToolkit features](https://apitoolkit.io/blog/how-to-troubleshoot-and-debug-your-apis/). These articles are a great starting point to quickly get you familiar with the subject.
 
 ## The Need for Specialized Tools in API Observability
 
@@ -27,12 +27,14 @@ Monitoring the health and performance of a system has traditionally relied on ge
 APIs serve as the connectors that allow different software applications to interact with each other. They may facilitate data transfer, enable user authentication, or even trigger complex workflows. Unlike a server or a database, an API is not just a single entity but often a complex set of operations that have their own specific needs, behaviours, and vulnerabilities.
 
 For instance, APIs can experience issues like:
+
 - Rate limiting: Too many requests from a single source in a short period.
 - Data inconsistency: Mismatched data formats between the sending and receiving ends.
 - Authorization failures: Incorrect or expired tokens causing access issues.
-These are problems that a general-purpose tool may not be programmed to identify, much less resolve.
+  These are problems that a general-purpose tool may not be programmed to identify, much less resolve.
 
 Given the unique challenges posed by APIs, it becomes crucial to have specialized tools designed to observe and manage them effectively. These specialized API observability tools can:
+
 - Monitor the rate, type, and source of API calls to identify unusual patterns.
 - Track performance metrics specific to APIs, such as response time or data throughput.
 - Provide insights into security aspects, like unauthorized access attempts.
@@ -53,6 +55,7 @@ While general-purpose monitoring tools offer broad coverage for system health, t
 ## Why Specialized Tools Like APIToolkit Are Essential
 
 While general monitoring tools offer a bird's-eye view, specialized tools like APIToolkit give you a microscope to understand the intricate details of your API landscape. As APIs continue to become more complex and integral to business operations, the need for specialized API observability tools is essential and here is why:
+
 - Deep-Dive Analytics: APIToolkit is designed to provide in-depth analytics specific to APIs. It can trace individual API calls, measure latencies at various stages, and offer insights that are actionable.
 - Context-Rich Monitoring: Unlike general tools, APIToolkit provides rich context for each API call, making debugging a breeze. It captures headers, payloads, and even the sequence of API calls, offering a comprehensive view of any issues.
 - Distributed Tracing: APIToolkit supports distributed tracing out-of-the-box, allowing you to track an API call as it traverses through multiple services, databases, and third-party integrations.
@@ -63,21 +66,25 @@ While general monitoring tools offer a bird's-eye view, specialized tools like A
 [API observability](https://apitoolkit.io/blog/api-observability-best-practices/) is not a one-size-fits-all concept; it's a multifaceted discipline that requires specialized tools to address its complexities. APIToolkit is designed with this in mind, offering a range of features that go beyond the capabilities of general monitoring tools. Let's explore some of these features and understand how they solve real-world problems.
 
 ### 1. Real-Time Monitoring and Analytics
+
 Feature: [APIToolkit](https://apitoolkit.io/) provides real-time monitoring and analytics, allowing you to track API calls, response times, and error rates as they happen.
 
 Real-World Scenario: Imagine you're running an e-commerce platform. During a flash sale, you notice that the checkout API is experiencing delays. Real-time monitoring allows you to pinpoint the issue immediately, ensuring a smooth experience for your customers and preventing potential revenue loss.
 
 ### 2.Outgoing Request Monitoring
+
 Feature: With its distributed tracing capabilities, APIToolkit can follow an API call through multiple services and databases, providing a complete picture of its journey.
 
 Real-World Scenario: In a microservices architecture, a single user action can trigger multiple API calls across various services. When something goes wrong, pinpointing the issue can be like finding a needle in a haystack. Distributed tracing simplifies this by providing a visual map of the API call's path, making it easier to identify bottlenecks or failures.
 
 ### 3. Context-Rich Error Tracking
+
 Feature: APIToolkit captures detailed information about each API call, including headers, payloads, and even the sequence of API calls leading up to an error.
 
 Real-World Scenario: Let's say you're running a travel booking service, and users are experiencing issues with flight bookings. Context-rich error reporting allows you to see the exact sequence of API calls that led to the error, helping you to resolve the issue faster and improve user satisfaction.
 
 ### 4. Anomaly Detection
+
 Feature: APIToolkit uses machine learning algorithms to understand the normal behavior of your APIs and alerts you when anomalies occur.
 
 Real-World Scenario: In a financial trading platform, sudden spikes in API calls could indicate fraudulent activity. Intelligent anomaly detection can alert you in real time, allowing you to take immediate action.
@@ -89,17 +96,17 @@ Real-World Scenario: In a financial trading platform, sudden spikes in API calls
 [API observability](https://apitoolkit.io/blog/api-observability-best-practices/) is crucial for understanding the behaviour and performance of your APIs. With APIToolkit, setting up observability is straightforward. Let's walk through the steps:
 
 1. Start by signing up for an APIToolkit
-![signin page](signin-page.png)
+   ![signin page](signin-page.png)
 2. Go ahead and create a new project
-![create a new project](create-new-page.png)
+   ![create a new project](create-new-page.png)
 3. Once your are done creating a new project, navigate to the ‘API Keys’ and select 'Generate Key'.  
-![Generate key](generate-key.png)
+   ![Generate key](generate-key.png)
 4. Once you’ve generated a key, go ahead and integrate your APIs into APIToolkit using these docs
 5. Follow the prompts to connect your API to APIToolkit
 6. Voila! You are as good as ready and here is what a fully integrated dashboard with data should look like
-![APIToolkit dashboard](apitoolkit-dashboard.png)
+   ![APIToolkit dashboard](apitoolkit-dashboard.png)
 
-Note: On [APIToolkit](https://apitoolkit.io/) your page is automatically configured with specific endpoints, setting rate limits, and more. All incoming requests are monitored for anomalies, new endpoints, slow endpoints and more. no rate limiting.  
+Note: On [APIToolkit](https://apitoolkit.io/) your page is automatically configured with specific endpoints, setting rate limits, and more. All incoming requests are monitored for anomalies, new endpoints, slow endpoints and more. no rate limiting.
 
 We also do field redaction. If a user doesn't want APIToolkit to record sensitive fields, like passwords, credit cards, etc., they can specify them so APIToolkit won't record them.
 
@@ -109,7 +116,7 @@ We also do field redaction. If a user doesn't want APIToolkit to record sensitiv
 
 The future of [API observability](https://apitoolkit.io/blog/api-observability-best-practices/) is promising, with advancements in machine learning and AI expected to bring even more intelligent features. Tools like APIToolkit are at the forefront of this evolution, shaping the way businesses monitor, analyze, and optimize their APIs.
 
-- - -
+---
 
 ## Keep Reading
 

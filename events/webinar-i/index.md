@@ -10,12 +10,12 @@ ogImage: https://raw.githubusercontent.com/apitoolkit/.github/main/images/events
 ```
 
 ### Webinar I
+
 # Building Resilient Backend System: Navigating Challenges with Integration
 
 ![Webinar I Banner](./banner.jpg){class="border-2 border-blue-600"}
 
 As tech teams, especially backend teams, rely heavily on third-party integrations to function, they often encounter challenges associated with these integrations. Whether it's APIs experiencing downtime, introducing breaking changes, or delivering subpar performance, these issues and failures costs companies millions of dollars annually.
-
 
 In this webinar, Anthony Alaribe, Founder of APItoolkit, will delve into the common issues introduced by third-party API integrations and share effective techniques and strategies for building resilient backend systems to be ahead of the curve. You will learn how to ensure your systems can quickly recover from setbacks or provide comprehensive insights into the root causes of any issues before they create costly and damaging effects.
 

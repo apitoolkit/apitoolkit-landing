@@ -194,9 +194,7 @@ apitoolkitClient.init();
 
 fastify.get("/", async (request, reply) => {
   try {
-    const response = await observeAxios(axios).get(
-      baseURL + "/non-existing-endpoint"
-    );
+    const response = await observeAxios(axios).get(baseURL + "/non-existing-endpoint");
   } catch (error) {
     // Report the error to APItoolkit
     ReportError(error);

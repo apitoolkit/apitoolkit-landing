@@ -65,7 +65,6 @@ We currently support 17+ web frameworks in different programming languages.
 {.text-md .font-semibold}
 If we don't support your framework, kindly email [hello@apitoolkit.io](mailto:hello@apitoolkit.io) and we'll create an SDK for you ASAP!
 
-
 {% render "default/markdown/integration-footer.liquid", config:config %}
 
 ```=html

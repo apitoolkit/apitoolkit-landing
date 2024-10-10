@@ -4,8 +4,8 @@ featured_image: image1.jpg
 date: 2022-06-08T09:35:51+02:00
 description: "Learn the key aspects of API observability and API monitoring"
 author: irhose
-categories: 
-  - API Observability 
+categories:
+  - API Observability
 tags:
   - monitoring
   - apis
@@ -20,19 +20,20 @@ This is where we like to play—the not so clearly defined border of [API observ
 
 ## API Monitoring and API Observability
 
-While [API monitoring](https://apitoolkit.io/blog/api-documentation-and-observability-the-truth-you-must-know/) enables you to check for uptime and take action if your API has time-outs or responds with 500 errors, it is also limited due to it being a blackbox form of monitoring with assertion checks created ahead of time. 
+While [API monitoring](https://apitoolkit.io/blog/api-documentation-and-observability-the-truth-you-must-know/) enables you to check for uptime and take action if your API has time-outs or responds with 500 errors, it is also limited due to it being a blackbox form of monitoring with assertion checks created ahead of time.
 
 The test or probe is already known ahead of time which means API monitoring is unable to answer arbitrary questions on how your API is behaving. Instead, API monitoring can only check on the traffic that it generates, not actual customer API traffic. As more APIs are exposed to the internet, there are new requirements to explore and find unknown unknowns for preventing API threats, troubleshooting customer issues, and understanding API usage. These requirements led to the emergence of API Observability.
 
 ## What is API Observability?
 
-API observability emerged because of some particular use cases that exposed limitations in traditional API monitoring. 
+API observability emerged because of some particular use cases that exposed limitations in traditional API monitoring.
 
 API observability is a form of whitebox monitoring that requires an agent or SDK to passively log API traffic to an observability service. This data collection can be done within the application or add a different point such as with an API gateway like Kong or NGINX.
 
 ### Tenets of API Observability
 
 There a certain pillars that make API observability what it is, viz:
+
 1. API Logs
 2. API Metrics
 3. API Analytics
@@ -40,11 +41,11 @@ There a certain pillars that make API observability what it is, viz:
 
 ### 1. API Logs
 
-An API observability platform such as [APIToolkit](https://apitoolkit.io) has the ability to inspect API calls in real-time for debugging and auditing. API logs show you the exact calls that your APIs make in an instant in time. 
+An API observability platform such as [APIToolkit](https://apitoolkit.io) has the ability to inspect API calls in real-time for debugging and auditing. API logs show you the exact calls that your APIs make in an instant in time.
 
 An API is intrinsically structured unlike traditional logging, this means that API logs can also be used for generating aggregations and metrics while maintaining context. Albeit, API calls can have a large number of HTTP headers, body keys, and attributes. Therefore your API observability tool should be capable of filtering and aggregating them without relying on a full scan of your data store.
 
-It’s important to note that GDPR and CCPA require new procedures for areas like API logs which are used across the company from security teams to business teams. A person can no longer dump API logs into a log management solution. Instead, API businesses need a way to export and delete (or anonymize) all the associated logs and events specific to a single customer. 
+It’s important to note that GDPR and CCPA require new procedures for areas like API logs which are used across the company from security teams to business teams. A person can no longer dump API logs into a log management solution. Instead, API businesses need a way to export and delete (or anonymize) all the associated logs and events specific to a single customer.
 
 This means API logs have to be tied to some permanent user identifier (and not just API keys that are rotated).
 
@@ -62,7 +63,7 @@ API Analytics and Monitoring includes both engineering-focused metrics such as p
 
 ### 4. API Traces
 
-APIs contain timing information on when the request was initiated, and how long it took the service to respond among other times—as APIs are transactional in nature. 
+APIs contain timing information on when the request was initiated, and how long it took the service to respond among other times—as APIs are transactional in nature.
 
 API traces make it easy to understand how long different services take to respond and where timing errors can occur. Traces enable you to further explore which logs to look at for a particular session or related set of API calls.
 
@@ -70,7 +71,7 @@ Read: [How to Write API Documentation: 10 Essential Guidelines](https://apitoolk
 
 ## API Monitoring
 
-API Monitoring refers to the practice of monitoring Application Programming Interfaces, most commonly in production, to gain visibility into performance, availability, and functional correctness. API Monitoring tools are designed to help you analyze the performance of your applications and improve poorly performing APIs. 
+API Monitoring refers to the practice of monitoring Application Programming Interfaces, most commonly in production, to gain visibility into performance, availability, and functional correctness. API Monitoring tools are designed to help you analyze the performance of your applications and improve poorly performing APIs.
 
 They provide measurements of how long a routine takes to execute, how often it is called, where it is called from, and how much of total time is spent executing that transaction.
 

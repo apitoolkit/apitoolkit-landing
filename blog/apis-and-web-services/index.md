@@ -19,6 +19,7 @@ What I do want to describe are the differences between [APIs](https://apitoolkit
 Bear in mind that a web service and an API are two very similar concepts, so it can be difficult to understand the similarities and differences.
 
 ## What’s an API?
+
 An Application Programming Interface (API) is an intermediary that enables two applications or systems to communicate with one another. APIs work via standardized protocols and functions that determine what data can be transferred from or modified within a system, and how this process occurs.
 
 Generally speaking, when developers reference APIs, they're likely describing web APIs (APIs that are accessible over the internet). Albeit, this isn't always the case. APIs can be expressed through local files (such as a JAR file in a Java program, .H file in C/C++ programs, etc.) to allow two local applications to communicate with each other. This doesn’t require a network as the two applications are communicating within a single device.
@@ -26,6 +27,7 @@ Generally speaking, when developers reference APIs, they're likely describing we
 I should probably declare this right now. All web services are APIs, but not all APIs are web services. This is important to note especially when you’re testing APIs.
 
 ## What’s a Web Service?
+
 A web service is a way for two machines to communicate with each other over a network.
 
 The key difference between a web service and an API is that a web service is dependent on a network for communication between two systems.
@@ -37,6 +39,7 @@ It’s important to note the requirement of the request being made over a networ
 Read: [API Monitoring and Documentation: The Truth You Must Know](https://apitoolkit.io/blog/api-documentation-and-observability-the-truth-you-must-know/)
 
 ## What Is the Key Difference Between APIs and Web Services?
+
 From everything I've said so far, it's clear that APIs and web services have more similarities than differences. Of course, this is the case because web services are a subset of APIs.
 
 Web services can be referred to as XML-centered data exchange systems that use the internet for A2A (application-to-application) communication and interfacing. These processes involve programs, messages, documents, and/or objects.
@@ -44,6 +47,7 @@ Web services can be referred to as XML-centered data exchange systems that use t
 Unlike APIs in general, web services require a network (the internet) in order for communication to be possible.
 
 ## What Are The Different Types of Web Services?
+
 The different types of central web services are REST, SOAP, XML-RPC, and UDDI.
 
 **REST**: REST (Representational State Transfer) [services](https://apitoolkit.io/blog/anomalies-in-restful-apis/) utilize HTTP, a foundational technology of the web, supporting methods such as GET, POST, PUT, or DELETE. This makes them ideal for [API-based](https://apitoolkit.io/blog/the-ultimate-api-management-strategy/)applications due to their simplicity and statelessness, where each request from a client to server must contain all the information needed to understand and complete the request.
@@ -52,7 +56,7 @@ The different types of central web services are REST, SOAP, XML-RPC, and UDDI.
 
 **XML-RPC (Remote Procedure Call)**: This is the most basic XML protocol. It allows for data exchange between a wide variety of devices on a given network. It uses HTTP to quickly and easily transfer data and other information from client to server.
 
-**UDDI**: an abbreviation for Universal Description, Discovery, and Integration, is an XML-based standard for detailing, publishing, and discovering web services. 
+**UDDI**: an abbreviation for Universal Description, Discovery, and Integration, is an XML-based standard for detailing, publishing, and discovering web services.
 
 It’s essentially an internet registry for [businesses around the world](https://apitoolkit.io/blog/api-as-a-product/). The goal is to streamline digital transactions and e-commerce among company systems.
 
@@ -78,11 +82,13 @@ Read: [Key Benefits of API Integration for Developers](https://apitoolkit.io/blo
 Of course, I couldn’t go over such a topic without touching on some age-old developer debate. SOAP and REST, which is better. Here are a few points for both sides. Bear in mind, that I don’t think there’s a clear-cut winner.
 
 Facts about the RESTful web service:
+
 - Easier to build
 - Roy Fielding designed it; one of the leading authors of HTTP
 - Offers simple CRUD-oriented (Create, Read, Update, and Delete) services
 
 Facts about the SOAP web service
+
 - Great for building a service with multiple, non-CRUD methods
 - Easier to consume
 - It has more standards

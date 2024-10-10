@@ -12,9 +12,10 @@ categories:
 ![the four pillars of api observability](the-four-pillars-of-api-observability.png)
 
 > "In a world that's becoming more connected, APIs are the unsung heroes. Observing them closely is like understanding the pulse of your digital entity."
+>
 > - Jane Doe, Senior API Strategist
 
-Have you ever felt that understanding Application Programming Interfaces (APIs) goes beyond just technical knowledge and becomes an art? Indeed, the intricacies of APIs go far beyond mere lines of code and technical specifications. More like a painter discerning the right shade or a musician hitting the perfect note, mastering APIs requires an understanding of the health and performance of the APIs to transform good software into great software. This artistic dimension is often overlooked, but it's what sets apart truly exceptional developers and tech teams. API observability allows teams to craft better experiences, design efficient systems, and ensure reliability. 
+Have you ever felt that understanding Application Programming Interfaces (APIs) goes beyond just technical knowledge and becomes an art? Indeed, the intricacies of APIs go far beyond mere lines of code and technical specifications. More like a painter discerning the right shade or a musician hitting the perfect note, mastering APIs requires an understanding of the health and performance of the APIs to transform good software into great software. This artistic dimension is often overlooked, but it's what sets apart truly exceptional developers and tech teams. API observability allows teams to craft better experiences, design efficient systems, and ensure reliability.
 
 [API observability](https://apitoolkit.io/blog/api-observability-software-development-/) is the practice of collecting and analyzing data about an API in order to understand its health, performance, and usage. This data can be used to identify and troubleshoot problems, optimize performance, and improve security. [API observability](https://apitoolkit.io/blog/best-api-monitoring-and-observability-tools/) is important because it allows you to gain a deeper understanding of how your APIs are being used and how they are performing. When considering API observability, there are four fundamental pillars that should guide your approach:
 
@@ -89,7 +90,7 @@ APIs allow different software applications to communicate, undergo numerous chan
 
 1. Endpoint Deprecation: If an API endpoint is deprecated, it signifies that this particular service or functionality is no longer supported. Clients or systems using this endpoint need to be informed and updated to prevent potential failures.
 2. Traffic Surge: A sudden increase in traffic can strain the system, potentially leading to performance issues or even outages. Recognizing such surges as events allows for quick scaling or intervention.
-3. Deployment of a New API Version:  Introducing a new version might come with changes that clients need to adapt to. Recognizing this as an event ensures stakeholders are informed, and potential issues are mitigated.
+3. Deployment of a New API Version: Introducing a new version might come with changes that clients need to adapt to. Recognizing this as an event ensures stakeholders are informed, and potential issues are mitigated.
 
 The Proactive Power of Event Monitoring
 By closely monitoring events, you adopt a forward-thinking stance. This proactive approach allows you to anticipate and address potential issues, rather than merely responding to them after the fact. With this you are equipped to handle major shifts, foresee upcoming challenges, and act quickly to maintain system stability.

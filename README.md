@@ -5,7 +5,7 @@
 
 ## Marketing Website and Developer Documentation
 
-[![QuickStatic](https://img.shields.io/badge/QuickStatic-Generator-f1541c?logo=rust)](https://github.com/topics/apitoolkit-sdk) [![APItoolkit SDK](https://img.shields.io/badge/APItoolkit-SDK-0068ff?logo=github)](https://github.com/topics/apitoolkit-sdk) [![Join Discord Server](https://img.shields.io/badge/Chat-Discord-7289da)](https://discord.gg/dEB6EjQnKB) [![APItoolkit Docs](https://img.shields.io/badge/Read-Docs-0068ff)](https://apitoolkit.io/docs?utm_source=github-sdks) 
+[![QuickStatic](https://img.shields.io/badge/QuickStatic-Generator-f1541c?logo=rust)](https://github.com/topics/apitoolkit-sdk) [![APItoolkit SDK](https://img.shields.io/badge/APItoolkit-SDK-0068ff?logo=github)](https://github.com/topics/apitoolkit-sdk) [![Join Discord Server](https://img.shields.io/badge/Chat-Discord-7289da)](https://discord.gg/dEB6EjQnKB) [![APItoolkit Docs](https://img.shields.io/badge/Read-Docs-0068ff)](https://apitoolkit.io/docs?utm_source=github-sdks)
 
 [APItoolkit](https://app.apitoolkit.io) is an end-to-end API and web services management toolkit for engineers and customer support teams. This repository houses our [marketing website](https://apitoolkit.io) and [developer documentation](https://apitoolkit.io/docs) built using our in-house [QuickStatic](https://github.com/tonyalaribe/quickstatic) static site generator.
 
@@ -67,31 +67,32 @@ Kindly click the toggle below to explore the list of important files and directo
 <details>
 <summary>📂 Open Directories Overview</summary>
 
-| Path | Description |
-| --- | --- |
-| `_quickstatic/themes` | QuickStatic themes and components (default and docs). |
-| `_quickstatic/public` | QuickStatic public build. |
-| `index` | The home page. |
-| `about` | The `/about` page. |
-| `assets` | All image/video assets, fonts, CSS files, JS files, etc. |
-| `blog` | The `/blog` pages. |
-| `compare` | The `/compare` page. |
-| `contact` | The `/contact` page. |
-| `docs` | The `/docs` pages and content. |
-| `events` | The `/events` pages. |
-| `faq` | The `/faq` page. |
-| `features` | The `/features` pages. |
-| `pricing` | The `/pricing` page. |
-| `privacy-policy` | The `/privacy-policy` page. |
-| `refund-policy` | The `/refund-policy` page. |
-| `static` | Some images and manifest files. |
-| `terms-and-conditions` | The `/terms-and-conditions` page. |
-| `thanks` | The `/thanks` page. |
-| `tools` | The `/tools` pages. |
-| `build.sh` | Script to fetch abd update the latest version of QuickStatic. |
-| `Makefile` | Manage tasks related to Tailwind CSS processing. |
-| `quickstatic.yaml` | QuickStatic configuration options. |
-| `tailwind.config.js` | Tailwind CSS configuration options. |
+| Path                   | Description                                                   |
+| ---------------------- | ------------------------------------------------------------- |
+| `_quickstatic/themes`  | QuickStatic themes and components (default and docs).         |
+| `_quickstatic/public`  | QuickStatic public build.                                     |
+| `index`                | The home page.                                                |
+| `about`                | The `/about` page.                                            |
+| `assets`               | All image/video assets, fonts, CSS files, JS files, etc.      |
+| `blog`                 | The `/blog` pages.                                            |
+| `compare`              | The `/compare` page.                                          |
+| `contact`              | The `/contact` page.                                          |
+| `docs`                 | The `/docs` pages and content.                                |
+| `events`               | The `/events` pages.                                          |
+| `faq`                  | The `/faq` page.                                              |
+| `features`             | The `/features` pages.                                        |
+| `pricing`              | The `/pricing` page.                                          |
+| `privacy-policy`       | The `/privacy-policy` page.                                   |
+| `refund-policy`        | The `/refund-policy` page.                                    |
+| `static`               | Some images and manifest files.                               |
+| `terms-and-conditions` | The `/terms-and-conditions` page.                             |
+| `thanks`               | The `/thanks` page.                                           |
+| `tools`                | The `/tools` pages.                                           |
+| `build.sh`             | Script to fetch abd update the latest version of QuickStatic. |
+| `Makefile`             | Manage tasks related to Tailwind CSS processing.              |
+| `quickstatic.yaml`     | QuickStatic configuration options.                            |
+| `tailwind.config.js`   | Tailwind CSS configuration options.                           |
+
 </details>
 
 ## Docs Style Guide
@@ -159,13 +160,13 @@ We use [Font Awesome](https://fontawesome.com) icons for our callout component. 
 
 **Icon keys**:
 
-| Icon Key | Description |
-| -------- | ----------- |
-| `fa-regular fa-lightbulb` | Optional information to help a user be more successful. |
-| `fa-regular fa-circle-info` | Highlights information that users should take into account, even when skimming. |
-| `fa-solid fa-book` | Definition of a term. |
-| `fa-solid fa-forward` | Suggested next action (CTA). |
-| `fa-solid fa-triangle-exclamation` | Important warning. |
+| Icon Key                           | Description                                                                     |
+| ---------------------------------- | ------------------------------------------------------------------------------- |
+| `fa-regular fa-lightbulb`          | Optional information to help a user be more successful.                         |
+| `fa-regular fa-circle-info`        | Highlights information that users should take into account, even when skimming. |
+| `fa-solid fa-book`                 | Definition of a term.                                                           |
+| `fa-solid fa-forward`              | Suggested next action (CTA).                                                    |
+| `fa-solid fa-triangle-exclamation` | Important warning.                                                              |
 
 ### Tab Toggle Component
 
@@ -179,11 +180,13 @@ You can have more than one tab in the tab group toggle component but keep things
   <div id="tab2" class="tab-content">Content B</div>
 </section>
 ```
+
 </details>
 
 ## Contributing and Help
 
 To contribute to the development of this project or request help from the community and our team, kindly do any of the following:
+
 - Read our [Contributors Guide](https://github.com/apitoolkit/.github/blob/main/CONTRIBUTING.md).
 - Join our community [Discord Server](https://discord.gg/dEB6EjQnKB).
 - Create a [new issue](https://github.com/apitoolkit/apitoolkit-landing/issues/new/choose) in this repository.

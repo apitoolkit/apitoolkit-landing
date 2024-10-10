@@ -60,12 +60,8 @@ const { NodeSDK } = require("@opentelemetry/sdk-node");
 const { Resource } = require("@opentelemetry/resources");
 const { BatchSpanProcessor } = require("@opentelemetry/sdk-trace-base");
 const { HttpInstrumentation } = require("@opentelemetry/instrumentation-http");
-const {
-  OTLPTraceExporter,
-} = require("@opentelemetry/exporter-trace-otlp-grpc");
-const {
-  ExpressInstrumentation,
-} = require("@opentelemetry/instrumentation-express");
+const { OTLPTraceExporter } = require("@opentelemetry/exporter-trace-otlp-grpc");
+const { ExpressInstrumentation } = require("@opentelemetry/instrumentation-express");
 
 // Environment variables and configuration
 const dsn = process.env.UPTRACE_DSN || "Warning: not set yet";
@@ -111,7 +107,7 @@ process.on("SIGTERM", () => {
   sdk
     .shutdown()
     .then(() => console.log("SDK shut down successfully"))
-    .catch((error) => console.log("Error shutting down SDK", error))
+    .catch(error => console.log("Error shutting down SDK", error))
     .finally(() => process.exit(0));
 });
 ```

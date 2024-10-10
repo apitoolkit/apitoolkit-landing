@@ -68,7 +68,7 @@ Read: [Best API Monitoring and Observability Tools in 2023](https://apitoolkit.i
 
 ![Distributed Caching](./distributed-caching.png)
 
-One of the most effective ways to improve your web [API performance](https://apitoolkit.io/blog/api-downtime/) is to implement caching mechanisms on both the server and client sides. Caching can help you reduce the load on your server, the [latency of your requests](https://apitoolkit.io/api-performance-monitoring-and-compliance/), and the bandwidth consumption of your data transfer. Caching can also improve the [availability and reliability of your web API](https://apitoolkit.io/api-anomalies-validation-and-checks/ ), as it can serve cached data even if the server is down or slow.
+One of the most effective ways to improve your web [API performance](https://apitoolkit.io/blog/api-downtime/) is to implement caching mechanisms on both the server and client sides. Caching can help you reduce the load on your server, the [latency of your requests](https://apitoolkit.io/api-performance-monitoring-and-compliance/), and the bandwidth consumption of your data transfer. Caching can also improve the [availability and reliability of your web API](https://apitoolkit.io/api-anomalies-validation-and-checks/), as it can serve cached data even if the server is down or slow.
 
 #### Best practices for implementing caching mechanisms are:
 
@@ -146,27 +146,27 @@ Logging and error tracking are essential for debugging and troubleshooting web [
 
 i. Capturing Detailed Logs for Debugging and Performance Analysis
 
-  - Use a consistent and structured format for logging, such as JSON or XML, to make it easier to parse and [analyze the logs](https://apitoolkit.io/api-logs-and-metrics/).
-  
-  - Include relevant information in the logs, such as the request ID, timestamp, method, URL, IP address, user agent, response code, response size, and response time.
+- Use a consistent and structured format for logging, such as JSON or XML, to make it easier to parse and [analyze the logs](https://apitoolkit.io/api-logs-and-metrics/).
 
-  - Log both successful and failed requests, as well as any warnings or errors that occur during the API execution.
-  
-  - Use different log levels to indicate the severity and importance of the log messages, such as debug, info, warn, error, or fatal.
-  
-  - Store the logs in a centralized and accessible location, such as a database or a cloud service, to enable easy retrieval and analysis.
-  
-  - Use log rotation and retention policies to manage the log size and avoid filling up the disk space.
+- Include relevant information in the logs, such as the request ID, timestamp, method, URL, IP address, user agent, response code, response size, and response time.
+
+- Log both successful and failed requests, as well as any warnings or errors that occur during the API execution.
+
+- Use different log levels to indicate the severity and importance of the log messages, such as debug, info, warn, error, or fatal.
+
+- Store the logs in a centralized and accessible location, such as a database or a cloud service, to enable easy retrieval and analysis.
+
+- Use log rotation and retention policies to manage the log size and avoid filling up the disk space.
 
 ii. Implementing Error Tracking Systems to Identify and Resolve Issues
 
-  - Use an [error tracking system or a service](https://apitoolkit.io/api-logs-and-metrics/) that can automatically capture, report, and notify you of any errors or exceptions that occur in your web API.
-  
-  - Configure the error tracking system to send alerts via email, SMS, or other channels when a critical or recurring error occurs.
-  
-  - Use the error tracking system to analyze the root cause of the errors, such as the stack trace, request details, user information, or environment variables.
-  
-  - Use the error tracking system to track the status and resolution of the errors, such as assigning them to developers, adding comments, or marking them as resolved.
+- Use an [error tracking system or a service](https://apitoolkit.io/api-logs-and-metrics/) that can automatically capture, report, and notify you of any errors or exceptions that occur in your web API.
+
+- Configure the error tracking system to send alerts via email, SMS, or other channels when a critical or recurring error occurs.
+
+- Use the error tracking system to analyze the root cause of the errors, such as the stack trace, request details, user information, or environment variables.
+
+- Use the error tracking system to track the status and resolution of the errors, such as assigning them to developers, adding comments, or marking them as resolved.
 
 Read: [How to Write API Documentation: 10 Essential Guidelines](https://apitoolkit.io/blog/how-to-write-api-docs/)
 
@@ -191,20 +191,20 @@ You should implement the following performance metrics and monitoring techniques
 
 ![API Latency Distribution](./api-latency.png)
 
-Performance metrics tools or services that can measure and report these metrics for your web API. For example, you should use [APIToolkit](https://apitoolkit.io) to monitor real user traffic and generate load test. APIToolkit is an API management toolbox with all the tools you need to design, test, and monitor the most reliable APIs. 
+Performance metrics tools or services that can measure and report these metrics for your web API. For example, you should use [APIToolkit](https://apitoolkit.io) to monitor real user traffic and generate load test. APIToolkit is an API management toolbox with all the tools you need to design, test, and monitor the most reliable APIs.
 
-  - Set performance goals or benchmarks for your web API based on your business requirements, user expectations, or industry standards. For example, you can set a goal to have an average response time of less than 500 milliseconds, a latency of less than 100 milliseconds, or a throughput of more than 1000 RPS.
+- Set performance goals or benchmarks for your web API based on your business requirements, user expectations, or industry standards. For example, you can set a goal to have an average response time of less than 500 milliseconds, a latency of less than 100 milliseconds, or a throughput of more than 1000 RPS.
 
-  - Compare your actual [performance metrics](https://apitoolkit.io/api-logs-and-metrics/) with your performance goals and [identify any gaps or bottlenecks](https://apitoolkit.io/blog/api-logs-and-metrics/) that may affect your web API performance.
+- Compare your actual [performance metrics](https://apitoolkit.io/api-logs-and-metrics/) with your performance goals and [identify any gaps or bottlenecks](https://apitoolkit.io/blog/api-logs-and-metrics/) that may affect your web API performance.
 
-  - Utilizing Performance Monitoring Tools and Dashboards
-  
-  ![APIToolkit Dashboard](./apitoolkit-dashboard.png)
-  Image source: APIToolkit dashboard.
+- Utilizing Performance Monitoring Tools and Dashboards
 
-  - Use performance [monitoring tools](https://apitoolkit.io/api-performance-monitoring-and-compliance/) or services that can continuously collect, aggregate, and visualize your web API performance metrics. For example, [APIToolkit](https://apitoolkit.io) can display your web API performance metrics in real-time, and provide comprehensive and integrated performance monitoring solutions.
-  
-  - Use performance monitoring tools or services that can alert you of any performance issues or [anomalies](https://apitoolkit.io/api-anomalies-validation-and-checks/) that may occur in your web API. For example, APIToolkit can detect and help you troubleshoot bugs or anomalies before they affect your customers. Also, APIToolkit integrates with PagerDuty, OpsGenie, Slack, and email to create powerful alerting systems and notify you of any incidents or emergencies in real-time.
+![APIToolkit Dashboard](./apitoolkit-dashboard.png)
+Image source: APIToolkit dashboard.
+
+- Use performance [monitoring tools](https://apitoolkit.io/api-performance-monitoring-and-compliance/) or services that can continuously collect, aggregate, and visualize your web API performance metrics. For example, [APIToolkit](https://apitoolkit.io) can display your web API performance metrics in real-time, and provide comprehensive and integrated performance monitoring solutions.
+
+- Use performance monitoring tools or services that can alert you of any performance issues or [anomalies](https://apitoolkit.io/api-anomalies-validation-and-checks/) that may occur in your web API. For example, APIToolkit can detect and help you troubleshoot bugs or anomalies before they affect your customers. Also, APIToolkit integrates with PagerDuty, OpsGenie, Slack, and email to create powerful alerting systems and notify you of any incidents or emergencies in real-time.
 
 Read: [API Observability and Monitoring: What’s the Difference?](https://apitoolkit.io/blog/api-observability-and-api-monitoring/)
 

@@ -6,7 +6,7 @@ description: In the context of Golang, Swagger simplifies the process of generat
 author: jessica
 categories:
   - APIs
---- 
+---
 
 # Generating Golang API Doc with Swagger
 
@@ -30,7 +30,7 @@ Swagger, now known as OpenAPI, is an open-source toolkit designed to simplify th
 - Interactive Documentation: Offers visually appealing documentation with built-in capabilities to test API endpoints directly from a browser.
 - Universal Understanding: Designed to be easily comprehensible for both developers and non-developers.
 - Client Library Generation: Allows direct generation of API client libraries for a variety of languages and frameworks from an OpenAPI specification.
-With Swagger, not only do you get a tool for documentation but also a comprehensive suite that aids in the entire lifecycle of API development.
+  With Swagger, not only do you get a tool for documentation but also a comprehensive suite that aids in the entire lifecycle of API development.
 
 ### Here are some of the advantages of using Swagger in your next project
 
@@ -47,59 +47,64 @@ Step 1: Make a Project Directory: Configuring your development environment
 Create a new Go project in your text editor or IDE then go ahead and load your go.mod file. You may choose any name for your package. If you don’t know how to do that, you can use the text below
 
 ```go
-mkdir goswagger 
-cd goswagger 
-go mod init goswagger 
+mkdir goswagger
+cd goswagger
+go mod init goswagger
 ```
 
 Step 2: Installing Swagger
+
 ```go
 download_url=$(curl -s https://api.github.com/repos/go-swagger/go-swagger/releases/latest | \
   jq -r '.assets[] | select(.name | contains("'"$(uname | tr '[:upper:]' '[:lower:]')"'_amd64")) | .browser_download_url')
 curl -o /usr/local/bin/swagger -L'#' "$download_url"
-chmod +x /usr/local/bin/swagger 
+chmod +x /usr/local/bin/swagger
 ```
 
 Step 3: Download Dependencies
 Next, we will download the required dependencies
 
-For this tutorial purpose, we will make use of  
+For this tutorial purpose, we will make use of
 
 Mux: Handling http requests and routing
 
 Command:
- ```go
-go get github.com/gorilla/mux 
+
+```go
+go get github.com/gorilla/mux
 ```
 
 Swagger: Handling swagger doc
 
-Command: 
+Command:
+
 ```go
-go get github.com/go-openapi/runtime/middleware 
+go get github.com/go-openapi/runtime/middleware
 MySQL: Handling MySQL queries
 ```
 
-Commands: 
-Shape Copy Text 
+Commands:
+Shape Copy Text
+
 ```go
-github.com/go-sql-driver/mysql 
-go get github.com/jmoiron/sqlx 
+github.com/go-sql-driver/mysql
+go get github.com/jmoiron/sqlx
 ```
 
-Step 4: Import Database company.sql from the Root Directory 
-Create main.go in the root directory. Establish database connection, routing for APIs, and Swagger documentation. 
+Step 4: Import Database company.sql from the Root Directory
+Create main.go in the root directory. Establish database connection, routing for APIs, and Swagger documentation.
 
-Shape Copy Text 
- ```go
-  r := mux.NewRouter() 
-   dbsqlx := config.ConnectDBSqlx() 
-   hsqlx := controllers.NewBaseHandlerSqlx(dbsqlx) 
-   company := r.PathPrefix("/admin/company").Subrouter() 
-   company.HandleFunc("/", hsqlx.PostCompanySqlx).Methods("POST") 
-   company.HandleFunc("/", hsqlx.GetCompaniesSqlx).Methods("GET") 
-   company.HandleFunc("/{id}", hsqlx.EditCompany).Methods("PUT") 
-   company.HandleFunc("/{id}", hsqlx.DeleteCompany).Methods("DELETE") 
+Shape Copy Text
+
+```go
+ r := mux.NewRouter()
+  dbsqlx := config.ConnectDBSqlx()
+  hsqlx := controllers.NewBaseHandlerSqlx(dbsqlx)
+  company := r.PathPrefix("/admin/company").Subrouter()
+  company.HandleFunc("/", hsqlx.PostCompanySqlx).Methods("POST")
+  company.HandleFunc("/", hsqlx.GetCompaniesSqlx).Methods("GET")
+  company.HandleFunc("/{id}", hsqlx.EditCompany).Methods("PUT")
+  company.HandleFunc("/{id}", hsqlx.DeleteCompany).Methods("DELETE")
 ```
 
 Step 5: Write Documentation using Go Swagger
@@ -108,22 +113,22 @@ Now, let’s see how to document using Swagger. It will consist of basic configu
 Basic Configuration
 
 ```go
-//  Comapany Api: 
-//   version: 0.0.1 
-//   title: Comapany Api 
-//  Schemes: http, https 
-//  Host: localhost:5000 
-//  BasePath: / 
-//  Produces: 
-//    - application/json 
-// 
-// securityDefinitions: 
-//  apiKey: 
-//    type: apiKey 
-//    in: header 
-//    name: authorization 
-// swagger:meta 
-package controllers 
+//  Comapany Api:
+//   version: 0.0.1
+//   title: Comapany Api
+//  Schemes: http, https
+//  Host: localhost:5000
+//  BasePath: /
+//  Produces:
+//    - application/json
+//
+// securityDefinitions:
+//  apiKey:
+//    type: apiKey
+//    in: header
+//    name: authorization
+// swagger:meta
+package controllers
 ```
 
 We can define security using the API key, which can be checked for each API.
@@ -132,193 +137,194 @@ Step5: Create a Model
 You can create models for our APIs' requests and answers. Below are some structural examples with swagger comments. Every field can have a name, type, schema, required, and description.
 
 ```go
-type ReqAddCompany struct { 
-   // Name of the company 
-   // in: string 
-   Name string `json:"name"validate:"required,min=2,max=100,alpha_space"` 
-   // Status of the company 
-   // in: int64 
-   Status int64 `json:"status" validate:"required"` 
-} 
+type ReqAddCompany struct {
+   // Name of the company
+   // in: string
+   Name string `json:"name"validate:"required,min=2,max=100,alpha_space"`
+   // Status of the company
+   // in: int64
+   Status int64 `json:"status" validate:"required"`
+}
 
-// swagger:parameters admin addCompany 
-type ReqCompanyBody struct { 
-   // - name: body 
-   //  in: body 
-   //  description: name and status 
-   //  schema: 
-   //  type: object 
-   //     "$ref": "#/definitions/ReqAddCompany" 
-   //  required: true 
-   Body ReqAddCompany `json:"body"` 
-} 
+// swagger:parameters admin addCompany
+type ReqCompanyBody struct {
+   // - name: body
+   //  in: body
+   //  description: name and status
+   //  schema:
+   //  type: object
+   //     "$ref": "#/definitions/ReqAddCompany"
+   //  required: true
+   Body ReqAddCompany `json:"body"`
+}
 
-// swagger:model Company 
-type Company struct { 
-   // Id of the company 
-   // in: int64 
-   Id int64 `json:"id"` 
-   // Name of the company 
-   // in: string 
-   Name string `json:"name"` 
-   // Status of the company 
-   // in: int64 
-   Status int64 `json:"status"` 
-} 
+// swagger:model Company
+type Company struct {
+   // Id of the company
+   // in: int64
+   Id int64 `json:"id"`
+   // Name of the company
+   // in: string
+   Name string `json:"name"`
+   // Status of the company
+   // in: int64
+   Status int64 `json:"status"`
+}
 
-// swagger:model CommonError 
-type CommonError struct { 
-   // Status of the error 
-   // in: int64 
-   Status int64 `json:"status"` 
-   // Message of the error 
-   // in: string 
-   Message string `json:"message"` 
-} 
-```
-
-Step 6: Set Up your API Routes 
-Every route can have swagger comments. You  can specify the request and response models, the route name, the request method, the description, and, if necessary with the API key.
-
-```go
-[Text Wrapping Break] HYPERLINK "javascript:void(0);" 
-```
-
-```go
-// swagger:route GET /admin/company/ admin listCompany 
-// Get companies list 
-// 
-// security: 
-// - apiKey: [] 
-// responses: 
-//  401: CommonError 
-//  200: GetCompanies 
-
-func (h *BaseHandlerSqlx) GetCompaniesSqlx(w http.ResponseWriter, r *http.Request) { 
-   response := GetCompanies{} 
-   companies := models.GetCompaniesSqlx(h.db) 
-   response.Status = 1 
-   response.Message = lang.Get("success") 
-   response.Data = companies 
-   w.Header().Set("content-type", "application/json") 
-   json.NewEncoder(w).Encode(response) 
-} 
-
-// swagger:route POST /admin/company/ admin addCompany 
-// Create a new company 
-// 
-// security: 
-// - apiKey: [] 
-// responses: 
-//  401: CommonError 
-//  200: GetCompany 
-func (h *BaseHandlerSqlx) PostCompanySqlx(w http.ResponseWriter, r *http.Request) { 
-   w.Header().Set("content-type", "application/json") 
-   response := GetCompany{} 
-   decoder := json.NewDecoder(r.Body) 
-   var reqcompany *models.ReqCompany 
-   err := decoder.Decode(&reqcompany) 
-   fmt.Println(err) 
-   if err != nil { 
-
-       json.NewEncoder(w).Encode(ErrHandler(lang.Get("invalid_requuest"))) 
-       return 
-   } 
-   company, errmessage := models.PostCompanySqlx(h.db, reqcompany) 
-   if errmessage != "" { 
-       json.NewEncoder(w).Encode(ErrHandler(errmessage)) 
-       return 
-   } 
-
-   response.Status = 1 
-   response.Message = lang.Get("insert_success") 
-   response.Data = company 
-   json.NewEncoder(w).Encode(response) 
-} 
-
-// swagger:route  PUT /admin/company/{id} admin editCompany 
-// Edit a company 
-// 
-// consumes: 
-//         - application/x-www-form-urlencoded 
-// security: 
-// - apiKey: [] 
-// responses: 
-//  401: CommonError 
-//  200: GetCompany 
-func (h *BaseHandlerSqlx) EditCompany(w http.ResponseWriter, r *http.Request) { 
-   r.ParseForm() 
-
-   w.Header().Set("content-type", "application/json") 
-   vars := mux.Vars(r) 
-   response := GetCompany{} 
-   id, err := strconv.ParseInt(vars["id"], 10, 64) 
-   if err != nil { 
-       json.NewEncoder(w).Encode(ErrHandler(lang.Get("invalid_requuest"))) 
-       return 
-   } 
-
-   var reqcompany models.ReqCompany 
-   reqcompany.Status, err = strconv.ParseInt(r.FormValue("status"), 10, 64) 
-   reqcompany.Name = r.FormValue("name") 
-   if err != nil { 
-       json.NewEncoder(w).Encode(ErrHandler(lang.Get("invalid_requuest"))) 
-       return 
-   } 
-
-   company, errmessage := models.EditCompany(h.db, &reqcompany, id) 
-   if errmessage != "" { 
-       json.NewEncoder(w).Encode(ErrHandler(errmessage)) 
-       return 
-   } 
-
-   response.Status = 1 
-   response.Message = lang.Get("update_success") 
-   response.Data = company 
-   json.NewEncoder(w).Encode(response) 
-} 
-
-```
-```go
-// swagger:route DELETE /admin/company/{id} admin deleteCompany 
-// Delete company 
-// 
-// security: 
-// - apiKey: [] 
-// responses: 
-//  401: CommonError 
-//  200: CommonSuccess 
-// Create handles Delete get company 
-func (h *BaseHandlerSqlx) DeleteCompany(w http.ResponseWriter, r *http.Request) { 
-   vars := mux.Vars(r) 
-   errmessage := models.DeleteCompany(h.db, vars["id"]) 
-   if errmessage != "" { 
-       json.NewEncoder(w).Encode(ErrHandler(errmessage)) 
-       return 
-   } 
-   successresponse := CommonSuccess{} 
-   successresponse.Status = 1 
-   successresponse.Message = lang.Get("delete_success") 
-   w.Header().Set("content-type", "application/json") 
-   json.NewEncoder(w).Encode(successresponse) 
+// swagger:model CommonError
+type CommonError struct {
+   // Status of the error
+   // in: int64
+   Status int64 `json:"status"`
+   // Message of the error
+   // in: string
+   Message string `json:"message"`
 }
 ```
 
-   ```go
-// documentation for developers 
-   opts := middleware.SwaggerUIOpts{SpecURL: "/swagger.yaml"} 
-   sh := middleware.SwaggerUI(opts, nil) 
-   r.Handle("/docs", sh) 
-   // documentation for share 
-   // opts1 := middleware.RedocOpts{SpecURL: "/swagger.yaml"} 
-   // sh1 := middleware.Redoc(opts1, nil) 
-   // r.Handle("/docs", sh1) 
+Step 6: Set Up your API Routes
+Every route can have swagger comments. You can specify the request and response models, the route name, the request method, the description, and, if necessary with the API key.
+
+```go
+[Text Wrapping Break] HYPERLINK "javascript:void(0);"
+```
+
+```go
+// swagger:route GET /admin/company/ admin listCompany
+// Get companies list
+//
+// security:
+// - apiKey: []
+// responses:
+//  401: CommonError
+//  200: GetCompanies
+
+func (h *BaseHandlerSqlx) GetCompaniesSqlx(w http.ResponseWriter, r *http.Request) {
+   response := GetCompanies{}
+   companies := models.GetCompaniesSqlx(h.db)
+   response.Status = 1
+   response.Message = lang.Get("success")
+   response.Data = companies
+   w.Header().Set("content-type", "application/json")
+   json.NewEncoder(w).Encode(response)
+}
+
+// swagger:route POST /admin/company/ admin addCompany
+// Create a new company
+//
+// security:
+// - apiKey: []
+// responses:
+//  401: CommonError
+//  200: GetCompany
+func (h *BaseHandlerSqlx) PostCompanySqlx(w http.ResponseWriter, r *http.Request) {
+   w.Header().Set("content-type", "application/json")
+   response := GetCompany{}
+   decoder := json.NewDecoder(r.Body)
+   var reqcompany *models.ReqCompany
+   err := decoder.Decode(&reqcompany)
+   fmt.Println(err)
+   if err != nil {
+
+       json.NewEncoder(w).Encode(ErrHandler(lang.Get("invalid_requuest")))
+       return
+   }
+   company, errmessage := models.PostCompanySqlx(h.db, reqcompany)
+   if errmessage != "" {
+       json.NewEncoder(w).Encode(ErrHandler(errmessage))
+       return
+   }
+
+   response.Status = 1
+   response.Message = lang.Get("insert_success")
+   response.Data = company
+   json.NewEncoder(w).Encode(response)
+}
+
+// swagger:route  PUT /admin/company/{id} admin editCompany
+// Edit a company
+//
+// consumes:
+//         - application/x-www-form-urlencoded
+// security:
+// - apiKey: []
+// responses:
+//  401: CommonError
+//  200: GetCompany
+func (h *BaseHandlerSqlx) EditCompany(w http.ResponseWriter, r *http.Request) {
+   r.ParseForm()
+
+   w.Header().Set("content-type", "application/json")
+   vars := mux.Vars(r)
+   response := GetCompany{}
+   id, err := strconv.ParseInt(vars["id"], 10, 64)
+   if err != nil {
+       json.NewEncoder(w).Encode(ErrHandler(lang.Get("invalid_requuest")))
+       return
+   }
+
+   var reqcompany models.ReqCompany
+   reqcompany.Status, err = strconv.ParseInt(r.FormValue("status"), 10, 64)
+   reqcompany.Name = r.FormValue("name")
+   if err != nil {
+       json.NewEncoder(w).Encode(ErrHandler(lang.Get("invalid_requuest")))
+       return
+   }
+
+   company, errmessage := models.EditCompany(h.db, &reqcompany, id)
+   if errmessage != "" {
+       json.NewEncoder(w).Encode(ErrHandler(errmessage))
+       return
+   }
+
+   response.Status = 1
+   response.Message = lang.Get("update_success")
+   response.Data = company
+   json.NewEncoder(w).Encode(response)
+}
+
+```
+
+```go
+// swagger:route DELETE /admin/company/{id} admin deleteCompany
+// Delete company
+//
+// security:
+// - apiKey: []
+// responses:
+//  401: CommonError
+//  200: CommonSuccess
+// Create handles Delete get company
+func (h *BaseHandlerSqlx) DeleteCompany(w http.ResponseWriter, r *http.Request) {
+   vars := mux.Vars(r)
+   errmessage := models.DeleteCompany(h.db, vars["id"])
+   if errmessage != "" {
+       json.NewEncoder(w).Encode(ErrHandler(errmessage))
+       return
+   }
+   successresponse := CommonSuccess{}
+   successresponse.Status = 1
+   successresponse.Message = lang.Get("delete_success")
+   w.Header().Set("content-type", "application/json")
+   json.NewEncoder(w).Encode(successresponse)
+}
+```
+
+```go
+// documentation for developers
+opts := middleware.SwaggerUIOpts{SpecURL: "/swagger.yaml"}
+sh := middleware.SwaggerUI(opts, nil)
+r.Handle("/docs", sh)
+// documentation for share
+// opts1 := middleware.RedocOpts{SpecURL: "/swagger.yaml"}
+// sh1 := middleware.Redoc(opts1, nil)
+// r.Handle("/docs", sh1)
 ```
 
 After we've finished with the API, we can use the command below in the root directory to generate swagger yaml or JSON files from swagger comments.
 
 ```go
-./swagger.yaml -scan-models swagger produce spec 
+./swagger.yaml -scan-models swagger produce spec
 ```
 
 It will create a file called swagger.yaml in the root directory. The same method can be used to generate a JSON file.
@@ -334,7 +340,7 @@ Swagger, as indicated earlier, isn't just for API documentation; we can also use
 Example: Client Generation for AngularJS.
 
 ```go
-npm install ng-swagger-gen --save-dev 
+npm install ng-swagger-gen --save-dev
 sudo node_modules/.bin/ng-swagger-gen -i ../swagger.yaml -o backend/src/app
 ```
 
@@ -344,7 +350,7 @@ It will generate services files for all of the APIs that will be referenced in t
 
 In [API development](https://apitoolkit.io), comprehensive documentation is a necessity. Swagger emerges as a powerful tool that simplifies the process of generating API documentation. It transforms code into an understandable guide, accelerates the development process, and fosters a community of developers who can effectively utilize your API. So, whether you're a seasoned Golang developer or just embarking on your coding journey, integrating Swagger into your workflow can bring your API documentation to the forefront, making your product more accessible, understandable, and impactful.
 
-- - -
+---
 
 ### **Keep Reading**
 

@@ -3,7 +3,7 @@ title: "How to Use Notion for Documentation"
 featured_image: how-to-use-notion-for-documentation.png
 date: 2023-08-24T08:05:56+02:00
 author: jessica
-categories: 
+categories:
   - APIs
 ---
 
@@ -21,7 +21,7 @@ Notion is more than just a note-taking app; it's a powerful all-in-one workspace
 
 In this article, we'll delve into the world of Notion to explore how you can leverage its features for your documentation needs. Specifically, we'll focus on two primary methods: creating your own custom template and utilizing pre-existing templates. By the end of this guide, you'll have a solid understanding of how to make Notion work for you, ensuring that your documentation is not just thorough, but also organized and easily accessible.
 
-Documentation is a vital part of any product because it aids in making clear directives, specifics, staff conversations, and other information that can be unclear to not just workers but users too.  A permanent record of successes is provided by good documentation, which may be useful in future talks with clients or with the company's directors and legal counsel. The ability to rapidly and effectively provide support, such as figuring out what a particular piece of software is (or was) supposed to perform, is a crucial benefit of thorough documentation.
+Documentation is a vital part of any product because it aids in making clear directives, specifics, staff conversations, and other information that can be unclear to not just workers but users too. A permanent record of successes is provided by good documentation, which may be useful in future talks with clients or with the company's directors and legal counsel. The ability to rapidly and effectively provide support, such as figuring out what a particular piece of software is (or was) supposed to perform, is a crucial benefit of thorough documentation.
 
 An essential component of good documentation is an efficient tool, and [Notion](https://www.notion.so/) is that all in one workspace that has it all. I mean most developers and creatives will agree to the fact that notion is a really great tool. It does everything, from being a storage app for documents to a product map, and then documentation. It is a flexible tool with millions of ways it can be utilized.
 
@@ -67,14 +67,14 @@ If creating a custom template from scratch seems like a daunting task, or if you
 
 1. **Access Template Gallery**: On the getting stated page, you'll find an option that says `Templates`. Click on it to open Notion's Template Gallery.
    ![Getting a new template](getting-started.png)
-2. **Search and Filter**: Use the search bar or filter options to narrow down templates that are most relevant to your documentation needs. You can sort by categories like `Doc`, `Engineering`, `Personal`, and more. I'll choose  a doc because I'm writing a documentation, and docs have different styles to pick from, such as technical specs, architecture overviews, product specs, and so on. All of these may appear similar, but there is a variation in layout, and this is the primary focus.
+2. **Search and Filter**: Use the search bar or filter options to narrow down templates that are most relevant to your documentation needs. You can sort by categories like `Doc`, `Engineering`, `Personal`, and more. I'll choose a doc because I'm writing a documentation, and docs have different styles to pick from, such as technical specs, architecture overviews, product specs, and so on. All of these may appear similar, but there is a variation in layout, and this is the primary focus.
 3. **Preview Templates**: Click on the template template to see a detailed view. This will give you an idea of the template's layout and features.
 4. **Select a Template**: Once you've found a template that suits your needs, click on `Get Template` to select it.
    ![Creating a new template](creating-new-template.png)
 5. **Rename and Save**: Give your new documentation page a specific name and save it in the appropriate location within your workspace.
- ![created doc](created-doc.png)  
+   ![created doc](created-doc.png)
 
-Choosing a template  provides you with a decent documentation format to work with, and with it you're ready to move forward with your high-quality, helpful documentation. These layouts decide how your material will appear and how each text will align with one another. A technical specification document will start with a summary, then move on to background, goals, potential solutions, and follow-up tasks, whereas a project specification will start with an overview, then progress to success criteria, user stories, and scope. The headings change  at some time, but the main thing is their subject emphasis, which means a lot to us depending on the type of layout we want to deploy.
+Choosing a template provides you with a decent documentation format to work with, and with it you're ready to move forward with your high-quality, helpful documentation. These layouts decide how your material will appear and how each text will align with one another. A technical specification document will start with a summary, then move on to background, goals, potential solutions, and follow-up tasks, whereas a project specification will start with an overview, then progress to success criteria, user stories, and scope. The headings change  at some time, but the main thing is their subject emphasis, which means a lot to us depending on the type of layout we want to deploy.
 
 ### Creating Your Template
 
@@ -88,10 +88,10 @@ While Notion's pre-existing templates are incredibly useful, there may be instan
 4. ![Give your page a name](getting-started.png)
 5. **Insert Blocks**: Click on the body of the page to bring up the block menu. You can also use the `+` button that appears as you hover over the page.
 6. **Choose Block Types**: Add the blocks that are essential for your documentation. These could include:
-    - **Text Blocks**: For headings, subheadings, and paragraphs.
-    - **Code Blocks**: To include code snippets or technical commands.
-    - **To-Do Lists**: For actionable items or steps.
-    - **Tables or Databases**: To organize data or resources.
+   - **Text Blocks**: For headings, subheadings, and paragraphs.
+   - **Code Blocks**: To include code snippets or technical commands.
+   - **To-Do Lists**: For actionable items or steps.
+   - **Tables or Databases**: To organize data or resources.
 7. **Arrange Blocks**: Drag and drop the blocks to arrange them in the order that makes the most sense for your documentation.
 8. **Add Custom Elements**: You can insert links, images, or even embed files to make your template more comprehensive.
 9. **Styling**: Once you're satisfied with how your custom template looks, go to the `...` menu at the top-right corner to use Notion's styling options to change fonts, colors, or add highlights to make your template visually appealing.

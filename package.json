@@ -2,7 +2,8 @@
   "scripts": {
     "serve": "quickstatic serve",
     "build": "npx tailwindcss -i ./assets/css/tailwind.css -c tailwind.config.js -o ./assets/css/tailwind.min.css --minify",
-    "build:watch": "npx tailwindcss -i ./assets/css/tailwind.css -c tailwind.config.js -o ./assets/css/tailwind.min.css --minify --watch"
+    "build:watch": "npx tailwindcss -i ./assets/css/tailwind.css -c tailwind.config.js -o ./assets/css/tailwind.min.css --minify --watch",
+    "prettier:fix": "prettier --write \"**/*.{js,jsx,ts,tsx,css,md,mdx}\""
   },
   "dependencies": {
     "prettier": "^3.2.5",

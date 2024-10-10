@@ -23,7 +23,7 @@ To help, I’ve curated a step-by-step strategy for product managers, web develo
 
 API management refers to the stepwise plan of action that ensures the success of an API product, and the array around it. API management involves the process of creating, implementing, publishing, monitoring, and securing APIs. It also involves managing usage policies, authentication, and authorization.
 
-It’s common practice for organizations to rush into creating  API programs without taking a methodical and proven approach to that journey.
+It’s common practice for organizations to rush into creating API programs without taking a methodical and proven approach to that journey.
 
 This lack of thoughtfulness results in disarray, with poor monitoring practices, redundancies, and obscured transparency canceling out the potential merits of having API ecosystems.
 
@@ -33,7 +33,7 @@ Read: [Best API Monitoring and Observability Tools in 2023](https://apitoolkit.i
 
 ### 1. Research
 
-As someone involved in developing digital products, it is crucial to understand the [rudiments of how APIs work](https://apitoolkit.io/blog/benefits-of-api-integration/) and the necessary tools and resources needed for developing them. 
+As someone involved in developing digital products, it is crucial to understand the [rudiments of how APIs work](https://apitoolkit.io/blog/benefits-of-api-integration/) and the necessary tools and resources needed for developing them.
 
 With a deep understanding of the subject, you can address issues more effectively. You can learn the basics from the following sources:
 
@@ -42,12 +42,11 @@ With a deep understanding of the subject, you can address issues more effectivel
 - Information or training from API providers
 - Experiencing your product from a consumer’s perspective
 
-
 ### 2. Plan and Set Goals
 
 Determine which issues need to be addressed first and establish clear milestones. You should prioritize the most straightforward tasks that have a high effect on accessibility. Your API DevOps can also be prioritized based on certain pages.
 
-Establish how your APIs will assist in meeting the organization’s business outcomes. For example, are you trying to enhance the adoption of your products or accelerate your digital transformation efforts? 
+Establish how your APIs will assist in meeting the organization’s business outcomes. For example, are you trying to enhance the adoption of your products or accelerate your digital transformation efforts?
 
 After identifying the intended outcomes, you should get executive alignment and backing around those business strategies.
 
@@ -99,7 +98,7 @@ Read: [How to Generate AUtomated API Documentation](https://apitoolkit.io/blog/h
 
 ### 7. Maintenance
 
-Regularly review your website content as it changes. Reduce the risk of API issues by including API checks during the publishing process. Additionally, you should provide a template for reporting issues and a consistent method of evaluation. 
+Regularly review your website content as it changes. Reduce the risk of API issues by including API checks during the publishing process. Additionally, you should provide a template for reporting issues and a consistent method of evaluation.
 
 Comparing findings will help identify trends across websites or teams and assist in management reporting activities.
 

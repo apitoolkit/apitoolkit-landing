@@ -99,4 +99,3 @@ In conclusion, documenting RESTful APIs is a critical aspect of coding efficienc
 [Key Benefits of API Integration for Developers (with Statistics)](https://apitoolkit.io/blog/benefits-of-api-integration/)
 
 [How to Measure the Effectiveness of Your API Documentation with Analytics](https://apitoolkit.io/blog/api-documentation-with-analytics/)
-

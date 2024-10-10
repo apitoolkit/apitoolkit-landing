@@ -31,7 +31,7 @@ Years later, this is that tool, and we would love to listen to
 similar stories you've experienced and help make such stories a
 thing of the past.
 
-``` =html
+```=html
   <p class="text-xs text-right">
     Anthony (<a
       href="https://twitter.com/tonialaribe"

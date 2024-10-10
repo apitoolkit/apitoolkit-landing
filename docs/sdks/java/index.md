@@ -9,7 +9,6 @@ pages:
   - title: Spring Boot
     slug: /docs/sdks/java/springboot
     icon: /assets/img/framework-logos/springboot-logo.svg
-
 ---
 
 # Java SDKs

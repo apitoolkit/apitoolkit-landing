@@ -1,10 +1,23 @@
 {
+  "printWidth": 100,
   "tabWidth": 2,
   "useTabs": false,
+  "semi": true,
   "singleQuote": false,
-  "printWidth": 80,
-  "trailingComma": "all",
+  "trailingComma": "es5",
+  "bracketSpacing": true,
+  "jsxBracketSameLine": false,
   "arrowParens": "avoid",
-  "endOfLine": "auto",
-  "proseWrap": "always"
+  "proseWrap": "always",
+  "htmlWhitespaceSensitivity": "css",
+  "endOfLine": "lf",
+  "embeddedLanguageFormatting": "auto",
+  "overrides": [
+    {
+      "files": "*.md",
+      "options": {
+        "proseWrap": "preserve"
+      }
+    }
+  ]
 }

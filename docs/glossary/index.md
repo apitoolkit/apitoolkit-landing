@@ -73,6 +73,7 @@ An API client refers to a software application or program that interacts with an
 API Consumption refers to the process of using or integrating an API within an application or system, focusing on how end-users or client applications utilize the services provided by the API.
 
 ## API Dependency
+
 API Dependency refers to a situation where an application or service relies on another external API for its operations, which can impact the application's functionality if the external API changes or becomes unavailable.
 
 ## API Documentation

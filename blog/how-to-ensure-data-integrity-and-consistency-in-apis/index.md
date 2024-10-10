@@ -20,7 +20,6 @@ APIs allow different software programs to share information smoothly. But if the
 
 **Data consistency**, in this context, involves maintaining uniformity and coherence across distributed systems. It ensures that all connected components interpret information in the same way, preventing discrepancies that could disrupt operations.
 
-
 ## The Consequences of Compromised Data Integrity
 
 Compromised data integrity within APIs can lead to a domino effect of operational errors, misinformed decisions, and, in the worst-case scenario, security breaches. Picture a case study where a financial application processes inaccurate transaction data due to a lack of integrity checks or a healthcare system misinterpreting patient records, potentially leading to life-threatening errors. These examples underscore the urgency of implementing robust measures to safeguard data integrity in APIs.
@@ -33,35 +32,35 @@ On the other hand, data verification focuses on confirming the accuracy and corr
 
 ## Best Practices for Ensuring Data Integrity and Consistency
 
-### 1. Data Validation 
+### 1. Data Validation
 
-* #### Schema Enforcement 
+- #### Schema Enforcement
 
 Schemas, such as [JSON Schema](https://json-schema.org/documentation.html) and [OpenAPI](https://www.openapis.org/), serve as the backbone for validating data format and structure in APIs. By defining a clear schema, APIs can ensure that the data exchanged adheres to a standardized format, minimizing unexpected errors.
 
-* #### Data Type Checks
+- #### Data Type Checks
 
 Rigorous checks on data types, such as integers, strings, and dates, are essential. This practice prevents issues arising from incompatible data types, ensuring that the data meets the expected format.
 
-* #### Business Logic Validation 
+- #### Business Logic Validation
 
 Implementing custom validation rules specific to business requirements ensures that the data not only conforms to technical specifications but also aligns with the unique needs of the application.
 
-### 2. Data Verification 
+### 2. Data Verification
 
-* #### Data Cleansing
+- #### Data Cleansing
 
 Identifying and correcting inaccurate or incomplete data is paramount. Techniques like outlier detection and normalization help clean the data before it undergoes further processing or storage.
 
-*  #### Data Reconciliation 
+- #### Data Reconciliation
 
 Comparing data across different sources helps identify inconsistencies. Automated reconciliation processes highlight disparities, enabling timely corrections and ensuring data consistency.
 
-* #### Data Profiling 
+- #### Data Profiling
 
 Analyzing data characteristics and identifying anomalies through profiling tools allows for a deeper understanding of the data. This proactive approach aids in identifying potential issues before they impact operations.
 
-* #### Encryption and Securing Sensitive Data
+- #### Encryption and Securing Sensitive Data
 
 Encrypting sensitive data at rest and in transit adds an extra layer of protection against unauthorized access. Strong encryption algorithms safeguard the confidentiality of data, reducing the risk of data breaches.
 

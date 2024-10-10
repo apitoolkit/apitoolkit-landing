@@ -25,13 +25,13 @@ Now, with only 32% of API providers confident that their API documentation are a
 
 To start, let's understand some key statistics on API documentation:
 
-* A study by ProgrammableWeb found that 70% of API developers say that documentation is the most important factor in their decision to use an API.
+- A study by ProgrammableWeb found that 70% of API developers say that documentation is the most important factor in their decision to use an API.
 
-* Another study by Mulesoft found that 45% of API developers say that they have had to abandon an API due to poor documentation.
+- Another study by Mulesoft found that 45% of API developers say that they have had to abandon an API due to poor documentation.
 
-* A third study by IBM found that the average time it takes to find the information you need in an API documentation is 20 minutes.
+- A third study by IBM found that the average time it takes to find the information you need in an API documentation is 20 minutes.
 
-* Software engineers who participated [in a study](https://www.researchgate.net/publication/335456576_How_developers_use_API_documentation_an_observation_study) said they spend approximately 40% of their time reading documentation.
+- Software engineers who participated [in a study](https://www.researchgate.net/publication/335456576_How_developers_use_API_documentation_an_observation_study) said they spend approximately 40% of their time reading documentation.
 
 ![APIToolkit's Documentation Heatmap](./apitoolkit-docs-heatmap.jpg)
 Image source: A heatmap showing site visitors to [APIToolkit](https://apitoolkit.io) (an API management toolkit) spent more time reading the documentation.
@@ -47,13 +47,15 @@ In addition, effective API documentation improves collaboration between API prov
 Your [API documentation](https://apitoolkit.io/blog/api-documentation-and-observability-the-truth-you-must-know/) audience is segmented. As such, it’s important to identify the different groups of people who benefit from your documentation. This will give you insights into serving their needs.
 
 ### Developers
-Developers are the people who directly use your APIs. In order to use your APIs effectively, they need to understand how it applies to their use case.  Additionally, if they need to run QA tests on the APIs, they require as much information as possible about the APIs. They may need to learn how to access and integrate with dozens, or even hundreds, of the resources you expose.
+
+Developers are the people who directly use your APIs. In order to use your APIs effectively, they need to understand how it applies to their use case. Additionally, if they need to run QA tests on the APIs, they require as much information as possible about the APIs. They may need to learn how to access and integrate with dozens, or even hundreds, of the resources you expose.
 
 ![APIToolkit installation documentation](./apitoolkitdoc1.png)
 
 Studies show that [developers have become more confident in API documentation](https://swagger.io/blog/5-key-trends-fintech-api-development/) over the years. With the numbers rising, it only makes sense if you provide the relevant technical docs to accompany your APIs.
 
 ### Administrators and Others
+
 This group of people may never actually use your APIs. They are responsible for identifying resources needed by their teams. Some of them are technical like CTOs, whereas others might be COOs. Ensure your API documentation is written with such an audience in mind.
 
 Lastly, journalists, tech enthusiasts, and other non-specialized people will likely come across your API docs. How do you target them? By writing for the least technical audience.
@@ -166,7 +168,7 @@ Errors are an inevitable part of using any API, and it’s important to explain 
 
 Trust me, one thing that really irks developers is gated API docs. Don’t be fooled, gated docs do not increase conversions. Developers and decision-makers want to know what to expect before deciding to use your APIs.
 
-Use as many code samples as necessary. Developers appreciate this a lot. Don’r be all talk and no sample. 
+Use as many code samples as necessary. Developers appreciate this a lot. Don’r be all talk and no sample.
 
 Lastly, optimize it for search engines. Your docs are no good if they can’t be found with a simple Google search. Ensure the page is indexed, titled properly, and well described.
 
@@ -190,7 +192,8 @@ While API documentation is essential, it can present its own set of challenges. 
 
 - **Maintaning up-to-date documentation**: Another challenge is maintaining up-to-date documentation. APIs evolve over time, with new features, endpoints, and parameters being added or modified. It is crucial to keep the documentation in sync with the API itself. Regularly review and update your documentation to ensure accuracy and relevancy. Consider integrating [APIToolkit](https://apitoolkit.io) into your backend services. Our API management tool auto-generates API documentation for you by studying the live traffic to and from your endpoints. You immediately get a notification once changes have been made. Read more about this [here](https://apitoolkit.io/blog/how-to-generate-automated-api-documentation/).
 
-### Final Thoughts 
+### Final Thoughts
+
 Documenting your [APIs](https://apitoolkit.io/blog/best-api-monitoring-and-observability-tools/) is just as important as building them. It’s essential to have frameworks and processes that make your API documentation seamless and scalable.
 
 You will have different audiences. Be sure to cater to all their varying needs when developing your API docs.

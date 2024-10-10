@@ -50,7 +50,7 @@ The growth of fintech APIs has been impressive, and the market is expected to co
 
 2. The same report estimates that the compound annual growth rate (CAGR) of the fintech API market will be 23.3% from 2020 to 2027.
 
-3. A [report by McKinsey & Company](https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/what-it-really-takes-to-capture-the-value-of-apis) estimates that the use of APIs in banking could generate up to USD 1 trillion in value for the industry globally. 
+3. A [report by McKinsey & Company](https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/what-it-really-takes-to-capture-the-value-of-apis) estimates that the use of APIs in banking could generate up to USD 1 trillion in value for the industry globally.
 
 ## Benefits of Fintech API for Financial Institutions
 
@@ -139,9 +139,9 @@ In conclusion, Fintech API has the ability to further transform the financial in
 
 The development of Fintech API has been significantly influenced by open banking and BaaS, leading to increased innovation and competitiveness. Financial institutions that adopt this technology are anticipated to get a competitive edge in the market, as the future of Fintech API remains bright.
 
-***
+---
 
-Our API monitoring and observability software (APIToolkit) guarantees the uninterrupted performance of your APIs. It was built by developers for developers. Our suite of features includes anomaly detection, logs and metrics explorer, automated API documentation, mission controls, etc. 
+Our API monitoring and observability software (APIToolkit) guarantees the uninterrupted performance of your APIs. It was built by developers for developers. Our suite of features includes anomaly detection, logs and metrics explorer, automated API documentation, mission controls, etc.
 
 [Check it out here](https://apitoolkit.io).
 

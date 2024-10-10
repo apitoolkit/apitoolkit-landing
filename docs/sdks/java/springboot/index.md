@@ -217,7 +217,7 @@ import org.springframework.web.bind.annotation.*;
 @EnableAPIToolkit
 @RestController
 public class DemoApplication {
-  
+
   public static void main(String[] args) {
     SpringApplication.run(DemoApplication.class, args);
   }
@@ -229,7 +229,7 @@ public class DemoApplication {
     List.of("$.user.email", "$.user.addresses"),
     List.of("$.users[*].email", "$.users[*].credit_card")
   );
-  
+
   @GetMapping("/hello")
   public String hello(HttpServletRequest request) {
     // Use the observingClient instance to create an HTTP Client

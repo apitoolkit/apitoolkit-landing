@@ -2,10 +2,10 @@
 title: "Newsletter 11/11: API Metrics and Montoring"
 featured_image: monitoring.webp
 description: "The true value of any API is its ecosystem value"
-author: anthony 
+author: anthony
 date: 2022-11-11T07:25:03+02:00
 categories:
-  - Newsletter 
+  - Newsletter
 draft: true
 ---
 
@@ -25,7 +25,7 @@ Although data is useful, the actual value lies in actionable data. When relying 
 
 **The Latency Check:** API latency is the amount of time it takes for a user to receive a response after submitting a query to your infrastructure. In latency a lower number is preferable. Connection issues between your server and the API server may be a result of latency. Delays between your server and the API server can be the reason. This could be due to network traffic or resource overload, in which case throttling the requests might be able to handle the high demand. The web service keeps track of the timestamps for the outgoing and incoming requests and compares them to past and present requests over a certain period to monitor latency. This can still be challenging because the server’s responses will still be impacted by response time. The best technique to get a precise latency estimate, if available, is to ping an endpoint or dial a health-check endpoint. When arranging servers geographically, this assessment may be helpful. Your company can decide which provider to choose by identifying the one with the lowest latency. If it is determined that latency is the real cause of your responses being delayed, you can also choose specific regional provider services, or you can choose another provider if the issue is with the speed at which your resources are responding. In real use, latency and response time are frequently integrated into one metric. Overall, the user experience improves with a faster reaction time.
 
-![Response time](./responsetime.png) 
+![Response time](./responsetime.png)
 **Response Time:** In addition to API latency, or the time it takes for information to flow from the server to the requesting party, response time also includes the amount of time a server needs to process the request. Due to the latency’s inclusion in the assessment of reaction time, the response rate will always be longer than the delay. The term “API latency rate” describes how long it takes for requested data to go from the API server to the party making the request. Response time accounts for both latency and the processing time required to process the request. Response time is the amount of time it takes for a service to react to a request, whereas latency accounts for network delays. Since the response time includes the latency to send and receive data, this can be more difficult to track using third-party APIs and web services. By comparing the response times of several resources on a specific API, you may estimate response time. This allows you to determine the true value and estimate the shared latency between your servers and the API’s servers. The performance of your application is directly impacted by the response time. Your users’ interactions will be slower as a result of API response delays. If your selected API is secure, you can prevent this.
 
 ![Availability](./availability-1.png)
@@ -41,7 +41,7 @@ If you don’t have the proper tools, managing and monitoring them could be chal
 
 APIToolkit is focused on security and compliance We focus on determining problems before they affect customers The integration process is simple, to use, and maintain without sacrificing security.
 
-Anticipate our launch  this November, as we are finally stepping out of the Beta. If you’ll like to get onboarded into APItoolkit before then (and benefit from our early user advantages), please feel free to reach out.
+Anticipate our launch this November, as we are finally stepping out of the Beta. If you’ll like to get onboarded into APItoolkit before then (and benefit from our early user advantages), please feel free to reach out.
 I bring you greetings from Kigali (Rwanda), It was a great experience collaborating with founders and possible APIToolkit users. We get into more details when the outcome of our collaboration becomes evident
 Do have a lovely weekend where ever you are, and stay happy.
 

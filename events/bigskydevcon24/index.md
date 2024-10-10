@@ -10,10 +10,10 @@ ogImage: https://raw.githubusercontent.com/apitoolkit/.github/main/images/events
 ```
 
 ### Conference Talk
+
 # You Can’t Build Interactive Web Apps Except SPA and Other Myths
 
 ![Webinar II Banner](./banner.jpg)
-
 
 Are you in Montana this weekend? If so, come join our co-founder Anthony Alaribe and other amazing speakers at the annual [Big Sky Dev Con](https://bigskydevcon.com?ref=apitoolkit) (BSDC) on Saturday, June 8, from 09:00 AM. to 05:00 PM. at The Commons, Montana USA. Hosted by Montana Programmers, BSDC is an annual tech conference focused on sharing knowledge about software development, tech business, design, and user experience with the tech community.
 ​

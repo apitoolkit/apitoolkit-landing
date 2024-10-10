@@ -62,7 +62,7 @@ It is recommended to use semantic versioning to indicate the compatibility and s
 
 As the demand for your [API](https://apitoolkit.io/blog/how-to-generate-automated-api-documentation/) grows, it becomes imperative to scale it to handle increased traffic and maintain optimal performance. Scaling can be achieved both vertically (adding more resources to a single server) and horizontally (distributing the load across multiple servers).
 
-In a production environment, it is crucial to [monitor](https://apitoolkit.io/blog/best-api-monitoring-and-observability-tools/)  API performance, set up load balancers, employ caching mechanisms, and utilize auto-scaling capabilities to ensure smooth operation under varying traffic conditions. Implementing these measures will help you effectively scale your APIs and meet the demands of your users.
+In a production environment, it is crucial to [monitor](https://apitoolkit.io/blog/best-api-monitoring-and-observability-tools/) API performance, set up load balancers, employ caching mechanisms, and utilize auto-scaling capabilities to ensure smooth operation under varying traffic conditions. Implementing these measures will help you effectively scale your APIs and meet the demands of your users.
 
 ## Unlocking the Power of API Gateways
 
@@ -94,9 +94,9 @@ Properly managing API scopes and keeping them up to date is crucial for maintain
 
 API gateways require a range of tools to facilitate seamless [management](https://apitoolkit.io/blog/api-downtime/) and optimization. These include:
 
-* [Monitoring and Analytics](https://apitoolkit.io/blog/best-api-monitoring-and-observability-tools/)  tools to track API performance, detect anomalies, and gain insights into usage patterns.
-* Load balancers to distribute incoming API requests across multiple backend servers and ensure optimal performance.
-* Security tools like Web Application Firewalls (WAF) and Intrusion Detection Systems (IDS) to protect against malicious attacks.
+- [Monitoring and Analytics](https://apitoolkit.io/blog/best-api-monitoring-and-observability-tools/) tools to track API performance, detect anomalies, and gain insights into usage patterns.
+- Load balancers to distribute incoming API requests across multiple backend servers and ensure optimal performance.
+- Security tools like Web Application Firewalls (WAF) and Intrusion Detection Systems (IDS) to protect against malicious attacks.
 
 By leveraging these tools, you can effectively manage and optimize your API gateway, providing a secure and high-performing environment for your APIs.
 

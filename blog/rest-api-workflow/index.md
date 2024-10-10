@@ -109,7 +109,7 @@ Get started [here](https://apitoolkit.io).
 
 ## Key Elements of a Good REST API Workflow
 
-Now that we have discussed what a REST API workflow is and how to evaluate its effectiveness, let's look at some of the key elements that make a good REST API workflow. 
+Now that we have discussed what a REST API workflow is and how to evaluate its effectiveness, let's look at some of the key elements that make a good REST API workflow.
 
 These elements are:
 
@@ -128,9 +128,9 @@ Some of the best practices for API design and documentation are:
 
 ```json
 {
-"status": 404,
-"message": "User not found",
-"details": "The user with id 123 does not exist"
+  "status": 404,
+  "message": "User not found",
+  "details": "The user with id 123 does not exist"
 }
 ```
 
@@ -138,15 +138,15 @@ Some of the best practices for API design and documentation are:
 
 ```json
 {
-"id": 123,
-"name": "John",
-"age": 25,
-"email": "john@example.com"
+  "id": 123,
+  "name": "John",
+  "age": 25,
+  "email": "john@example.com"
 }
 ```
 
 - Use OpenAPI [specifications](https://apitoolkit.io/blog/api-documentation-vs-api-specification/) to define your API structure, resources, methods, parameters,
-responses, etc. in a machine-readable and human-readable format (such as YAML or JSON). For example,
+  responses, etc. in a machine-readable and human-readable format (such as YAML or JSON). For example,
 
 ```yaml
 openapi: 3.0.0
@@ -174,7 +174,7 @@ description: Sort users by name (asc or desc)
 schema:
 ```
 
-**Read**: 
+**Read**:
 
 [Best API Monitoring and Observability Tools in 2023](https://apitoolkit.io/blog/best-api-monitoring-and-observability-tools/)
 

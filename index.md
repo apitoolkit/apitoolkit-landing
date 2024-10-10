@@ -149,8 +149,8 @@ end
     <div class="w-full ">
         <div class="px-5 text-center space-y-4">
         <h2 class="text-4xl font-extrabold">The power of Smarter Observability</h2>
-<p class="inline-block max-w-[750px] leading-relaxed">APItoolkit applies cryptography and machine learning to your logs and request payloads 
-to automatically detect bugs, errors, breaking changes, etc. 
+<p class="inline-block max-w-[750px] leading-relaxed">APItoolkit applies cryptography and machine learning to your logs and request payloads
+to automatically detect bugs, errors, breaking changes, etc.
 Or actively making healthcheck requests to API/web endpoints</p>
         </div>
 
@@ -262,7 +262,7 @@ Or actively making healthcheck requests to API/web endpoints</p>
         <!--ARCADE EMBED END-->
 
 
-    </div>    
+    </div>
     </section>
 
     <div class="text-center mt-20 border-t border-base-200">
@@ -334,7 +334,6 @@ Or actively making healthcheck requests to API/web endpoints</p>
 </section>
 
 ```
-
 
 ```=html
   <section class="py-10 my-16">

@@ -21,11 +21,11 @@ APIs are important in customizing and managing alerts. They offer developers the
 
 In our world today real-time interaction is key, APIs provide the infrastructure to send instant alerts in response to specific events or actions. This immediate feedback loop enhances user engagement and keeps your audience informed and up-to-date. APIs are designed to handle a vast number of requests, making them ideal for applications that require the delivery of alerts to a large audience. Moreover, their integration capabilities mean that you can connect your application with various messaging platforms and services, expanding your reach and ensuring a consistent experience across different channels.
 
-![Choosing API Alerts](choosing-api-alerts.png) 
+![Choosing API Alerts](choosing-api-alerts.png)
 
 ## Choosing and Setting Up Your API for alerts
 
-Selecting an appropriate API for managing alerts  is crucial. Here are some key factors to consider:
+Selecting an appropriate API for managing alerts is crucial. Here are some key factors to consider:
 
 1. **Reliability**: Your chosen API should guarantee high availability and consistent performance to ensure that your [alerts](https://apitoolkit.io/blog/best-practices-for-implementing-custom-alerts/) are delivered without delays or disruptions. Look for APIs with a proven track record of uptime and robust failover mechanisms.
 
@@ -46,15 +46,19 @@ Once you are able to understand the role of APIs in enhancing communication thro
 After selecting the right API, the next step is to configure it for your application. Setting up your API for alerts is a critical step in creating an effective communication channel with your users. By carefully selecting and configuring your API, you ensure that your application can send timely, relevant, and personalized alerts, enhancing user engagement and satisfaction. Here's a basic walkthrough:
 
 ### Step 1: API Authentication
+
 The first step is to authenticate your application with the API. This usually involves registering your application with the [API](https://apitoolkit.io/blog/leveraging-api-logs/) provider to receive an API key or token, which will be used in your API requests to authenticate your application.
 
 ### Step 2: Setting Permissions
+
 Determine the level of access your application needs. Most APIs allow you to set permissions to restrict what your application can do, enhancing security. Ensure you request only the necessary permissions to perform the required tasks.
 
 ### Step 3: Initial API Settings
+
 Configure the initial settings for your API integration. This may include setting up endpoints, defining default alert templates, and specifying retry policies for failed [alerts](https://apitoolkit.io/blog/stay-ahead-of-the-curve/). Tailor these settings to match your application's needs and alert strategy.
 
 ### Step 4: Test Your Setup
+
 Before going live, test your API integration thoroughly. Use the API's sandbox environment, if available, to simulate alerts and ensure everything works as expected. Testing helps identify and rectify any issues before they affect your users.
 
 ## Making Alerts Smarter with APIs

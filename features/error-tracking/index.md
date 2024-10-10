@@ -12,6 +12,7 @@ hide-date: true
 ###### [*Error Tracking and Breaking Change Detection*{.drop-shadow-md}]{class="bg-amber-300 px-2 rounded-md dark:text-black"}
 
 {class="mt-2 mb-3 dark:text-white "}
+
 ### Find and Fix Errors and Breaking Changes in Real-time
 
 {class="py-5"}
@@ -36,6 +37,7 @@ Error monitoring is not enough. Catch breaking changes in your APIs and third-pa
 ::::
 
 {.leading-tight}
+
 ### See All Errors and API Changelog (Breaking and Safe Changes) at a Glance
 
 {.text-lg}
@@ -59,6 +61,7 @@ Seeing all changes and issues at a glance to help you prioritize what issues nee
 {class="space-y-3 col-span-2 order-first md:order-last"}
 ::::
 {.leading-tight}
+
 ### Trace Errors back to the Root Cause
 
 {.text-lg}
@@ -77,6 +80,7 @@ Don't just track errors and stack traces, but also record the incoming and outgo
 ::::
 
 {.leading-tight}
+
 ### Track breaking changes in Your APIs & Third-Party Integrations
 
 {.text-lg}
@@ -100,6 +104,7 @@ Catch breaking changes in your APIs and in any third-party APIs you depend on. N
 {class="space-y-3 col-span-2 order-first md:order-last"}
 ::::
 {.leading-tight}
+
 ### Get instant Alert and Notifications on the Go
 
 {.text-lg}
@@ -116,6 +121,7 @@ Integrate Alerts into your current workflow through Slack, email, teams, pagerdu
 
 {class="text-center"}
 ::::
+
 ### Integrate APItoolkit
 
 ```=html

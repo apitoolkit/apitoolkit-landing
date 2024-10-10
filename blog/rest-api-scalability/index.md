@@ -2,8 +2,8 @@
 title: "REST APIs and Their Scalability Feature"
 featured_image: scalability.jpeg
 date: 2023-07-16T12:36:58+02:00
-author: anthony 
-description: Scalability has become a buzzword in the software industry, often touted as the golden standard for any system worth its salt. But what exactly does it mean, and how does it relate to REST APIs?  
+author: anthony
+description: Scalability has become a buzzword in the software industry, often touted as the golden standard for any system worth its salt. But what exactly does it mean, and how does it relate to REST APIs?
 categories:
   - API
 ---
@@ -12,7 +12,7 @@ categories:
 
 ![scalability](./scalability.jpeg)
 
-Scalability has become a buzzword in the software industry, often touted as the golden standard for any system worth its salt. But what exactly does it mean, and how does it relate to REST APIs? 
+Scalability has become a buzzword in the software industry, often touted as the golden standard for any system worth its salt. But what exactly does it mean, and how does it relate to REST APIs?
 
 Scalability, at its core, refers to the ability of a system to handle an increasing amount of load by continually increasing its resources. Essentially, it's about growing without breaking. And when it comes to REST APIs, scalability is a built-in feature that distinguishes it from other APIs. Here's how it works:
 
@@ -32,14 +32,13 @@ Twitter employs REST APIs to achieve this level of scalability. The APIs enable 
 
 Scalability doesn't always mean handling more. Sometimes, it means doing less. One of the principles of REST is that responses can be cacheable. This means the client, whether a web browser or a mobile app, can store responses locally.
 
-When a client sends a request that can be satisfied with the cached data, there's no need to send a request to the server at all. This can significantly reduce the load on the server, thus improving scalability. 
+When a client sends a request that can be satisfied with the cached data, there's no need to send a request to the server at all. This can significantly reduce the load on the server, thus improving scalability.
 
 In the context of Twitter, think about reloading your feed. If not much time has passed, your app can display cached tweets, reducing the need for a server request.
 
-
 ## More scalability
-However, scaling doesn't happen automatically. There are certain practices that you need to follow, and others you should avoid, to ensure your REST API can handle increased traffic without performance degradation.
 
+However, scaling doesn't happen automatically. There are certain practices that you need to follow, and others you should avoid, to ensure your REST API can handle increased traffic without performance degradation.
 
 ### **Practices to Enhance REST APIs Scalability**
 

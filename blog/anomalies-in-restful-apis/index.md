@@ -6,13 +6,13 @@ author: collins
 description: "The right strategies you can use to tackle API anomalies in RESTful APIs."
 categories:
   - API Management
---- 
+---
 
 # How to Tackle Anomalies in RESTful APIs (the Right Way)
 
 ![Software Developer Managing APIs](./api-devloper-looking-at-computer.jpg)
 
-**No doubt, RESTful APIs have become a critical component of modern software development, favored for its simplicity, scalability, and flexibility. However, with this increased reliance on RESTful APIs comes the challenge of anomalies.  In this blog post, we will talk about API management and how to properly tackle anomalies in RESTful APIs.**
+**No doubt, RESTful APIs have become a critical component of modern software development, favored for its simplicity, scalability, and flexibility. However, with this increased reliance on RESTful APIs comes the challenge of anomalies. In this blog post, we will talk about API management and how to properly tackle anomalies in RESTful APIs.**
 
 ## What is API Management
 

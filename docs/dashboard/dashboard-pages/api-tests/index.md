@@ -7,7 +7,7 @@ menuWeight: 7
 
 # API Tests Page
 
-In this guide, you will learn how to effectively navigate through the **API Tests** page on the APItoolkit dashboard and maximize all the powerful features accessible in it. 
+In this guide, you will learn how to effectively navigate through the **API Tests** page on the APItoolkit dashboard and maximize all the powerful features accessible in it.
 
 ```=html
 <hr />
@@ -88,43 +88,44 @@ Kindly click each toggle below to learn more about each field.
 
 The `request` field defines the API request to be made and consists of three properties:
 
-  ① `method` (required): This property specifies the HTTP method for the request, such as `GET`, `POST`, `PUT`, or `DELETE` as the key. The value of the `method` property is the request URL path. Here's an example:
+① `method` (required): This property specifies the HTTP method for the request, such as `GET`, `POST`, `PUT`, or `DELETE` as the key. The value of the `method` property is the request URL path. Here's an example:
 
-  ```yaml
-  # POST request
-  - title: Adds Todo item - POST
-    POST: /todos/
+```yaml
+# POST request
+- title: Adds Todo item - POST
+  POST: /todos/
 
-  # GET request
-  - title: Fetches Todo items - GET
-    GET: /todos/
-  ```
+# GET request
+- title: Fetches Todo items - GET
+  GET: /todos/
+```
 
-  ② `headers` (optional): This property allows you to include HTTP headers in the request. Headers can be used to pass additional information to the server, such as authentication tokens or content types. Here's an example:
+② `headers` (optional): This property allows you to include HTTP headers in the request. Headers can be used to pass additional information to the server, such as authentication tokens or content types. Here's an example:
 
-  ```yaml
-  - title: Fetches Todo items - GET with headers
-    GET: /todos/
-    headers:
-      Authorization: Bearer <token>
-      Content-Type: application/json
-      Allowed-Methods:
-        - GET
-        - POST
-  ```
+```yaml
+- title: Fetches Todo items - GET with headers
+  GET: /todos/
+  headers:
+    Authorization: Bearer <token>
+    Content-Type: application/json
+    Allowed-Methods:
+      - GET
+      - POST
+```
 
-  ⓷ `json` (optional): This property allows you to include request body data in JSON format when necessary. By specifying the `json` property within the `request` field, you can provide structured data that needs to be sent along with the API request. Here's an example:
+⓷ `json` (optional): This property allows you to include request body data in JSON format when necessary. By specifying the `json` property within the `request` field, you can provide structured data that needs to be sent along with the API request. Here's an example:
 
-  ```yaml
-  - title: Create User - POST
-    POST: /users/
-    json:
-      name: John Doe
-      age: 25
-      email: john.doe@example.com
-  ```
+```yaml
+- title: Create User - POST
+  POST: /users/
+  json:
+    name: John Doe
+    age: 25
+    email: john.doe@example.com
+```
 
-  In the above example, a POST request is made to create a new user. The `json` property contains the user data in JSON format, including properties such as `name`, `age`, and `email`. Including the `json` property in the `request` field enables you to pass structured data to the API endpoint, facilitating actions such as creating or updating resources on the server.
+In the above example, a POST request is made to create a new user. The `json` property contains the user data in JSON format, including properties such as `name`, `age`, and `email`. Including the `json` property in the `request` field enables you to pass structured data to the API endpoint, facilitating actions such as creating or updating resources on the server.
+
 </details>
 
 <details>
@@ -161,20 +162,21 @@ By utilizing the `asserts` field effectively, you can ensure that the API respon
 
 {class="docs-table"}
 :::
-| Assertion | Description     |
+| Assertion | Description |
 |-----------|-----------------|
-| `ok`     | Checks if the provided expression evaluates to `true`. |
-| `empty`  | Checks if a value is empty (e.g., an empty array, string, or null). |
-| `array`  | Checks if a value is an array.                  |
-| `string` | Checks if a value is a string.                  |
-| `number` | Checks if a value is a number.                  |
-| `boolean`| Checks if a value is a boolean.                 |
-| `null`   | Checks if a value is null.                      |
-| `exists` | Checks if a value exists.                       |
-| `date`   | Checks if a value is a valid date string.       |
+| `ok` | Checks if the provided expression evaluates to `true`. |
+| `empty` | Checks if a value is empty (e.g., an empty array, string, or null). |
+| `array` | Checks if a value is an array. |
+| `string` | Checks if a value is a string. |
+| `number` | Checks if a value is a number. |
+| `boolean`| Checks if a value is a boolean. |
+| `null` | Checks if a value is null. |
+| `exists` | Checks if a value exists. |
+| `date` | Checks if a value is a valid date string. |
 :::
 
 These assertions provide a wide range of options to validate different aspects of the API response, allowing you to ensure the correctness and integrity of the data and behavior. You can select the appropriate assertion based on the specific validation requirements of your API test scenario.
+
 </details>
 
 <details>
@@ -182,9 +184,9 @@ These assertions provide a wide range of options to validate different aspects o
 <br />
 
 The `exports` field allows you to capture and store values from the API response of a stage for future reference within the test scenario. It provides a convenient way to extract specific data and make it accessible in subsequent stages of the test.
-  
+
 To use the `exports` field, you define key-value pairs where the keys represent the names of the exports (think of it as a variable), and the values define the JSON paths or expressions used to extract the desired data from the response.
-  
+
 Here's an example that demonstrates the usage of the `exports` field:
 
 ```yaml
@@ -197,6 +199,7 @@ Here's an example that demonstrates the usage of the `exports` field:
 In the above example, the `exports` field captures the value of the `_id` property from the first element of the API response array. It assigns this value to the `todoItem` export. By capturing the `_id` value in the `todoItem` exports, you can access it in subsequent stages of the test scenario. This allows you to use the extracted data for further API requests, assertions, or any other necessary operations.
 
 The `exports` field enables you to create a bridge between different stages within the test scenario, providing a way to pass relevant data between them. This can be particularly useful when you need to refer to specific values or dynamically generate inputs for subsequent API requests. Using the `exports` field, you can enhance the flexibility and modularity of your API tests, making them more robust and adaptable to different scenarios.
+
 </details>
 
 ## What is JSONPath?
@@ -252,7 +255,7 @@ To reference this `userId` export in a subsequent API request, you can use the `
 - title: Update User - PUT
   PUT: /users/$.stages[0].userId
   json:
-    name: 'John Doe'
+    name: "John Doe"
 ```
 
 In the above example, the `userId` captured in the first stage is accessed using the syntax `$.stages[0].userId`. The reference will substituted with the corresponding value during execution. You can also use relative references like `$.stages[-n]` which refers to the `exports` of the `nth` stage before the current stage. Here's an example:
@@ -282,7 +285,7 @@ In the example above, we first provide a JSONPath to the date followed by the da
 
 {class="docs-table"}
 :::
-| Token | Meaning     | Example         |
+| Token | Meaning | Example |
 |------|--------------|-----------------|
 | `%Y` | Year with century as a decimal number. | 2023 |
 | `%m` | Month as a zero-padded decimal number. | 07 |
@@ -305,12 +308,12 @@ Here are some example dates and their correct formats:
 :::
 | Date String | Format |
 | ----------- | ------ |
-| 2023-07-26                      | `%Y-%m-%d`                 |
-| 2023-07-26 12:34:56 UTC         | `%Y-%m-%d %H:%M:%S %Z`     |
-| 15 August, 1995, 03:45 PM UTC   | `%d %B, %Y, %I:%M %p %Z`   |
-| Mon, 05 Dec 2022 11:05:30 UTC   | `%a, %d %b %Y %H:%M:%S %Z` |
-| January 01, 2000 - 00:00:00 UTC | `%B %d, %Y - %H:%M:%S %Z`  |
-| 1987/03/10 06:30 AM UTC         | `%Y/%m/%d %I:%M %p %Z`     |
+| 2023-07-26 | `%Y-%m-%d` |
+| 2023-07-26 12:34:56 UTC | `%Y-%m-%d %H:%M:%S %Z` |
+| 15 August, 1995, 03:45 PM UTC | `%d %B, %Y, %I:%M %p %Z` |
+| Mon, 05 Dec 2022 11:05:30 UTC | `%a, %d %b %Y %H:%M:%S %Z` |
+| January 01, 2000 - 00:00:00 UTC | `%B %d, %Y - %H:%M:%S %Z` |
+| 1987/03/10 06:30 AM UTC | `%Y/%m/%d %I:%M %p %Z` |
 :::
 
 In the table above, the "Date String" column represents the example date string, and the "Format" column contains the corresponding format string to parse the given date string.

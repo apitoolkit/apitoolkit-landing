@@ -60,12 +60,12 @@ ogImage: https://raw.githubusercontent.com/apitoolkit/.github/main/images/compar
             <td class="font-bold text-base md:text-lg lg:text-lg text-center">API Monitoring and Observability</td>
             <td class="border border-blue-500 bg-slate-50 dark:bg-inherit prose text-sm md:text-base lg:text-base leading-relaxed text-center">
                 <img class="h-6 mt-2 mb-4 block mx-auto" src="/assets/img/compare-logos/check.svg" alt="Icon that indicates this feature is supported." />
-                
+
                 Focused on <b>API-first</b> monitoring, observability, and application performance management (APM). Track and trace incoming and outgoing requests and capture the entire request-response chain of all endpoints on your API.
             </td>
             <td class="border prose text-sm md:text-base lg:text-base leading-relaxed text-center">
                 <img class="h-6 mt-2 mb-4 block mx-auto" src="/assets/img/compare-logos/check2.svg" alt="Icon that indicates this feature is supported." />
-                
+
                 More focused on monitoring REST APIs for applications.
             </td>
          </tr>

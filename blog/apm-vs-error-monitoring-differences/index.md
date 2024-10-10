@@ -95,7 +95,7 @@ Now, you might be thinking, "That's all well and good, but what's in it for me?"
 
 Deciding between APM and [Error Monitoring](https://apitoolkit.io/blog/moesif-alternative-for-monitoring-and-observability/) boils down to understanding what your application needs most. Is your primary concern ensuring that everything runs smoothly and efficiently? Then APM might be your MVP. Or are you more focused on making sure no bugs or errors ruin the user experience? In that case, Error Monitoring could be your go-to defender.
 
-Note  that you don't necessarily have to choose one over the other. In fact, the most robust approach often involves integrating both APM and [Error Monitoring](https://apitoolkit.io/blog/error-monitoring-for-developer/). This combo gives you the best of both worlds, allowing you to optimize performance while also staying vigilant against any errors that might pop up.
+Note that you don't necessarily have to choose one over the other. In fact, the most robust approach often involves integrating both APM and [Error Monitoring](https://apitoolkit.io/blog/error-monitoring-for-developer/). This combo gives you the best of both worlds, allowing you to optimize performance while also staying vigilant against any errors that might pop up.
 
 ## Synergies Between APM and Error Monitoring
 

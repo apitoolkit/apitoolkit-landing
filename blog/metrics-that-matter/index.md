@@ -2,10 +2,10 @@
 title: "Metrics that Matter: Key Performance Indicators in API Logs"
 featured_image: kpis.png
 date: 2023-12-04T09:21:39+02:00
-author: jessica 
+author: jessica
 description: Explore key KPIs in API log analysis for improved performance and system health. Essential insights for effective API monitoring and management
 categories:
-  - APIs Logs 
+  - APIs Logs
 ---
 
 # Metrics that Matter: Key Performance Indicators in API Logs
@@ -103,4 +103,3 @@ Continuous [API log monitoring](https://apitoolkit.io/blog/why-you-need-an-api-m
 [Enhancing Customer Experience Through API Log Insights](https://apitoolkit.io/blog/enhancing-customer-experience/)
 [Bridging the Gap Between API Logs and User Behavior Tracking](https://apitoolkit.io/blog/api-logs-and-user-behaviour-tracking/)
 [Incident Management: How to Resolve API Downtime Issues Before It Escalates](https://apitoolkit.io/blog/api-downtime/)
-

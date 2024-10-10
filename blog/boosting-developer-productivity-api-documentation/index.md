@@ -3,7 +3,7 @@ title: "Boosting Developer Productivity with Effective API Documentation: Strate
 featured_image: developer-documentation.png
 date: 2024-02-28T08:05:56+02:00
 author: jessica
-description: Let's explore API documentation and uncover how it can improve developer productivity. 
+description: Let's explore API documentation and uncover how it can improve developer productivity.
 categories:
   - API Documentation
 ---

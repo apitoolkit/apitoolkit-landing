@@ -1,5 +1,5 @@
 ---
-title: 'How to Prevent API Outages to Improve Performance'
+title: "How to Prevent API Outages to Improve Performance"
 featured_image: error-monitoring.png
 date: 2023-10-12T08:00:00+00:00
 author: jessica

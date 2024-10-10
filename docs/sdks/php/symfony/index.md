@@ -16,7 +16,7 @@ To integrate your Symfony application with APItoolkit, you need to use this SDK 
 
 ## Prerequisites
 
-Ensure you have already completed the first three steps of the [onboarding guide](/docs/onboarding/){target="_blank"}.
+Ensure you have already completed the first three steps of the [onboarding guide](/docs/onboarding/){target="\_blank"}.
 
 ## Installation
 
@@ -43,30 +43,30 @@ Then, add the `APIToolkit\EventSubscriber\APIToolkitService` listener and API Ke
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
 parameters:
-    locale: 'en'
+  locale: "en"
 services:
-    # default configuration for services in *this* file
-    _defaults:
-        autowire: true      # Automatically injects dependencies in your services.
-        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+  # default configuration for services in *this* file
+  _defaults:
+    autowire: true # Automatically injects dependencies in your services.
+    autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
 
-    # Initialize the APItoolkit client
-    APIToolkit\EventSubscriber\APIToolkitService:
-      arguments:
-        $apiKey: '%env(APITOOLKIT_KEY)%'
-    # END Initialize the APItoolkit client
+  # Initialize the APItoolkit client
+  APIToolkit\EventSubscriber\APIToolkitService:
+    arguments:
+      $apiKey: "%env(APITOOLKIT_KEY)%"
+  # END Initialize the APItoolkit client
 
-    # makes classes in src/ available to be used as services
-    # this creates a service per class whose id is the fully-qualified class name
-    App\:
-        resource: '../src/'
-        exclude:
-            - '../src/DependencyInjection/'
-            - '../src/Entity/'
-            - '../src/Kernel.php'
+  # makes classes in src/ available to be used as services
+  # this creates a service per class whose id is the fully-qualified class name
+  App\:
+    resource: "../src/"
+    exclude:
+      - "../src/DependencyInjection/"
+      - "../src/Entity/"
+      - "../src/Kernel.php"
 
-    # add more service definitions when explicit configuration is needed
-    # please note that last definitions always *replace* previous ones
+  # add more service definitions when explicit configuration is needed
+  # please note that last definitions always *replace* previous ones
 ```
 
 <div class="callout">
@@ -78,7 +78,7 @@ services:
 
 If you have fields that are sensitive and should not be sent to APItoolkit servers, you can mark those fields to be redacted (the fields will never leave your servers).
 
-To mark a field for redacting via this SDK, you need to add some additional arguments to the configuration  with paths to the fields that should be redacted. There are three variables you can provide to configure what gets redacted, namely:
+To mark a field for redacting via this SDK, you need to add some additional arguments to the configuration with paths to the fields that should be redacted. There are three variables you can provide to configure what gets redacted, namely:
 
 1. `$redactHeaders`: A list of HTTP header keys.
 2. `$redactRequestBody`: A list of JSONPaths from the request body.
@@ -138,18 +138,18 @@ Here's what the configuration would look like with redacted fields in the `confi
 services:
   APIToolkit\EventSubscriber\APIToolkitService:
     arguments:
-      $apiKey: '%env(APITOOLKIT_KEY)%'
+      $apiKey: "%env(APITOOLKIT_KEY)%"
       $redactedHeaders:
-        - 'content-type'
-        - 'Authorization'
-        - 'HOST'
+        - "content-type"
+        - "Authorization"
+        - "HOST"
       $redactRequestBody:
-        - '$.user.email'
-        - '$.user.addresses'
-        - '$.user.addresses[*]'
+        - "$.user.email"
+        - "$.user.addresses"
+        - "$.user.addresses[*]"
       $redactResponseBody:
-        - '$.users[*].email'
-        - '$.users[*].credit_card'
+        - "$.users[*].email"
+        - "$.users[*].credit_card"
 ```
 
 <div class="callout">

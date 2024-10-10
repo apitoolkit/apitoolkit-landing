@@ -90,7 +90,7 @@ In conclusion, mastering JavaScript error monitoring is crucial for maintaining 
 
 [How to Write API Documentation: 14 Essential Guidelines](https://apitoolkit.io/blog/how-to-write-api-docs/)
 
-[Ultimate Guide to API Testing Automation](https://apitoolkit.io/blog/api-testing-automation/) 
+[Ultimate Guide to API Testing Automation](https://apitoolkit.io/blog/api-testing-automation/)
 
 [Web API Performance Best Practices - the Ultimate Guide](https://apitoolkit.io/blog/web-api-performance/)
 

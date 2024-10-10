@@ -204,7 +204,6 @@ APITOOLKIT_REDACT_RES_BODY: $.users[*].email, $.users[*].credit_card
   </ul>
 </div>
 
-
 ## Error Reporting
 
 With APItoolkit, you can track and report different unhandled or uncaught errors, API issues, and anomalies at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.

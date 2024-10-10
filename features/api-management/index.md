@@ -12,6 +12,7 @@ hide-date: true
 ###### [*Control It. Secure It. See It All*{.drop-shadow-md}]{.bg-amber-300 .px-2 .rounded-md}
 
 {class="mt-2 mb-3 dark:text-white "}
+
 ### API Management
 
 {class="py-5"}
@@ -37,6 +38,7 @@ APItoolkit isn’t just another API management tool. It’s the most feature-ric
 {.space-y-3 .col-span-2}
 ::::
 {.leading-tight}
+
 ### API Monitoring
 
 {.text-lg}
@@ -54,6 +56,7 @@ With comprehensive metrics tracking, you gain deep insights into how your API in
 { .space-y-3 .col-span-2}
 ::::
 {.leading-tight}
+
 ### Maintain API Quality and Reliability
 
 {.text-lg}
@@ -77,6 +80,7 @@ By leveraging API documentation tools for clear instructions, API testing tools 
 { .space-y-3 .col-span-2}
 ::::
 {.leading-tight}
+
 ### Advanced Generated Tests and Monitors
 
 {.text-lg}
@@ -97,6 +101,7 @@ Test in both staging and production environments. Be aware of issues before they
 {.space-y-3 .col-span-2}
 ::::
 {.leading-tight}
+
 ### Analytics and Reporting
 
 {.text-lg}
@@ -113,6 +118,7 @@ Monitor and pinpoint every single error. Understand the “Why,” “How,” an
 
 {class="text-center"}
 ::::
+
 ### Integrate APItoolkit
 
 ```=html

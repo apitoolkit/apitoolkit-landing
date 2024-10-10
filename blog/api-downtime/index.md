@@ -42,7 +42,7 @@ API downtime can have a significant impact on businesses and users who depend on
 
 - **Financial losses**: Businesses may face revenue loss, increased costs, or even contractual penalties due to API downtime. For instance, an e-commerce platform with a malfunctioning payment API could miss sales, while a cloud provider facing storage API issues might need to compensate clients for SLA breaches.
 
-- **Brand damage**:  API downtime can tarnish a business's reputation. Users frustrated by a downed social media messaging API or patients endangered by an inaccessible healthcare data API might lose trust in these platforms.
+- **Brand damage**: API downtime can tarnish a business's reputation. Users frustrated by a downed social media messaging API or patients endangered by an inaccessible healthcare data API might lose trust in these platforms.
 
 - **Competitive disadvantage**: Businesses can lose their competitive edge due to API downtime. For example, if a travel booking site's flight information API is down, it may lose customers to its competitors who offer more reliable and accurate information.
 
@@ -60,7 +60,7 @@ The exact cost of API downtime depends on various factors such as:
 
 - **The type and size of the audience**: Different audiences have different expectations and behaviors that affect how they react to and cope with API downtime. For example, a loyal customer may be more forgiving than a new customer.
 
-A [report by the IDC](https://www.devopsdigest.com/idc-survey-appdynamics-devops-application-performance#:~:text=Unplanned%20application%20downtime%20costs%20the%20Fortune%201000%20from,of%20Downtime%3A%20Fortune%201000%20Best%20Practice%20Metrics%20Quantified.) suggests that Fortune 1000 companies lose between $1.25 billion and $2.5 billion every year because of application outages. A company that brings in more than $1 billion in annual revenue could lose around $686,000 in revenue per minute of downtime. 
+A [report by the IDC](https://www.devopsdigest.com/idc-survey-appdynamics-devops-application-performance#:~:text=Unplanned%20application%20downtime%20costs%20the%20Fortune%201000%20from,of%20Downtime%3A%20Fortune%201000%20Best%20Practice%20Metrics%20Quantified.) suggests that Fortune 1000 companies lose between $1.25 billion and $2.5 billion every year because of application outages. A company that brings in more than $1 billion in annual revenue could lose around $686,000 in revenue per minute of downtime.
 
 According to some incident management estimates, the average cost of API downtime for a large enterprise can range from $5,600 to $11,600 per minute, depending on the industry and the scenario. This translates to $336,000 to $696,000 per hour, or $8.06 million to $16.7 million per day. For some high-profile cases, the cost of API downtime can be even higher. For example, in 2017, Amazon's S3 cloud storage service [experienced a four-hour outage](https://www.datacenterknowledge.com/archives/2017/03/02/aws-outage-that-broke-the-internet-caused-by-mistyped-command/) that affected many websites and services that relied on it. The outage was estimated to have cost Amazon and its customers around $150 million in lost revenue.
 
@@ -71,7 +71,7 @@ Read: [API Management: How to Tackles Anomalies in RESTful APIs (the Right Way)]
 The best way to minimize the cost and impact of API downtime is to [prevent it from happening in the first place](https://apitoolkit.io/blog/why-you-need-an-api-monitoring-tool/). This is proper incident management. And it requires a proactive approach that involves:
 
 - Implementing robust monitoring and alert systems
-- Conducting regular performance and stress testing, and 
+- Conducting regular performance and stress testing, and
 - Following best practices for API design and development.
 
 ### Implementing Robust Monitoring and Alert Systems

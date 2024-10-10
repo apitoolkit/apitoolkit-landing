@@ -1,6 +1,6 @@
 ---
 title: "Reduce API downtime and Errors with APItoolkit API observability"
-featured_image: 
+featured_image:
 date: 2024-03-26T06:44:56+02:00
 description: "with a plethora of API observability tools available, finding the right one can feel like navigating a labyrinth."
 author: elliot
@@ -29,17 +29,17 @@ API errors, on the other hand, are specific issues or exceptions that arise duri
 
 - Invalid Data
 
--  Timeouts
+- Timeouts
 
 - Rate Limiting
 
--  Protocol Errors
+- Protocol Errors
 
 ## APIToolkit as a Solution
 
 Developers, we've all been there. A critical API goes down, users are frustrated, and the scramble to identify and fix the issue is on. But what if you could prevent downtime altogether?
 
-One of the key strengths of the APIToolkit lies in its proactive approach to preventing API downtime. By leveraging on advanced monitoring capabilities, developers can gain real-time insights into the performance and health of their APIs. 
+One of the key strengths of the APIToolkit lies in its proactive approach to preventing API downtime. By leveraging on advanced monitoring capabilities, developers can gain real-time insights into the performance and health of their APIs.
 
 If you want to have a feel of what we can do please check out our feature pages. Or better, signup for free to get started.
 Our Features
@@ -65,7 +65,6 @@ APItoolkit's advanced analytics and insights help identify and address performan
 
 ## Final word
 
-API Management is not just about managing APIs and managing API operations. It's also about making sure that your from the team members of your organization have access to API operations and resources associated with your organization and its API operations    and resources associated with your organization. 
+API Management is not just about managing APIs and managing API operations. It's also about making sure that your from the team members of your organization have access to API operations and resources associated with your organization and its API operations and resources associated with your organization.
 
-We have a wealth of information available to help you get started! Our comprehensive documentation and informative blog posts cover a wide range of topics.  Feel free to browse through them to find what you're looking for.
-
+We have a wealth of information available to help you get started! Our comprehensive documentation and informative blog posts cover a wide range of topics. Feel free to browse through them to find what you're looking for.

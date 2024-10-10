@@ -16,11 +16,11 @@ categories:
 
 If you're building or managing APIs, you know how important it is to keep them running smoothly and efficiently. You also know how challenging it can be to monitor, troubleshoot, and optimize them in a complex and dynamic environment. That's where API observability comes in.
 
-API observability is the ability to understand the internal state of an API from the data it produces and the ability to explore that data to answer questions about what happened and why. In this guide, we'll explain what API observability is, why it matters, and how to achieve it using four key components: 
+API observability is the ability to understand the internal state of an API from the data it produces and the ability to explore that data to answer questions about what happened and why. In this guide, we'll explain what API observability is, why it matters, and how to achieve it using four key components:
 
 - Monitoring,
-- Logging, 
-- Tracing, and 
+- Logging,
+- Tracing, and
 - Metrics.
 
 ![API Observability Infographic](./api-observability.png)
@@ -41,7 +41,7 @@ Without API observability, teams may struggle to detect, diagnose, and resolve i
 
 API observability helps teams overcome these challenges by providing them with a comprehensive and granular view of their APIs' health and performance. It enables teams to not only monitor their APIs' status and metrics in real-time, but also drill down into the details of individual requests and responses to identify root causes and anomalies. It also allows teams to understand how their APIs are being consumed by different clients and users, and how they impact key business outcomes.
 
-By leveraging API observability data, teams can proactively prevent or mitigate issues before they affect users or customers. They can also continuously improve their APIs' quality and efficiency by applying data-driven decisions and feedback loops. 
+By leveraging API observability data, teams can proactively prevent or mitigate issues before they affect users or customers. They can also continuously improve their APIs' quality and efficiency by applying data-driven decisions and feedback loops.
 
 Ultimately, API observability empowers teams to deliver better APIs faster and more confidently.
 
@@ -148,11 +148,11 @@ By leveraging [observability tools](https://apitoolkit.io/blog/best-api-monitori
 
 Moreover, API observability enhances collaboration between development and operations teams, fostering a proactive approach to maintaining and improving APIs. By sharing observability data and leveraging real-time monitoring, teams can quickly detect anomalies, investigate root causes, and implement remediation measures, reducing downtime and enhancing system reliability.
 
-***
+---
 
 Try [APIToolkit](https://apitoolkit.io), a robust API management toolbox with all the tools you need to build and manage the most reliable APIs.
 
-***
+---
 
 **Keep Reading**
 

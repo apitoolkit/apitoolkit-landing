@@ -16,7 +16,7 @@ To integrate your Laravel application with APItoolkit, you need to use this SDK 
 
 ## Prerequisites
 
-- Ensure you have already completed the first three steps of the [onboarding guide](/docs/onboarding/){target="_blank"}.
+- Ensure you have already completed the first three steps of the [onboarding guide](/docs/onboarding/){target="\_blank"}.
 - APItoolkit uses the Laravel cache to prevent reinitializing the SDK for each request. So, ensure you have [Laravel cache](https://laravel.com/docs/10.x/cache?ref=APItoolkit){target="\_blank"} set up in your application.
 
 ## Installation
@@ -62,6 +62,7 @@ class Kernel extends HttpKernel
   ];
 }
 ```
+
   </div>
   <div id="tab2" class="tab-content">
     Alternatively, if you want to monitor specific routes, you can register the middleware, like so:
@@ -82,7 +83,7 @@ class Kernel extends HttpKernel
 }
 ```
 
-  Then you can use the `apitoolkit` middleware in your routes like so:
+Then you can use the `apitoolkit` middleware in your routes like so:
 
 ```php
 Route::get('/', function () {
@@ -248,6 +249,7 @@ Route::get('/user', function (Request $request) {
   }
 });
 ```
+
   </div>
 </section>
 

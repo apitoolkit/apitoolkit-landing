@@ -20,9 +20,9 @@ APIs are simply amazing. They make work easy. But the truth is, APIs are not all
 
 ## What is an API?
 
-APIs are applications that enable communication between diverse software systems. API stands for [Application Programming Interface](https://en.wikipedia.org/wiki/API). 
+APIs are applications that enable communication between diverse software systems. API stands for [Application Programming Interface](https://en.wikipedia.org/wiki/API).
 
-APIs allow a vast array of unrelated software systems to interoperate with one another. Additionally, APIs provide a way for developers to add functionality to software by leveraging a comprehensive set of available APIs. This is why complex systems require [API monitoring](https://apitoolkit.io/blog/why-you-need-an-api-monitoring-tool/). 
+APIs allow a vast array of unrelated software systems to interoperate with one another. Additionally, APIs provide a way for developers to add functionality to software by leveraging a comprehensive set of available APIs. This is why complex systems require [API monitoring](https://apitoolkit.io/blog/why-you-need-an-api-monitoring-tool/).
 
 APIs do not all operate similarly, however. Developers can work with various API types, protocols, and structures that suit the differing needs of different application software and businesses.
 
@@ -59,9 +59,9 @@ Partner APIs, as the name implies, are specifically tailored for collaboration w
 
 Partner APIs could be paid or free. In either case, partners use such APIs to facilitate business dealings with the API provider. Partner APIs are vital in forming strategic alliances and ensuring secure data sharing. In logistics, APIs connect e-commerce platforms with courier services, streamlining shipping and tracking processes. This not only enhances operational efficiency but also improves customer satisfaction.
 
-Stripe is a notable example of how partner APIs work. As a payment processor, Stripe provides APIs to businesses that want to use their platform as a payment gateway. Stripe benefits through payments for services rather than for the APIs themselves. 
+Stripe is a notable example of how partner APIs work. As a payment processor, Stripe provides APIs to businesses that want to use their platform as a payment gateway. Stripe benefits through payments for services rather than for the APIs themselves.
 
-Developers and API consumers are given clear rights and licenses [guiding the use of partner APIs](https://www.3pillarglobal.com/insights/criteria-for-and-benefits-of-selecting-an-api-partner/). 
+Developers and API consumers are given clear rights and licenses [guiding the use of partner APIs](https://www.3pillarglobal.com/insights/criteria-for-and-benefits-of-selecting-an-api-partner/).
 
 Read: [Key Benefits of API Integration for Developers (with Statistics)](https://apitoolkit.io/blog/benefits-of-api-integration/)
 
@@ -69,7 +69,7 @@ Read: [Key Benefits of API Integration for Developers (with Statistics)](https:/
 
 Private APIs are created for use within organizations to connect internal systems and applications. They empower businesses to achieve greater agility, optimize internal processes, and enable cross-functional collaboration.
 
-Because internal APIs are intended for private use, they usually have low level security and authentication. Whatever security is needed is provided by company policies. 
+Because internal APIs are intended for private use, they usually have low level security and authentication. Whatever security is needed is provided by company policies.
 
 This trend is however changing with more information surfacing about the need for security in API strategy. Internal APIs significantly improve organizational efficiency by automating workflows and enabling smooth inter-departmental communication. In banking, private APIs are used to connect customer service platforms with account [management](https://apitoolkit.io/blog/the-ultimate-api-management-strategy/) systems, allowing for faster and more efficient customer service.
 
@@ -80,7 +80,8 @@ Internal APIs can be used to connect CRM systems with marketing automation platf
 Read: [API Documentation vs API Specification - What it means for you](https://apitoolkit.io/blog/api-documentation-vs-api-specification/)
 
 ### Composite APIs
-Composite APIs, also known as Aggregator APIs or Orchestrator APIs, are a special type of API that combines multiple underlying APIs into a single, unified interface. That is to say, they produce a sequence of related operations through the combination of multiple [APIs](https://apitoolkit.io/blog/anomalies-in-restful-apis/). 
+
+Composite APIs, also known as Aggregator APIs or Orchestrator APIs, are a special type of API that combines multiple underlying APIs into a single, unified interface. That is to say, they produce a sequence of related operations through the combination of multiple [APIs](https://apitoolkit.io/blog/anomalies-in-restful-apis/).
 
 They are instrumental in scenarios where multiple tasks need to be performed in a quick succession. In healthcare, composite APIs can synchronize patient data across various systems – from appointment scheduling to medical records – enhancing the efficiency of healthcare delivery.
 
@@ -92,7 +93,7 @@ APIs are the backbone of modern software integration, enabling organizations to 
 
 The future of [APIs](https://apitoolkit.io/blog/anomalies-in-restful-apis/) will also be deeply intertwined with enhanced security and data privacy measures. As digital interactions become more complex and integral to our daily lives, the emphasis on robust security protocols in API development will become paramount. This focus on security is not just a technical necessity but a crucial aspect of maintaining user trust and adhering to global regulatory standards. In summary, the API-driven future is not just about technological advancement but also about creating a secure, efficient, and interconnected digital landscape that unlocks new possibilities and reshapes our interaction with technology.
 
-As a developer or API consumer, the choice of what type of API to use or build depends on the desired use case. There are [public libraries](https://github.com/public-apis/public-apis) available for open APIs and businesses usually detail everything you need to know about using partner APIs. 
+As a developer or API consumer, the choice of what type of API to use or build depends on the desired use case. There are [public libraries](https://github.com/public-apis/public-apis) available for open APIs and businesses usually detail everything you need to know about using partner APIs.
 
 This makes collaboration easy and seamless. So don't let anything stop you from building that project.
 
@@ -102,5 +103,3 @@ This makes collaboration easy and seamless. So don't let anything stop you from 
 [How to Tackle Anomalies in RESTful APIs (the Right Way)](https://apitoolkit.io/blog/anomalies-in-restful-apis/)
 [How to Write API Documentation: 10 Essential Guidelines](https://apitoolkit.io/blog/how-to-write-api-docs/)
 [A Comprehensive API Management Strategy for Businesses](https://apitoolkit.io/blog/the-ultimate-api-management-strategy/)
-
-

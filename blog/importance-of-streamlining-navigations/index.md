@@ -57,10 +57,10 @@ While the specific metrics to track may vary depending on the nature of the API 
 
 Along with tracking adoption and engagement [metrics](https://apitoolkit.io/blog/the-key-metrics/), it's essential for API product managers and growth teams to place a strong emphasis on long-term API retention. Keeping existing users engaged is foundational to sustaining a dependable customer base and fostering continuous growth. Lets dive into methods that can bolster enduring API user retention.
 
-* Regularly communicate product updates and new features to keep users engaged and informed.
-* Offer personalized support and guidance to address user concerns and challenges effectively.
-* Provide ongoing developer education and resources to help users maximize the value of your API products.
-* Continuously monitor and improve performance and reliability to instill confidence in your API products. 
+- Regularly communicate product updates and new features to keep users engaged and informed.
+- Offer personalized support and guidance to address user concerns and challenges effectively.
+- Provide ongoing developer education and resources to help users maximize the value of your API products.
+- Continuously monitor and improve performance and reliability to instill confidence in your API products.
 
 By implementing these strategies and leveraging skip links to streamline navigation, API product managers can enhance user satisfaction, increase loyalty, and retain their valuable user base in the long run.
 

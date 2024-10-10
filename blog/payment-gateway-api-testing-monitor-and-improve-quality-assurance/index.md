@@ -84,11 +84,13 @@ One of the [key tools used for monitoring API performance](https://apitoolkit.io
 Payment gateway APIs can encounter various issues, such as latency, data inconsistency, and compatibility problems. Continuous monitoring helps in identifying and addressing these issues promptly, minimizing the impact on users. You should closely monitor API logs, error messages, and system metrics. This can help your business quickly diagnose and resolve issues, ensuring uninterrupted payment processing.
 
 ## Improving Quality Assurance in Payment Gateway API Testing
+
 Continuous improvement is essential to enhance the quality assurance practices in payment gateway API testing.
 
 Implement best practices like thorough documentation of test cases, utilizing version control for test scripts, and conducting regular code reviews to identify potential defects before they make their way into production. Additionally, adopting [shift-left testing](https://en.wikipedia.org/wiki/Shift-left_testing#:~:text=Shift%2Dleft%20testing%20is%20an,by%20Larry%20Smith%20in%202001.), where testing is conducted earlier in the software development lifecycle, can help identify issues at an early stage, reducing the cost and effort required to fix them.
 
 ### Continuous Improvement in API Testing
+
 API testing is not a one-time process but rather an ongoing activity that should be iteratively improved. By collecting feedback from stakeholders, analyzing test results, and incorporating lessons learned, QA teams can enhance their testing approach and continuously raise the bar for quality assurance.
 
 ## The Future of Payment Gateway API Testing
@@ -105,9 +107,9 @@ In conclusion, testing payment gateway APIs is a vital aspect of ensuring the sm
 
 **Keep reading**
 
-[Best API Monitoring and Observability Tools in 2023](https://apitoolkit.io/blog/best-api-monitoring-and-observability-tools/) 
+[Best API Monitoring and Observability Tools in 2023](https://apitoolkit.io/blog/best-api-monitoring-and-observability-tools/)
 
-[Ultimate Guide to API Testing Automation](https://apitoolkit.io/blog/api-testing-automation/) 
+[Ultimate Guide to API Testing Automation](https://apitoolkit.io/blog/api-testing-automation/)
 
 [Web API Performance Best Practices - the Ultimate Guide](https://apitoolkit.io/blog/web-api-performance/)
 

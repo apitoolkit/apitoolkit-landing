@@ -11,18 +11,18 @@ categories:
 
 ![API Trends](./image1.jpg)
 
-|**API Top Trends 2024**|
-|---|
-|[**API analytics and monitoring platforms**](#1-api-analytics-and-monitoring-platforms)|
-|[**API-as-a-Product**](#2-the-rise-of-api-as-a-product)|
-|[**The proliferation of low code and no code API development**](#3-the-proliferation-of-low-code-and-no-code-api-development)|
-|[**Machine learning APIs**](#4-machine-learning-apis)|
-|[**Improvement in API security standards**](#5-improvement-in-api-security-standards)|
-|[**GraphQL Adoptability will Accelerate**](#6-graphql-adoptability-will-accelerate)|
-|[**APIs will become more ubiquitous and hyperconnected**](#7-apis-will-become-ubiquitous-and-hyperconnected)|
-|[**The Adoption of Microservices Will Promote the Development of APIs**](#8-the-adoption-of-microservices-will-promote-the-development-of-apis)|
-|[**More APIs will provide severless architecture**](#9-more-apis-will-provide-serverless-architecture)|
-|[**API management takes centre stage**](#10-api-management-takes-centre-stage)|
+| **API Top Trends 2024**                                                                                                                         |
+| ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| [**API analytics and monitoring platforms**](#1-api-analytics-and-monitoring-platforms)                                                         |
+| [**API-as-a-Product**](#2-the-rise-of-api-as-a-product)                                                                                         |
+| [**The proliferation of low code and no code API development**](#3-the-proliferation-of-low-code-and-no-code-api-development)                   |
+| [**Machine learning APIs**](#4-machine-learning-apis)                                                                                           |
+| [**Improvement in API security standards**](#5-improvement-in-api-security-standards)                                                           |
+| [**GraphQL Adoptability will Accelerate**](#6-graphql-adoptability-will-accelerate)                                                             |
+| [**APIs will become more ubiquitous and hyperconnected**](#7-apis-will-become-ubiquitous-and-hyperconnected)                                    |
+| [**The Adoption of Microservices Will Promote the Development of APIs**](#8-the-adoption-of-microservices-will-promote-the-development-of-apis) |
+| [**More APIs will provide severless architecture**](#9-more-apis-will-provide-serverless-architecture)                                          |
+| [**API management takes centre stage**](#10-api-management-takes-centre-stage)                                                                  |
 
 According to [Google](https://cloud.google.com/blog/products/api-management/7-ideas-for-the-future-of-apis), APIs are now the “crown jewels” of modern software development, providing the connective tissue that powers nearly every [digital product](https://apitoolkit.io/blog/api-as-a-product/) available today.
 
@@ -95,7 +95,7 @@ Machine learning APIs are becoming increasingly popular as businesses seek to in
 
 Main areas of interest include translation services, speech recognition, chatbots, predictive analytics, and customer service automation tools.
 
-A prime AI/ML API example worthy of note is Amazon Machine API. This API helps users carry out different machine learning tasks and easily enables building, training, and deployment of  ML models.
+A prime AI/ML API example worthy of note is Amazon Machine API. This API helps users carry out different machine learning tasks and easily enables building, training, and deployment of ML models.
 
 The API is built on the Amazon cloud platform and so it allows users to choose from many pre-trained AI services for forecasting, computer vision, language, and other capabilities.
 
@@ -121,7 +121,7 @@ The acceleration of GraphQL adoptability is a paradigm shift in how APIs are con
 
 ## 7. APIs will become Ubiquitous and Hyperconnected
 
-[APIs](https://apitoolkit.io/blog/fintech-api/) have, no doubt, become increasingly ubiquitous, with businesses of all sizes using them to power their applications and services. We can expect to see this trend continue in 2024, as more businesses adopt an API-first approach to development. Whether it's integrating with third-party services, enabling mobile applications, or facilitating cloud migrations, APIs are at the heart of virtually every digital interaction. 
+[APIs](https://apitoolkit.io/blog/fintech-api/) have, no doubt, become increasingly ubiquitous, with businesses of all sizes using them to power their applications and services. We can expect to see this trend continue in 2024, as more businesses adopt an API-first approach to development. Whether it's integrating with third-party services, enabling mobile applications, or facilitating cloud migrations, APIs are at the heart of virtually every digital interaction.
 
 The ubiquity and hyperconnectivity of [APIs](https://apitoolkit.io/blog/fintech-api/) are driving a new wave of innovation and collaboration. Businesses are now able to tap into a vast array of services and capabilities, from payment processing and geo-location to machine learning and data analytics, all through APIs. This has led to the rise of API marketplaces and ecosystems where companies can buy, sell, and share APIs, further accelerating digital transformation. As we move through 2024, we can expect APIs to become even more integral to how businesses operate and innovate, with an increasing focus on standardization, discoverability, and real-time data exchange.
 

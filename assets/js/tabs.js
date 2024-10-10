@@ -8,13 +8,13 @@
     const tabButtons = tabGroup.querySelectorAll(".tab-button");
     const tabContents = tabGroup.querySelectorAll(".tab-content");
 
-    tabButtons.forEach((button) => {
+    tabButtons.forEach(button => {
       button.addEventListener("click", () => {
         // Hide all active button and content within this group
-        tabButtons.forEach((btn) => {
+        tabButtons.forEach(btn => {
           btn.classList.remove("active");
         });
-        tabContents.forEach((content) => {
+        tabContents.forEach(content => {
           content.classList.remove("active");
         });
 
@@ -40,7 +40,7 @@
 
   function initializeTabGroups() {
     const tabGroups = document.querySelectorAll(".tab-group");
-    tabGroups.forEach((group) => {
+    tabGroups.forEach(group => {
       // Initialize the tabs functionality
       tabsComponent(group);
     });
@@ -51,7 +51,7 @@
 
     const observer = new IntersectionObserver(
       (entries, observer) => {
-        entries.forEach((entry) => {
+        entries.forEach(entry => {
           if (entry.isIntersecting) {
             tabsComponent(entry.target);
             observer.unobserve(entry.target); // Stop observing once initialized
@@ -61,7 +61,7 @@
       { threshold: 0.1 }
     );
 
-    tabGroups.forEach((group) => {
+    tabGroups.forEach(group => {
       observer.observe(group);
     });
   }

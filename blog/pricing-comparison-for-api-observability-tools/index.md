@@ -12,18 +12,17 @@ categories:
 
 API observability is all about gaining deep insights into the health and performance of your APIs. It's like having a real-time control panel, allowing you to monitor everything from request latency to error rates. This helps you to identify and troubleshoot issues quickly, before they impact your users or business.
 
-But  with a plethora of API observability tools available, finding the right one can feel like navigating a labyrinth.  Cost often becomes a major hurdle. You need a solution that's powerful enough to deliver valuable insights, yet budget-friendly.
+But with a plethora of API observability tools available, finding the right one can feel like navigating a labyrinth. Cost often becomes a major hurdle. You need a solution that's powerful enough to deliver valuable insights, yet budget-friendly.
 
 ![alt](./api%20observability%20tools.jpeg)
 
-
 ## API Observability Pricing Models
 
-Now that you're convinced API observability is your secret weapon for top-notch APIs, let's tackle the next hurdle: pricing models.  These can vary wildly, so understanding what you're paying for is crucial.  
+Now that you're convinced API observability is your secret weapon for top-notch APIs, let's tackle the next hurdle: pricing models. These can vary wildly, so understanding what you're paying for is crucial.
 
 ### Per User
 
-This model charges based on the number of people accessing the observability platform. 
+This model charges based on the number of people accessing the observability platform.
 **Pros:** Simple to understand and manage costs for small teams.  
 **Cons:** Can get expensive quickly as your team grows, and it might not reflect actual data usage.
 
@@ -31,17 +30,17 @@ This model charges based on the number of people accessing the observability pla
 
 Here, you pay based on the number of servers or containers your APIs run on.  
 **Pros:** Straightforward for organizations with a static infrastructure.  
-**Cons:** Doesn't scale well for cloud-based deployments or applications with variable workloads.  You might end up paying for unused monitoring.
+**Cons:** Doesn't scale well for cloud-based deployments or applications with variable workloads. You might end up paying for unused monitoring.
 
 ### Per API Call/Request
 
 This model charges based on the volume of traffic your APIs handle.  
-**Pros:** Scales efficiently with your API usage, ideal for dynamic environments. 
+**Pros:** Scales efficiently with your API usage, ideal for dynamic environments.
 **Cons:** Can be unpredictable for APIs with fluctuating traffic patterns, leading to potential bill shock.
 
 ### Data Ingestion
 
-This structure charges based on the amount of data your APIs generate (logs, metrics, traces).  Pros: Aligns cost with actual data consumption, offering flexibility.  
+This structure charges based on the amount of data your APIs generate (logs, metrics, traces). Pros: Aligns cost with actual data consumption, offering flexibility.  
 Cons: Requires careful monitoring of data volume to avoid overages.
 
 ## Pricing comparison for API observability tools
@@ -61,5 +60,3 @@ This allows you to ensure your APIs are delivering optimal performance and user 
 ## Final Note
 
 API observability is not a luxury but a necessity for ensuring the health and performance of your APIs. With the right tool in place, you can gain valuable insights, proactively address issues, and ultimately deliver exceptional user experiences.
-
-

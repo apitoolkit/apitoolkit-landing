@@ -40,11 +40,11 @@ Read: [How to Generate Automated API Documentation](https://apitoolkit.io/blog/h
 
 API Specification is more like an architectural blueprint. It is a comprehensive, technical description of the API's behavior, detailing its operations, accessible endpoints, input and output for each call, and the data models it employs. Specifications are often written in machine-readable formats like YAML or JSON using standards like the OpenAPI Specification (OAS). This allows for automation in generating documentation, client libraries, and even test cases, thus streamlining the development process. For developers who are building or maintaining an API, the specification provides a rigorous and precise structure to work from, ensuring that the API is built to spec and can interact correctly with other software. Unlike API documentation, which is intended for developers who want to use an API, API specification is intended for developers who want to build an API.
 
-In a nutshell, you can describe API specification as a detailed understanding of an API's behavior and how it interacts and relates  with other APIs. [The OpenAPI Specification](https://github.com/OAI/OpenAPI-Specification) is a perfect illustration of what an API specification is all about.
+In a nutshell, you can describe API specification as a detailed understanding of an API's behavior and how it interacts and relates with other APIs. [The OpenAPI Specification](https://github.com/OAI/OpenAPI-Specification) is a perfect illustration of what an API specification is all about.
 
 ![OpenAPI Specification Github](./openapi-specification.png)
 
-While an API specification describes how the API acts and what to anticipate from the API, the OpenAPI 3.0.1 paper also acts as an  API documentation in some ways. And the GitHub repository's OpenAPI Specification paper does just that. Numerous API objects, values, and parameters are listed in the paper, along with information on how to call each object and what it can accomplish. We can also observe how things are related and how each object can be used.
+While an API specification describes how the API acts and what to anticipate from the API, the OpenAPI 3.0.1 paper also acts as an API documentation in some ways. And the GitHub repository's OpenAPI Specification paper does just that. Numerous API objects, values, and parameters are listed in the paper, along with information on how to call each object and what it can accomplish. We can also observe how things are related and how each object can be used.
 
 ## The Impact of Good API Documentation and Specification on API's
 

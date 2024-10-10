@@ -7,7 +7,7 @@ categories:
   - Error Monitoring
 ---
 
-# Error Monitoring for Startups: Why it's Essential for Early-stage Companies 
+# Error Monitoring for Startups: Why it's Essential for Early-stage Companies
 
 ![Error Monitoring for Startups](error-monitoring-for-startups.png)
 

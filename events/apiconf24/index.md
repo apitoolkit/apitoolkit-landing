@@ -10,6 +10,7 @@ ogImage: https://raw.githubusercontent.com/apitoolkit/.github/main/images/events
 ```
 
 ### Conference Talk and Booth
+
 # The Power of Observability in API-Driven Applications
 
 ![API Conference 2024 Banner](./banner.jpeg)

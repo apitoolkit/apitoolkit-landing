@@ -165,17 +165,14 @@ There are a number of tools available that can be used to validate OpenAPI speci
 
 If possible, it is a good idea to design the API using OpenAPI before implementing it. This will help to ensure that the API is well-designed and easy to use.
 
-
 ## Conclusion
 
 The OpenAPI Specification is a powerful and versatile way to describe your API in a standard and machine-readable way. The future of API development with OpenAPI is one of endless possibilities. It is a future where businesses can innovate and connect with unprecedented ease, where developers can build with confidence, and where digital interactions are as seamless as they are secure. Embracing OpenAPI is not just a choice for today; it is an investment in a future where the potential of APIs knows no limitation.
 
 **Also read**:
 
-[Best API Monitoring and Observability Tools in 2023](https://apitoolkit.io/blog/best-api-monitoring-and-observability-tools/) 
+[Best API Monitoring and Observability Tools in 2023](https://apitoolkit.io/blog/best-api-monitoring-and-observability-tools/)
 
 [Generate Swagger Docs Easily with Apitoolkit's Live Traffic](https://apitoolkit.io/blog/how-to-generate-swagger-docs-from-your-live-traffic-with-apitoolkit/)
 
 [Generating Golang API Doc with Swagger](https://apitoolkit.io/blog/generating-golangdoc/)
-
-

@@ -107,10 +107,7 @@ import APIToolkit from "apitoolkit-fastify";
 
 async function bootstrap() {
   const fastifyInstance = fastify();
-  const app = await NestFactory.create(
-    AppModule,
-    new FastifyAdapter(fastifyInstance)
-  );
+  const app = await NestFactory.create(AppModule, new FastifyAdapter(fastifyInstance));
 
   // Initialize the APItoolkit client
   const apiToolkitClient = await APIToolkit.NewClient({
@@ -307,24 +304,21 @@ To monitor all unhandled exceptions, add the APItoolkit `ReportError` function t
 Example
 
 ```ts
-import {ExceptionFilter, Catch, ArgumentsHost, HttpException} from '@nestjs/common';
-import { FastifyReply } from 'fastify';
-import { ReportError } from 'apitoolkit-fastify';
+import { ExceptionFilter, Catch, ArgumentsHost, HttpException } from "@nestjs/common";
+import { FastifyReply } from "fastify";
+import { ReportError } from "apitoolkit-fastify";
 
 @Catch()
 export class AllExceptionsFilter implements ExceptionFilter {
-catch(exception: unknown, host: ArgumentsHost) {
-// Report error to APIToolkit
-ReportError(exception);
-const ctx = host.switchToHttp();
-const response = ctx.getResponse<FastifyReply>();
-    const status =
-      exception instanceof HttpException ? exception.getStatus() : 500;
+  catch(exception: unknown, host: ArgumentsHost) {
+    // Report error to APIToolkit
+    ReportError(exception);
+    const ctx = host.switchToHttp();
+    const response = ctx.getResponse<FastifyReply>();
+    const status = exception instanceof HttpException ? exception.getStatus() : 500;
 
     const message =
-      exception instanceof HttpException
-        ? exception.getResponse()
-        : 'Internal server error';
+      exception instanceof HttpException ? exception.getResponse() : "Internal server error";
 
     response.status(status).send({
       statusCode: status,
@@ -337,17 +331,20 @@ const response = ctx.getResponse<FastifyReply>();
 Then register the filter in your application's entry file.
 
 ```ts
-import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
-import { FastifyAdapter, NestFastifyApplication} from '@nestjs/platform-fastify';
-import APIToolkit from 'apitoolkit-fastify';
-import { AllExceptionsFilter } from './app.filter';
-import Fastify from 'fastify';
+import { NestFactory } from "@nestjs/core";
+import { AppModule } from "./app.module";
+import { FastifyAdapter, NestFastifyApplication } from "@nestjs/platform-fastify";
+import APIToolkit from "apitoolkit-fastify";
+import { AllExceptionsFilter } from "./app.filter";
+import Fastify from "fastify";
 
 async function bootstrap() {
   const fastify = Fastify();
-  const app = await NestFactory.create<NestFastifyApplication>(AppModule, new FastifyAdapter(fastify));
-  const apitoolkitClient = APIToolkit.NewClient({apiKey: '<API_KEY>', fastify});
+  const app = await NestFactory.create<NestFastifyApplication>(
+    AppModule,
+    new FastifyAdapter(fastify)
+  );
+  const apitoolkitClient = APIToolkit.NewClient({ apiKey: "<API_KEY>", fastify });
   apitoolkitClient.init();
 
   // Register the exceptions filter as a global filter

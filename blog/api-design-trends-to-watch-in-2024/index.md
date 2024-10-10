@@ -72,13 +72,11 @@ APIToolkit is a prime example of an API MaaS platform, offering a comprehensive 
 
 By leveraging API MaaS solutions like APIToolkit, developers can significantly reduce the burden of API management, freeing up valuable time and resources to focus on innovation and building exceptional applications.
 
-
 ### Trend 3: Serverless Architecture
 
 Serverless architecture minimizes backend complexity which accelerates API development Traditionally, APIs were hosted on servers that developers had to provision and manage. But with serverless computing, these infrastructure concerns are handled by cloud platforms.
 
 ![Serverless Architecture](./Serverless%20Architecture.jpeg)
-
 
 ### Benefits of a serverless approach:
 
@@ -96,8 +94,9 @@ For greenfield APIs, serverless is the best approach to accelerate development. 
 
 ### Trend 4: API Analytics
 
-Application programming interfaces (APIs) have emerged as a critical enabler of data analytics. APIs allow different software systems and datasets to connect and share information seamlessly. API analytics tools empower companies to track detailed metrics on API usage and performance. 
+Application programming interfaces (APIs) have emerged as a critical enabler of data analytics. APIs allow different software systems and datasets to connect and share information seamlessly. API analytics tools empower companies to track detailed metrics on API usage and performance.
 ![alt](./API%20rate%20limiting.jpg)
+
 - **Usage metrics:** Volume, frequency and consumption patterns.
 
 - **Performance monitoring:** Latency, uptime, error rates.
@@ -112,7 +111,6 @@ With analytics, you can
 - Detects performance issues proactively before customers are impacted.
 - Gain customer intelligence to nurture developer relationships.
 - Quantify business value delivered by APIs.
-
 
 ### Trend 5: Open Source APIs
 
@@ -139,7 +137,6 @@ For publishing open APIs
 - Monitor projects and extensions developers build on top of your API.
 
 - Route feedback back into improving the API for the community.
-
 
 ### Trend 6: AI to Enhance APIs
 
@@ -208,10 +205,3 @@ Delivering delightful experiences will earn you loyal API consumers.
 ## Final note
 
 API design is rapidly evolving. Learning these trends will help you stay ahead of the curve and build world-class APIs. Some important trends to follow include the widespread adoption of GraphQL as an alternative to REST, increased use of gRPC and Protobuf for internal communication, and a shift towards event-driven and webhook-based asynchronous APIs.
-
-
-
-
-
-
-

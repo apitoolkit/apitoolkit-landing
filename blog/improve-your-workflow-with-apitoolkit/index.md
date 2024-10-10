@@ -6,7 +6,7 @@ description: "Bugs are an inevitable part of the software development lifecycle,
 author: elliot
 categories:
   - API
---- 
+---
 
 # Improve Your Workflow with APItoolkit
 
@@ -20,7 +20,7 @@ Even though there are tools that help with building and maintaining software, th
 
 Take a minute to answer these questions
 
-- How do you get notified when you've caused a bug in the staging environment? 
+- How do you get notified when you've caused a bug in the staging environment?
 - How do you judge how serious the problem is and how quickly you need to address it?
 - How can you quickly identify what's actually causing the issue?
 - And once you've submitted a fix, how do you confirm that it actually solved the underlying problem?
@@ -51,13 +51,13 @@ Of course, every organization is a bit different in its processes and tech stack
 
 ### Step 1 - Create an account or Sign into your already account
 
-To do this use this link to create or sign into your account. Follow the subsequent procedures to get your first project created easily 
+To do this use this link to create or sign into your account. Follow the subsequent procedures to get your first project created easily
 
 ![login into apitoolkit](./login.png)
 
 ### Step 2 - Generating your API KEY
 
-After creating your account, the next thing is to generate your API KEY. This key creates the connection between your application and APItoolkit’s servers. 
+After creating your account, the next thing is to generate your API KEY. This key creates the connection between your application and APItoolkit’s servers.
 
 ![generate api key](./api-key.png)
 
@@ -74,37 +74,39 @@ Run this to install the needed packages
 ```js
   npm install express apitoolkit-express
 ```
+
 Run this to initialize APItoolkit into your existing application
 
 ```js
-import { APIToolkit } from 'apitoolkit-express';
-const apitoolkitClient = APIToolkit.NewClient({ apiKey: '<API-KEY>' });
+import { APIToolkit } from "apitoolkit-express";
+const apitoolkitClient = APIToolkit.NewClient({ apiKey: "<API-KEY>" });
 ```
+
 Once everything works you should get a complete code like this if you use common js
 
 ```js
-const { APIToolkit } = require('apitoolkit-express');
-const express = require('express');
+const { APIToolkit } = require("apitoolkit-express");
+const express = require("express");
 const app = express();
 const port = 3000;
 const apitoolkit = APIToolkit.NewClient({
-  apiKey: '<API-KEY>', // Required: API Key generated from apitoolkit dashboard
+  apiKey: "<API-KEY>", // Required: API Key generated from apitoolkit dashboard
 });
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(apitoolkit.expressMiddleware);
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
+app.get("/", (req, res) => {
+  res.send("Hello World!");
 });
 app.listen(port, () => {
- console.log(`Example app listening on port ${port}`);
+  console.log(`Example app listening on port ${port}`);
 });
 ```
+
 At this point, APItoolkit has already started to capture the necessary changes in your applications.
 
 ![alt](./chnages%20and%20errors.png)
-
 
 Notice how each change is recorded and grouped. If APIToolkit detects any change, you have to explicitly acknowledge the change or the error. Since APIToolkit allows teams to work on one project, if a change is not acknowledged, it may be seen as non-acknowledged error by other team members.
 
@@ -112,15 +114,15 @@ After a successful integration you should see this.
 
 ![successful integration ](./suc-inte.png)
 
-### Step 4 - Redacting Sensitive Fields 
+### Step 4 - Redacting Sensitive Fields
 
 We believe in security and protection of sensitive data. To redact sensitive information like credit card numbers and other data, use the following code to perform the task.
 
 This example is for our initial Express.js project
 
 ```js
-const express = require('express');
-import APIToolkit from 'apitoolkit-express';
+const express = require("express");
+import APIToolkit from "apitoolkit-express";
 
 const app = express();
 const port = 3000;
@@ -129,25 +131,24 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const apitoolkitClient = APIToolkit.NewClient({
-  apiKey: '<API-KEY>',
-  redactHeaders: ['Content-Type', 'Authorization', 'Cookies'], // Specified headers will be redacted
-  redactRequestBody: ['$.credit-card.cvv', '$.credit-card.name'], // Specified request bodies fields will be redacted
-  redactResponseBody: ['$.message.error'], // Specified response body fields will be redacted
+  apiKey: "<API-KEY>",
+  redactHeaders: ["Content-Type", "Authorization", "Cookies"], // Specified headers will be redacted
+  redactRequestBody: ["$.credit-card.cvv", "$.credit-card.name"], // Specified request bodies fields will be redacted
+  redactResponseBody: ["$.message.error"], // Specified response body fields will be redacted
 });
 app.use(apitoolkitClient.expressMiddleware);
-app.get('/', (req, res) => {
-  res.send('Hello World!');
+app.get("/", (req, res) => {
+  res.send("Hello World!");
 });
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
 ```
 
-While the redactHeaders configuration field accepts a list of headers to be redacted (case-insensitive), the redactRequestBody and redactResponseBody options leverage the flexibility of JSONPath strings. 
+While the redactHeaders configuration field accepts a list of headers to be redacted (case-insensitive), the redactRequestBody and redactResponseBody options leverage the flexibility of JSONPath strings.
 
 This approach empowers us to precisely define which fields within our responses contain sensitive information, ensuring a granular level of control over the redaction process.
 
 It's worth noting that the list of items designated for redaction will be consistently applied across all endpoint requests and responses within our server, promoting a uniform and comprehensive approach to data privacy.
 
 We will go deep into this in our subsequent post. Having any questions? Contact our [support engineers.](hello@apitoolkit.io)
-

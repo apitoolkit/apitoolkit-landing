@@ -113,7 +113,7 @@ Once you have chosen an error monitoring tool for your application, you should i
 Some of the best practices for implementing error monitoring are:
 
 - **Setting up alerts and notifications**: You should configure your error monitoring tool to alert you when an error occurs in your application,
-so you can respond to it promptly. Also, set up notifications to inform you about the status and resolution of errors, so you can keep track of them. [APIToolkit](https://apitoolkit.io) integrates with various channels to serve you error alerts and notifications, such as email, Slack, Opsgenie, SMS, push notifications, etc.
+  so you can respond to it promptly. Also, set up notifications to inform you about the status and resolution of errors, so you can keep track of them. [APIToolkit](https://apitoolkit.io) integrates with various channels to serve you error alerts and notifications, such as email, Slack, Opsgenie, SMS, push notifications, etc.
 
 - **Integrating with development workflows**: You should integrate your error monitoring tool with your development tools and processes, such as code repositories, issue trackers, project management tools, etc. This way, you can streamline your error management workflow and collaborate with your team more effectively. You can also automate some tasks related to error management, such as creating tickets, assigning tasks, updating statuses, etc.
 
@@ -151,10 +151,10 @@ Not all errors are equally important or urgent. Some errors may have a high impa
 
 A common way to prioritize errors is to use the following matrix:
 
-| Impact | High | Low |
-| --- | --- | --- |
-| Frequency | High | Critical | Minor |
-| Low | Major | Trivial |
+| Impact    | High  | Low      |
+| --------- | ----- | -------- | ----- |
+| Frequency | High  | Critical | Minor |
+| Low       | Major | Trivial  |
 
 Another way to categorize errors is to use the following taxonomy:
 
@@ -162,7 +162,7 @@ Another way to categorize errors is to use the following taxonomy:
 - **Logic errors**: These are errors that result from incorrect logic or algorithm in the code. They are usually harder to detect and fix by using debugging tools, testing frameworks, or code reviews.
 - **Runtime errors**: These are errors that occur during the execution of the code. They are usually caused by external factors such as input data, network conditions, hardware failures, etc. They are usually detected by using monitoring tools, logging systems, or exception handlers.
 - **Configuration errors**: These are errors that result from incorrect configuration or settings of the code or its dependencies. They are usually caused by human error, environment changes, or compatibility issues. They are usually detected by using configuration management tools,
-version control systems, or deployment pipelines.
+  version control systems, or deployment pipelines.
 
 By prioritizing and categorizing errors, the team can allocate resources and efforts accordingly and focus on resolving the most critical and frequent errors first.
 
@@ -198,7 +198,7 @@ Application errors are inevitable, but they can be mitigated and resolved by fol
 
 [How to Write API Documentation: 14 Essential Guidelines](https://apitoolkit.io/blog/how-to-write-api-docs/)
 
-[Ultimate Guide to API Testing Automation](https://apitoolkit.io/blog/api-testing-automation/) 
+[Ultimate Guide to API Testing Automation](https://apitoolkit.io/blog/api-testing-automation/)
 
 [Web API Performance Best Practices - the Ultimate Guide](https://apitoolkit.io/blog/web-api-performance/)
 

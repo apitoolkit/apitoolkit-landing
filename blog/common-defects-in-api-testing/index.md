@@ -11,7 +11,8 @@ categories:
 
 ![common defects in api testing](common-defects-in-api-testing.png)
 
-> Technology, like art, is a soaring exercise of the human imagination.  
+> Technology, like art, is a soaring exercise of the human imagination.
+>
 > - Daniel Bell
 
 Daniel Bell reminds us that technology isn't just about machines or codes; it's about human innovation. One of the best examples of this innovation is Application Programming Interface (API). [API](https://apitoolkit.io/blog/the-ultimate-api-management-strategy/) is a set of rules that allows different software programs to communicate with each other.
@@ -29,9 +30,9 @@ It's important to note that [APIs](https://apitoolkit.io/blog/the-ultimate-api-m
 Imagine ordering a pizza with all your favourite toppings, only to find a crucial topping missing or, worse, finding double the anchovies you never asked for. In the world of APIs, missing endpoints are like those forgotten toppings, while duplicate functionalities are unwanted extras. These defects can lead to incomplete features or wasteful redundancy, making your software feel more like a chaotic pizza party than a streamlined system.
 
 Missing functionality refers to the absence of certain features or functions in an API that developers expect to be present. This can occur when the API does not offer a complete set of tools required for a specific use case or when some features are left out either inadvertently or intentionally by the developers.
-  
+
 The consequences of missing functionality can be vast. In some cases developers struggle to complete specific tasks, prompting them to seek alternative solutions that can take more time and potentially cause additional problems. In other cases, the absence of critical functionality might render the API useless for the intended purpose. This can lead to a loss of trust and reliance on the API provider.
-  
+
 Duplicate functionality in an API refers to the presence of multiple functions or methods that essentially do the same thing. While it might be introduced with the intent of offering different ways to achieve the same result, it can often lead to confusion and redundancy.
 
 Having duplicate functionality can be stressful for developers. It raises questions such as which function to use, whether there are any performance differences between the duplicates, and if one is more stable or reliable than the other. This can lead to inconsistent usage and make troubleshooting harder since there's uncertainty about which function is responsible for potential issues.
@@ -131,7 +132,7 @@ Inconsistent error handling refers to the irregular or varied ways in which a sy
 
 - Robust Authentication: Implement strong authentication methods, like OAuth or token-based systems.
 - Authorization Mechanisms: Ensure fine-grained access controls to restrict data and functionality based on user roles.
-- Regular Security Audits:  Conduct frequent security assessments to identify and rectify vulnerabilities.
+- Regular Security Audits: Conduct frequent security assessments to identify and rectify vulnerabilities.
 
 ### 5. Performance Issues
 
@@ -160,7 +161,7 @@ Inconsistent error handling refers to the irregular or varied ways in which a sy
 
 **How to fix them:**
 
-- Standardized Error Responses:  Adopt a uniform format for all error responses.
+- Standardized Error Responses: Adopt a uniform format for all error responses.
 - Error [Logging](https://apitoolkit.io/blog/the-four-pillars-of-api-observability/): Implement detailed logging to capture and analyze errors for future improvements.
 - Developer Training: Ensure the development team is trained on best practices for error handling.
 

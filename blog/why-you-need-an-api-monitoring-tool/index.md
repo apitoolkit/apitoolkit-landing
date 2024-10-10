@@ -25,7 +25,7 @@ Here are the top ... reasons why you should use APIToolkit.
 
 [APIToolkit](https://apitoolkit.io) was built by software engineers to solve problems that have cost founders, startups and tech companies lots of money. [Anthony](https://twitter.com/tonialaribe), one of the co-founders of APIToolkit can be quoted saying, “We’re engineers at our core, who are very close to the problems we are solving. So, we encourage our users to be a part of this community evolving solutions to solve API documentation and observability.”
 
-The team at APIToolkit has a combined experience of 17+ years in software development. Not only does APIToolkit provide observability and monitoring services, but we also have a supportive community on Discord where you can have open conversations with us. 
+The team at APIToolkit has a combined experience of 17+ years in software development. Not only does APIToolkit provide observability and monitoring services, but we also have a supportive community on Discord where you can have open conversations with us.
 
 Feel free to join the community or book a call with Anthony to chat about your experiences with API documentation and observability.
 
@@ -38,9 +38,9 @@ To keep our users informed in real time, we offer [live auto-generated API docum
 
 Our plug & play integration also lets you view your live API shapes, fields, etc., and generate Swagger docs at anytime via your live traffic.
 
-Our dynamic notifications provide an extra layer of security against users with malicious intent or an unintentional coding error. For example, users may intentionally or unintentionally bombard an endpoint with traffic. 
+Our dynamic notifications provide an extra layer of security against users with malicious intent or an unintentional coding error. For example, users may intentionally or unintentionally bombard an endpoint with traffic.
 
-Such abnormally large amounts of traffic may overload your server and cause a DDoS outage. You can prevent this by setting up a notification for any abnormal increase in the number of queries against the endpoint. 
+Such abnormally large amounts of traffic may overload your server and cause a DDoS outage. You can prevent this by setting up a notification for any abnormal increase in the number of queries against the endpoint.
 
 This functionality can notify your security team if an endpoint receives abnormally large numbers of requests, so they can take action immediately.
 
@@ -76,6 +76,7 @@ Generally, we spot errors and address them before your customers do.
 In a situation whereby your APIs are experiencing errors, latency, downtime, or anomalies, [APIToolkit raises an alarm](https://apitoolkit.io/api-performance-monitoring-and-compliance/), alerting you right on time. You can then drill down into the root cause of the issue via our Log Explorer. APIToolkit empowers you with the tools to track and resolve errors and bugs before your customers notice them.
 
 ## 6. Refactor and Migrate Safely
+
 You no longer have to break your APIs to refactor them. Catch bugs and changes due to refactorings or migrations faster than your customers. Stay on top of your game with one dashboard that provides you with the analytics you need for seamless service.
 
 Furthermore, you can quickly and seamlessly debug errors without tedious log-searching and fragile single-metric tests.
@@ -97,6 +98,7 @@ APIToolkit is equipped with the most advanced tools to give you a detailed insig
 In a nutshell, you stay on top of your APIs in real time. You can view your endpoints, fields, and even export your API as swagger if you like. The always up-to-date documentation is generated automatically from your live traffic.
 
 ## Final Thoughts
+
 Automating your processes isn’t always the answer to efficiency problems. But in this case, it definitely is. [APIToolkit](https://app.apitoolkit.io/) comes with features to supercharge your documentation and monitoring processes, keeping you alert, and saving you time and money.
 
 **Also Read**:
@@ -108,4 +110,3 @@ Automating your processes isn’t always the answer to efficiency problems. But 
 [How to Analyze API Logs and Metrics for Better Performance](https://apitoolkit.io/blog/api-logs-and-metrics/)
 
 [Incident Management: How to Resolve API Downtime Issues Before It Escalates](https://apitoolkit.io/blog/api-downtime/)
-

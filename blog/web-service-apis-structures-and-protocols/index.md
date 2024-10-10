@@ -11,7 +11,7 @@ categories:
 
 ![Guide](guide.png)
 
-Each login to a favorite website using a Google account is an interaction made possible by a [web API](https://apitoolkit.io/blog/web-api-performance/). But beyond this surface-level interaction lies the intricate world of web service APIs, crucial for developers and tech enthusiasts to understand. Before delving into what web service APIs are, perhaps I should define what an [API](https://apitoolkit.io/blog/unlocking-the-full-potential-of-api-gateways/) is. An API is a component that enables communication between two systems or applications. 
+Each login to a favorite website using a Google account is an interaction made possible by a [web API](https://apitoolkit.io/blog/web-api-performance/). But beyond this surface-level interaction lies the intricate world of web service APIs, crucial for developers and tech enthusiasts to understand. Before delving into what web service APIs are, perhaps I should define what an [API](https://apitoolkit.io/blog/unlocking-the-full-potential-of-api-gateways/) is. An API is a component that enables communication between two systems or applications.
 
 Web service APIs are subsets of APIs that depend on a networks, predominantly the internet, to enable this cross-communication. The [World Wide Web Consortium](http://www.w3.org/2005/Talks/01-ws-plh/?n=1) (W3C) defined web services thus: “A web service is a software system designed to support interoperable machine-to-machine interaction over a network. It has an interface described in a machine-processable format (specifically WSDL). Other systems interact with the web service in a manner prescribed by its description using SOAP-messages, typically conveyed using HTTP with an XML serialization in conjunction with other web-related standards”.
 
@@ -21,15 +21,16 @@ Developers interact with web services on a daily basis. This is why an in-depth 
 
 There are 4 main types of web service APIs, namely:
 
-**XML-RPC (Extensible Markup Language-Remote Procedure Call)**: This is the most basic XML protocol. This protocol allows data exchange between a variety of devices on a given network. It facilitates the transfer of data and other information between clients and servers using HTTP. 
+**XML-RPC (Extensible Markup Language-Remote Procedure Call)**: This is the most basic XML protocol. This protocol allows data exchange between a variety of devices on a given network. It facilitates the transfer of data and other information between clients and servers using HTTP.
 
-**REST**: [REST](https://apitoolkit.io/blog/rest-api-is-the-future/) is an acronym for Representational State Transfer. REST services use HTTP and support a range of HTTP methods such as GET, POST, PUT, and DELETE. It allows for communication and connectivity between API-based devices and the internet. 
+**REST**: [REST](https://apitoolkit.io/blog/rest-api-is-the-future/) is an acronym for Representational State Transfer. REST services use HTTP and support a range of HTTP methods such as GET, POST, PUT, and DELETE. It allows for communication and connectivity between API-based devices and the internet.
 
 **SOAP**: SOAP stands for Simple Object Access Protocol. A Web service protocol that uses XML to facilitate transferring data and documents over HTTP or SMTP (Simple Mail Transfer Protocol). It uses XML to enable communication between independent processes running on different platforms.
 
 **UDDI**: UDDI is an abbreviation for Universal Description, Discovery, and Integration, is an XML-based standard for detailing, publishing, and discovering web services.
 
 Other web services that use markup language
+
 - JSON-RPC.
 - JSON-WSP
 - Representational state transfer (REST) versus remote procedure call (RPC)
@@ -44,9 +45,9 @@ Other web services that use markup language
 
 **Interoperability**: One of the major benefits of web service is interoperability. Web services provide a standardized way of integrating web-based applications using the XML, SOAP, WSDL, and UDDI open standards over an Internet Protocol backbone applications to communicate, exchange data, and share services among themselves.
 
-The common standards-based communications methods have been developed and these make it possible for web services to be platform-independent.  
+The common standards-based communications methods have been developed and these make it possible for web services to be platform-independent.
 
-**Usability**: Web services are designed to be used for a web page request and to receive data. Web services are the same. The capability of web services varies from simple information lookup to complex algorithmic computations. 
+**Usability**: Web services are designed to be used for a web page request and to receive data. Web services are the same. The capability of web services varies from simple information lookup to complex algorithmic computations.
 
 XML is the data format used to contain the data and provide metadata around it, SOAP is used to transfer the data, WSDL is used for describing the services available, and UDDI lists what services are available.
 
@@ -63,6 +64,7 @@ Data transmitted over the internet has to be structured in some way. The two mos
 XML (or Extensible Markup Language) is the text format that [SOAP](https://apitoolkit.io/blog/everything-about-soap-apis/) uses. It establishes a set of rules to structure messages as both human and machine-readable records. Albeit, XML is quite verbose as it aims to create a web document with all its formality.
 
 ### The Message Structure of SOAP
+
 Standard [SOAP](https://apitoolkit.io/blog/everything-about-soap-apis/) requests appear as an enveloped messages consisiting of four elemetns, each with their unique funveloped message consisting of four unique parts, each with its own function.
 
 **Envelope**: the core and essential component of every message. It starts and concludes messages with its tags, enveloping them, hence the name.
@@ -86,6 +88,7 @@ When you make this request, instead of receiving a fully rendered webpage, you g
 This example showcases the essence of REST: a stateless, client-server communication where the server replies with structured, predictable responses to HTTP requests. By using [REST](https://apitoolkit.io/blog/rest-api-is-the-future/), developers can efficiently extract and manipulate data, integrate it with other applications, or use it to inform user interfaces, making it a powerful tool in modern web development.
 
 ## Structure of a REST Request
+
 **The Endpoint**: This is a unique URL that represents an object or group of objects of data. Each API request has its own endpoint, which is what the HTTP client is directed at in order to interact with data resources.
 
 **The Method**: HTTP methods (which will be explained in further detail below) are an integral part of a RESTful API request. These methods – GET, POST, PUSH, PATCH, and DELETE – correspond to create, read, update, and delete resources.
@@ -95,17 +98,19 @@ This example showcases the essence of REST: a stateless, client-server communica
 **The Data**: A [REST API](https://apitoolkit.io/blog/rest-api-scalability/) request also consists of data (also referred to as a “body”) that usually works with the POST, PUT, and PATCH HTTP commands and contains the information and representation of the resource that will be created.
 
 ## Major Differences Between SOAP and REST
-| | |
-| ----------- | ------------- |
-| SOAP is a strict protocol. | REST is an architectural pattern | 
-| SOAP can’t use REST because it is a protocol | REST can use SOAP web services because it is a concept and can use any protocol like HTTP, SOAP. |
-| SOAP only permits XML | REST permits many different data formats including plain text, HTML, XML, and JSON |
-| SOAP requires more bandwidth and more resources | REST requires less bandwidth and fewer resources. |
-| SOAP supports both SMTP and HTTP protocols | REST requires the use of HTTP only |
-| SOAP is more reliable than REST | REST is less secure than SOAP. | 
-| SOAP is faster than REST | Great for building a service with multiple, non-CRUD methods |
+
+|                                                 |                                                                                                  |
+| ----------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| SOAP is a strict protocol.                      | REST is an architectural pattern                                                                 |
+| SOAP can’t use REST because it is a protocol    | REST can use SOAP web services because it is a concept and can use any protocol like HTTP, SOAP. |
+| SOAP only permits XML                           | REST permits many different data formats including plain text, HTML, XML, and JSON               |
+| SOAP requires more bandwidth and more resources | REST requires less bandwidth and fewer resources.                                                |
+| SOAP supports both SMTP and HTTP protocols      | REST requires the use of HTTP only                                                               |
+| SOAP is more reliable than REST                 | REST is less secure than SOAP.                                                                   |
+| SOAP is faster than REST                        | Great for building a service with multiple, non-CRUD methods                                     |
 
 ## Conclusion
+
 There are many use cases for web services and the use case is largely defined by the team working with them. Other factors like speed, team size, and project specifications help inform what web services to use.
 
 Ultimately, the information I’ve provided here should help you make a good choice of web service for your project.

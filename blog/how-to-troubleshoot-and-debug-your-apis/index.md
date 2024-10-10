@@ -6,7 +6,7 @@ author: jessica
 description: "Here is how to Troubleshoot and Debug Your APIs using APIToolkit"
 categories:
   - API Observability
---- 
+---
 
 # How to Troubleshoot and Debug Your APIs with API Observability Tools
 
@@ -39,30 +39,30 @@ Continuous Deployment & Integration: As developers push new code and features mo
 Imagine a popular ice cream shop on a hot summer day. The place is bustling with customers eager for a cold treat. Just as this shop strives to serve each customer efficiently, APIs aim to process requests seamlessly. However, just like any busy establishment, issues can arise.
 
 1. Slow Response Times
-Analogy: You're standing in line, eagerly waiting for your turn. But the server behind the counter seems to be moving in slow motion, taking an eternity to scoop ice cream for each customer.
-API Perspective: Much like waiting for your ice cream, an API that responds slowly can test a user's patience. It can make an application seem sluggish or unresponsive, diminishing the user experience.
+   Analogy: You're standing in line, eagerly waiting for your turn. But the server behind the counter seems to be moving in slow motion, taking an eternity to scoop ice cream for each customer.
+   API Perspective: Much like waiting for your ice cream, an API that responds slowly can test a user's patience. It can make an application seem sluggish or unresponsive, diminishing the user experience.
 
 2. Downtime
-Analogy: Just as you're about to place your order, the shop puts up a sign: "Sorry, machine breakdown. Temporarily closed." The disappointment is palpable.
-API Perspective: This is akin to an API going offline. When an application can't access the API, features break, and users can't get what they came for, leading to frustration.
+   Analogy: Just as you're about to place your order, the shop puts up a sign: "Sorry, machine breakdown. Temporarily closed." The disappointment is palpable.
+   API Perspective: This is akin to an API going offline. When an application can't access the API, features break, and users can't get what they came for, leading to frustration.
 
 3. Incorrect Data Returns
-Analogy: You ask for a scoop of vanilla but are handed chocolate instead. While both are delightful flavors, it's not what you asked for.
-API Perspective: Similarly, when an API returns unexpected data, it can lead to confusion or errors. It's like getting a flavor you didn't order.
+   Analogy: You ask for a scoop of vanilla but are handed chocolate instead. While both are delightful flavors, it's not what you asked for.
+   API Perspective: Similarly, when an API returns unexpected data, it can lead to confusion or errors. It's like getting a flavor you didn't order.
 
 4. Rate Limit Issues
-Analogy: The shop has a special promotion: "One free scoop per customer." You loved the first one and decide to go back for seconds, but they kindly refuse, citing the one-scoop policy.
-API Perspective: Just like the one-scoop limit, APIs often have a cap on how many requests they can entertain within a time-frame. Exceeding this limit means subsequent requests are turned away.
+   Analogy: The shop has a special promotion: "One free scoop per customer." You loved the first one and decide to go back for seconds, but they kindly refuse, citing the one-scoop policy.
+   API Perspective: Just like the one-scoop limit, APIs often have a cap on how many requests they can entertain within a time-frame. Exceeding this limit means subsequent requests are turned away.
 
 5. Dependency Failures
-Analogy: You decide to order a sundae. But alas, they've run out of whipped cream, a key ingredient. Your sundae can't be made without it.
-API Perspective: Many APIs rely on other services to function. If a dependent service is unavailable, it's akin to missing whipped cream for the sundae. The main service can't complete its task.
+   Analogy: You decide to order a sundae. But alas, they've run out of whipped cream, a key ingredient. Your sundae can't be made without it.
+   API Perspective: Many APIs rely on other services to function. If a dependent service is unavailable, it's akin to missing whipped cream for the sundae. The main service can't complete its task.
 
 Using the ice cream shop as an analogy, we see the myriad challenges both face in ensuring smooth operations. Whether it's scooping ice cream or processing data, timely and accurate delivery is key to keeping everyone happy.
 
 ## How to Use Observability Tools for API Troubleshooting with APIToolkit
 
-In the world of digital transformation, APIs power a significant chunk of the modern web. But with great power comes great responsibility, especially when things go haywire and  observability tools like [APIToolkit](https://apitoolkit.io/) makes the difference. In this guide, we'll walk through how you can harness APIToolkit to troubleshoot and ensure your APIs run as smoothly as silk.
+In the world of digital transformation, APIs power a significant chunk of the modern web. But with great power comes great responsibility, especially when things go haywire and observability tools like [APIToolkit](https://apitoolkit.io/) makes the difference. In this guide, we'll walk through how you can harness APIToolkit to troubleshoot and ensure your APIs run as smoothly as silk.
 
 1. Sign in to the [APIToolkit](https://app.apitoolkit.io/) dashboard.
 2. Click on 'Sign Up' and enter your details.

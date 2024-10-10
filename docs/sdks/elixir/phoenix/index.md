@@ -16,7 +16,7 @@ To integrate your Elixir Phoenix application with APItoolkit, you need to use th
 
 ## Prerequisites
 
-Ensure you have already completed the first three steps of the [onboarding guide](/docs/onboarding/){target="_blank"}.
+Ensure you have already completed the first three steps of the [onboarding guide](/docs/onboarding/){target="\_blank"}.
 
 ## Installation
 
@@ -73,11 +73,11 @@ In the configuration above, **only the `api_key` option is required**, but you c
 
 ## Redacting Sensitive Data
 
-If you have fields that are sensitive and should not be sent to APItoolkit servers, you can mark those fields to be redacted  (the fields will never leave your servers).
+If you have fields that are sensitive and should not be sent to APItoolkit servers, you can mark those fields to be redacted (the fields will never leave your servers).
 
 To mark a field for redacting via this SDK, you need to provide additional arguments to the `config` key with paths to the fields that should be redacted. There are three arguments you can provide to configure what gets redacted, namely:
 
-1. `redact_headers`:  A list of HTTP header keys.
+1. `redact_headers`: A list of HTTP header keys.
 2. `redact_request_body`: A list of JSONPaths from the request body.
 3. `redact_response_body`: A list of JSONPaths from the response body.
 

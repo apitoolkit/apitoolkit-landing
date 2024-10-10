@@ -38,7 +38,7 @@ Having a comprehensive observability strategy for your APIs is crucial for sever
 
 ## Best Practices for API Observability
 
-API observability is a critical aspect of ensuring the performance, availability, and reliability of your APIs. Collecting and analyzing telemetry data means that you can gain valuable insights into how your APIs are functioning. You can also identify any issues or bottlenecks that may impact their performance. 
+API observability is a critical aspect of ensuring the performance, availability, and reliability of your APIs. Collecting and analyzing telemetry data means that you can gain valuable insights into how your APIs are functioning. You can also identify any issues or bottlenecks that may impact their performance.
 
 Let’s explore some best practices for setting up and maintaining effective API observability.
 
@@ -76,11 +76,11 @@ When it comes to collecting API telemetry data, there are various types of [metr
 
 Some commonly collected telemetry data includes:
 
-* **Response Times:** This metric measures the time it takes for your API to respond to a request. Monitoring response times can help you identify slow endpoints or network connectivity issues.
-* **Request Rates:** Tracking the number of requests your API receives over a specific period of time can help you understand the load on your system and plan for scalability.
-* **Error Rates:** Monitoring the frequency of errors occurring in your API can help you identify potential bugs or issues that need to be addressed.
-* **Latency:** Latency measures the time it takes for a request to travel from the client to the server and back. Monitoring latency can help you optimize your API's performance and improve the user experience.
-* **Resource Utilization:** This metric provides insights into how your API is utilizing system resources such as CPU, memory, and disk space. Monitoring resource utilization can help you identify inefficiencies and optimize performance.
+- **Response Times:** This metric measures the time it takes for your API to respond to a request. Monitoring response times can help you identify slow endpoints or network connectivity issues.
+- **Request Rates:** Tracking the number of requests your API receives over a specific period of time can help you understand the load on your system and plan for scalability.
+- **Error Rates:** Monitoring the frequency of errors occurring in your API can help you identify potential bugs or issues that need to be addressed.
+- **Latency:** Latency measures the time it takes for a request to travel from the client to the server and back. Monitoring latency can help you optimize your API's performance and improve the user experience.
+- **Resource Utilization:** This metric provides insights into how your API is utilizing system resources such as CPU, memory, and disk space. Monitoring resource utilization can help you identify inefficiencies and optimize performance.
 
 In addition to these metrics, logging events can also provide crucial information about your API's behavior. For example, authentication failures or database errors can be logged to help you troubleshoot and investigate potential security breaches or data integrity issues.
 
@@ -88,14 +88,14 @@ In addition to these metrics, logging events can also provide crucial informatio
 
 There are several tools available for collecting API telemetry data, each offering different features and capabilities. Some popular choices include:
 
-* **[APIToolkit](https://apitoolkit.io):** APIToolkit is a powerful API monitoring and observability platform that can help you collect and analyze telemetry data from your API. It offers advanced search and visualization capabilities to help you gain actionable insights.
+- **[APIToolkit](https://apitoolkit.io):** APIToolkit is a powerful API monitoring and observability platform that can help you collect and analyze telemetry data from your API. It offers advanced search and visualization capabilities to help you gain actionable insights.
 
 ![API Latency](./api-latency.png)
 Image Source: APIToolkit's dashboard displaying latency distribution
 
-* **Datadog:** Datadog is a log management and analysis tool that provides monitoring and logging capabilities. It allows you to collect, analyze, and visualize telemetry data from your API in real time.
+- **Datadog:** Datadog is a log management and analysis tool that provides monitoring and logging capabilities. It allows you to collect, analyze, and visualize telemetry data from your API in real time.
 
-* **New Relic:** New Relic offers a range of monitoring and observability solutions, including tools specifically designed for API telemetry data collection. It provides detailed insights into the performance and behavior of your API.
+- **New Relic:** New Relic offers a range of monitoring and observability solutions, including tools specifically designed for API telemetry data collection. It provides detailed insights into the performance and behavior of your API.
 
 In addition to these observability platforms, cloud service providers like AWS and Google Cloud also offer services that enable you to collect and analyze telemetry data within their respective environments. For example, AWS CloudWatch and Google Cloud's Stackdriver provide monitoring and logging capabilities that integrate seamlessly with their cloud infrastructure. However, a tool like [APIToolkit](https://apitoolkit,io) gives you more granular insight into your APIs and backend services.
 
@@ -109,8 +109,8 @@ When analyzing API telemetry data, it is important to focus on key metrics that 
 
 - Response times
 - Error rates
-- Throughput, and 
-- Latency. 
+- Throughput, and
+- Latency.
 
 By effectively [monitoring these metrics](https://apitoolkit.io/api-performance-monitoring-and-compliance/), you can detect trends, identify bottlenecks, and take proactive steps to optimize your API performance.
 

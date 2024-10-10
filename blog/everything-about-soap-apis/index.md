@@ -19,7 +19,7 @@ In this guide, we will introduce SOAP, discuss how to call SOAP APIs, how to des
 
 ## What Is SOAP?
 
-SOAP stands for Simple Object Access Protocol. It’s a web service protocol that uses XML to facilitate transferring data and documents over HTTP or SMTP (Simple Mail Transfer Protocol). 
+SOAP stands for Simple Object Access Protocol. It’s a web service protocol that uses XML to facilitate transferring data and documents over HTTP or SMTP (Simple Mail Transfer Protocol).
 SOAP was designed for Microsoft back in 1998. Today, it’s mostly used to expose web services and transmit data over HTTP/HTTPS.
 
 The built-in functionality to create web-based services allows SOAP to handle communications and make responses language- and platform-independent.
@@ -28,13 +28,13 @@ The built-in functionality to create web-based services allows SOAP to handle co
 
 SOAP messages are constructed of up to four blocks:
 
-*Envelope*: The core and essential component of every message. It starts and concludes messages with its tags, enveloping them, hence the name. The entirety of the SOAP message comes within the envelope, including the other three blocks.
+_Envelope_: The core and essential component of every message. It starts and concludes messages with its tags, enveloping them, hence the name. The entirety of the SOAP message comes within the envelope, including the other three blocks.
 
-*Header*: This is an optional element that determines the specifics, and extra requirements for the message, e.g. authentication. Although it’s optional, “soap:Header” makes possible SOAP’s extensibility via SOAP Modules. These modules can either be required or optional.
+_Header_: This is an optional element that determines the specifics, and extra requirements for the message, e.g. authentication. Although it’s optional, “soap:Header” makes possible SOAP’s extensibility via SOAP Modules. These modules can either be required or optional.
 
-*Body*: The body includes the request or response. Namespaces can be used to describe what data to expect within the body, but are not required. In practice, the name of the procedure, parameters, and data all come through the SOAP Body.
+_Body_: The body includes the request or response. Namespaces can be used to describe what data to expect within the body, but are not required. In practice, the name of the procedure, parameters, and data all come through the SOAP Body.
 
-*Fault*: This is an optional element that shows all data about any errors that could emerge throughout the API request and response. There are various possible causes of an error; inaccurate SOAP formatting, a processing error on the server, and mismatched data type.
+_Fault_: This is an optional element that shows all data about any errors that could emerge throughout the API request and response. There are various possible causes of an error; inaccurate SOAP formatting, a processing error on the server, and mismatched data type.
 
 ### How to Call a SOAP API
 
@@ -67,7 +67,7 @@ Standard protocols cover multiple areas and facets of SOAP use:
 
 The interesting thing about these protocols is that you can choose which one to use. This is what we refer to as SOAP extensibility. For example, if you need your financial transactions to be secure, you can apply [WS-Atomic Transaction](http://docs.oasis-open.org/ws-tx/wstx-wsat-1.2-spec-os/wstx-wsat-1.2-spec-os.html) that are ACID-compliant.
 
-*Sidebar*: ACID stands for Atomicity, Consistency, Isolation, and Durability. It’s an enterprise-grade transaction quality and one of the reasons why SOAP is still used when exchanging sensitive information in enterprise architectures.
+_Sidebar_: ACID stands for Atomicity, Consistency, Isolation, and Durability. It’s an enterprise-grade transaction quality and one of the reasons why SOAP is still used when exchanging sensitive information in enterprise architectures.
 
 ### Some Useful Resources for Beginners with SOAP
 
@@ -85,7 +85,7 @@ As a beginner SOAP engineer, here are the main links you should check:
 
 - [WS-Coordination](https://pdfs.semanticscholar.org/dac1/5df5c842195452c25efc7e73ecd3874e32cc.pdf?_ga=2.212038484.1719500171.1582820369-786203862.1582820369): for coordinating actions of distributed applications
 
-- [WS-Security](https://docs.microsoft.com/en-us/previous-versions/ms951257(v=msdn.10)): this describes how to enable message-level protection
+- [WS-Security](<https://docs.microsoft.com/en-us/previous-versions/ms951257(v=msdn.10)>): this describes how to enable message-level protection
 
 - [WS-Atomic Transaction](http://docs.oasis-open.org/ws-tx/wstx-wsat-1.2-spec.html): how to make messages ACID-compliant
 
@@ -94,7 +94,3 @@ As a beginner SOAP engineer, here are the main links you should check:
 There is still a need for SOAP as a standard for web services, and it is used in many internal systems all over the world. Organizations are moving toward microservices architecture using [REST APIs](http://apitoolkit.io/blog/everything-about-rest-apis) for new projects. Modern techniques do away with the completely standards-based approach of SOAP, but many prefer this more flexible and nimble approach.
 
 Check out our list of [best API monitoring tools](https://apitoolkit.io/blog/best-api-monitoring-and-observability-tools/) to help ensure the integrity of your APIs.
-
-
-
-

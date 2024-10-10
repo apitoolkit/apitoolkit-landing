@@ -2,7 +2,7 @@
 title: "Unlocking the Mystery: What Are REST APIs?"
 featured_image: what-are-rest-apis.png
 date: 2023-07-14T12:36:58+02:00
-author: anthony 
+author: anthony
 description: Delve into the intricate world of REST APIs, exploring their role in modern computing and unraveling the complexities behind their design. What are REST APIs? Discover the answer and much more in this detailed exploration.
 categories:
   - API
@@ -14,16 +14,16 @@ categories:
 
 _Delve into the intricate world of REST APIs, exploring their role in modern computing and unraveling the complexities behind their design. What are REST APIs? Discover the answer and much more in this detailed exploration._
 
-|**Table of Contents**|
-|---|
-|[**What are REST APIs? An Introduction**](#what-are-rest-apis-an-introduction)|
-|[**Building Blocks of REST APIs**](#building-blocks-of-rest-apis)|
-|[**Understanding Resource in REST APIs**](#understanding-resource-in-rest-apis)|
-|[**Diving into Methods: The Actions of REST APIs**](#diving-into-methods-the-actions-of-rest-apis)|
-|[**The Role of Status Codes in REST APIs**](#the-role-of-status-codes-in-rest-apis)|
-|[**Headers in REST APIs: Beyond the Visible**](#headers-in-rest-apis-beyond-the-visible)|
-|[**Frequently Asked Questions**](#frequently-asked-questions)|
-|[**Conclusion: The Ubiquity of REST APIs**](#conclusion-the-ubiquity-of-rest-apis)|
+| **Table of Contents**                                                                              |
+| -------------------------------------------------------------------------------------------------- |
+| [**What are REST APIs? An Introduction**](#what-are-rest-apis-an-introduction)                     |
+| [**Building Blocks of REST APIs**](#building-blocks-of-rest-apis)                                  |
+| [**Understanding Resource in REST APIs**](#understanding-resource-in-rest-apis)                    |
+| [**Diving into Methods: The Actions of REST APIs**](#diving-into-methods-the-actions-of-rest-apis) |
+| [**The Role of Status Codes in REST APIs**](#the-role-of-status-codes-in-rest-apis)                |
+| [**Headers in REST APIs: Beyond the Visible**](#headers-in-rest-apis-beyond-the-visible)           |
+| [**Frequently Asked Questions**](#frequently-asked-questions)                                      |
+| [**Conclusion: The Ubiquity of REST APIs**](#conclusion-the-ubiquity-of-rest-apis)                 |
 
 ## **What are REST APIs? An Introduction**
 
@@ -36,10 +36,11 @@ Now, let's dive a little deeper and unravel the building blocks of REST APIs.
 ## **Building Blocks of REST APIs**
 
 Every REST API is built upon a few core components:
+
 - Resource
 - Method
 - Status Code
-- Header. 
+- Header.
 
 These act as the foundation on which the whole structure rests. Understanding them will help us appreciate the beauty of REST APIs.
 
@@ -65,7 +66,7 @@ Headers in REST APIs carry additional information with the HTTP request or respo
 
 This concludes our look at the building blocks. We'll explore some key features of REST APIs next, beginning with their stateless nature.
 
-*This is an example of the content. Due to the limit of the output, I cannot continue here. However, for each subsequent heading, a similar approach will be adopted, continuing the comprehensive exploration of REST APIs.*
+_This is an example of the content. Due to the limit of the output, I cannot continue here. However, for each subsequent heading, a similar approach will be adopted, continuing the comprehensive exploration of REST APIs._
 
 ## **Frequently Asked Questions**
 

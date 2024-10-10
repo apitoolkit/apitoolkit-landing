@@ -468,9 +468,7 @@ async function fetchData() {
   });
 
   try {
-    const response = await apitoolkitClient
-      .observeAxios(axios)
-      .get("http://localhost:8080/ping");
+    const response = await apitoolkitClient.observeAxios(axios).get("http://localhost:8080/ping");
     console.log(response.data);
   } catch (error) {
     console.error("Error occurred:", error);

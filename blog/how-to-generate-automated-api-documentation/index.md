@@ -6,7 +6,7 @@ author: collins
 description: "Find Out how to Generate Automated API Documentation with APIToolkit"
 categories:
   - API Documentation
---- 
+---
 
 # How to Generate Automated API Documentation
 
@@ -32,7 +32,7 @@ Read: [How to Use Notion for API Documentation](https://apitoolkit.io/blog/using
 
 As a company, we had conversations with small and large development teams about how they maintain their API documentation. Out of almost 60 companies, it turns out that the processes were quite heavily dependent on their tech stacks and frameworks.
 
-For example, while 70% of the companies had some form of API documentation, only 15% had it automated in some form. Most companies at best had a postman collection with different common requests they supported. And especially in companies that had APIs consumed by other internal teams. For instance,  to power mobile apps or a frontend, the teams simply shared an example curl or postman collection with the team integrating their APIs. And the integrating team would usually have to figure out the API based on that alone.
+For example, while 70% of the companies had some form of API documentation, only 15% had it automated in some form. Most companies at best had a postman collection with different common requests they supported. And especially in companies that had APIs consumed by other internal teams. For instance, to power mobile apps or a frontend, the teams simply shared an example curl or postman collection with the team integrating their APIs. And the integrating team would usually have to figure out the API based on that alone.
 
 Another chunk of developers managed hand-rolled swagger files, but these swagger files were almost always out of date with the actual in-production APIs, because it was common that small changes happened to the APIs but the developer never remembered to also update the swagger files.
 
@@ -60,47 +60,43 @@ When requests get to your servers, APItoolkit looks into these requests, checks 
 
 To help you build a model about how this works, let’s look at some example GET request.
 
-	// Request 1
-	GET /user/1
-	
-	{
-  "name": "John Dow",
-  "age": 30
-	}
-	
-	
-	// Request 2
-	GET /user/2
-	
-	{
-  "name": "Romeo Dow",
-  "age": 25
-	}
-	
-	
-	// Request 3
-	GET /user/3 
+    // Request 1
+    GET /user/1
 
-	{
-  "name": "Julliet Dow",
-  "age": 40
-	}
-	
-	--- Etc
+    {
+
+"name": "John Dow",
+"age": 30
+}
+// Request 2
+GET /user/2
+{
+"name": "Romeo Dow",
+"age": 25
+}
+// Request 3
+GET /user/3
+
+    {
+
+"name": "Julliet Dow",
+"age": 40
+}
+--- Etc
 
 [APItoolkit](https://apitoolkit.io/) would process these requests and learn that the endpoint has a structure that looks similar to:
 
 Endpoint: /user/{arg: integer}/
 
-field	type	format	examples
+field type format examples
 
 ---
 
-name	string	/(a-z) (a-z)	“John Doe”, “Romeo Dow”, “Julliet Dow”
+name string /(a-z) (a-z) “John Doe”, “Romeo Dow”, “Julliet Dow”
 
 ---
 
-age	int	int:(25 <= x >= 40)	30, 25, 40
+age int int:(25 <= x >= 40) 30, 25, 40
 
 So, APitoolkit builds this insight about your API, which it uses for anomaly detection and other purposes, but especially generating documentation.
 
@@ -110,15 +106,15 @@ If you look at the table, you realise that while we have all this automatically 
 
 So what we do is simply notify the team or developer, that we detected a new/updated field, and nudge them to add a description via apitoolkit dashboard. So, a user could then add comments to the field as needed, and the table could then look somewhat like:
 
-field	type	format	examples	description
+field type format examples description
 
 ---
 
-name	string	/(a-z) (a-z)	“John Doe”, “Romeo Dow”, “Julliet Dow”	A name is the legal identifier of an account user
+name string /(a-z) (a-z) “John Doe”, “Romeo Dow”, “Julliet Dow” A name is the legal identifier of an account user
 
 ---
 
-age	int	int:(25 <= x >= 40)	30, 25, 40	The legal age of an account user, calculate from their uploaded date of birth.
+age int int:(25 <= x >= 40) 30, 25, 40 The legal age of an account user, calculate from their uploaded date of birth.
 
 ### 3. Support collaboration via comments on docs, fields and shared updates
 

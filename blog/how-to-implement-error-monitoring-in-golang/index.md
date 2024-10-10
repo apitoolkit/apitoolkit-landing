@@ -34,7 +34,7 @@ But Apitoolkit's goes beyond mere notifications. It empowers you to proactively 
 
 By using Apitoolkit's error monitoring and proactive testing features, you transform your Golang backends from vulnerable codebases to resilient fortresses.
 
- Imagine the peace of mind knowing that even when glitches inevitably appear, you'll have a reliable toolset to identify, diagnose, and resolve them with lightning speed.
+Imagine the peace of mind knowing that even when glitches inevitably appear, you'll have a reliable toolset to identify, diagnose, and resolve them with lightning speed.
 
 ## How to Handle Errors in Go Language
 
@@ -50,15 +50,15 @@ Go's approach to error handling stands out for its emphasis on explicitness and 
 
 #### 2. Checking Errors
 
-**Explicit Checks:** Developers must explicitly check for errors after function calls using 
+**Explicit Checks:** Developers must explicitly check for errors after function calls using
 
-``````go
+```go
 if err != nil.
-``````
+```
 
 **Immediate Handling:** This encourages immediate error handling at the point of occurrence, promoting clarity and preventing error propagation.
-    
-`````go
+
+```go
 package main
 
 import (
@@ -74,7 +74,7 @@ func main() {
 	}
 	fmt.Println(string(data))
 }
-```````
+```
 
 #### 3. Panic and Recover
 
@@ -83,9 +83,9 @@ func main() {
 **Recover:** The recover() function can catch a panic(), allowing for logging or alternative actions.
 
 **Use Sparingly:** Excessive use of panic() and recover() can make code less predictable and harder to debug.
-    
-    
+
 ## Monitoring Golang Errors with Apitoolkit
+
 We've discussed Go's error handling, but the real world throws curveballs. So how do you ensure your Go applications stay in shape during production? This is where Apitoolkit steps in, becoming your eagle-eyed guardian for pesky Golang errors.
 
 Think of Apitoolkit as a centralized hub for all your Go application's errors. It meticulously gathers them, sorts them out, and presents them in a way that's both technical and approachable.
@@ -95,17 +95,20 @@ Think of Apitoolkit as a centralized hub for all your Go application's errors. I
 1. Install the apitoolkit package: go get -u github.com/apitoolkit/apitoolkit-go
 2. Import the package in your Golang file: import apitoolkit "github.com/apitoolkit/apitoolkit-go"
 3. Create a new instance of the apitoolkit client:
-````go
+
+```go
 ctx := context.Background()
 apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkit.Config{APIKey: "<API_KEY>"})
 if err != nil {
     panic(err)
 }
-`````
+```
+
 Please remember to replace <API_KEY> with your actual API key.
 
 4.Wrap your HTTP handler function with the apitoolkit middleware:
-``````go
+
+```go
 helloHandler := func(w http.ResponseWriter, r *http.Request) {
     file, err := os.Open("non-existing-file.txt")
     if err!= nil {
@@ -116,18 +119,21 @@ helloHandler := func(w http.ResponseWriter, r *http.Request) {
 }
 
 http.Handle("/", apitoolkitClient.Middleware(http.HandlerFunc(helloHandler)))
-``````
+```
+
 5. Finally, start your HTTP server:
-``````go
+
+```go
 if err := http.ListenAndServe(":8089", nil); err != nil {
     fmt.Println("Server error:", err)
 }
-``````
+```
+
 To check the reported errors, log in to your APItoolkit.io account and navigate to the 'Errors' section. You can filter the errors by environment, date, or error type.
 
 Here is how APItoolkit present your errors;
 
-**Crystal-Clear Stack Traces:** No more cryptic error messages. Apitoolkit dissects each error, pinpointing the exact line of code where it originated. 
+**Crystal-Clear Stack Traces:** No more cryptic error messages. Apitoolkit dissects each error, pinpointing the exact line of code where it originated.
 ![error monitoring](./error-monitoring.png)
 
 **Informative Charts and Graphs:** Visualize error trends over time. Identify recurring issues, track spikes in error rates, and understand how your app behaves under different loads.**User Tracking:** Who's affected by which errors? Apitoolkit connects the dots, showing you which users are experiencing specific issues. Prioritize critical errors impacting large batches of users, ensuring a smooth experience for everyone.
@@ -154,8 +160,6 @@ Here is how APItoolkit present your errors;
 
 **A:** Go handles errors with an emphasis on explicitness and value-based management. It uses a built-in error interface, and functions often return multiple values, including an explicit error value to indicate success or failure. Unlike languages using exceptions, Go avoids hidden control flow jumps, promoting clear error handling paths and immediate error handling at the point of occurrence.
 
- 
 ## Conclusion
-    
-While Go's built-in error handling offers a solid foundation, maintaining robust production-grade applications demands more. Apitoolkit bridges the gap, offering comprehensive error monitoring to keep your Go backends humming. Real-time error notifications, detailed stack traces, and customizable alerts empower you to catch and resolve issues swiftly. 
 
+While Go's built-in error handling offers a solid foundation, maintaining robust production-grade applications demands more. Apitoolkit bridges the gap, offering comprehensive error monitoring to keep your Go backends humming. Real-time error notifications, detailed stack traces, and customizable alerts empower you to catch and resolve issues swiftly.
