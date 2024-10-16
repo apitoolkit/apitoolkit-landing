@@ -1,14 +1,14 @@
 ---
-title: NestJs
-ogTitle: NestJs Integration Guide
+title: AdonisJs
+ogTitle: AdonisJs Integration Guide
 date: 2022-03-23
 updatedDate: 2024-06-16
 menuWeight: 2
 ---
 
-# NestJs Integration Guide
+# AdonisJs Integration Guide
 
-You can integrate your NestJs application with APIToolkit using OpenTelemetry. This allows you to send logs, metrics, and traces to APIToolkit for monitoring and analytics.
+You can integrate your AdonisJs application with APIToolkit using OpenTelemetry. This allows you to send logs, metrics, and traces to APIToolkit for monitoring and analytics.
 
 To get started, you'll need the OpenTelemetry Node.js library and some basic configuration.
 
@@ -45,7 +45,7 @@ There are generally two ways to go about this from the command line:
 1. Using the `env` keyword
 2. Using the `export` keyword
 
-For demonstration, I will be using the [OpenSource NestJs project on GitHub](https://github.com/danielAsaboro/nestjs-boilerplate) as an example.
+For demonstration, I will be using the [OpenSource AdonisJs project on GitHub](https://github.com/apitoolkit/test-adonis.git) as an example.
 
 ### 1. Using the `env` keyword
 
@@ -58,7 +58,7 @@ env OTEL_TRACES_EXPORTER=otlp \
     OTEL_EXPORTER_OTLP_PROTOCOL=grpc \
     OTEL_PROPAGATORS=baggage,tracecontext \
 node --require @opentelemetry/auto-instrumentations-node/register
-npm start
+npm run dev
 ```
 
 ### 2. Using the `export` keyword
@@ -72,7 +72,7 @@ export OTEL_RESOURCE_ATTRIBUTES=at-project-key="z6BJfZVEOSozztMfhqZsGTpG9DiXT9We
 export OTEL_EXPORTER_OTLP_PROTOCOL="grpc"
 export OTEL_PROPAGATORS="baggage,tracecontext"
 export NODE_OPTIONS="--require @opentelemetry/auto-instrumentations-node/register"
-npm start
+npm run dev
 ```
 
 If you are wondering what the difference is, it's this:
