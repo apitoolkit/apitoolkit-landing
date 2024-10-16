@@ -2,7 +2,7 @@
 title: FastifyJs
 ogTitle: FastifyJs Integration Guide
 date: 2022-03-23
-updatedDate: 2024-06-10
+updatedDate: 2024-06-16
 menuWeight: 2
 ---
 
