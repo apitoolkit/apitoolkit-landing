@@ -30,7 +30,7 @@ Ensure you have already completed the first three steps of the [onboarding guide
 
 Unlike NodeJs which has Auto Instrumentation, the corresponding Go OpenTelemetry initiative is still a work in progress. As a result, it will be a bit technical but not difficulty. So follow closely.
 
-We will be using this [Opensource User profile getter](https://github.com/danielAsaboro/go_chi_test) as our Starter project.
+We will be using this [Greetings API Repo](https://github.com/danielAsaboro/go_echo_test) as our Starter project.
 
 It has two branches;
 
