@@ -8,7 +8,8 @@ menuWeight: 4
 
 # Go Gin SDK Guide
 
-To integrate your Golang Gin application with APItoolkit, you need to use this SDK to monitor incoming traffic, aggregate the requests, and then send them to APItoolkit's servers. Kindly follow this guide to get started and learn about all the supported features of APItoolkit's **Golang SDK**.
+You can integrate your Golang Gin application with APIToolkit using OpenTelemetry. This allows you to send logs, metrics, and traces to APIToolkit for monitoring and analytics.
+
 
 ```=html
 <hr>
@@ -16,392 +17,288 @@ To integrate your Golang Gin application with APItoolkit, you need to use this S
 
 ## Prerequisites
 
-Ensure you have already completed the first three steps of the [onboarding guide](/docs/onboarding/){target="\_blank"}.
+Ensure you have already completed the first three steps of the [onboarding guide](/docs/onboarding/){target="_blank"}.
+
 
 ## Installation
 
-Kindly run the command below to install the SDK:
+Unlike NodeJs which has Auto Instrumentation, the corresponding Go OpenTelemetry initiative is still a work in progress. As a result, it will be a bit technical but not difficult.
+
+We will be using a basic RateLimiter as our starter project. You can find the initial code [here](https://github.com/danielAsaboro/go_gin_test/tree/initial_code).
+
+### 1. Add OpenTelemetry Instrumentation
+
+Run the following command to install the required packages and dependencies:
 
 ```sh
-go get github.com/apitoolkit/apitoolkit-go/gin
+go get "go.opentelemetry.io/otel" \
+  "go.opentelemetry.io/otel/exporters/stdout/stdoutmetric" \
+  "go.opentelemetry.io/otel/exporters/stdout/stdouttrace" \
+  "go.opentelemetry.io/otel/exporters/stdout/stdoutlog" \
+  "go.opentelemetry.io/otel/sdk/log" \
+  "go.opentelemetry.io/otel/log/global" \
+  "go.opentelemetry.io/otel/propagation" \
+  "go.opentelemetry.io/otel/sdk/metric" \
+  "go.opentelemetry.io/otel/sdk/resource" \
+  "go.opentelemetry.io/otel/sdk/trace" \
+  "go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin" \
+  "go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc"
 ```
 
-Then add `github.com/apitoolkit/apitoolkit-go/gin` to the list of imports, like so:
+### 2. Initialize the OpenTelemetry SDK
+
+Create a `main.go` file with the following content:
 
 ```go
 package main
 
 import (
-  apitoolkit "github.com/apitoolkit/apitoolkit-go/gin"
+	"context"
+	"errors"
+	"flag"
+	"log"
+	"time"
+
+	"github.com/fatih/color"
+	"github.com/gin-gonic/gin"
+	"go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin"
+	"go.opentelemetry.io/otel"
+	"go.opentelemetry.io/otel/attribute"
+	"go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc"
+	"go.opentelemetry.io/otel/exporters/stdout/stdoutlog"
+	"go.opentelemetry.io/otel/exporters/stdout/stdoutmetric"
+	"go.opentelemetry.io/otel/log/global"
+	"go.opentelemetry.io/otel/propagation"
+	sdklog "go.opentelemetry.io/otel/sdk/log"
+	sdkmetric "go.opentelemetry.io/otel/sdk/metric"
+	sdktrace "go.opentelemetry.io/otel/sdk/trace"
+	"go.uber.org/ratelimit"
 )
-```
 
-## Configuration
-
-Next, initialize APItoolkit in your application's entry point (e.g., `main.go`), like so:
-
-```go
-package main
-
-import (
-  "context"
-  "net/http"
-
-  "github.com/gin-gonic/gin"
-  apitoolkit "github.com/apitoolkit/apitoolkit-go/gin"
+var (
+	limit ratelimit.Limiter
+	rps   = flag.Int("rps", 100, "request per second")
 )
+
+func init() {
+	log.SetFlags(0)
+	log.SetPrefix("[GIN] ")
+	log.SetOutput(gin.DefaultWriter)
+}
+
+func leakBucket() gin.HandlerFunc {
+	prev := time.Now()
+	return func(ctx *gin.Context) {
+		now := limit.Take()
+		log.Print(color.CyanString("%v", now.Sub(prev)))
+		prev = now
+	}
+}
+
+func ginRun(rps int) {
+	limit = ratelimit.New(rps)
+
+	app := gin.Default()
+	app.Use(otelgin.Middleware("gin test project"))
+	app.Use(leakBucket())
+
+	app.GET("/rate", func(ctx *gin.Context) {
+		tracer := otel.Tracer("rate-limiter-service")
+		_, span := tracer.Start(context.Background(), "rate-limiting")
+		defer span.End()
+
+		span.SetAttributes(attribute.String("method", ctx.Request.Method))
+		span.SetAttributes(attribute.String("path", ctx.FullPath()))
+
+		ctx.JSON(200, "rate limiting test")
+	})
+
+	log.Printf(color.CyanString("Current Rate Limit: %v requests/s", rps))
+	app.Run(":8081")
+}
 
 func main() {
-  ctx := context.Background()
+	flag.Parse()
 
-  // Initialize the APItoolkit client
-  apitoolkitClient, err := apitoolkit.NewClient(
-    ctx,
-    apitoolkit.Config{
-      APIKey: "{ENTER_YOUR_API_KEY_HERE}",
-      Debug = false,
-      Tags = []string{"environment: production", "region: us-east-1"},
-      ServiceVersion: "v2.0",
-    },
-  )
-  if err != nil {
-    panic(err)
-  }
+	ctx := context.Background()
+	shutdown, err := setupOTelSDK(ctx)
+	if err != nil {
+		log.Fatalf("Error setting up OTel SDK: %v", err)
+	}
+	defer func() {
+		if err := shutdown(ctx); err != nil {
+			log.Fatalf("Error shutting down OTel SDK: %v", err)
+		}
+	}()
 
-  router := gin.New()
+	ginRun(*rps)
+}
 
-  // Register APItoolkit's middleware
-  router.Use(apitoolkit.GinMiddleware(apitoolkitClient))
+func setupOTelSDK(ctx context.Context) (shutdown func(context.Context) error, err error) {
+	var shutdownFuncs []func(context.Context) error
 
-  // router.Use(...)
-  // Other middleware
+	prop := propagation.NewCompositeTextMapPropagator(
+		propagation.TraceContext{},
+		propagation.Baggage{},
+	)
+	otel.SetTextMapPropagator(prop)
 
-  router.GET("/:slug/test", func(c *gin.Context) {
-    c.JSON(http.StatusOK, gin.H{"message": "hello world"})
-  })
+	traceExporter, err := otlptracegrpc.New(context.Background(),
+		otlptracegrpc.WithEndpoint("localhost:4317"),
+		otlptracegrpc.WithInsecure(),
+	)
+	if err != nil {
+		return nil, err
+	}
+	tracerProvider := sdktrace.NewTracerProvider(
+		sdktrace.WithBatcher(traceExporter, sdktrace.WithBatchTimeout(5*time.Second)),
+	)
+	shutdownFuncs = append(shutdownFuncs, tracerProvider.Shutdown)
+	otel.SetTracerProvider(tracerProvider)
 
-  router.Run(":8080")
+	metricExporter, err := stdoutmetric.New()
+	if err != nil {
+		return nil, err
+	}
+	meterProvider := sdkmetric.NewMeterProvider(
+		sdkmetric.WithReader(sdkmetric.NewPeriodicReader(metricExporter, sdkmetric.WithInterval(3*time.Second))),
+	)
+	shutdownFuncs = append(shutdownFuncs, meterProvider.Shutdown)
+	otel.SetMeterProvider(meterProvider)
+
+	logExporter, err := stdoutlog.New()
+	if err != nil {
+		return nil, err
+	}
+	loggerProvider := sdklog.NewLoggerProvider(
+		sdklog.WithProcessor(sdklog.NewBatchProcessor(logExporter)),
+	)
+	shutdownFuncs = append(shutdownFuncs, loggerProvider.Shutdown)
+	global.SetLoggerProvider(loggerProvider)
+
+	return func(ctx context.Context) error {
+		var err error
+		for _, fn := range shutdownFuncs {
+			err = errors.Join(err, fn(ctx))
+		}
+		return err
+	}, nil
 }
 ```
 
-In the configuration above, **only the `APIKey` option is required**, but you can add the following optional fields:
+### 3. Instrument your application
 
-{class="docs-table"}
-:::
-| Option | Description |
-| ------ | ----------- |
-| `Debug` | Set to `true` to enable debug mode. |
-| `Tags` | A list of defined tags for your services (used for grouping and filtering data on the dashboard). |
-| `ServiceVersion` | A defined string version of your application (used for further debugging on the dashboard). |
-| `RedactHeaders` | A list of HTTP header keys to redact. |
-| `RedactResponseBody` | A list of JSONPaths from the request body to redact. |
-| `RedactRequestBody` | A list of JSONPaths from the response body to redact. |
-:::
+The code above already includes instrumentation for the Gin application. The `otelgin.Middleware("gin test project")` line adds OpenTelemetry middleware to your Gin application.
 
-<div class="callout">
-  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <p>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</p>
-</div>
+### 4. Add Custom Instrumentation
 
-## Redacting Sensitive Data
-
-If you have fields that are sensitive and should not be sent to APItoolkit servers, you can mark those fields to be redacted (the fields will never leave your servers).
-
-To mark a field for redacting via this SDK, you need to provide additional arguments to the `apitoolkitCfg` variable with paths to the fields that should be redacted. There are three arguments you can provide to configure what gets redacted, namely:
-
-1. `RedactHeaders`: A list of HTTP header keys.
-2. `RedactRequestBody`: A list of JSONPaths from the request body.
-3. `RedactResponseBody`: A list of JSONPaths from the response body.
-
-<hr />
-JSONPath is a query language used to select and extract data from JSON files. For example, given the following sample user data JSON object:
-
-```json
-{
-  "user": {
-    "name": "John Martha",
-    "email": "john.martha@example.com",
-    "addresses": [
-      {
-        "street": "123 Main St",
-        "city": "Anytown",
-        "state": "CA",
-        "zip": "12345"
-      },
-      {
-        "street": "123 Main St",
-        "city": "Anytown",
-        "state": "CA",
-        "zip": "12345"
-      }
-    ],
-    "credit_card": {
-      "number": "4111111111111111",
-      "expiration": "12/28",
-      "cvv": "123"
-    }
-  }
-}
-```
-
-Examples of valid JSONPath expressions would be:
-
-{class="docs-table"}
-:::
-| JSONPath | Description |
-| -------- | ----------- |
-| `$.user.addresses[*].zip` | In this case, APItoolkit will replace the `zip` field in all the objects of the `addresses` list inside the `user` object with the string `[CLIENT_REDACTED]`. |
-| `$.user.credit_card` | In this case, APItoolkit will replace the entire `credit_card` object inside the `user` object with the string `[CLIENT_REDACTED]`. |
-:::
-
-<div class="callout">
-  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <p>To learn more about JSONPaths, please take a look at the [official docs](https://github.com/json-path/JsonPath/blob/master/README.md){target="_blank"} or use this [JSONPath Evaluator](https://jsonpath.com?ref=apitoolkit){target="_blank"} to validate your JSONPath expressions. </p>
-  <p>**You can also use our [JSON Redaction Tool](/tools/json-redacter/) <i class="fa-regular fa-screwdriver-wrench"></i> to preview what the final data sent from your API to APItoolkit will look like, after redacting any given JSON object**.</p>
-</div>
-<hr />
-
-Here's an example of what the configuration would look like with redacted fields:
+Custom instrumentation is added in the `/rate` endpoint handler:
 
 ```go
-package main
+app.GET("/rate", func(ctx *gin.Context) {
+    tracer := otel.Tracer("rate-limiter-service")
+    _, span := tracer.Start(context.Background(), "rate-limiting")
+    defer span.End()
 
-import (
-  "context"
-  "net/http"
+    span.SetAttributes(attribute.String("method", ctx.Request.Method))
+    span.SetAttributes(attribute.String("path", ctx.FullPath()))
 
-  "github.com/gin-gonic/gin"
-  apitoolkit "github.com/apitoolkit/apitoolkit-go/gin"
-)
-
-func main() {
-  ctx := context.Background()
-
-  apitoolkitCfg := apitoolkit.Config{
-    APIKey:             "{ENTER_YOUR_API_KEY_HERE}",
-    RedactHeaders:      []string{"content-type", "Authorization", "HOST"},
-    RedactRequestBody:  []string{"$.user.email", "$.user.addresses"},
-    RedactResponseBody: []string{"$.users[*].email", "$.users[*].credit_card"},
-  }
-  apitoolkitClient, _ := apitoolkit.NewClient(ctx, apitoolkitCfg)
-
-  router := gin.New()
-  router.Use(apitoolkit.GinMiddleware(apitoolkitClient))
-
-  router.GET("/:slug/test", func(c *gin.Context) {
-    c.JSON(http.StatusOK, gin.H{"message": "hello world"})
-  })
-
-  router.Run(":8080")
-}
+    ctx.JSON(200, "rate limiting test")
+})
 ```
 
-<div class="callout">
-  <p><i class="fa-regular fa-circle-info"></i> <b>Note</b></p>
-  <ul>
-    <li>The `RedactHeaders` config field expects a list of <b>case-insensitive headers as strings</b>.</li>
-    <li>The `RedactRequestBody` and `RedactResponseBody` config fields expect a list of <b>JSONPaths as strings</b>.</li>
-    <li>The list of items to be redacted will be applied to all endpoint requests and responses on your server.</li>
-  </ul>
-</div>
+This creates a new span for each request to the `/rate` endpoint and adds attributes for the HTTP method and path.
 
-## Error Reporting
+### 5. Configure the OpenTelemetry Exporter
 
-APItoolkit automatically detects different unhandled errors, API issues, and anomalies but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
+Before running your application, you need to set up the environment variables for the OpenTelemetry exporter. Add the following exports to your environment or to a startup script:
 
-To manually report specific errors at different parts of your application, use the `ReportError()` method, passing in the `context` and `error` arguments, like so:
-
-```go
-package main
-
-import (
-  "context"
-  "net/http"
-  "os"
-
-  "github.com/gin-gonic/gin"
-  apitoolkit "github.com/apitoolkit/apitoolkit-go/gin"
-)
-
-func main() {
-  ctx := context.Background()
-
-  // Initialize the client
-  apitoolkitClient, err := apitoolkit.NewClient(
-    ctx,
-    apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"},
-  )
-  if err != nil {
-    panic(err)
-  }
-
-  router := gin.New()
-
-  // Register APItoolkit's middleware
-  router.Use(apitoolkit.GinMiddleware(apitoolkitClient))
-
-  router.GET("/", hello)
-
-  router.Run(":8000")
-}
-
-func hello(c *gin.Context) {
-  // Attempt to open a non-existing file
-  file, err := os.Open("non-existing-file.txt")
-  if err != nil {
-    // Report the error to APItoolkit
-    apitoolkit.ReportError(c.Request.Context(), err)
-    c.JSON(http.StatusInternalServerError, gin.H{"message": "Something went wrong"})
-    return
-  }
-  c.JSON(http.StatusOK, gin.H{"message": file.Name()})
-}
+```sh
+export OTEL_TRACES_EXPORTER="otlp"
+export OTEL_EXPORTER_OTLP_ENDPOINT="http://otelcol.apitoolkit.io:4317"
+export OTEL_NODE_RESOURCE_DETECTORS="env,host,os"
+export OTEL_SERVICE_NAME="my go gin project test"
+export OTEL_RESOURCE_ATTRIBUTES=at-project-key="z6BJfZVEOSozztMfhqZsGTpG9DiXT9Weurvk1bpe9mwF8orB"
+export OTEL_EXPORTER_OTLP_PROTOCOL="grpc"
+export OTEL_PROPAGATORS="baggage,tracecontext"
 ```
 
-<div class="callout">
-  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <p>The `ReportError()` method mentioned above is imported directly from `apitoolkit` and not `apitoolkitClient`.</p>
-</div>
+These environment variables configure OpenTelemetry to:
+- Use the OTLP exporter for traces
+- Send data to a collector at `http://otelcol.apitoolkit.io:4317`
+- Detect and include environment, host, and OS information in the telemetry data
+- Set the service name for your application
+- Include your APIToolkit project key in the resource attributes
+- Use gRPC as the transport protocol
+- Use baggage and tracecontext propagators
 
-## Monitoring Outgoing Requests
+### 6. Update the OpenTelemetry SDK Setup
 
-Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="\_blank"} page. However, you can separate outgoing requests from others and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="\_blank"} page, alongside the incoming request that triggered them.
-
-<section class="tab-group" data-tab-group="group1">
-  <button class="tab-button" data-tab="tab1">Custom RoundTripper</button>
-  <button class="tab-button" data-tab="tab2">TLS Client</button>
-  <div id="tab1" class="tab-content">
-  To monitor outgoing HTTP requests from your application, replace the default HTTP client transport with a custom RoundTripper. This allows you to capture and send copies of all incoming and outgoing requests to APItoolkit.
-  
-  Here's an example of the configuration with a custom RoundTripper:
+Modify the `setupOTelSDK` function in your `main.go` file to use the OTLP exporter instead of stdout exporters. Replace the existing function with the following:
 
 ```go
-package main
+func setupOTelSDK(ctx context.Context) (shutdown func(context.Context) error, err error) {
+    var shutdownFuncs []func(context.Context) error
 
-import (
-  "context"
-  "net/http"
-
-  "github.com/gin-gonic/gin"
-  apitoolkit "github.com/apitoolkit/apitoolkit-go/gin"
-)
-
-func main() {
-  ctx := context.Background()
-  apitoolkitClient, err := apitoolkit.NewClient(
-    ctx,
-    apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"},
-  )
-  if err != nil {
-    panic(err)
-  }
-
-  router := gin.New()
-  router.Use(apitoolkit.GinMiddleware(apitoolkitClient))
-
-  router.GET("/test", func(c *gin.Context) {
-    // Create a new HTTP client
-    HTTPClient := apitoolkit.HTTPClient(
-      c.Request.Context(),
-      apitoolkit.WithRedactHeaders("content-type", "Authorization", "HOST"),
-      apitoolkit.WithRedactRequestBody("$.user.email", "$.user.addresses"),
-      apitoolkit.WithRedactResponseBody("$.users[*].email", "$.users[*].credit_card"),
+    // Set up propagator
+    prop := propagation.NewCompositeTextMapPropagator(
+        propagation.TraceContext{},
+        propagation.Baggage{},
     )
+    otel.SetTextMapPropagator(prop)
 
-    // Make an outgoing HTTP request using the modified HTTPClient
-    _, _ = HTTPClient.Get("https://jsonplaceholder.typicode.com/posts/1")
+    // Set up trace provider
+    traceExporter, err := otlptracegrpc.New(ctx)
+    if err != nil {
+        return nil, err
+    }
+    tracerProvider := sdktrace.NewTracerProvider(
+        sdktrace.WithBatcher(traceExporter),
+    )
+    shutdownFuncs = append(shutdownFuncs, tracerProvider.Shutdown)
+    otel.SetTracerProvider(tracerProvider)
 
-    c.String(http.StatusOK, "Ok, success!")
-  })
+    // Set up meter provider
+    metricExporter, err := otlpmetricgrpc.New(ctx)
+    if err != nil {
+        return nil, err
+    }
+    meterProvider := sdkmetric.NewMeterProvider(
+        sdkmetric.WithReader(sdkmetric.NewPeriodicReader(metricExporter)),
+    )
+    shutdownFuncs = append(shutdownFuncs, meterProvider.Shutdown)
+    otel.SetMeterProvider(meterProvider)
 
-  router.Run(":8088")
+    // Return shutdown function
+    return func(ctx context.Context) error {
+        var err error
+        for _, fn := range shutdownFuncs {
+            err = errors.Join(err, fn(ctx))
+        }
+        return err
+    }, nil
 }
 ```
 
-<div class="callout">
-  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <p class="mt-6">You can also redact data with the custom RoundTripper for outgoing requests.</p>
-</div>
+This setup uses the OTLP gRPC exporter for both traces and metrics, which will send the telemetry data to the endpoint specified in your environment variables.
 
-  </div>
-  <div id="tab2" class="tab-content">
-  If you are using a TLS client for your HTTP requests, you will need to use the [apitoolkit-go/tls_client](https://github.com/apitoolkit/apitoolkit-go/tree/main/tls_client){target="_blank" rel="noopener noreferrer"} package to monitor those requests. To use the package, you must first install it using the command below:
+### 7. Run the application
+
+Build and run the application with the following command:
 
 ```sh
-go get github.com/apitoolkit/apitoolkit-go/tls_client
+go mod tidy
+go run .
 ```
 
-Here's an example of the configuration with a TLS client:
+The application will start and listen on port 8081. You can test it by sending a request to `http://localhost:8081/rate`.
 
-```go
-package main
+## Visualization and Analysis
 
-import (
-  "context"
-  "net/http"
+With the configuration you've provided, your application is now set up to send telemetry data to APItoolkit The OTLP exporter will send the data to the endpoint specified in the `OTEL_EXPORTER_OTLP_ENDPOINT` environment variable.
 
-  "github.com/gin-gonic/gin"
-  fhttp "github.com/bogdanfinn/fhttp"
-  tls_client "github.com/bogdanfinn/tls-client"
+## Conclusion
 
-  apitoolkit "github.com/apitoolkit/apitoolkit-go/gin"
-  apitoolkitTlsClient "github.com/apitoolkit/apitoolkit-go/tls_client"
-)
+This guide demonstrates how to integrate OpenTelemetry with a Go Gin application and configure it to send telemetry data to an external backend system. You can extend this setup to include more detailed metrics, logs, and traces as needed for your specific application.
 
-func main() {
-  ctx := context.Background()
-  apitoolkitClient, err := apitoolkit.NewClient(
-    ctx,
-    apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"},
-  )
-  if err != nil {
-    panic(err)
-  }
-
-  router := gin.New()
-  router.Use(apitoolkit.GinMiddleware(apitoolkitClient))
-
-  jar := tls_client.NewCookieJar()
-  options := []tls_client.HttpClientOption{
-    tls_client.WithTimeoutSeconds(30),
-    tls_client.WithNotFollowRedirects(),
-    tls_client.WithCookieJar(jar), // create cookieJar instance and pass it as argument
-  }
-
-  clientTLS, err := tls_client.NewHttpClient(tls_client.NewNoopLogger(), options...)
-  if err != nil {
-    panic(err)
-  }
-
-  router.GET("/test", func(c *gin.Context) {
-    // Create a new apitoolkit custom TLS Client
-    tclient := apitoolkitTlsClient.NewHttpClient(c.Request.Context(), clientTLS, apitoolkitClient)
-    req, err := fhttp.NewRequest(http.MethodGet, "https://jsonplaceholder.typicode.com/posts/1", nil)
-    if err != nil {
-      panic(err)
-    }
-
-    // Make an outgoing HTTP request using the modified TLS Client
-    resp, err := tclient.Do(req)
-    if err != nil {
-      panic(err)
-    }
-    log.Printf("status code: %d", resp.StatusCode)
-
-    c.String(http.StatusOK, "Ok, success!")
-  })
-
-  router.Run(":8088")
-}
-```
-
-  </div>
-</section>
-
-```=html
-<hr />
-<a href="https://github.com/apitoolkit/apitoolkit-go" target="_blank" rel="noopener noreferrer" class="w-full btn btn-outline link link-hover">
-    <i class="fa-brands fa-github"></i>
-    Explore the Golang SDK
-</a>
-```
+Remember to keep your APIToolkit project key (`at-project-key`) secure and not expose it in public repositories or logs.
