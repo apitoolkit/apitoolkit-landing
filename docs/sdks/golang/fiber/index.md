@@ -227,7 +227,6 @@ func ReadData(ctx *fiber.Ctx) error {
 	)
 
 	span.SetAttributes(
-		attribute.String("path_params", fmt.Sprintf(`{"id":"%s"}`, ctx.Params("id"))),
 		attribute.String("query_params", fmt.Sprintf("%v", ctx.Queries())),
 		attribute.String("request_body", "{}"),
 		attribute.String("request_headers", fmt.Sprintf("%v", ctx.GetReqHeaders())),
