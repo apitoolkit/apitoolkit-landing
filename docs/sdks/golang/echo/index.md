@@ -116,7 +116,6 @@ func InitTracerProvider() *sdktrace.TracerProvider {
 
 ```
 
-
 What's happening above:
 
 - This function sets up the OpenTelemetry tracer provider with an OTLP gRPC exporter.
@@ -150,9 +149,7 @@ import (
 
 var tracer trace.Tracer
 
-type HelloWorld struct {
-	Message string `json:"message"`
-}
+// todo
 
 func main() {
 
@@ -174,24 +171,6 @@ func main() {
 	e.GET("/hello", Greetings)
 	e.Logger.Fatal(e.Start(":3000"))
 }
-
-func Greetings(c echo.Context) error {
-
-	return c.JSON(http.StatusOK, HelloWorld{
-		Message: "Hello World",
-	})
-
-}
-
-```
-
-### 4. Add Custom Instrumentation
-
-Instrumentation libraries capture telemetry at the edges of your systems, such as inbound and outbound HTTP requests, but they don’t capture what’s going on in your application. For that you’ll need to write some custom manual instrumentation.
-
-Modify the `Greetings` function to include custom instrumentation using OpenTelemetry API:
-
-```go
 
 func Greetings(c echo.Context) error {
 	// Create a background context for tracing
@@ -258,6 +237,82 @@ func Greetings(c echo.Context) error {
 	})
 }
 
+
+```
+
+### 4. Add Custom Instrumentation
+
+Instrumentation libraries capture telemetry at the edges of your systems, such as inbound and outbound HTTP requests, but they don’t capture what’s going on in your application. For that you’ll need to write some custom manual instrumentation.
+
+Modify the `Greetings` function to include custom instrumentation using OpenTelemetry API:
+
+```go
+
+func Greetings(c echo.Context) error {
+    // Create a background context for tracing
+    ctx := context.Background()
+    startTime := time.Now()
+
+    // Start a new span for tracing
+    _, span := tracer.Start(ctx, "Greetings")
+    defer span.End()
+
+    // Extract request data from Echo context
+    r := c.Request()
+
+    method := r.Method
+    scheme := "http"
+    statusCode := http.StatusOK
+    host := r.Host
+    port := r.URL.Port()
+    if port == "" {
+        port = "8081"
+    }
+
+    // Set span status
+    span.SetStatus(codes.Ok, "")
+
+    // Use semantic conventions for common attributes
+    span.SetAttributes(
+        semconv.HTTPMethodKey.String(method),
+        semconv.HTTPSchemeKey.String(scheme),
+        semconv.HTTPStatusCodeKey.Int(statusCode),
+        semconv.HTTPTargetKey.String(r.URL.Path),
+        semconv.HTTPURLKey.String(r.URL.String()),
+        semconv.HTTPHostKey.String(host),
+        semconv.NetHostPortKey.String(port),
+        semconv.HTTPUserAgentKey.String(r.UserAgent()),
+        semconv.HTTPRequestContentLengthKey.Int64(r.ContentLength),
+        semconv.NetPeerIPKey.String(c.RealIP()),
+    )
+
+    // Custom attributes that don't have semantic conventions
+    span.SetAttributes(
+        attribute.String("created_at", startTime.Format(time.RFC3339Nano)),
+        attribute.Float64("duration_ns", float64(time.Since(startTime).Nanoseconds())),
+        attribute.String("parent_id", ""), // Optionally extract from context
+        attribute.String("referer", r.Referer()),
+        attribute.String("request_type", "Incoming"),
+        attribute.String("sdk_type", "echo"),
+        attribute.String("service_version", ""), // Optionally fill this
+        attribute.StringSlice("tags", []string{}),
+    )
+
+    // Set nested fields (these don't have direct semconv equivalents)
+    span.SetAttributes(
+        attribute.String("path_params", r.URL.Path),
+        attribute.String("query_params", fmt.Sprintf("%v", r.URL.Query())),
+        attribute.String("request_body", "{}"), // Assuming empty body for GET request
+        attribute.String("request_headers", fmt.Sprintf("%v", r.Header)),
+        attribute.String("response_body", "{}"),
+        attribute.String("response_headers", "{}"),
+    )
+
+    return c.JSON(http.StatusOK, HelloWorld{
+        Message: "Hello World",
+    })
+}
+
 ```
 
 #### Set Your Environment Variables
@@ -273,7 +328,6 @@ export OTEL_RESOURCE_ATTRIBUTES=at-project-key="z6BJfZVEOSozztMfhqZsGTpG9DiXT9We
 export OTEL_EXPORTER_OTLP_PROTOCOL="grpc"
 export OTEL_PROPAGATORS="baggage,tracecontext"
 ```
-
 
 ##### Quick overview of the configuration parameters
 
