@@ -2,7 +2,7 @@
 title: Go Chi
 ogTitle: Go Chi OpenTelemetry Integration
 date: 2022-03-23
-updatedDate: 2024-06-10
+updatedDate: 2024-10-22
 menuWeight: 1
 ---
 
@@ -10,7 +10,7 @@ menuWeight: 1
 
 This guide demonstrates how to integrate APItoolkit with your Go Chi application for distributed tracing using OpenTelemetry. We'll walk through the code and explain each part of the integration process.
 
-To get started, you'll need the following OpenTelemetry Go packages and some basic configuration.
+To get started, you'll need to install OpenTelemetry Go packages and some basic configuration.
 
 ```=html
 <hr>
