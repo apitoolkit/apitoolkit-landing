@@ -52,22 +52,23 @@ env OTEL_TRACES_EXPORTER=otlp \
     OTEL_RESOURCE_ATTRIBUTES=at-project-key=z6BJfZVEOSozztMfhqZsGTpG9DiXT9Weurvk1bpe9mwF8orB \
     OTEL_EXPORTER_OTLP_PROTOCOL=grpc \
     OTEL_PROPAGATORS=baggage,tracecontext \
-node --require @opentelemetry/auto-instrumentations-node/register app.js
+node --require @opentelemetry/auto-instrumentations-node/register server.js
 
 ```
 
 ### 2. Using the `export` keyword
 
 ```sh
-export OTEL_TRACES_EXPORTER="otlp"
 export OTEL_EXPORTER_OTLP_ENDPOINT="http://otelcol.apitoolkit.io:4317"
 export OTEL_NODE_RESOURCE_DETECTORS="env,host,os"
-export OTEL_SERVICE_NAME="your-service-name"
+export OTEL_SERVICE_NAME="<YOUR_SERVICE_NAME>"
 export OTEL_RESOURCE_ATTRIBUTES=at-project-key="z6BJfZVEOSozztMfhqZsGTpG9DiXT9Weurvk1bpe9mwF8orB"
 export OTEL_EXPORTER_OTLP_PROTOCOL="grpc"
+export OTEL_TRACES_EXPORTER="otlp"
+export OTEL_LOGS_EXPORTER="otlp"
 export OTEL_PROPAGATORS="baggage,tracecontext"
 export NODE_OPTIONS="--require @opentelemetry/auto-instrumentations-node/register"
-node lib/server.js
+node server.js
 ```
 
 If you are wondering what the difference is, it's this:
@@ -100,58 +101,34 @@ Run the following command to install the express js package from your projects r
 
 ```sh
 npm install apitoolkit-express
-
 ```
 
 ### Project setup
 
-Intialize apitoolkit into your project by providing `apikey` and `tracer` like so:
+Intialize apitoolkit into your project by providing `apikey` and `serviceName` like so:
 
 ```js
 import express from "express";
-import { logs, NodeSDK } from "@opentelemetry/sdk-node";
 import { APIToolkit } from "apitoolkit-express";
-import { OTLPLogExporter } from "@opentelemetry/exporter-logs-otlp-grpc";
-import { OTLPTraceExporter } from "@opentelemetry/exporter-trace-otlp-grpc";
-import {
-  diag,
-  DiagConsoleLogger,
-  DiagLogLevel,
-  trace,
-} from "@opentelemetry/api";
-import { SemanticResourceAttributes } from "@opentelemetry/semantic-conventions";
-import { Resource } from "@opentelemetry/resources";
 
-const loggerLevel = DiagLogLevel.DEBUG;
-diag.setLogger(new DiagConsoleLogger(), loggerLevel);
-
-const defaultAttributes = {
-  [SemanticResourceAttributes.SERVICE_NAME]: "apitoolkit-js-express",
-  [SemanticResourceAttributes.SERVICE_VERSION]: "1.0.0",
-  environment: "production",
-  "at-api-key": "<API-KEY>",
-};
-
-const resource = new Resource(defaultAttributes);
-
-const logExporter = new OTLPLogExporter({
-  url: "http://otelcol.apitoolkit.io:4317",
+const apitoolkitClient = APIToolkit.NewClient({
+  apiKey: "<API-KEY>",
+  serviceName: "<YOUR_SERVICE_NAME>",
 });
 
-const traceExporter = new OTLPTraceExporter({
-  url: "http://otelcol.apitoolkit.io:4317",
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(apitoolkit.expressMiddleware);
+
+app.get("/", (req, res) => {
+  res.send("Hello World!");
 });
 
-const sdk = new NodeSDK({
-  resource: resource,
-  logRecordProcessors: [new logs.SimpleLogRecordProcessor(logExporter)],
-  traceExporter,
+// Report uncaught errors, must come after all route hanndlers
+app.use(apitoolkit.errorHandler);
+app.listen(3000, () => {
+  console.log(`Example app listening on port ${port}`);
 });
-sdk.start();
-
-const tracer = trace.getTracer("example-app");
-
-const apitoolkitClient = APIToolkit.NewClient({ apiKey: "<API-KEY>", tracer });
 ```
 
 where `<API-KEY>` is the API key which can be generated from your [apitoolkit.io](apitoolkit.io) account
@@ -195,18 +172,6 @@ const apitoolkit = APIToolkit.NewClient({
   apiKey: "<API-KEY>", // Required: API Key generated from apitoolkit dashboard
   tracer: tracer, // Required: OpenTelemetry tracer instance
 });
-
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(apitoolkit.expressMiddleware);
-
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
-
-app.listen(3000, () => {
-  console.log(`Example app listening on port ${port}`);
-});
 ```
 
 ## Reporting errors to APIToolkit
@@ -220,13 +185,11 @@ To enable automatic error reporting, add the APIToolkit `errorHandler` middlewar
 import { APIToolkit, ReportError } from "apitoolkit-express";
 import express from "express";
 
-/* ...
-Open telemetry instrumentation
-
-*/
-
 const app = express();
-const apitoolkitClient = APIToolkit.NewClient({ apiKey: "<API-KEY>", tracer: /* your tracer instance */ });
+const apitoolkitClient = APIToolkit.NewClient({
+  apiKey: "<API-KEY>",
+  serviceName: "<YOUR_SERVICE_NAME>",
+});
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -244,13 +207,11 @@ Or manually report errors within the context of a web request, by calling the Re
 import { APIToolkit, ReportError } from "apitoolkit-express";
 import express from "express";
 
-/* ...
-Open telemetry instrumentation
-
-*/
-
 const app = express();
-const apitoolkitClient = APIToolkit.NewClient({ apiKey: "<API-KEY>", tracer: /* your tracer instance */ });
+const apitoolkitClient = APIToolkit.NewClient({
+  apiKey: "<API-KEY>",
+  serviceName: "<YOUR_SERVICE_NAME>",
+});
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -271,16 +232,14 @@ This works automatically from within a web request which is wrapped by the apito
 In that case, you can call ReportError, but on the apitoolkit client, instead.
 
 ```js
-import {APIToolkit , ReportError } from "apitoolkit-express";
 import express from "express";
-
-/* ...
-Open telemetry instrumentation
-
-*/
+import { APIToolkit, ReportError } from "apitoolkit-express";
 
 const app = express();
-const apitoolkitClient = APIToolkit.NewClient({apiKey: "<API-KEY>", tracer: /* your tracer instance */ });
+const apitoolkitClient = APIToolkit.NewClient({
+  apiKey: "<API-KEY>",
+  serviceName: "<YOUR_SERVICE_NAME>",
+});
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -288,12 +247,12 @@ app.use(apitoolkitClient.expressMiddleware);
 
 app.get("/", (req, res) => {
   try {
-  throw new Error("Something went wrong");
-  res.send("hello world");
-} catch (error) {
-  apitoolClient.ReportError(error);
-  res.send("Something went wrong")
-}
+    throw new Error("Something went wrong");
+    res.send("hello world");
+  } catch (error) {
+    apitoolClient.ReportError(error);
+    res.send("Something went wrong");
+  }
 });
 ```
 
