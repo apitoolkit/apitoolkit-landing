@@ -109,33 +109,26 @@ Intialize apitoolkit into your project by providing `apikey` and `serviceName` l
 
 ```js
 import express from "express";
-import { APIToolkit } from "apitoolkit-express";
-
-const apitoolkitClient = APIToolkit.NewClient({
-  apiKey: "<API-KEY>",
-  serviceName: "<YOUR_SERVICE_NAME>",
-});
+import {expressMiddleware, expressErrorHandler} from "apitoolkit-express";
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(apitoolkit.expressMiddleware);
+app.use(expressMiddleware());
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
 // Report uncaught errors, must come after all route hanndlers
-app.use(apitoolkit.errorHandler);
+app.use(expressErrorHandler);
 app.listen(3000, () => {
   console.log(`Example app listening on port ${port}`);
 });
 ```
 
-where `<API-KEY>` is the API key which can be generated from your [apitoolkit.io](apitoolkit.io) account
-
 #### Quick overview of the configuration parameters
 
-In the configuration above, **only the `apiKey` and `tracer` fields required**, but you can add the following optional fields:
+An object with the following optional fields can be passed to the middleware function to configure it:
 
 {class="docs-table"}
 :::
@@ -143,6 +136,7 @@ In the configuration above, **only the `apiKey` and `tracer` fields required**, 
 | ------ | ----------- |
 | `debug` | Set to `true` to enable debug mode. |
 | `tags` | A list of defined tags for your services (used for grouping and filtering data on the dashboard). |
+| `serviceName` | A defined string name of your application |
 | `serviceVersion` | A defined string version of your application (used for further debugging on the dashboard). |
 | `redactHeaders` | A list of HTTP header keys to redact. |
 | `redactResponseBody` | A list of JSONPaths from the response body to redact. |
@@ -151,106 +145,49 @@ In the configuration above, **only the `apiKey` and `tracer` fields required**, 
 | `captureResponseBody` | default `false`, set to true if you want to capture the response body. |
 :::
 
-Next, you can use the apitoolkit middleware for your express app.
-
-```js
-app.use(apitoolkitClient.expressMiddleware);
-```
-
-where app is your express js instance.
-
-Your final could might look something like this especially on typescript:
-
-```js
-import { APIToolkit } from "apitoolkit-express";
-import express from "express";
-
-/* Initialize OpenTelemetry SDK */
-
-const app = express();
-const apitoolkit = APIToolkit.NewClient({
-  apiKey: "<API-KEY>", // Required: API Key generated from apitoolkit dashboard
-  tracer: tracer, // Required: OpenTelemetry tracer instance
-});
-```
 
 ## Reporting errors to APIToolkit
 
 APIToolkit detects a lot of API issues automatically, but it's also valuable to report and track errors. This helps you associate more details about the backend with a given failing request.
 If you've used sentry, or rollback, or bugsnag, then you're likely aware of this functionality.
 
-To enable automatic error reporting, add the APIToolkit `errorHandler` middleware immediately after your app's controllers and APIToolkit will handle all uncaught errors that happened during a request and associate the error to that request.
+To enable automatic error reporting, add the APIToolkit `expressErrorHandler` middleware immediately after your app's controllers and APIToolkit will handle all uncaught errors that happened during a request and associate the error to that request.
 
 ```typescript
-import { APIToolkit, ReportError } from "apitoolkit-express";
 import express from "express";
+import {expressMiddleware, expressErrorHandler} from "apitoolkit-express";
 
 const app = express();
-const apitoolkitClient = APIToolkit.NewClient({
-  apiKey: "<API-KEY>",
-  serviceName: "<YOUR_SERVICE_NAME>",
-});
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(apitoolkitClient.expressMiddleware);
+app.use(expressMiddleware());
 
 app.get("/", (req, res) => {});
 
 // The error handler must be before any other error middleware and after all controllers
-app.use(apitoolkitClient.errorHandler);
+app.use(expressErrorHandler);
 ```
 
 Or manually report errors within the context of a web request, by calling the ReportError function.
 
 ```typescript
-import { APIToolkit, ReportError } from "apitoolkit-express";
 import express from "express";
+import {expressMiddleware, expressErrorHandler, reportError} from "apitoolkit-express";
+
 
 const app = express();
-const apitoolkitClient = APIToolkit.NewClient({
-  apiKey: "<API-KEY>",
-  serviceName: "<YOUR_SERVICE_NAME>",
-});
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(apitoolkitClient.expressMiddleware);
+app.use(expressMiddleware);
 
 app.get("/", (req, res) => {
   try {
     throw new Error("Something went wrong");
     res.send("hello world");
   } catch (error) {
-    ReportError(error);
-    res.send("Something went wrong");
-  }
-});
-```
-
-This works automatically from within a web request which is wrapped by the apitoolkit middleware. But if called from a background job, ReportError will not know how to actually Report the Error.
-In that case, you can call ReportError, but on the apitoolkit client, instead.
-
-```js
-import express from "express";
-import { APIToolkit, ReportError } from "apitoolkit-express";
-
-const app = express();
-const apitoolkitClient = APIToolkit.NewClient({
-  apiKey: "<API-KEY>",
-  serviceName: "<YOUR_SERVICE_NAME>",
-});
-
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(apitoolkitClient.expressMiddleware);
-
-app.get("/", (req, res) => {
-  try {
-    throw new Error("Something went wrong");
-    res.send("hello world");
-  } catch (error) {
-    apitoolClient.ReportError(error);
+    reportError(error);
     res.send("Something went wrong");
   }
 });
