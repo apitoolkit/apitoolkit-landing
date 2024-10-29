@@ -121,9 +121,8 @@ app.get("/", (req, res) => {
 
 // Report uncaught errors, must come after all route hanndlers
 app.use(expressErrorHandler);
-app.listen(3000, () => {
-  console.log(`Example app listening on port ${port}`);
-});
+
+app.listen(3000, () => { console.log("Example app listening on port 3000")});
 ```
 
 #### Quick overview of the configuration parameters
@@ -167,6 +166,8 @@ app.get("/", (req, res) => {});
 
 // The error handler must be before any other error middleware and after all controllers
 app.use(expressErrorHandler);
+
+app.listen(3000, () => { console.log("Example app listening on port 3000")});
 ```
 
 Or manually report errors within the context of a web request, by calling the ReportError function.
@@ -191,6 +192,8 @@ app.get("/", (req, res) => {
     res.send("Something went wrong");
   }
 });
+
+app.listen(3000, () => { console.log("Example app listening on port 3000")});
 ```
 
 <div class="callout">
