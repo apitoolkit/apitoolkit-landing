@@ -1,14 +1,18 @@
 ---
 title: Go Native
-ogTitle: Go Native SDK Guide
+ogTitle: Go Native OpenTelemetry Integration
 date: 2022-03-23
-updatedDate: 2024-06-08
+updatedDate: 2024-10-22
 menuWeight: 6
 ---
 
-# Go Native SDK Guide
+# Go Native OpenTelemetry Integration
 
-To integrate your Golang Native application with APItoolkit, you need to use this SDK to monitor incoming traffic, aggregate the requests, and then send them to APItoolkit's servers. Kindly follow this guide to get started and learn about all the supported features of APItoolkit's **Golang SDK**.
+
+
+This guide demonstrates how to integrate APItoolkit with your Go Chi application for distributed tracing using OpenTelemetry. We'll walk through the code and explain each part of the integration process.
+
+To get started, you'll need to install OpenTelemetry Go packages and some basic configuration.
 
 ```=html
 <hr>
@@ -20,374 +24,348 @@ Ensure you have already completed the first three steps of the [onboarding guide
 
 ## Installation
 
-Kindly run the command below to install the SDK:
+Unlike NodeJs which has Auto Instrumentation, the corresponding Go OpenTelemetry initiative is still a work in progress. As a result, it will be a bit technical but not difficulty. So follow closely.
+
+We will be using this [Dice Roller API](https://github.com/danielAsaboro/go_net_test) as our Starter project.
+
+It has two branches;
+
+- _main_: [Without OpenTelemetry]
+- _with_otel_: [With OpenTelemetry Integrated]
+
+This tutorial will guide you on how to move from are Uninstrumented service to an Instrumented one.
+
+### 1. Add OpenTelemetry Instrumentation
+
+Kindly run the command below to install the required packages and dependencies.
 
 ```sh
-go get github.com/apitoolkit/apitoolkit-go/native
+go get go.opentelemetry.io/otel
+go get go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc
+go get go.opentelemetry.io/otel/sdk/resource
+go get go.opentelemetry.io/otel/sdk/trace
 ```
 
-Then add `github.com/apitoolkit/apitoolkit-go/native` to the list of dependencies, like so:
+Ensure they are installed correctly
+
+### 2. Initialize the OpenTelemetry SDK
+
+This is required for any application that exports telemetry data.
+
+Create an `otel.go` file with OpenTelemetry SDK bootstrapping code for good separation of concern and for ease of continuous improvement. The content of this file would look like this:
 
 ```go
+
 package main
 
 import (
-  apitoolkit "github.com/apitoolkit/apitoolkit-go/native"
+	"context"
+	"errors"
+	"os"
+	"time"
+
+	"go.opentelemetry.io/otel"
+	"go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc"
+	"go.opentelemetry.io/otel/propagation"
+	"go.opentelemetry.io/otel/sdk/trace"
 )
-```
 
-## Configuration
-
-Next, initialize APItoolkit in your application's entry point (e.g., `main.go`), like so:
-
-```go
-package main
-
-import (
-  "context"
-  "log"
-  "net/http"
-
-  apitoolkit "github.com/apitoolkit/apitoolkit-go/native"
+var (
+	otlpEndpoint = os.Getenv("OTEL_EXPORTER_OTLP_ENDPOINT")
 )
 
-func main() {
-  ctx := context.Background()
+// setupOTelSDK bootstraps the OpenTelemetry pipeline.
+// If it does not return an error, make sure to call shutdown for proper cleanup.
+func setupOTelSDK(ctx context.Context) (shutdown func(context.Context) error, err error) {
+	var shutdownFuncs []func(context.Context) error
 
-  // Initialize the APItoolkit client
-  apitoolkitClient, err := apitoolkit.NewClient(
-    ctx,
-    apitoolkit.Config{
-      APIKey: "{ENTER_YOUR_API_KEY_HERE}",
-      Debug = false,
-      Tags = []string{"environment: production", "region: us-east-1"},
-      ServiceVersion: "v2.0",
-    },
-  )
-  if err != nil {
-    panic(err)
-  }
+	// shutdown calls cleanup functions registered via shutdownFuncs.
+	// The errors from the calls are joined.
+	// Each registered cleanup will be invoked once.
+	shutdown = func(ctx context.Context) error {
+		var err error
+		for _, fn := range shutdownFuncs {
+			err = errors.Join(err, fn(ctx))
+		}
+		shutdownFuncs = nil
+		return err
+	}
 
-  // Register APItoolkit's middleware
-  http.Handle("/", apitoolkit.Middleware(apitoolkitClient)(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-    w.WriteHeader(http.StatusOK)
-    w.Write([]byte("Hello, World!"))
-  })))
+	// handleErr calls shutdown for cleanup and makes sure that all errors are returned.
+	handleErr := func(inErr error) {
+		err = errors.Join(inErr, shutdown(ctx))
+	}
 
-  log.Fatal(http.ListenAndServe(":8080", nil))
+	// Set up propagator.
+	prop := newPropagator()
+	otel.SetTextMapPropagator(prop)
+
+	// Set up trace provider.
+	tracerProvider, err := newTraceProvider()
+	if err != nil {
+		handleErr(err)
+		return
+	}
+	shutdownFuncs = append(shutdownFuncs, tracerProvider.Shutdown)
+	otel.SetTracerProvider(tracerProvider)
+
+	return
 }
+
+func newPropagator() propagation.TextMapPropagator {
+	return propagation.NewCompositeTextMapPropagator(
+		propagation.TraceContext{},
+		propagation.Baggage{},
+	)
+}
+
+func newTraceProvider() (*trace.TracerProvider, error) {
+	// Set up trace provider
+	traceExporter, err := otlptracegrpc.New(context.Background(),
+		otlptracegrpc.WithEndpoint(otlpEndpoint),
+		otlptracegrpc.WithInsecure(),
+	)
+	if err != nil {
+		return nil, err
+	}
+
+	traceProvider := trace.NewTracerProvider(
+		trace.WithBatcher(traceExporter,
+			// Default is 5s. Set to 1s for demonstrative purposes.
+			trace.WithBatchTimeout(time.Second)),
+	)
+	return traceProvider, nil
+}
+
 ```
 
-In the configuration above, **only the `APIKey` option is required**, but you can add the following optional fields:
+What's happening above:
 
-{class="docs-table"}
-:::
-| Option | Description |
-| ------ | ----------- |
-| `Debug` | Set to `true` to enable debug mode. |
-| `Tags` | A list of defined tags for your services (used for grouping and filtering data on the dashboard). |
-| `ServiceVersion` | A defined string version of your application (used for further debugging on the dashboard). |
-| `RedactHeaders` | A list of HTTP header keys to redact. |
-| `RedactResponseBody` | A list of JSONPaths from the request body to redact. |
-| `RedactRequestBody` | A list of JSONPaths from the response body to redact. |
-:::
+- This function sets up the OpenTelemetry tracer provider with an OTLP gRPC exporter.
+- It configures the service name and ensures all spans are sampled.
 
-<div class="callout">
-  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <p>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</p>
-</div>
+### 3. Instrument your application
 
-## Redacting Sensitive Data
+Now that we have the OpenTelemetry SDK initializer set up, we can instrument our HTTP server.
 
-If you have fields that are sensitive and should not be sent to APItoolkit servers, you can mark those fields to be redacted (the fields will never leave your servers).
-
-To mark a field for redacting via this SDK, you need to provide additional arguments to the `apitoolkitCfg` variable with paths to the fields that should be redacted. There are three arguments you can provide to configure what gets redacted, namely:
-
-1. `RedactHeaders`: A list of HTTP header keys.
-2. `RedactRequestBody`: A list of JSONPaths from the request body.
-3. `RedactResponseBody`: A list of JSONPaths from the response body.
-
-<hr />
-JSONPath is a query language used to select and extract data from JSON files. For example, given the following sample user data JSON object:
-
-```json
-{
-  "user": {
-    "name": "John Martha",
-    "email": "john.martha@example.com",
-    "addresses": [
-      {
-        "street": "123 Main St",
-        "city": "Anytown",
-        "state": "CA",
-        "zip": "12345"
-      },
-      {
-        "street": "123 Main St",
-        "city": "Anytown",
-        "state": "CA",
-        "zip": "12345"
-      }
-    ],
-    "credit_card": {
-      "number": "4111111111111111",
-      "expiration": "12/28",
-      "cvv": "123"
-    }
-  }
-}
-```
-
-Examples of valid JSONPath expressions would be:
-
-{class="docs-table"}
-:::
-| JSONPath | Description |
-| -------- | ----------- |
-| `$.user.addresses[*].zip` | In this case, APItoolkit will replace the `zip` field in all the objects of the `addresses` list inside the `user` object with the string `[CLIENT_REDACTED]`. |
-| `$.user.credit_card` | In this case, APItoolkit will replace the entire `credit_card` object inside the `user` object with the string `[CLIENT_REDACTED]`. |
-:::
-
-<div class="callout">
-  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <p>To learn more about JSONPaths, please take a look at the [official docs](https://github.com/json-path/JsonPath/blob/master/README.md){target="_blank"} or use this [JSONPath Evaluator](https://jsonpath.com?ref=apitoolkit){target="_blank"} to validate your JSONPath expressions. </p>
-  <p>**You can also use our [JSON Redaction Tool](/tools/json-redacter/) <i class="fa-regular fa-screwdriver-wrench"></i> to preview what the final data sent from your API to APItoolkit will look like, after redacting any given JSON object**.</p>
-</div>
-<hr />
-
-Here's an example of what the configuration would look like with redacted fields:
+Modify your `main.go` file to include code that initializes OpenTelemetry SDK and instruments the HTTP server using the otelhttp instrumentation library:
 
 ```go
+
 package main
 
 import (
-  "context"
-  "net/http"
+	"context"
+	"errors"
+	"log"
+	"net"
+	"net/http"
+	"os"
+	"os/signal"
+	"time"
 
-  apitoolkit "github.com/apitoolkit/apitoolkit-go/native"
+	"go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
 )
 
 func main() {
-  ctx := context.Background()
-
-  apitoolkitCfg := apitoolkit.Config{
-    APIKey:             "{ENTER_YOUR_API_KEY_HERE}",
-    RedactHeaders:      []string{"content-type", "Authorization", "HOST"},
-    RedactRequestBody:  []string{"$.user.email", "$.user.addresses"},
-    RedactResponseBody: []string{"$.users[*].email", "$.users[*].credit_card"},
-  }
-  apitoolkitClient, _ := apitoolkit.NewClient(ctx, apitoolkitCfg)
-
-  http.HandleFunc("/:slug/test", apitoolkit.Middleware(apitoolkitClient)(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-    w.WriteHeader(http.StatusOK)
-    w.Write([]byte("Ok, success!"))
-  })))
-
-  http.ListenAndServe(":8080", nil)
+	if err := run(); err != nil {
+		log.Fatalln(err)
+	}
 }
+
+func run() (err error) {
+	// Handle SIGINT (CTRL+C) gracefully.
+	ctx, stop := signal.NotifyContext(context.Background(), os.Interrupt)
+	defer stop()
+
+	// Set up OpenTelemetry.
+	otelShutdown, err := setupOTelSDK(ctx)
+	if err != nil {
+		return
+	}
+	// Handle shutdown properly so nothing leaks.
+	defer func() {
+		err = errors.Join(err, otelShutdown(context.Background()))
+	}()
+
+	// Start HTTP server.
+	srv := &http.Server{
+		Addr:         ":8082",
+		BaseContext:  func(_ net.Listener) context.Context { return ctx },
+		ReadTimeout:  time.Second,
+		WriteTimeout: 10 * time.Second,
+		Handler:      newHTTPHandler(),
+	}
+	srvErr := make(chan error, 1)
+	go func() {
+		srvErr <- srv.ListenAndServe()
+	}()
+
+	// Wait for interruption.
+	select {
+	case err = <-srvErr:
+		// Error when starting HTTP server.
+		return
+	case <-ctx.Done():
+		// Wait for first CTRL+C.
+		// Stop receiving signal notifications as soon as possible.
+		stop()
+	}
+
+	// When Shutdown is called, ListenAndServe immediately returns ErrServerClosed.
+	err = srv.Shutdown(context.Background())
+	return
+}
+
+func newHTTPHandler() http.Handler {
+	mux := http.NewServeMux()
+
+	// handleFunc is a replacement for mux.HandleFunc
+	// which enriches the handler's HTTP instrumentation with the pattern as the http.route.
+	handleFunc := func(pattern string, handlerFunc func(http.ResponseWriter, *http.Request)) {
+		// Configure the "http.route" for the HTTP instrumentation.
+		handler := otelhttp.WithRouteTag(pattern, http.HandlerFunc(handlerFunc))
+		mux.Handle(pattern, handler)
+	}
+
+	// Register handlers.
+	handleFunc("/rolldice/", rolldice)
+	handleFunc("/rolldice/{player}", rolldice)
+
+	// Add HTTP instrumentation for the whole server.
+	handler := otelhttp.NewHandler(mux, "/")
+	return handler
+}
+
 ```
 
+### 4. Add Custom Instrumentation
+
+Instrumentation libraries capture telemetry at the edges of your systems, such as inbound and outbound HTTP requests, but they don’t capture what’s going on in your application. For that you’ll need to write some custom manual instrumentation.
+
+Modify the `getUser` function to include custom instrumentation using OpenTelemetry API:
+
+```go
+
+package main
+
+import (
+	"fmt"
+	"io"
+	"log"
+	"math/rand"
+	"net/http"
+	"strconv"
+
+	"go.opentelemetry.io/contrib/bridges/otelslog"
+	"go.opentelemetry.io/otel"
+	"go.opentelemetry.io/otel/attribute"
+	"go.opentelemetry.io/otel/metric"
+)
+
+const name = "go.opentelemetry.io/otel/example/dice"
+
+var (
+	tracer  = otel.Tracer(name)
+	meter   = otel.Meter(name)
+	logger  = otelslog.NewLogger(name)
+	rollCnt metric.Int64Counter
+)
+
+func init() {
+	var err error
+	rollCnt, err = meter.Int64Counter("dice.rolls",
+		metric.WithDescription("The number of rolls by roll value"),
+		metric.WithUnit("{roll}"))
+	if err != nil {
+		panic(err)
+	}
+}
+
+func rolldice(w http.ResponseWriter, r *http.Request) {
+	ctx, span := tracer.Start(r.Context(), "roll")
+	defer span.End()
+
+	roll := 1 + rand.Intn(6)
+
+	var msg string
+	if player := r.PathValue("player"); player != "" {
+		msg = fmt.Sprintf("%s is rolling the dice", player)
+	} else {
+		msg = "Anonymous player is rolling the dice"
+	}
+	logger.InfoContext(ctx, msg, "result", roll)
+
+	rollValueAttr := attribute.Int("roll.value", roll)
+	span.SetAttributes(rollValueAttr)
+	rollCnt.Add(ctx, 1, metric.WithAttributes(rollValueAttr))
+
+	resp := strconv.Itoa(roll) + "\n"
+	if _, err := io.WriteString(w, resp); err != nil {
+		log.Printf("Write failed: %v\n", err)
+	}
+}
+
+```
+
+#### Set Your Environment Variables
+
+Before running your application, set the following environment variables:
+
+```sh
+export OTEL_TRACES_EXPORTER="otlp"
+export OTEL_EXPORTER_OTLP_ENDPOINT="otelcol.apitoolkit.io:4317"
+export OTEL_NODE_RESOURCE_DETECTORS="env,host,os"
+export OTEL_SERVICE_NAME="my go chi project test"
+export OTEL_RESOURCE_ATTRIBUTES=at-project-key="z6BJfZVEOSozztMfhqZsGTpG9DiXT9Weurvk1bpe9mwF8orB"
+export OTEL_EXPORTER_OTLP_PROTOCOL="grpc"
+export OTEL_PROPAGATORS="baggage,tracecontext"
+```
+
+##### Quick overview of the configuration parameters
+
+{class="docs-table"}
+:::
+| Attribute | Description |
+| --------- | ----------- |
+| `OTEL_EXPORTER_OTLP_ENDPOINT` | Specifies the endpoint URL for the OpenTelemetry collector. In this case, it's set to "otelcol.apitoolkit.io:4317". |
+| `OTEL_NODE_RESOURCE_DETECTORS` | Defines which resource detectors to use. Here, it's set to detect environment variables, host information, and operating system details. |
+| `OTEL_SERVICE_NAME` | Sets the name of your service. You should replace "your-service-name" with the actual name of your service. |
+| `OTEL_RESOURCE_ATTRIBUTES` | Specifies additional resource attributes. In this case, it's setting an API Toolkit project key. |
+| `OTEL_EXPORTER_OTLP_PROTOCOL` | Defines the protocol used for exporting telemetry data. It's set to "grpc" (gRPC protocol). |
+| `OTEL_PROPAGATORS` | Specifies which context propagators to use. Here, it's set to use both "baggage" and "tracecontext". |
+:::
+
+### 5. Run the application to Ensure Everything works
+
+Build and run the application with the following command:
+
+```sh
+
+go mod tidy
+go run .
+
+```
+
+The server will start on port 8081. You can test it by sending a request:
+
+```sh
+curl http://localhost:8082/rolldice/
+```
+
+This should return: `1|2|3...6` – basically any number between 0 and 7.
+
+With this setup, your application will send traces to APItoolkit for visualization and analysis.
+
 <div class="callout">
-  <p><i class="fa-regular fa-circle-info"></i> <b>Note</b></p>
-  <ul>
-    <li>The `RedactHeaders` config field expects a list of <b>case-insensitive headers as strings</b>.</li>
-    <li>The `RedactRequestBody` and `RedactResponseBody` config fields expect a list of <b>JSONPaths as strings</b>.</li>
-    <li>The list of items to be redacted will be applied to all endpoint requests and responses on your server.</li>
+  <p><i class="fa-regular fa-lightbulb"></i> <b>Tips</b></p>
+  <ol>
+  <li>
+  Remember to keep your APIToolkit project key (`at-project-key`) secure and not expose it in public repositories or logs.
+  </li>
+   <li>
+  Ensure you don't make the mistake of adding the http scheme `http` or `https` to your OTLP Endpoint
+  </li>
   </ul>
+
 </div>
-
-## Error Reporting
-
-With APItoolkit, you can track and report different unhandled or uncaught errors, API issues, and anomalies at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
-
-To manually report specific errors at different parts of your application, use the `ReportError()` method, passing in the `context` and `error` arguments, like so:
-
-```go
-package main
-
-import (
-  "context"
-  "fmt"
-  "net/http"
-  "os"
-
-  apitoolkit "github.com/apitoolkit/apitoolkit-go/native"
-)
-
-func main() {
-  ctx := context.Background()
-
-  apitoolkitClient, err := apitoolkit.NewClient(
-    ctx,
-    apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"},
-  )
-  if err != nil {
-    panic(err)
-  }
-
-  helloHandler := func(w http.ResponseWriter, r *http.Request) {
-    // Attempt to open a non-existing file
-    file, err := os.Open("non-existing-file.txt")
-    if err != nil {
-      // Report the error to APItoolkit
-      apitoolkit.ReportError(r.Context(), err)
-    }
-    fmt.Fprintln(w, "{\"Hello\": \"World!\"}")
-  }
-
-  http.Handle("/", apitoolkit.Middleware(apitoolkitClient)(http.HandlerFunc(helloHandler)))
-
-  if err := http.ListenAndServe(":8089", nil); err != nil {
-    fmt.Println("Server error:", err)
-  }
-}
-```
-
-<div class="callout">
-  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <p>The `ReportError()` method mentioned above is imported directly from `apitoolkit` and not `apitoolkitClient`.</p>
-</div>
-
-## Monitoring Outgoing Requests
-
-Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="\_blank"} page. However, you can separate outgoing requests from others and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="\_blank"} page, alongside the incoming request that triggered them.
-
-<section class="tab-group" data-tab-group="group1">
-  <button class="tab-button" data-tab="tab1">Custom RoundTripper</button>
-  <button class="tab-button" data-tab="tab2">TLS Client</button>
-  <div id="tab1" class="tab-content">
-  To monitor outgoing HTTP requests from your application, replace the default HTTP client transport with a custom RoundTripper. This allows you to capture and send copies of all incoming and outgoing requests to APItoolkit.
-  
-  Here's an example of the configuration with a custom RoundTripper:
-
-```go
-package main
-
-import (
-  "context"
-  "log"
-  "net/http"
-
-  apitoolkit "github.com/apitoolkit/apitoolkit-go/native"
-)
-
-func main() {
-  ctx := context.Background()
-
-  apitoolkitClient, err := apitoolkit.NewClient(
-    ctx,
-    apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"},
-  )
-  if err != nil {
-    panic(err)
-  }
-
-  http.HandleFunc("/test", apitoolkit.Middleware(apitoolkitClient)(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-
-    // Create a new HTTP client
-    HTTPClient := apitoolkit.HTTPClient(
-      r.Context(),
-      apitoolkit.WithRedactHeaders("content-type", "Authorization", "HOST"),
-      apitoolkit.WithRedactRequestBody("$.user.email", "$.user.addresses"),
-      apitoolkit.WithRedactResponseBody("$.users[*].email", "$.users[*].credit_card"),
-    )
-
-    // Make an outgoing HTTP request using the modified HTTPClient
-    _, _ = HTTPClient.Get("https://jsonplaceholder.typicode.com/posts/1")
-
-    // Respond to the request
-    w.WriteHeader(http.StatusOK)
-    w.Write([]byte("Hello, World!"))
-  })))
-
-  http.ListenAndServe(":8080", nil)
-}
-```
-
-<div class="callout">
-  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <p class="mt-6">You can also redact data with the custom RoundTripper for outgoing requests.</p>
-</div>
-
-  </div>
-  <div id="tab2" class="tab-content">
-  If you are using a TLS client for your HTTP requests, you will need to use the [apitoolkit-go/tls_client](https://github.com/apitoolkit/apitoolkit-go/tree/main/tls_client){target="_blank" rel="noopener noreferrer"} package to monitor those requests. To use the package, you must first install it using the command below:
-
-```sh
-go get github.com/apitoolkit/apitoolkit-go/tls_client
-```
-
-Here's an example of the configuration with a TLS client:
-
-```go
-package main
-
-import (
-  "context"
-  "log"
-  "net/http"
-
-  fhttp "github.com/bogdanfinn/fhttp"
-  tls_client "github.com/bogdanfinn/tls-client"
-
-  apitoolkit "github.com/apitoolkit/apitoolkit-go/native"
-  apitoolkitTlsClient "github.com/apitoolkit/apitoolkit-go/tls_client"
-)
-
-func main() {
-  ctx := context.Background()
-
-  apitoolkitClient, err := apitoolkit.NewClient(
-    ctx,
-    apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"},
-  )
-  if err != nil {
-    panic(err)
-  }
-
-  jar := tls_client.NewCookieJar()
-  options := []tls_client.HttpClientOption{
-    tls_client.WithTimeoutSeconds(30),
-    tls_client.WithNotFollowRedirects(),
-    tls_client.WithCookieJar(jar), // create cookieJar instance and pass it as argument
-  }
-
-  clientTLS, err := tls_client.NewHttpClient(tls_client.NewNoopLogger(), options...)
-  if err != nil {
-    panic(err)
-  }
-
-  http.HandleFunc("/test", apitoolkit.Middleware(apitoolkitClient)(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-
-    tclient := apitoolkitTlsClient.NewHttpClient(r.Context(), clientTLS, apitoolkitClient)
-    req, err := fhttp.NewRequest(http.MethodGet, "https://jsonplaceholder.typicode.com/posts/1", nil)
-    if err != nil {
-      panic(err)
-    }
-
-    resp, err := tclient.Do(req)
-    if err != nil {
-      panic(err)
-    }
-
-    log.Printf("status code: %d", resp.StatusCode)
-
-    // Respond to the request
-    w.WriteHeader(http.StatusOK)
-    w.Write([]byte("Hello, World!"))
-  })))
-
-  http.ListenAndServe(":8080", nil)
-}
-```
-
-  </div>
-</section>
-
-```=html
-<hr />
-<a href="https://github.com/apitoolkit/apitoolkit-go" target="_blank" rel="noopener noreferrer" class="w-full btn btn-outline link link-hover">
-    <i class="fa-brands fa-github"></i>
-    Explore the Golang SDK
-</a>
-```

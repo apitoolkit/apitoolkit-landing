@@ -2,13 +2,15 @@
 title: Go Fiber
 ogTitle: Go Fiber SDK Guide
 date: 2022-03-23
-updatedDate: 2024-06-10
+updatedDate: 2024-10-22
 menuWeight: 3
 ---
 
-# Go Fiber SDK Guide
+# Go Fiber OpenTelemetry Integration Guide
 
-To integrate your Golang Fiber application with APItoolkit, you need to use this SDK to monitor incoming traffic, aggregate the requests, and then send them to APItoolkit's servers. Kindly follow this guide to get started and learn about all the supported features of APItoolkit's **Golang SDK**.
+This guide demonstrates how to integrate APItoolkit with your Go Chi application for distributed tracing using OpenTelemetry. We'll walk through the code and explain each part of the integration process.
+
+To get started, you'll need to install OpenTelemetry Go packages and some basic configuration.
 
 ```=html
 <hr>
@@ -20,387 +22,397 @@ Ensure you have already completed the first three steps of the [onboarding guide
 
 ## Installation
 
-Kindly run the command below to install the SDK:
+Unlike NodeJs which has Auto Instrumentation, the corresponding Go OpenTelemetry initiative is still a work in progress. As a result, it will be a bit technical but not difficulty. So follow closely.
+
+e will be using this [Opensource User profile repo](https://github.com/danielAsaboro/go_fiber_test.git) as our Starter project.
+
+It has two branches;
+
+- _main_: [Without OpenTelemetry]
+- _with_otel_: [With OpenTelemetry Integrated]
+
+This tutorial will guide you on how to move from are Uninstrumented service to an Instrumented one.
+
+### 1. Add OpenTelemetry Instrumentation
+
+Kindly run the command below to install the required packages and dependencies.
 
 ```sh
-go get github.com/apitoolkit/apitoolkit-go/fiber
+go get go.opentelemetry.io/otel
+go get go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc
+go get go.opentelemetry.io/otel/sdk/resource
+go get go.opentelemetry.io/otel/sdk/trace
 ```
 
-Then add `github.com/apitoolkit/apitoolkit-go/fiber` to the list of imports, like so:
+Ensure they are installed correctly
+
+### 2. Initialize the OpenTelemetry SDK
+
+This is required for any application that exports telemetry data.
+
+Create an `otel.go` file with OpenTelemetry SDK bootstrapping code for good separation of concern and for ease of continuous improvement. The content of this file would look like this:
 
 ```go
+
 package main
 
 import (
-  apitoolkit "github.com/apitoolkit/apitoolkit-go/fiber"
+	"context"
+	"log"
+	"os"
+
+	"go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc"
+	"go.opentelemetry.io/otel/sdk/resource"
+	sdktrace "go.opentelemetry.io/otel/sdk/trace"
+	semconv "go.opentelemetry.io/otel/semconv/v1.20.0"
 )
+
+var (
+	otlpEndpoint = os.Getenv("OTEL_EXPORTER_OTLP_ENDPOINT")
+	serviceName = os.Getenv("OTEL_SERVICE_NAME")
+)
+
+// InitTracerProvider initializes and returns a trace provider
+func InitTracerProvider() *sdktrace.TracerProvider {
+	exporter, err := otlptracegrpc.New(context.Background(),
+		otlptracegrpc.WithEndpoint(otlpEndpoint),
+		otlptracegrpc.WithInsecure(),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	res, err := resource.New(
+		context.Background(),
+		resource.WithAttributes(
+			semconv.ServiceNameKey.String(serviceName),
+		),
+	)
+	if err != nil {
+		log.Fatalf("unable to initialize resource due: %v", err)
+	}
+
+	return sdktrace.NewTracerProvider(
+		sdktrace.WithSampler(sdktrace.AlwaysSample()),
+		sdktrace.WithBatcher(exporter),
+		sdktrace.WithResource(res),
+	)
+}
+
 ```
 
-## Configuration
+What's happening above:
 
-Next, initialize APItoolkit in your application's entry point (e.g., `main.go`), like so:
+- This function sets up the OpenTelemetry tracer provider with an OTLP gRPC exporter.
+- It configures the service name and ensures all spans are sampled.
+
+### 3. Instrument your application
+
+Now that we have the OpenTelemetry SDK initializer set up, we can instrument our HTTP server.
+
+Modify your `main.go` file to include code that initializes OpenTelemetry SDK and instruments the HTTP server using the otelhttp instrumentation library:
 
 ```go
+
 package main
 
 import (
-  "context"
+	"context"
+	"fiber_sample/routes"
+	"log"
 
-  "github.com/gofiber/fiber/v2"
-  apitoolkit "github.com/apitoolkit/apitoolkit-go/fiber"
+	"github.com/gofiber/fiber/v2"
+	"go.opentelemetry.io/otel"
+	"go.opentelemetry.io/otel/propagation"
 )
+
 
 func main() {
-  ctx := context.Background()
+	// first we must setup new Instance of FIber
+	app := fiber.New()
 
-  // Initialize the APItoolkit client
-  apitoolkitClient, err := apitoolkit.NewClient(
-    ctx,
-    apitoolkit.Config{
-      APIKey: "{ENTER_YOUR_API_KEY_HERE}",
-      Debug = false,
-      Tags = []string{"environment: production", "region: us-east-1"},
-      ServiceVersion: "v2.0",
-    },
-  )
-  if err != nil {
-    panic(err)
-  }
+	// Initialize trace provider
+	tp := InitTracerProvider()
+	defer func() {
+		if err := tp.Shutdown(context.Background()); err != nil {
+			log.Printf("Error shutting down tracer provider: %v", err)
+		}
+	}()
+	// Set global tracer provider & text propagators
+	otel.SetTracerProvider(tp)
+	otel.SetTextMapPropagator(propagation.NewCompositeTextMapPropagator(propagation.TraceContext{}, propagation.Baggage{}))
 
-  router := fiber.New()
+	// Initialize tracer
+	// then we must define our routes function
+	routes.Routes(app)
 
-  // Register APItoolkit's middleware
-  router.Use(apitoolkit.FiberMiddleware(apitoolkitClient))
-
-  // router.Use(...)
-  // Other middleware
-
-  router.Get("/greet", func(c *fiber.Ctx) error {
-    name := c.Query("name", "jon")
-    return c.SendString("Hello " + name)
-  })
-
-  router.Listen(":3000")
+	// create http connection for this api
+	app.Listen(":3000")
 }
+
 ```
 
-<div class="callout">
-  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <p>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</p>
-</div>
+### 4. Add Custom Instrumentation
 
-## Redacting Sensitive Data
+Instrumentation libraries capture telemetry at the edges of your systems, such as inbound and outbound HTTP requests, but they don’t capture what’s going on in your application. For that you’ll need to write some custom manual instrumentation.
 
-If you have fields that are sensitive and should not be sent to APItoolkit servers, you can mark those fields to be redacted (the fields will never leave your servers).
+Go to the `handlers` directory and Modify the `handlers.go` file to include custom instrumentation using OpenTelemetry API:
 
-To mark a field for redacting via this SDK, you need to provide additional arguments to the `apitoolkitCfg` variable with paths to the fields that should be redacted. There are three arguments you can provide to configure what gets redacted, namely:
+```go
 
-1. `RedactHeaders`: A list of HTTP header keys.
-2. `RedactRequestBody`: A list of JSONPaths from the request body.
-3. `RedactResponseBody`: A list of JSONPaths from the response body.
+package handlers
 
-<hr />
-JSONPath is a query language used to select and extract data from JSON files. For example, given the following sample user data JSON object:
+import (
+	"fiber_sample/data"
+	"fmt"
+	"strconv"
+	"time"
 
-```json
-{
-  "user": {
-    "name": "John Martha",
-    "email": "john.martha@example.com",
-    "addresses": [
-      {
-        "street": "123 Main St",
-        "city": "Anytown",
-        "state": "CA",
-        "zip": "12345"
-      },
-      {
-        "street": "123 Main St",
-        "city": "Anytown",
-        "state": "CA",
-        "zip": "12345"
-      }
-    ],
-    "credit_card": {
-      "number": "4111111111111111",
-      "expiration": "12/28",
-      "cvv": "123"
-    }
-  }
+	"github.com/gofiber/fiber/v2"
+	"go.opentelemetry.io/otel"
+	"go.opentelemetry.io/otel/attribute"
+	"go.opentelemetry.io/otel/codes"
+	semconv "go.opentelemetry.io/otel/semconv/v1.4.0"
+	oteltrace "go.opentelemetry.io/otel/trace"
+)
+
+var tracer oteltrace.Tracer
+
+// ReadData handles reading all data
+func ReadData(ctx *fiber.Ctx) error {
+	tracer = otel.Tracer("fiber test server")
+	startTime := time.Now()
+	_, span := tracer.Start(ctx.UserContext(), "getUser")
+	defer span.End()
+
+	// Fiber-specific methods to get request data
+	method := ctx.Method()
+	scheme := ctx.Protocol()
+	statusCode := fiber.StatusOK
+	host := ctx.Hostname()
+	url := ctx.OriginalURL()
+
+	// Set span status
+	span.SetStatus(codes.Ok, "")
+
+	contentLengthStr := ctx.Get(fiber.HeaderContentLength)
+	contentLength, err := strconv.Atoi(contentLengthStr)
+	if err != nil {
+		contentLength = 0
+	}
+
+	// Use semantic conventions for common attributes
+	span.SetAttributes(
+		semconv.HTTPMethodKey.String(method),
+		semconv.HTTPSchemeKey.String(scheme),
+		semconv.HTTPStatusCodeKey.Int(statusCode),
+		semconv.HTTPTargetKey.String(ctx.Path()),
+		semconv.HTTPURLKey.String(url),
+		semconv.HTTPHostKey.String(host),
+		semconv.NetHostPortKey.String(ctx.Port()),
+		semconv.HTTPUserAgentKey.String(ctx.Get(fiber.HeaderUserAgent)),
+		semconv.HTTPRequestContentLengthKey.Int(contentLength),
+		semconv.NetPeerIPKey.String(ctx.IP()),
+	)
+
+	// Custom attributes
+	span.SetAttributes(
+		attribute.String("created_at", startTime.Format(time.RFC3339Nano)),
+		attribute.Float64("duration_ns", float64(time.Since(startTime).Nanoseconds())),
+		attribute.String("referer", ctx.Get(fiber.HeaderReferer)),
+		attribute.String("request_type", "Incoming"),
+		attribute.String("sdk_type", "go-fiber"),
+		attribute.String("service_version", ""),
+		attribute.StringSlice("tags", []string{}),
+	)
+
+	span.SetAttributes(
+		attribute.String("query_params", fmt.Sprintf("%v", ctx.Queries())),
+		attribute.String("request_body", "{}"),
+		attribute.String("request_headers", fmt.Sprintf("%v", ctx.GetReqHeaders())),
+		attribute.String("response_body", "{}"),
+		attribute.String("response_headers", "{}"),
+	)
+
+	dataService := data.InitData()
+	return ctx.JSON(dataService.GetData())
 }
+
+// DeleteData handles deleting a record by ID
+func DeleteData(ctx *fiber.Ctx) error {
+	tracer = otel.Tracer("fiber test server")
+	startTime := time.Now()
+	_, span := tracer.Start(ctx.UserContext(), "deleteUser")
+	defer span.End()
+
+	id, _ := strconv.Atoi(ctx.Params("id"))
+	dataService := data.InitData()
+
+	span.SetAttributes(
+		attribute.String("created_at", startTime.Format(time.RFC3339Nano)),
+		attribute.Float64("duration_ns", float64(time.Since(startTime).Nanoseconds())),
+		attribute.String("request_type", "Incoming"),
+		attribute.String("id", strconv.Itoa(id)),
+	)
+
+	return ctx.JSON(dataService.DeleteData(id))
+}
+
+// InsertData handles inserting new data
+func InsertData(ctx *fiber.Ctx) error {
+	tracer = otel.Tracer("fiber test server")
+	startTime := time.Now()
+	_, span := tracer.Start(ctx.UserContext(), "insertUser")
+	defer span.End()
+
+	dataService := data.InitData()
+	user := new(data.UserModel)
+
+	if err := ctx.BodyParser(user); err != nil {
+		span.SetStatus(codes.Error, "Body parsing error")
+		return err
+	}
+
+	users := dataService.InsertData(data.UserModel{
+		Name:   user.Name,
+		Gender: user.Gender,
+		Age:    user.Age,
+	})
+	// Set span status
+	span.SetStatus(codes.Ok, "")
+
+	span.SetAttributes(
+		attribute.String("created_at", startTime.Format(time.RFC3339Nano)),
+		attribute.Float64("duration_ns", float64(time.Since(startTime).Nanoseconds())),
+		attribute.String("request_body", fmt.Sprintf("%v", user)),
+	)
+
+	return ctx.JSON(users)
+}
+
+// ReadDataById handles fetching a record by ID
+func ReadDataById(ctx *fiber.Ctx) error {
+	tracer = otel.Tracer("fiber test server")
+	startTime := time.Now()
+	_, span := tracer.Start(ctx.UserContext(), "getUserById")
+	defer span.End()
+
+	id, _ := strconv.Atoi(ctx.Params("id"))
+	dataService := data.InitData()
+
+	// Set span status
+	span.SetStatus(codes.Ok, "")
+	span.SetAttributes(
+		attribute.String("created_at", startTime.Format(time.RFC3339Nano)),
+		attribute.Float64("duration_ns", float64(time.Since(startTime).Nanoseconds())),
+		attribute.String("id", strconv.Itoa(id)),
+	)
+
+	return ctx.JSON(dataService.GetDataById(id))
+}
+
+// PatchData handles updating a record by ID
+func PatchData(ctx *fiber.Ctx) error {
+	tracer = otel.Tracer("fiber test server")
+	startTime := time.Now()
+	_, span := tracer.Start(ctx.UserContext(), "updateUser")
+	defer span.End()
+
+	id, _ := strconv.Atoi(ctx.Params("id"))
+	dataService := data.InitData()
+	user := new(data.UserModel)
+
+	if err := ctx.BodyParser(user); err != nil {
+		span.SetStatus(codes.Error, "Body parsing error")
+		return err
+	}
+
+	users := dataService.UpdateDataById(
+		id,
+		data.UserModel{
+			Name:   user.Name,
+			Gender: user.Gender,
+			Age:    user.Age,
+		},
+	)
+	// Set span status
+	span.SetStatus(codes.Ok, "")
+	span.SetAttributes(
+		attribute.String("created_at", startTime.Format(time.RFC3339Nano)),
+		attribute.Float64("duration_ns", float64(time.Since(startTime).Nanoseconds())),
+		attribute.String("request_body", fmt.Sprintf("%v", user)),
+	)
+
+	return ctx.JSON(users)
+}
+
 ```
 
-Examples of valid JSONPath expressions would be:
+#### Set Your Environment Variables
+
+Before running your application, set the following environment variables:
+
+```sh
+export OTEL_TRACES_EXPORTER="otlp"
+export OTEL_EXPORTER_OTLP_ENDPOINT="otelcol.apitoolkit.io:4317"
+export OTEL_NODE_RESOURCE_DETECTORS="env,host,os"
+export OTEL_SERVICE_NAME="my go fiber project test"
+export OTEL_RESOURCE_ATTRIBUTES=at-project-key="z6BJfZVEOSozztMfhqZsGTpG9DiXT9Weurvk1bpe9mwF8orB"
+export OTEL_EXPORTER_OTLP_PROTOCOL="grpc"
+export OTEL_PROPAGATORS="baggage,tracecontext"
+```
+
+##### Quick overview of the configuration parameters
 
 {class="docs-table"}
 :::
-| JSONPath | Description |
-| -------- | ----------- |
-| `$.user.addresses[*].zip` | In this case, APItoolkit will replace the `zip` field in all the objects of the `addresses` list inside the `user` object with the string `[CLIENT_REDACTED]`. |
-| `$.user.credit_card` | In this case, APItoolkit will replace the entire `credit_card` object inside the `user` object with the string `[CLIENT_REDACTED]`. |
+| Attribute | Description |
+| --------- | ----------- |
+| `OTEL_EXPORTER_OTLP_ENDPOINT` | Specifies the endpoint URL for the OpenTelemetry collector. In this case, it's set to "otelcol.apitoolkit.io:4317". |
+| `OTEL_NODE_RESOURCE_DETECTORS` | Defines which resource detectors to use. Here, it's set to detect environment variables, host information, and operating system details. |
+| `OTEL_SERVICE_NAME` | Sets the name of your service. You should replace "your-service-name" with the actual name of your service. |
+| `OTEL_RESOURCE_ATTRIBUTES` | Specifies additional resource attributes. In this case, it's setting an API Toolkit project key. |
+| `OTEL_EXPORTER_OTLP_PROTOCOL` | Defines the protocol used for exporting telemetry data. It's set to "grpc" (gRPC protocol). |
+| `OTEL_PROPAGATORS` | Specifies which context propagators to use. Here, it's set to use both "baggage" and "tracecontext". |
 :::
 
-<div class="callout">
-  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <p>To learn more about JSONPaths, please take a look at the [official docs](https://github.com/json-path/JsonPath/blob/master/README.md){target="_blank"} or use this [JSONPath Evaluator](https://jsonpath.com?ref=apitoolkit){target="_blank"} to validate your JSONPath expressions. </p>
-  <p>**You can also use our [JSON Redaction Tool](/tools/json-redacter/) <i class="fa-regular fa-screwdriver-wrench"></i> to preview what the final data sent from your API to APItoolkit will look like, after redacting any given JSON object**.</p>
-</div>
-<hr />
+### 5. Run the application to Ensure Everything works
 
-Here's an example of what the configuration would look like with redacted fields:
-
-```go
-package main
-
-import (
-  "context"
-  "os"
-
-  "github.com/gofiber/fiber/v2"
-  apitoolkit "github.com/apitoolkit/apitoolkit-go/fiber"
-)
-
-func main() {
-  ctx := context.Background()
-
-  apitoolkitCfg := apitoolkit.Config{
-    APIKey:             "{ENTER_YOUR_API_KEY_HERE}",
-    RedactHeaders:      []string{"content-type", "Authorization", "HOST"},
-    RedactRequestBody:  []string{"$.user.email", "$.user.addresses"},
-    RedactResponseBody: []string{"$.users[*].email", "$.users[*].credit_card"},
-  }
-  apitoolkitClient, err := apitoolkit.NewClient(ctx, apitoolkitCfg)
-  if err != nil {
-    panic(err)
-  }
-
-  router := fiber.New()
-  router.Use(apitoolkit.FiberMiddleware(apitoolkitClient))
-
-  router.Get("/", hello)
-
-  router.Listen(":3000")
-}
-
-func hello(c *fiber.Ctx) error {
-  // Attempt to open a non-existing file
-  file, err := os.Open("non-existing-file.txt")
-  if err != nil {
-    // Report the error to APItoolkit
-    apitoolkit.ReportError(c.Context(), err)
-    return c.SendString("Something went wrong")
-  }
-  return c.SendString("Hello file, " + file.Name())
-}
-```
-
-<div class="callout">
-  <p><i class="fa-regular fa-circle-info"></i> <b>Note</b></p>
-  <ul>
-    <li>The `RedactHeaders` config field expects a list of <b>case-insensitive headers as strings</b>.</li>
-    <li>The `RedactRequestBody` and `RedactResponseBody` config fields expect a list of <b>JSONPaths as strings</b>.</li>
-    <li>The list of items to be redacted will be applied to all endpoint requests and responses on your server.</li>
-  </ul>
-</div>
-
-## Error Reporting
-
-APItoolkit automatically detects different unhandled errors, API issues, and anomalies but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
-
-To manually report specific errors at different parts of your application, use the `ReportError()` method, passing in the `context` and `error` arguments, like so:
-
-```go
-package main
-
-import (
-  "context"
-  "net/http"
-  "os"
-
-  "github.com/gofiber/fiber/v2"
-  apitoolkit "github.com/apitoolkit/apitoolkit-go/fiber"
-)
-
-func main() {
-  ctx := context.Background()
-
-  apitoolkitClient, err := apitoolkit.NewClient(
-    ctx,
-    apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"},
-  )
-  if err != nil {
-    panic(err)
-  }
-
-  router := fiber.New()
-  router.Use(apitoolkit.FiberMiddleware(apitoolkitClient))
-
-  router.GET("/", hello)
-
-  router.Listen(":3000")
-}
-
-func hello(c *fiber.Ctx) error {
-  // Attempt to open a non-existing file
-  file, err := os.Open("non-existing-file.txt")
-  if err != nil {
-    // Report the error to APItoolkit
-    apitoolkit.ReportError(c.Context(), err)
-    return c.SendString("Something went wrong")
-  }
-  return c.SendString("Hello file, " + file.Name())
-}
-```
-
-<div class="callout">
-  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <p>The `ReportError()` method mentioned above is imported directly from `apitoolkit` and not `apitoolkitClient`.</p>
-</div>
-
-## Monitoring Outgoing Requests
-
-Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="\_blank"} page. However, you can separate outgoing requests from others and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="\_blank"} page, alongside the incoming request that triggered them.
-
-<section class="tab-group" data-tab-group="group1">
-  <button class="tab-button" data-tab="tab1">Custom RoundTripper</button>
-  <button class="tab-button" data-tab="tab2">TLS Client</button>
-  <div id="tab1" class="tab-content">
-  To monitor outgoing HTTP requests from your application, replace the default HTTP client transport with a custom RoundTripper. This allows you to capture and send copies of all incoming and outgoing requests to APItoolkit.
-  
-  Here's an example of the configuration with a custom RoundTripper:
-
-```go
-package main
-
-import (
-  "context"
-  "net/http"
-
-  "github.com/gofiber/fiber/v2"
-  apitoolkit "github.com/apitoolkit/apitoolkit-go/fiber"
-)
-
-func main() {
-  ctx := context.Background()
-
-  apitoolkitClient, err := apitoolkit.NewClient(
-    ctx,
-    apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"},
-  )
-  if err != nil {
-    panic(err)
-  }
-
-  router := fiber.New()
-  router.Use(apitoolkit.FiberMiddleware(apitoolkitClient))
-
-  router.Get("/test", func(c *fiber.Ctx) error {
-
-    // Create a new HTTP client
-    HTTPClient := apitoolkit.HTTPClient(
-      c.Request().Context(),
-      apitoolkit.WithRedactHeaders("content-type", "Authorization", "HOST"),
-      apitoolkit.WithRedactRequestBody("$.user.email", "$.user.addresses"),
-      apitoolkit.WithRedactResponseBody("$.users[*].email", "$.users[*].credit_card"),
-    )
-
-    // Make an outgoing HTTP request using the modified HTTPClient
-    _, _ = HTTPClient.Get("https://jsonplaceholder.typicode.com/posts/1")
-
-    // Respond to the request
-    return c.SendString("Ok, success!")
-  })
-
-  router.Listen(":3000")
-}
-```
-
-<div class="callout">
-  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <p class="mt-6">You can also redact data with the custom RoundTripper for outgoing requests.</p>
-</div>
-
-  </div>
-  <div id="tab2" class="tab-content">
-  If you are using a TLS client for your HTTP requests, you will need to use the [apitoolkit-go/tls_client](https://github.com/apitoolkit/apitoolkit-go/tree/main/tls_client){target="_blank" rel="noopener noreferrer"} package to monitor those requests. To use the package, you must first install it using the command below:
+Build and run the application with the following command:
 
 ```sh
-go get github.com/apitoolkit/apitoolkit-go/tls_client
+
+go mod tidy
+go run .
+
 ```
 
-Here's an example of the configuration with a TLS client:
+The server will start on port 3000. You can test it by sending a request:
 
-```go
-package main
-
-import (
-  "context"
-  "net/http"
-
-  "github.com/gofiber/fiber/v2"
-  fhttp "github.com/bogdanfinn/fhttp"
-  tls_client "github.com/bogdanfinn/tls-client"
-
-  apitoolkit "github.com/apitoolkit/apitoolkit-go/fiber"
-  apitoolkitTlsClient "github.com/apitoolkit/apitoolkit-go/tls_client"
-)
-
-func main() {
-  ctx := context.Background()
-
-  apitoolkitClient, err := apitoolkit.NewClient(
-    ctx,
-    apitoolkit.Config{APIKey: "{ENTER_YOUR_API_KEY_HERE}"},
-  )
-  if err != nil {
-    panic(err)
-  }
-
-  router := fiber.New()
-  router.Use(apitoolkit.FiberMiddleware(apitoolkitClient))
-
-  jar := tls_client.NewCookieJar()
-  options := []tls_client.HttpClientOption{
-    tls_client.WithTimeoutSeconds(30),
-    tls_client.WithNotFollowRedirects(),
-    tls_client.WithCookieJar(jar), // create cookieJar instance and pass it as argument
-  }
-
-  clientTLS, err := tls_client.NewHttpClient(tls_client.NewNoopLogger(), options...)
-  if err != nil {
-    panic(err)
-  }
-
-  router.Get("/test", func(c *fiber.Ctx) error {
-    // Create a new apitoolkit custom TLS Client
-    tclient := apitoolkitTlsClient.NewHttpClient(c.Request().Context(), clientTLS, apitoolkitClient)
-    req, err := fhttp.NewRequest(http.MethodGet, "https://jsonplaceholder.typicode.com/posts/1", nil)
-    if err != nil {
-      panic(err)
-    }
-
-    // Make an outgoing HTTP request using the modified TLS Client
-    resp, err := tclient.Do(req)
-    if err != nil {
-      panic(err)
-    }
-    log.Printf("status code: %d", resp.StatusCode)
-
-    // Respond to the request
-    return c.SendString("Ok, success!")
-  })
-
-  router.Listen(":3000")
-}
+```sh
+curl http://localhost:3000
 ```
 
-  </div>
-</section>
+This should return: 
 
-```=html
-<hr />
-<a href="https://github.com/apitoolkit/apitoolkit-go" target="_blank" rel="noopener noreferrer" class="w-full btn btn-outline link link-hover">
-    <i class="fa-brands fa-github"></i>
-    Explore the Golang SDK
-</a>
 ```
+
+[{"id":1,"name":"A","age":18,"gender":"Male"},{"id":2,"name":"Chi","age":17,"gender":"Female"},{"id":3,"name":"Shintaro","age":18,"gender":"Male"},{"id":4,"name":"Ayano","age":18,"gender":"Female"}]
+
+```
+
+
+With this setup, your application will send traces to APItoolkit for visualization and analysis.
+
+<div class="callout">
+  <p><i class="fa-regular fa-lightbulb"></i> <b>Tips</b></p>
+  <ol>
+  <li>
+  Remember to keep your APIToolkit project key (`at-project-key`) secure and not expose it in public repositories or logs.
+  </li>
+   <li>
+  Ensure you don't make the mistake of adding the http scheme `http` or `https` to your OTLP Endpoint
+  </li>
+  </ul>
+
+</div>
