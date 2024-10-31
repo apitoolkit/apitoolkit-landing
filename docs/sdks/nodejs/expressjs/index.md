@@ -22,107 +22,69 @@ Ensure you have completed the first three steps of the [onboarding guide](/docs/
 
 ## Installation
 
-Run the command below to install the API, SDK, and Instrumentation tools.
+Run the command below to install the APIToolkit express sdk and Open telemetery API, SDK, and auto instrumentation tools.
 
 ```sh
-npm install --save @opentelemetry/api @opentelemetry/auto-instrumentations-node
+npm install --save apitoolkit-express @opentelemetry/api @opentelemetry/auto-instrumentations-node
 # Or
-yarn add @opentelemetry/api @opentelemetry/auto-instrumentations-node
+yarn add apitoolkit-express @opentelemetry/api @opentelemetry/auto-instrumentations-node
 ```
 
-## Configuration
+## Open Telemetery Configuration
 
 This module is highly configurable by setting environment variables. So many aspects of the auto instrumentation’s behavior such as Resource detectors, Exporters, Trace context propagation headers,
 and many more can be configured based on your needs.
 
-There are generally two ways to go about this from the command line:
-
-1. Using the `env` keyword
-2. Using the `export` keyword
-
-For demonstration, I will be using the [OpenSource Bookshelf ExpressJs project on GitHub](https://github.com/apitoolkit/express-bookshelf-realworld-example-app) as an example.
-
-### 1. Using the `env` keyword
-
 ```sh
-env OTEL_TRACES_EXPORTER=otlp \
-    OTEL_EXPORTER_OTLP_ENDPOINT=http://otelcol.apitoolkit.io:4317 \
-    OTEL_SERVICE_NAME=your-service-name \
-    OTEL_LOGS_EXPORTER=otlp \
-    OTEL_RESOURCE_ATTRIBUTES=at-project-key=z6BJfZVEOSozztMfhqZsGTpG9DiXT9Weurvk1bpe9mwF8orB \
-    OTEL_EXPORTER_OTLP_PROTOCOL=grpc \
-    OTEL_PROPAGATORS=baggage,tracecontext \
-node --require @opentelemetry/auto-instrumentations-node/register server.js
-
-```
-
-### 2. Using the `export` keyword
-
-```sh
+# Specifies the endpoint URL for the OpenTelemetry collector.
 export OTEL_EXPORTER_OTLP_ENDPOINT="http://otelcol.apitoolkit.io:4317"
+# Defines which resource detectors to use. detect environment variables, host info, and operating system details.
 export OTEL_NODE_RESOURCE_DETECTORS="env,host,os"
+# Specifies the name of the service.
 export OTEL_SERVICE_NAME="<YOUR_SERVICE_NAME>"
+# Specifies the attributes to be added to the resource.
 export OTEL_RESOURCE_ATTRIBUTES=at-project-key="z6BJfZVEOSozztMfhqZsGTpG9DiXT9Weurvk1bpe9mwF8orB"
+# Specifies the protocol to use for the OpenTelemetry exporter.
 export OTEL_EXPORTER_OTLP_PROTOCOL="grpc"
 export OTEL_TRACES_EXPORTER="otlp"
 export OTEL_LOGS_EXPORTER="otlp"
+# Specifies which context propagators to use.
 export OTEL_PROPAGATORS="baggage,tracecontext"
 export NODE_OPTIONS="--require @opentelemetry/auto-instrumentations-node/register"
 node server.js
 ```
 
-If you are wondering what the difference is, it's this:
-
-- The first method, `env` sets them only for the immediate command execution.
-- The second method, `exports`, sets the variables globally for the current terminal session.
-
-#### Quick overview of the configuration parameters
-
-{class="docs-table"}
-:::
-| Attribute | Description |
-| --------- | ----------- |
-| `OTEL_EXPORTER_OTLP_ENDPOINT` | Specifies the endpoint URL for the OpenTelemetry collector. In this case, it's set to "http://otelcol.apitoolkit.io:4317". |
-| `OTEL_NODE_RESOURCE_DETECTORS` | Defines which resource detectors to use. Here, it's set to detect environment variables, host information, and operating system details. |
-| `OTEL_SERVICE_NAME` | Sets the name of your service. You should replace "your-service-name" with the actual name of your service. |
-| `OTEL_RESOURCE_ATTRIBUTES` | Specifies additional resource attributes. In this case, it's setting an API Toolkit project key. |
-| `OTEL_EXPORTER_OTLP_PROTOCOL` | Defines the protocol used for exporting telemetry data. It's set to "grpc" (gRPC protocol). |
-| `OTEL_PROPAGATORS` | Specifies which context propagators to use. Here, it's set to use both "baggage" and "tracecontext". |
-| `NODE_OPTIONS` | Sets Node.js options. In this case, it's requiring the OpenTelemetry auto-instrumentation module for Node.js. |
-:::
-
-## Monitoring HTTP requests with APIToolkit Express Middleware
+## Setup APIToolkit Express Middleware
 
 APIToolkit Express Middleware is a middleware that can be used to monitor HTTP requests. It is a wrapper around the Express.js middleware and provides additional functionalities on top of the open telemetry instrumentation which creates a custom span for each request capturing details about the request including request and response bodies.
 
-### Installation
-
-Run the following command to install the express js package from your projects root:
-
-```sh
-npm install apitoolkit-express
-```
-
-### Project setup
-
-Intialize apitoolkit into your project by providing `apikey` and `serviceName` like so:
-
 ```js
 import express from "express";
-import {expressMiddleware, expressErrorHandler} from "apitoolkit-express";
+import { APIToolkit } from "apitoolkit-express";
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(expressMiddleware());
+app.use(
+  APIToolkit.middleware({
+    serviceName: "my-service",
+    redactHeaders: ["authorization", "cookie"],
+    redactResponseBody: ["$.creditCardNumber"], // jsonpath to redact credit card number from response body
+    redactRequestBody: ["$.password"], // jsonpath to redact password from request body
+    captureRequestBody: true, // capture request body and send it to your apitoolkit dashboard
+    captureResponseBody: true, // capture response body and send it to your apitoolkit dashboard
+  })
+);
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
 // Report uncaught errors, must come after all route hanndlers
-app.use(expressErrorHandler);
+app.use(APIToolkit.errorMiddleware());
 
-app.listen(3000, () => { console.log("Example app listening on port 3000")});
+app.listen(3000, () => {
+  console.log("Example app listening on port 3000");
+});
 ```
 
 #### Quick overview of the configuration parameters
@@ -144,56 +106,66 @@ An object with the following optional fields can be passed to the middleware fun
 | `captureResponseBody` | default `false`, set to true if you want to capture the response body. |
 :::
 
-
 ## Reporting errors to APIToolkit
 
 APIToolkit detects a lot of API issues automatically, but it's also valuable to report and track errors. This helps you associate more details about the backend with a given failing request.
 If you've used sentry, or rollback, or bugsnag, then you're likely aware of this functionality.
 
-To enable automatic error reporting, add the APIToolkit `expressErrorHandler` middleware immediately after your app's controllers and APIToolkit will handle all uncaught errors that happened during a request and associate the error to that request.
+To enable automatic error reporting, add the APIToolkit `errorMiddleware` function immediately after your app's controllers and APIToolkit will handle all uncaught errors that happened during a request and associate the error to that request.
 
 ```typescript
 import express from "express";
-import {expressMiddleware, expressErrorHandler} from "apitoolkit-express";
+import { APIToolkit } from "apitoolkit-express";
 
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(expressMiddleware());
+app.use(
+  APIToolkit.expressMiddleware({
+    /* options */
+  })
+);
 
 app.get("/", (req, res) => {});
 
 // The error handler must be before any other error middleware and after all controllers
-app.use(expressErrorHandler);
+app.use(APIToolkit.errorMiddleware());
 
-app.listen(3000, () => { console.log("Example app listening on port 3000")});
+app.listen(3000, () => {
+  console.log("Example app listening on port 3000");
+});
 ```
 
 Or manually report errors within the context of a web request, by calling the ReportError function.
 
 ```typescript
 import express from "express";
-import {expressMiddleware, expressErrorHandler, reportError} from "apitoolkit-express";
-
+import { APIToolkit } from "apitoolkit-express";
 
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(expressMiddleware);
+app.use(
+  APIToolkit.expressMiddleware({
+    /* options */
+  })
+);
 
 app.get("/", (req, res) => {
   try {
     throw new Error("Something went wrong");
     res.send("hello world");
   } catch (error) {
-    reportError(error);
+    APIToolkit.reportError(error);
     res.send("Something went wrong");
   }
 });
 
-app.listen(3000, () => { console.log("Example app listening on port 3000")});
+app.listen(3000, () => {
+  console.log("Example app listening on port 3000");
+});
 ```
 
 <div class="callout">
