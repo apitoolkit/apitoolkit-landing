@@ -38,18 +38,13 @@ and many more can be configured based on your needs.
 ```sh
 # Specifies the endpoint URL for the OpenTelemetry collector.
 export OTEL_EXPORTER_OTLP_ENDPOINT="http://otelcol.apitoolkit.io:4317"
-# Defines which resource detectors to use. detect environment variables, host info, and operating system details.
-export OTEL_NODE_RESOURCE_DETECTORS="env,host,os"
 # Specifies the name of the service.
 export OTEL_SERVICE_NAME="<YOUR_SERVICE_NAME>"
-# Specifies the attributes to be added to the resource.
+# Adds your API KEY to the resource.
 export OTEL_RESOURCE_ATTRIBUTES=at-project-key="z6BJfZVEOSozztMfhqZsGTpG9DiXT9Weurvk1bpe9mwF8orB"
 # Specifies the protocol to use for the OpenTelemetry exporter.
 export OTEL_EXPORTER_OTLP_PROTOCOL="grpc"
-export OTEL_TRACES_EXPORTER="otlp"
-export OTEL_LOGS_EXPORTER="otlp"
-# Specifies which context propagators to use.
-export OTEL_PROPAGATORS="baggage,tracecontext"
+
 export NODE_OPTIONS="--require @opentelemetry/auto-instrumentations-node/register"
 node server.js
 ```
