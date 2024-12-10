@@ -43,9 +43,9 @@ faqs:
                             <span class="text-sm font-bold text-gray-400" id="starts_at">Starts at ...</span>
                             <div class="">
                                <span class="font-bold text-6xl" id="price">$34</span>
-                               <span class="" id="num_requests">/400k requests per month</span>
+                               <span class="" id="num_requests">/40m events per month</span>
                                <br>
-                               <small class="text-sm">then $1 per 20k requests</small>
+                               <small class="text-sm">then $1 per million events (logs, spans, metric samples, etc)</small>
                                <span id="save_container" class="text-green-600 font-bold"></span>
                             </div>
                         </div>
