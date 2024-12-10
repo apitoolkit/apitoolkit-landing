@@ -47,15 +47,10 @@ import (
 	"log"
 
 	apitoolkit "github.com/apitoolkit/apitoolkit-go/native"
-  "github.com/joho/godotenv"
+  _ "github.com/joho/godotenv/autoload"
 )
 
 func main() {
-
-  err := godotenv.Load(".env")
-	if err != nil {
-		log.Printf("Error loading .env file: %v", err)
-	}
   // configure openTelemetry
 	shutdown, err := apitoolkit.ConfigureOpenTelemetry()
 	if err != nil {

@@ -31,7 +31,7 @@ go get github.com/apitoolkit/apitoolkit-go/echo
 Before configuration open telemetery and setting up the APItoolkit middleware, you need to configure a few environment variables. These variables provide essential information for setting up openTelemetry and APItoolkit.
 
 ```sh
-OTEL_RESOURCE_ATTRIBUTES=at-project-key=<YOUR_API_KEY> # Your apitoolkit API key
+OTEL_RESOURCE_ATTRIBUTES=at-project-key=YOUR_API_KEY # Your apitoolkit API key
 OTEL_SERVICE_NAME="apitoolkit-otel-go-demo" # Service name for your the service you're integrating in
 OTEL_SERVICE_VERSION="0.0.1" # Your application's service version
 ```
@@ -48,15 +48,11 @@ import (
 
 	apitoolkit "github.com/apitoolkit/apitoolkit-go/echo"
 	"github.com/labstack/echo/v4"
-	"github.com/joho/godotenv"
+  _ "github.com/joho/godotenv/autoload"
 )
 
 
 func main() {
-	err := godotenv.Load(".env")
-	if err != nil {
-		log.Printf("Error loading .env file: %v", err)
-	}
   // Configure OpenTelemetry
 	shutdown, err := apitoolkit.ConfigureOpenTelemetry()
 	if err != nil {
