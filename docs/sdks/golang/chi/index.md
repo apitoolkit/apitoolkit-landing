@@ -50,17 +50,14 @@ import (
 )
 
 func main() {
-
   // Configure OpenTelemetry
 	shutdown, err := apitoolkit.ConfigureOpenTelemetry()
 	if err != nil {
 		log.Printf("error configuring openTelemetry: %v", err)
-
 	}
 	defer shutdown()
 
   r := chi.NewRouter()
-
 	// Add the apitoolkit chi middleware to monitor http requests
 	// And report errors to apitoolkit
 	r.Use(apitoolkit.Middleware(apitoolkit.Config{
@@ -79,9 +76,7 @@ func main() {
 		w.Write([]byte("Hello, world!"))
 	})
 
-	if err := http.ListenAndServe(":8000", r); err != nil {
-		log.Fatalf("failed to start server: %v", err)
-	}
+	http.ListenAndServe(":8000", r)
 }
 ```
 

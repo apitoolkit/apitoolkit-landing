@@ -56,12 +56,10 @@ func main() {
 	shutdown, err := apitoolkit.ConfigureOpenTelemetry()
 	if err != nil {
 		log.Printf("error configuring openTelemetry: %v", err)
-
 	}
 	defer shutdown()
 
 	router := echo.New()
-
 	// Register APItoolkit's middleware
 	router.Use(apitoolkit.Middleware(apitoolkit.Config{
 		RedactHeaders:       []string{"Authorization", "X-Api-Key"},

@@ -60,17 +60,14 @@ func main() {
 	handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("Hello, World!"))
 	})
-
- // configure apitoolkit middleware
+  // configure apitoolkit middleware
 	nativeMiddleware := apitoolkit.Middleware(apitoolkit.Config{
 		RedactHeaders:       []string{"Authorization", "X-Api-Key"},
 		RedactRequestBody:   []string{"password", "credit_card"},
 		RedactResponseBody:  []string{"password", "credit_card"},
 	})
-
 	// Wrap handler with middleware for monitoring requests and reporting errors
 	http.Handle("/", nativeMiddleware(handler))
-
 	if err := http.ListenAndServe(":8000", nil); err != nil {
 		log.Fatal(err)
 	}

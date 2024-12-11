@@ -55,12 +55,10 @@ func main() {
 	shutdown, err := apitoolkit.ConfigureOpenTelemetry()
 	if err != nil {
 		log.Printf("error configuring openTelemetry: %v", err)
-
 	}
 	defer shutdown()
 
 	router := mux.NewRouter()
-
 	// Register APItoolkit's middleware
 	router.Use(apitoolkit.Middleware(
 		apitoolkit.Config{
@@ -73,7 +71,6 @@ func main() {
 		w.WriteHeader(http.StatusOK)
 		w.Write([]byte("ok"))
 	})
-
 	http.Handle("/", router)
 	http.ListenAndServe(":8000", router)
 

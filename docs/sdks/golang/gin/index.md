@@ -55,12 +55,10 @@ func main() {
 	shutdown, err := apitoolkit.ConfigureOpenTelemetry()
 	if err != nil {
 		log.Printf("error configuring openTelemetry: %v", err)
-
 	}
 	defer shutdown()
 
   r := gin.Default()
-
 	// Add the apitoolkit gin middleware to monitor http requests
 	// And report errors to apitoolkit
 	r.Use(apitoolkit.Middleware(apitoolkit.Config{

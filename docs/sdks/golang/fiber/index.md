@@ -55,12 +55,10 @@ func main() {
 	shutdown, err := apitoolkit.ConfigureOpenTelemetry()
 	if err != nil {
 		log.Printf("error configuring openTelemetry: %v", err)
-
 	}
 	defer shutdown()
 
 	app := fiber.New()
-
 	// Register APItoolkit's middleware
 	app.Use(apitoolkit.Middleware(apitoolkit.Config{
 		RedactHeaders:       []string{"Authorization", "X-Api-Key"}, // Example headers to redact
