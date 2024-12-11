@@ -134,4 +134,3 @@ The middleware configuration specifies how the APItoolkit SDK should handle requ
   </ul>
 
 </div>
-````
