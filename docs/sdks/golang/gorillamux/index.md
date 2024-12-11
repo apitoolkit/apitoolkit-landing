@@ -16,8 +16,6 @@ menuWeight: 5
 - [All Configuration Options](#all-environment-variables)
 - [All Middleware Configuration Options](#all-middleware-configuration-fields)
 
----
-
 ## Installation
 
 Install the APIToolkit gorilla mux SDK using the following command `go get` command:
@@ -81,8 +79,6 @@ func main() {
 
 }
 ```
-
----
 
 ### All Environment Variables
 

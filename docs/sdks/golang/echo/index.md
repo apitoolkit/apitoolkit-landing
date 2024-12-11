@@ -16,8 +16,6 @@ menuWeight: 2
 - [All Configuration Options](#all-environment-variables)
 - [All Middleware Configuration Options](#all-middleware-configuration-fields)
 
----
-
 ## Installation
 
 Install the APIToolkit echo SDK using the following command `go get` command:

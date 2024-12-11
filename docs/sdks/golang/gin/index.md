@@ -16,8 +16,6 @@ menuWeight: 4
 - [All Configuration Options](#all-environment-variables)
 - [All Middleware Configuration Options](#all-middleware-configuration-fields)
 
----
-
 ## Installation
 
 Install the APIToolkit gin SDK using the following command `go get` command:

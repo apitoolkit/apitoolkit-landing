@@ -16,8 +16,6 @@ menuWeight: 6
 - [All Configuration Options](#all-environment-variables)
 - [All Middleware Configuration Options](#all-middleware-configuration-fields)
 
----
-
 ## Installation
 
 Install the APIToolkit native Go SDK using the following command `go get` command:
@@ -79,8 +77,6 @@ func main() {
 }
 ```
 
----
-
 ### All Environment Variables
 
 Set the following environment variables in your application to enable the SDK:
@@ -103,6 +99,7 @@ Set the following environment variables in your application to enable the SDK:
 ### All Middleware Configuration Fields
 
 The middleware configuration specifies how the APItoolkit SDK should handle requests and responses. Below are the available fields:
+
 {class="docs-table"}
 :::
 | Field Name | Type | Description | Default Value | Example |
