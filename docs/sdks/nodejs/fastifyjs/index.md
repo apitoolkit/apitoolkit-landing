@@ -22,12 +22,12 @@ Ensure you have completed the first three steps of the [onboarding guide](/docs/
 
 ## Installation
 
-Run the command below to install the APIToolkit express sdk and Open telemetery API, SDK, and auto instrumentation tools.
+Run the command below to install the APIToolkit fastify sdk and Open telemetery API, SDK, and auto instrumentation tools.
 
 ```sh
 npm install --save apitoolkit-fastify @opentelemetry/api @opentelemetry/auto-instrumentations-node
 # Or using yarn
-yarn add apitoolkit-express @opentelemetry/api @opentelemetry/auto-instrumentations-node
+yarn add apitoolkit-fastify @opentelemetry/api @opentelemetry/auto-instrumentations-node
 ```
 
 ## Open Telemetery Configuration
@@ -197,7 +197,6 @@ fastifyServer.get("/", async (request, reply) => {
 fastifyServer.listen({ port: 3000 });
 ```
 
-
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tips</b></p>
   <ol>
@@ -208,5 +207,4 @@ fastifyServer.listen({ port: 3000 });
   By default, all SDK [resource detectors](https://opentelemetry.io/docs/languages/js/resources/) are enabled. However, you can customize this by setting the `OTEL_NODE_RESOURCE_DETECTORS` environment variable to activate specific detectors or disable them entirely.
  </li>
   </ul>
-
 </div>
