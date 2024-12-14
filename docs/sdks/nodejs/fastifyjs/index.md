@@ -8,7 +8,7 @@ menuWeight: 2
 
 # FastifyJs Integration Guide
 
-You can integrate your FastifyJs application with APIToolkit using OpenTelemetry. This allows you to send logs, metrics, and traces to APIToolkit for monitoring and analytics.
+APIToolkit Fastify Middleware allows you to monitor HTTP requests in your Fastify applications. It builds upon OpenTelemetry instrumentation to create custom spans for each request, capturing key details such as request and response bodies, headers, and status codes. Additionally, it offers robust support for monitoring outgoing requests and reporting errors automatically.
 
 To get started, you'll need the OpenTelemetry Node.js library and some basic configuration.
 
@@ -22,78 +22,181 @@ Ensure you have completed the first three steps of the [onboarding guide](/docs/
 
 ## Installation
 
-Run the command below to install the API, SDK, and Instrumentation tools.
+Run the command below to install the APIToolkit express sdk and Open telemetery API, SDK, and auto instrumentation tools.
 
 ```sh
-
-npm install --save @opentelemetry/api \
-    @opentelemetry/auto-instrumentations-node
-
-# Or
-
-yarn add @opentelemetry/api @opentelemetry/auto-instrumentations-node
-
+npm install --save apitoolkit-fastify @opentelemetry/api @opentelemetry/auto-instrumentations-node
+# Or using yarn
+yarn add apitoolkit-express @opentelemetry/api @opentelemetry/auto-instrumentations-node
 ```
 
-## Configuration
+## Open Telemetery Configuration
 
 This module is highly configurable by setting environment variables. So many aspects of the auto instrumentation’s behavior such as Resource detectors, Exporters, Trace context propagation headers,
 and many more can be configured based on your needs.
 
-There are generally two ways to go about this from the command line:
-
-1. Using the `env` keyword
-2. Using the `export` keyword
-
-For demonstration, I will be using the [OpenSource FastifyJs project on GitHub](https://github.com/danielAsaboro/fastify-postgres.git) as an example.
-
-### 1. Using the `env` keyword
-
 ```sh
-env OTEL_TRACES_EXPORTER=otlp \
-    OTEL_EXPORTER_OTLP_ENDPOINT=http://otelcol.apitoolkit.io:4317 \
-    OTEL_SERVICE_NAME=your-service-name \
-    OTEL_LOGS_EXPORTER=otlp \
-    OTEL_RESOURCE_ATTRIBUTES=at-project-key=z6BJfZVEOSozztMfhqZsGTpG9DiXT9Weurvk1bpe9mwF8orB \
-    OTEL_EXPORTER_OTLP_PROTOCOL=grpc \
-    OTEL_PROPAGATORS=baggage,tracecontext \
-node --require @opentelemetry/auto-instrumentations-node/register
-npm start
-```
-
-### 2. Using the `export` keyword
-
-```sh
-export OTEL_TRACES_EXPORTER="otlp"
+# Specifies the endpoint URL for the OpenTelemetry collector.
 export OTEL_EXPORTER_OTLP_ENDPOINT="http://otelcol.apitoolkit.io:4317"
-export OTEL_NODE_RESOURCE_DETECTORS="env,host,os"
-export OTEL_SERVICE_NAME="your-service-name"
+# Specifies the name of the service.
+export OTEL_SERVICE_NAME="<YOUR_SERVICE_NAME>"
+# Adds your API KEY to the resource.
 export OTEL_RESOURCE_ATTRIBUTES=at-project-key="z6BJfZVEOSozztMfhqZsGTpG9DiXT9Weurvk1bpe9mwF8orB"
+# Specifies the protocol to use for the OpenTelemetry exporter.
 export OTEL_EXPORTER_OTLP_PROTOCOL="grpc"
-export OTEL_PROPAGATORS="baggage,tracecontext"
+
 export NODE_OPTIONS="--require @opentelemetry/auto-instrumentations-node/register"
-npm start
+node server.js
 ```
 
-If you are wondering what the difference is, it's this:
+## Setup APIToolkit Fastify Middleware For HTTP Request Monitoring
 
-- The first method, `env` sets them only for the immediate command execution.
-- The second method, `exports`, sets the variables globally for the current terminal session.
+APIToolkit Fastify Middleware is a middleware that can be used to monitor HTTP requests. It provides additional functionalities on top of the open telemetry instrumentation which creates a custom span for each request capturing details about the request including request and response bodies.
+
+```js
+import fastify from "fastify";
+import { APIToolkit } from "apitoolkit-fastify";
+import axios from "axios";
+
+const fastifyServer = fastify({});
+const apitoolkitClient = APIToolkit.NewClient({
+  fastify: fastifyServer, // Required: The Fastify server instance
+  monitorAxios: axios, // Optional: Use this to monitor Axios requests
+});
+
+apitoolkitClient.initializeHooks();
+
+fastifyServer.get("/", async (request, reply) => {
+  const response = await axios.get("https://api.github.com/users/octocat");
+  return response.data;
+});
+
+fastifyServer.listen({ port: 3000 });
+```
 
 #### Quick overview of the configuration parameters
 
+An object with the following optional fields can be passed to the middleware function to configure it:
+
 {class="docs-table"}
 :::
-| Attribute | Description |
-| --------- | ----------- |
-| `OTEL_EXPORTER_OTLP_ENDPOINT` | Specifies the endpoint URL for the OpenTelemetry collector. In this case, it's set to "http://otelcol.apitoolkit.io:4317". |
-| `OTEL_NODE_RESOURCE_DETECTORS` | Defines which resource detectors to use. Here, it's set to detect environment variables, host information, and operating system details. |
-| `OTEL_SERVICE_NAME` | Sets the name of your service. You should replace "your-service-name" with the actual name of your service. |
-| `OTEL_RESOURCE_ATTRIBUTES` | Specifies additional resource attributes. In this case, it's setting an API Toolkit project key. |
-| `OTEL_EXPORTER_OTLP_PROTOCOL` | Defines the protocol used for exporting telemetry data. It's set to "grpc" (gRPC protocol). |
-| `OTEL_PROPAGATORS` | Specifies which context propagators to use. Here, it's set to use both "baggage" and "tracecontext". |
-| `NODE_OPTIONS` | Sets Node.js options. In this case, it's requiring the OpenTelemetry auto-instrumentation module for Node.js. |
+| Option | Description |
+| ------ | ----------- |
+| `fastify` | The Fastify server instance. |
+| `debug` | Set to `true` to enable debug mode. |
+| `tags` | A list of defined tags for your services (used for grouping and filtering data on the dashboard). |
+| `serviceName` | A defined string name of your application |
+| `serviceVersion` | A defined string version of your application (used for further debugging on the dashboard). |
+| `redactHeaders` | A list of HTTP header keys to redact. |
+| `redactResponseBody` | A list of JSONPaths from the response body to redact. |
+| `redactRequestBody` | A list of JSONPaths from the request body to redact. |
+| `captureRequestBody` | default `false`, set to true if you want to capture the request body. |
+| `captureResponseBody` | default `false`, set to true if you want to capture the response body. |
 :::
+
+## Reporting errors to APIToolkit
+
+APIToolkit detects a lot of API issues automatically, but it's also valuable to report and track errors. This helps you associate more details about the backend with a given failing request.
+If you've used sentry, or rollback, or bugsnag, then you're likely aware of this functionality.
+
+The Fastify SDK automatically reports uncaught server errors to APIToolkit. But you can also manually report errors.
+
+```typescript
+import fastify from "fastify";
+import { APIToolkit, reportError } from "apitoolkit-fastify";
+import axios from "axios";
+
+const fastifyServer = fastify({});
+const apitoolkitClient = APIToolkit.NewClient({
+  fastify: fastifyServer,
+});
+apitoolkitClient.initializeHooks();
+
+fastifyServer.get("/", async (request, reply) => {
+  try {
+    throw new Error("Something went wrong");
+    return {message: "Hello World"};
+  } catch (error) {
+    // Manually report the error to APIToolkit
+    reportError(error);
+    return {message: "Something went wrong"};
+  }
+});
+fastifyServer.listen({ port: 3000 });
+```
+
+## Monitoring Axios requests
+APIToolkit supports monitoring outgoing HTTP requests made using libraries like Axios. This can be done either globally or on a per-request basis.
+
+### Global monitoring
+To monitor all outgoing Axios requests globally, you can use the `monitorAxios` option when initializing the APIToolkit client.
+```typescript
+import { APIToolkit } from "apitoolkit-fastify";
+import axios from "axios";
+const fastifyServer = fastify({});
+const apitoolkitClient = APIToolkit.NewClient({
+  fastify: fastifyServer,
+  monitorAxios: axios, // Optional: Use this to monitor Axios requests
+});
+```
+By setting `monitorAxios` in the client configuration, all axios requests in your server will be monitored by APIToolkit.
+
+### Per-request monitoring
+To monitor a specific Axios request, you can use the `observeAxios` function provided by the SDK.
+
+```typescript
+import { APIToolkit, observeAxios } from "apitoolkit-fastify";
+import axios from "axios";
+
+const fastifyServer = fastify({});
+const apitoolkitClient = APIToolkit.NewClient({fastify: fastifyServer});
+apitoolkitClient.initializeHooks();
+
+
+fastifyServer.get("/", async (request, reply) => {
+  const response = await observeAxios({axiosInstance: axios, urlWildcard: "/todos/:id"}).get("https://jsonplaceholder.typicode.com/todos/1");
+  return response.data
+})
+```
+The `urlWildcard` parameter is used for urls that contain dynamic path parameters. This helps APIToolkit to identify request to the same endpoint but with different parameters.
+
+#### All observeAxios options
+Below is the full list of options for the `observeAxios` function:
+
+{class="docs-table"}
+:::
+| Option | Description |
+| ------ | ----------- |
+| `axiosInstance` | `requred` The Axios instance to monitor. |
+| `urlWildcard` | `optional` The route pattern of the url if it has dynamic path parameters. |
+| `redactHeaders` | A list of HTTP header keys to redact. |
+| `redactResponseBody` | A list of JSONPaths from the response body to redact. |
+| `redactRequestBody` | A list of JSONPaths from the request body to redact. |
+:::
+
+#### Example
+```typescript
+import { APIToolkit, observeAxios } from "apitoolkit-fastify";
+import axios from "axios";
+
+const fastifyServer = fastify({});
+const apitoolkitClient = APIToolkit.NewClient({fastify: fastifyServer});
+apitoolkitClient.initializeHooks();
+
+fastifyServer.get("/", async (request, reply) => {
+  const response = await observeAxios({
+    axiosInstance: axios,
+    urlWildcard: "/todos/:id"
+    redactHeaders: ["Authorization"],
+    redactResponseBody: ["$.credit_card_number"],
+    redactRequestBody: ["$.password"]
+  }).get("https://jsonplaceholder.typicode.com/todos/1");
+
+  return response.data
+})
+fastifyServer.listen({ port: 3000 });
+```
+
 
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tips</b></p>
@@ -102,8 +205,8 @@ If you are wondering what the difference is, it's this:
   At the moment, only Traces are supported for environment variable configuration. See the open issues for [Metrics](https://github.com/open-telemetry/opentelemetry-js/issues/4551) and [Logs](https://github.com/open-telemetry/opentelemetry-js/issues/4552) to learn more.
   </li>
  <li>
-  By default, all SDK [resource detectors](https://opentelemetry.io/docs/languages/js/resources/) are enabled. However, you can customize this by setting the `OTEL_NODE_RESOURCE_DETECTORS` environment variable to activate specific detectors or disable them entirely. 
+  By default, all SDK [resource detectors](https://opentelemetry.io/docs/languages/js/resources/) are enabled. However, you can customize this by setting the `OTEL_NODE_RESOURCE_DETECTORS` environment variable to activate specific detectors or disable them entirely.
  </li>
   </ul>
-  
+
 </div>
