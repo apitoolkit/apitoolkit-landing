@@ -8,7 +8,7 @@ menuWeight: 2
 
 # ExpressJs Integration Guide
 
-You can integrate your Express.js application with APIToolkit using OpenTelemetry. This allows you to send logs, metrics, and traces to APIToolkit for monitoring and analytics.
+APIToolkit Express Middleware allows you to monitor HTTP requests in your Express applications. It builds upon OpenTelemetry instrumentation to create custom spans for each request, capturing key details such as request and response bodies, headers, and status codes. Additionally, it offers robust support for monitoring outgoing requests and reporting errors automatically.
 
 To get started, you'll need the OpenTelemetry Node.js library and some basic configuration.
 
@@ -49,36 +49,35 @@ export NODE_OPTIONS="--require @opentelemetry/auto-instrumentations-node/registe
 node server.js
 ```
 
-## Setup APIToolkit Express Middleware
+## Setup APIToolkit Express Middleware For HTTP Request Monitoring
 
 APIToolkit Express Middleware is a middleware that can be used to monitor HTTP requests. It is a wrapper around the Express.js middleware and provides additional functionalities on top of the open telemetry instrumentation which creates a custom span for each request capturing details about the request including request and response bodies.
 
 ```js
-import express from "express";
+import * as express from "express";
 import { APIToolkit } from "apitoolkit-express";
+import axios from "axios";
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(
-  APIToolkit.middleware({
-    serviceName: "my-service",
-    redactHeaders: ["authorization", "cookie"],
-    redactResponseBody: ["$.creditCardNumber"], // jsonpath to redact credit card number from response body
-    redactRequestBody: ["$.password"], // jsonpath to redact password from request body
-    captureRequestBody: true, // capture request body and send it to your apitoolkit dashboard
-    captureResponseBody: true, // capture response body and send it to your apitoolkit dashboard
-  })
-);
-
-app.get("/", (req, res) => {
-  res.send("Hello World!");
+const app = express();
+const apitoolkitClient = APIToolkit.NewClient({
+  serviceName: "my-service",
+  monitorAxios: axios, // Optional: Use this to monitor Axios requests
 });
 
-// Report uncaught errors, must come after all route hanndlers
-app.use(APIToolkit.errorMiddleware());
+// Add middleware for request monitoring
+app.use(apitoolkitClient.middleware);
+
+app.get("/", async (req, res) => {
+  // This axios request get's monitored and appears in the  APIToolkit explorer
+  const response = await axios.get("https://jsonplaceholder.typicode.com/todos/1");
+  res.json(response.data);
+});
+
+// automatically report unhandled errors along with the request data
+app.use(apitoolkitClient.errorMiddleware);
 
 app.listen(3000, () => {
-  console.log("Example app listening on port 3000");
+  console.log("Example app listening on port 3000!");
 });
 ```
 
@@ -116,16 +115,17 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(
-  APIToolkit.expressMiddleware({
-    /* options */
-  })
-);
+
+const apitoolkitClient = APIToolkit.NewClient({
+  serviceName: "my-service",
+});
+
+app.use(apitoolkitClient.middleware);
 
 app.get("/", (req, res) => {});
 
 // The error handler must be before any other error middleware and after all controllers
-app.use(APIToolkit.errorMiddleware());
+app.use(apitoolkitClient.errorMiddleware);
 
 app.listen(3000, () => {
   console.log("Example app listening on port 3000");
@@ -136,24 +136,26 @@ Or manually report errors within the context of a web request, by calling the Re
 
 ```typescript
 import express from "express";
-import { APIToolkit } from "apitoolkit-express";
+import { APIToolkit, reportError } from "apitoolkit-express";
 
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(
-  APIToolkit.expressMiddleware({
-    /* options */
-  })
-);
+
+const apitoolkitClient = APIToolkit.NewClient({
+  serviceName: "my-service",
+});
+
+app.use(apitoolkitClient.middleware);
 
 app.get("/", (req, res) => {
   try {
     throw new Error("Something went wrong");
     res.send("hello world");
   } catch (error) {
-    APIToolkit.reportError(error);
+    // Manually report the error to APIToolkit
+    reportError(error);
     res.send("Something went wrong");
   }
 });
@@ -161,6 +163,67 @@ app.get("/", (req, res) => {
 app.listen(3000, () => {
   console.log("Example app listening on port 3000");
 });
+```
+
+## Monitoring Axios requests
+APIToolkit supports monitoring outgoing HTTP requests made using libraries like Axios. This can be done either globally or on a per-request basis.
+
+### Global monitoring
+To monitor all outgoing Axios requests globally, you can use the `monitorAxios` option when initializing the APIToolkit client.
+```typescript
+import { APIToolkit } from "apitoolkit-express";
+import axios from "axios";
+const apitoolkitClient = APIToolkit.NewClient({
+  serviceName: "my-service",
+  monitorAxios: axios, // Optional: Use this to monitor Axios requests
+});
+```
+By doing the above, all axios requests in your server will be monitored by APIToolkit.
+
+### Per-request monitoring
+To monitor a specific Axios request, you can use the `observeAxios` function provided by the SDK.
+
+```typescript
+import { APIToolkit, observeAxios } from "apitoolkit-express";
+import axios from "axios";
+const apitoolkitClient = APIToolkit.NewClient({serviceName: "my-service"});
+app.get("/", async (req, res) => {
+  const response = await observeAxios({axiosInstance: axios, urlWildcard: "/todos/:id"}).get("https://jsonplaceholder.typicode.com/todos/1");
+  res.json(response.data);
+})
+```
+The `urlWildcard` parameter is used for urls that contain dynamic path parameters. This helps APIToolkit to identify request to the same endpoint but with different parameters.
+
+#### All observeAxios options
+Below is the full list of options for the `observeAxios` function:
+
+{class="docs-table"}
+:::
+| Option | Description |
+| ------ | ----------- |
+| `axiosInstance` | `requred` The Axios instance to monitor. |
+| `urlWildcard` | `optional` The route pattern of the url if it has dynamic path parameters. |
+| `redactHeaders` | A list of HTTP header keys to redact. |
+| `redactResponseBody` | A list of JSONPaths from the response body to redact. |
+| `redactRequestBody` | A list of JSONPaths from the request body to redact. |
+:::
+
+#### Example
+```typescript
+import { APIToolkit, observeAxios } from "apitoolkit-express";
+import axios from "axios";
+const apitoolkitClient = APIToolkit.NewClient({serviceName: "my-service"});
+
+app.get("/", async (req, res) => {
+  const response = await observeAxios({
+    axiosInstance: axios,
+    urlWildcard: "/todos/:id"
+    redactHeaders: ["Authorization"],
+    redactResponseBody: ["$.credit_card_number"],
+    redactRequestBody: ["$.password"]
+  }).get("https://jsonplaceholder.typicode.com/todos/1");
+  res.json(response.data);
+})
 ```
 
 <div class="callout">
