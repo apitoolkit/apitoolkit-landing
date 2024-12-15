@@ -26,8 +26,6 @@ Run the command below to install the APIToolkit fastify sdk and Open telemetery 
 
 ```sh
 npm install --save apitoolkit-fastify @opentelemetry/api @opentelemetry/auto-instrumentations-node
-# Or using yarn
-yarn add apitoolkit-fastify @opentelemetry/api @opentelemetry/auto-instrumentations-node
 ```
 
 ## Open Telemetery Configuration
@@ -115,21 +113,24 @@ apitoolkitClient.initializeHooks();
 fastifyServer.get("/", async (request, reply) => {
   try {
     throw new Error("Something went wrong");
-    return {message: "Hello World"};
+    return { message: "Hello World" };
   } catch (error) {
     // Manually report the error to APIToolkit
     reportError(error);
-    return {message: "Something went wrong"};
+    return { message: "Something went wrong" };
   }
 });
 fastifyServer.listen({ port: 3000 });
 ```
 
 ## Monitoring Axios requests
+
 APIToolkit supports monitoring outgoing HTTP requests made using libraries like Axios. This can be done either globally or on a per-request basis.
 
 ### Global monitoring
+
 To monitor all outgoing Axios requests globally, you can use the `monitorAxios` option when initializing the APIToolkit client.
+
 ```typescript
 import { APIToolkit } from "apitoolkit-fastify";
 import axios from "axios";
@@ -139,9 +140,11 @@ const apitoolkitClient = APIToolkit.NewClient({
   monitorAxios: axios, // Optional: Use this to monitor Axios requests
 });
 ```
+
 By setting `monitorAxios` in the client configuration, all axios requests in your server will be monitored by APIToolkit.
 
 ### Per-request monitoring
+
 To monitor a specific Axios request, you can use the `observeAxios` function provided by the SDK.
 
 ```typescript
@@ -149,18 +152,22 @@ import { APIToolkit, observeAxios } from "apitoolkit-fastify";
 import axios from "axios";
 
 const fastifyServer = fastify({});
-const apitoolkitClient = APIToolkit.NewClient({fastify: fastifyServer});
+const apitoolkitClient = APIToolkit.NewClient({ fastify: fastifyServer });
 apitoolkitClient.initializeHooks();
 
-
 fastifyServer.get("/", async (request, reply) => {
-  const response = await observeAxios({axiosInstance: axios, urlWildcard: "/todos/:id"}).get("https://jsonplaceholder.typicode.com/todos/1");
-  return response.data
-})
+  const response = await observeAxios({
+    axiosInstance: axios,
+    urlWildcard: "/todos/:id",
+  }).get("https://jsonplaceholder.typicode.com/todos/1");
+  return response.data;
+});
 ```
+
 The `urlWildcard` parameter is used for urls that contain dynamic path parameters. This helps APIToolkit to identify request to the same endpoint but with different parameters.
 
 #### All observeAxios options
+
 Below is the full list of options for the `observeAxios` function:
 
 {class="docs-table"}
@@ -175,6 +182,7 @@ Below is the full list of options for the `observeAxios` function:
 :::
 
 #### Example
+
 ```typescript
 import { APIToolkit, observeAxios } from "apitoolkit-fastify";
 import axios from "axios";

@@ -26,8 +26,6 @@ Run the command below to install the APIToolkit express sdk and Open telemetery 
 
 ```sh
 npm install --save apitoolkit-express @opentelemetry/api @opentelemetry/auto-instrumentations-node
-# Or
-yarn add apitoolkit-express @opentelemetry/api @opentelemetry/auto-instrumentations-node
 ```
 
 ## Open Telemetery Configuration
@@ -69,7 +67,9 @@ app.use(apitoolkitClient.middleware);
 
 app.get("/", async (req, res) => {
   // This axios request get's monitored and appears in the  APIToolkit explorer
-  const response = await axios.get("https://jsonplaceholder.typicode.com/todos/1");
+  const response = await axios.get(
+    "https://jsonplaceholder.typicode.com/todos/1"
+  );
   res.json(response.data);
 });
 
@@ -166,10 +166,13 @@ app.listen(3000, () => {
 ```
 
 ## Monitoring Axios requests
+
 APIToolkit supports monitoring outgoing HTTP requests made using libraries like Axios. This can be done either globally or on a per-request basis.
 
 ### Global monitoring
+
 To monitor all outgoing Axios requests globally, you can use the `monitorAxios` option when initializing the APIToolkit client.
+
 ```typescript
 import { APIToolkit } from "apitoolkit-express";
 import axios from "axios";
@@ -178,23 +181,30 @@ const apitoolkitClient = APIToolkit.NewClient({
   monitorAxios: axios, // Optional: Use this to monitor Axios requests
 });
 ```
+
 By doing the above, all axios requests in your server will be monitored by APIToolkit.
 
 ### Per-request monitoring
+
 To monitor a specific Axios request, you can use the `observeAxios` function provided by the SDK.
 
 ```typescript
 import { APIToolkit, observeAxios } from "apitoolkit-express";
 import axios from "axios";
-const apitoolkitClient = APIToolkit.NewClient({serviceName: "my-service"});
+const apitoolkitClient = APIToolkit.NewClient({ serviceName: "my-service" });
 app.get("/", async (req, res) => {
-  const response = await observeAxios({axiosInstance: axios, urlWildcard: "/todos/:id"}).get("https://jsonplaceholder.typicode.com/todos/1");
+  const response = await observeAxios({
+    axiosInstance: axios,
+    urlWildcard: "/todos/:id",
+  }).get("https://jsonplaceholder.typicode.com/todos/1");
   res.json(response.data);
-})
+});
 ```
+
 The `urlWildcard` parameter is used for urls that contain dynamic path parameters. This helps APIToolkit to identify request to the same endpoint but with different parameters.
 
 #### All observeAxios options
+
 Below is the full list of options for the `observeAxios` function:
 
 {class="docs-table"}
@@ -209,6 +219,7 @@ Below is the full list of options for the `observeAxios` function:
 :::
 
 #### Example
+
 ```typescript
 import { APIToolkit, observeAxios } from "apitoolkit-express";
 import axios from "axios";

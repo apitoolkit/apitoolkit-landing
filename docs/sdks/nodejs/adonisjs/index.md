@@ -25,75 +25,209 @@ Ensure you have completed the first three steps of the [onboarding guide](/docs/
 Run the command below to install the API, SDK, and Instrumentation tools.
 
 ```sh
-
-npm install --save @opentelemetry/api \
-    @opentelemetry/auto-instrumentations-node
-
-# Or
-
-yarn add @opentelemetry/api @opentelemetry/auto-instrumentations-node
-
+npm install --save apitoolkit-adonis @opentelemetry/api  @opentelemetry/auto-instrumentations-node
 ```
 
-## Configuration
+## Open Telemetery Configuration
 
 This module is highly configurable by setting environment variables. So many aspects of the auto instrumentation’s behavior such as Resource detectors, Exporters, Trace context propagation headers,
 and many more can be configured based on your needs.
 
-There are generally two ways to go about this from the command line:
-
-1. Using the `env` keyword
-2. Using the `export` keyword
-
-For demonstration, I will be using the [OpenSource AdonisJs project on GitHub](https://github.com/apitoolkit/test-adonis.git) as an example.
-
-### 1. Using the `env` keyword
-
 ```sh
-env OTEL_TRACES_EXPORTER=otlp \
-    OTEL_EXPORTER_OTLP_ENDPOINT=http://otelcol.apitoolkit.io:4317 \
-    OTEL_SERVICE_NAME=your-service-name \
-    OTEL_LOGS_EXPORTER=otlp \
-    OTEL_RESOURCE_ATTRIBUTES=at-project-key=z6BJfZVEOSozztMfhqZsGTpG9DiXT9Weurvk1bpe9mwF8orB \
-    OTEL_EXPORTER_OTLP_PROTOCOL=grpc \
-    OTEL_PROPAGATORS=baggage,tracecontext \
-node --require @opentelemetry/auto-instrumentations-node/register
-npm run dev
-```
-
-### 2. Using the `export` keyword
-
-```sh
-export OTEL_TRACES_EXPORTER="otlp"
+# Specifies the endpoint URL for the OpenTelemetry collector.
 export OTEL_EXPORTER_OTLP_ENDPOINT="http://otelcol.apitoolkit.io:4317"
-export OTEL_NODE_RESOURCE_DETECTORS="env,host,os"
-export OTEL_SERVICE_NAME="your-service-name"
+# Specifies the name of the service.
+export OTEL_SERVICE_NAME="<YOUR_SERVICE_NAME>"
+# Adds your API KEY to the resource.
 export OTEL_RESOURCE_ATTRIBUTES=at-project-key="z6BJfZVEOSozztMfhqZsGTpG9DiXT9Weurvk1bpe9mwF8orB"
+# Specifies the protocol to use for the OpenTelemetry exporter.
 export OTEL_EXPORTER_OTLP_PROTOCOL="grpc"
-export OTEL_PROPAGATORS="baggage,tracecontext"
+
 export NODE_OPTIONS="--require @opentelemetry/auto-instrumentations-node/register"
 npm run dev
 ```
 
-If you are wondering what the difference is, it's this:
+## Setup APIToolkit Adonis Middleware For HTTP Request Monitoring
 
-- The first method, `env` sets them only for the immediate command execution.
-- The second method, `exports`, sets the variables globally for the current terminal session.
+APIToolkit Adonis Middleware is a middleware that can be used to monitor HTTP requests. It is a wrapper around the Express.js middleware and provides additional functionalities on top of the open telemetry instrumentation which creates a custom span for each request capturing details about the request including request and response bodies.
+
+First configure the `apitoolkit-adonis` sdk by running the following command:
+
+```sh
+node ace configure apitoolkit-adonis
+```
+
+Then, create an `apitoolkit.js|ts` file in the `/conf` directory and export the `defineConfig` object with some properties like so:
+
+```js
+import { defineConfig } from "apitoolkit-adonis";
+import axios from "axios";
+
+export default defineConfig({
+  captureResponseBody: true,
+  serviceName: "my-service",
+  monitorAxios: axios, // Optional: Use this to monitor all axios requests from your server
+});
+```
+
+Then, register the middleware by adding the `apitoolkit-adonis` client to your global middleware list in the `start/kernel.js|ts` file like so:
+
+```js
+import server from "@adonisjs/core/services/server";
+import APIToolkit from "apitoolkit-adonis";
+
+const client = new APIToolkit();
+
+server.use([
+  () => import("#middleware/container_bindings_middleware"),
+  () => import("#middleware/force_json_response_middleware"),
+  () => import("@adonisjs/cors/cors_middleware"),
+  () => client.middleware(),
+]);
+```
 
 #### Quick overview of the configuration parameters
 
+An object with the following optional fields can be passed to the `defineConfig` function in `conf/apitoolkit.ts` to configure it:
+
 {class="docs-table"}
 :::
-| Attribute | Description |
-| --------- | ----------- |
-| `OTEL_EXPORTER_OTLP_ENDPOINT` | Specifies the endpoint URL for the OpenTelemetry collector. In this case, it's set to "http://otelcol.apitoolkit.io:4317". |
-| `OTEL_NODE_RESOURCE_DETECTORS` | Defines which resource detectors to use. Here, it's set to detect environment variables, host information, and operating system details. |
-| `OTEL_SERVICE_NAME` | Sets the name of your service. You should replace "your-service-name" with the actual name of your service. |
-| `OTEL_RESOURCE_ATTRIBUTES` | Specifies additional resource attributes. In this case, it's setting an API Toolkit project key. |
-| `OTEL_EXPORTER_OTLP_PROTOCOL` | Defines the protocol used for exporting telemetry data. It's set to "grpc" (gRPC protocol). |
-| `OTEL_PROPAGATORS` | Specifies which context propagators to use. Here, it's set to use both "baggage" and "tracecontext". |
-| `NODE_OPTIONS` | Sets Node.js options. In this case, it's requiring the OpenTelemetry auto-instrumentation module for Node.js. |
+| Option | Description |
+| ------ | ----------- |
+| `debug` | Set to `true` to enable debug mode. |
+| `tags` | A list of defined tags for your services (used for grouping and filtering data on the dashboard). |
+| `serviceName` | A defined string name of your application |
+| `serviceVersion` | A defined string version of your application (used for further debugging on the dashboard). |
+| `redactHeaders` | A list of HTTP header keys to redact. |
+| `redactResponseBody` | A list of JSONPaths from the response body to redact. |
+| `redactRequestBody` | A list of JSONPaths from the request body to redact. |
+| `captureRequestBody` | default `false`, set to true if you want to capture the request body. |
+| `captureResponseBody` | default `false`, set to true if you want to capture the response body. |
 :::
+
+## Error Reporting
+
+With APItoolkit, you can track and report different unhandled or uncaught errors, API issues, and anomalies at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
+
+To report errors, you need to first enable [asyncLocalStorage](https://docs.adonisjs.com/guides/concepts/async-local-storage){target="\_blank" rel="noopener noreferrer"} in your AdonisJS project by setting `useAsyncLocalStorage` to `true` in your `config/app.js|ts` file, like so:
+
+```js
+export const http = defineConfig({
+  useAsyncLocalStorage: true,
+  // Other configs...
+});
+```
+
+Then, use the `reportError()` function in your application's exception handler, passing in the `error` argument, to report all uncaught errors and service exceptions that happened during a request, like so:
+
+```js
+import { HttpContext, ExceptionHandler } from "@adonisjs/core/http";
+import { reportError } from "apitoolkit-adonis";
+
+export default class HttpExceptionHandler extends ExceptionHandler {
+  async handle(error: unknown, ctx: HttpContext) {
+    return super.handle(error, ctx);
+  }
+
+  async report(error: unknown, ctx: HttpContext) {
+    // Automatically report all uncaught errors to APItoolkit
+    reportError(error);
+    return super.report(error, ctx);
+  }
+}
+```
+
+#### Manual Error Reporting
+
+You can also manually report errors to APIToolkit by calling the `reportError()` function, passing in the `error` argument, like so:
+
+```ts
+import router from "@adonisjs/core/services/router";
+import { reportError } from "apitoolkit-adonis";
+router.get("/", async () => {
+  try {
+    throw new Error("something went wrong");
+    return res.data;
+  } catch (error) {
+    // report the error to APIToolkit
+    reportError(error);
+    return { message: "something went wrong" };
+  }
+});
+```
+
+## Monitoring Axios requests
+
+APIToolkit supports monitoring outgoing HTTP requests made using libraries like Axios. This can be done either globally or on a per-request basis.
+
+### Global monitoring
+
+To monitor all outgoing Axios requests globally, you can use the `monitorAxios` option when initializing the APIToolkit client.
+
+```typescript
+import { defineConfig } from "apitoolkit-adonis";
+import axios from "axios";
+
+export default defineConfig({
+  captureResponseBody: true,
+  serviceName: "my-service",
+  monitorAxios: axios, // Optional: Use this to monitor all axios requests from your server
+});
+```
+
+By adding `monitorAxios` to config, all axios requests in your server will be monitored by APIToolkit.
+
+### Per-request monitoring
+
+To monitor a specific Axios request, you can use the `observeAxios` function provided by the SDK.
+
+```typescript
+import router from "@adonisjs/core/services/router";
+import { observeAxios } from "apitoolkit-adonis";
+import axios from "axios";
+router.get("/", async () => {
+  const res = await observeAxios({
+    axiosInstance: axios,
+    urlWildcard: "/todos/:todoId",
+  }).get("https://jsonplaceholder.typicode.com/todos/1");
+  return res.data;
+});
+```
+
+The `urlWildcard` parameter is used for urls that contain dynamic path parameters. This helps APIToolkit to identify request to the same endpoint but with different parameters.
+
+#### All observeAxios options
+
+Below is the full list of options for the `observeAxios` function:
+
+{class="docs-table"}
+:::
+| Option | Description |
+| ------ | ----------- |
+| `axiosInstance` | `requred` The Axios instance to monitor. |
+| `urlWildcard` | `optional` The route pattern of the url if it has dynamic path parameters. |
+| `redactHeaders` | A list of HTTP header keys to redact. |
+| `redactResponseBody` | A list of JSONPaths from the response body to redact. |
+| `redactRequestBody` | A list of JSONPaths from the request body to redact. |
+:::
+
+#### Example
+
+```typescript
+import router from "@adonisjs/core/services/router";
+import { observeAxios } from "apitoolkit-adonis";
+import axios from "axios";
+router.get("/", async () => {
+  const res = await observeAxios({
+    axiosInstance: axios,
+    urlWildcard: "/todos/:todoId"
+    redactHeaders: ["Authorization"],
+    redactResponseBody: ["$.credit_card_number"],
+    redactRequestBody: ["$.password"]
+  }).get("https://jsonplaceholder.typicode.com/todos/1");
+  return res.data;
+});
+```
 
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tips</b></p>
@@ -102,8 +236,7 @@ If you are wondering what the difference is, it's this:
   At the moment, only Traces are supported for environment variable configuration. See the open issues for [Metrics](https://github.com/open-telemetry/opentelemetry-js/issues/4551) and [Logs](https://github.com/open-telemetry/opentelemetry-js/issues/4552) to learn more.
   </li>
  <li>
-  By default, all SDK [resource detectors](https://opentelemetry.io/docs/languages/js/resources/) are enabled. However, you can customize this by setting the `OTEL_NODE_RESOURCE_DETECTORS` environment variable to activate specific detectors or disable them entirely. 
+  By default, all SDK [resource detectors](https://opentelemetry.io/docs/languages/js/resources/) are enabled. However, you can customize this by setting the `OTEL_NODE_RESOURCE_DETECTORS` environment variable to activate specific detectors or disable them entirely.
  </li>
   </ul>
-  
 </div>
