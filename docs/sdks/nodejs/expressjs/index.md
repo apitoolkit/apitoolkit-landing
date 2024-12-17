@@ -39,7 +39,7 @@ export OTEL_EXPORTER_OTLP_ENDPOINT="http://otelcol.apitoolkit.io:4317"
 # Specifies the name of the service.
 export OTEL_SERVICE_NAME="<YOUR_SERVICE_NAME>"
 # Adds your API KEY to the resource.
-export OTEL_RESOURCE_ATTRIBUTES=at-project-key="z6BJfZVEOSozztMfhqZsGTpG9DiXT9Weurvk1bpe9mwF8orB"
+export OTEL_RESOURCE_ATTRIBUTES="at-project-key={YOUR_API_KEY}"
 # Specifies the protocol to use for the OpenTelemetry exporter.
 export OTEL_EXPORTER_OTLP_PROTOCOL="grpc"
 
@@ -174,8 +174,11 @@ APIToolkit supports monitoring outgoing HTTP requests made using libraries like 
 To monitor all outgoing Axios requests globally, you can use the `monitorAxios` option when initializing the APIToolkit client.
 
 ```typescript
+import express from "express";
 import { APIToolkit } from "apitoolkit-express";
 import axios from "axios";
+const app = express();
+
 const apitoolkitClient = APIToolkit.NewClient({
   serviceName: "my-service",
   monitorAxios: axios, // Optional: Use this to monitor Axios requests
@@ -189,9 +192,14 @@ By doing the above, all axios requests in your server will be monitored by APITo
 To monitor a specific Axios request, you can use the `observeAxios` function provided by the SDK.
 
 ```typescript
+import express from "express";
 import { APIToolkit, observeAxios } from "apitoolkit-express";
 import axios from "axios";
+
+const app = express();
 const apitoolkitClient = APIToolkit.NewClient({ serviceName: "my-service" });
+
+app.use(apitoolkitClient.middleware);
 app.get("/", async (req, res) => {
   const response = await observeAxios({
     axiosInstance: axios,
@@ -221,10 +229,14 @@ Below is the full list of options for the `observeAxios` function:
 #### Example
 
 ```typescript
+import express from "express";
 import { APIToolkit, observeAxios } from "apitoolkit-express";
 import axios from "axios";
+
+const app = express();
 const apitoolkitClient = APIToolkit.NewClient({serviceName: "my-service"});
 
+app.use(apitoolkitClient.middleware);
 app.get("/", async (req, res) => {
   const response = await observeAxios({
     axiosInstance: axios,
