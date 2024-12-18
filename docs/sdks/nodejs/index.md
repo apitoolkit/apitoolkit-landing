@@ -18,6 +18,9 @@ pages:
   - title: NestJS
     slug: /docs/sdks/nodejs/nestjs
     icon: /assets/img/framework-logos/nest-icon.png
+  - title: NextJS
+    slug: /docs/sdks/nodejs/nextjs
+    icon: /assets/img/framework-logos/next-icon.png
 ---
 
 # Nodejs SDKs
