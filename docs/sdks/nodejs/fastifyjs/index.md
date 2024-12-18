@@ -149,7 +149,6 @@ To monitor a specific Axios request, you can use the `observeAxios` function pro
 
 ```typescript
 import { APIToolkit, observeAxios } from "apitoolkit-fastify";
-import axios from "axios";
 
 const fastifyServer = fastify({});
 const apitoolkitClient = APIToolkit.NewClient({ fastify: fastifyServer });
@@ -157,7 +156,6 @@ apitoolkitClient.initializeHooks();
 
 fastifyServer.get("/", async (request, reply) => {
   const response = await observeAxios({
-    axiosInstance: axios,
     urlWildcard: "/todos/:id",
   }).get("https://jsonplaceholder.typicode.com/todos/1");
   return response.data;
@@ -174,7 +172,6 @@ Below is the full list of options for the `observeAxios` function:
 :::
 | Option | Description |
 | ------ | ----------- |
-| `axiosInstance` | `requred` The Axios instance to monitor. |
 | `urlWildcard` | `optional` The route pattern of the url if it has dynamic path parameters. |
 | `redactHeaders` | A list of HTTP header keys to redact. |
 | `redactResponseBody` | A list of JSONPaths from the response body to redact. |
@@ -185,7 +182,6 @@ Below is the full list of options for the `observeAxios` function:
 
 ```typescript
 import { APIToolkit, observeAxios } from "apitoolkit-fastify";
-import axios from "axios";
 
 const fastifyServer = fastify({});
 const apitoolkitClient = APIToolkit.NewClient({fastify: fastifyServer});
@@ -193,7 +189,6 @@ apitoolkitClient.initializeHooks();
 
 fastifyServer.get("/", async (request, reply) => {
   const response = await observeAxios({
-    axiosInstance: axios,
     urlWildcard: "/todos/:id"
     redactHeaders: ["Authorization"],
     redactResponseBody: ["$.credit_card_number"],

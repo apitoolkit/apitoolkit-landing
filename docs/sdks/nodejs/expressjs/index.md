@@ -194,7 +194,6 @@ To monitor a specific Axios request, you can use the `observeAxios` function pro
 ```typescript
 import express from "express";
 import { APIToolkit, observeAxios } from "apitoolkit-express";
-import axios from "axios";
 
 const app = express();
 const apitoolkitClient = APIToolkit.NewClient({ serviceName: "my-service" });
@@ -202,7 +201,6 @@ const apitoolkitClient = APIToolkit.NewClient({ serviceName: "my-service" });
 app.use(apitoolkitClient.middleware);
 app.get("/", async (req, res) => {
   const response = await observeAxios({
-    axiosInstance: axios,
     urlWildcard: "/todos/:id",
   }).get("https://jsonplaceholder.typicode.com/todos/1");
   res.json(response.data);
@@ -231,7 +229,6 @@ Below is the full list of options for the `observeAxios` function:
 ```typescript
 import express from "express";
 import { APIToolkit, observeAxios } from "apitoolkit-express";
-import axios from "axios";
 
 const app = express();
 const apitoolkitClient = APIToolkit.NewClient({serviceName: "my-service"});
@@ -239,7 +236,6 @@ const apitoolkitClient = APIToolkit.NewClient({serviceName: "my-service"});
 app.use(apitoolkitClient.middleware);
 app.get("/", async (req, res) => {
   const response = await observeAxios({
-    axiosInstance: axios,
     urlWildcard: "/todos/:id"
     redactHeaders: ["Authorization"],
     redactResponseBody: ["$.credit_card_number"],
