@@ -103,6 +103,7 @@ An object with the following optional fields can be passed to the `defineConfig`
 | `redactRequestBody` | A list of JSONPaths from the request body to redact. |
 | `captureRequestBody` | default `false`, set to true if you want to capture the request body. |
 | `captureResponseBody` | default `false`, set to true if you want to capture the response body. |
+| `monitorAxios` | Axios instance to monitor. |
 :::
 
 ## Error Reporting
@@ -187,7 +188,6 @@ import { observeAxios } from "apitoolkit-adonis";
 import axios from "axios";
 router.get("/", async () => {
   const res = await observeAxios({
-    axiosInstance: axios,
     urlWildcard: "/todos/:todoId",
   }).get("https://jsonplaceholder.typicode.com/todos/1");
   return res.data;
@@ -204,7 +204,6 @@ Below is the full list of options for the `observeAxios` function:
 :::
 | Option | Description |
 | ------ | ----------- |
-| `axiosInstance` | `requred` The Axios instance to monitor. |
 | `urlWildcard` | `optional` The route pattern of the url if it has dynamic path parameters. |
 | `redactHeaders` | A list of HTTP header keys to redact. |
 | `redactResponseBody` | A list of JSONPaths from the response body to redact. |

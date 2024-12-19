@@ -98,6 +98,7 @@ An object with the following optional fields can be passed to the middleware fun
 | `redactRequestBody` | A list of JSONPaths from the request body to redact. |
 | `captureRequestBody` | default `false`, set to true if you want to capture the request body. |
 | `captureResponseBody` | default `false`, set to true if you want to capture the response body. |
+| `monitorAxios` | Axios instance to monitor. |
 :::
 
 ## Reporting errors to APIToolkit
@@ -217,7 +218,6 @@ Below is the full list of options for the `observeAxios` function:
 :::
 | Option | Description |
 | ------ | ----------- |
-| `axiosInstance` | `requred` The Axios instance to monitor. |
 | `urlWildcard` | `optional` The route pattern of the url if it has dynamic path parameters. |
 | `redactHeaders` | A list of HTTP header keys to redact. |
 | `redactResponseBody` | A list of JSONPaths from the response body to redact. |

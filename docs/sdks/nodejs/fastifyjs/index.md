@@ -90,6 +90,7 @@ An object with the following optional fields can be passed to the middleware fun
 | `redactRequestBody` | A list of JSONPaths from the request body to redact. |
 | `captureRequestBody` | default `false`, set to true if you want to capture the request body. |
 | `captureResponseBody` | default `false`, set to true if you want to capture the response body. |
+| `monitorAxios` | Axios instance to monitor. |
 :::
 
 ## Reporting errors to APIToolkit
