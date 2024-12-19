@@ -99,17 +99,20 @@ export default withAPItoolkitPagesRouter(handler, config);
 
 An object with the following optional fields can be passed to the middleware to configure it:
 
-| Option                | Description                                                                                       |
+{class="docs-table"}
+:::
+| Option | Description |
 | --------------------- | ------------------------------------------------------------------------------------------------- |
-| `debug`               | Set to `true` to enable debug mode.                                                               |
-| `serviceName`         | A defined string name of your application.                                                        |
-| `tags`                | A list of defined tags for your services (used for grouping and filtering data on the dashboard). |
-| `serviceVersion`      | A defined string version of your application (used for further debugging on the dashboard).       |
-| `redactHeaders`       | A list of HTTP header keys to redact.                                                             |
-| `redactResponseBody`  | A list of JSONPaths from the response body to redact.                                             |
-| `redactRequestBody`   | A list of JSONPaths from the request body to redact.                                              |
-| `captureRequestBody`  | Default `false`, set to `true` if you want to capture the request body.                           |
-| `captureResponseBody` | Default `false`, set to `true` if you want to capture the response body.                          |
+| `debug` | Set to `true` to enable debug mode. |
+| `serviceName` | A defined string name of your application. |
+| `tags` | A list of defined tags for your services (used for grouping and filtering data on the dashboard). |
+| `serviceVersion` | A defined string version of your application (used for further debugging on the dashboard). |
+| `redactHeaders` | A list of HTTP header keys to redact. |
+| `redactResponseBody` | A list of JSONPaths from the response body to redact. |
+| `redactRequestBody` | A list of JSONPaths from the request body to redact. |
+| `captureRequestBody` | Default `false`, set to `true` if you want to capture the request body. |
+| `captureResponseBody` | Default `false`, set to `true` if you want to capture the response body. |
+:::
 
 ## Reporting errors to APIToolkit
 
