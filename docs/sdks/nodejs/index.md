@@ -20,7 +20,7 @@ pages:
     icon: /assets/img/framework-logos/nest-icon.png
   - title: NextJS
     slug: /docs/sdks/nodejs/nextjs
-    icon: /assets/img/framework-logos/next-icon.png
+    icon: /assets/img/framework-logos/next-icon.svg
 ---
 
 # Nodejs SDKs
