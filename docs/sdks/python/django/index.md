@@ -35,14 +35,14 @@ To setup open telemetry, you need to configure the following environment variabl
 ```sh
 OTEL_EXPORTER_OTLP_ENDPOINT="http://otelcol.apitoolkit.io:4317"
 OTEL_SERVICE_NAME="my-service" # Specifies the name of the service.
-OTEL_RESOURCE_ATTRIBUTES="at-project-key={YOUR_API_KEY}" # Adds your API KEY to the resource.
+OTEL_RESOURCE_ATTRIBUTES="at-project-key={ENTER_YOUR_API_KEY_HERE}" # Adds your API KEY to the resource.
 OTEL_EXPORTER_OTLP_PROTOCOL="grpc" #Specifies the protocol to use for the OpenTelemetry exporter.
 ```
 
 Then run the command below to start your server with opentelemetry instrumented:
 
 ```sh
-opentelemetry-instrument python3 -m myapp.py
+opentelemetry-instrument python3 manage.py runserver
 ```
 
 <div class="callout">

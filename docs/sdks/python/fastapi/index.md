@@ -42,7 +42,7 @@ OTEL_EXPORTER_OTLP_PROTOCOL="grpc" #Specifies the protocol to use for the OpenTe
 Then run the command below to start your server with opentelemetry instrumented:
 
 ```sh
-opentelemetry-instrument python3 -m myapp.py
+opentelemetry-instrument uvicorn main:app
 ```
 
 <div class="callout">
