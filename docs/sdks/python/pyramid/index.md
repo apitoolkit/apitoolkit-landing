@@ -6,9 +6,7 @@ updatedDate: 2024-06-17
 menuWeight: 4
 ---
 
-# Pyramid SDK Guide
-
-To integrate your FastAPI application with APItoolkit, you need to use this SDK to monitor incoming traffic, aggregate the requests, and then send them to APItoolkit's servers. Kindly follow this guide to get started and learn about all the supported features of APItoolkit's **Pyramid SDK**.
+In this guide, you’ll learn how to integrate OpenTelemetry into your Pyramid application and install the APItoolkit SDK to enhance its functionalities. By combining OpenTelemetry’s robust tracing and metrics capabilities with the APItoolkit SDK, you’ll be able to monitor incoming and outgoing requests, report errors, and gain deeper insights into your application’s performance. This setup provides comprehensive observability, helping you track requests and troubleshoot issues effectively.
 
 ```=html
 <hr>
@@ -20,15 +18,41 @@ Ensure you have already completed the first three steps of the [onboarding guide
 
 ## Installation
 
-Kindly run the command below to install the SDK:
+Kindly run the command below to install the apitoolkit pyramid sdk and necessary opentelemetry packages:
 
 ```sh
-pip install apitoolkit-pyramid
+pip install apitoolkit-pyramid opentelemetry-distro opentelemetry-exporter-otlp
+opentelemetry-bootstrap -a install
 ```
 
-## Configuration
+## Setup Open Telemetry
 
-Next, add the `APITOOLKIT_KEY` variable to your settings or `development.ini` or `production.ini` file, like so:
+Setting up open telemetry allows you to send traces, metrics and logs to the APIToolkit platform.
+To setup open telemetry, you need to configure the following environment variables:
+
+```sh
+OTEL_EXPORTER_OTLP_ENDPOINT="http://otelcol.apitoolkit.io:4317"
+OTEL_SERVICE_NAME="my-service" # Specifies the name of the service.
+OTEL_RESOURCE_ATTRIBUTES="at-project-key={YOUR_API_KEY}" # Adds your API KEY to the resource.
+OTEL_EXPORTER_OTLP_PROTOCOL="grpc" #Specifies the protocol to use for the OpenTelemetry exporter.
+```
+
+Then run the command below to start your server with opentelemetry instrumented:
+
+```sh
+opentelemetry-instrument python3 -m myapp.py
+```
+
+<div class="callout">
+  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
+  <p>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</p>
+</div>
+
+## APItoolkit Pyramid Configuration
+
+After setting up open telemetry, you can now configure and start the apitoolkit pyramid middleware.
+
+Next, add the configuration variables to your settings or `development.ini` or `production.ini` file, like so:
 
 <section class="tab-group" data-tab-group="group1">
   <button class="tab-button" data-tab="tab1">settings</button>
@@ -37,7 +61,6 @@ Next, add the `APITOOLKIT_KEY` variable to your settings or `development.ini` or
 
 ```python
 settings = {
-  "APITOOLKIT_KEY": "{ENTER_YOUR_API_KEY_HERE}",
   "APITOOLKIT_DEBUG": False,
   "APITOOLKIT_TAGS": ["environment: production", "region: us-east-1"],
   "APITOOLKIT_SERVICE_VERSION": "v2.0",
@@ -50,8 +73,6 @@ settings = {
   <div id="tab2" class="tab-content">
 
 ```sh
-APITOOLKIT_KEY = "{ENTER_YOUR_API_KEY_HERE}"
-
 APITOOLKIT_DEBUG = False
 APITOOLKIT_TAGS = environment: production, region: us-east-1
 APITOOLKIT_SERVICE_VERSION = "v2.0"
@@ -76,7 +97,7 @@ def home(request):
 
 if __name__ == '__main__':
   settings = {
-    "APITOOLKIT_KEY": "{ENTER_YOUR_API_KEY_HERE}"
+    "APITOOLKIT_SERVICE_NAME": "YOUR_SERVICE_NAME",
   }
   with Configurator(settings=settings) as config:
     # Initialize APItoolkit
@@ -89,20 +110,19 @@ if __name__ == '__main__':
   server.serve_forever()
 ```
 
-In the configuration above, **only the `APITOOLKIT_KEY` option is required**, but you can add the following optional fields:
-
 {class="docs-table"}
 :::
 | Option | Description |
 | ------ | ----------- |
+| `APITOOLKIT_SERVICE_NAME` | A defined string name of your application |
 | `APITOOLKIT_DEBUG` | Set to `true` to enable debug mode. |
 | `APITOOLKIT_TAGS` | A list of defined tags for your services (used for grouping and filtering data on the dashboard). |
 | `APITOOLKIT_SERVICE_VERSION` | A defined string version of your application (used for further debugging on the dashboard). |
-| `APITOOLKIT_ROUTES_WHITELIST` | A list of route prefixes that should be captured (only capture specific incoming requests that match these prefixes). |
-| `APITOOLKIT_IGNORE_HTTP_CODES` | A list of HTTP status codes that should NOT be captured (ignore status codes you're not interested in or are spamming your logs). |
 | `APITOOLKIT_REDACT_HEADERS` | A list of HTTP header keys to redact. |
-| `APITOOLKIT_REDACT_REQ_BODY` | A list of JSONPaths from the request body to redact. |
-| `APITOOLKIT_REDACT_RES_BODY` | A list of JSONPaths from the response body to redact. |
+| `APITOOLKIT_REDACT_REQUEST_BODY` | A list of JSONPaths from the request body to redact. |
+| `APITOOLKIT_REDACT_RESPONSE_BODY` | A list of JSONPaths from the response body to redact. |
+| `APITOOLKIT_CAPTURE_REQUEST_BODY` | Set to `true` to capture the request body. |
+| `APITOOLKIT_CAPTURE_RESPONSE_BODY` | Set to `true` to capture the response body. |
 :::
 
 <div class="callout">
@@ -117,8 +137,8 @@ If you have fields that are sensitive and should not be sent to APItoolkit serve
 To mark a field for redacting via this SDK, you need to add some additional fields to your `development.ini` or `production.ini` file or settings with paths to the fields that should be redacted. There are three variables you can provide to configure what gets redacted, namely:
 
 1. `APITOOLKIT_REDACT_HEADERS`: A list of HTTP header keys.
-2. `APITOOLKIT_REDACT_REQ_BODY`: A list of JSONPaths from the request body.
-3. `APITOOLKIT_REDACT_RES_BODY`: A list of JSONPaths from the response body.
+2. `APITOOLKIT_REDACT_REQUEST_BODY`: A list of JSONPaths from the request body.
+3. `APITOOLKIT_REDACT_RESPONSE_BODY`: A list of JSONPaths from the response body.
 
 <hr />
 JSONPath is a query language used to select and extract data from JSON files. For example, given the following sample user data JSON object:
@@ -178,8 +198,8 @@ Here's an example of what the configuration would look like with redacted fields
 ```python
 settings = {
   "APITOOLKIT_REDACT_HEADERS": ["content-type", "Authorization", "HOST"],
-  "APITOOLKIT_REDACT_REQ_BODY": ["$.user.email", "$.user.addresses"],
-  "APITOOLKIT_REDACT_RES_BODY": ["$.users[*].email", "$.users[*].credit_card"]
+  "APITOOLKIT_REDACT_REQUEST_BODY": ["$.user.email", "$.user.addresses"],
+  "APITOOLKIT_REDACT_RESPONSE_BODY": ["$.users[*].email", "$.users[*].credit_card"]
 }
 ```
 
@@ -203,7 +223,6 @@ APITOOLKIT_REDACT_RES_BODY: $.users[*].email, $.users[*].credit_card
     <li>The list of items to be redacted will be applied to all endpoint requests and responses on your server.</li>
   </ul>
 </div>
-
 
 ## Error Reporting
 

@@ -8,7 +8,7 @@ menuWeight: 2
 
 # FastAPI SDK Guide
 
-To integrate your FastAPI application with APItoolkit, you need to use this SDK to monitor incoming traffic, aggregate the requests, and then send them to APItoolkit's servers. Kindly follow this guide to get started and learn about all the supported features of APItoolkit's **FastAPI SDK**.
+In this guide, you’ll learn how to integrate OpenTelemetry into your FastAPI application and install the APItoolkit SDK to enhance its functionalities. By combining OpenTelemetry’s robust tracing and metrics capabilities with the APItoolkit SDK, you’ll be able to monitor incoming and outgoing requests, report errors, and gain deeper insights into your application’s performance. This setup provides comprehensive observability, helping you track requests and troubleshoot issues effectively.
 
 ```=html
 <hr>
@@ -20,13 +20,39 @@ Ensure you have already completed the first three steps of the [onboarding guide
 
 ## Installation
 
-Kindly run the command below to install the SDK:
+Kindly run the command below to install the apitoolkit fastapi sdk and necessary opentelemetry packages:
 
 ```sh
-pip install apitoolkit-fastapi
+pip install apitoolkit-fastapi opentelemetry-distro opentelemetry-exporter-otlp
+opentelemetry-bootstrap -a install
 ```
 
-## Configuration
+## Setup Open Telemetry
+
+Setting up open telemetry allows you to send traces, metrics and logs to the APIToolkit platform.
+To setup open telemetry, you need to configure the following environment variables:
+
+```sh
+OTEL_EXPORTER_OTLP_ENDPOINT="http://otelcol.apitoolkit.io:4317"
+OTEL_SERVICE_NAME="my-service" # Specifies the name of the service.
+OTEL_RESOURCE_ATTRIBUTES="at-project-key={ENTER_YOUR_API_KEY_HERE}" # Adds your API KEY to the resource.
+OTEL_EXPORTER_OTLP_PROTOCOL="grpc" #Specifies the protocol to use for the OpenTelemetry exporter.
+```
+
+Then run the command below to start your server with opentelemetry instrumented:
+
+```sh
+opentelemetry-instrument python3 -m myapp.py
+```
+
+<div class="callout">
+  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
+  <p>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</p>
+</div>
+
+## APItoolkit FastAPI Configuration
+
+After setting up open telemetry, you can now configure the apitoolkit fastapi middleware.
 
 Next, initialize APItoolkit in your application's entry point (e.g., `main.py`), like so:
 
@@ -37,12 +63,7 @@ from apitoolkit_fastapi import APIToolkit
 app = FastAPI()
 
 # Initialize APItoolkit
-apitoolkit = APIToolkit(
-  api_key="{ENTER_YOUR_API_KEY_HERE}",
-  debug=False,
-  tags=["environment: production", "region: us-east-1"],
-  service_version="v2.0"
-)
+apitoolkit = APIToolkit(service_name="my-service")
 app.middleware("http")(apitoolkit.middleware)
 # END Initialize APItoolkit
 
@@ -51,24 +72,20 @@ def read_root():
   return {"Hello": "World"}
 ```
 
-In the configuration above, **only the `api_key` option is required**, but you can add the following optional fields:
-
 {class="docs-table"}
 :::
 | Option | Description |
 | ------ | ----------- |
+| `service_name` | A defined string name of your application (used for further debugging on the dashboard). |
 | `debug` | Set to `true` to enable debug mode. |
 | `tags` | A list of defined tags for your services (used for grouping and filtering data on the dashboard). |
 | `service_version` | A defined string version of your application (used for further debugging on the dashboard). |
 | `redact_headers` | A list of HTTP header keys to redact. |
 | `redact_response_body` | A list of JSONPaths from the request body to redact. |
 | `redact_request_body` | A list of JSONPaths from the response body to redact. |
+| `capture_request_body` | Set to `true` to capture the request body. |
+| `capture_response_body` | Set to `true` to capture the response body. |
 :::
-
-<div class="callout">
-  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <p>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</p>
-</div>
 
 ## Redacting Sensitive Data
 
@@ -141,7 +158,7 @@ redact_response_body = ["$.user.email", "$.user.addresses"]
 redact_request_body = ["$.users[*].email", "$.users[*].credit_card"]
 
 apitoolkit = APIToolkit(
-  api_key="{ENTER_YOUR_API_KEY_HERE}",
+  service_name="my-service",
   redact_headers=redact_headers,
   redact_response_body=redact_response_body,
   redact_request_body=redact_request_body
@@ -175,7 +192,7 @@ from apitoolkit_fastapi import report_error
 
 app = FastAPI()
 
-apitoolkit = APIToolkit(api_key="{ENTER_YOUR_API_KEY_HERE}")
+apitoolkit = APIToolkit(service_name="my-service")
 app.middleware("http")(apitoolkit.middleware)
 
 @app.get('/')
@@ -201,7 +218,7 @@ from apitoolkit_fastapi import observe_request
 
 app = FastAPI()
 
-apitoolkit = APIToolkit(api_key="{ENTER_YOUR_API_KEY_HERE}")
+apitoolkit = APIToolkit(service_name="my-service")
 app.middleware("http")(apitoolkit.middleware)
 
 @app.get('/')
