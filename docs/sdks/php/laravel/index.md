@@ -8,7 +8,9 @@ menuWeight: 1
 
 # Laravel SDK Guide
 
-To integrate your Laravel application with APItoolkit, you need to use this SDK to monitor incoming traffic, aggregate the requests, and then send them to APItoolkit's servers. Kindly follow this guide to get started and learn about all the supported features of APItoolkit's **Laravel SDK**.
+APIToolkit laravel Middleware allows you to monitor HTTP requests in your laravel applications. It builds upon OpenTelemetry instrumentation to create custom spans for each request, capturing key details such as request and response bodies, headers, and status codes. Additionally, it offers robust support for monitoring outgoing requests and reporting errors automatically.
+
+To get started, you'll need the OpenTelemetry Node.js library and some basic configuration.
 
 ```=html
 <hr>
@@ -16,28 +18,55 @@ To integrate your Laravel application with APItoolkit, you need to use this SDK 
 
 ## Prerequisites
 
-- Ensure you have already completed the first three steps of the [onboarding guide](/docs/onboarding/){target="_blank"}.
-- APItoolkit uses the Laravel cache to prevent reinitializing the SDK for each request. So, ensure you have [Laravel cache](https://laravel.com/docs/10.x/cache?ref=APItoolkit){target="\_blank"} set up in your application.
+Ensure you have already completed the first three steps of the [onboarding guide](/docs/onboarding/){target="\_blank"}.
 
 ## Installation
 
-Kindly run the command below to install the SDK:
+Kindly run the command below to install the apitoolkit-slim sdk and required opentelemetry packages:
 
 ```sh
-composer require apitoolkit/apitoolkit-laravel
+composer require \
+    open-telemetry/sdk \
+    open-telemetry/exporter-otlp \
+    apitoolkit/apitoolkit-laravel
 ```
 
-## Configuration
+## Setup Open Telemetry
 
-First, add the `APITOOLKIT_KEY` environment variable to your `.env` file, like so:
+Setting up open telemetry allows you to send traces, metrics and logs to the APIToolkit platform.
+To setup open telemetry, first install the opentelemetry php extension:
 
 ```sh
-APITOOLKIT_KEY={ENTER_YOUR_API_KEY_HERE}
-
-APITOOLKIT_DEBUG=false
-APITOOLKIT_TAGS="environment: production, region: us-east-1"
-APITOOLKIT_SERVICE_VERSION=v2.0
+pecl install opentelemetry
 ```
+
+Then add it to your `php.ini` file like so.
+
+```ini
+[opentelemetry]
+extension=opentelemetry.so
+```
+
+Then configure the following environment variables:
+
+```sh
+export OTEL_PHP_AUTOLOAD_ENABLED=true
+export OTEL_SERVICE_NAME=your-service-name
+export OTEL_TRACES_EXPORTER=otlp
+export OTEL_EXPORTER_OTLP_PROTOCOL=http/protobuf
+export OTEL_EXPORTER_OTLP_ENDPOINT=http://otelcol.apitoolkit.io:4318
+export OTEL_RESOURCE_ATTRIBUTES="at-project-key={ENTER_YOUR_API_KEY_HERE}"
+export OTEL_PROPAGATORS=baggage,tracecontext
+```
+
+<div class="callout">
+  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
+  <p>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</p>
+</div>
+
+## Setup APItoolkit Middleware
+
+Register the middleware in the app/Http/Kernel.php file under the correct middleware group (e.g., api) or at the root, like so. This creates a customs spans which captures and sends http request info such as headers, requests and repsonse bodies, matched route etc. for each request
 
 <section class="tab-group" data-tab-group="group1">
   <button class="tab-button" data-tab="tab1">Middleware (Global)</button>
@@ -62,6 +91,7 @@ class Kernel extends HttpKernel
   ];
 }
 ```
+
   </div>
   <div id="tab2" class="tab-content">
     Alternatively, if you want to monitor specific routes, you can register the middleware, like so:
@@ -82,7 +112,7 @@ class Kernel extends HttpKernel
 }
 ```
 
-  Then you can use the `apitoolkit` middleware in your routes like so:
+Then you can use the `apitoolkit` middleware in your routes like so:
 
 ```php
 Route::get('/', function () {
@@ -95,7 +125,9 @@ Route::get('/', function () {
   </div>
 </section>
 
-In the configuration above, **only the `APITOOLKIT_KEY` option is required**, but you can add the following optional fields:
+## Middleware configuration options:
+
+You can configure the middleware using the following environment variables:
 
 {class="docs-table"}
 :::
@@ -107,12 +139,9 @@ In the configuration above, **only the `APITOOLKIT_KEY` option is required**, bu
 | `APITOOLKIT_REDACT_HEADERS` | A list of HTTP header keys to redact. |
 | `APITOOLKIT_REDACT_REQUEST_BODY` | A list of JSONPaths from the request body to redact. |
 | `APITOOLKIT_REDACT_RESPONSE_BODY` | A list of JSONPaths from the response body to redact. |
+| `APITOOLKIT_CAPTURE_REQUEST_BODY` | A list of JSONPaths from the request body to capture. |
+| `APITOOLKIT_CAPTURE_RESPONSE_BODY` | A list of JSONPaths from the response body to capture. |
 :::
-
-<div class="callout">
-  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <p>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</p>
-</div>
 
 ## Redacting Sensitive Data
 
@@ -248,6 +277,7 @@ Route::get('/user', function (Request $request) {
   }
 });
 ```
+
   </div>
 </section>
 
@@ -264,7 +294,7 @@ use APIToolkit\APIToolkitLaravel;
 
 Route::get('/user', function (Request $request) {
   $options = [
-    "pathWildCard" => "/repos/{owner}/{repo}",
+    "pathPattern" => "/repos/{owner}/{repo}",
     "redactHeaders" => ["content-type", "Authorization", "HOST"],
     "redactRequestBody" => ["$.user.email", "$.user.addresses"],
     "redactResponseBody" => ["$.users[*].email", "$.users[*].credit_card"]
@@ -283,7 +313,7 @@ The `$options` associative array accepts the following optional fields:
 :::
 | Option | Description |
 | ------ | ----------- |
-| `pathWildCard` | The `url_path` string for URLs with path parameters. |
+| `pathPattern` | The `url_path` string for URLs with path parameters. |
 | `redactHeaders` | A list of HTTP header keys to redact. |
 | `redactResponseBody` | A list of JSONPaths from the request body to redact. |
 | `redactRequestBody` | A list of JSONPaths from the response body to redact. |
