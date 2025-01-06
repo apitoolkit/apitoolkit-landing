@@ -8,7 +8,9 @@ menuWeight: 2
 
 # Slim SDK Guide
 
-To integrate your Slim application with APItoolkit, you need to use this SDK to monitor incoming traffic, aggregate the requests, and then send them to APItoolkit's servers. Kindly follow this guide to get started and learn about all the supported features of APItoolkit's **Slim SDK**.
+APIToolkit Slim Middleware allows you to monitor HTTP requests in your Slim applications. It builds upon OpenTelemetry instrumentation to create custom spans for each request, capturing key details such as request and response bodies, headers, and status codes. Additionally, it offers robust support for monitoring outgoing requests and reporting errors automatically.
+
+To get started, you'll need the OpenTelemetry Node.js library and some basic configuration.
 
 ```=html
 <hr>
@@ -16,19 +18,57 @@ To integrate your Slim application with APItoolkit, you need to use this SDK to 
 
 ## Prerequisites
 
-Ensure you have already completed the first three steps of the [onboarding guide](/docs/onboarding/){target="_blank"}.
+Ensure you have already completed the first three steps of the [onboarding guide](/docs/onboarding/){target="\_blank"}.
 
 ## Installation
 
-Kindly run the command below to install the SDK:
+Kindly run the command below to install the apitoolkit-slim sdk and required opentelemetry packages:
 
 ```sh
-composer require apitoolkit/apitoolkit-slim
+composer require \
+    open-telemetry/sdk \
+    open-telemetry/exporter-otlp \
+    open-telemetry/opentelemetry-auto-slim \
+    open-telemetry/opentelemetry-auto-psr18 \
+    apitoolkit/apitoolkit-slim
 ```
 
-## Configuration
+## Setup Open Telemetry
 
-Next, create a new instance of the `APIToolkitMiddleware` class and register the middleware with the Slim Framework in the `app/middleware.php` file, like so:
+Setting up open telemetry allows you to send traces, metrics and logs to the APIToolkit platform.
+To setup open telemetry First install the open telemetry php extension:
+
+```sh
+pecl install opentelemetry
+```
+
+Then add it to your `php.ini` file like so.
+
+```ini
+[opentelemetry]
+extension=opentelemetry.so
+```
+
+Then configure the following environment variables:
+
+```sh
+export OTEL_PHP_AUTOLOAD_ENABLED=true
+export OTEL_SERVICE_NAME=your-service-name
+export OTEL_TRACES_EXPORTER=otlp
+export OTEL_EXPORTER_OTLP_PROTOCOL=http/protobuf
+export OTEL_EXPORTER_OTLP_ENDPOINT=http://otelcol.apitoolkit.io:4318
+export OTEL_RESOURCE_ATTRIBUTES="at-project-key={ENTER_YOUR_API_KEY_HERE}"
+export OTEL_PROPAGATORS=baggage,tracecontext
+```
+
+<div class="callout">
+  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
+  <p>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</p>
+</div>
+
+## Setup APItoolkit Middleware
+
+Next, create a new instance of the APIToolkitMiddleware class and register the middleware with the Slim Framework in the app/middleware.php file. This creates a customs spans which captures and sends http request info such as headers, requests and repsonse bodies, matched route etc. for each request
 
 ```php
 use Slim\Factory\AppFactory;
@@ -40,9 +80,9 @@ $app = AppFactory::create();
 
 // Initialize the APItoolkit client
 $apitoolkitMiddleware = new APIToolkitMiddleware([
-  'apiKey' => "{ENTER_YOUR_API_KEY_HERE}",
   'debug' => false,
   'tags' => ["environment: production", "region: us-east-1"],
+  'captureRequestBody' => true,
   'serviceVersion' => "v2.0",
 ]);
 
@@ -57,7 +97,7 @@ $app->get('/', function ($request, $response) {
 $app->run();
 ```
 
-In the configuration above, **only the API key option is required**, but you can add the following optional fields:
+Middleware configuration options:
 
 {class="docs-table"}
 :::
@@ -69,12 +109,9 @@ In the configuration above, **only the API key option is required**, but you can
 | `$redactHeaders` | A list of HTTP header keys to redact. |
 | `$redactRequestBody` | A list of JSONPaths from the request body to redact. |
 | `$redactResponseBody` | A list of JSONPaths from the response body to redact. |
+| `$captureRequestBody` | default `false`, set to true if you want to capture the request body. |
+| `$captureResponseBody` | default `false`, set to true if you want to capture the response body. |
 :::
-
-<div class="callout">
-  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <p>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</p>
-</div>
 
 ## Redacting Sensitive Data
 
@@ -145,7 +182,6 @@ require __DIR__ . '/vendor/autoload.php';
 $app = AppFactory::create();
 
 $apitoolkitMiddleware = new APIToolkitMiddleware([
-  'apiKey' => "{ENTER_YOUR_API_KEY_HERE}",
   'redactHeaders' => [],
   'redactRequestBody' => [],
   'redactResponseBody' => [],
@@ -185,7 +221,7 @@ require __DIR__ . '/vendor/autoload.php';
 
 $app = AppFactory::create();
 
-$apitoolkitMiddleware = new APIToolkitMiddleware(['apiKey' => "{ENTER_YOUR_API_KEY_HERE}"]);
+$apitoolkitMiddleware = new APIToolkitMiddleware([]);
 $app->add($apitoolkitMiddleware);
 
 $app->get('/', function (Request $request, Response $response) {
@@ -218,12 +254,12 @@ require __DIR__ . '/vendor/autoload.php';
 
 $app = AppFactory::create();
 
-$apitoolkitMiddleware = new APIToolkitMiddleware(['apiKey' => "{ENTER_YOUR_API_KEY_HERE}"]);
+$apitoolkitMiddleware = new APIToolkitMiddleware([]);
 $app->add($apitoolkitMiddleware);
 
 $app->get('/user', function (Request $request, Response $response) {
   $options = [
-    "pathWildCard" => "/repos/{owner}/{repo}",
+    "pathPattern" => "/repos/{owner}/{repo}",
     "redactHeaders" => ["Content-Type", "Authorization", "HOST"],
     "redactRequestBody" => ["$.users[*].email", "$.users[*].credit_card"],
     "redactResponseBody" => ["$.users[*].email", "$.users[*].credit_card"]
@@ -244,7 +280,7 @@ The `$options` associative array accepts the following optional fields:
 :::
 | Option | Description |
 | ------ | ----------- |
-| `pathWildCard` | The `url_path` string for URLs with path parameters. |
+| `pathPattern` | The `url_path` string for URLs with path parameters. |
 | `redactHeaders` | A list of HTTP header keys to redact. |
 | `redactResponseBody` | A list of JSONPaths from the request body to redact. |
 | `redactRequestBody` | A list of JSONPaths from the response body to redact. |

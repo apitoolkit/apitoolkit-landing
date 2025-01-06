@@ -42,7 +42,7 @@ OTEL_EXPORTER_OTLP_PROTOCOL="grpc" #Specifies the protocol to use for the OpenTe
 Then run the command below to start your server with opentelemetry instrumented:
 
 ```sh
-opentelemetry-instrument python3 manage.py runserver
+opentelemetry-instrument python3 manage.py runserver --noreload
 ```
 
 <div class="callout">
