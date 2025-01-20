@@ -46,6 +46,12 @@ Then run the command below to start your server with opentelemetry instrumented:
 opentelemetry-instrument python3 manage.py runserver --noreload
 ```
 
+Or run using `gunicorn`
+
+```sh
+opentelemetry-instrument gunicorn myapp.wsgi
+```
+
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
   <p>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</p>
