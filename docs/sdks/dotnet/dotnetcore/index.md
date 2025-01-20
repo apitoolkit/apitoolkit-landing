@@ -8,7 +8,9 @@ menuWeight: 1
 
 # .Net Core SDK Guide
 
-To integrate .Net web services with APItoolkit, you need to use this SDK to monitor incoming traffic, aggregate the requests, and then send them to APItoolkit's servers. Kindly follow this guide to get started and learn about all the supported features of APItoolkit's **.Net Core SDK**.
+In this guide, you’ll learn how to integrate OpenTelemetry into your .NET application and install the APItoolkit SDK to enhance its functionalities.
+By combining OpenTelemetry’s robust tracing and metrics capabilities with the APItoolkit SDK, you’ll be able to monitor incoming and outgoing requests, report errors, and gain deeper insights into your application’s performance.
+This setup provides comprehensive observability, helping you track requests and troubleshoot issues effectively.
 
 ```=html
 <hr>
@@ -16,9 +18,52 @@ To integrate .Net web services with APItoolkit, you need to use this SDK to moni
 
 ## Prerequisites
 
-Ensure you have already completed the first three steps of the [onboarding guide](/docs/onboarding/){target="_blank"}.
+Ensure you have already completed the first three steps of the [onboarding guide](/docs/onboarding/){target="\_blank"}.
 
-## Installation
+## Open Telemetry Setup
+
+Setting up open telemetry allows you to send traces, metrics and logs to the APIToolkit platform.
+In this guid, we will be using the opentelemetry auto-instrumentation packages to setup open telemetry.
+
+#### Install OpenTelemetry
+
+Run the following command to install the OpenTelemetry auto instrumentation for .NET:
+
+```sh
+# Download the bash script
+curl -sSfL https://github.com/open-telemetry/opentelemetry-dotnet-instrumentation/releases/latest/download/otel-dotnet-auto-install.sh -O
+
+# Install core files
+sh ./otel-dotnet-auto-install.sh
+
+# Enable execution for the instrumentation script
+chmod +x $HOME/.otel-dotnet-auto/instrument.sh
+
+# Setup the instrumentation for the current shell session
+. $HOME/.otel-dotnet-auto/instrument.sh
+```
+
+See auto instrumentation setup for windows [here](https://opentelemetry.io/docs/zero-code/net/#windows-powershell){target="\_blank"}.
+
+#### OpenTelemetry Configuration
+
+After installating .NET autoinstrumentation packages, you can configure the OpenTelemetry instrumentation by setting the following environment variables:
+
+```sh
+export OTEL_EXPORTER_OTLP_ENDPOINT="http://otelcol.apitoolkit.io:4317" # Specifies the endpoint to send the traces to.
+export OTEL_DOTNET_AUTO_TRACES_ADDITIONAL_SOURCES="APItoolkit.HTTPInstrumentation" # The apitoolkit instrumentation  activity resource.
+export OTEL_SERVICE_NAME="my-service" # Specifies the name of the service.
+export OTEL_RESOURCE_ATTRIBUTES="at-project-key={ENTER_YOUR_API_KEY_HERE}" # Adds your API KEY to the resource.
+export OTEL_EXPORTER_OTLP_PROTOCOL="grpc" # Specifies the protocol to use for the OpenTelemetry exporter.
+```
+
+After setting the environment variables, build and run your application and you should see the logs, traces and metrics in the APIToolkit dashboard.
+
+## APItoolkit SDK Configuration
+
+After setting up open telemetry, you can now configure the apitoolkit middleware, to monitor incoming and outgoing requests, report errors, and gain deeper insights into your application's performance.
+
+#### Installation
 
 Kindly run the command below to install the SDK:
 
@@ -26,7 +71,7 @@ Kindly run the command below to install the SDK:
 dotnet add package ApiToolkit.Net
 ```
 
-## Configuration
+#### Configuration
 
 Next, initialize APItoolkit in your application's entry point (e.g., `Program.cs`), like so:
 
@@ -36,12 +81,10 @@ using ApiToolkit.Net;
 // Initialize the APItoolkit client
 var config = new Config
 {
-  ApiKey = "{ENTER_YOUR_API_KEY_HERE}",
-  Debug = false,
-  Tags = new List&lt;string&gt; { "environment: production", "region: us-east-1" },
   ServiceVersion: "v2.0",
+  ServiceName = "MyService",
 };
-var client = await APIToolkit.NewClientAsync(config);
+var client = APIToolkit.NewClient(config);
 // END Initialize the APItoolkit client
 
 // Register APItoolkit's middleware
@@ -52,12 +95,16 @@ app.Use(async (context, next) =>
 });
 // END Register APItoolkit's middleware
 
-// app.UseEndpoint(...)
-// Other middleware and logic
-// ...
+app.MapGet("/hello", async context =>
+{
+  await context.Response.WriteAsync("Hello, world!");
+});
+
+
+app.Run();
 ```
 
-In the configuration above, **only the `ApiKey` option is required**, but you can add the following optional fields:
+In the configuration above you can add the following optional fields:
 
 {class="docs-table"}
 :::
@@ -69,6 +116,9 @@ In the configuration above, **only the `ApiKey` option is required**, but you ca
 | `RedactHeaders` | A list of HTTP header keys to redact. |
 | `RedactResponseBody` | A list of JSONPaths from the request body to redact. |
 | `RedactRequestBody` | A list of JSONPaths from the response body to redact. |
+| `ServiceName` | Set the name of the service. |
+| `CaptureRequestBody` | Set to `true` to capture the request body. |
+| `CaptureResponseBody` | Set to `true` to capture the response body. |
 :::
 
 <div class="callout">
@@ -81,11 +131,11 @@ In the configuration above, **only the `ApiKey` option is required**, but you ca
 
 ## Redacting Sensitive Data
 
-If you have fields that are sensitive and should not be sent to APItoolkit servers, you can mark those fields to be redacted  (the fields will never leave your servers).
+If you have fields that are sensitive and should not be sent to APItoolkit servers, you can mark those fields to be redacted (the fields will never leave your servers).
 
 To mark a field for redacting via this SDK, you need to provide additional arguments to the `config` variable with paths to the fields that should be redacted. There are three arguments you can provide to configure what gets redacted, namely:
 
-1. `RedactHeaders`:  A list of HTTP header keys.
+1. `RedactHeaders`: A list of HTTP header keys.
 2. `RedactRequestBody`: A list of JSONPaths from the request body.
 3. `RedactResponseBody`: A list of JSONPaths from the response body.
 
@@ -144,15 +194,13 @@ using ApiToolkit.Net;
 
 var config = new Config
 {
-  Debug = true, // Set debug flags to false in production
-  ApiKey = "{ENTER_YOUR_API_KEY_HERE}",
   RedactHeaders = new List&lt;string&gt; { "content-type", "Authorization", "HOST" },
   RedactRequestBody = new List&lt;string&gt; { "$.user.email", "$.user.addresses" },
   RedactResponseBody = new List&lt;string&gt; { "$.users[*].email", "$.users[*].credit_card" }
 };
-var client = await APIToolkit.NewClientAsync(config);
+var client = APIToolkit.NewClient(config);
 
-# Register the middleware to use the initialized client
+// Register the middleware to use the initialized client
 app.Use(async (context, next) =>
 {
   var apiToolkit = new APIToolkit(next, client);
@@ -183,9 +231,9 @@ var app = builder.Build();
 
 var config = new Config
 {
-  ApiKey = "{ENTER_YOUR_API_KEY_HERE}"
+  ServiceName = "Backend"
 };
-var client = await APIToolkit.NewClientAsync(config);
+var client = APIToolkit.NewClient(config);
 
 app.Use(async (context, next) =>
 {
@@ -215,7 +263,7 @@ app.MapGet("/error-tracking", async context =>
 
 ## Monitoring Outgoing Requests
 
-Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="_blank"} page. However, you can separate outgoing requests from others and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="_blank"} page, alongside the incoming request that triggered them.
+Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="\_blank"} page. However, you can separate outgoing requests from others and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="\_blank"} page, alongside the incoming request that triggered them.
 
 To monitor outgoing HTTP requests from your application, we provide the `APIToolkitObservingHandler()` handler. Here's an example of the outgoing requests configuration with this SDK on a sample `/monitor-requests` endpoint that makes an asynchronous `HttpClient` GET request to a sample public endpoint URL.
 
@@ -229,7 +277,7 @@ var config = new Config
 {
   ApiKey = "{ENTER_YOUR_API_KEY_HERE}"
 };
-var client = await APIToolkit.NewClientAsync(config);
+var client = APIToolkit.NewClient(config);
 
 app.Use(async (context, next) =>
 {
@@ -260,7 +308,7 @@ The `client.APIToolkitObservingHandler` handler accepts a required `context` fie
 :::
 | Option | Description |
 | ------ | ----------- |
-| `pathWildCard` | The `url_path` string for URLs with path parameters. |
+| `PathWildCard` | The `url_path` string for URLs with path parameters. |
 | `RedactHeaders` | A list of HTTP header keys to redact. |
 | `RedactResponseBody` | A list of JSONPaths from the request body to redact. |
 | `RedactRequestBody` | A list of JSONPaths from the response body to redact. |
