@@ -45,6 +45,12 @@ Then run the command below to start your server with opentelemetry instrumented:
 opentelemetry-instrument flask run --app app
 ```
 
+Or using `gunicorn`:
+
+```sh
+opentelemetry-instrument gunicorn server:app
+```
+
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
   <p>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</p>
@@ -62,7 +68,7 @@ from apitoolkit_flask import APIToolkit
 app = Flask(__name__)
 
 # Initialize APItoolkit
-apitoolkit = APIToolkit(service_name="my-service")
+apitoolkit = APIToolkit()
 
 @app.before_request
 def before_request():
@@ -167,7 +173,6 @@ redact_response_body = ["$.user.email", "$.user.addresses"]
 redact_request_body = ["$.users[*].email", "$.users[*].credit_card"]
 
 apitoolkit = APIToolkit(
-  apitoolkit = APIToolkit(service_name="my-service")
   redact_headers=redact_headers,
   redact_response_body=redact_response_body,
   redact_request_body=redact_request_body
@@ -210,7 +215,7 @@ from apitoolkit_flask import APIToolkit, report_error
 
 app = Flask(__name__)
 
-apitoolkit = APIToolkit(service_name="my-service")
+apitoolkit = APIToolkit()
 
 @app.before_request
 def before_request():
@@ -247,7 +252,7 @@ from apitoolkit_flask import APIToolkit, observe_request
 
 app = Flask(__name__)
 
-apitoolkit = APIToolkit(service_name="my-service")
+apitoolkit = APIToolkit()
 
 @app.before_request
 def before_request():

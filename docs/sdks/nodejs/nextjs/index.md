@@ -48,7 +48,7 @@ You can create the `intrumentation.ts|js` in the `src` directory of your project
 import { registerOTel } from "@vercel/otel";
 
 export function register() {
-  registerOTel("<YOUR_PROJECT_NAME>");
+  registerOTel("{YOUR_PROJECT_NAME}");
 }
 ```
 
@@ -70,7 +70,6 @@ async function handleRequest(req: NextRequest) {
 // Optional configuration
 const config = {
   captureResponseBody: true,
-  serviceName: "my-service",
 }
 export const GET = withAPItoolkitAppRouter(handleRequest, config);
 
@@ -89,7 +88,6 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
 // Optional configuration
 const config = {
   captureResponseBody: true,
-  serviceName: "my-service",
 }
 
 export default withAPItoolkitPagesRouter(handler, config);

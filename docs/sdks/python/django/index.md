@@ -74,7 +74,6 @@ load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Add the APItoolkit configuration options
-APITOOLKIT_SERVICE_NAME= "my-service"
 APITOOLKIT_CAPTURE_REQUEST_BODY = True
 APITOOLKIT_CAPTURE_RESPONSE_BODY = True
 

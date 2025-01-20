@@ -69,7 +69,7 @@ from apitoolkit_fastapi import APIToolkit
 app = FastAPI()
 
 # Initialize APItoolkit
-apitoolkit = APIToolkit(service_name="my-service")
+apitoolkit = APIToolkit()
 app.middleware("http")(apitoolkit.middleware)
 # END Initialize APItoolkit
 
@@ -164,7 +164,6 @@ redact_response_body = ["$.user.email", "$.user.addresses"]
 redact_request_body = ["$.users[*].email", "$.users[*].credit_card"]
 
 apitoolkit = APIToolkit(
-  service_name="my-service",
   redact_headers=redact_headers,
   redact_response_body=redact_response_body,
   redact_request_body=redact_request_body
@@ -198,7 +197,7 @@ from apitoolkit_fastapi import report_error
 
 app = FastAPI()
 
-apitoolkit = APIToolkit(service_name="my-service")
+apitoolkit = APIToolkit()
 app.middleware("http")(apitoolkit.middleware)
 
 @app.get('/')
@@ -224,7 +223,7 @@ from apitoolkit_fastapi import observe_request
 
 app = FastAPI()
 
-apitoolkit = APIToolkit(service_name="my-service")
+apitoolkit = APIToolkit()
 app.middleware("http")(apitoolkit.middleware)
 
 @app.get('/')
