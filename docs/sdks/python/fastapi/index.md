@@ -45,6 +45,12 @@ Then run the command below to start your server with opentelemetry instrumented:
 opentelemetry-instrument uvicorn main:app
 ```
 
+Or run using `gunicorn` with `gunicorn` config
+
+```sh
+opentelemetry-instrument gunicorn -c gunicorn.conf.py main:app
+```
+
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
   <p>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</p>
