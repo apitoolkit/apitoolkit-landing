@@ -8,9 +8,10 @@ menuWeight: 1
 
 # Springboot SDK Guide
 
-To integrate your Springboot Java application with APItoolkit, you need to use this SDK to monitor incoming traffic, aggregate the requests, and then send them to APItoolkit's servers. Kindly follow this guide to get started and learn about all the supported features of APItoolkit's **Springboot SDK**.
+In this guide, you’ll learn how to integrate OpenTelemetry into your Java application and install the APItoolkit Springboot SDK to enhance its functionalities. By combining OpenTelemetry’s robust tracing and metrics capabilities with the APItoolkit SDK, you’ll be able to monitor incoming and outgoing requests, report errors, and gain deeper insights into your application’s performance. This setup provides comprehensive observability, helping you track requests and troubleshoot issues effectively.
 
 ```=html
+
 <hr>
 ```
 
@@ -26,26 +27,51 @@ To install the SDK, kindly add the following dependency to your `pom.xml` file w
 &lt;dependency&gt;
   &lt;groupId&gt;io.apitoolkit.springboot&lt;/groupId&gt;
   &lt;artifactId&gt;apitoolkit-springboot&lt;/artifactId&gt;
-  &lt;version&gt;1.0.6&lt;/version&gt;
+  &lt;version&gt;2.0.9&lt;/version&gt;
 &lt;/dependency&gt;
 ```
 
-## Configuration
+## Open Telemetry Setup
 
-First, add your APItoolkit API key to the `application.properties` file, like so:
+Setting up open telemetry allows you to send traces, metrics and logs to the APIToolkit platform.
+To setup open telemetry, you need to install the opentelemetry-javaagent.jar file.
 
 ```sh
-apitoolkit.apikey={ENTER_YOUR_API_KEY_HERE}
+curl -L -O https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/latest/download/opentelemetry-javaagent.jar
+```
 
-# Other configuation options
-apitoolkit.debug=false
-# ...
+### Setup Open Telemetry Variables
+
+The environment variables include your API key and the endpoint to send the data to, this allows you to send data to the APIToolkit platform.
+
+```sh
+export OTEL_EXPORTER_OTLP_ENDPOINT="http://otelcol.apitoolkit.io:4317"
+export OTEL_SERVICE_NAME="my-service" # Specifies the name of the service.
+export OTEL_RESOURCE_ATTRIBUTES=at-project-key="{ENTER_YOUR_API_KEY_HERE}" # Adds your API KEY to the resource.
+export OTEL_EXPORTER_OTLP_PROTOCOL="grpc" #Specifies the protocol to use for the OpenTelemetry exporter.
 ```
 
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
   <p>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</p>
 </div>
+
+## APItoolkit SDK Configuration
+
+The apitoolkit sdk can be configured using the following optional properties in your `resource/application.properties` file:
+
+```sh
+apitoolkit.captureRequestBody=true # Capture request body.
+apitoolkit.captureResponseBody=true # Capture response body.
+apitoolkit.serviceName=my-service # Service name.
+apitoolkit.serviceVersion="2.0" # Service version.
+apitoolkit.tags = "value1,value2" # Comma-separated list of tags.
+apitoolkit.redactHeaders = "Authorizations, X-Api-Key" # Comma-separated list of headers to redact.
+apitoolkit.redactRequestBody= "$.password,$.creditCardNumber" # Comma-separated list of JSON paths to redact.
+apitoolkit.redactResponseBody= "$.password,$.creditCardNumber" # Comma-separated list of JSON paths to redact.
+apitoolkit.debug=false # Enable debug mode.
+# ...
+```
 
 Then, initialize the SDK, like so:
 
@@ -217,7 +243,7 @@ import org.springframework.web.bind.annotation.*;
 @EnableAPIToolkit
 @RestController
 public class DemoApplication {
-  
+
   public static void main(String[] args) {
     SpringApplication.run(DemoApplication.class, args);
   }
@@ -229,7 +255,7 @@ public class DemoApplication {
     List.of("$.user.email", "$.user.addresses"),
     List.of("$.users[*].email", "$.users[*].credit_card")
   );
-  
+
   @GetMapping("/hello")
   public String hello(HttpServletRequest request) {
     // Use the observingClient instance to create an HTTP Client
