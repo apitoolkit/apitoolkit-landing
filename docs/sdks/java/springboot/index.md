@@ -56,6 +56,18 @@ export OTEL_EXPORTER_OTLP_PROTOCOL="grpc" #Specifies the protocol to use for the
   <p>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</p>
 </div>
 
+You can then run the application with opentelemetry instrumented using the following command:
+
+```sh
+java -javaagent:<PATH-TO>/opentelemetry-javaagent.jar -jar target/your_app.jar
+```
+
+or using maven
+
+```sh
+mvn spring-boot:run -Dspring-boot.run.jvmArguments="-javaagent:<PATH-TO>/opentelemetry-javaagent.jar"
+```
+
 ## APItoolkit SDK Configuration
 
 The apitoolkit sdk can be configured using the following optional properties in your `resource/application.properties` file:
