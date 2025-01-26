@@ -52,6 +52,12 @@ Or run using `gunicorn`
 opentelemetry-instrument gunicorn myapp.wsgi
 ```
 
+Or using `daphne`
+
+```sh
+opentelemetry-instrument daphne myapp.asgi:application
+```
+
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
   <p>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</p>
