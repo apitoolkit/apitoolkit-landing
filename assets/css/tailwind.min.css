@@ -7516,12 +7516,6 @@ html:has(.drawer-toggle:checked) {
   margin-bottom: calc(2rem * var(--tw-space-y-reverse));
 }
 
-.space-x-5 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(1.25rem * var(--tw-space-x-reverse));
-  margin-left: calc(1.25rem * calc(1 - var(--tw-space-x-reverse)));
-}
-
 .space-y-reverse > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 1;
 }
@@ -7880,11 +7874,6 @@ html:has(.drawer-toggle:checked) {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-fill-brand-strong {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 104 255 / var(--tw-bg-opacity));
 }
 
 .bg-\[url\(\'\/assets\/img\/svgs\/grid\.svg\'\)\] {
@@ -8253,10 +8242,6 @@ html:has(.drawer-toggle:checked) {
   padding-top: 18px;
 }
 
-.pt-8 {
-  padding-top: 2rem;
-}
-
 .text-left {
   text-align: left;
 }
@@ -8553,11 +8538,6 @@ html:has(.drawer-toggle:checked) {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.text-text-inverse-strong {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
 .underline {
   text-decoration-line: underline;
 }
@@ -8566,16 +8546,12 @@ html:has(.drawer-toggle:checked) {
   text-decoration-line: overline;
 }
 
-.underline-offset-4 {
-  text-underline-offset: 4px;
-}
-
-.underline-offset-1 {
-  text-underline-offset: 1px;
-}
-
 .underline-offset-2 {
   text-underline-offset: 2px;
+}
+
+.underline-offset-4 {
+  text-underline-offset: 4px;
 }
 
 .opacity-0 {
