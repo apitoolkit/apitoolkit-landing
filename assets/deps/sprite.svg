@@ -3,4 +3,13 @@
   <symbol id="chevron-down" viewBox="0 0 13 12" fill="none">
     <path d="M3.96924 4.5L6.96924 7.5L9.96924 4.5" stroke="#000D4D" stroke-opacity="0.45" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
   </symbol>
+  <symbol id="pie-chart" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M21.7099 16.39C21.0737 17.8945 20.0787 19.2202 18.8118 20.2513C17.5449 21.2824 16.0447 21.9874 14.4424 22.3048C12.84 22.6221 11.1843 22.5421 9.62006 22.0718C8.05578 21.6014 6.63054 20.7551 5.46893 19.6067C4.30733 18.4582 3.44473 17.0428 2.95655 15.4839C2.46837 13.9251 2.36948 12.2705 2.66851 10.6646C2.96755 9.05878 3.65541 7.55063 4.67196 6.27203C5.68851 4.99343 7.0028 3.98332 8.49992 3.33M22.4999 12.5C22.4999 11.1868 22.2413 9.88642 21.7387 8.67317C21.2362 7.45991 20.4996 6.35752 19.571 5.42893C18.6424 4.50035 17.54 3.76375 16.3267 3.2612C15.1135 2.75866 13.8131 2.5 12.4999 2.5V12.5H22.4999Z" stroke="#0068FF" stroke-opacity="0.8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="activity" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M22.5 12.5H18.5L15.5 21.5L9.5 3.5L6.5 12.5H2.5" stroke="#0068FF" stroke-opacity="0.8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="bar-chart-2" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M22.5 12.5H18.5L15.5 21.5L9.5 3.5L6.5 12.5H2.5" stroke="#0068FF" stroke-opacity="0.8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
 </svg>
