@@ -4,129 +4,138 @@
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <link rel="stylesheet" href="/assets/css/tailwind.min.css">
   </head>
-  <body class=" flex flex-col items-center xdark text-textStrong space-y-28 bg-bgBase">
-    <nav class="py-4 flex-1 flex max-w-6xl w-full justify-between items-center sticky top-0 z-10 bg-bgBase">
-      <a href="/" class="px-1 py-1" aria-label="Back to homepage">
-        <img class="h-6 dark:hidden" src="/assets/brand/logo_full_color.svg" alt="APItoolkit full color logo">
-        <img class="h-6 hidden dark:inline-block" src="/assets/brand/logo_full_white.svg" alt="APItoolkit white logo">
-      </a>
-      <div class="flex gap-5 items-center">
-        <a class="inline-flex items-center">Product 
-          <svg class="flex-shrink-0 icon h-5 w-5 text-current fill-current stroke-current">
-            <use xlink:href="/assets/deps/sprite.svg#chevron-down"></use>
-          </svg>
+  <body class=" flex flex-col items-center xdark text-textStrong space-y-48 bg-bgBase [&_svg]:text-iconNeutral">
+    <section class="space-y-28">
+      <nav class="py-4 flex-1 flex max-w-7xl w-full justify-between items-center sticky top-0 z-10 bg-bgBase">
+        <a href="/" class="py-1" aria-label="Back to homepage">
+          <img class="h-6 dark:hidden" src="/assets/brand/logo_full_color.svg" alt="APItoolkit full color logo">
+          <img class="h-6 hidden dark:inline-block" src="/assets/brand/logo_full_white.svg" alt="APItoolkit white logo">
         </a>
-        <a>Documentation</a>
-        <a>Blog</a>
-        <a>Pricing</a>
-      </div>
-      <div class="flex gap-5 items-center">
-        <a class="underline underline-offset-2">Login</a>
-        <a class="underline underline-offset-2">Start free trial</a>
-        <a class="bg-fillBrand-strong text-textInverse-strong px-4 py-3 rounded-xl">Book a demo</a>
-      </div>
-    </nav>
-
-    <div class="flex max-w-6xl w-full ">
-      <div class="space-y-8">
-        <h1 class="text-4xl font-semibold leading-10 space-y-3">
-        <span class="block">Find and fix production issues<span class="text-textDisabled">,</span></span><span class="text-textDisabled block">before customers notice</span></h1>
-        <ul class="text-xl space-y-4">
-          <li class="flex gap-2"><svg class="flex-shrink-0 icon h-5 w-5 text-current fill-current stroke-current">
-            <use xlink:href="/assets/deps/sprite.svg#pie-chart"></use>
-          </svg> Catch breaking changes and critical errors</li>
-          <li class="flex gap-2"><svg class="flex-shrink-0 icon h-5 w-5 text-current fill-current stroke-current">
-            <use xlink:href="/assets/deps/sprite.svg#activity"></use>
-          </svg> Analyze logs, metrics, traces and request payloads</li>
-          <li class="flex gap-2"><svg class="flex-shrink-0 icon h-5 w-5 text-current fill-current stroke-current">
-            <use xlink:href="/assets/deps/sprite.svg#bar-chart-2"></use>
-          </svg> Monitor uptime & performance--yours and external APIs you rely on</li>
-        </ul>
-        <div>
-          <a class="btn py-3 px-4 bg-fillBrand-strong text-textInverse-strong">Book a demo</a>
-          <a class="btn py-3 px-4 bg-transparent border border-fillBrand-strong text-fillBrand-strong" >Start 30 day free trial</a>
-        </div>
-        <div class="flex gap-4 items-center text-textWeak">
-          <!-- TrustBox Rating -->
-          <a class="flex items-center gap-3" href="https://trustpilot.com/review/apitoolkit.io" target="_blank" rel="noopener noreferrer">
-              <img src="/assets/img/trustpilot-stars-4.5.svg" class="w-28" alt="APItoolkit Trustpilot Rating" />
-              <img class="w-20 dark:hidden" src="/assets/img/trustpilot-black.svg" alt="Trustpilot Logo" />
-              <img class="w-20 hidden dark:inline-block" src="/assets/img/trustpilot-white.svg" alt="Trustpilot Logo" />
+        <div class="flex gap-5 items-center">
+          <a class="inline-flex items-center">Product 
+            <svg class="flex-shrink-0 icon h-5 w-5 text-current fill-current stroke-current">
+              <use xlink:href="/assets/deps/sprite.svg#chevron-down"></use>
+            </svg>
           </a>
-          <!-- End TrustBox Rating -->
-          <span>|</span>
-          <span>Built for security & compliance</span>
+          <a>Documentation</a>
+          <a>Blog</a>
+          <a>Pricing</a>
         </div>
-      </div>
-      <div class="flex-1"><img class="ml-14 w-[120%]" src="/assets/img/home/hero-img1.svg"/></div>
-    </div>
+        <div class="flex gap-5 items-center">
+          <a class="underline underline-offset-2">Login</a>
+          <a class="underline underline-offset-2">Start free trial</a>
+          <a class="bg-fillBrand-strong text-textInverse-strong px-6 py-3 rounded-xl">Book a demo</a>
+        </div>
+      </nav>
 
-    <div class="max-w-6xl w-full text-textWeak">
-      <div class="space-y-8">
-        <p class="">Trusted by 5000+ developers at proactive engineering companies</p>
-        <div class="flex gap-6  items-center [&>*]:brightness-0 [&>*]:dark:invert opacity-50">
-          <img src="/assets/img/customers/andela.svg" alt="Andela's Logo" class="h-5 sm:h-8">
-          <img src="/assets/img/customers/thepeer.svg" alt="ThePeer's Logo" class="h-5 sm:h-8">
-          <img src="/assets/img/customers/grovepay.svg" alt="Grovepay's Logo" class="h-5 sm:h-8">
-          <img src="/assets/img/customers/sameday.svg" alt="Same Day Customs' Logo" class="h-5 sm:h-8">
-          <img src="/assets/img/customers/platnova.png" alt="Platnova's Logo" class="h-5 sm:h-8">
-          <img src="/assets/img/customers/payfonte.svg" alt="Payfonte's Logo" class="h-5 sm:h-8">
-        </div>
-        <div class="flex text-sm space-x-24">
-          <div class="flex-1 border-l border-fillBrand-strong px-6 space-y-4">
-            <p>"We had a major incident, and our tech support could see via APItookit which third-party integration partner was responsible, and could take action without needing the engineering team's help"</p>
-            <div class="flex gap-3">
-              <img class="rounded-lg grayscale w-12" src="/assets/img/love/joshua.jpeg" />
-              <div class="flex-1">
-                <p>Joshua Chinemezum</p>
-                <p class="text-xs">CEO of Platnova</p>
-              </div>
-            </div>
-            <a class="text-textBrand underline underline-offset-2 block">Platnova case study</a>
+      <div class="flex max-w-7xl w-full gap-10">
+        <div class="space-y-8 flex-1">
+          <h1 class="text-[2.5rem] font-semibold leading-10 space-y-3">
+          <span class="block">Find and fix production issues<span class="text-textDisabled">,</span></span><span class="text-textDisabled block">before customers notice</span></h1>
+          <ul class="text-[1.25rem] space-y-4 leading-tight [&_svg]:!text-strokeBrand-strong">
+            <li class="flex gap-2 items-center"><svg class="h-5 w-5">
+              <use xlink:href="/assets/deps/sprite.svg#pie-chart"></use>
+            </svg> Catch breaking changes and critical errors</li>
+            <li class="flex gap-2 items-center"><svg class="h-5 w-5">
+              <use xlink:href="/assets/deps/sprite.svg#activity"></use>
+            </svg> Analyze logs, metrics, traces and request payloads</li>
+            <li class="flex gap-2 items-center"><svg class="h-5 w-5">
+              <use xlink:href="/assets/deps/sprite.svg#bar-chart-2"></use>
+            </svg> Monitor performance and uptime of both APIs and external APIs</li>
+          </ul>
+          <div class="flex gap-4">
+            <a class="btn py-3 px-6 rounded-xl bg-fillBrand-strong text-textInverse-strong">Book a demo</a>
+            <a class="btn py-3 px-6 rounded-xl bg-transparent border border-fillBrand-strong text-fillBrand-strong" >Start 30 day free trial</a>
           </div>
-          <div class="flex-1 border-l border-fillBrand-strong px-6 space-y-4">
-            <p>"We had a major incident, and our tech support could see via APItookit which third-party integration partner was responsible, and could take action without needing the engineering team's help"</p>
-            <div class="flex gap-3">
-              <img class="rounded-lg grayscale w-12" src="/assets/img/love/joshua.jpeg" />
-              <div class="flex-1">
-                <p>Joshua Chinemezum</p>
-                <p class="text-xs">CEO of Platnova</p>
-              </div>
-            </div>
-            <a class="text-textBrand underline underline-offset-2 block">Platnova case study</a>
+          <div class="flex gap-4 items-center text-textWeak">
+            <!-- TrustBox Rating -->
+            <a class="flex items-center gap-3" href="https://trustpilot.com/review/apitoolkit.io" target="_blank" rel="noopener noreferrer">
+                <img src="/assets/img/trustpilot-stars-4.5.svg" class="w-28" alt="APItoolkit Trustpilot Rating" />
+                <img class="w-20 dark:hidden" src="/assets/img/trustpilot-black.svg" alt="Trustpilot Logo" />
+                <img class="w-20 hidden dark:inline-block" src="/assets/img/trustpilot-white.svg" alt="Trustpilot Logo" />
+            </a>
+            <!-- End TrustBox Rating -->
+            <span>|</span>
+            <span>Built for security & compliance</span>
           </div>
         </div>
+        <div class="w-[42%]"><img class="w-full" src="/assets/img/home/hero-img1.svg"/></div>
       </div>
-    </div>
 
-    <div class="max-w-6xl w-full text-textWeak space-y-5">
-      <h2 class="text-3xl font-semibold text-textStrong">The most intuitive way to understand systems that matter</h2>
-      <p>Just because you don't see an error, doesn't mean it's not happening. That's why we built both active <br/>and passive monitoring--<span class="text-textBrand">to keep you informed of the different systems you maintain.<span></p>
+      <div class="max-w-7xl w-full text-textWeak">
+        <div class="space-y-8">
+          <p class="">Trusted by 5000+ developers at proactive engineering companies</p>
+          <div class="flex gap-8  items-center [&>*]:brightness-0 [&>*]:dark:invert opacity-50">
+            <img src="/assets/img/customers/andela.svg" alt="Andela's Logo" class="h-5 sm:h-8">
+            <img src="/assets/img/customers/partna.svg" alt="ThePeer's Logo" class="h-5 sm:h-8">
+            <img src="/assets/img/customers/grovepay.svg" alt="Grovepay's Logo" class="h-5 sm:h-8">
+            <img src="/assets/img/customers/sameday.svg" alt="Same Day Customs' Logo" class="h-5 sm:h-8">
+            <img src="/assets/img/customers/platnova.png" alt="Platnova's Logo" class="h-5 sm:h-8">
+            <img src="/assets/img/customers/payfonte.svg" alt="Payfonte's Logo" class="h-5 sm:h-8">
+            <img src="/assets/img/customers/thepeer.svg" alt="ThePeer's Logo" class="h-5 sm:h-8">
+          </div>
+          <div class="flex text-sm leading-5 text-textWeak space-x-24 py-6">
+            <div class="flex-1 border-l border-fillBrand-strong px-6 py-2 space-y-4">
+              <div class="flex gap-1"><div class="inline-flex space-x-1  w-[6rem]">
+                <svg class="icon h-5 inline-block"><use xlink:href="/assets/deps/sprite.svg#star"></use></svg>
+                <svg class="icon h-5 inline-block"><use xlink:href="/assets/deps/sprite.svg#star"></use></svg>
+                <svg class="icon h-5 inline-block"><use xlink:href="/assets/deps/sprite.svg#star"></use></svg>
+                <svg class="icon h-5 inline-block"><use xlink:href="/assets/deps/sprite.svg#star"></use></svg>
+                <svg class="icon h-5 inline-block"><use xlink:href="/assets/deps/sprite.svg#star"></use></svg>
+              </div></div>
+              <p>"Easy onboarding and they added an integration just for our use case, thanks again! We didn't have insights into our api load before and this helps very much."</p>
+              <div class="flex gap-3 items-center">
+                <img class="rounded-lg grayscale w-12 h-12 object-cover" src="/assets/img/love/sebastian_zwach.jpeg" />
+                <div class="flex-1 space-y-1">
+                  <p class="text-textStrong">Sebastian Zwach</p>
+                  <p class="text-xs">founder of Neorent GmbH</p>
+                </div>
+              </div>
+              <a class="text-textBrand underline underline-offset-2 block">Neorent case study</a>
+            </div>
+            <div class="flex-1 border-l border-fillBrand-strong px-6 py-2 space-y-4">
+              <div class="flex gap-1"><div class="inline-flex space-x-1  w-[6rem]">
+                <svg class="icon h-5 inline-block"><use xlink:href="/assets/deps/sprite.svg#star"></use></svg>
+                <svg class="icon h-5 inline-block"><use xlink:href="/assets/deps/sprite.svg#star"></use></svg>
+                <svg class="icon h-5 inline-block"><use xlink:href="/assets/deps/sprite.svg#star"></use></svg>
+                <svg class="icon h-5 inline-block"><use xlink:href="/assets/deps/sprite.svg#star"></use></svg>
+                <svg class="icon h-5 inline-block"><use xlink:href="/assets/deps/sprite.svg#star"></use></svg>
+              </div></div>
+              <p>"We had a major incident, and our tech support could see via APItookit which third-party integration partner was responsible, and could take action without needing the engineering team's help"</p>
+              <div class="flex gap-3 items-center">
+                <img class="rounded-lg grayscale w-12 h-12 object-cover" src="/assets/img/love/joshua.jpeg" />
+                <div class="flex-1 space-y-1">
+                  <p class="text-textStrong">Joshua Chinemezum</p>
+                  <p class="text-xs">CEO of Platnova</p>
+                </div>
+              </div>
+              <a class="text-textBrand underline underline-offset-2 block">Platnova case study</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <div class="flex justify-between py-3">
-        <div class="inline-block bg-fillWeak border border-strokeWeak rounded-lg [&>*]:px-4 [&>*]:py-3 [&>*]:inline-flex [&>*]:gap-1">
-          <label class="rounded-lg border border-strokeStrong bg-bgOverlay">
-            <svg class="flex-shrink-0 icon h-5 w-5 xtext-current xfill-current xstroke-current">
-              <use xlink:href="/assets/deps/sprite.svg#pie-chart"></use>
-            </svg>
-            APIs
-          </label>
-          <label>Backends</label>
-          <label>Databases</label>
-          <label>Infrastructure</label>
-          <label>Frontends</label>
-          <label>Mobile</label>
+    <div class="max-w-7xl w-full text-textWeak space-y-5">
+      <h2 class="text-[2rem] font-semibold text-textStrong">The most intuitive way to understand systems that matter</h2>
+      <p class="text-xl">Just because you don't see an error, doesn't mean it's not happening. That's why we built both active <br/>and passive monitoring--<span class="text-textBrand">to keep you informed of the different systems you maintain.<span></p>
+
+      <div class="flex justify-between py-11">
+        <div class="inline-flex justify-center bg-fillWeak border border-strokeWeak rounded-lg 
+          [&>*]:px-4 [&>*]:py-3 [&>*]:inline-flex [&>*]:items-center [&>*]:gap-2
+          [&_svg]:h-5 [&_svg]:w-5 
+          ">
+          <label class="rounded-lg border border-strokeStrong bg-bgOverlay shadow-md"><svg><use xlink:href="/assets/deps/sprite.svg#rss"></use></svg> APIs</label>
+          <label><svg><use xlink:href="/assets/deps/sprite.svg#hard-drive"></use></svg> Backends</label>
+          <label><svg><use xlink:href="/assets/deps/sprite.svg#database"></use></svg> Databases</label>
+          <label><svg><use xlink:href="/assets/deps/sprite.svg#server"></use></svg> Infrastructure</label>
+          <label><svg><use xlink:href="/assets/deps/sprite.svg#monitor"></use></svg> Frontends</label>
+          <label><svg><use xlink:href="/assets/deps/sprite.svg#smartphone"></use></svg> Mobile</label>
         </div>
 
-        <div class="inline-flex gap-4">
-          <a class="border border-strokeWeak p-4 rounded-lg"><svg class="flex-shrink-0 icon h-5 w-5 xtext-current xfill-current xstroke-current">
-              <use xlink:href="/assets/deps/sprite.svg#pie-chart"></use>
-            </svg>
-          </a>
-          <a class="border border-strokeStrong p-4 rounded-lg shadow-md"><svg class="flex-shrink-0 icon h-5 w-5 xtext-current xfill-current xstroke-current">
-              <use xlink:href="/assets/deps/sprite.svg#pie-chart"></use>
-            </svg>
-          </a>
+        <div class="inline-flex gap-4 [&>*]:inline-flex [&>*]:items-center">
+          <a class="border border-strokeDisabled p-4 rounded-lg"><svg class="h-3 w-3"><use xlink:href="/assets/deps/sprite.svg#chevron-left"></use></svg></a>
+          <a class="border border-strokeStrong p-4 rounded-lg shadow-md"><svg class="h-3 w-3"><use xlink:href="/assets/deps/sprite.svg#chevron-right"></use></svg></a>
         </div>
       </div>
 
@@ -135,17 +144,17 @@
           <div class="space-y-2">
             <h5 class="text-xl font-semibold text-textStrong">Catch breaking changes</h5>
             <p>Spot unexpected changes in API responses or data structures-your services or third-party calls-before they slip into production.</p>
-            <a class="text-textBrand underline">Learn more</a>
+            <a class="text-textBrand underline block ">Learn more</a>
           </div>
           <div class="space-y-2">
             <h5 class="text-xl font-semibold text-textStrong">Monitor request payloads</h5>
             <p>Create real-time alerts for critical API payloads-like third-party errors or large bank transactions-and get notified instantly.</p>
-            <a class="text-textBrand underline">Learn more</a>
+            <a class="text-textBrand underline block ">Learn more</a>
           </div>
           <div class="space-y-2">
             <h5 class="text-xl font-semibold text-textStrong">Create Multistep Healthchecks</h5>
             <p>Run multistep checks for critical workflows—create an account, check balance, transfer funds, delete account-on a regular schedule.</p>
-            <a class="text-textBrand underline">Learn more</a>
+            <a class="text-textBrand underline block ">Learn more</a>
           </div>
         </div>
         <div class="flex-1">
@@ -154,7 +163,7 @@
     </div>
 
     <!-- Powered by AI -->
-    <div class="max-w-6xl w-full text-textWeak space-y-5">
+    <div class="max-w-7xl w-full text-textWeak space-y-5">
       <div class="flex justify-between">
         <div class="flex-1 space-y-6">
           <h2 class="text-3xl font-semibold text-textStrong">How? Powered by a purpose built AI. <span class="text-textWeak">seriously</span></h2>
@@ -199,51 +208,34 @@
     </div>
 
     <!-- FEATURES -->
-    <div class="max-w-6xl w-full text-textWeak space-y-5">
-      <h2 class="text-3xl font-semibold text-textStrong">Built with features that matter to engineers like us</h2>
-      <p>The new standard for log management. Collect, store, and analyze everysingle event <br/>without limits on a platform that gives you complete control.</p>
+    <div class="max-w-7xl w-full text-textWeak space-y-5">
+      <h2 class="text-[2rem] font-semibold text-textStrong">Built with features that matter to engineers like us</h2>
+      <p class="text-xl">The new standard for log management. Collect, store, and analyze everysingle event <br/>without limits on a platform that gives you complete control.</p>
       <div class="flex gap-16 pt-5">
-        <div class="space-y-8">
+        <div class="text-textStrong space-y-8 [&_input]:hidden [&_label]:inline-flex [&_label]:px-2  [&_label]:items-center [&_label]:gap-2   
+            [&_label]:border-l-2 [&_label]:border-transparent [&_svg]:h-4 [&_svg]:w-4 ">
           <div class="flex flex-col [&>*]:flex [&>*]:gap-2 [&>label]:text-lg [&>label]:p-1">
-            <h4 class="text-sm font-semibold pb-3">Observability & monitoring</h4>
-            <label><input type="radio" class="hidden"/> <svg class="flex-shrink-0 icon h-5 w-5 xtext-current xfill-current xstroke-current">
-              <use xlink:href="/assets/deps/sprite.svg#pie-chart"></use>
-            </svg>Logs and traces analysis</label>
-            <label><input type="radio" class="hidden"/> <svg class="flex-shrink-0 icon h-5 w-5 xtext-current xfill-current xstroke-current">
-              <use xlink:href="/assets/deps/sprite.svg#pie-chart"></use>
-            </svg>Errors and Performance tracking</label>
-            <label><input type="radio" class="hidden"/> <svg class="flex-shrink-0 icon h-5 w-5 xtext-current xfill-current xstroke-current">
-              <use xlink:href="/assets/deps/sprite.svg#pie-chart"></use>
-            </svg>Monitors and healthchecks</label>
-            <label><input type="radio" class="hidden"/> <svg class="flex-shrink-0 icon h-5 w-5 xtext-current xfill-current xstroke-current">
-              <use xlink:href="/assets/deps/sprite.svg#pie-chart"></use>
-            </svg>Custom metrics</label>
+            <h4 class="text-sm font-semibold pb-3 pl-2.5">Observability & monitoring</h4>
+            <label class="!border-fillBrand-strong bg-fillBrand-weak"><input type="radio"/> <svg><use xlink:href="/assets/deps/sprite.svg#align-left"></use></svg>Logs and traces analysis</label>
+            <label><input type="radio"/> <svg><use xlink:href="/assets/deps/sprite.svg#activity"></use></svg>Errors and Performance tracking</label>
+            <label><input type="radio"/> <svg><use xlink:href="/assets/deps/sprite.svg#compass"></use></svg>Monitors and healthchecks</label>
+            <label><input type="radio"/> <svg><use xlink:href="/assets/deps/sprite.svg#bar-chart"></use></svg>Custom metrics</label>
           </div>
 
           <div class="flex flex-col [&>*]:flex [&>*]:gap-2 [&>label]:text-lg [&>label]:p-1">
-            <h4 class="text-sm font-semibold pb-3">API management</h4>
-            <label><input type="radio" class="hidden"/> <svg class="flex-shrink-0 icon h-5 w-5 xtext-current xfill-current xstroke-current">
-              <use xlink:href="/assets/deps/sprite.svg#pie-chart"></use>
-            </svg>API Catalog and Documentation</label>
-            <label><input type="radio" class="hidden"/> <svg class="flex-shrink-0 icon h-5 w-5 xtext-current xfill-current xstroke-current">
-              <use xlink:href="/assets/deps/sprite.svg#pie-chart"></use>
-            </svg>Change detection and tracking</label>
+            <h4 class="text-sm font-semibold pb-3 pl-2.5">API management</h4>
+            <label><input type="radio"/> <svg><use xlink:href="/assets/deps/sprite.svg#layout"></use></svg>API Catalog and Documentation</label>
+            <label><input type="radio"/> <svg><use xlink:href="/assets/deps/sprite.svg#copy"></use></svg>Change detection and tracking</label>
           </div>
 
           <div class="flex flex-col [&>*]:flex [&>*]:gap-2 [&>label]:text-lg [&>label]:p-1">
-            <h4 class="text-sm font-semibold pb-3">Alerts and reports</h4>
-            <label><input type="radio" class="hidden"/> <svg class="flex-shrink-0 icon h-5 w-5 xtext-current xfill-current xstroke-current">
-              <use xlink:href="/assets/deps/sprite.svg#pie-chart"></use>
-            </svg>Real time alert channels</label>
-            <label><input type="radio" class="hidden"/> <svg class="flex-shrink-0 icon h-5 w-5 xtext-current xfill-current xstroke-current">
-              <use xlink:href="/assets/deps/sprite.svg#pie-chart"></use>
-            </svg>Custom dashboards</label>
-            <label><input type="radio" class="hidden"/> <svg class="flex-shrink-0 icon h-5 w-5 xtext-current xfill-current xstroke-current">
-              <use xlink:href="/assets/deps/sprite.svg#pie-chart"></use>
-            </svg>Daily or weekly reports</label>
+            <h4 class="text-sm font-semibold pb-3 pl-2.5">Alerts and reports</h4>
+            <label><input type="radio"/> <svg><use xlink:href="/assets/deps/sprite.svg#radio"></use></svg>Real time alert channels</label>
+            <label><input type="radio"/> <svg><use xlink:href="/assets/deps/sprite.svg#grid"></use></svg>Custom dashboards</label>
+            <label><input type="radio"/> <svg class="flex-shrink-0 icon h-5 w-5"><use xlink:href="/assets/deps/sprite.svg#calendar"></use></svg>Daily or weekly reports</label>
           </div>
 
-          <div class="flex flex-col [&>*]:underline [&>*]:underline-offset-2 space-y-1 text-textBrand">
+          <div class="flex flex-col [&>*]:underline [&>*]:underline-offset-2 space-y-1 text-textBrand pl-2.5">
             <a>Launch playground</a>
             <a>Book a demo</a>
             <a>Start free 30 day trial</a>
@@ -251,22 +243,16 @@
 
         </div>
         <div class="flex-1">
-          <div class="flex">
+          <div class="flex items-end">
             <div class="space-y-3 flex-1">
               <h5 class="text-xl font-semibold">Logs and traces analysis</h5>
-              <p>If a tree falls in a forest and no one is around to hear it, does it make a sound? That's why we built tools for both active and passive monitoring of systems that matter</p>
+              <p class="max-w-xl">If a tree falls in a forest and no one is around to hear it, does it make a sound? That's why we built tools for both active and passive monitoring of systems that matter</p>
               <a class="block underline underline-offset-2 text-textBrand">Learn more</a>
             </div>
             <div>
               <div class="gap-4 [&>*]:inline-flex inline-flex">
-                <a class="border border-strokeWeak p-4 rounded-lg"><svg class="flex-shrink-0 icon h-5 w-5 xtext-current xfill-current xstroke-current">
-                    <use xlink:href="/assets/deps/sprite.svg#pie-chart"></use>
-                  </svg>
-                </a>
-                <a class="border border-strokeStrong p-4 rounded-lg shadow-md"><svg class="flex-shrink-0 icon h-5 w-5 xtext-current xfill-current xstroke-current">
-                    <use xlink:href="/assets/deps/sprite.svg#pie-chart"></use>
-                  </svg>
-                </a>
+                <a class="border border-strokeDisabled p-4 rounded-lg"><svg class="h-4 w-4"><use xlink:href="/assets/deps/sprite.svg#chevron-left"></use></svg></a>
+                <a class="border border-strokeStrong p-4 rounded-lg shadow-md"><svg class="h-4 w-4"><use xlink:href="/assets/deps/sprite.svg#chevron-right"></use></svg></a>
               </div>
             </div>
           </div>
@@ -277,16 +263,17 @@
     </div>
 
     <!-- FLEXIBLE DEPLOYMENTS-->
-    <div class="max-w-6xl w-full text-textWeak space-y-5">
-      <h2 class="text-3xl font-semibold text-textStrong">Flexible deployment options for every company </h2>
-      <p>Regardless of your company's size or compliance requirements, APItoolkit operates <br/>within your business and regulatory constraints.</p>
+    <div class="max-w-7xl w-full text-textWeak space-y-5">
+      <h2 class="text-[2rem] font-semibold text-textStrong">Flexible deployment options for every company </h2>
+      <p class="text-xl">Regardless of your company's size or compliance requirements, APItoolkit operates <br/>within your business and regulatory constraints.</p>
       <div>
-        <a class="btn py-3 px-4 bg-fillBrand-strong text-textInverse-strong">Book a demo</a>
-        <a class="btn py-3 px-4 bg-transparent border border-fillBrand-strong text-fillBrand-strong" >Start 30 day free trial</a>
+        <a class="btn py-3 px-6 rounded-xl bg-fillBrand-strong text-textInverse-strong">Book a demo</a>
+        <a class="btn py-3 px-6 rounded-xl bg-transparent border border-fillBrand-strong text-fillBrand-strong" >Start 30 day free trial</a>
       </div>
-      <div class="flex gap-10 pt-5 [&>*]:flex-1 [&>*]:p-6 [&>*]:space-y-5 [&>*]:rounded-xl [&>*]:border ">
+      <div class="flex gap-10 pt-5 [&>*]:flex-1 [&>*]:p-6 [&>*]:space-y-5 [&>*]:rounded-xl [&>*]:border [&_svg]:w-5 [&_svg]:h-5 [&_svg]:!text-iconBrand">
         <div class="border-strokeBrand-weak">
-          <div>
+          <div class="inline-block p-3 bg-fillBrand-weak rounded-full"><svg><use xlink:href="/assets/deps/sprite.svg#cloud"></use></svg></div>
+          <div class="flex flex-col">
             <strong class="block font-normal">APITOOLKIT CLOUD</strong>
             <h5 class="font-semibold text-2xl text-textStrong">Bring nothing</h5>
           </div>
@@ -296,7 +283,8 @@
         </div>
 
         <div class="bg-fillBrand-weak border-strokeBrand-weak">
-          <div>
+          <div class="inline-block p-3 bg-fillBrand-weak rounded-full"><svg><use xlink:href="/assets/deps/sprite.svg#database"></use></svg></div>
+          <div class="flex flex-col">
             <strong class="block font-normal">APITOOLKIT CLOUD</strong>
             <h5 class="font-semibold text-2xl text-textStrong">Bring your own s3 storage</h5>
           </div>
@@ -306,7 +294,8 @@
         </div>
 
         <div class="bg-fillWarning-weak border-strokeWarning-weak">
-          <div>
+          <div class="inline-block p-3 bg-fillBrand-weak rounded-full"><svg><use xlink:href="/assets/deps/sprite.svg#server"></use></svg></div>
+          <div class="flex flex-col">
             <strong class="block font-normal">ON PREM</strong>
             <h5 class="font-semibold text-2xl text-textStrong">Bring your own servers</h5>
           </div>
@@ -319,8 +308,8 @@
     </div>
 
     <!-- INTEGRATIONS-->
-    <div class="max-w-6xl w-full text-textWeak space-y-3">
-      <h2 class="text-2xl font-semibold text-textStrong">Integrations with your favorite stacks, powered by OpenTelemetry</h2>
+    <div class="max-w-7xl w-full text-textWeak space-y-5">
+      <h2 class="text-[2rem] font-semibold text-textStrong">Integrations with your favorite tech stack, powered by OpenTelemetry</h2>
       <a class="block text-textBrand underline underline-offset-2">View all integrations.</a>
       <div class="pt-5 grid grid-cols-12 pr-20 gap-5 [&_img]:w-full [&>*]:cols-span-1 [&>*]:p-3 [&>*]:rounded-xl [&>*]:border [&>*]:border-strokeWeak">
         <div><img src="https://img.icons8.com/color/48/postgreesql.png"/></div>
@@ -347,79 +336,93 @@
     </div>
 
     <!-- REAL RESULTS FROM CUSTOMERS -->
-    <div class="max-w-6xl w-full text-textWeak space-y-3">
-      <h2 class="text-2xl font-semibold text-textStrong">Real results for real customers</h2>
+    <div class="max-w-7xl w-full text-textWeak space-y-5">
+      <h2 class="text-[2rem] font-semibold text-textStrong">Real results for real customers</h2>
       <a class="block text-textBrand underline underline-offset-2">View all case studies.</a>
-      <div class="grid grid-cols-5 gap-5 [&>div]:border [&>div]:p-5 [&>div]:border [&>div]:rounded-lg  [&>div]:flex [&>div]:flex-col 
-            [&>div]:justify-between  [&_.logo1]:my-5  [&_.logo1]:brightness-0 [&_.logo1]:dark:invert [&_.logo1]:opacity-50 [&_.logo1]:h-6
-            [&_strong]:text-3xl [&_.logo2]:!my-0
+      <div class="pt-5 grid grid-cols-5 gap-5 [&>div]:border [&>div]:p-5 [&>div]:border [&>div]:rounded-lg  [&>div]:flex [&>div]:flex-col 
+            [&>div]:justify-between  [&>div]:items-start [&_.logo1]:my-2  [&_.logo1]:brightness-0 [&_.logo1]:dark:invert [&_.logo1]:opacity-50 [&_.logo1]:h-6
+            [&_strong]:text-6xl [&_small]:text-xl  [&_.logo2]:!my-0 [&_.quote]:text-2xl
             ">
         <div class="border-strokeWarning-weak bg-fillWarning-weak">
-          <strong>20x</strong>
-          <small>revenue growth</small>
-          <img src="/assets/img/customers/grovepay.svg" class="logo1"/>
+          <div class="space-y-3 flex flex-col justify-self-center">
+            <strong>20x</strong>
+            <small>faster MTTR</small>
+          </div>
+          <div><img class="h-8 logo1" src="/assets/img/customers/blockradar-full.svg"/></div>
         </div>
         <div class="border-strokeBrand-weak bg-fillBrand-weak">
-          <strong>20x</strong>
-          <span>revenue growth</span>
-          <img src="/assets/img/customers/grovepay.svg" class="logo1"/>
+          <div class="space-y-3 flex flex-col">
+            <strong>70%</strong>
+            <small>reduction in manual troubleshooting</small>
+          </div>
+          <img src="/assets/img/customers/sameday.svg" class="logo1"/>
         </div>
         <div class="border-strokeBrand-weak col-span-3 gap-5">
-          <p>"We had a major incident, and our tech support could see via APItookit which third-party integration partner was responsible, and could take action without needing the engineering team's help"</p>
-          <div class="flex gap-3">
-            <img class="rounded-lg grayscale w-12" src="/assets/img/love/joshua.jpeg" />
-            <div class="flex-1 flex justify-between">
+          <p class="quote">"We had a major upgrade planned for our iOS/Android app and our API usage and format had always been a bit of a black box. After adding the APItoolkit middleware to our laravel app, we could see every new route and request format being sent. It gave me and the dev team complete confidence that our users weren't being affected by our changes. <br/><br/>The app upgrade ended up being one of the smoothest and LEAST STRESSFUL rollouts we have ever done. Really an amazing tool and now a permanent part of our workflow. Thank you!!"</p>
+
+          <div class="flex items-center gap-3 w-full">
+            <img class="rounded-lg grayscale w-12" src="/assets/img/love/larrison_morrison.jpeg" />
+            <div class="flex-1 flex items-center justify-between">
               <div>
-                <p>Joshua Chinemezum</p>
-                <p class="text-xs">CEO of Platnova</p>
+                  <p>Lazarus Morrison</p>
+                  <p class="text-xs">Founder of Community Fluency</p>
               </div>
-              <img src="/assets/img/customers/grovepay.svg" class="logo1 logo2"/>
+              <div class="inline-flex items-center text-lg gap-1"><img src="/assets/img/customers/community_fluency.png" alt="Community Fluency" class="logo1 logo2"/> <span>Community<strong class="!text-lg">Fluency</strong></span></div>
             </div>
           </div>
         </div>
 
         <div class="border-strokeBrand-weak col-span-3 gap-5">
-          <p>"We had a major incident, and our tech support could see via APItookit which third-party integration partner was responsible, and could take action without needing the engineering team's help"</p>
-          <div class="flex gap-3">
-            <img class="rounded-lg grayscale w-12" src="/assets/img/love/joshua.jpeg" />
-            <div class="flex-1 flex justify-between">
+          <p class="quote">"The best observability tool we use today at Woodcore, APItoolkit notifies us about any slight change that happens on the system.
+            <br/><br/>Most especially, for the features we utilise today on APItoolkit, would cost us a lot more elsewhere."</p>
+          <div class="flex items-center gap-3 w-full">
+            <img class="rounded-lg grayscale w-12" src="/assets/img/love/samuel_joseph.jpeg" />
+            <div class="flex-1 flex items-center justify-between">
               <div>
-                <p>Joshua Chinemezum</p>
-                <p class="text-xs">CEO of Platnova</p>
+                <p>Samuel Joseph</p>
+                <p class="text-xs">CEO of Woodcore</p>
               </div>
-              <img src="/assets/img/customers/grovepay.svg" class="logo1 logo2"/>
+              <img src="/assets/img/customers/woodcore-logo-full.svg" class="logo1 logo2" />
             </div>
           </div>
         </div>
         <div class="border-strokeError-weak bg-fillError-weak">
-          <strong>20x</strong>
-          <span>revenue growth</span>
-          <img src="/assets/img/customers/grovepay.svg" class="logo1"/>
+          <div class="space-y-3 flex flex-col">
+            <strong>3x</strong>
+            <small>faster system recovery</small>
+          </div>
+          <img src="/assets/img/customers/partna.svg" class="logo1"/>
         </div>
         <div class="border-strokeWarning-weak bg-fillWarning-weak">
-          <strong>20x</strong>
-          <small>revenue growth</small>
-          <img src="/assets/img/customers/grovepay.svg" class="logo1"/>
+          <div class="space-y-3 flex flex-col">
+            <strong>5x</strong>
+            <small>faster incident debug times</small>
+          </div>
+          <img src="/assets/img/customers/coronams-logo.svg" class="logo1"/>
         </div>
 
         <div class="border-strokeWarning-weak bg-fillWarning-weak">
-          <strong>20x</strong>
-          <small>revenue growth</small>
-          <img src="/assets/img/customers/grovepay.svg" class="logo1"/>
+          <div class="space-y-3 flex flex-col">
+            <strong>9x</strong>
+            <small>customer support calls</small>
+          </div>
+          <img src="/assets/img/customers/platnova.png" class="logo1"/>
         </div>
         <div class="border-strokeBrand-weak bg-fillBrand-weak">
-          <strong>20x</strong>
-          <span>revenue growth</span>
-          <img src="/assets/img/customers/grovepay.svg" class="logo1"/>
+          <div class="space-y-3 flex flex-col">
+            <strong>20x</strong>
+            <small>revenue growth</small>
+          </div>
+          <img src="/assets/img/customers/payfonte.svg" class="logo1"/>
         </div>
         <div class="border-strokeBrand-weak col-span-3 gap-5">
-          <p>"We had a major incident, and our tech support could see via APItookit which third-party integration partner was responsible, and could take action without needing the engineering team's help"</p>
-          <div class="flex gap-3">
-            <img class="rounded-lg grayscale w-12" src="/assets/img/love/joshua.jpeg" />
-            <div class="flex-1 flex justify-between">
+          <p class="quote">"I fell for ApitoolKit because it integrated effortlessly with my application and provided valuable API insights. Whenever I needed help, the team was always ready to listen and resolve any issues. That's why we pay for their service."</p>
+          <div class="flex gap-3 w-full">
+            <img class="rounded-lg grayscale w-12" src="/assets/img/love/david_odohi.jpeg" />
+            <div class="flex-1 flex items-center justify-between">
               <div>
-                <p>Joshua Chinemezum</p>
-                <p class="text-xs">CEO of Platnova</p>
+                <p>Odohi David</p>
+                <p class="text-xs">CTO of Grovepay</p>
               </div>
               <img src="/assets/img/customers/grovepay.svg" class="logo1 logo2"/>
             </div>
@@ -430,28 +433,121 @@
   
     <section class=" flex flex-col items-center w-full">
       <!-- Footer CTA-->
-      <div class="max-w-6xl w-full text-textWeak space-y-3">
-        <h2 class="text-3xl font-normal text-textStrong"><span class="text-textBrand">Find and fix issues</span> before your customers, <br/>stakeholders or partners notice.</h2>
+      <div class="max-w-7xl w-full text-textWeak space-y-10 py-20">
+        <h2 class="text-[2rem] font-normal text-textStrong leading-10"><span class="text-textBrand">Find and fix issues</span> before your customers, <br/>stakeholders or partners notice.</h2>
         <div>
-          <a class="btn py-3 px-4 bg-fillBrand-strong text-textInverse-strong">Book a demo</a>
-          <a class="btn py-3 px-4 bg-transparent border border-fillBrand-strong text-fillBrand-strong" >Start 30 day free trial</a>
+          <a class="btn py-3 px-6 rounded-xl bg-fillBrand-strong text-textInverse-strong">Book a demo</a>
+          <a class="btn py-3 px-6 rounded-xl bg-transparent border border-fillBrand-strong text-fillBrand-strong" >Start 30 day free trial</a>
         </div>
-        <div>
-          <span>|</span>
-          <a>Signup for our <span class="underline underline-offset-2">newsletter</span> to stay updated</a>
+        <div class="space-x-8 inline-flex items-center text-xl">
+          <div class="[&_svg]:h-5 [&_svg]:w-5 inline-flex gap-4 ">
+            <a><svg><use xlink:href="/assets/deps/sprite.svg#github"></use></svg></a>
+            <a><svg><use xlink:href="/assets/deps/sprite.svg#twitter"></use></svg></a>
+            <a><svg><use xlink:href="/assets/deps/sprite.svg#linkedin"></use></svg></a>
+            <a><svg><use xlink:href="/assets/deps/sprite.svg#youtube"></use></svg></a>
+            <a><svg><use xlink:href="/assets/deps/sprite.svg#discord"></use></svg></a>
+          </div>
+          <span class="text-textDisabled">|</span>
+          <a>Signup for our <span class="underline underline-offset-2 font-semibold">newsletter</span> to stay updated</a>
         </div>
       </div>
-      <hr/>
-      <footer>
-        <div>
-          <a href="/" class="px-1 py-1" aria-label="Back to homepage">
-            <img class="h-6 dark:hidden" src="/assets/brand/logo_full_color.svg" alt="APItoolkit full color logo">
-            <img class="h-6 hidden dark:inline-block" src="/assets/brand/logo_full_white.svg" alt="APItoolkit white logo">
-          </a>
+
+
+      <footer class="max-w-7xl border-t border-strokeWeak pt-20 pb-5 space-y-12">
+        <!-- Logo Section -->
+        <a href="/" class="py-1 block" aria-label="Back to homepage">
+          <img class="h-6 dark:hidden" src="/assets/brand/logo_full_color.svg" alt="APItoolkit full color logo">
+          <img class="h-6 hidden dark:inline-block" src="/assets/brand/logo_full_white.svg" alt="APItoolkit white logo">
+        </a>
+
+        <div class="grid grid-cols-1 md:grid-cols-6 gap-8">
+            <!-- Navigation Columns -->
+            <div class="col-span-1">
+                <h3 class="text-sm font-semibold text-textWeak mb-4">Product</h3>
+                <ul class="space-y-3">
+                    <li><a href="#">Error Tracking</a></li>
+                    <li><a href="#">Breaking Changes Detection</a></li>
+                    <li><a href="#">API Logs and Metrics</a></li>
+                    <li><a href="#">API Observability</a></li>
+                    <li><a href="#">API Management</a></li>
+                    <li><a href="#">API Analytics</a></li>
+                    <li><a href="#">Opentelemetry</a></li>
+                </ul>
+            </div>
+
+            <div class="col-span-1">
+                <h3 class="text-sm font-semibold text-textWeak mb-4">Developers and Support</h3>
+                <ul class="space-y-3">
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">Onboarding Guide</a></li>
+                    <li><a href="#">SDK Guides</a></li>
+                    <li><a href="#">Dashboard Manual</a></li>
+                    <li><a href="#">Why Choose APIToolkit?</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Test JSON Redaction</a></li>
+                    <li><a href="#">Status Page</a></li>
+                </ul>
+            </div>
+
+            <div class="col-span-1">
+              <h3 class="text-sm font-semibold text-textWeak mb-4">Product Comparisons</h3>
+              <ul class="space-y-3">
+                  <li><a href="#">APIToolkit vs Datadog</a></li>
+                  <li><a href="#">APIToolkit vs Sentry</a></li>
+                  <li><a href="#">APIToolkit vs Honeybadger</a></li>
+                  <li><a href="#">APIToolkit vs New Relic</a></li>
+                  <li><a href="#">APIToolkit vs Baseline</a></li>
+                  <li><a href="#">APIToolkit vs Treblle</a></li>
+                  <li><a href="#">APIToolkit vs Axiom</a></li>
+              </ul>
+            </div>
+
+            <div class="col-span-1">
+              <h3 class="text-sm font-semibold text-textWeak mb-4">Company</h3>
+              <ul class="space-y-3">
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">FAQs</a></li>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">Events</a></li>
+                  <li><a href="#">Press kit</a></li>
+                  <li><a href="#">Contact</a></li>
+                  <li><a href="#">Privacy Policy</a></li>
+                  <li><a href="#">Terms and Conditions</a></li>
+              </ul>
+            </div>
+
+            <div class="col-span-2">
+              <h3 class="text-sm font-semibold text-textWeak mb-4">Latest recommended writeups</h3>
+              <ul class="space-y-3 [&_a]:underline [&_a]:underline-offset-2">
+                  <li><a href="#">What Is Incident Management? Beginner's Guide</a></li>
+                  <li><a href="#">How to Create a Developer-Friendly On-Call</a></li>
+                  <li><a href="#">8 Best Free & Open Source Status Page Tools in 2024</a></li>
+                  <li><a href="#">10 Best API Monitoring Tools in 2024</a></li>
+                  <li><a href="#">5 Most Used Incident Management Tools (Reviewed & Ranked)</a></li>
+              </ul>
+            </div>
         </div>
-        <div>
+
+        <hr/>
+        <!-- Bottom Bar -->
+        <div class="mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="text-gray-600 mb-4 md:mb-0">
+                Copyrights (c) 2025 - Past 3 technologies UG. Gruntaler str. 18, 13357 Berlin, Germany
+            </div>
+            <div class="flex items-center space-x-6">
+                <a href="#" class="flex items-center text-gray-600 hover:text-gray-900">
+                    <img src="/path-to-discord.svg" alt="Discord" class="h-6 w-6 mr-2">
+                    Join our discord community
+                </a>
+                <div class="flex items-center text-gray-600">
+                    <div class="flex items-center">
+                        <span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                        Status All systems operational
+                    </div>
+                </div>
+            </div>
         </div>
-      </footer>
+    </footer>
     </section>
 
   </body>
