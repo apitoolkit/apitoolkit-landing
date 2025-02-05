@@ -6845,6 +6845,10 @@ html:has(.drawer-toggle:checked) {
   margin-top: auto;
 }
 
+.ml-3 {
+  margin-left: 0.75rem;
+}
+
 .box-border {
   box-sizing: border-box;
 }
@@ -8361,6 +8365,10 @@ html:has(.drawer-toggle:checked) {
 
 .pt-\[18px\] {
   padding-top: 18px;
+}
+
+.pt-28 {
+  padding-top: 7rem;
 }
 
 .text-left {
@@ -10689,6 +10697,10 @@ html:has(.drawer-toggle:checked) {
   padding: 1.5rem;
 }
 
+.\[\&\>\*\]\:p-4>* {
+  padding: 1rem;
+}
+
 .\[\&\>\*\]\:px-4>* {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -10697,6 +10709,11 @@ html:has(.drawer-toggle:checked) {
 .\[\&\>\*\]\:py-3>* {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+}
+
+.\[\&\>\*\]\:py-2>* {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .\[\&\>\*\]\:underline>* {

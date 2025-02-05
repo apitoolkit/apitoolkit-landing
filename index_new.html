@@ -5,29 +5,28 @@
     <link rel="stylesheet" href="/assets/css/tailwind.min.css">
   </head>
   <body class=" flex flex-col items-center xdark text-textStrong space-y-48 bg-bgBase [&_svg]:text-iconNeutral">
-    <section class="space-y-28">
-      <nav class="py-4 flex-1 flex max-w-7xl w-full justify-between items-center sticky top-0 z-10 bg-bgBase">
-        <a href="/" class="py-1" aria-label="Back to homepage">
-          <img class="h-6 dark:hidden" src="/assets/brand/logo_full_color.svg" alt="APItoolkit full color logo">
-          <img class="h-6 hidden dark:inline-block" src="/assets/brand/logo_full_white.svg" alt="APItoolkit white logo">
+    <nav class="py-4 flex-1 flex max-w-7xl w-full justify-between items-center sticky top-0 z-10 bg-bgBase">
+      <a href="/" class="py-1" aria-label="Back to homepage">
+        <img class="h-6 dark:hidden" src="/assets/brand/logo_full_color.svg" alt="APItoolkit full color logo">
+        <img class="h-6 hidden dark:inline-block" src="/assets/brand/logo_full_white.svg" alt="APItoolkit white logo">
+      </a>
+      <div class="flex gap-5 items-center">
+        <a class="inline-flex items-center">Product 
+          <svg class="flex-shrink-0 icon h-5 w-5 text-current fill-current stroke-current">
+            <use xlink:href="/assets/deps/sprite.svg#chevron-down"></use>
+          </svg>
         </a>
-        <div class="flex gap-5 items-center">
-          <a class="inline-flex items-center">Product 
-            <svg class="flex-shrink-0 icon h-5 w-5 text-current fill-current stroke-current">
-              <use xlink:href="/assets/deps/sprite.svg#chevron-down"></use>
-            </svg>
-          </a>
-          <a>Documentation</a>
-          <a>Blog</a>
-          <a>Pricing</a>
-        </div>
-        <div class="flex gap-5 items-center">
-          <a class="underline underline-offset-2">Login</a>
-          <a class="underline underline-offset-2">Start free trial</a>
-          <a class="bg-fillBrand-strong text-textInverse-strong px-6 py-3 rounded-xl">Book a demo</a>
-        </div>
-      </nav>
-
+        <a>Documentation</a>
+        <a>Blog</a>
+        <a>Pricing</a>
+      </div>
+      <div class="flex gap-5 items-center">
+        <a class="underline underline-offset-2">Login</a>
+        <a class="underline underline-offset-2">Start free trial</a>
+        <a class="bg-fillBrand-strong text-textInverse-strong px-6 py-3 rounded-xl">Book a demo</a>
+      </div>
+    </nav>
+    <section class="space-y-28 pt-28">
       <div class="flex max-w-7xl w-full gap-10">
         <div class="space-y-8 flex-1">
           <h1 class="text-[2.5rem] font-semibold leading-10 space-y-3">
@@ -73,6 +72,7 @@
             <img src="/assets/img/customers/platnova.png" alt="Platnova's Logo" class="h-5 sm:h-8">
             <img src="/assets/img/customers/payfonte.svg" alt="Payfonte's Logo" class="h-5 sm:h-8">
             <img src="/assets/img/customers/thepeer.svg" alt="ThePeer's Logo" class="h-5 sm:h-8">
+            <img src="/assets/img/customers/blockradar-full.svg" alt="Blockrada's Logo" class="h-5 sm:h-8" />
           </div>
           <div class="flex text-sm leading-5 text-textWeak space-x-24 py-6">
             <div class="flex-1 border-l border-fillBrand-strong px-6 py-2 space-y-4">
@@ -165,26 +165,15 @@
     <!-- Powered by AI -->
     <div class="max-w-7xl w-full text-textWeak space-y-5">
       <div class="flex justify-between">
-        <div class="flex-1 space-y-6">
-          <h2 class="text-3xl font-semibold text-textStrong">How? Powered by a purpose built AI. <span class="text-textWeak">seriously</span></h2>
+        <div class="flex-1 space-y-5">
+          <h2 class="text-[2rem] font-semibold text-textStrong">How? Powered by a purpose built AI. <span class="text-textWeak">seriously</span></h2>
           <p>Build and manage your systems with help from an AI that is designed to keep humans<br/>in the loop and improve detection, investigation and response.</p>
+          <a class="text-textBrand underline underline-offset-2 block ">Learn more</a>
         </div>
         <div class="flex items-end">
-          <div class="gap-4 [&>*]:inline-flex inline-flex">
-            <a class="border border-strokeWeak p-4 rounded-lg"><svg class="flex-shrink-0 icon h-5 w-5 xtext-current xfill-current xstroke-current">
-                <use xlink:href="/assets/deps/sprite.svg#pie-chart"></use>
-              </svg>
-            </a>
-            <a class="border border-strokeStrong p-4 rounded-lg shadow-md"><svg class="flex-shrink-0 icon h-5 w-5 xtext-current xfill-current xstroke-current">
-                <use xlink:href="/assets/deps/sprite.svg#pie-chart"></use>
-              </svg>
-            </a>
-            <a class="border border-strokeStrong p-4 rounded-lg shadow-md space-x-4">
-              Explore
-              <svg class="flex-shrink-0 icon h-5 w-5 xtext-current xfill-current xstroke-current">
-                <use xlink:href="/assets/deps/sprite.svg#pie-chart"></use>
-              </svg>
-            </a>
+          <div class="inline-flex gap-4  [&>*]:p-4  [&>*]:inline-flex [&>*]:items-center">
+            <a class="border border-strokeDisabled p-4 rounded-lg"><svg class="h-3 w-3"><use xlink:href="/assets/deps/sprite.svg#chevron-left"></use></svg></a>
+            <a class="border border-strokeStrong p-4 rounded-lg shadow-md"><svg class="h-3 w-3"><use xlink:href="/assets/deps/sprite.svg#chevron-right"></use></svg></a>
           </div>
         </div>
       </div>
@@ -196,12 +185,12 @@
         </div>
         <div>
           <img src="https://placehold.it/200x200"/>
-          <h5 class="text-sm font-semibold">Weekly reports that contain exactly what needs attention</h5>
+          <h5 class="text-sm font-semibold">Very intelligent anomaly detection</h5>
           <p>No need to stare at logs all day. See the errors, anomalies, etc which appeared in the last week.</p>
         </div>
         <div>
           <img src="https://placehold.it/200x200"/>
-          <h5 class="text-sm font-semibold">Weekly reports that contain exactly what needs attention</h5>
+          <h5 class="text-sm font-semibold">Breaking and incremental change detection in APIs (yours or thirdparties)</h5>
           <p>No need to stare at logs all day. See the errors, anomalies, etc which appeared in the last week.</p>
         </div>
       </div>
@@ -404,14 +393,14 @@
         <div class="border-strokeWarning-weak bg-fillWarning-weak">
           <div class="space-y-3 flex flex-col">
             <strong>9x</strong>
-            <small>customer support calls</small>
+            <small>less customer support calls</small>
           </div>
           <img src="/assets/img/customers/platnova.png" class="logo1"/>
         </div>
         <div class="border-strokeBrand-weak bg-fillBrand-weak">
           <div class="space-y-3 flex flex-col">
-            <strong>20x</strong>
-            <small>revenue growth</small>
+            <strong>500ms</strong>
+            <small>shaved off refactored endpoints</small>
           </div>
           <img src="/assets/img/customers/payfonte.svg" class="logo1"/>
         </div>
