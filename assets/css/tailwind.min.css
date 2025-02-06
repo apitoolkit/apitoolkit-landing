@@ -6845,8 +6845,20 @@ html:has(.drawer-toggle:checked) {
   margin-top: auto;
 }
 
-.ml-3 {
-  margin-left: 0.75rem;
+.-mt-28 {
+  margin-top: -7rem;
+}
+
+.\!mt-28 {
+  margin-top: 7rem !important;
+}
+
+.\!-mt-28 {
+  margin-top: -7rem !important;
+}
+
+.\!mt-32 {
+  margin-top: 8rem !important;
 }
 
 .box-border {
@@ -6965,6 +6977,10 @@ html:has(.drawer-toggle:checked) {
   height: 1.5rem;
 }
 
+.h-8 {
+  height: 2rem;
+}
+
 .h-\[210px\] {
   height: 210px;
 }
@@ -6987,10 +7003,6 @@ html:has(.drawer-toggle:checked) {
 
 .h-screen {
   height: 100vh;
-}
-
-.h-8 {
-  height: 2rem;
 }
 
 .max-h-\[calc\(100vh-8rem\)\] {
@@ -7447,12 +7459,6 @@ html:has(.drawer-toggle:checked) {
   margin-left: calc(6rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
-.space-x-4 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(1rem * var(--tw-space-x-reverse));
-  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
-}
-
 .space-x-6 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(1.5rem * var(--tw-space-x-reverse));
@@ -7525,12 +7531,6 @@ html:has(.drawer-toggle:checked) {
   margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
 }
 
-.space-y-6 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
-}
-
 .space-y-8 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
@@ -7560,10 +7560,6 @@ html:has(.drawer-toggle:checked) {
 .divide-gray-200 > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-divide-opacity));
-}
-
-.place-self-center {
-  place-self: center;
 }
 
 .self-center {
@@ -8367,10 +8363,6 @@ html:has(.drawer-toggle:checked) {
   padding-top: 18px;
 }
 
-.pt-28 {
-  padding-top: 7rem;
-}
-
 .text-left {
   text-align: left;
 }
@@ -8401,6 +8393,11 @@ html:has(.drawer-toggle:checked) {
 
 .font-sans {
   font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.\!text-lg {
+  font-size: 1.125rem !important;
+  line-height: 1.75rem !important;
 }
 
 .text-2xl {
@@ -8474,16 +8471,6 @@ html:has(.drawer-toggle:checked) {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-.\!text-lg {
-  font-size: 1.125rem !important;
-  line-height: 1.75rem !important;
-}
-
-.text-8xl {
-  font-size: 6rem;
-  line-height: 1;
 }
 
 .font-black {
@@ -8786,6 +8773,21 @@ html:has(.drawer-toggle:checked) {
 
 .shadow-slate-200 {
   --tw-shadow-color: #e2e8f0;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+.shadow-strokeBrand-weak {
+  --tw-shadow-color: #0068FF33;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+.shadow-fillBrand-weak {
+  --tw-shadow-color: #0068FF0D;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+.shadow-fillWarning-weak {
+  --tw-shadow-color: #FFC02E0D;
   --tw-shadow: var(--tw-shadow-colored);
 }
 
@@ -10693,12 +10695,12 @@ html:has(.drawer-toggle:checked) {
   padding: 0.75rem;
 }
 
-.\[\&\>\*\]\:p-6>* {
-  padding: 1.5rem;
-}
-
 .\[\&\>\*\]\:p-4>* {
   padding: 1rem;
+}
+
+.\[\&\>\*\]\:p-6>* {
+  padding: 1.5rem;
 }
 
 .\[\&\>\*\]\:px-4>* {
@@ -10711,17 +10713,30 @@ html:has(.drawer-toggle:checked) {
   padding-bottom: 0.75rem;
 }
 
-.\[\&\>\*\]\:py-2>* {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-
 .\[\&\>\*\]\:underline>* {
   text-decoration-line: underline;
 }
 
 .\[\&\>\*\]\:underline-offset-2>* {
   text-underline-offset: 2px;
+}
+
+.\[\&\>\*\]\:shadow-md>* {
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.\[\&\>\*\]\:shadow-sm>* {
+  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.\[\&\>\*\]\:shadow>* {
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .\[\&\>\*\]\:brightness-0>* {
@@ -10750,6 +10765,12 @@ html:has(.drawer-toggle:checked) {
   justify-content: space-between;
 }
 
+.\[\&\>div\]\:space-y-5>div > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
+}
+
 .\[\&\>div\]\:rounded-lg>div {
   border-radius: 0.5rem;
 }
@@ -10769,11 +10790,6 @@ html:has(.drawer-toggle:checked) {
 .\[\&\>label\]\:text-lg>label {
   font-size: 1.125rem;
   line-height: 1.75rem;
-}
-
-.\[\&_\.logo1\]\:my-5 .logo1 {
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
 }
 
 .\[\&_\.logo1\]\:my-2 .logo1 {
@@ -10850,29 +10866,9 @@ html:has(.drawer-toggle:checked) {
   padding-right: 0.5rem;
 }
 
-.\[\&_p\]\:text-2xl p {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
-.\[\&_quote\]\:text-2xl quote {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
 .\[\&_small\]\:text-xl small {
   font-size: 1.25rem;
   line-height: 1.75rem;
-}
-
-.\[\&_strong\]\:text-3xl strong {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
-.\[\&_strong\]\:text-8xl strong {
-  font-size: 6rem;
-  line-height: 1;
 }
 
 .\[\&_strong\]\:text-6xl strong {
