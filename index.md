@@ -449,9 +449,11 @@ Or actively making healthcheck requests to API/web endpoints</p>
   </section>
 ```
 
+```=html
 {% render "default/components/faqs", this:this %}
 
 <hr />
+```
 
 {class="text-center width-control mx-auto mt-4 py-24 prose w-full max-w-full prose-pre:p-0"}
 ::::
