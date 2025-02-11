@@ -3,6 +3,16 @@
     <link rel="preconnect" href="https://rsms.me/">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <link rel="stylesheet" href="/assets/css/tailwind.min.css">
+    <script>
+    function cycleRadioButtons(name, direction) {
+      // direction: +1 for next, -1 for previous
+      const radios = document.querySelectorAll(`input[name="${name}"]`);
+      let currentIndex = Array.from(radios).findIndex(radio => radio.checked);
+      if (currentIndex === -1) currentIndex = 0;
+      const newIndex = (currentIndex + direction + radios.length) % radios.length;
+      radios[newIndex].checked = true;
+    }
+    </script>
   </head>
   <body class=" flex flex-col items-center xdark text-textStrong space-y-48 bg-bgBase [&_svg]:text-iconNeutral">
     <nav class="py-4 flex-1 flex max-w-7xl w-full justify-between items-center sticky top-0 z-10 bg-bgBase">
@@ -64,7 +74,7 @@
       <div class="max-w-7xl w-full text-textWeak">
         <div class="space-y-8">
           <p class="">Trusted by 5000+ developers at proactive engineering companies</p>
-          <div class="flex gap-8  items-center [&>*]:brightness-0 [&>*]:dark:invert opacity-50">
+          <div class="flex gap-8  items-center *:brightness-0 *:dark:invert opacity-50">
             <img src="/assets/img/customers/andela.svg" alt="Andela's Logo" class="h-5 sm:h-8">
             <img src="/assets/img/customers/partna.svg" alt="ThePeer's Logo" class="h-5 sm:h-8">
             <img src="/assets/img/customers/grovepay.svg" alt="Grovepay's Logo" class="h-5 sm:h-8">
@@ -116,30 +126,31 @@
       </div>
     </section>
 
-    <div class="max-w-7xl w-full text-textWeak space-y-5">
+    <div class="max-w-7xl w-full text-textWeak space-y-5 group/uc">
       <h2 class="text-[2rem] font-semibold text-textStrong">The most intuitive way to understand systems that matter</h2>
       <p class="text-xl leading-normal">Just because you don't see an error, doesn't mean it's not happening. That's why we built both active <br/>and passive monitoring--<span class="text-textBrand">to keep you informed of the different systems you maintain.<span></p>
 
       <div class="flex justify-between py-11">
         <div class="inline-flex justify-center bg-fillWeak border border-strokeWeak rounded-lg 
-          [&>*]:px-4 [&>*]:py-3 [&>*]:inline-flex [&>*]:items-center [&>*]:gap-2
-          [&_svg]:h-5 [&_svg]:w-5 
+          *:px-4 *:py-3 *:inline-flex *:items-center *:gap-2
+          [&_svg]:h-5 [&_svg]:w-5 [&>label]:rounded-lg [&>label]:border-strokeStrong
           ">
-          <label class="rounded-lg border border-strokeStrong bg-bgOverlay shadow"><svg><use xlink:href="/assets/deps/sprite.svg#rss"></use></svg> APIs</label>
-          <label><svg><use xlink:href="/assets/deps/sprite.svg#hard-drive"></use></svg> Backends</label>
-          <label><svg><use xlink:href="/assets/deps/sprite.svg#database"></use></svg> Databases</label>
-          <label><svg><use xlink:href="/assets/deps/sprite.svg#server"></use></svg> Infrastructure</label>
-          <label><svg><use xlink:href="/assets/deps/sprite.svg#monitor"></use></svg> Frontends</label>
-          <label><svg><use xlink:href="/assets/deps/sprite.svg#smartphone"></use></svg> Mobile</label>
+          <label class="has-[:checked]:border has-[:checked]:bg-bgOverlay has-[:checked]:shadow"><svg><use xlink:href="/assets/deps/sprite.svg#rss"></use></svg> APIs<input checked type="radio" class="hidden uc uc-apis" name="usecase" value="apis"/></label>
+          <label class="has-[:checked]:border has-[:checked]:bg-bgOverlay has-[:checked]:shadow"><svg><use xlink:href="/assets/deps/sprite.svg#hard-drive"></use></svg> Backends<input type="radio" class="hidden uc uc-backend" name="usecase" value="backend"/></label>
+          <label class="has-[:checked]:border has-[:checked]:bg-bgOverlay has-[:checked]:shadow"><svg><use xlink:href="/assets/deps/sprite.svg#database"></use></svg> Databases<input type="radio" class="hidden uc uc-database" name="usecase" value="database"/></label>
+          <!-- <label class="rounded-lg border border-strokeStrong bg-bgOverlay shadow"><svg><use xlink:href="/assets/deps/sprite.svg#server"></use></svg> Infrastructure<input type="radio" class="hidden uc uc-infra" name="usecase" value="infra"/></label> -->
+          <!-- <label class="rounded-lg border border-strokeStrong bg-bgOverlay shadow"><svg><use xlink:href="/assets/deps/sprite.svg#monitor"></use></svg> Frontends<input type="radio" class="hidden uc uc-frontends" name="usecase" value="frontends"/></label> -->
+          <!-- <label class="rounded-lg border border-strokeStrong bg-bgOverlay shadow"><svg><use xlink:href="/assets/deps/sprite.svg#smartphone"></use></svg> Mobile<input type="radio" class="hidden uc uc-mobile" name="usecase" value="mobile"/></label>-->
         </div>
 
-        <div class="inline-flex gap-4 [&>*]:inline-flex [&>*]:items-center">
-          <a class="border border-strokeDisabled p-4 rounded-lg"><svg class="h-3 w-3"><use xlink:href="/assets/deps/sprite.svg#chevron-left"></use></svg></a>
-          <a class="border border-strokeStrong p-4 rounded-lg shadow"><svg class="h-3 w-3"><use xlink:href="/assets/deps/sprite.svg#chevron-right"></use></svg></a>
+        <div class="inline-flex gap-4 *:inline-flex *:items-center *:shadow *:border *:border-strokeStrong *:p-4 *:rounded-lg *:cursor-pointer select-none">
+          <a class="group-has-[.uc-apis:checked]/uc:!border-strokeDisabled group-has-[.uc-apis:checked]/uc:shadow-none" onclick="cycleRadioButtons('usecase', -1)"><svg class="h-3 w-3"><use xlink:href="/assets/deps/sprite.svg#chevron-left"></use></svg></a>
+          <a class="group-has-[.uc-database:checked]/uc:!border-strokeDisabled group-has-[.uc-database:checked]/uc:shadow-none" onclick="cycleRadioButtons('usecase', +1)"><svg class="h-3 w-3"><use xlink:href="/assets/deps/sprite.svg#chevron-right"></use></svg></a>
         </div>
       </div>
 
-      <div class="flex gap-16">
+      <!-- APIs -->
+      <div class="hidden group-has-[.uc-apis:checked]/uc:flex gap-16">
         <div class="w-1/3 space-y-16">
           <div class="space-y-2 [&_p]:leading-normal">
             <h5 class="text-xl font-semibold text-textStrong">Catch breaking changes</h5>
@@ -161,6 +172,65 @@
             <img src="/assets/img/screenshots/analytics2.png" class="w-full shadow rounded-lg border border-strokeDisabled"/>
         </div>
       </div>
+      <!-- end APIs -->
+
+      <!-- Backends -->
+      <div class="hidden group-has-[.uc-backend:checked]/uc:flex gap-16">
+        <div class="w-1/3 space-y-16">
+          <div class="space-y-2 [&_p]:leading-normal">
+            <h5 class="text-xl font-semibold text-textStrong">Endpoint Performance and Throughput</h5>
+            <p>Spot unexpected changes in API responses or data structures-your services or third-party calls-before they slip into production.</p>
+            <a class="text-textBrand underline block ">Learn more</a>
+          </div>
+          <div class="space-y-2">
+            <h5 class="text-xl font-semibold text-textStrong">Track Errors and Exceptions</h5>
+            <p>Track all errors and exceptions generated by your application. Prioritize errors based on their frequency.</p>
+            <a class="text-textBrand underline block ">Learn more</a>
+          </div>
+          <div class="space-y-2">
+            <h5 class="text-xl font-semibold text-textStrong">Background and cron jobs</h5>
+            <p>See and track job runs and get alerted if an important job stops running.</p>
+            <a class="text-textBrand underline block ">Learn more</a>
+          </div>
+          <div class="space-y-2">
+            <h5 class="text-xl font-semibold text-textStrong">Debug with logs and traces</h5>
+            <p>When theres an issue, debug with all the related logs and traces automatically surfaced for you.</p>
+            <a class="text-textBrand underline block ">Learn more</a>
+          </div>
+        </div>
+        <div class="flex-1">
+            <img src="/assets/img/screenshots/analytics2.png" class="w-full shadow rounded-lg border border-strokeDisabled"/>
+        </div>
+      </div>
+      <!-- end Backends -->
+
+      <!-- Databases -->
+      <div class="hidden group-has-[.uc-database:checked]/uc:flex gap-16">
+        <div class="w-1/3 space-y-16">
+          <div class="space-y-2 [&_p]:leading-normal">
+            <h5 class="text-xl font-semibold text-textStrong">Identify Slow Database Queries</h5>
+            <p>Spot unexpected changes in API responses or data structures-your services or third-party calls-before they slip into production.</p>
+            <a class="text-textBrand underline block ">Learn more</a>
+          </div>
+          <div class="space-y-2">
+            <h5 class="text-xl font-semibold text-textStrong">Query Analytics and Dashboards</h5>
+            <p>Dashboard templates that visualize all the important metrics and datapoints for your database of choice.</p>
+            <a class="text-textBrand underline block ">Learn more</a>
+          </div>
+          <div class="space-y-2">
+            <h5 class="text-xl font-semibold text-textStrong">Database Error tracking and anomaly detection</h5>
+            <p>Don't let database emergencies sneak up on you. Automatically analyze query results and database logs for errors and anomalies.</p>
+            <a class="text-textBrand underline block ">Learn more</a>
+          </div>
+        </div>
+        <div class="flex-1">
+            <img src="/assets/img/screenshots/analytics2.png" class="w-full shadow rounded-lg border border-strokeDisabled"/>
+        </div>
+      </div>
+      <!-- end Databases -->
+
+
+
     </div>
 
     <!-- Powered by AI -->
@@ -172,25 +242,25 @@
           <a class="text-xl text-textBrand underline underline-offset-2 block ">Learn more</a>
         </div>
         <div class="flex items-end">
-          <div class="inline-flex gap-4  [&>*]:p-4  [&>*]:inline-flex [&>*]:items-center">
+          <div class="inline-flex gap-4  *:p-4  *:inline-flex *:items-center">
             <a class="border border-strokeDisabled p-4 rounded-lg"><svg class="h-3 w-3"><use xlink:href="/assets/deps/sprite.svg#chevron-left"></use></svg></a>
             <a class="border border-strokeStrong p-4 rounded-lg shadow"><svg class="h-3 w-3"><use xlink:href="/assets/deps/sprite.svg#chevron-right"></use></svg></a>
           </div>
         </div>
       </div>
-      <div class="flex gap-6 pt-5 [&>div]:space-y-5">
+      <div class="flex gap-16 pt-5 [&>div]:space-y-5 [&_h5]:text-textStrong [&_img]:border  [&_img]:border-strokeBrand-weak">
         <div>
-          <img src="https://placehold.it/200x200"/>
+          <img src="/assets/img/home/error-analytics.svg" class="w-full bg-fillBrand-weak rounded-lg"/>
           <h5 class="text-xl font-semibold">Weekly reports that contain exactly what needs attention</h5>
-          <p>No need to stare at logs all day. See the errors, anomalies, etc which appeared in the last week.</p>
+          <p>We tell you want errors popped up, which services or endpoints got slower, which weird log appeared, etc.</p>
         </div>
         <div>
-          <img src="https://placehold.it/200x200"/>
-          <h5 class="text-xl font-semibold">Very intelligent anomaly detection</h5>
-          <p>No need to stare at logs all day. See the errors, anomalies, etc which appeared in the last week.</p>
+          <img src="/assets/img/home/specs.svg" class="w-full bg-fillBrand-weak rounded-lg"/>
+          <h5 class="text-xl font-semibold">Query using natural language</h5>
+          <p>Ask questions about your data, your systems or logs without learning some strange query langauge.</p>
         </div>
         <div>
-          <img src="https://placehold.it/200x200"/>
+          <img src="/assets/img/home/selfhost.svg" class="w-full bg-fillBrand-weak rounded-lg"/>
           <h5 class="text-xl font-semibold">Breaking and incremental change detection in APIs (yours or thirdparties)</h5>
           <p>No need to stare at logs all day. See the errors, anomalies, etc which appeared in the last week.</p>
         </div>
@@ -198,34 +268,35 @@
     </div>
 
     <!-- FEATURES -->
-    <div class="max-w-7xl w-full text-textWeak space-y-5">
+    <div class="max-w-7xl w-full text-textWeak space-y-5 group/ft">
       <h2 class="text-[2rem] font-semibold text-textStrong">Built with features that matter to engineers like us</h2>
       <p class="text-xl leading-normal">The new standard for log management. Collect, store, and analyze every single event <br/>without limits on a platform that gives you complete control.</p>
       <div class="flex gap-16 pt-5">
         <div class="text-textStrong space-y-8 [&_input]:hidden [&_label]:inline-flex [&_label]:px-2  [&_label]:items-center [&_label]:gap-2   
-            [&_label]:border-l-2 [&_label]:border-transparent [&_svg]:h-4 [&_svg]:w-4 ">
-          <div class="flex flex-col [&>*]:flex [&>*]:gap-2 [&>label]:text-lg [&>label]:p-1">
+            [&_label]:border-l-2 [&_label]:border-transparent [&_svg]:h-4 [&_svg]:w-4 
+            ">
+          <div class="flex flex-col *:flex *:gap-2 [&>label]:text-lg [&>label]:p-1">
             <h4 class="text-sm font-semibold pb-3 pl-2.5">Observability & monitoring</h4>
-            <label class="!border-fillBrand-strong bg-fillBrand-weak"><input type="radio"/> <svg><use xlink:href="/assets/deps/sprite.svg#align-left"></use></svg>Logs and traces analysis</label>
-            <label><input type="radio"/> <svg><use xlink:href="/assets/deps/sprite.svg#activity"></use></svg>Errors and Performance tracking</label>
-            <label><input type="radio"/> <svg><use xlink:href="/assets/deps/sprite.svg#compass"></use></svg>Monitors and healthchecks</label>
-            <label><input type="radio"/> <svg><use xlink:href="/assets/deps/sprite.svg#bar-chart"></use></svg>Custom metrics</label>
+            <label class="has-[:checked]:!border-fillBrand-strong has-[:checked]:bg-fillBrand-weak"><svg><use xlink:href="/assets/deps/sprite.svg#align-left"></use></svg>Logs and traces analysis<input checked type="radio" class="hidden ft ft-logs" name="features"/></label>
+            <label class="has-[:checked]:!border-fillBrand-strong has-[:checked]:bg-fillBrand-weak"><svg><use xlink:href="/assets/deps/sprite.svg#activity"></use></svg>Errors and Performance tracking<input type="radio" class="hidden ft ft-errors" name="features"/></label>
+            <label class="has-[:checked]:!border-fillBrand-strong has-[:checked]:bg-fillBrand-weak"><svg><use xlink:href="/assets/deps/sprite.svg#compass"></use></svg>Monitors and healthchecks<input type="radio" class="hidden ft ft-monitors" name="features"/></label>
+            <label class="has-[:checked]:!border-fillBrand-strong has-[:checked]:bg-fillBrand-weak"><svg><use xlink:href="/assets/deps/sprite.svg#bar-chart"></use></svg>Custom metrics<input type="radio" class="hidden ft ft-metrics" name="features"/></label>
           </div>
 
-          <div class="flex flex-col [&>*]:flex [&>*]:gap-2 [&>label]:text-lg [&>label]:p-1">
+          <div class="flex flex-col *:flex *:gap-2 [&>label]:text-lg [&>label]:p-1">
             <h4 class="text-sm font-semibold pb-3 pl-2.5">API management</h4>
-            <label><input type="radio"/> <svg><use xlink:href="/assets/deps/sprite.svg#layout"></use></svg>API Catalog and Documentation</label>
-            <label><input type="radio"/> <svg><use xlink:href="/assets/deps/sprite.svg#copy"></use></svg>Change detection and tracking</label>
+            <label class="has-[:checked]:!border-fillBrand-strong has-[:checked]:bg-fillBrand-weak"><svg><use xlink:href="/assets/deps/sprite.svg#layout"></use></svg>API Catalog and Documentation<input type="radio" class="hidden ft ft-apis" name="features"/></label>
+            <label class="has-[:checked]:!border-fillBrand-strong has-[:checked]:bg-fillBrand-weak"><svg><use xlink:href="/assets/deps/sprite.svg#copy"></use></svg>Change detection and anomalies<input type="radio" class="hidden ft ft-change" name="features"/></label>
           </div>
 
-          <div class="flex flex-col [&>*]:flex [&>*]:gap-2 [&>label]:text-lg [&>label]:p-1">
+          <div class="flex flex-col *:flex *:gap-2 [&>label]:text-lg [&>label]:p-1">
             <h4 class="text-sm font-semibold pb-3 pl-2.5">Alerts and reports</h4>
-            <label><input type="radio"/> <svg><use xlink:href="/assets/deps/sprite.svg#radio"></use></svg>Real time alert channels</label>
-            <label><input type="radio"/> <svg><use xlink:href="/assets/deps/sprite.svg#grid"></use></svg>Custom dashboards</label>
-            <label><input type="radio"/> <svg class="flex-shrink-0 icon h-5 w-5"><use xlink:href="/assets/deps/sprite.svg#calendar"></use></svg>Daily or weekly reports</label>
+            <label class="has-[:checked]:!border-fillBrand-strong has-[:checked]:bg-fillBrand-weak"><svg><use xlink:href="/assets/deps/sprite.svg#radio"></use></svg>Real time alert channels<input type="radio" class="hidden ft ft-alerts" name="features"/></label>
+            <label class="has-[:checked]:!border-fillBrand-strong has-[:checked]:bg-fillBrand-weak"><svg><use xlink:href="/assets/deps/sprite.svg#grid"></use></svg>Custom dashboards<input type="radio" class="hidden ft ft-dashboards" name="features"/></label>
+            <label class="has-[:checked]:!border-fillBrand-strong has-[:checked]:bg-fillBrand-weak"><svg class="flex-shrink-0 icon h-5 w-5"><use xlink:href="/assets/deps/sprite.svg#calendar"></use></svg>Daily or weekly reports<input type="radio" class="hidden ft ft-reports" name="features"/></label>
           </div>
 
-          <div class="flex flex-col [&>*]:underline [&>*]:underline-offset-2 space-y-1 text-textBrand pl-2.5">
+          <div class="flex flex-col *:underline *:underline-offset-2 space-y-1 text-textBrand pl-2.5">
             <a>Launch playground</a>
             <a>Book a demo</a>
             <a>Start free 30 day trial</a>
@@ -234,16 +305,51 @@
         </div>
         <div class="flex-1 space-y-8">
           <div class="flex items-end">
-            <div class="space-y-3 flex-1">
+            <!-- Logs -->
+            <div class="hidden group-has-[.ft-logs:checked]/ft:block space-y-3 flex-1">
               <h5 class="text-xl font-semibold text-textStrong">Logs and traces analysis</h5>
               <p class="max-w-xl leading-normal">If a tree falls in a forest and no one is around to hear it, does it make a sound? That's why we built tools for both active and passive monitoring of systems that matter</p>
               <a class="block underline underline-offset-2 text-textBrand">Learn more</a>
             </div>
-            <div>
-              <div class="gap-4 [&>*]:inline-flex inline-flex">
-                <a class="border border-strokeDisabled p-4 rounded-lg"><svg class="h-4 w-4"><use xlink:href="/assets/deps/sprite.svg#chevron-left"></use></svg></a>
-                <a class="border border-strokeStrong p-4 rounded-lg shadow"><svg class="h-4 w-4"><use xlink:href="/assets/deps/sprite.svg#chevron-right"></use></svg></a>
-              </div>
+            <!-- end Logs -->
+            <!-- Errors and Performance tracking -->
+            <div class="hidden group-has-[.ft-errors:checked]/ft:block space-y-3 flex-1">
+              <h5 class="text-xl font-semibold text-textStrong">Errors and Performance tracking</h5>
+              <p class="max-w-xl leading-normal">If a tree falls in a forest and no one is around to hear it, does it make a sound? That's why we built tools for both active and passive monitoring of systems that matter</p>
+              <a class="block underline underline-offset-2 text-textBrand">Learn more</a>
+            </div>
+            <!-- end Errors and Performance tracking -->
+            <!-- Monitors -->
+            <div class="hidden group-has-[.ft-monitors:checked]/ft:block space-y-3 flex-1">
+              <h5 class="text-xl font-semibold text-textStrong">Monitors and Healthchecks</h5>
+              <p class="max-w-xl leading-normal">If a tree falls in a forest and no one is around to hear it, does it make a sound? That's why we built tools for both active and passive monitoring of systems that matter</p>
+              <a class="block underline underline-offset-2 text-textBrand">Learn more</a>
+            </div>
+            <!-- end Monitors -->
+            <!-- Metrics -->
+            <div class="hidden group-has-[.ft-metrics:checked]/ft:block space-y-3 flex-1">
+              <h5 class="text-xl font-semibold text-textStrong">Custom metrics</h5>
+              <p class="max-w-xl leading-normal">If a tree falls in a forest and no one is around to hear it, does it make a sound? That's why we built tools for both active and passive monitoring of systems that matter</p>
+              <a class="block underline underline-offset-2 text-textBrand">Learn more</a>
+            </div>
+            <!-- end Metrics -->
+            <!-- API Catalog -->
+            <div class="hidden group-has-[.ft-apis:checked]/ft:block space-y-3 flex-1">
+              <h5 class="text-xl font-semibold text-textStrong">API Catalog and Documentation</h5>
+              <p class="max-w-xl leading-normal">If a tree falls in a forest and no one is around to hear it, does it make a sound? That's why we built tools for both active and passive monitoring of systems that matter</p>
+              <a class="block underline underline-offset-2 text-textBrand">Learn more</a>
+            </div>
+            <!-- end API Catalog -->
+            <!-- Change Detection -->
+            <div class="hidden group-has-[.ft-change:checked]/ft:block space-y-3 flex-1">
+              <h5 class="text-xl font-semibold text-textStrong">Change Detection and anomalies</h5>
+              <p class="max-w-xl leading-normal">If a tree falls in a forest and no one is around to hear it, does it make a sound? That's why we built tools for both active and passive monitoring of systems that matter</p>
+              <a class="block underline underline-offset-2 text-textBrand">Learn more</a>
+            </div>
+            <!-- end Change Detection -->
+            <div class="inline-flex gap-4 *:inline-flex *:items-center *:shadow *:border *:border-strokeStrong *:p-4 *:rounded-lg *:cursor-pointer select-none">
+              <a class="group-has-[.ft-logs:checked]/ft:!border-strokeDisabled group-has-[.ft-logs:checked]/ft:shadow-none" onclick="cycleRadioButtons('features', -1)"><svg class="h-3 w-3"><use xlink:href="/assets/deps/sprite.svg#chevron-left"></use></svg></a>
+              <a class="group-has-[.ft-reports:checked]/ft:!border-strokeDisabled group-has-[.ft-reports:checked]/ft:shadow-none" onclick="cycleRadioButtons('features', +1)"><svg class="h-3 w-3"><use xlink:href="/assets/deps/sprite.svg#chevron-right"></use></svg></a>
             </div>
           </div>
           <div>
@@ -261,7 +367,7 @@
         <a class="btn py-3 px-6 rounded-xl bg-fillBrand-strong text-textInverse-strong shadow ">Book a demo</a>
         <a class="btn py-3 px-6 rounded-xl bg-transparent border border-fillBrand-strong text-fillBrand-strong shadow " >Start 30 day free trial</a>
       </div>
-      <div class="flex gap-10 pt-5 [&>*]:shadow [&>*]:flex-1 [&>*]:p-6 [&>*]:space-y-5 [&>*]:rounded-xl [&>*]:border [&_svg]:w-5 [&_svg]:h-5 [&_svg]:!text-iconBrand">
+      <div class="flex gap-10 pt-5 *:shadow *:flex-1 *:p-6 *:space-y-5 *:rounded-xl *:border [&_svg]:w-5 [&_svg]:h-5 [&_svg]:!text-iconBrand">
         <div class="border-strokeBrand-weak ">
           <div class="inline-block p-3 bg-fillBrand-weak rounded-full"><svg><use xlink:href="/assets/deps/sprite.svg#cloud"></use></svg></div>
           <div class="flex flex-col">
@@ -637,6 +743,31 @@
                   <li><a href="#">5 Most Used Incident Management Tools (Reviewed & Ranked)</a></li>
               </ul>
             </div>
+        </div>
+
+        <div class="">
+          <h3 class="text-sm font-semibold text-textWeak mb-4">Platforms</h3>
+          <div class="grid grid-cols-1 md:grid-cols-6 gap-3 *:col-span-1">
+            <a href="#">Database Monitoring</a>
+            <a href="#">Kubernetes Monitoring</a>
+            <a href="#">PHP Monitoring</a>
+            <a href="#">.NET Monitoring</a>
+            <a href="#">Java Monitoring</a>
+            <a href="#">Node.js Monitoring</a>
+            <a href="#">Laravel Monitoring</a>
+            <a href="#">Symfony Monitoring</a>
+            <a href="#">CodeIgniter Monitoring</a>
+            <a href="#">Express Monitoring</a>
+            <a href="#">MySQL Monitoring</a>
+            <a href="#">PostgreSQL Monitoring</a>
+            <a href="#">Ruby Monitoring</a>
+            <a href="#">Python Monitoring</a>
+            <a href="#">Golang Monitoring</a>
+            <a href="#">Django Monitoring</a>
+            <a href="#">Angular Monitoring</a>
+            <a href="#">React Monitoring</a>
+          </div>
+          <a href="#" class="block py-3 underline underline-offset-2">See all platforms</a>
         </div>
 
         <hr/>
