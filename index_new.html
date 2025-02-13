@@ -15,7 +15,7 @@
     </script>
   </head>
   <body class=" flex flex-col items-center xdark text-textStrong space-y-48 bg-bgBase [&_svg]:text-iconNeutral">
-    <nav class="py-4 flex-1 flex max-w-7xl w-full justify-between items-center sticky top-0 z-10 bg-bgBase">
+    <!-- <nav class="py-4 flex-1 flex max-w-7xl w-full justify-between items-center sticky top-0 z-10 bg-bgBase">
       <a href="/" class="py-1" aria-label="Back to homepage">
         <img class="h-6 dark:hidden" src="/assets/brand/logo_full_color.svg" alt="APItoolkit full color logo">
         <img class="h-6 hidden dark:inline-block" src="/assets/brand/logo_full_white.svg" alt="APItoolkit white logo">
@@ -26,16 +26,279 @@
             <use xlink:href="/assets/deps/sprite.svg#chevron-down"></use>
           </svg>
         </a>
-        <a>Documentation</a>
-        <a>Blog</a>
-        <a>Pricing</a>
+        <a href="https://apitoolkit.io/docs/" class="p-3 hover:bg-base-200 rounded-lg block">Documentation</a>
+        <a href="https://apitoolkit.io/blog/" class="p-3 hover:bg-base-200 rounded-lg block">Blog</a>
+        <a href="https://apitoolkit.io/pricing/" class="p-3 hover:bg-base-200 rounded-lg block">Pricing</a>
       </div>
       <div class="flex gap-5 items-center">
-        <a class="underline underline-offset-2">Login</a>
-        <a class="underline underline-offset-2">Start free trial</a>
-        <a class="bg-fillBrand-strong text-textInverse-strong px-6 py-3 rounded-xl shadow ">Book a demo</a>
+        <a href="https://app.apitoolkit.io" class="underline underline-offset-2">Login</a>
+        <a href="https://app.apitoolkit.io" class="underline underline-offset-2">Start free trial</a>
+        <a href="https://calendar.app.google/1a4HG5GZYv1sjjZG6" target="_blank" class="bg-fillBrand-strong text-textInverse-strong px-6 py-3 rounded-xl shadow ">Book a demo</a>
       </div>
-    </nav>
+    </nav> -->
+    <header id="header" class="max-w-7xl w-full top-0 left-0 right-0 sticky bg-bgBase z-30 dark:border-gray-700">
+      <nav
+        class="mx-auto flex justify-between items-center py-3 md:py-4 relative">
+        <div class="flex md:gap-6 lg:gap-10 items-center">
+          <a href="/" title="Back to homepage">
+            <img class="h-6 dark:hidden" src="/assets/brand/logo_full_color.svg" alt="APItoolkit full color logo" />
+            <img class="h-6 hidden dark:inline-block" src="/assets/brand/logo_full_white.svg" alt="APItoolkit white logo" />
+          </a>
+          <!-- Mobile Nav Items -->
+          <div id="menu" class="fixed hidden overflow-y-auto pb-[73px] top-[73px] p-4 left-0 w-full h-full bg-base-100">
+            <ul class="w-[min(100%,500px)] mx-auto flex flex-col">
+              <li class="w-full border-b">
+                <button class="text-left py-4 w-full justify-between flex items-center"
+                  onclick="showOptions(event,'h-[210px]')">
+                  Documentation
+                  <svg xmlns="http://www.w3.org/2000/svg" class="duration-200" width="19" height="18" viewBox="0 0 19 18"
+                    fill="none">
+                    <path d="M5.5293 7.125L9.2793 10.875L13.0293 7.125" stroke="#2E3238" stroke-width="1.2"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </button>
+                <div class="h-0 overflow-hidden duration-200">
+                  <ul class="flex flex-col text-sm">
+                    <li>
+                      <a href="/docs/onboarding" class="p-2 flex items-center gap-2 hover:bg-base-200 shrink-0">
+                        <img src="/assets/img/nav-item.svg" class="h-12 flex-shrink-0 w-12 border rounded-lg"
+                          alt="navigation item icon">
+                        <div class="flex flex-col">
+                          <h6 class="font-bold  ">Get started</h6>
+                          <span class="text-gray-500 leading-[1.10]">All you need to begin using APItoolkit.</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="">
+                      <a href="/docs/sdks"
+                        class="p-2 flex items-center gap-2 hover:bg-base-200 shrink-0">
+                        <img src="/assets/img/nav-item.svg" class="h-12 flex-shrink-0 w-12 border rounded-lg"
+                          alt="navigation item icon">
+                        <div class="flex flex-col">
+                          <h6 class="font-bold ">SDK Guides</h6>
+                          <span class="text-gray-500 leading-[1.10]">Integrate any of our SDKs into your application.</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/docs/dashboard" class="p-2 flex items-center gap-2 hover:bg-base-200 shrink-0">
+                        <img src="/assets/img/nav-item.svg" class="h-12 flex-shrink-0 w-12 border rounded-lg"
+                          alt="navigation item icon">
+                        <div class="flex flex-col">
+                          <h6 class="font-bold ">Dashboard Guides</h6>
+                          <span class="text-gray-500 leading-[1.10]">Learn everything you need to navigate the APItoolkit
+                          dashboard.</span>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="w-full  border-b">
+                <button class="text-left py-4 w-full justify-between flex items-center"
+                  onclick="showOptions(event, 'h-[288px]')">
+                  Features
+                  <svg xmlns="http://www.w3.org/2000/svg" class="duration-200" width="19" height="18" viewBox="0 0 19 18"
+                    fill="none">
+                    <path d="M5.5293 7.125L9.2793 10.875L13.0293 7.125" stroke="#2E3238" stroke-width="1.2"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </button>
+                <div class="h-0 overflow-hidden duration-200">
+                  <ul class="flex flex-col text-sm">
+                    <li>
+                      <a href="/features/error-tracking" class="p-2 flex items-center gap-2 hover:bg-base-200 shrink-0">
+                        <img src="/assets/img/features.svg" class="h-12 p-3 flex-shrink-0 w-12 border rounded-lg" alt="">
+                        <div class="flex flex-col">
+                          <h6 class="font-bold ">Error Tracking</h6>
+                          <span class="text-gray-500 leading-[1.10]">Find and fix Errors and Breaking Changes in realtime.
+                          </span>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="">
+                      <a href="/features/api-analytics" class="p-2 flex items-center gap-2 hover:bg-base-200 shrink-0">
+                        <img src="/assets/img/features.svg" class="h-12 p-3 w-12 flex-shrink-0 border rounded-lg" alt="">
+                        <div class="flex flex-col">
+                          <h6 class="font-bold ">API Analytics</h6>
+                          <span class="text-gray-500 leading-[1.10]">Easily identify trends and optimize what truly matters
+                            to your business.
+                          </span>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/features/api-management" class="p-2 flex items-center gap-2 hover:bg-base-200 shrink-0">
+                        <img src="/assets/img/features.svg" class="h-12 p-3 flex-shrink-0 w-12 border rounded-lg" alt="">
+                        <div class="flex flex-col">
+                          <h6 class="font-bold ">API Management</h6>
+                          <span class="text-gray-500 leading-[1.10]">Everything you need to manage your APIs
+                            effectively.</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/features/api-observability" class="p-2 flex items-center gap-2 hover:bg-base-200 shrink-0">
+                        <img src="/assets/img/features.svg" class="h-12 p-3 flex-shrink-0 w-12 border rounded-lg" alt="">
+                        <div class="flex flex-col">
+                          <h6 class="font-bold ">API Observability</h6>
+                          <span class="text-gray-500 leading-[1.10]">Achieve real-time API Observability to pinpoint issues,
+                            understand root causes, and fix
+                            problems in real-time.</span>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="w-full py-4 border-b">
+                <a href="/blog" class="block">Blog</a>
+              </li>
+              <li class="w-full py-4 border-b"><a href="/pricing" class="block">Pricing</a></li>
+              <li class="w-full py-4 border-b"><a href="/compare" class="block">Compare</a></li>
+            </ul>
+          </div>
+        </div>
+        <button class="p-3 last:hidden overflow-hidden md:hidden hover:bg-base-200 rounded-lg" onclick="toggleMenu(event)">
+          <svg class="text-black-500 h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
+            <path stroke="currentColor" id="hamburger" stroke-linejoin="round" stroke-width="1.2" d="M15 6H3M15 12H3">
+            </path>
+            <path stroke="currentColor" id="cross" class="hidden" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="1.1" d="m12.5 5.5-7 7m7 0-7-7">
+            </path>
+          </svg>
+        </button>
+        <!-- Desktop Nav Items -->
+        <div class="hidden md:flex items-center gap-4">
+          <ul class="hidden md:flex items-center md:gap-4 lg:gap-8">
+            <li class="relative group">
+              <button class="flex items-center p-2 gap-1 hover:bg-base-200 rounded-lg" title="Documentation">
+                Documentation
+                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18" fill="none">
+                  <path d="M5.5293 7.125L9.2793 10.875L13.0293 7.125" stroke="#2E3238" stroke-width="1.2"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+              <div
+                class="group-hover:opacity-100 group-hover:h-[210px] w-96 h-0 z-40 overflow-y-hidden  duration-300 opacity-0 absolute top-[100%] left-0 bg-base-100 border rounded-lg">
+                <ul class="flex flex-col gap-1 text-sm">
+                  <li>
+                    <a href="/docs/onboarding" class="p-2 flex items-center gap-2 hover:bg-base-200 shrink-0"
+                      title="To Onboarding page">
+                      <img src="/assets/img/nav-item.svg" class="h-12 flex-shrink-0 w-12 border rounded-lg"
+                        alt="navigation item icon">
+                      <div class="flex flex-col">
+                        <h6 class="font-bold ">Get Started</h6>
+                        <span class="text-gray-500 leading-[1.10]">All you need to begin using APItoolkit.</span>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="">
+                    <a href="/docs/sdks" class="p-2 flex items-center gap-2 hover:bg-base-200 shrink-0"
+                      title="To Platform SDKs page">
+                      <img src="/assets/img/nav-item.svg" class="h-12 w-12 flex-shrink-0 border rounded-lg"
+                        alt="navigation item icon">
+                      <div class="flex flex-col">
+                        <h6 class="font-bold ">SDK Guides</h6>
+                        <span class="text-gray-500 leading-[1.10]">Integrate any of our SDKs into your application.</span>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/docs/dashboard" class="p-2 flex items-center gap-2 hover:bg-base-200 shrink-0"
+                      title="To Dashboard page">
+                      <img src="/assets/img/nav-item.svg" class="h-12 flex-shrink-0 w-12 border rounded-lg"
+                        alt="navigation item icon">
+                      <div class="flex flex-col">
+                        <h6 class="font-bold ">Dashboard Guides</h6>
+                        <span class="text-gray-500 leading-[1.10]">Learn everything you need to navigate our
+                          dashboard.</span>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="relative group">
+              <button class="flex items-center p-2 gap-1 hover:bg-base-200 rounded-lg">
+                Features
+                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18" fill="none">
+                  <path d="M5.5293 7.125L9.2793 10.875L13.0293 7.125" stroke="#2E3238" stroke-width="1.2"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+              <div
+                class="group-hover:opacity-100 group-hover:h-72 w-96 h-0 z-40 overflow-y-hidden  duration-300 opacity-0 absolute top-[100%] left-0 bg-base-100 border rounded-lg">
+                <ul class="flex flex-col justify-between text-sm">
+                  <li>
+                    <a href="/features/error-tracking" class="p-2 flex items-center gap-2 hover:bg-base-200 shrink-0">
+                      <img src="/assets/img/features.svg" class="h-12 p-3 flex-shrink-0 w-12 border rounded-lg" alt="">
+                      <div class="flex flex-col">
+                        <h6 class="font-bold ">Error Tracking</h6>
+                        <span class="text-gray-500 leading-[1.10]">Find and fix Errors and Breaking Changes in realtime.
+                        </span>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="">
+                    <a href="/features/api-analytics" class="p-2 flex items-center gap-2 hover:bg-base-200 shrink-0">
+                      <img src="/assets/img/features.svg" class="h-12 w-12  p-3 flex-shrink-0 border rounded-lg" alt="">
+                      <div class="flex flex-col">
+                        <h6 class="font-bold ">API Analytics</h6>
+                        <span class="text-gray-500 leading-[1.10]">Easily identify trends and optimize what truly matters to
+                          your business.
+                        </span>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/features/api-management" class="block p-2 flex items-center gap-2 hover:bg-base-200 shrink-0">
+                      <img src="/assets/img/features.svg" class="h-12  p-3 flex-shrink-0 w-12 border rounded-lg" alt="">
+                      <div class="flex flex-col">
+                        <h6 class="font-bold ">API Management</h6>
+                        <span class="text-gray-500 leading-[1.10]">Everything you need to manage your APIs
+                          effectively.</span>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/features/api-observability"
+                      class="block p-2 flex items-center gap-2 hover:bg-base-200 shrink-0">
+                      <img src="/assets/img/features.svg" class="h-12  p-3 flex-shrink-0 w-12 border rounded-lg" alt="">
+                      <div class="flex flex-col">
+                        <h6 class="font-bold ">API Observability</h6>
+                        <span class="text-gray-500 leading-[1.10]">Achieve real-time API Observability to pinpoint issues,
+                          understand root causes, and fix problems
+                          in real-time.</span>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li><a href="/blog" class=" p-3 hover:bg-base-200 rounded-lg block">Blog</a></li>
+            <li><a href="/pricing" class=" p-3 hover:bg-base-200 rounded-lg block">Pricing</a></li>
+          </ul>
+          <a href="https://app.apitoolkit.io" class="btn btn-outline btn-neutral ">Sign in</a>
+          <a href="https://app.apitoolkit.io" class="btn btn-secondary">Start for free</a>
+          <label class="swap swap-rotate" for="theme-controller">
+            <input type="checkbox" value="sunset" id="theme-controller" class="theme-controller" _="
+                         on change localStorage.setItem('darkMode', me.checked) 
+                         then if  me.checked set body's @data-theme to 'sunset' else set body's @data-theme to 'emerald' 
+            " />
+            <svg class="swap-off icon h-5 w-5 text-current fill-current stroke-current opacity-70">
+              <use xlink:href="/assets/deps/fontawesome/light.svg#sun-bright"></use>
+            </svg>
+            <svg class="swap-on icon h-5 w-5 text-current fill-current stroke-current opacity-70">
+              <use xlink:href="/assets/deps/fontawesome/light.svg#moon-stars"></use>
+            </svg>
+          </label>
+          <script>
+            if (localStorage.getItem("darkMode") === 'true') { document.getElementById("theme-controller").checked = true }
+          </script>
+        </div>
+      </nav>
+    </header>
     <section class="space-y-28 !mt-32">
       <div class="flex max-w-7xl w-full gap-10">
         <div class="space-y-8 flex-1">
@@ -53,8 +316,8 @@
             </svg> Monitor performance and uptime of both APIs and external APIs</li>
           </ul>
           <div class="flex gap-4">
-            <a class="btn py-3 px-6 rounded-xl bg-fillBrand-strong text-textInverse-strong shadow ">Book a demo</a>
-            <a class="btn py-3 px-6 rounded-xl bg-transparent border border-fillBrand-strong text-fillBrand-strong shadow " >Start 30 day free trial</a>
+            <a href="https://calendar.app.google/1a4HG5GZYv1sjjZG6" target="_blank" class="btn py-3 px-6 rounded-xl bg-fillBrand-strong text-textInverse-strong shadow ">Book a demo</a>
+            <a href="https://app.apitoolkit.io" class="btn py-3 px-6 rounded-xl bg-transparent border border-fillBrand-strong text-fillBrand-strong shadow " >Start 30 day free trial</a>
           </div>
           <div class="flex gap-4 items-center text-textWeak">
             <!-- TrustBox Rating -->
@@ -155,12 +418,12 @@
           <div class="space-y-2 [&_p]:leading-normal">
             <h5 class="text-xl font-semibold text-textStrong">Catch breaking changes</h5>
             <p>Spot unexpected changes in API responses or data structures-your services or third-party calls-before they slip into production.</p>
-            <a class="text-textBrand underline block ">Learn more</a>
+            <a href="https://apitoolkit.io/features/error-tracking/" class="text-textBrand underline block ">Learn more</a>
           </div>
           <div class="space-y-2">
             <h5 class="text-xl font-semibold text-textStrong">Monitor request payloads</h5>
             <p>Create real-time alerts for critical API payloads-like third-party errors or large bank transactions-and get notified instantly.</p>
-            <a class="text-textBrand underline block ">Learn more</a>
+            <a href="https://apitoolkit.io/docs/features/api-monitoring-observability/" class="text-textBrand underline block ">Learn more</a>
           </div>
           <div class="space-y-2">
             <h5 class="text-xl font-semibold text-textStrong">Create Multistep Healthchecks</h5>
@@ -297,9 +560,9 @@
           </div>
 
           <div class="flex flex-col *:underline *:underline-offset-2 space-y-1 text-textBrand pl-2.5">
-            <a>Launch playground</a>
-            <a>Book a demo</a>
-            <a>Start free 30 day trial</a>
+            <a href="https://app.apitoolkit.io">Launch playground</a>
+            <a href="https://calendar.app.google/1a4HG5GZYv1sjjZG6" target="_blank">Book a demo</a>
+            <a href="https://app.apitoolkit.io">Start free 30 day trial</a>
           </div>
 
         </div>
@@ -364,8 +627,8 @@
       <h2 class="text-[2rem] font-semibold text-textStrong">Flexible deployment options for every company </h2>
       <p class="text-xl leading-normal">Regardless of your company's size or compliance requirements, APItoolkit operates <br/>within your business and regulatory constraints.</p>
       <div>
-        <a class="btn py-3 px-6 rounded-xl bg-fillBrand-strong text-textInverse-strong shadow ">Book a demo</a>
-        <a class="btn py-3 px-6 rounded-xl bg-transparent border border-fillBrand-strong text-fillBrand-strong shadow " >Start 30 day free trial</a>
+        <a href="https://calendar.app.google/1a4HG5GZYv1sjjZG6" target="_blank" class="btn py-3 px-6 rounded-xl bg-fillBrand-strong text-textInverse-strong shadow ">Book a demo</a>
+        <a href="https://app.apitoolkit.io" class="btn py-3 px-6 rounded-xl bg-transparent border border-fillBrand-strong text-fillBrand-strong shadow " >Start 30 day free trial</a>
       </div>
       <div class="flex gap-10 pt-5 *:shadow *:flex-1 *:p-6 *:space-y-5 *:rounded-xl *:border [&_svg]:w-5 [&_svg]:h-5 [&_svg]:!text-iconBrand">
         <div class="border-strokeBrand-weak ">
@@ -376,7 +639,7 @@
           </div>
           <p>Fully managed cloud service with <strong>usage-based pricing</strong> and automatic optimization.</p>
           <p>Start for free, then scale seamlessly with <strong>predictable costs</strong> as your needs grow.</p>
-          <a class="block underline underline-offset-2 text-textBrand">Start 30 day free trial</a>
+          <a href="https://app.apitoolkit.io" class="block underline underline-offset-2 text-textBrand">Start 30 day free trial</a>
         </div>
 
         <div class="bg-fillBrand-weak border-strokeBrand-weak shadow-fillBrand-weak">
@@ -387,7 +650,7 @@
           </div>
           <p>Fully managed cloud service but <strong>all your data</strong> is stored in your own s3 compatible storage. </p>
           <p>Keep your data for as long as you want, and freely <strong>query and visualize data from months or years ago</strong>. At no extra cost.</p>
-          <a class="block underline underline-offset-2 text-textBrand">Book a demo</a>
+          <a href="https://calendar.app.google/1a4HG5GZYv1sjjZG6" target="_blank" class="block underline underline-offset-2 text-textBrand">Book a demo</a>
         </div>
 
         <div class="bg-fillWarning-weak border-strokeWarning-weak shadow-fillWarning-weak">
@@ -398,7 +661,7 @@
           </div>
           <p>Deploy in your own servers while APItoolkit handles operations.</p>
           <p>Perfect for organizations seeking <strong>complete data control</strong> with <strong>predictable annual pricing</strong>.</p>
-          <a class="block underline underline-offset-2 text-textBrand">Book a demo</a>
+          <a href="https://calendar.app.google/1a4HG5GZYv1sjjZG6" target="_blank" class="block underline underline-offset-2 text-textBrand">Book a demo</a>
         </div>
 
       </div>
@@ -417,36 +680,36 @@
           [&>div>*]:border [&>div>*]:border-strokeWeak">
           <div class="animate-[scroll-x_60s_linear_infinite] whitespace-nowrap flex w-[max-content] shrink-0 gap-5">
             <div><img src="https://img.icons8.com/color/48/postgreesql.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/linux.png"/></div>
+            <div><img src="https://img.icons8.com/color/48/cloudflare.png"/></div>
             <div><img src="https://img.icons8.com/color/48/mongodb.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/slack.png"/></div>
+            <div><img src="https://img.icons8.com/fluency/48/azure-1.png"/></div>
             <div><img src="https://img.icons8.com/color/48/mysql.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/debian.png"/></div>
+            <div><img src="https://img.icons8.com/color/48/nginx.png"/></div>
             <div><img src="https://img.icons8.com/color/48/redis.png"/></div>
             <div><img src="https://img.icons8.com/color/48/elasticsearch.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/microsoft.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/java-coffee-cup-logo.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/javascript.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/rust-programming-language.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/php.png"/></div>
-            <div><img src="https://img.icons8.com/windows/32/ruby-on-rails.png"/></div>
+            <div><img src="https://img.icons8.com/fluency/48/github.png"/></div>
+            <div><img src="https://img.icons8.com/color/48/google-cloud.png"/></div>
+            <div><img src="https://img.icons8.com/nolan/64/apache-kafka.png"/></div>
+            <div><img src="https://img.icons8.com/color/48/kubernetes.png"/></div>
+            <div><img src="https://img.icons8.com/color/48/prometheus-app.png"/></div>
+            <div><img src="https://www.vectorlogo.zone/logos/haproxy/haproxy-icon.svg"/></div>
             <div><img src="https://img.icons8.com/color/48/docker.png"/></div>
           </div>
           <div class="animate-[scroll-x_60s_linear_infinite] whitespace-nowrap flex w-[max-content] shrink-0 gap-5" aria-hidden="true" >
             <div><img src="https://img.icons8.com/color/48/postgreesql.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/linux.png"/></div>
+            <div><img src="https://img.icons8.com/color/48/cloudflare.png"/></div>
             <div><img src="https://img.icons8.com/color/48/mongodb.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/slack.png"/></div>
+            <div><img src="https://img.icons8.com/fluency/48/azure-1.png"/></div>
             <div><img src="https://img.icons8.com/color/48/mysql.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/debian.png"/></div>
+            <div><img src="https://img.icons8.com/color/48/nginx.png"/></div>
             <div><img src="https://img.icons8.com/color/48/redis.png"/></div>
             <div><img src="https://img.icons8.com/color/48/elasticsearch.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/microsoft.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/java-coffee-cup-logo.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/javascript.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/rust-programming-language.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/php.png"/></div>
-            <div><img src="https://img.icons8.com/windows/32/ruby-on-rails.png"/></div>
+            <div><img src="https://img.icons8.com/fluency/48/github.png"/></div>
+            <div><img src="https://img.icons8.com/color/48/google-cloud.png"/></div>
+            <div><img src="https://img.icons8.com/nolan/64/apache-kafka.png"/></div>
+            <div><img src="https://img.icons8.com/color/48/kubernetes.png"/></div>
+            <div><img src="https://img.icons8.com/color/48/prometheus-app.png"/></div>
+            <div><img src="https://www.vectorlogo.zone/logos/haproxy/haproxy-icon.svg"/></div>
             <div><img src="https://img.icons8.com/color/48/docker.png"/></div>
           </div>
         </div>
@@ -455,11 +718,11 @@
           [&>div>*]:inline-block [&>div>*]:w-24 [&>div>*]:p-3 [&>div>*]:rounded-xl 
           [&>div>*]:border [&>div>*]:border-strokeWeak">
           <div class="animate-[scroll-x_60s_linear_infinite] animation-reverse  whitespace-nowrap flex w-[max-content] shrink-0 gap-5">
-            <div><img src="https://img.icons8.com/color/48/microsoft.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/java-coffee-cup-logo.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/javascript.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/rust-programming-language.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/php.png"/></div>
+            <div><img src="https://img.icons8.com/color/48/linux.png"/></div>
+            <div><img src="https://img.icons8.com/color/48/linux.png"/></div>
+            <div><img src="https://img.icons8.com/color/48/linux.png"/></div>
+            <div><img src="https://img.icons8.com/color/48/linux.png"/></div>
+            <div><img src="https://img.icons8.com/color/48/linux.png""/></div>
             <div><img src="https://img.icons8.com/windows/32/ruby-on-rails.png"/></div>
             <div><img src="https://img.icons8.com/color/48/postgreesql.png"/></div>
             <div><img src="https://img.icons8.com/color/48/linux.png"/></div>
@@ -478,12 +741,12 @@
             <div><img src="https://img.icons8.com/color/48/docker.png"/></div>
           </div>
           <div class="animate-[scroll-x_60s_linear_infinite] animation-reverse whitespace-nowrap flex w-[max-content] shrink-0 gap-5" aria-hidden="true" >
-            <div><img src="https://img.icons8.com/color/48/microsoft.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/java-coffee-cup-logo.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/javascript.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/rust-programming-language.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/php.png"/></div>
-            <div><img src="https://img.icons8.com/windows/32/ruby-on-rails.png"/></div>
+            <div><img src="https://img.icons8.com/color/48/gitlab.png"/></div>
+            <div><img src="https://img.icons8.com/color/48/linux.png"/></div>
+            <div><img src="https://img.icons8.com/color/48/linux.png"/></div>
+            <div><img src="https://img.icons8.com/color/48/linux.png"/></div>
+            <div><img src="https://img.icons8.com/color/48/linux.png"/></div>
+            <div><img src="https://img.icons8.com/color/48/linux.png"/></div>
             <div><img src="https://img.icons8.com/color/48/postgreesql.png"/></div>
             <div><img src="https://img.icons8.com/color/48/linux.png"/></div>
             <div><img src="https://img.icons8.com/color/48/mongodb.png"/></div>
@@ -653,16 +916,16 @@
       <div class="max-w-7xl w-full text-textWeak space-y-10 pb-20">
         <h2 class="text-[2rem] font-normal text-textStrong leading-10"><span class="text-textBrand">Find and fix issues</span> before your customers, <br/>stakeholders or partners notice.</h2>
         <div>
-          <a class="btn py-3 px-6 rounded-xl bg-fillBrand-strong text-textInverse-strong">Book a demo</a>
-          <a class="btn py-3 px-6 rounded-xl bg-transparent border border-fillBrand-strong text-fillBrand-strong" >Start 30 day free trial</a>
+          <a href="https://calendar.app.google/1a4HG5GZYv1sjjZG6" target="_blank" class="btn py-3 px-6 rounded-xl bg-fillBrand-strong text-textInverse-strong">Book a demo</a>
+          <a href="https://app.apitoolkit.io" class="btn py-3 px-6 rounded-xl bg-transparent border border-fillBrand-strong text-fillBrand-strong" >Start 30 day free trial</a>
         </div>
         <div class="space-x-8 inline-flex items-center text-xl">
           <div class="[&_svg]:h-5 [&_svg]:w-5 inline-flex gap-4 ">
-            <a><svg><use xlink:href="/assets/deps/sprite.svg#github"></use></svg></a>
-            <a><svg><use xlink:href="/assets/deps/sprite.svg#twitter"></use></svg></a>
-            <a><svg><use xlink:href="/assets/deps/sprite.svg#linkedin"></use></svg></a>
-            <a><svg><use xlink:href="/assets/deps/sprite.svg#youtube"></use></svg></a>
-            <a><svg><use xlink:href="/assets/deps/sprite.svg#discord"></use></svg></a>
+            <a href="https://github.com/apitoolkit" target="_blank"><svg><use xlink:href="/assets/deps/sprite.svg#github"></use></svg></a>
+            <a href="https://x.com/APItoolkitHQ" target="_blank"><svg><use xlink:href="/assets/deps/sprite.svg#twitter"></use></svg></a>
+            <a href="https://www.linkedin.com/company/apitoolkit" target="_blank"><svg><use xlink:href="/assets/deps/sprite.svg#linkedin"></use></svg></a>
+            <a href="https://www.youtube.com/@APItoolkit" target="_blank"><svg><use xlink:href="/assets/deps/sprite.svg#youtube"></use></svg></a>
+            <a href="https://discord.gg/BHQh5JzjPX" target="_blank"><svg><use xlink:href="/assets/deps/sprite.svg#discord"></use></svg></a>
           </div>
           <span class="text-textDisabled">|</span>
           <a>Signup for our <span class="underline underline-offset-2 font-semibold">newsletter</span> to stay updated</a>
@@ -682,54 +945,54 @@
             <div class="col-span-1">
                 <h3 class="text-sm font-semibold text-textWeak mb-4">Product</h3>
                 <ul class="space-y-3">
-                    <li><a href="#">Error Tracking</a></li>
-                    <li><a href="#">Breaking Changes Detection</a></li>
-                    <li><a href="#">API Logs and Metrics</a></li>
-                    <li><a href="#">API Observability</a></li>
-                    <li><a href="#">API Management</a></li>
-                    <li><a href="#">API Analytics</a></li>
-                    <li><a href="#">Opentelemetry</a></li>
+                    <li><a href="https://apitoolkit.io/features/error-tracking">Error Tracking</a></li>
+                    <li><a href="https://apitoolkit.io/features/error-tracking">Breaking Changes Detection</a></li>
+                    <li><a href="https://apitoolkit.io/features/api-logs-and-metrics/">API Logs and Metrics</a></li>
+                    <li><a href="https://apitoolkit.io/features/api-observability/">API Observability</a></li>
+                    <li><a href="https://apitoolkit.io/features/api-management/">API Management</a></li>
+                    <li><a href="https://apitoolkit.io/features/api-analytics/">API Analytics</a></li>
+                    <li><a href="https://opentelemetry.io/">Opentelemetry</a></li>
                 </ul>
             </div>
 
             <div class="col-span-1">
                 <h3 class="text-sm font-semibold text-textWeak mb-4">Developers and Support</h3>
                 <ul class="space-y-3">
-                    <li><a href="#">Documentation</a></li>
-                    <li><a href="#">Onboarding Guide</a></li>
-                    <li><a href="#">SDK Guides</a></li>
-                    <li><a href="#">Dashboard Manual</a></li>
-                    <li><a href="#">Why Choose APIToolkit?</a></li>
-                    <li><a href="#">Pricing</a></li>
-                    <li><a href="#">Test JSON Redaction</a></li>
-                    <li><a href="#">Status Page</a></li>
+                    <li><a href="https://apitoolkit.io/docs/">Documentation</a></li>
+                    <li><a href="https://apitoolkit.io/docs/onboarding/">Onboarding Guide</a></li>
+                    <li><a href="https://apitoolkit.io/docs/sdks/">SDK Guides</a></li>
+                    <li><a href="https://apitoolkit.io/docs/dashboard/">Dashboard Manual</a></li>
+                    <li><a href="https://apitoolkit.io/compare/">Why Choose APIToolkit?</a></li>
+                    <li><a href="https://apitoolkit.io/pricing/">Pricing</a></li>
+                    <li><a href="https://apitoolkit.io/tools/json-redacter/">Test JSON Redaction</a></li>
+                    <li><a href="https://updown.io/6kqs">Status Page</a></li>
                 </ul>
             </div>
 
             <div class="col-span-1">
               <h3 class="text-sm font-semibold text-textWeak mb-4">Product Comparisons</h3>
               <ul class="space-y-3">
-                  <li><a href="#">APIToolkit vs Datadog</a></li>
-                  <li><a href="#">APIToolkit vs Sentry</a></li>
-                  <li><a href="#">APIToolkit vs Honeybadger</a></li>
-                  <li><a href="#">APIToolkit vs New Relic</a></li>
-                  <li><a href="#">APIToolkit vs Baseline</a></li>
-                  <li><a href="#">APIToolkit vs Treblle</a></li>
-                  <li><a href="#">APIToolkit vs Axiom</a></li>
+                  <li><a href="https://apitoolkit.io/compare/datadog">APIToolkit vs Datadog</a></li>
+                  <li><a href="https://apitoolkit.io/compare/sentry">APIToolkit vs Sentry</a></li>
+                  <li><a href="https://apitoolkit.io/compare/honeybadger">APIToolkit vs Honeybadger</a></li>
+                  <li><a href="https://apitoolkit.io/compare/newrelic">APIToolkit vs New Relic</a></li>
+                  <li><a href="https://apitoolkit.io/compare/baselime">APIToolkit vs Baseline</a></li>
+                  <li><a href="https://apitoolkit.io/compare/treblle">APIToolkit vs Treblle</a></li>
+                  <li><a href="https://apitoolkit.io/compare/axiom">APIToolkit vs Axiom</a></li>
               </ul>
             </div>
 
             <div class="col-span-1">
               <h3 class="text-sm font-semibold text-textWeak mb-4">Company</h3>
               <ul class="space-y-3">
-                  <li><a href="#">About</a></li>
-                  <li><a href="#">FAQs</a></li>
-                  <li><a href="#">Blog</a></li>
-                  <li><a href="#">Events</a></li>
-                  <li><a href="#">Press kit</a></li>
-                  <li><a href="#">Contact</a></li>
-                  <li><a href="#">Privacy Policy</a></li>
-                  <li><a href="#">Terms and Conditions</a></li>
+                  <li><a href="https://apitoolkit.io/about/">About</a></li>
+                  <li><a href="https://apitoolkit.io/docs/faqs">FAQs</a></li>
+                  <li><a href="https://apitoolkit.io/blog/">Blog</a></li>
+                  <li><a href="https://apitoolkit.io/events/">Events</a></li>
+                  <li><a href="https://apitoolkit.io/brand">Press kit</a></li>
+                  <li><a href="https://apitoolkit.io/contact/">Contact</a></li>
+                  <li><a href="https://apitoolkit.io/privacy-policy/">Privacy Policy</a></li>
+                  <li><a href="https://apitoolkit.io/terms-and-conditions/">Terms and Conditions</a></li>
               </ul>
             </div>
 
@@ -777,7 +1040,7 @@
                 Copyrights (c) 2025 - Past 3 technologies UG. Gruntaler str. 18, 13357 Berlin, Germany
             </div>
             <div class="flex items-center space-x-6">
-                <a href="#" class="flex items-center text-gray-600 hover:text-gray-900">
+                <a href="https://discord.gg/BHQh5JzjPX" target="_blank" class="flex items-center text-gray-600 hover:text-gray-900">
                     <svg class="h-5 w-5 mr-2"><use xlink:href="/assets/deps/sprite.svg#discord"></use></svg>
                     Join our discord community
                 </a>
