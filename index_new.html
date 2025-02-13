@@ -20,22 +20,125 @@
         <img class="h-6 dark:hidden" src="/assets/brand/logo_full_color.svg" alt="APItoolkit full color logo">
         <img class="h-6 hidden dark:inline-block" src="/assets/brand/logo_full_white.svg" alt="APItoolkit white logo">
       </a>
-      <div class="flex gap-5 items-center">
-        <a class="inline-flex items-center">Product 
-          <svg class="flex-shrink-0 icon h-5 w-5 text-current fill-current stroke-current">
-            <use xlink:href="/assets/deps/sprite.svg#chevron-down"></use>
-          </svg>
-        </a>
-        <a>Documentation</a>
-        <a>Blog</a>
-        <a>Pricing</a>
+
+      <div class="hidden md:flex items-center gap-4">
+        <ul class="hidden md:flex items-center md:gap-4 lg:gap-4">
+          <li class="relative group">
+            <button class="flex items-center p-2 gap-1 hover:bg-base-200 rounded-lg" title="Documentation">
+              Documentation
+              <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18" fill="none">
+                <path d="M5.5293 7.125L9.2793 10.875L13.0293 7.125" stroke="#2E3238" stroke-width="1.2"
+                  stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+            <div
+              class="group-hover:opacity-100 group-hover:h-[210px] w-96 h-0 z-40 overflow-y-hidden  duration-300 opacity-0 absolute top-[100%] left-0 bg-base-100 border rounded-lg">
+              <ul class="flex flex-col gap-1 text-sm">
+                <li>
+                  <a href="/docs/onboarding" class="p-2 flex items-center gap-2 hover:bg-base-200 shrink-0"
+                    title="To Onboarding page">
+                    <img src="/assets/img/nav-item.svg" class="h-12 flex-shrink-0 w-12 border rounded-lg"
+                      alt="navigation item icon">
+                    <div class="flex flex-col">
+                      <h6 class="font-bold ">Get Started</h6>
+                      <span class="text-gray-500 leading-[1.10]">All you need to begin using APItoolkit.</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="">
+                  <a href="/docs/sdks" class="p-2 flex items-center gap-2 hover:bg-base-200 shrink-0"
+                    title="To Platform SDKs page">
+                    <img src="/assets/img/nav-item.svg" class="h-12 w-12 flex-shrink-0 border rounded-lg"
+                      alt="navigation item icon">
+                    <div class="flex flex-col">
+                      <h6 class="font-bold ">SDK Guides</h6>
+                      <span class="text-gray-500 leading-[1.10]">Integrate any of our SDKs into your application.</span>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="/docs/dashboard" class="p-2 flex items-center gap-2 hover:bg-base-200 shrink-0"
+                    title="To Dashboard page">
+                    <img src="/assets/img/nav-item.svg" class="h-12 flex-shrink-0 w-12 border rounded-lg"
+                      alt="navigation item icon">
+                    <div class="flex flex-col">
+                      <h6 class="font-bold ">Dashboard Guides</h6>
+                      <span class="text-gray-500 leading-[1.10]">Learn everything you need to navigate our
+                        dashboard.</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="relative group">
+            <button class="flex items-center p-2 gap-1 hover:bg-base-200 rounded-lg">
+              Features
+              <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18" fill="none">
+                <path d="M5.5293 7.125L9.2793 10.875L13.0293 7.125" stroke="#2E3238" stroke-width="1.2"
+                  stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+            <div
+              class="group-hover:opacity-100 group-hover:h-72 w-96 h-0 z-40 overflow-y-hidden  duration-300 opacity-0 absolute top-[100%] left-0 bg-base-100 border rounded-lg">
+              <ul class="flex flex-col justify-between text-sm">
+                <li>
+                  <a href="/features/error-tracking" class="p-2 flex items-center gap-2 hover:bg-base-200 shrink-0">
+                    <img src="/assets/img/features.svg" class="h-12 p-3 flex-shrink-0 w-12 border rounded-lg" alt="">
+                    <div class="flex flex-col">
+                      <h6 class="font-bold ">Error Tracking</h6>
+                      <span class="text-gray-500 leading-[1.10]">Find and fix Errors and Breaking Changes in realtime.
+                      </span>
+                    </div>
+                  </a>
+                </li>
+                <li class="">
+                  <a href="/features/api-analytics" class="p-2 flex items-center gap-2 hover:bg-base-200 shrink-0">
+                    <img src="/assets/img/features.svg" class="h-12 w-12  p-3 flex-shrink-0 border rounded-lg" alt="">
+                    <div class="flex flex-col">
+                      <h6 class="font-bold ">API Analytics</h6>
+                      <span class="text-gray-500 leading-[1.10]">Easily identify trends and optimize what truly matters to
+                        your business.
+                      </span>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="/features/api-management" class="p-2 flex items-center gap-2 hover:bg-base-200 shrink-0">
+                    <img src="/assets/img/features.svg" class="h-12  p-3 flex-shrink-0 w-12 border rounded-lg" alt="">
+                    <div class="flex flex-col">
+                      <h6 class="font-bold ">API Management</h6>
+                      <span class="text-gray-500 leading-[1.10]">Everything you need to manage your APIs
+                        effectively.</span>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="/features/api-observability"
+                    class="p-2 flex items-center gap-2 hover:bg-base-200 shrink-0">
+                    <img src="/assets/img/features.svg" class="h-12  p-3 flex-shrink-0 w-12 border rounded-lg" alt="">
+                    <div class="flex flex-col">
+                      <h6 class="font-bold ">API Observability</h6>
+                      <span class="text-gray-500 leading-[1.10]">Achieve real-time API Observability to pinpoint issues,
+                        understand root causes, and fix problems
+                        in real-time.</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li><a href="/blog" class=" p-3 hover:bg-base-200 rounded-lg block">Blog</a></li>
+          <li><a href="/pricing" class=" p-3 hover:bg-base-200 rounded-lg block">Pricing</a></li>
+        </ul>
       </div>
       <div class="flex gap-5 items-center">
-        <a class="underline underline-offset-2">Login</a>
-        <a class="underline underline-offset-2">Start free trial</a>
-        <a class="bg-fillBrand-strong text-textInverse-strong px-6 py-3 rounded-xl shadow ">Book a demo</a>
+        <a href="https://app.apitoolkit.io" class="underline underline-offset-2">Login</a>
+        <a href="https://app.apitoolkit.io" class="underline underline-offset-2">Start free trial</a>
+        <a href="https://calendar.app.google/1a4HG5GZYv1sjjZG6" target="_blank" class="bg-fillBrand-strong text-textInverse-strong px-6 py-3 rounded-xl shadow ">Book a demo</a>
       </div>
     </nav>
+
     <section class="space-y-28 !mt-32">
       <div class="flex max-w-7xl w-full gap-10">
         <div class="space-y-8 flex-1">
@@ -53,8 +156,8 @@
             </svg> Monitor performance and uptime of both APIs and external APIs</li>
           </ul>
           <div class="flex gap-4">
-            <a class="btn py-3 px-6 rounded-xl bg-fillBrand-strong text-textInverse-strong shadow ">Book a demo</a>
-            <a class="btn py-3 px-6 rounded-xl bg-transparent border border-fillBrand-strong text-fillBrand-strong shadow " >Start 30 day free trial</a>
+            <a href="https://calendar.app.google/1a4HG5GZYv1sjjZG6" target="_blank" class="btn py-3 px-6 rounded-xl bg-fillBrand-strong text-textInverse-strong shadow ">Book a demo</a>
+            <a href="https://app.apitoolkit.io" class="btn py-3 px-6 rounded-xl bg-transparent border border-fillBrand-strong text-fillBrand-strong shadow " >Start 30 day free trial</a>
           </div>
           <div class="flex gap-4 items-center text-textWeak">
             <!-- TrustBox Rating -->
@@ -155,12 +258,12 @@
           <div class="space-y-2 [&_p]:leading-normal">
             <h5 class="text-xl font-semibold text-textStrong">Catch breaking changes</h5>
             <p>Spot unexpected changes in API responses or data structures-your services or third-party calls-before they slip into production.</p>
-            <a class="text-textBrand underline block ">Learn more</a>
+            <a href="https://apitoolkit.io/features/error-tracking/" class="text-textBrand underline block ">Learn more</a>
           </div>
           <div class="space-y-2">
             <h5 class="text-xl font-semibold text-textStrong">Monitor request payloads</h5>
             <p>Create real-time alerts for critical API payloads-like third-party errors or large bank transactions-and get notified instantly.</p>
-            <a class="text-textBrand underline block ">Learn more</a>
+            <a href="https://apitoolkit.io/docs/features/api-monitoring-observability/" class="text-textBrand underline block ">Learn more</a>
           </div>
           <div class="space-y-2">
             <h5 class="text-xl font-semibold text-textStrong">Create Multistep Healthchecks</h5>
@@ -297,9 +400,9 @@
           </div>
 
           <div class="flex flex-col *:underline *:underline-offset-2 space-y-1 text-textBrand pl-2.5">
-            <a>Launch playground</a>
-            <a>Book a demo</a>
-            <a>Start free 30 day trial</a>
+            <a href="https://app.apitoolkit.io">Launch playground</a>
+            <a href="https://calendar.app.google/1a4HG5GZYv1sjjZG6" target="_blank">Book a demo</a>
+            <a href="https://app.apitoolkit.io">Start free 30 day trial</a>
           </div>
 
         </div>
@@ -364,8 +467,8 @@
       <h2 class="text-[2rem] font-semibold text-textStrong">Flexible deployment options for every company </h2>
       <p class="text-xl leading-normal">Regardless of your company's size or compliance requirements, APItoolkit operates <br/>within your business and regulatory constraints.</p>
       <div>
-        <a class="btn py-3 px-6 rounded-xl bg-fillBrand-strong text-textInverse-strong shadow ">Book a demo</a>
-        <a class="btn py-3 px-6 rounded-xl bg-transparent border border-fillBrand-strong text-fillBrand-strong shadow " >Start 30 day free trial</a>
+        <a href="https://calendar.app.google/1a4HG5GZYv1sjjZG6" target="_blank" class="btn py-3 px-6 rounded-xl bg-fillBrand-strong text-textInverse-strong shadow ">Book a demo</a>
+        <a href="https://app.apitoolkit.io" class="btn py-3 px-6 rounded-xl bg-transparent border border-fillBrand-strong text-fillBrand-strong shadow " >Start 30 day free trial</a>
       </div>
       <div class="flex gap-10 pt-5 *:shadow *:flex-1 *:p-6 *:space-y-5 *:rounded-xl *:border [&_svg]:w-5 [&_svg]:h-5 [&_svg]:!text-iconBrand">
         <div class="border-strokeBrand-weak ">
@@ -376,7 +479,7 @@
           </div>
           <p>Fully managed cloud service with <strong>usage-based pricing</strong> and automatic optimization.</p>
           <p>Start for free, then scale seamlessly with <strong>predictable costs</strong> as your needs grow.</p>
-          <a class="block underline underline-offset-2 text-textBrand">Start 30 day free trial</a>
+          <a href="https://app.apitoolkit.io" class="block underline underline-offset-2 text-textBrand">Start 30 day free trial</a>
         </div>
 
         <div class="bg-fillBrand-weak border-strokeBrand-weak shadow-fillBrand-weak">
@@ -387,7 +490,7 @@
           </div>
           <p>Fully managed cloud service but <strong>all your data</strong> is stored in your own s3 compatible storage. </p>
           <p>Keep your data for as long as you want, and freely <strong>query and visualize data from months or years ago</strong>. At no extra cost.</p>
-          <a class="block underline underline-offset-2 text-textBrand">Book a demo</a>
+          <a href="https://calendar.app.google/1a4HG5GZYv1sjjZG6" target="_blank" class="block underline underline-offset-2 text-textBrand">Book a demo</a>
         </div>
 
         <div class="bg-fillWarning-weak border-strokeWarning-weak shadow-fillWarning-weak">
@@ -398,7 +501,7 @@
           </div>
           <p>Deploy in your own servers while APItoolkit handles operations.</p>
           <p>Perfect for organizations seeking <strong>complete data control</strong> with <strong>predictable annual pricing</strong>.</p>
-          <a class="block underline underline-offset-2 text-textBrand">Book a demo</a>
+          <a href="https://calendar.app.google/1a4HG5GZYv1sjjZG6" target="_blank" class="block underline underline-offset-2 text-textBrand">Book a demo</a>
         </div>
 
       </div>
@@ -417,36 +520,36 @@
           [&>div>*]:border [&>div>*]:border-strokeWeak">
           <div class="animate-[scroll-x_60s_linear_infinite] whitespace-nowrap flex w-[max-content] shrink-0 gap-5">
             <div><img src="https://img.icons8.com/color/48/postgreesql.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/linux.png"/></div>
+            <div><img src="https://img.icons8.com/color/48/cloudflare.png"/></div>
             <div><img src="https://img.icons8.com/color/48/mongodb.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/slack.png"/></div>
+            <div><img src="https://img.icons8.com/fluency/48/azure-1.png"/></div>
             <div><img src="https://img.icons8.com/color/48/mysql.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/debian.png"/></div>
+            <div><img src="https://img.icons8.com/color/48/nginx.png"/></div>
             <div><img src="https://img.icons8.com/color/48/redis.png"/></div>
             <div><img src="https://img.icons8.com/color/48/elasticsearch.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/microsoft.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/java-coffee-cup-logo.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/javascript.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/rust-programming-language.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/php.png"/></div>
-            <div><img src="https://img.icons8.com/windows/32/ruby-on-rails.png"/></div>
+            <div><img src="https://img.icons8.com/fluency/48/github.png"/></div>
+            <div><img src="https://img.icons8.com/color/48/google-cloud.png"/></div>
+            <div><img src="https://img.icons8.com/nolan/64/apache-kafka.png"/></div>
+            <div><img src="https://img.icons8.com/color/48/kubernetes.png"/></div>
+            <div><img src="https://img.icons8.com/color/48/prometheus-app.png"/></div>
+            <div><img src="https://www.vectorlogo.zone/logos/haproxy/haproxy-icon.svg"/></div>
             <div><img src="https://img.icons8.com/color/48/docker.png"/></div>
           </div>
           <div class="animate-[scroll-x_60s_linear_infinite] whitespace-nowrap flex w-[max-content] shrink-0 gap-5" aria-hidden="true" >
             <div><img src="https://img.icons8.com/color/48/postgreesql.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/linux.png"/></div>
+            <div><img src="https://img.icons8.com/color/48/cloudflare.png"/></div>
             <div><img src="https://img.icons8.com/color/48/mongodb.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/slack.png"/></div>
+            <div><img src="https://img.icons8.com/fluency/48/azure-1.png"/></div>
             <div><img src="https://img.icons8.com/color/48/mysql.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/debian.png"/></div>
+            <div><img src="https://img.icons8.com/color/48/nginx.png"/></div>
             <div><img src="https://img.icons8.com/color/48/redis.png"/></div>
             <div><img src="https://img.icons8.com/color/48/elasticsearch.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/microsoft.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/java-coffee-cup-logo.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/javascript.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/rust-programming-language.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/php.png"/></div>
-            <div><img src="https://img.icons8.com/windows/32/ruby-on-rails.png"/></div>
+            <div><img src="https://img.icons8.com/fluency/48/github.png"/></div>
+            <div><img src="https://img.icons8.com/color/48/google-cloud.png"/></div>
+            <div><img src="https://img.icons8.com/nolan/64/apache-kafka.png"/></div>
+            <div><img src="https://img.icons8.com/color/48/kubernetes.png"/></div>
+            <div><img src="https://img.icons8.com/color/48/prometheus-app.png"/></div>
+            <div><img src="https://www.vectorlogo.zone/logos/haproxy/haproxy-icon.svg"/></div>
             <div><img src="https://img.icons8.com/color/48/docker.png"/></div>
           </div>
         </div>
@@ -455,50 +558,40 @@
           [&>div>*]:inline-block [&>div>*]:w-24 [&>div>*]:p-3 [&>div>*]:rounded-xl 
           [&>div>*]:border [&>div>*]:border-strokeWeak">
           <div class="animate-[scroll-x_60s_linear_infinite] animation-reverse  whitespace-nowrap flex w-[max-content] shrink-0 gap-5">
-            <div><img src="https://img.icons8.com/color/48/microsoft.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/java-coffee-cup-logo.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/javascript.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/rust-programming-language.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/php.png"/></div>
-            <div><img src="https://img.icons8.com/windows/32/ruby-on-rails.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/postgreesql.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/linux.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/mongodb.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/slack.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/mysql.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/debian.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/redis.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/elasticsearch.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/docker.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/java-coffee-cup-logo.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/javascript.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/rust-programming-language.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/php.png"/></div>
-            <div><img src="https://img.icons8.com/windows/32/ruby-on-rails.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/docker.png"/></div>
+            <div class="flex items-center justify-center"><img class="w-full h-full object-contain"  src="/assets/img/opentelemetry-contrib-logos/statsd-receiver.png"/></div>
+            <div class="flex items-center justify-center"><img class="w-full h-full object-contain"  src="/assets/img/opentelemetry-contrib-logos/solacereceiver.jpg"/></div>
+            <div class="flex items-center justify-center"><img class="w-full h-full object-contain"  src="/assets/img/opentelemetry-contrib-logos/zipkin-logo.png"/></div>
+            <div class="flex items-center justify-center"><img class="w-full h-full object-contain"  src="/assets/img/opentelemetry-contrib-logos/snowflake.png"/></div>
+            <div class="flex items-center justify-center"><img class="w-full h-full object-contain"  src="/assets/img/opentelemetry-contrib-logos/skywalking.jpg"/></div>
+            <div class="flex items-center justify-center"><img class="w-full h-full object-contain"  src="/assets/img/opentelemetry-contrib-logos/riak-logo.png"/></div>
+            <div><img src="https://www.vectorlogo.zone/logos/huawei/huawei-icon.svg"></div>
+            <div><img src="https://www.vectorlogo.zone/logos/apache_zookeeper/apache_zookeeper-icon.svg"/></div>
+            <div><img src="https://www.vectorlogo.zone/logos/rabbitmq/rabbitmq-icon.svg"/></div>
+            <div><img src="https://www.vectorlogo.zone/logos/podmanio/podmanio-icon.svg"></div>
+            <div><img src="https://www.vectorlogo.zone/logos/apache_couchdb/apache_couchdb-icon.svg"></div>
+            <div><img src="https://www.vectorlogo.zone/logos/influxdata/influxdata-icon.svg"></div>
+            <div><img src="https://www.vectorlogo.zone/logos/jaegertracingio/jaegertracingio-icon.svg"></div>
+            <div><img src="https://www.vectorlogo.zone/logos/oracle/oracle-icon.svg"></div>
+            <div><img src="https://www.vectorlogo.zone/logos/memcached/memcached-icon.svg"></div>
+            <div><img src="https://www.vectorlogo.zone/logos/signalfx/signalfx-icon.svg"></div>
           </div>
           <div class="animate-[scroll-x_60s_linear_infinite] animation-reverse whitespace-nowrap flex w-[max-content] shrink-0 gap-5" aria-hidden="true" >
-            <div><img src="https://img.icons8.com/color/48/microsoft.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/java-coffee-cup-logo.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/javascript.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/rust-programming-language.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/php.png"/></div>
-            <div><img src="https://img.icons8.com/windows/32/ruby-on-rails.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/postgreesql.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/linux.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/mongodb.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/slack.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/mysql.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/debian.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/redis.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/elasticsearch.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/docker.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/java-coffee-cup-logo.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/javascript.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/rust-programming-language.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/php.png"/></div>
-            <div><img src="https://img.icons8.com/windows/32/ruby-on-rails.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/docker.png"/></div>
+            <div class="flex items-center justify-center"><img class="w-full h-full object-contain"  src="/assets/img/opentelemetry-contrib-logos/statsd-receiver.png"/></div>
+            <div class="flex items-center justify-center"><img class="w-full h-full object-contain"  src="/assets/img/opentelemetry-contrib-logos/solacereceiver.jpg"/></div>
+            <div class="flex items-center justify-center"><img class="w-full h-full object-contain"  src="/assets/img/opentelemetry-contrib-logos/zipkin-logo.png"/></div>
+            <div class="flex items-center justify-center"><img class="w-full h-full object-contain"  src="/assets/img/opentelemetry-contrib-logos/snowflake.png"/></div>
+            <div class="flex items-center justify-center"><img class="w-full h-full object-contain"  src="/assets/img/opentelemetry-contrib-logos/skywalking.jpg"/></div>
+            <div class="flex items-center justify-center"><img class="w-full h-full object-contain"  src="/assets/img/opentelemetry-contrib-logos/riak-logo.png"/></div>
+            <div><img src="https://www.vectorlogo.zone/logos/huawei/huawei-icon.svg"></div>
+            <div><img src="https://www.vectorlogo.zone/logos/apache_zookeeper/apache_zookeeper-icon.svg"/></div>
+            <div><img src="https://www.vectorlogo.zone/logos/rabbitmq/rabbitmq-icon.svg"/></div>
+            <div><img src="https://www.vectorlogo.zone/logos/podmanio/podmanio-icon.svg"></div>
+            <div><img src="https://www.vectorlogo.zone/logos/apache_couchdb/apache_couchdb-icon.svg"></div>
+            <div><img src="https://www.vectorlogo.zone/logos/influxdata/influxdata-icon.svg"></div>
+            <div><img src="https://www.vectorlogo.zone/logos/jaegertracingio/jaegertracingio-icon.svg"></div>
+            <div><img src="https://www.vectorlogo.zone/logos/oracle/oracle-icon.svg"></div>
+            <div><img src="https://www.vectorlogo.zone/logos/memcached/memcached-icon.svg"></div>
+            <div><img src="https://www.vectorlogo.zone/logos/signalfx/signalfx-icon.svg"></div>
           </div>
         </div>
         <div class=" flex w-full overflow-x-hidden gap-5  max-w-[100vw]
@@ -506,37 +599,37 @@
           [&>div>*]:inline-block [&>div>*]:w-24 [&>div>*]:p-3 [&>div>*]:rounded-xl 
           [&>div>*]:border [&>div>*]:border-strokeWeak">
           <div class="animate-[scroll-x_60s_linear_infinite] whitespace-nowrap flex w-[max-content] shrink-0 gap-5">
-            <div><img src="https://img.icons8.com/color/48/redis.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/elasticsearch.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/microsoft.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/java-coffee-cup-logo.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/javascript.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/rust-programming-language.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/php.png"/></div>
-            <div><img src="https://img.icons8.com/windows/32/ruby-on-rails.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/docker.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/postgreesql.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/linux.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/mongodb.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/slack.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/mysql.png"/></div>
+            <div><img src="https://www.vectorlogo.zone/logos/splunk/splunk-icon.svg"/></div>
+            <div><img src="https://www.vectorlogo.zone/logos/alibabacloud/alibabacloud-icon.svg"/></div>
+            <div><img src="https://www.vectorlogo.zone/logos/apache_cassandra/apache_cassandra-icon.svg"/></div>
+            <div><img src="https://www.vectorlogo.zone/logos/logicmonitor/logicmonitor-icon.svg"/></div>
+            <div><img src="https://www.vectorlogo.zone/logos/sematext/sematext-icon.svg"/></div>
+            <div><img src="https://www.vectorlogo.zone/logos/sentryio/sentryio-icon.svg"/></div>
+            <div><img src="https://www.vectorlogo.zone/logos/sumologic/sumologic-icon.svg"/></div>
+            <div class="flex items-center justify-center"><img class="w-full h-full object-contain" src="/assets/img/opentelemetry-contrib-logos/tencent-logo.png"/></div>
+            <div><img src="https://www.vectorlogo.zone/logos/grafana/grafana-icon.svg"/></div>
+            <div class="flex items-center justify-center"><img class="w-full h-full object-contain" src="/assets/img/opentelemetry-contrib-logos/pulsar-logo.png"/></div>
+            <div><img src="https://www.vectorlogo.zone/logos/apache_carbondata/apache_carbondata-icon.svg"/></div>
+            <div class="flex items-center justify-center"><img class="w-full h-full object-contain" src="/assets/img/opentelemetry-contrib-logos/clickhouse-logo.png"/></div>
+            <div><img src="https://www.vectorlogo.zone/logos/honeycombio/honeycombio-icon.svg"/></div>
+            <div class="flex items-center justify-center"><img class="w-full h-full object-contain" src="/assets/img/opentelemetry-contrib-logos/coralognix.png"/></div>
             <div><img src="https://img.icons8.com/color/48/debian.png"/></div>
           </div>
           <div class="animate-[scroll-x_60s_linear_infinite] whitespace-nowrap flex w-[max-content] shrink-0 gap-5" aria-hidden="true" >
-            <div><img src="https://img.icons8.com/color/48/redis.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/elasticsearch.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/microsoft.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/java-coffee-cup-logo.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/javascript.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/rust-programming-language.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/php.png"/></div>
-            <div><img src="https://img.icons8.com/windows/32/ruby-on-rails.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/docker.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/postgreesql.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/linux.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/mongodb.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/slack.png"/></div>
-            <div><img src="https://img.icons8.com/color/48/mysql.png"/></div>
+            <div><img src="https://www.vectorlogo.zone/logos/splunk/splunk-icon.svg"/></div>
+            <div><img src="https://www.vectorlogo.zone/logos/alibabacloud/alibabacloud-icon.svg"/></div>
+            <div><img src="https://www.vectorlogo.zone/logos/apache_cassandra/apache_cassandra-icon.svg"/></div>
+            <div><img src="https://www.vectorlogo.zone/logos/logicmonitor/logicmonitor-icon.svg"/></div>
+            <div><img src="https://www.vectorlogo.zone/logos/sematext/sematext-icon.svg"/></div>
+            <div><img src="https://www.vectorlogo.zone/logos/sentryio/sentryio-icon.svg"/></div>
+            <div><img src="https://www.vectorlogo.zone/logos/sumologic/sumologic-icon.svg"/></div>
+            <div class="flex items-center justify-center"><img class="w-full h-full object-contain" src="/assets/img/opentelemetry-contrib-logos/tencent-logo.png"/></div>
+            <div><img src="https://www.vectorlogo.zone/logos/grafana/grafana-icon.svg"/></div>
+            <div class="flex items-center justify-center"><img class="w-full h-full object-contain" src="/assets/img/opentelemetry-contrib-logos/pulsar-logo.png"/></div>
+            <div><img src="https://www.vectorlogo.zone/logos/apache_carbondata/apache_carbondata-icon.svg"/></div>
+            <div class="flex items-center justify-center"><img class="w-full h-full object-contain" src="/assets/img/opentelemetry-contrib-logos/clickhouse-logo.png"/></div>
+            <div><img src="https://www.vectorlogo.zone/logos/honeycombio/honeycombio-icon.svg"/></div>
+            <div class="flex items-center justify-center"><img class="w-full h-full object-contain" src="/assets/img/opentelemetry-contrib-logos/coralognix.png"/></div>
             <div><img src="https://img.icons8.com/color/48/debian.png"/></div>
           </div>
         </div>
@@ -554,7 +647,7 @@
           <path d="M8.85166 51.4448C8.69432 52.2581 9.22611 53.045 10.0395 53.2024C10.8528 53.3597 11.6397 52.8279 11.7971 52.0146L8.85166 51.4448ZM50.2152 12.7874C51.0361 12.6764 51.6117 11.921 51.5007 11.1C51.3897 10.279 50.6343 9.70348 49.8133 9.81446L50.2152 12.7874ZM4.41835 41.327C3.99148 40.617 3.06988 40.3875 2.3599 40.8144C1.64992 41.2413 1.42042 42.1629 1.84729 42.8729L4.41835 41.327ZM8.60781 51.206L7.32227 51.979L7.323 51.9802L8.60781 51.206ZM12.2243 52.2568L11.6114 50.8878L11.6101 50.8883L12.2243 52.2568ZM23.1434 49.0118C23.8995 48.6732 24.238 47.7859 23.8995 47.0298C23.561 46.2737 22.6736 45.9351 21.9175 46.2737L23.1434 49.0118ZM10.3244 51.7297C11.7971 52.0146 11.797 52.0149 11.7969 52.0152C11.7969 52.0152 11.7969 52.0154 11.7969 52.0154C11.7969 52.0154 11.797 52.0151 11.7971 52.0146C11.7973 52.0135 11.7977 52.0114 11.7983 52.0083C11.7995 52.002 11.8016 51.9915 11.8046 51.977C11.8105 51.9479 11.8198 51.9026 11.8327 51.8418C11.8585 51.7202 11.8987 51.5366 11.9544 51.297C12.066 50.8179 12.2399 50.1155 12.4863 49.2383C12.9792 47.4825 13.7602 45.0333 14.9084 42.2744C17.2144 36.7337 20.9547 30.0577 26.7149 25.1964L24.78 22.9038C18.5074 28.1975 14.5361 35.3613 12.1387 41.1217C10.9353 44.0133 10.1167 46.5799 9.59795 48.4273C9.33841 49.3517 9.15345 50.0978 9.03262 50.6166C8.9722 50.8761 8.92778 51.0789 8.89806 51.2189C8.8832 51.289 8.87201 51.3433 8.86433 51.3812C8.86049 51.4001 8.85753 51.415 8.85543 51.4256C8.85438 51.4309 8.85354 51.4352 8.85291 51.4384C8.8526 51.44 8.85234 51.4413 8.85213 51.4424C8.85203 51.4429 8.85191 51.4435 8.85186 51.4438C8.85175 51.4443 8.85166 51.4448 10.3244 51.7297ZM26.7149 25.1964C38.5275 15.2273 47.9159 13.0982 50.2152 12.7874L49.8133 9.81446C46.9548 10.2009 37.0331 12.5628 24.78 22.9038L26.7149 25.1964ZM1.84729 42.8729L7.32227 51.979L9.89334 50.4331L4.41835 41.327L1.84729 42.8729ZM7.323 51.9802C8.46525 53.876 10.8515 54.5171 12.8385 53.6253L11.6101 50.8883C10.909 51.203 10.1972 50.9375 9.89262 50.4319L7.323 51.9802ZM12.8372 53.6259L23.1434 49.0118L21.9175 46.2737L11.6114 50.8878L12.8372 53.6259Z" fill="#0068FF"/>
         </svg>
       </div>
-      <div class="grid grid-cols-5 gap-6 [&>div]:border [&>div]:p-5 [&>div]:border [&>div]:rounded-lg  [&>div]:flex [&>div]:flex-col 
+      <div class="grid grid-cols-5 gap-6[&>div]:p-5 [&>div]:border [&>div]:rounded-lg  [&>div]:flex [&>div]:flex-col 
             [&>div]:justify-between  [&>div]:items-start [&_.logo1]:my-2  [&_.logo1]:brightness-0 [&_.logo1]:dark:invert [&_.logo1]:opacity-50 [&_.logo1]:h-6
             [&_strong]:text-5xl [&_small]:text-xl  [&_.logo2]:!my-0 [&_.quote]:text-2xl
             [&_.col-span-3]:p-8 [&_.col-span-3]:gap-8 [&_.quote]:leading-normal
@@ -653,16 +746,16 @@
       <div class="max-w-7xl w-full text-textWeak space-y-10 pb-20">
         <h2 class="text-[2rem] font-normal text-textStrong leading-10"><span class="text-textBrand">Find and fix issues</span> before your customers, <br/>stakeholders or partners notice.</h2>
         <div>
-          <a class="btn py-3 px-6 rounded-xl bg-fillBrand-strong text-textInverse-strong">Book a demo</a>
-          <a class="btn py-3 px-6 rounded-xl bg-transparent border border-fillBrand-strong text-fillBrand-strong" >Start 30 day free trial</a>
+          <a href="https://calendar.app.google/1a4HG5GZYv1sjjZG6" target="_blank" class="btn py-3 px-6 rounded-xl bg-fillBrand-strong text-textInverse-strong">Book a demo</a>
+          <a href="https://app.apitoolkit.io" class="btn py-3 px-6 rounded-xl bg-transparent border border-fillBrand-strong text-fillBrand-strong" >Start 30 day free trial</a>
         </div>
         <div class="space-x-8 inline-flex items-center text-xl">
           <div class="[&_svg]:h-5 [&_svg]:w-5 inline-flex gap-4 ">
-            <a><svg><use xlink:href="/assets/deps/sprite.svg#github"></use></svg></a>
-            <a><svg><use xlink:href="/assets/deps/sprite.svg#twitter"></use></svg></a>
-            <a><svg><use xlink:href="/assets/deps/sprite.svg#linkedin"></use></svg></a>
-            <a><svg><use xlink:href="/assets/deps/sprite.svg#youtube"></use></svg></a>
-            <a><svg><use xlink:href="/assets/deps/sprite.svg#discord"></use></svg></a>
+            <a href="https://github.com/apitoolkit" target="_blank"><svg><use xlink:href="/assets/deps/sprite.svg#github"></use></svg></a>
+            <a href="https://x.com/APItoolkitHQ" target="_blank"><svg><use xlink:href="/assets/deps/sprite.svg#twitter"></use></svg></a>
+            <a href="https://www.linkedin.com/company/apitoolkit" target="_blank"><svg><use xlink:href="/assets/deps/sprite.svg#linkedin"></use></svg></a>
+            <a href="https://www.youtube.com/@APItoolkit" target="_blank"><svg><use xlink:href="/assets/deps/sprite.svg#youtube"></use></svg></a>
+            <a href="https://discord.gg/BHQh5JzjPX" target="_blank"><svg><use xlink:href="/assets/deps/sprite.svg#discord"></use></svg></a>
           </div>
           <span class="text-textDisabled">|</span>
           <a>Signup for our <span class="underline underline-offset-2 font-semibold">newsletter</span> to stay updated</a>
@@ -682,54 +775,54 @@
             <div class="col-span-1">
                 <h3 class="text-sm font-semibold text-textWeak mb-4">Product</h3>
                 <ul class="space-y-3">
-                    <li><a href="#">Error Tracking</a></li>
-                    <li><a href="#">Breaking Changes Detection</a></li>
-                    <li><a href="#">API Logs and Metrics</a></li>
-                    <li><a href="#">API Observability</a></li>
-                    <li><a href="#">API Management</a></li>
-                    <li><a href="#">API Analytics</a></li>
-                    <li><a href="#">Opentelemetry</a></li>
+                    <li><a href="https://apitoolkit.io/features/error-tracking">Error Tracking</a></li>
+                    <li><a href="https://apitoolkit.io/features/error-tracking">Breaking Changes Detection</a></li>
+                    <li><a href="https://apitoolkit.io/features/api-logs-and-metrics/">API Logs and Metrics</a></li>
+                    <li><a href="https://apitoolkit.io/features/api-observability/">API Observability</a></li>
+                    <li><a href="https://apitoolkit.io/features/api-management/">API Management</a></li>
+                    <li><a href="https://apitoolkit.io/features/api-analytics/">API Analytics</a></li>
+                    <li><a href="https://opentelemetry.io/">Opentelemetry</a></li>
                 </ul>
             </div>
 
             <div class="col-span-1">
                 <h3 class="text-sm font-semibold text-textWeak mb-4">Developers and Support</h3>
                 <ul class="space-y-3">
-                    <li><a href="#">Documentation</a></li>
-                    <li><a href="#">Onboarding Guide</a></li>
-                    <li><a href="#">SDK Guides</a></li>
-                    <li><a href="#">Dashboard Manual</a></li>
-                    <li><a href="#">Why Choose APIToolkit?</a></li>
-                    <li><a href="#">Pricing</a></li>
-                    <li><a href="#">Test JSON Redaction</a></li>
-                    <li><a href="#">Status Page</a></li>
+                    <li><a href="https://apitoolkit.io/docs/">Documentation</a></li>
+                    <li><a href="https://apitoolkit.io/docs/onboarding/">Onboarding Guide</a></li>
+                    <li><a href="https://apitoolkit.io/docs/sdks/">SDK Guides</a></li>
+                    <li><a href="https://apitoolkit.io/docs/dashboard/">Dashboard Manual</a></li>
+                    <li><a href="https://apitoolkit.io/compare/">Why Choose APIToolkit?</a></li>
+                    <li><a href="https://apitoolkit.io/pricing/">Pricing</a></li>
+                    <li><a href="https://apitoolkit.io/tools/json-redacter/">Test JSON Redaction</a></li>
+                    <li><a href="https://updown.io/6kqs">Status Page</a></li>
                 </ul>
             </div>
 
             <div class="col-span-1">
               <h3 class="text-sm font-semibold text-textWeak mb-4">Product Comparisons</h3>
               <ul class="space-y-3">
-                  <li><a href="#">APIToolkit vs Datadog</a></li>
-                  <li><a href="#">APIToolkit vs Sentry</a></li>
-                  <li><a href="#">APIToolkit vs Honeybadger</a></li>
-                  <li><a href="#">APIToolkit vs New Relic</a></li>
-                  <li><a href="#">APIToolkit vs Baseline</a></li>
-                  <li><a href="#">APIToolkit vs Treblle</a></li>
-                  <li><a href="#">APIToolkit vs Axiom</a></li>
+                  <li><a href="https://apitoolkit.io/compare/datadog">APIToolkit vs Datadog</a></li>
+                  <li><a href="https://apitoolkit.io/compare/sentry">APIToolkit vs Sentry</a></li>
+                  <li><a href="https://apitoolkit.io/compare/honeybadger">APIToolkit vs Honeybadger</a></li>
+                  <li><a href="https://apitoolkit.io/compare/newrelic">APIToolkit vs New Relic</a></li>
+                  <li><a href="https://apitoolkit.io/compare/baselime">APIToolkit vs Baseline</a></li>
+                  <li><a href="https://apitoolkit.io/compare/treblle">APIToolkit vs Treblle</a></li>
+                  <li><a href="https://apitoolkit.io/compare/axiom">APIToolkit vs Axiom</a></li>
               </ul>
             </div>
 
             <div class="col-span-1">
               <h3 class="text-sm font-semibold text-textWeak mb-4">Company</h3>
               <ul class="space-y-3">
-                  <li><a href="#">About</a></li>
-                  <li><a href="#">FAQs</a></li>
-                  <li><a href="#">Blog</a></li>
-                  <li><a href="#">Events</a></li>
-                  <li><a href="#">Press kit</a></li>
-                  <li><a href="#">Contact</a></li>
-                  <li><a href="#">Privacy Policy</a></li>
-                  <li><a href="#">Terms and Conditions</a></li>
+                  <li><a href="https://apitoolkit.io/about/">About</a></li>
+                  <li><a href="https://apitoolkit.io/docs/faqs">FAQs</a></li>
+                  <li><a href="https://apitoolkit.io/blog/">Blog</a></li>
+                  <li><a href="https://apitoolkit.io/events/">Events</a></li>
+                  <li><a href="https://apitoolkit.io/brand">Press kit</a></li>
+                  <li><a href="https://apitoolkit.io/contact/">Contact</a></li>
+                  <li><a href="https://apitoolkit.io/privacy-policy/">Privacy Policy</a></li>
+                  <li><a href="https://apitoolkit.io/terms-and-conditions/">Terms and Conditions</a></li>
               </ul>
             </div>
 
@@ -777,7 +870,7 @@
                 Copyrights (c) 2025 - Past 3 technologies UG. Gruntaler str. 18, 13357 Berlin, Germany
             </div>
             <div class="flex items-center space-x-6">
-                <a href="#" class="flex items-center text-gray-600 hover:text-gray-900">
+                <a href="https://discord.gg/BHQh5JzjPX" target="_blank" class="flex items-center text-gray-600 hover:text-gray-900">
                     <svg class="h-5 w-5 mr-2"><use xlink:href="/assets/deps/sprite.svg#discord"></use></svg>
                     Join our discord community
                 </a>
