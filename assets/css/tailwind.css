@@ -21,6 +21,10 @@
     }
   }
 
+  .svg {
+    @apply text-iconNeutral;
+  }
+
   .text-blue-title {
     color: #353f5f;
     /* @aply text-sky-700; */
@@ -288,6 +292,7 @@
 .animation-reverse {
   animation-direction: reverse;
 }
+
 .mask-edges {
   mask-image: linear-gradient(
     var(--mask-direction, to right),
@@ -297,6 +302,7 @@
     hsl(0 0% 0% / 0)
   );
 }
+
 
 
 .carousel-menu {
@@ -312,4 +318,21 @@
 
 .carousel-menu input:checked+label {
   @apply ring;
+}
+
+
+/* Animate elements into view on scroll */
+
+@media (prefers-reduced-motion: no-preference) {
+  .timeline-fade-in {
+    scale: .8; opacity: 0;
+    animation: fade-in linear forwards;
+    animation-timeline: view();
+    animation-range: 150px 500px;
+  }
+
+  @keyframes fade-in {
+    to {scale: 1; opacity: 1;}
+  }
+
 }
