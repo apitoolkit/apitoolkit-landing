@@ -91,7 +91,7 @@ testimonials:
       <div class="max-w-7xl px-2 md:px-0 w-full text-textWeak">
         <div class="space-y-8">
           <p class="">Trusted by 5000+ developers at proactive engineering companies</p>
-          <div class="flex gap-8  items-center *:brightness-0 *:dark:invert opacity-50">
+          <div class="flex  gap-4 md:gap-8  items-center *:brightness-0 *:dark:invert opacity-50">
             <img src="/assets/img/customers/andela.svg" alt="Andela's Logo" class="h-5 sm:h-8">
             <img src="/assets/img/customers/partna.svg" alt="ThePeer's Logo" class="h-5 sm:h-8">
             <img src="/assets/img/customers/grovepay.svg" alt="Grovepay's Logo" class="h-5 sm:h-8">
