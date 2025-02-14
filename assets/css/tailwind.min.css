@@ -10902,6 +10902,10 @@ html:has(.drawer-toggle:checked) {
     padding: 2rem;
   }
 
+  .sm\:p-5 {
+    padding: 1.25rem;
+  }
+
   .sm\:px-0 {
     padding-left: 0px;
     padding-right: 0px;
