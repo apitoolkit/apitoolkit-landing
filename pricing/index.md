@@ -42,7 +42,7 @@ faqs:
                         <div class="flex flex-col items-start gap-8px">
                             <span class="text-sm font-bold text-gray-400" id="starts_at">Starts at ...</span>
                             <div class="">
-                               <span class="font-bold text-6xl" id="price">$34</span>
+                               <span class="font-bold text-6xl" id="price">$49</span>
                                <span class="" id="num_requests">/20m events per month</span>
                                <br>
                                <small class="text-sm">then $1 per 500k events (logs, spans, metric samples, etc)</small>

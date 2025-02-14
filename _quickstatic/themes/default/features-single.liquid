@@ -1,6 +1,6 @@
-{% render "default/components/head", this:this %}
-{% render "default/components/nav", this:this %}
+{% render "default/components/head", this:this, config:config %}
+{% render "default/components/nav", this:this, config:config %}
 <div>
   {{this.content}}
 </div>
-{% render "default/components/foot", this:this %}
+{% render "default/components/foot", this:this, config:config %}

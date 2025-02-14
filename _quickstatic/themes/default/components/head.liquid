@@ -62,8 +62,22 @@
     <base href="{{ this.permalink }}">
 
     <!-- end of meta tags and favicons -->
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
     <link rel="stylesheet" href="/assets/css/tailwind.min.css?v=1">
     <script defer src="/assets/js/main.js"></script>
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script>
+      function cycleRadioButtons(name, direction) {
+        // direction: +1 for next, -1 for previous
+        const radios = document.querySelectorAll(`input[name="${name}"]`);
+        let currentIndex = Array.from(radios).findIndex(radio => radio.checked);
+        if (currentIndex === -1) currentIndex = 0;
+        const newIndex = (currentIndex + direction + radios.length) % radios.length;
+        radios[newIndex].checked = true;
+      }
+    </script>
 
     <style>
       body {
@@ -115,42 +129,6 @@
       href="/assets/img/svgs/grid.svg"
       type="image/webp"
     >
-
-    <style>
-      @font-face {
-        font-family: 'Bakemono';
-        src: url('/assets/deps/bakemono/Bakemono-Variable.woff2') format('woff2-variations'),
-          url('/assets/deps/bakemono/Bakemono-Variable.woff') format('woff-variations'),
-          url('/assets/deps/bakemono/Bakemono-Variable.ttf') format('ttf-variations');
-      }
-
-      :root {
-        font-family: 'Bakemono', sans-serif;
-      }
-
-      h1, h2, .strong {
-        font-variation-settings: 'wght' 700, 'mono' 600;
-      }
-
-      body[data-theme='sunset'] h2 {
-        color: white;
-      }
-
-      body[data-theme='sunset'] formkit-input {
-        background-color: gray;
-      }
-
-      h3,
-      h4,
-      h5 {
-        font-variation-settings: 'wght' 500, 'mono' 500;
-      }
-
-      .monospace {
-        font-family: 'Bakemono', monospace;
-        font-variation-settings: 'mono' 1000;
-      }
-    </style>
 
     <!-- Amplitude (with GA Events Forwarder) -->
     <script type="text/javascript">
@@ -347,13 +325,11 @@
     data-theme="emerald"
     hx-boost="true"
     hx-ext="preload,head-support"
-    class=""
+    class="text-textStrong bg-bgBase"
     preload
   >
-    <script>
+    <script style="display:none">
       if (localStorage.getItem('darkMode') === 'true') {
-        document.body.setAttribute('data-theme', 'sunset');
+        // document.body.setAttribute('data-theme', 'sunset');
       }
     </script>
-  </body>
-</html>

@@ -4,13 +4,22 @@
 
 @layer base {
 
+  @font-face {
+    font-family: "Inter Fallback";
+    src: local("Arial"), local("ArialMT");
+    ascent-override: 90.4365%;
+    descent-override: 22.518%;
+    line-gap-override: 0%;
+    size-adjust: 107.1194%;
+  }
+
   html,
   body {
     font-size: 16px;
   }
 
   :root {
-    font-family: Inter, sans-serif;
+    font-family: Inter, "Inter Fallback", sans-serif;
     font-feature-settings: 'liga' 1, 'calt' 1;
     /* fix for Chrome */
   }
@@ -20,6 +29,8 @@
       font-family: InterVariable, sans-serif;
     }
   }
+
+
 
   .svg {
     @apply text-iconNeutral;

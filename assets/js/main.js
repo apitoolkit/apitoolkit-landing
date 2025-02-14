@@ -1,9 +1,9 @@
 const price_indicator = document.querySelector("#price_range");
 let plan = "month";
-const prices = [34, 49, 88, 215, 420, 615, 800];
-const reqs = ["400k", "1.1M", "2M", "5M", "10M", "15M", "20M"];
+const prices = [49, 49, 99, 149, 199, 299];
+const reqs = ["1m", "20M", "40M", "60M", "80M", "100M", "200M"];
 const reqsYr = ["400k", "1.1M", "2M", "5M", "10M", "10M", "10M"];
-const pricesYr = [29, 34, 61, 150, 294, 294, 294];
+const pricesYr = [34, 61, 150, 294, 294, 294];
 const priceContainer = document.querySelector("#price");
 const reqsContainer = document.querySelector("#num_requests");
 const saveContainer = document.querySelector("#save_container");
@@ -12,19 +12,19 @@ function priceChange() {
   const value = price_indicator.value;
   let price = prices[value];
   let num_reqs = reqs[value];
-  if (reqs[value] === "400k") {
+  if (reqs[value] === "20m") {
     startsAtContainer.innerText = "Starts at ...";
   } else {
-    startsAtContainer.innerText = "Starts at $34/400k requests per month";
+    startsAtContainer.innerText = "Starts at $49/20m requests per month";
   }
 
   if (plan === "annual") {
     price = pricesYr[value];
     num_reqs = reqsYr[value];
-    if (reqsYr[value] === "400k") {
+    if (reqsYr[value] === "20m") {
       startsAtContainer.innerText = "Starts at ...";
     } else {
-      startsAtContainer.innerText = "Starts at $29/400k requests per month";
+      startsAtContainer.innerText = "Starts at $34/20m requests per month";
     }
   }
   priceContainer.innerText = "$" + price;

@@ -1,97 +1,48 @@
-<header id="header" class="w-full flex flex-col items-center top-0 left-0 right-0 sticky bg-base-100 z-30 dark:border-gray-700">
-  <nav class="py-4 flex-1 flex max-w-7xl w-full justify-between items-center sticky top-0 z-10 bg-bgBase">
-      <a href="/" class="py-1" aria-label="Back to homepage">
-        <img class="h-6 dark:hidden" src="/assets/brand/logo_full_color.svg" alt="APItoolkit full color logo">
-        <img class="h-6 hidden dark:inline-block" src="/assets/brand/logo_full_white.svg" alt="APItoolkit white logo">
-      </a>
-
-      <div class="flex gap-5 items-center">
-          <div class="inline-flex">
-            <a class="inline-flex items-center p-2 gap-1 hover:bg-base-200 rounded-lg" title="Documentation">
-              Documentation
-              <svg class="flex-shrink-0 h-5 w-5 text-current"><use xlink:href="/assets/deps/sprite.svg#chevron-down"></use></svg>
-            </a>
-            <div
-              class="flex flex-col group-hover:opacity-100 group-hover:h-[210px] w-96 h-0 z-40 overflow-y-hidden  duration-300 opacity-0 absolute top-[100%] left-0 bg-base-100 border rounded-lg">
-                <a href="/docs/onboarding" class="p-2 flex items-center gap-2 hover:bg-base-200 shrink-0"
-                  title="To Onboarding page">
-                  <img src="/assets/img/nav-item.svg" class="h-12 flex-shrink-0 w-12 border rounded-lg"
-                    alt="navigation item icon">
-                  <div class="flex flex-col">
-                    <h6 class="font-bold ">Get Started</h6>
-                    <span class="text-gray-500 leading-[1.10]">All you need to begin using APItoolkit.</span>
-                  </div>
-                </a>
-                <a href="/docs/sdks" class="p-2 flex items-center gap-2 hover:bg-base-200 shrink-0"
-                  title="To Platform SDKs page">
-                  <img src="/assets/img/nav-item.svg" class="h-12 w-12 flex-shrink-0 border rounded-lg"
-                    alt="navigation item icon">
-                  <div class="flex flex-col">
-                    <h6 class="font-bold ">SDK Guides</h6>
-                    <span class="text-gray-500 leading-[1.10]">Integrate any of our SDKs into your application.</span>
-                  </div>
-                </a>
-                <a href="/docs/dashboard" class="p-2 flex items-center gap-2 hover:bg-base-200 shrink-0"
-                  title="To Dashboard page">
-                  <img src="/assets/img/nav-item.svg" class="h-12 flex-shrink-0 w-12 border rounded-lg"
-                    alt="navigation item icon">
-                  <div class="flex flex-col">
-                    <h6 class="font-bold ">Dashboard Guides</h6>
-                    <span class="text-gray-500 leading-[1.10]">Learn everything you need to navigate our
-                      dashboard.</span>
-                  </div>
-                </a>
-            </div>
-          </div>
-          <div class="relative group">
-            <a class="cursor-pointer flex items-center p-2 gap-1 hover:bg-base-200 rounded-lg">
-              Features
-              <svg class="flex-shrink-0 h-5 w-5 text-current"><use xlink:href="/assets/deps/sprite.svg#chevron-down"></use></svg>
-            </a>
-            <div
-              class="flex flex-col group-hover:opacity-100 group-hover:h-72 w-96 h-0 z-40 overflow-y-hidden  duration-300 opacity-0 absolute top-[100%] left-0 bg-base-100 border rounded-lg">
-              <a href="/features/error-tracking" class="p-2 flex items-center gap-2 hover:bg-base-200 shrink-0">
-                <img src="/assets/img/features.svg" class="h-12 p-3 flex-shrink-0 w-12 border rounded-lg" alt="">
-                <div class="flex flex-col">
-                  <h6 class="font-bold ">Error Tracking</h6>
-                  <span class="text-gray-500 leading-[1.10]">Find and fix Errors and Breaking Changes in realtime.
-                  </span>
-                </div>
-              </a>
-              <a href="/features/api-analytics" class="p-2 flex items-center gap-2 hover:bg-base-200 shrink-0">
-                <img src="/assets/img/features.svg" class="h-12 w-12  p-3 flex-shrink-0 border rounded-lg" alt="">
-                <div class="flex flex-col">
-                  <h6 class="font-bold ">API Analytics</h6>
-                  <span class="text-gray-500 leading-[1.10]">Easily identify trends and optimize what truly matters to
-                    your business.
-                  </span>
-                </div>
-              </a>
-              <a href="/features/api-management" class="p-2 flex items-center gap-2 hover:bg-base-200 shrink-0">
-                <img src="/assets/img/features.svg" class="h-12  p-3 flex-shrink-0 w-12 border rounded-lg" alt="">
-                <div class="flex flex-col">
-                  <h6 class="font-bold ">API Management</h6>
-                  <span class="text-gray-500 leading-[1.10]">Everything you need to manage your APIs
-                    effectively.</span>
-                </div>
-              </a>
-              <a href="/features/api-observability"
-                class="p-2 flex items-center gap-2 hover:bg-base-200 shrink-0">
-                <img src="/assets/img/features.svg" class="h-12  p-3 flex-shrink-0 w-12 border rounded-lg" alt="">
-                <div class="flex flex-col">
-                  <h6 class="font-bold ">API Observability</h6>
-                  <span class="text-gray-500 leading-[1.10]">Achieve real-time API Observability to pinpoint issues,
-                    understand root causes, and fix problems
-                    in real-time.</span>
-                </div>
-              </a>
-            </div>
-          </div>
-          <li><a href="/blog" class=" p-3 hover:bg-base-200 rounded-lg block">Blog</a></li>
-          <li><a href="/pricing" class=" p-3 hover:bg-base-200 rounded-lg block">Pricing</a></li>
-        </ul>
+<header id="header" class="w-full flex flex-col items-center top-0 left-0 right-0 sticky bg-base-100 z-30 dark:border-gray-700 group">
+  <nav class="group-has-[#menuInput:checked]:h-full p-2 md:px-0 md:py-4 flex-1 flex flex-col md:flex-row max-w-7xl w-full justify-between items-center sticky top-0 z-10 bg-bgBase group-has-[#menuInput:checked]:border-b md:border-b-0 border-b-strokeBrand-strong">
+      <div class="flex justify-between w-full md:w-auto ">
+        <a href="/" class="py-1 md:px-0 " aria-label="Back to homepage">
+          <img class="h-6 dark:hidden" src="/assets/brand/logo_full_color.svg" alt="APItoolkit full color logo">
+          <img class="h-6 hidden dark:inline-block" src="/assets/brand/logo_full_white.svg" alt="APItoolkit white logo">
+        </a>
+        <label class="md:hidden p-2 hover:bg-fillBrand-weak">
+          <svg class="h-5 w-5">
+            <use class="block group-has-[#menuInput:checked]:hidden " xlink:href="/assets/deps/sprite.svg#menu"></use>
+            <use class="hidden group-has-[#menuInput:checked]:block " xlink:href="/assets/deps/sprite.svg#xmark"></use>
+          </svg><input type="checkbox" id="menuInput" class="hidden"/>
+        </label>
       </div>
-      <div class="flex gap-5 items-center">
+      
+
+      <div class="hidden group-has-[#menuInput:checked]:flex md:flex flex-col md:flex-row pt-5 md:py-0 gap-2 md:gap-5 md:items-center w-full md:w-auto px-5 md:px-0">
+        {% for navItem in config.raw.main_nav %}
+          {% if navItem.dropdown %}
+            <div class="relative group/nv">
+              <div class="flex cursor-pointer items-center p-2 gap-1 hover:bg-fillBrand-weak rounded-lg" title="{{navItem.title}}">
+                {{navItem.title}} 
+                <svg class="flex-shrink-0 h-5 w-5 text-current"><use xlink:href="/assets/deps/sprite.svg#chevron-down"></use></svg>
+              </div>
+              <div
+                class="flex flex-col group-hover/nv:opacity-100 group-hover/nv:h-auto w-96 h-0 z-40 overflow-y-hidden  duration-300 opacity-0 absolute top-[100%] left-0 bg-base-100 border rounded-lg">
+                  {% for subItem in navItem.dropdown %}
+                    <a href="{{subItem.url}}" class="p-2 flex items-center gap-2 hover:bg-base-200 shrink-0"
+                      title="{{subItem.title}}">
+                      <img src="/assets/img/nav-item.svg" class="h-12 flex-shrink-0 w-12 border rounded-lg"
+                        alt="navigation item icon">
+                      <div class="flex flex-col">
+                        <h6 class="font-bold ">{{subItem.title}}</h6>
+                        <span class="text-gray-500 leading-[1.10]">{{subItem.description}}</span>
+                      </div>
+                    </a>
+                  {% endfor %}
+              </div>
+            </div>
+          {% else %}
+            <a href="{{navItem.url}}" class=" p-3 hover:bg-fillBrand-weak rounded-lg block">{{navItem.title}}</a>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <div class="hidden group-has-[#menuInput:checked]:flex  md:flex gap-5 items-center w-full md:w-auto px-5 md:px-0">
         <a href="https://app.apitoolkit.io" class="underline underline-offset-2">Login</a>
         <a href="https://app.apitoolkit.io" class="underline underline-offset-2">Start free trial</a>
         <a href="https://calendar.app.google/1a4HG5GZYv1sjjZG6" target="_blank" class="bg-fillBrand-strong text-textInverse-strong px-6 py-3 rounded-xl shadow ">Book a demo</a>
