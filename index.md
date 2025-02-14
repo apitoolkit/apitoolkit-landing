@@ -465,7 +465,7 @@ platforms:
       <div class="grid grid-cols-6 sm:grid-cols-10 gap-2 sm:gap-6 [&>div]:border [&>div]:rounded-lg  [&>div]:flex [&>div]:flex-col 
             [&>div]:justify-between  [&>div]:items-start [&_.logo1]:my-2  [&_.logo1]:brightness-0 [&_.logo1]:dark:invert [&_.logo1]:opacity-50 [&_.logo1]:h-6
             [&_strong]:text-5xl [&_small]:text-xl  [&_.logo2]:!my-0 [&_.quote]:text-2xl
-            [&_.col-span-6]:p-8 [&_.col-span-6]:gap-8 [&_.quote]:leading-normal
+            [&_.col-span-6]:gap-8 [&_.quote]:leading-normal
             ">
         {% for t in this.frontmatter.testimonials %}
             {% if t.stat %}
@@ -476,7 +476,7 @@ platforms:
               <div><img class="h-8 logo1" src="/assets/img/customers/{{t.logo}}"/></div>
             </div>
             {% else %}
-            <div class="border-strokeBrand-weak col-span-6">
+            <div class="border-strokeBrand-weak col-span-6 p-4 sm:p-8">
               <p class="quote">{{t.quote}}</p>
               <div class="flex items-center gap-3 w-full">
                 <img class="rounded-lg grayscale w-12" src="/assets/img/love/{{t.photo}}" />
