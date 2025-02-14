@@ -45,7 +45,7 @@ testimonials:
 ```=html
 <section class="flex flex-col space-y-48 items-center">
   <section class="space-y-28 !mt-32">
-      <div class="flex flex-col md:flex-row max-w-7xl w-full gap-10 px-2 md:px-0">
+      <div class="flex flex-col md:flex-row max-w-7xl w-full gap-10 px-3">
         <div class="space-y-8 flex-1">
           <h1 class="text-[2.5rem] font-semibold leading-10 space-y-3">
             <span class="block">Find and fix production issues<span class="text-textDisabled">,</span></span>
@@ -88,7 +88,7 @@ testimonials:
         <div class="md:w-[42%]"><img class="w-full" src="/assets/img/home/hero-img1.svg"/></div>
       </div>
 
-      <div class="max-w-7xl px-2 md:px-0 w-full text-textWeak">
+      <div class="max-w-7xl px-3 w-full text-textWeak">
         <div class="space-y-8">
           <p class="">Trusted by 5000+ developers at proactive engineering companies</p>
           <div class="flex  gap-4 md:gap-8  items-center *:brightness-0 *:dark:invert opacity-50">
@@ -143,7 +143,7 @@ testimonials:
       </div>
     </section>
 
-    <div class="max-w-7xl px-2 md:px-0 w-full text-textWeak space-y-5 group/uc">
+    <div class="max-w-7xl px-3 w-full text-textWeak space-y-5 group/uc">
       <h2 class="text-[2rem] font-semibold text-textStrong">The most intuitive way to understand systems that matter</h2>
       <p class="text-xl leading-normal">Just because you don't see an error, doesn't mean it's not happening. That's why we built both active <br/>and passive monitoring--<span class="text-textBrand">to keep you informed of the different systems you maintain.<span></p>
 
@@ -276,7 +276,7 @@ testimonials:
     </div>
 
     <!-- Powered by AI -->
-    <div class="max-w-7xl px-2 md:px-0 w-full text-textWeak space-y-5">
+    <div class="max-w-7xl px-3 w-full text-textWeak space-y-5">
       <div class="flex justify-between">
         <div class="flex-1 space-y-5">
           <h2 class="text-[2rem] font-semibold text-textStrong">Put AI to work. <span class="text-textWeak">seriously</span></h2>
@@ -310,7 +310,7 @@ testimonials:
     </div>
 
     <!-- FEATURES -->
-    <div class="max-w-7xl px-2 md:px-0 w-full text-textWeak space-y-5 group/ft">
+    <div class="max-w-7xl px-3 w-full text-textWeak space-y-5 group/ft">
       <h2 class="text-[2rem] font-semibold text-textStrong">Built with features that matter to engineers like us</h2>
       <p class="text-xl leading-normal">Collect, store, and analyze every single log or event <br/>without limits on a platform that gives you complete control.</p>
       <div class="flex gap-16 pt-5">
@@ -402,7 +402,7 @@ testimonials:
     </div>
 
     <!-- FLEXIBLE DEPLOYMENTS-->
-    <div class="max-w-7xl px-2 md:px-0 w-full text-textWeak space-y-5">
+    <div class="max-w-7xl px-3 w-full text-textWeak space-y-5">
       <h2 class="text-[2rem] font-semibold text-textStrong">Flexible deployment options for every company </h2>
       <p class="text-xl leading-normal">Regardless of your company's size or compliance requirements, APItoolkit operates <br/>within your business and regulatory constraints.</p>
       <div>
@@ -448,7 +448,7 @@ testimonials:
 
     <!-- INTEGRATIONS-->
     <div class="text-textWeak space-y-5 w-full flex flex-col items-center justify-center">
-      <div class="max-w-7xl px-2 w-full space-y-5">
+      <div class="max-w-7xl px-3 w-full space-y-5">
         <h2 class="text-[2rem] font-semibold text-textStrong">780+ Integrations with your favorite tech stacks, powered by OpenTelemetry</h2>
         <a class="block text-textBrand underline underline-offset-2">View all integrations.</a>
       </div>
@@ -494,7 +494,7 @@ testimonials:
     </div>
 
     <!-- REAL RESULTS FROM CUSTOMERS -->
-    <div class="max-w-7xl px-2 md:px-0 w-full text-textStrong space-y-5">
+    <div class="max-w-7xl px-3 w-full text-textStrong space-y-5">
       <h2 class="text-[2rem] font-semibold text-textStrong">Real results for real customers</h2>
       <a class="block text-textBrand underline underline-offset-2">View all case studies.</a>
       <div class="relative flex items-end justify-end !-mt-5b">
