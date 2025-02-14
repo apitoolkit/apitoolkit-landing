@@ -45,7 +45,7 @@ testimonials:
 ```=html
 <section class="flex flex-col space-y-48 items-center">
   <section class="space-y-28 !mt-32">
-      <div class="flex max-w-7xl w-full gap-10">
+      <div class="flex flex-col md:flex-row max-w-7xl w-full gap-10 px-2 md:px-0">
         <div class="space-y-8 flex-1">
           <h1 class="text-[2.5rem] font-semibold leading-10 space-y-3">
             <span class="block">Find and fix production issues<span class="text-textDisabled">,</span></span>
@@ -85,10 +85,10 @@ testimonials:
             <span>Built for security & compliance</span>
           </div>
         </div>
-        <div class="w-[42%]"><img class="w-full" src="/assets/img/home/hero-img1.svg"/></div>
+        <div class="md:w-[42%]"><img class="w-full" src="/assets/img/home/hero-img1.svg"/></div>
       </div>
 
-      <div class="max-w-7xl w-full text-textWeak">
+      <div class="max-w-7xl px-2 md:px-0 w-full text-textWeak">
         <div class="space-y-8">
           <p class="">Trusted by 5000+ developers at proactive engineering companies</p>
           <div class="flex gap-8  items-center *:brightness-0 *:dark:invert opacity-50">
@@ -101,7 +101,7 @@ testimonials:
             <img src="/assets/img/customers/thepeer.svg" alt="ThePeer's Logo" class="h-5 sm:h-8">
             <img src="/assets/img/customers/blockradar-full.svg" alt="Blockrada's Logo" class="h-5 sm:h-8" />
           </div>
-          <div class="flex text-textWeak space-x-24 py-6">
+          <div class="flex flex-col sm:flex-row text-textWeak gap-24 py-6">
             <div class="timeline-fade-in flex-1 border-l border-fillBrand-strong px-6 py-2 space-y-4">
               <div class="flex gap-1"><div class="inline-flex space-x-1  w-[6rem]">
                 <svg class="icon h-5 inline-block"><use xlink:href="/assets/deps/sprite.svg#star"></use></svg>
@@ -143,7 +143,7 @@ testimonials:
       </div>
     </section>
 
-    <div class="max-w-7xl w-full text-textWeak space-y-5 group/uc">
+    <div class="max-w-7xl px-2 md:px-0 w-full text-textWeak space-y-5 group/uc">
       <h2 class="text-[2rem] font-semibold text-textStrong">The most intuitive way to understand systems that matter</h2>
       <p class="text-xl leading-normal">Just because you don't see an error, doesn't mean it's not happening. That's why we built both active <br/>and passive monitoring--<span class="text-textBrand">to keep you informed of the different systems you maintain.<span></p>
 
@@ -168,8 +168,8 @@ testimonials:
       </div>
 
       <!-- APIs -->
-      <div class="hidden group-has-[.uc-apis:checked]/uc:flex gap-16">
-        <div class="w-1/3 space-y-12 [&_p]:leading-normal [&_label]:p-2">
+      <div class="hidden group-has-[.uc-apis:checked]/uc:flex gap-16 flex-col md:flex-row">
+        <div class="sm:w-1/3 space-y-12 [&_p]:leading-normal [&_label]:p-2">
           <label class="flex gap-3 group cursor-pointer hover:bg-fillBrand-weak rounded-lg">
             <input type="radio" name="apis" checked  class="hidden" value="1"/>
             <svg class="h-6 w-6 bg-fillBrand-weak !text-iconBrand p-0.5 mt-0.5 rounded-sm flex-shrink-0">
@@ -276,7 +276,7 @@ testimonials:
     </div>
 
     <!-- Powered by AI -->
-    <div class="max-w-7xl w-full text-textWeak space-y-5">
+    <div class="max-w-7xl px-2 md:px-0 w-full text-textWeak space-y-5">
       <div class="flex justify-between">
         <div class="flex-1 space-y-5">
           <h2 class="text-[2rem] font-semibold text-textStrong">Put AI to work. <span class="text-textWeak">seriously</span></h2>
@@ -290,7 +290,7 @@ testimonials:
           </div>
         </div>
       </div>
-      <div class="flex gap-12 pt-5 [&>div]:space-y-5 [&_h5]:text-textStrong [&_img]:border [&_img]:h-48 [&_img]:w-auto [&_img]:rounded-lg  [&_img]:border-strokeBrand-strong">
+      <div class="flex flex-col md:flex-row gap-12 pt-5 [&>div]:space-y-5 [&_h5]:text-textStrong [&_img]:border [&_img]:h-48 [&_img]:w-auto [&_img]:rounded-lg  [&_img]:border-strokeBrand-strong">
         <div class="">
           <img src="/assets/img/home/error-analytics.svg" class="bg-fillBrand-weak"/>
           <h5 class="text-xl font-semibold">Weekly reports that contain exactly what needs attention</h5>
@@ -310,7 +310,7 @@ testimonials:
     </div>
 
     <!-- FEATURES -->
-    <div class="max-w-7xl w-full text-textWeak space-y-5 group/ft">
+    <div class="max-w-7xl px-2 md:px-0 w-full text-textWeak space-y-5 group/ft">
       <h2 class="text-[2rem] font-semibold text-textStrong">Built with features that matter to engineers like us</h2>
       <p class="text-xl leading-normal">Collect, store, and analyze every single log or event <br/>without limits on a platform that gives you complete control.</p>
       <div class="flex gap-16 pt-5">
@@ -402,14 +402,14 @@ testimonials:
     </div>
 
     <!-- FLEXIBLE DEPLOYMENTS-->
-    <div class="max-w-7xl w-full text-textWeak space-y-5">
+    <div class="max-w-7xl px-2 md:px-0 w-full text-textWeak space-y-5">
       <h2 class="text-[2rem] font-semibold text-textStrong">Flexible deployment options for every company </h2>
       <p class="text-xl leading-normal">Regardless of your company's size or compliance requirements, APItoolkit operates <br/>within your business and regulatory constraints.</p>
       <div>
         <a href="https://calendar.app.google/1a4HG5GZYv1sjjZG6" target="_blank" class="btn py-3 px-6 rounded-xl bg-fillBrand-strong text-textInverse-strong shadow ">Book a demo</a>
         <a href="https://app.apitoolkit.io" class="btn py-3 px-6 rounded-xl bg-transparent border border-fillBrand-strong text-fillBrand-strong shadow " >Start 30 day free trial</a>
       </div>
-      <div class="flex gap-10 pt-5 *:shadow *:flex-1 *:p-6 *:space-y-5 *:rounded-xl *:border [&_svg]:w-5 [&_svg]:h-5 [&_svg]:!text-iconBrand">
+      <div class="flex flex-col md:flex-row gap-10 pt-5 *:shadow *:flex-1 *:p-6 *:space-y-5 *:rounded-xl *:border [&_svg]:w-5 [&_svg]:h-5 [&_svg]:!text-iconBrand">
         <div class="border-strokeBrand-weak ">
           <div class="inline-block p-3 bg-fillBrand-weak rounded-full"><svg><use xlink:href="/assets/deps/sprite.svg#cloud"></use></svg></div>
           <div class="flex flex-col">
@@ -448,7 +448,7 @@ testimonials:
 
     <!-- INTEGRATIONS-->
     <div class="text-textWeak space-y-5 w-full flex flex-col items-center justify-center">
-      <div class="max-w-7xl w-full space-y-5">
+      <div class="max-w-7xl px-2 w-full space-y-5">
         <h2 class="text-[2rem] font-semibold text-textStrong">780+ Integrations with your favorite tech stacks, powered by OpenTelemetry</h2>
         <a class="block text-textBrand underline underline-offset-2">View all integrations.</a>
       </div>
@@ -494,7 +494,7 @@ testimonials:
     </div>
 
     <!-- REAL RESULTS FROM CUSTOMERS -->
-    <div class="max-w-7xl w-full text-textStrong space-y-5">
+    <div class="max-w-7xl px-2 md:px-0 w-full text-textStrong space-y-5">
       <h2 class="text-[2rem] font-semibold text-textStrong">Real results for real customers</h2>
       <a class="block text-textBrand underline underline-offset-2">View all case studies.</a>
       <div class="relative flex items-end justify-end !-mt-5b">
@@ -503,7 +503,7 @@ testimonials:
           <path d="M8.85166 51.4448C8.69432 52.2581 9.22611 53.045 10.0395 53.2024C10.8528 53.3597 11.6397 52.8279 11.7971 52.0146L8.85166 51.4448ZM50.2152 12.7874C51.0361 12.6764 51.6117 11.921 51.5007 11.1C51.3897 10.279 50.6343 9.70348 49.8133 9.81446L50.2152 12.7874ZM4.41835 41.327C3.99148 40.617 3.06988 40.3875 2.3599 40.8144C1.64992 41.2413 1.42042 42.1629 1.84729 42.8729L4.41835 41.327ZM8.60781 51.206L7.32227 51.979L7.323 51.9802L8.60781 51.206ZM12.2243 52.2568L11.6114 50.8878L11.6101 50.8883L12.2243 52.2568ZM23.1434 49.0118C23.8995 48.6732 24.238 47.7859 23.8995 47.0298C23.561 46.2737 22.6736 45.9351 21.9175 46.2737L23.1434 49.0118ZM10.3244 51.7297C11.7971 52.0146 11.797 52.0149 11.7969 52.0152C11.7969 52.0152 11.7969 52.0154 11.7969 52.0154C11.7969 52.0154 11.797 52.0151 11.7971 52.0146C11.7973 52.0135 11.7977 52.0114 11.7983 52.0083C11.7995 52.002 11.8016 51.9915 11.8046 51.977C11.8105 51.9479 11.8198 51.9026 11.8327 51.8418C11.8585 51.7202 11.8987 51.5366 11.9544 51.297C12.066 50.8179 12.2399 50.1155 12.4863 49.2383C12.9792 47.4825 13.7602 45.0333 14.9084 42.2744C17.2144 36.7337 20.9547 30.0577 26.7149 25.1964L24.78 22.9038C18.5074 28.1975 14.5361 35.3613 12.1387 41.1217C10.9353 44.0133 10.1167 46.5799 9.59795 48.4273C9.33841 49.3517 9.15345 50.0978 9.03262 50.6166C8.9722 50.8761 8.92778 51.0789 8.89806 51.2189C8.8832 51.289 8.87201 51.3433 8.86433 51.3812C8.86049 51.4001 8.85753 51.415 8.85543 51.4256C8.85438 51.4309 8.85354 51.4352 8.85291 51.4384C8.8526 51.44 8.85234 51.4413 8.85213 51.4424C8.85203 51.4429 8.85191 51.4435 8.85186 51.4438C8.85175 51.4443 8.85166 51.4448 10.3244 51.7297ZM26.7149 25.1964C38.5275 15.2273 47.9159 13.0982 50.2152 12.7874L49.8133 9.81446C46.9548 10.2009 37.0331 12.5628 24.78 22.9038L26.7149 25.1964ZM1.84729 42.8729L7.32227 51.979L9.89334 50.4331L4.41835 41.327L1.84729 42.8729ZM7.323 51.9802C8.46525 53.876 10.8515 54.5171 12.8385 53.6253L11.6101 50.8883C10.909 51.203 10.1972 50.9375 9.89262 50.4319L7.323 51.9802ZM12.8372 53.6259L23.1434 49.0118L21.9175 46.2737L11.6114 50.8878L12.8372 53.6259Z" fill="#0068FF"/>
         </svg>
       </div>
-      <div class="grid grid-cols-5 gap-6 [&>div]:p-5 [&>div]:border [&>div]:rounded-lg  [&>div]:flex [&>div]:flex-col 
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-6 [&>div]:p-5 [&>div]:border [&>div]:rounded-lg  [&>div]:flex [&>div]:flex-col 
             [&>div]:justify-between  [&>div]:items-start [&_.logo1]:my-2  [&_.logo1]:brightness-0 [&_.logo1]:dark:invert [&_.logo1]:opacity-50 [&_.logo1]:h-6
             [&_strong]:text-5xl [&_small]:text-xl  [&_.logo2]:!my-0 [&_.quote]:text-2xl
             [&_.col-span-3]:p-8 [&_.col-span-3]:gap-8 [&_.quote]:leading-normal
