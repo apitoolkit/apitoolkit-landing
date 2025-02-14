@@ -229,7 +229,7 @@ platforms:
     </section>
 
     <div class="max-w-7xl px-3 w-full text-textWeak space-y-5 group/uc">
-      <h2 class="text-[2rem] leading-normal font-semibold text-textStrong">The most intuitive way to understand systems that matter</h2>
+      <h2 class="text-[2rem] leading-tight font-semibold text-textStrong">The most intuitive way to understand systems that matter</h2>
       <p class="text-xl leading-normal">Just because you don't see an error, doesn't mean it's not happening. That's why we built both active <br/>and passive monitoring--<span class="text-textBrand">to keep you informed of the different systems you maintain.<span></p>
 
       <div class="flex justify-between py-8">
@@ -280,7 +280,7 @@ platforms:
     <div class="max-w-7xl px-3 w-full text-textWeak space-y-5">
       <div class="flex justify-between">
         <div class="flex-1 space-y-5">
-          <h2 class="text-[2rem] leading-normal font-semibold text-textStrong">Put AI to work. <span class="text-textWeak">seriously</span></h2>
+          <h2 class="text-[2rem] leading-tight font-semibold text-textStrong">Put AI to work. <span class="text-textWeak">seriously</span></h2>
           <p class="text-xl leading-normal">Have a sidekick who is analyzing your data in real time, sending you reports or answering your questions.</p>
           <a class="text-xl text-textBrand underline underline-offset-2 block ">Learn more</a>
         </div>
@@ -312,7 +312,7 @@ platforms:
 
     <!-- FEATURES -->
     <div class="max-w-7xl px-3 w-full text-textWeak space-y-5 group/ft">
-      <h2 class="text-[2rem] leading-normal font-semibold text-textStrong">Built with features that matter to engineers like us</h2>
+      <h2 class="text-[2rem] leading-tight font-semibold text-textStrong">Built with features that matter to engineers like us</h2>
       <p class="text-xl leading-normal">Collect, store, and analyze every single log or event <br/>without limits on a platform that gives you complete control.</p>
       <div class="flex gap-16 pt-5">
         <div class="hidden sm:block text-textStrong space-y-8 [&_input]:hidden [&_label]:inline-flex [&_label]:px-2  [&_label]:items-center [&_label]:gap-2   
@@ -362,7 +362,7 @@ platforms:
 
     <!-- FLEXIBLE DEPLOYMENTS-->
     <div class="max-w-7xl px-3 w-full text-textWeak space-y-5">
-      <h2 class="text-[2rem] leading-normal font-semibold text-textStrong">Flexible deployment options for every company </h2>
+      <h2 class="text-[2rem] leading-tight font-semibold text-textStrong">Flexible deployment options for every company </h2>
       <p class="text-xl leading-normal">Regardless of your company's size or compliance requirements, APItoolkit operates <br/>within your business and regulatory constraints.</p>
       <div>
         <a href="https://calendar.app.google/1a4HG5GZYv1sjjZG6" target="_blank" class="btn py-3 px-6 rounded-xl bg-fillBrand-strong text-textInverse-strong shadow ">Book a demo</a>
@@ -408,7 +408,7 @@ platforms:
     <!-- INTEGRATIONS-->
     <div class="text-textWeak space-y-5 w-full flex flex-col items-center justify-center">
       <div class="max-w-7xl px-3 w-full space-y-5">
-        <h2 class="text-[2rem] leading-normal font-semibold text-textStrong">780+ Integrations with your favorite tech stacks, powered by OpenTelemetry</h2>
+        <h2 class="text-[2rem] leading-tight font-semibold text-textStrong">780+ Integrations with your favorite tech stacks, powered by OpenTelemetry</h2>
         <a class="block text-textBrand underline underline-offset-2">View all integrations.</a>
       </div>
       <div class="space-y-5 pt-5 mask-edges">
@@ -454,7 +454,7 @@ platforms:
 
     <!-- REAL RESULTS FROM CUSTOMERS -->
     <div class="max-w-7xl px-3 w-full text-textStrong space-y-5">
-      <h2 class="text-[2rem] leading-normal font-semibold text-textStrong">Real results for real customers</h2>
+      <h2 class="text-[2rem] leading-tight font-semibold text-textStrong">Real results for real customers</h2>
       <a class="block text-textBrand underline underline-offset-2">View all case studies.</a>
       <div class="relative hidden sm:flex items-end justify-end !-mt-5b">
         <svg class="absolute -mb-3" width="253" height="55" viewBox="0 0 253 55" fill="none" xmlns="http://www.w3.org/2000/svg">
