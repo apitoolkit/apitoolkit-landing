@@ -190,7 +190,7 @@ platforms:
       <div class="max-w-7xl px-3 w-full text-textWeak">
         <div class="space-y-8">
           <p class="">Trusted by 5000+ developers at proactive engineering companies</p>
-          <div class="flex  gap-4 md:gap-8  items-center *:brightness-0 *:dark:invert opacity-50">
+          <div class="grid grid-cols-4 sm:grid-cols-8 *:col-span-1  gap-4 md:gap-8  items-center *:brightness-0 *:dark:invert opacity-50">
             {% assign customers = "andela.svg,partna.svg,grovepay.svg,sameday.svg,platnova.png,payfonte.svg,thepeer.svg,blockradar-full.svg" | split: "," %}
             {% for logo in customers %}<img src="/assets/img/customers/{{logo}}" alt="{{logo}}" class="h-5 sm:h-8">{% endfor %}
           </div>
