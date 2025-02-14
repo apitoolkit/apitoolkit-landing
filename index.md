@@ -350,45 +350,60 @@ testimonials:
             <!-- Logs -->
             <div class="hidden group-has-[.ft-logs:checked]/ft:block space-y-3 flex-1">
               <h5 class="text-xl font-semibold text-textStrong">Logs and traces analysis</h5>
-              <p class="max-w-xl leading-normal">If a tree falls in a forest and no one is around to hear it, does it make a sound? That's why we built tools for both active and passive monitoring of systems that matter</p>
+              <p class="max-w-xl leading-normal">Gain deep insights into your API performance with real-time logs and trace analysis. Quickly identify bottlenecks, debug issues efficiently, and enhance reliability with structured logging, detailed traces, and actionable analytics all in one powerful toolkit.</p>
               <a class="block underline underline-offset-2 text-textBrand">Learn more</a>
             </div>
             <!-- end Logs -->
             <!-- Errors and Performance tracking -->
             <div class="hidden group-has-[.ft-errors:checked]/ft:block space-y-3 flex-1">
               <h5 class="text-xl font-semibold text-textStrong">Errors and Performance tracking</h5>
-              <p class="max-w-xl leading-normal">If a tree falls in a forest and no one is around to hear it, does it make a sound? That's why we built tools for both active and passive monitoring of systems that matter</p>
+              <p class="max-w-xl leading-normal">Monitor API errors and performance in real time. Detect issues instantly, analyze trends, and optimize response times with detailed insights. Improve reliability with automated tracking, alerting, and in-depth analytics to ensure a seamless user experience.</p>
               <a class="block underline underline-offset-2 text-textBrand">Learn more</a>
             </div>
             <!-- end Errors and Performance tracking -->
             <!-- Monitors -->
             <div class="hidden group-has-[.ft-monitors:checked]/ft:block space-y-3 flex-1">
               <h5 class="text-xl font-semibold text-textStrong">Monitors and Healthchecks</h5>
-              <p class="max-w-xl leading-normal">If a tree falls in a forest and no one is around to hear it, does it make a sound? That's why we built tools for both active and passive monitoring of systems that matter</p>
+              <p class="max-w-xl leading-normal">Ensure API reliability with automated monitors and health checks. Continuously track uptime, detect failures early, and receive instant alerts. Keep your services running smoothly with real-time insights and proactive issue resolution.</p>
               <a class="block underline underline-offset-2 text-textBrand">Learn more</a>
             </div>
             <!-- end Monitors -->
             <!-- Metrics -->
             <div class="hidden group-has-[.ft-metrics:checked]/ft:block space-y-3 flex-1">
               <h5 class="text-xl font-semibold text-textStrong">Custom metrics</h5>
-              <p class="max-w-xl leading-normal">If a tree falls in a forest and no one is around to hear it, does it make a sound? That's why we built tools for both active and passive monitoring of systems that matter</p>
+              <p class="max-w-xl leading-normal">Define and track custom metrics tailored to your API needs. Gain actionable insights, monitor key performance indicators, and optimize efficiency with real-time data visualization and alerts. Make data-driven decisions to enhance your API’s performance and reliability.</p>
               <a class="block underline underline-offset-2 text-textBrand">Learn more</a>
             </div>
             <!-- end Metrics -->
             <!-- API Catalog -->
             <div class="hidden group-has-[.ft-apis:checked]/ft:block space-y-3 flex-1">
               <h5 class="text-xl font-semibold text-textStrong">API Catalog and Documentation</h5>
-              <p class="max-w-xl leading-normal">If a tree falls in a forest and no one is around to hear it, does it make a sound? That's why we built tools for both active and passive monitoring of systems that matter</p>
+              <p class="max-w-xl leading-normal">Organize, manage, and document your APIs effortlessly with a dynamic API catalog. Provide clear, up-to-date documentation, improve discoverability, and streamline onboarding for developers with interactive guides, code samples, and real-time updates.</p>
               <a class="block underline underline-offset-2 text-textBrand">Learn more</a>
             </div>
             <!-- end API Catalog -->
             <!-- Change Detection -->
             <div class="hidden group-has-[.ft-change:checked]/ft:block space-y-3 flex-1">
               <h5 class="text-xl font-semibold text-textStrong">Change Detection and anomalies</h5>
-              <p class="max-w-xl leading-normal">If a tree falls in a forest and no one is around to hear it, does it make a sound? That's why we built tools for both active and passive monitoring of systems that matter</p>
+              <p class="max-w-xl leading-normal">Detect API changes and anomalies in real time. Stay ahead of unexpected behavior with automated monitoring, instant alerts, and detailed insights. Ensure stability, prevent disruptions, and maintain seamless performance with proactive change detection.</p>
               <a class="block underline underline-offset-2 text-textBrand">Learn more</a>
             </div>
             <!-- end Change Detection -->
+            <!-- Alerts and Reports -->
+            <div class="hidden group-has-[.ft-alerts:checked]/ft:block space-y-3 flex-1">
+              <h5 class="text-xl font-semibold text-textStrong">Real time alerts</h5>
+              <p class="max-w-xl leading-normal">Stay informed with real-time alerts and comprehensive reports. Customize alert channels and receive detailed analytics to monitor your API's performance and reliability effectively.</p>
+              <a class="block underline underline-offset-2 text-textBrand">Learn more</a>
+            </div>
+            <!-- Custom Dashboards Detail Panel -->
+            <div class="hidden group-has-[.ft-dashboards:checked]/ft:block space-y-3 flex-1">
+              <h5 class="text-xl font-semibold text-textStrong">Custom Dashboards</h5>
+              <p class="max-w-xl leading-normal">
+                Tailor your monitoring experience with customizable dashboards. Aggregate and visualize key metrics that matter most to your operations, providing a comprehensive and intuitive overview of your system's performance.
+              </p>
+              <a href="#" class="block underline underline-offset-2 text-textBrand">Learn more</a>
+            </div>
+            <!-- end Alerts and Reports -->
             <div class="inline-flex gap-4 *:inline-flex *:items-center *:shadow *:border *:border-strokeStrong *:p-4 *:rounded-lg *:cursor-pointer select-none">
               <a class="group-has-[.ft-logs:checked]/ft:!border-strokeDisabled group-has-[.ft-logs:checked]/ft:shadow-none" onclick="cycleRadioButtons('features', -1)"><svg class="h-3 w-3"><use xlink:href="/assets/deps/sprite.svg#chevron-left"></use></svg></a>
               <a class="group-has-[.ft-reports:checked]/ft:!border-strokeDisabled group-has-[.ft-reports:checked]/ft:shadow-none" onclick="cycleRadioButtons('features', +1)"><svg class="h-3 w-3"><use xlink:href="/assets/deps/sprite.svg#chevron-right"></use></svg></a>
