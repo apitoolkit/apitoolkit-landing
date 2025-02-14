@@ -158,17 +158,17 @@ platforms:
           });
           </script>
           <ul class="text-[1.25rem] space-y-4 leading-tight [&_svg]:!text-strokeBrand-strong">
-            <li class="flex gap-2 items-center"><svg class="h-5 w-5">
+            <li class="flex gap-2 items-center"><svg class="h-5 w-5 flex-shrink-0">
               <use xlink:href="/assets/deps/sprite.svg#pie-chart"></use>
             </svg> Catch breaking changes and critical errors</li>
-            <li class="flex gap-2 items-center"><svg class="h-5 w-5">
+            <li class="flex gap-2 items-center"><svg class="h-5 w-5 flex-shrink-0">
               <use xlink:href="/assets/deps/sprite.svg#activity"></use>
             </svg> Analyze logs, metrics, traces and request payloads</li>
-            <li class="flex gap-2 items-center"><svg class="h-5 w-5">
+            <li class="flex gap-2 items-center"><svg class="h-5 w-5 flex-shrink-0">
               <use xlink:href="/assets/deps/sprite.svg#bar-chart-2"></use>
             </svg> Monitor performance and uptime of both APIs and external APIs</li>
           </ul>
-          <div class="flex gap-4">
+          <div class="flex gap-2 sm:gap-4">
             <a href="https://calendar.app.google/1a4HG5GZYv1sjjZG6" target="_blank" class="btn py-3 px-6 rounded-xl bg-fillBrand-strong text-textInverse-strong shadow ">Book a demo</a>
             <a href="https://app.apitoolkit.io" class="btn py-3 px-6 rounded-xl bg-transparent border border-fillBrand-strong text-fillBrand-strong shadow " >Start 30 day free trial</a>
           </div>
