@@ -12,7 +12,7 @@ testimonials:
       photo: larrison_morrison.jpeg
       name: Lazarus Morrison
       title: Founder of Community Fluency
-      logo_raw: <div class="inline-flex items-center text-lg gap-1"><img src="/assets/img/customers/community_fluency.png" alt="Community Fluency" class="logo1 logo2"/> <span>Community<strong class="!text-lg">Fluency</strong></span></div>
+      logo_raw: <div class="inline-flex items-center text-lg gap-1"><img src="/assets/img/customers/community_fluency.png" alt="Community Fluency" class="logo1 logo2"/> <span class="hidden sm:inline-block">Community<strong class="!text-lg">Fluency</strong></span></div>
     - quote: "The best observability tool we use today at Woodcore, APItoolkit notifies us about any slight change that happens on the system. <br/><br/>Most especially, for the features we utilise today on APItoolkit, would cost us a lot more elsewhere."
       photo: samuel_joseph.jpeg
       name: Samuel Joseph
@@ -39,7 +39,106 @@ testimonials:
       name: Odohi David
       title: CTO of Grovepay
       logo: grovepay.svg
-      
+
+features:
+    - title: Observability & monitoring 
+      links:
+            - icon: align-left 
+              id: logs
+              title: Logs and traces analysis
+              details: Gain deep insights into your API performance with real-time logs and trace analysis. Quickly identify bottlenecks, debug issues efficiently, and enhance reliability with structured logging, detailed traces, and actionable analytics all in one powerful toolkit.
+              learnmore: /
+            - icon: activity
+              id: errors
+              title: Errors and Performance tracking
+              details: Monitor API errors and performance in real time. Detect issues instantly, analyze trends, and optimize response times with detailed insights. Improve reliability with automated tracking, alerting, and in-depth analytics to ensure a seamless user experience. 
+              learnmore: /
+            - icon: compass 
+              id: monitors
+              title: Monitors and healthchecks
+              details: Ensure API reliability with automated monitors and health checks. Continuously track uptime, detect failures early, and receive instant alerts. Keep your services running smoothly with real-time insights and proactive issue resolution.
+              learnmore: /
+            - icon: bar-chart
+              id: metrics
+              title: Custom metrics
+              details: Define and track custom metrics tailored to your API needs. Gain actionable insights, monitor key performance indicators, and optimize efficiency with real-time data visualization and alerts. Make data-driven decisions to enhance your API’s performance and reliability.
+              learnmore: /
+    - title: API management
+      links: 
+            - icon: layout 
+              id: apis
+              title: API Catalog and Documentation 
+              details: Organize, manage, and document your APIs effortlessly with a dynamic API catalog. Provide clear, up-to-date documentation, improve discoverability, and streamline onboarding for developers with interactive guides, code samples, and real-time updates.
+              learnmore: /
+            - icon: copy
+              id: change
+              title: Change detection and anomalies
+              details: Detect API changes and anomalies in real time. Stay ahead of unexpected behavior with automated monitoring, instant alerts, and detailed insights. Ensure stability, prevent disruptions, and maintain seamless performance with proactive change detection.
+              learnmore: /
+    - title: Alerts and reports
+      links: 
+            - icon: radio 
+              id: alerts 
+              title: Real time alert channels
+              details: Stay informed with real-time alerts and comprehensive reports. Customize alert channels and receive detailed analytics to monitor your API's performance and reliability effectively.
+              learnmore: /
+            - icon: grid 
+              id: dashboards 
+              title: Custom dashboards
+              details: Tailor your monitoring experience with customizable dashboards. Aggregate and visualize key metrics that matter most to your operations, providing a comprehensive and intuitive overview of your system's performance.
+              learnmore: /
+            - icon: calendar 
+              id: reports
+              title: Daily or weekly reports
+              details: Reports on everything  
+              learnmore: /
+    
+platforms:
+    - title: APIs 
+      id: apis 
+      icon: rss 
+      children:
+            - title: Catch breaking changes 
+              details: Spot unexpected changes in API responses or data structures-your services or third-party calls-before they slip into production. 
+              learnmore: /
+            - title: Monitor request payloads 
+              details: Create real-time alerts for critical API payloads-like third-party errors or large bank transactions-and get notified instantly. 
+              learnmore: /
+            - title: Create multistep healthchecks 
+              details: Run multistep checks for critical workflows—create an account, check balance, transfer funds, delete account-on a regular schedule.
+              learnmore: /
+    - title: Backends
+      id: backend
+      icon: hard-drive 
+      children: 
+            - title: Endpoint Performance and Throughput 
+              details: Spot unexpected changes in API responses or data structures-your services or third-party calls-before they slip into production. 
+              learnmore: /
+            - title: Track Errors and Exceptions 
+              details: Track all errors and exceptions generated by your application. Prioritize errors based on their frequency. 
+              learnmore: /
+            - title: Background and cron jobs 
+              details: See and track job runs and get alerted if an important job stops running. 
+              learnmore: /
+            - title: Debug with logs and traces 
+              details: When theres an issue, debug with all the related logs and traces automatically surfaced for you. 
+              learnmore: /
+    - title: Databases 
+      id: database 
+      icon: database
+      children:
+            - title: Identify Slow Database Queries 
+              details: Spot unexpected changes in API responses or data structures-your services or third-party calls-before they slip into production. 
+              learnmore: /
+            - title: Query Analytics and Dashboards 
+              details: Dashboard templates that visualize all the important metrics and datapoints for your database of choice. 
+              learnmore: /
+            - title: Database Error tracking and anomaly detection
+              details: Don't let database emergencies sneak up on you. Automatically analyze query results and database logs for errors and anomalies.
+              learnmore: /
+    # - title: Infra 
+    # - title: Frontends 
+    # - title: Mobile
 ---
 
 ```=html
@@ -92,14 +191,8 @@ testimonials:
         <div class="space-y-8">
           <p class="">Trusted by 5000+ developers at proactive engineering companies</p>
           <div class="flex  gap-4 md:gap-8  items-center *:brightness-0 *:dark:invert opacity-50">
-            <img src="/assets/img/customers/andela.svg" alt="Andela's Logo" class="h-5 sm:h-8">
-            <img src="/assets/img/customers/partna.svg" alt="ThePeer's Logo" class="h-5 sm:h-8">
-            <img src="/assets/img/customers/grovepay.svg" alt="Grovepay's Logo" class="h-5 sm:h-8">
-            <img src="/assets/img/customers/sameday.svg" alt="Same Day Customs' Logo" class="h-5 sm:h-8">
-            <img src="/assets/img/customers/platnova.png" alt="Platnova's Logo" class="h-5 sm:h-8">
-            <img src="/assets/img/customers/payfonte.svg" alt="Payfonte's Logo" class="h-5 sm:h-8">
-            <img src="/assets/img/customers/thepeer.svg" alt="ThePeer's Logo" class="h-5 sm:h-8">
-            <img src="/assets/img/customers/blockradar-full.svg" alt="Blockrada's Logo" class="h-5 sm:h-8" />
+            {% assign customers = "andela.svg,partna.svg,grovepay.svg,sameday.svg,platnova.png,payfonte.svg,thepeer.svg,blockradar-full.svg" | split: "," %}
+            {% for logo in customers %}<img src="/assets/img/customers/{{logo}}" alt="{{logo}}" class="h-5 sm:h-8">{% endfor %}
           </div>
           <div class="flex flex-col sm:flex-row text-textWeak gap-24 py-6">
             <div class="timeline-fade-in flex-1 border-l border-fillBrand-strong px-6 py-2 space-y-4">
@@ -143,14 +236,10 @@ testimonials:
         <div class="inline-flex justify-center bg-fillWeak border border-strokeWeak rounded-lg 
           *:px-4 *:py-3 *:inline-flex *:items-center *:gap-2
           [&_svg]:h-5 [&_svg]:w-5 [&>label]:rounded-lg [&>label]:border-strokeStrong
-          
           ">
-          <label class="has-[:checked]:border has-[:checked]:border-strokeBrand-strong has-[:checked]:bg-bgOverlay has-[:checked]:shadow has-[:checked]:!text-textBrand"><svg class="peer-checked:text-iconBrand"><use xlink:href="/assets/deps/sprite.svg#rss"></use></svg> APIs<input checked type="radio" class="hidden uc uc-apis" name="usecase" value="apis"/></label>
-          <label class="has-[:checked]:border has-[:checked]:border-strokeBrand-strong has-[:checked]:bg-bgOverlay has-[:checked]:shadow has-[:checked]:!text-textBrand"><svg><use xlink:href="/assets/deps/sprite.svg#hard-drive"></use></svg> Backends<input type="radio" class="hidden uc uc-backend" name="usecase" value="backend"/></label>
-          <label class="has-[:checked]:border has-[:checked]:border-strokeBrand-strong has-[:checked]:bg-bgOverlay has-[:checked]:shadow has-[:checked]:!text-textBrand"><svg><use xlink:href="/assets/deps/sprite.svg#database"></use></svg> Databases<input type="radio" class="hidden uc uc-database" name="usecase" value="database"/></label>
-          <!-- <label class="rounded-lg border border-strokeStrong bg-bgOverlay shadow"><svg><use xlink:href="/assets/deps/sprite.svg#server"></use></svg> Infrastructure<input type="radio" class="hidden uc uc-infra" name="usecase" value="infra"/></label> -->
-          <!-- <label class="rounded-lg border border-strokeStrong bg-bgOverlay shadow"><svg><use xlink:href="/assets/deps/sprite.svg#monitor"></use></svg> Frontends<input type="radio" class="hidden uc uc-frontends" name="usecase" value="frontends"/></label> -->
-          <!-- <label class="rounded-lg border border-strokeStrong bg-bgOverlay shadow"><svg><use xlink:href="/assets/deps/sprite.svg#smartphone"></use></svg> Mobile<input type="radio" class="hidden uc uc-mobile" name="usecase" value="mobile"/></label>-->
+         {% for platform in this.frontmatter.platforms %}
+         <label class="has-[:checked]:border has-[:checked]:border-strokeBrand-strong has-[:checked]:bg-bgOverlay has-[:checked]:shadow has-[:checked]:!text-textBrand"><svg class="peer-checked:text-iconBrand"><use xlink:href="/assets/deps/sprite.svg#{{platform.icon}}"></use></svg> {{platform.title}}<input {% if forloop.first %}checked{% endif %} type="radio" class="hidden uc uc-{{platform.id}}" name="usecase" value="{{platform.id}}"/></label>
+         {% endfor %}
         </div>
 
         <div class="inline-flex gap-4 *:inline-flex *:items-center *:shadow *:border *:border-strokeStrong *:p-4 *:rounded-lg *:cursor-pointer select-none">
@@ -159,112 +248,32 @@ testimonials:
         </div>
       </div>
 
-      <!-- APIs -->
-      <div class="hidden group-has-[.uc-apis:checked]/uc:flex gap-16 flex-col md:flex-row">
+      {% for platform in this.frontmatter.platforms %}
+      <!-- {{platform.title}} -->
+      <div class="hidden group-has-[.uc-{{platform.id}}:checked]/uc:flex gap-16 flex-col md:flex-row">
         <div class="sm:w-1/3 space-y-12 [&_p]:leading-normal [&_label]:p-2">
+         {% for c in platform.children %}
           <label class="flex gap-3 group cursor-pointer hover:bg-fillBrand-weak rounded-lg">
-            <input type="radio" name="apis" checked  class="hidden" value="1"/>
+            <input type="radio" name="{{platform.id}}" {% if forloop.first %}checked{% endif %}  class="hidden" value="1"/>
             <svg class="h-6 w-6 bg-fillBrand-weak !text-iconBrand p-0.5 mt-0.5 rounded-sm flex-shrink-0">
               <use class="block group-has-[:checked]:hidden" xlink:href="/assets/deps/sprite.svg#plus-square"></use>
               <use class="hidden group-has-[:checked]:block" xlink:href="/assets/deps/sprite.svg#minus-square"></use>
             </svg>
             <div class="flex-1 space-y-2">
-              <h5 class="text-xl font-semibold text-textStrong">Catch breaking changes</h5>
-              <p class="hidden group-has-[:checked]:block">Spot unexpected changes in API responses or data structures-your services or third-party calls-before they slip into production.</p>
-              <a class="hidden group-has-[:checked]:block text-textBrand underline block ">Learn more</a>
+                <h5 class="text-xl font-semibold text-textStrong">{{c.title}}</h5>
+                <p class="hidden group-has-[:checked]:block">{{c.details}}</p>
+                <a class="hidden group-has-[:checked]:block text-textBrand underline block" href="{{c.learnmore}}">Learn more</a>
             </div>
           </label>
-
-          <label class="flex gap-3 group cursor-pointer hover:bg-fillBrand-weak rounded-lg">
-            <input type="radio" name="apis"  class="hidden" value="2"/>
-            <svg class="h-6 w-6 bg-fillBrand-weak !text-iconBrand p-0.5 mt-0.5 rounded-sm flex-shrink-0">
-              <use class="block group-has-[:checked]:hidden" xlink:href="/assets/deps/sprite.svg#plus-square"></use>
-              <use class="hidden group-has-[:checked]:block" xlink:href="/assets/deps/sprite.svg#minus-square"></use>
-            </svg>
-            <div class="flex-1 space-y-2">
-              <h5 class="text-xl font-semibold text-textStrong">Monitor request payloads</h5>
-              <p  class="hidden group-has-[:checked]:block">Create real-time alerts for critical API payloads-like third-party errors or large bank transactions-and get notified instantly.</p>
-              <a class="hidden group-has-[:checked]:block text-textBrand underline block ">Learn more</a>
-            </div>
-          </label>
-
-          <label class="flex gap-3 group cursor-pointer hover:bg-fillBrand-weak rounded-lg">
-            <input type="radio" name="apis"  class="hidden" value="3"/>
-            <svg class="h-6 w-6 bg-fillBrand-weak !text-iconBrand p-0.5 mt-0.5 rounded-sm flex-shrink-0">
-              <use class="block group-has-[:checked]:hidden" xlink:href="/assets/deps/sprite.svg#plus-square"></use>
-              <use class="hidden group-has-[:checked]:block" xlink:href="/assets/deps/sprite.svg#minus-square"></use>
-            </svg>
-            <div class="space-y-2">
-              <h5 class="text-xl font-semibold text-textStrong">Create Multistep Healthchecks</h5>
-              <p  class="hidden group-has-[:checked]:block">Run multistep checks for critical workflows—create an account, check balance, transfer funds, delete account-on a regular schedule.</p>
-              <a class="hidden group-has-[:checked]:block text-textBrand underline block ">Learn more</a>
-            </div>
-          </label>
+          {% endfor %}
         </div>
 
         <div class="flex-1">
             <img src="/assets/img/screenshots/analytics2.png" class="timeline-fade-in w-full shadow rounded-lg border border-strokeBrand-strong"/>
         </div>
       </div>
-      <!-- end APIs -->
-
-      <!-- Backends -->
-      <div class="hidden group-has-[.uc-backend:checked]/uc:flex gap-16">
-        <div class="w-1/3 space-y-16">
-          <div class="space-y-2 [&_p]:leading-normal">
-            <h5 class="text-xl font-semibold text-textStrong">Endpoint Performance and Throughput</h5>
-            <p>Spot unexpected changes in API responses or data structures-your services or third-party calls-before they slip into production.</p>
-            <a class="text-textBrand underline block ">Learn more</a>
-          </div>
-          <div class="space-y-2">
-            <h5 class="text-xl font-semibold text-textStrong">Track Errors and Exceptions</h5>
-            <p>Track all errors and exceptions generated by your application. Prioritize errors based on their frequency.</p>
-            <a class="text-textBrand underline block ">Learn more</a>
-          </div>
-          <div class="space-y-2">
-            <h5 class="text-xl font-semibold text-textStrong">Background and cron jobs</h5>
-            <p>See and track job runs and get alerted if an important job stops running.</p>
-            <a class="text-textBrand underline block ">Learn more</a>
-          </div>
-          <div class="space-y-2">
-            <h5 class="text-xl font-semibold text-textStrong">Debug with logs and traces</h5>
-            <p>When theres an issue, debug with all the related logs and traces automatically surfaced for you.</p>
-            <a class="text-textBrand underline block ">Learn more</a>
-          </div>
-        </div>
-        <div class="flex-1">
-            <img src="/assets/img/screenshots/analytics2.png" class="w-full shadow rounded-lg border border-strokeDisabled"/>
-        </div>
-      </div>
-      <!-- end Backends -->
-
-      <!-- Databases -->
-      <div class="hidden group-has-[.uc-database:checked]/uc:flex gap-16">
-        <div class="w-1/3 space-y-16">
-          <div class="space-y-2 [&_p]:leading-normal">
-            <h5 class="text-xl font-semibold text-textStrong">Identify Slow Database Queries</h5>
-            <p>Spot unexpected changes in API responses or data structures-your services or third-party calls-before they slip into production.</p>
-            <a class="text-textBrand underline block ">Learn more</a>
-          </div>
-          <div class="space-y-2">
-            <h5 class="text-xl font-semibold text-textStrong">Query Analytics and Dashboards</h5>
-            <p>Dashboard templates that visualize all the important metrics and datapoints for your database of choice.</p>
-            <a class="text-textBrand underline block ">Learn more</a>
-          </div>
-          <div class="space-y-2">
-            <h5 class="text-xl font-semibold text-textStrong">Database Error tracking and anomaly detection</h5>
-            <p>Don't let database emergencies sneak up on you. Automatically analyze query results and database logs for errors and anomalies.</p>
-            <a class="text-textBrand underline block ">Learn more</a>
-          </div>
-        </div>
-        <div class="flex-1">
-            <img src="/assets/img/screenshots/analytics2.png" class="w-full shadow rounded-lg border border-strokeBrand-strong"/>
-        </div>
-      </div>
-      <!-- end Databases -->
-
-
-
+      <!-- end {{platform.title}} -->
+      {% endfor %}
     </div>
 
     <!-- Powered by AI -->
@@ -306,29 +315,18 @@ testimonials:
       <h2 class="text-[2rem] font-semibold text-textStrong">Built with features that matter to engineers like us</h2>
       <p class="text-xl leading-normal">Collect, store, and analyze every single log or event <br/>without limits on a platform that gives you complete control.</p>
       <div class="flex gap-16 pt-5">
-        <div class="text-textStrong space-y-8 [&_input]:hidden [&_label]:inline-flex [&_label]:px-2  [&_label]:items-center [&_label]:gap-2   
+        <div class="hidden sm:block text-textStrong space-y-8 [&_input]:hidden [&_label]:inline-flex [&_label]:px-2  [&_label]:items-center [&_label]:gap-2   
             [&_label]:border-l-2 [&_label]:border-transparent [&_svg]:h-4 [&_svg]:w-4 
             ">
+          {% for feature in this.frontmatter.features %}
+          {% assign ischecked = forloop.first %}
           <div class="flex flex-col *:flex *:gap-2 [&>label]:text-lg [&>label]:p-1">
-            <h4 class="text-sm font-semibold pb-3 pl-2.5">Observability & monitoring</h4>
-            <label class="has-[:checked]:!border-fillBrand-strong has-[:checked]:bg-fillBrand-weak"><svg><use xlink:href="/assets/deps/sprite.svg#align-left"></use></svg>Logs and traces analysis<input checked type="radio" class="hidden ft ft-logs" name="features"/></label>
-            <label class="has-[:checked]:!border-fillBrand-strong has-[:checked]:bg-fillBrand-weak"><svg><use xlink:href="/assets/deps/sprite.svg#activity"></use></svg>Errors and Performance tracking<input type="radio" class="hidden ft ft-errors" name="features"/></label>
-            <label class="has-[:checked]:!border-fillBrand-strong has-[:checked]:bg-fillBrand-weak"><svg><use xlink:href="/assets/deps/sprite.svg#compass"></use></svg>Monitors and healthchecks<input type="radio" class="hidden ft ft-monitors" name="features"/></label>
-            <label class="has-[:checked]:!border-fillBrand-strong has-[:checked]:bg-fillBrand-weak"><svg><use xlink:href="/assets/deps/sprite.svg#bar-chart"></use></svg>Custom metrics<input type="radio" class="hidden ft ft-metrics" name="features"/></label>
+            <h4 class="text-sm font-semibold pb-3 pl-2.5">{{feature.title}}</h4>
+            {% for f in feature.links %}
+            <label class="cursor-pointer has-[:checked]:!border-fillBrand-strong has-[:checked]:bg-fillBrand-weak"><svg><use xlink:href="/assets/deps/sprite.svg#{{f.icon}}"></use></svg>{{f.title}}<input {% if ischecked and forloop.first %}checked{% endif %}  type="radio" class="hidden ft ft-{{f.id}}" name="features"/></label>
+            {% endfor %}
           </div>
-
-          <div class="flex flex-col *:flex *:gap-2 [&>label]:text-lg [&>label]:p-1">
-            <h4 class="text-sm font-semibold pb-3 pl-2.5">API management</h4>
-            <label class="has-[:checked]:!border-fillBrand-strong has-[:checked]:bg-fillBrand-weak"><svg><use xlink:href="/assets/deps/sprite.svg#layout"></use></svg>API Catalog and Documentation<input type="radio" class="hidden ft ft-apis" name="features"/></label>
-            <label class="has-[:checked]:!border-fillBrand-strong has-[:checked]:bg-fillBrand-weak"><svg><use xlink:href="/assets/deps/sprite.svg#copy"></use></svg>Change detection and anomalies<input type="radio" class="hidden ft ft-change" name="features"/></label>
-          </div>
-
-          <div class="flex flex-col *:flex *:gap-2 [&>label]:text-lg [&>label]:p-1">
-            <h4 class="text-sm font-semibold pb-3 pl-2.5">Alerts and reports</h4>
-            <label class="has-[:checked]:!border-fillBrand-strong has-[:checked]:bg-fillBrand-weak"><svg><use xlink:href="/assets/deps/sprite.svg#radio"></use></svg>Real time alert channels<input type="radio" class="hidden ft ft-alerts" name="features"/></label>
-            <label class="has-[:checked]:!border-fillBrand-strong has-[:checked]:bg-fillBrand-weak"><svg><use xlink:href="/assets/deps/sprite.svg#grid"></use></svg>Custom dashboards<input type="radio" class="hidden ft ft-dashboards" name="features"/></label>
-            <label class="has-[:checked]:!border-fillBrand-strong has-[:checked]:bg-fillBrand-weak"><svg class="flex-shrink-0 icon h-5 w-5"><use xlink:href="/assets/deps/sprite.svg#calendar"></use></svg>Daily or weekly reports<input type="radio" class="hidden ft ft-reports" name="features"/></label>
-          </div>
+          {% endfor %}
 
           <div class="flex flex-col *:underline *:underline-offset-2 space-y-1 text-textBrand pl-2.5">
             <a href="https://app.apitoolkit.io">Launch playground</a>
@@ -338,64 +336,18 @@ testimonials:
 
         </div>
         <div class="flex-1 space-y-8">
-          <div class="flex items-end">
-            <!-- Logs -->
-            <div class="hidden group-has-[.ft-logs:checked]/ft:block space-y-3 flex-1">
-              <h5 class="text-xl font-semibold text-textStrong">Logs and traces analysis</h5>
-              <p class="max-w-xl leading-normal">Gain deep insights into your API performance with real-time logs and trace analysis. Quickly identify bottlenecks, debug issues efficiently, and enhance reliability with structured logging, detailed traces, and actionable analytics all in one powerful toolkit.</p>
-              <a class="block underline underline-offset-2 text-textBrand">Learn more</a>
+          <div class="flex-col-reverse flex sm:flex-row sm:items-end gap-5">
+            {% for feature in this.frontmatter.features %}
+            {% for f in feature.links %}
+            <!-- {{feature.title}} -->
+            <div class="hidden group-has-[.ft-{{f.id}}:checked]/ft:block space-y-3 flex-1">
+              <h5 class="text-xl font-semibold text-textStrong">{{f.title}}</h5>
+              <p class="max-w-xl leading-normal">{{f.details}}</p>
+              <a href="{{f.learnmore}}" class="block underline underline-offset-2 text-textBrand">Learn more</a>
             </div>
-            <!-- end Logs -->
-            <!-- Errors and Performance tracking -->
-            <div class="hidden group-has-[.ft-errors:checked]/ft:block space-y-3 flex-1">
-              <h5 class="text-xl font-semibold text-textStrong">Errors and Performance tracking</h5>
-              <p class="max-w-xl leading-normal">Monitor API errors and performance in real time. Detect issues instantly, analyze trends, and optimize response times with detailed insights. Improve reliability with automated tracking, alerting, and in-depth analytics to ensure a seamless user experience.</p>
-              <a class="block underline underline-offset-2 text-textBrand">Learn more</a>
-            </div>
-            <!-- end Errors and Performance tracking -->
-            <!-- Monitors -->
-            <div class="hidden group-has-[.ft-monitors:checked]/ft:block space-y-3 flex-1">
-              <h5 class="text-xl font-semibold text-textStrong">Monitors and Healthchecks</h5>
-              <p class="max-w-xl leading-normal">Ensure API reliability with automated monitors and health checks. Continuously track uptime, detect failures early, and receive instant alerts. Keep your services running smoothly with real-time insights and proactive issue resolution.</p>
-              <a class="block underline underline-offset-2 text-textBrand">Learn more</a>
-            </div>
-            <!-- end Monitors -->
-            <!-- Metrics -->
-            <div class="hidden group-has-[.ft-metrics:checked]/ft:block space-y-3 flex-1">
-              <h5 class="text-xl font-semibold text-textStrong">Custom metrics</h5>
-              <p class="max-w-xl leading-normal">Define and track custom metrics tailored to your API needs. Gain actionable insights, monitor key performance indicators, and optimize efficiency with real-time data visualization and alerts. Make data-driven decisions to enhance your API’s performance and reliability.</p>
-              <a class="block underline underline-offset-2 text-textBrand">Learn more</a>
-            </div>
-            <!-- end Metrics -->
-            <!-- API Catalog -->
-            <div class="hidden group-has-[.ft-apis:checked]/ft:block space-y-3 flex-1">
-              <h5 class="text-xl font-semibold text-textStrong">API Catalog and Documentation</h5>
-              <p class="max-w-xl leading-normal">Organize, manage, and document your APIs effortlessly with a dynamic API catalog. Provide clear, up-to-date documentation, improve discoverability, and streamline onboarding for developers with interactive guides, code samples, and real-time updates.</p>
-              <a class="block underline underline-offset-2 text-textBrand">Learn more</a>
-            </div>
-            <!-- end API Catalog -->
-            <!-- Change Detection -->
-            <div class="hidden group-has-[.ft-change:checked]/ft:block space-y-3 flex-1">
-              <h5 class="text-xl font-semibold text-textStrong">Change Detection and anomalies</h5>
-              <p class="max-w-xl leading-normal">Detect API changes and anomalies in real time. Stay ahead of unexpected behavior with automated monitoring, instant alerts, and detailed insights. Ensure stability, prevent disruptions, and maintain seamless performance with proactive change detection.</p>
-              <a class="block underline underline-offset-2 text-textBrand">Learn more</a>
-            </div>
-            <!-- end Change Detection -->
-            <!-- Alerts and Reports -->
-            <div class="hidden group-has-[.ft-alerts:checked]/ft:block space-y-3 flex-1">
-              <h5 class="text-xl font-semibold text-textStrong">Real time alerts</h5>
-              <p class="max-w-xl leading-normal">Stay informed with real-time alerts and comprehensive reports. Customize alert channels and receive detailed analytics to monitor your API's performance and reliability effectively.</p>
-              <a class="block underline underline-offset-2 text-textBrand">Learn more</a>
-            </div>
-            <!-- Custom Dashboards Detail Panel -->
-            <div class="hidden group-has-[.ft-dashboards:checked]/ft:block space-y-3 flex-1">
-              <h5 class="text-xl font-semibold text-textStrong">Custom Dashboards</h5>
-              <p class="max-w-xl leading-normal">
-                Tailor your monitoring experience with customizable dashboards. Aggregate and visualize key metrics that matter most to your operations, providing a comprehensive and intuitive overview of your system's performance.
-              </p>
-              <a href="#" class="block underline underline-offset-2 text-textBrand">Learn more</a>
-            </div>
-            <!-- end Alerts and Reports -->
+            <!-- end {{feature.title}} -->
+            {% endfor %}
+            {% endfor %}
             <div class="inline-flex gap-4 *:inline-flex *:items-center *:shadow *:border *:border-strokeStrong *:p-4 *:rounded-lg *:cursor-pointer select-none">
               <a class="group-has-[.ft-logs:checked]/ft:!border-strokeDisabled group-has-[.ft-logs:checked]/ft:shadow-none" onclick="cycleRadioButtons('features', -1)"><svg class="h-3 w-3"><use xlink:href="/assets/deps/sprite.svg#chevron-left"></use></svg></a>
               <a class="group-has-[.ft-reports:checked]/ft:!border-strokeDisabled group-has-[.ft-reports:checked]/ft:shadow-none" onclick="cycleRadioButtons('features', +1)"><svg class="h-3 w-3"><use xlink:href="/assets/deps/sprite.svg#chevron-right"></use></svg></a>
@@ -510,31 +462,27 @@ testimonials:
           <path d="M8.85166 51.4448C8.69432 52.2581 9.22611 53.045 10.0395 53.2024C10.8528 53.3597 11.6397 52.8279 11.7971 52.0146L8.85166 51.4448ZM50.2152 12.7874C51.0361 12.6764 51.6117 11.921 51.5007 11.1C51.3897 10.279 50.6343 9.70348 49.8133 9.81446L50.2152 12.7874ZM4.41835 41.327C3.99148 40.617 3.06988 40.3875 2.3599 40.8144C1.64992 41.2413 1.42042 42.1629 1.84729 42.8729L4.41835 41.327ZM8.60781 51.206L7.32227 51.979L7.323 51.9802L8.60781 51.206ZM12.2243 52.2568L11.6114 50.8878L11.6101 50.8883L12.2243 52.2568ZM23.1434 49.0118C23.8995 48.6732 24.238 47.7859 23.8995 47.0298C23.561 46.2737 22.6736 45.9351 21.9175 46.2737L23.1434 49.0118ZM10.3244 51.7297C11.7971 52.0146 11.797 52.0149 11.7969 52.0152C11.7969 52.0152 11.7969 52.0154 11.7969 52.0154C11.7969 52.0154 11.797 52.0151 11.7971 52.0146C11.7973 52.0135 11.7977 52.0114 11.7983 52.0083C11.7995 52.002 11.8016 51.9915 11.8046 51.977C11.8105 51.9479 11.8198 51.9026 11.8327 51.8418C11.8585 51.7202 11.8987 51.5366 11.9544 51.297C12.066 50.8179 12.2399 50.1155 12.4863 49.2383C12.9792 47.4825 13.7602 45.0333 14.9084 42.2744C17.2144 36.7337 20.9547 30.0577 26.7149 25.1964L24.78 22.9038C18.5074 28.1975 14.5361 35.3613 12.1387 41.1217C10.9353 44.0133 10.1167 46.5799 9.59795 48.4273C9.33841 49.3517 9.15345 50.0978 9.03262 50.6166C8.9722 50.8761 8.92778 51.0789 8.89806 51.2189C8.8832 51.289 8.87201 51.3433 8.86433 51.3812C8.86049 51.4001 8.85753 51.415 8.85543 51.4256C8.85438 51.4309 8.85354 51.4352 8.85291 51.4384C8.8526 51.44 8.85234 51.4413 8.85213 51.4424C8.85203 51.4429 8.85191 51.4435 8.85186 51.4438C8.85175 51.4443 8.85166 51.4448 10.3244 51.7297ZM26.7149 25.1964C38.5275 15.2273 47.9159 13.0982 50.2152 12.7874L49.8133 9.81446C46.9548 10.2009 37.0331 12.5628 24.78 22.9038L26.7149 25.1964ZM1.84729 42.8729L7.32227 51.979L9.89334 50.4331L4.41835 41.327L1.84729 42.8729ZM7.323 51.9802C8.46525 53.876 10.8515 54.5171 12.8385 53.6253L11.6101 50.8883C10.909 51.203 10.1972 50.9375 9.89262 50.4319L7.323 51.9802ZM12.8372 53.6259L23.1434 49.0118L21.9175 46.2737L11.6114 50.8878L12.8372 53.6259Z" fill="#0068FF"/>
         </svg>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-5 gap-6 [&>div]:p-5 [&>div]:border [&>div]:rounded-lg  [&>div]:flex [&>div]:flex-col 
+      <div class="grid grid-cols-6 sm:grid-cols-10 gap-6 [&>div]:p-5 [&>div]:border [&>div]:rounded-lg  [&>div]:flex [&>div]:flex-col 
             [&>div]:justify-between  [&>div]:items-start [&_.logo1]:my-2  [&_.logo1]:brightness-0 [&_.logo1]:dark:invert [&_.logo1]:opacity-50 [&_.logo1]:h-6
             [&_strong]:text-5xl [&_small]:text-xl  [&_.logo2]:!my-0 [&_.quote]:text-2xl
-            [&_.col-span-3]:p-8 [&_.col-span-3]:gap-8 [&_.quote]:leading-normal
+            [&_.col-span-6]:p-8 [&_.col-span-6]:gap-8 [&_.quote]:leading-normal
             ">
         {% for t in this.frontmatter.testimonials %}
             {% if t.stat %}
-            <div class="border-stroke{{t.theme}}-weak bg-fill{{t.theme}}-weak">
-              <div class="space-y-3 flex flex-col justify-self-center">
-                <strong>{{t.stat}}</strong>
-                <small>{{t.desc}}</small>
+            <div class="border-stroke{{t.theme}}-weak bg-fill{{t.theme}}-weak  col-span-3 sm:col-span-2 gap-2">
+              <div class="space-y-3 flex flex-col gap-2 justify-self-center">
+                <strong>{{t.stat}}</strong><small>{{t.desc}}</small>
               </div>
               <div><img class="h-8 logo1" src="/assets/img/customers/{{t.logo}}"/></div>
             </div>
             {% else %}
-            <div class="border-strokeBrand-weak col-span-3">
+            <div class="border-strokeBrand-weak col-span-6">
               <p class="quote">{{t.quote}}</p>
               <div class="flex items-center gap-3 w-full">
                 <img class="rounded-lg grayscale w-12" src="/assets/img/love/{{t.photo}}" />
                 <div class="flex-1 flex items-center justify-between">
-                  <div>
-                      <p>{{t.name}}</p>
-                      <p class="text-xs">{{t.title}}</p>
-                  </div>
-                    {% if t.logo_raw %}{{t.logo_raw}}{% else %}<img src="/assets/img/customers/{{t.logo}}" class="logo1 logo2" />{% endif %}
+                  <div class="flex-1"><p>{{t.name}}</p><p class="text-xs">{{t.title}}</p></div>
+                  <div class="flex-1">{% if t.logo_raw %}{{t.logo_raw}}{% else %}<img src="/assets/img/customers/{{t.logo}}" class="logo1 logo2" />{% endif %}</div>
                 </div>
               </div>
             </div>
