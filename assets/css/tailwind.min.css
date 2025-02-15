@@ -9364,7 +9364,7 @@ html:has(.drawer-toggle:checked) {
     opacity: 0;
     animation: fade-in linear forwards;
     animation-timeline: view();
-    animation-range: 150px 500px;
+    animation-range: 8% 40%;
   }
 
   @keyframes fade-in {
@@ -10768,10 +10768,6 @@ html:has(.drawer-toggle:checked) {
     margin-top: 0px;
   }
 
-  .sm\:\!mt-32 {
-    margin-top: 8rem !important;
-  }
-
   .sm\:mt-32 {
     margin-top: 8rem;
   }
@@ -10869,6 +10865,10 @@ html:has(.drawer-toggle:checked) {
     gap: 2.5rem;
   }
 
+  .sm\:gap-4 {
+    gap: 1rem;
+  }
+
   .sm\:gap-5 {
     gap: 1.25rem;
   }
@@ -10877,26 +10877,22 @@ html:has(.drawer-toggle:checked) {
     gap: 1.5rem;
   }
 
-  .sm\:gap-4 {
-    gap: 1rem;
-  }
-
   .sm\:space-x-8 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-x-reverse: 0;
     margin-right: calc(2rem * var(--tw-space-x-reverse));
     margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
-  .sm\:space-y-6 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-y-reverse: 0;
-    margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
-    margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
-  }
-
   .sm\:space-y-3 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-y-reverse: 0;
     margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
     margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
+  }
+
+  .sm\:space-y-6 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
   }
 
   .sm\:border-b-2 {
@@ -10916,12 +10912,12 @@ html:has(.drawer-toggle:checked) {
     padding: 5rem;
   }
 
-  .sm\:p-8 {
-    padding: 2rem;
-  }
-
   .sm\:p-5 {
     padding: 1.25rem;
+  }
+
+  .sm\:p-8 {
+    padding: 2rem;
   }
 
   .sm\:px-0 {
@@ -10970,12 +10966,12 @@ html:has(.drawer-toggle:checked) {
     line-height: 1.75rem;
   }
 
-  .sm\:leading-normal {
-    line-height: 1.5;
-  }
-
   .sm\:leading-10 {
     line-height: 2.5rem;
+  }
+
+  .sm\:leading-normal {
+    line-height: 1.5;
   }
 
   .sm\:text-current {
@@ -11375,10 +11371,6 @@ html:has(.drawer-toggle:checked) {
 
 .\[\&_\.col-span-6\]\:gap-8 .col-span-6 {
   gap: 2rem;
-}
-
-.\[\&_\.col-span-6\]\:p-8 .col-span-6 {
-  padding: 2rem;
 }
 
 .\[\&_\.logo1\]\:my-2 .logo1 {

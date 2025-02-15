@@ -229,7 +229,7 @@ platforms:
     </section>
 
     <div class="max-w-7xl px-3 w-full text-textWeak space-y-5 group/uc">
-      <h2 class="text-[2rem] leading-tight font-semibold text-textStrong">The most intuitive way to understand systems that matter</h2>
+      <h2 class="text-[2rem] leading-tight font-semibold text-textStrong">Monitoring and Observability, to understand systems that matter</h2>
       <p class="text-xl leading-normal">Just because you don't see an error, doesn't mean it's not happening. That's why we built both active <br/>and passive monitoring--<span class="text-textBrand">to keep you informed of the different systems you maintain.<span></p>
 
       <div class="flex justify-between py-8">
