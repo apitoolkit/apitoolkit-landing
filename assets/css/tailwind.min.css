@@ -2781,6 +2781,10 @@ img {
   }
 }
 
+.artboard {
+  width: 100%;
+}
+
 .avatar.placeholder > div {
   display: flex;
   align-items: center;
@@ -6050,10 +6054,20 @@ details.collapse summary::-webkit-details-marker {
   width: 320px;
 }
 
+.artboard.phone-1 {
+  width: 320px;
+  height: 568px;
+}
+
 .artboard.phone-1.horizontal,
       .artboard.phone-1.artboard-horizontal {
   width: 568px;
   height: 320px;
+}
+
+.artboard.phone-2 {
+  width: 375px;
+  height: 667px;
 }
 
 .artboard.phone-2.horizontal,
@@ -6062,10 +6076,20 @@ details.collapse summary::-webkit-details-marker {
   height: 375px;
 }
 
+.artboard.phone-3 {
+  width: 414px;
+  height: 736px;
+}
+
 .artboard.phone-3.horizontal,
       .artboard.phone-3.artboard-horizontal {
   width: 736px;
   height: 414px;
+}
+
+.artboard.phone-4 {
+  width: 375px;
+  height: 812px;
 }
 
 .artboard.phone-4.horizontal,
@@ -6074,10 +6098,20 @@ details.collapse summary::-webkit-details-marker {
   height: 375px;
 }
 
+.artboard.phone-5 {
+  width: 414px;
+  height: 896px;
+}
+
 .artboard.phone-5.horizontal,
       .artboard.phone-5.artboard-horizontal {
   width: 896px;
   height: 414px;
+}
+
+.artboard.phone-6 {
+  width: 320px;
+  height: 1024px;
 }
 
 .artboard.phone-6.horizontal,
@@ -7134,6 +7168,10 @@ html:has(.drawer-toggle:checked) {
 
 .aspect-auto {
   aspect-ratio: auto;
+}
+
+.aspect-square {
+  aspect-ratio: 1 / 1;
 }
 
 .h-0 {

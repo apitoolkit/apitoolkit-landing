@@ -4,10 +4,12 @@ testimonials:
       desc: faster <span class="underline underline-offset-4 decoration-dotted tooltip tooltip-right" data-tip="mean time to resolution">MTTR</span>
       logo: blockradar-full.svg
       theme: Warning
+      color: ffebe0
     - stat: 70% 
       desc: reduction in manual troubleshooting
       logo: sameday.svg
       theme: Brand
+      color: d3e5f0
     - quote: "We had a major upgrade planned for our iOS/Android app... After adding APItoolkit to our laravel app, we could see every new route and request. It gave me and the dev team complete confidence that our users weren't being affected by our changes. <br/><br/>... became the smoothest and LEAST STRESSFUL rollouts we have ever done. Really an amazing tool and now a permanent part of our workflow. Thank you!!"
       photo: larrison_morrison.jpeg
       name: Lazarus Morrison
@@ -22,23 +24,28 @@ testimonials:
       desc: faster system recovery
       logo: partna.svg
       theme: Error
+      color: e9daff
     - stat: 5x
       desc: faster incident debug times
       logo: coronams-logo.svg
       theme: Warning
+      color: ffebe0
     - stat: 9x 
       desc: less customer support calls 
       logo: platnova.png
       theme: Warning
+      color: d3e5f0
     - stat: 500ms 
       desc: shaved off improved endpoints
       logo: payfonte.svg
       theme: Brand
+      color: e6fae3
     - quote: "I fell for ApitoolKit because it integrated effortlessly with my application and provided valuable API insights. Whenever I needed help, the team was always ready to listen and resolve any issues. That's why we pay for their service."
       photo: david_odohi.jpeg
       name: Odohi David
       title: CTO of Grovepay
       logo: grovepay.svg
+      
 
 features:
     - title: Observability & monitoring 
@@ -142,6 +149,7 @@ platforms:
 ---
 
 ```=html
+<script src="https://unpkg.com/@rive-app/canvas"></script>
 <section class="flex flex-col space-y-48 items-center">
   <section class="space-y-28 mt-8 sm:mt-32">
       <div class="flex flex-col md:flex-row max-w-7xl w-full gap-10 px-3">
@@ -184,7 +192,30 @@ platforms:
             <span>Built for security & compliance</span>
           </div>
         </div>
-        <div class="md:w-[42%]"><img class="w-full" src="/assets/img/home/hero-img1.svg"/></div>
+        <div class="md:w-[42%]">
+            <!-- <img class="w-full" src="/assets/img/home/hero-img1.svg"/> -->
+            <canvas id="rive-hero-canvas" xwidth="200" class="w-full aspect-square xobject-contain"></canvas>
+        </div>
+        <script>
+            const canvas = document.getElementById("rive-hero-canvas");
+            const parentWidth = canvas.parentElement.clientWidth;
+            // Set the canvas width attribute to the parent's width.
+            const scale = window.devicePixelRatio;
+            canvas.width = parentWidth * scale;
+            canvas.height = parentWidth * 0.81 * scale;
+
+            const r = new rive.Rive({
+                src: '/assets/img/home/apitoolkit-hero.riv',
+                canvas: canvas,
+                autoplay: true,
+                artboard: "Artboard", // Optional. If not supplied the default is selected
+                // stateMachines: "bumpy",
+                onLoad: () => {
+                  r.resizeToCanvas(); 
+                  // r.resizeDrawingSurfaceToCanvas();
+                },
+            });
+        </script>
       </div>
 
       <div class="max-w-7xl px-3 w-full text-textWeak">
@@ -229,7 +260,7 @@ platforms:
     </section>
 
     <div class="max-w-7xl px-3 w-full text-textWeak space-y-5 group/uc">
-      <h2 class="text-[2rem] leading-tight font-semibold text-textStrong">Monitoring and Observability, to understand systems that matter</h2>
+      <h2 class="text-[2rem] leading-tight font-semibold text-textStrong">Monitoring and Observability<span class="text-textWeak">, built to understand all your systems</span></h2>
       <p class="text-xl leading-normal">Just because you don't see an error, doesn't mean it's not happening. That's why we built both active <br/>and passive monitoring--<span class="text-textBrand">to keep you informed of the different systems you maintain.<span></p>
 
       <div class="flex justify-between py-8">
@@ -251,9 +282,9 @@ platforms:
       {% for platform in this.frontmatter.platforms %}
       <!-- {{platform.title}} -->
       <div class="hidden group-has-[.uc-{{platform.id}}:checked]/uc:flex gap-16 flex-col md:flex-row">
-        <div class="sm:w-1/3 space-y-12 [&_p]:leading-normal [&_label]:p-2">
+        <div class="sm:w-1/3 divide-y divide-y-strokeDisabled [&_p]:leading-normal">
          {% for c in platform.children %}
-          <label class="flex gap-3 group cursor-pointer hover:bg-fillBrand-weak rounded-lg">
+          <label class="flex px-2 py-6 gap-3 group cursor-pointer hover:bg-fillBrand-weak rounded-lg">
             <input type="radio" name="{{platform.id}}" {% if forloop.first %}checked{% endif %}  class="hidden" value="1"/>
             <svg class="h-6 w-6 bg-fillBrand-weak !text-iconBrand p-0.5 mt-0.5 rounded-sm flex-shrink-0">
               <use class="block group-has-[:checked]:hidden" xlink:href="/assets/deps/sprite.svg#plus-square"></use>
@@ -269,7 +300,7 @@ platforms:
         </div>
 
         <div class="flex-1">
-            <img src="/assets/img/screenshots/analytics2.png" class="timeline-fade-in w-full shadow rounded-lg border border-strokeBrand-strong"/>
+            <img src="/assets/img/home/dashboard-012025.svg" class="timeline-fade-in w-full shadow rounded-lg border border-strokeBrand-strong"/>
         </div>
       </div>
       <!-- end {{platform.title}} -->
@@ -281,7 +312,7 @@ platforms:
       <div class="flex justify-between">
         <div class="flex-1 space-y-5">
           <h2 class="text-[2rem] leading-tight font-semibold text-textStrong">Put AI to work. <span class="text-textWeak">seriously</span></h2>
-          <p class="text-xl leading-normal">Have a sidekick who is analyzing your data in real time, sending you reports or answering your questions.</p>
+          <p class="text-xl leading-normal">Generate queries, create visualizations, fix bugs, monitor logs, payloads, and kickstart whole analyses - all from a prompt.</p>
           <a class="text-xl text-textBrand underline underline-offset-2 block ">Learn more</a>
         </div>
         <div class="flex items-end">
@@ -354,7 +385,7 @@ platforms:
             </div>
           </div>
           <div>
-            <img src="/assets/img/screenshots/analytics2.png" class="timeline-fade-in w-full shadow rounded-lg border border-strokeBrand-strong"/>
+            <img src="/assets/img/home/explore-012025.svg" class="timeline-fade-in w-full shadow rounded-lg border border-strokeBrand-strong"/>
           </div>
         </div>
       </div>
@@ -440,7 +471,7 @@ platforms:
           [&_img]:w-full 
           [&>div>*]:inline-block [&>div>*]:w-24 [&>div>*]:p-3 [&>div>*]:rounded-xl 
           [&>div>*]:border [&>div>*]:border-strokeWeak">
-          {% assign icons = "splunk-icon.svg,alibabacloud-icon.svg,apache_cassandra-icon.svg,logicmonitor-icon.svg,sematext-icon.svg,sentryio-icon.svg,tencent-logo.png,pulsar-logo.png,clickhouse-logo.png,coralognix.png" | split: "," %}
+          {% assign icons = "splunk-icon.svg,alibabacloud-icon.svg,apache_cassandra-icon.svg,logicmonitor-icon.svg,sematext-icon.svg,sentryio-icon.svg,tencent-logo.png,pulsar-logo.png,clickhouse-logo.png,coralognix.png,statsd-receiver.png,solacereceiver.jpg,zipkin-logo.png" | split: "," %}
           <div class="animate-[scroll-x_60s_linear_infinite] whitespace-nowrap flex w-[max-content] shrink-0 gap-5">
             {% for ic in icons %}<div><img src="/assets/img/opentelemetry-contrib-logos/{{ic}}"/></div>{% endfor %}
           </div>
@@ -469,7 +500,7 @@ platforms:
             ">
         {% for t in this.frontmatter.testimonials %}
             {% if t.stat %}
-            <div class="border-stroke{{t.theme}}-weak bg-fill{{t.theme}}-weak  col-span-3 sm:col-span-2 gap-2 p-3 sm:p-5">
+            <div class="border-stroke{{t.theme}}-weak bg-fill{{t.theme}}-weak  col-span-3 sm:col-span-2 gap-2 p-3 sm:p-5" style="background-color:#{{t.color}}">
               <div class="space-y-3 flex flex-col gap-2 justify-self-center">
                 <strong>{{t.stat}}</strong><small>{{t.desc}}</small>
               </div>
