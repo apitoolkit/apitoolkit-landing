@@ -149,6 +149,7 @@ platforms:
 ---
 
 ```=html
+<script src="https://unpkg.com/@rive-app/canvas"></script>
 <section class="flex flex-col space-y-48 items-center">
   <section class="space-y-28 mt-8 sm:mt-32">
       <div class="flex flex-col md:flex-row max-w-7xl w-full gap-10 px-3">
@@ -191,7 +192,30 @@ platforms:
             <span>Built for security & compliance</span>
           </div>
         </div>
-        <div class="md:w-[42%]"><img class="w-full" src="/assets/img/home/hero-img1.svg"/></div>
+        <div class="md:w-[42%]">
+            <!-- <img class="w-full" src="/assets/img/home/hero-img1.svg"/> -->
+            <canvas id="rive-hero-canvas" xwidth="200" class="w-full aspect-square xobject-contain"></canvas>
+        </div>
+        <script>
+            const canvas = document.getElementById("rive-hero-canvas");
+            const parentWidth = canvas.parentElement.clientWidth;
+            // Set the canvas width attribute to the parent's width.
+            const scale = window.devicePixelRatio;
+            canvas.width = parentWidth * scale;
+            canvas.height = parentWidth * 0.81 * scale;
+
+            const r = new rive.Rive({
+                src: '/assets/img/home/apitoolkit-hero.riv',
+                canvas: canvas,
+                autoplay: true,
+                artboard: "Artboard", // Optional. If not supplied the default is selected
+                // stateMachines: "bumpy",
+                onLoad: () => {
+                  r.resizeToCanvas(); 
+                  // r.resizeDrawingSurfaceToCanvas();
+                },
+            });
+        </script>
       </div>
 
       <div class="max-w-7xl px-3 w-full text-textWeak">
@@ -288,7 +312,7 @@ platforms:
       <div class="flex justify-between">
         <div class="flex-1 space-y-5">
           <h2 class="text-[2rem] leading-tight font-semibold text-textStrong">Put AI to work. <span class="text-textWeak">seriously</span></h2>
-          <p class="text-xl leading-normal">Have a sidekick who is analyzing your data in real time, sending you reports or answering your questions.</p>
+          <p class="text-xl leading-normal">Generate queries, create visualizations, fix bugs, monitor logs, payloads, and kickstart whole analyses - all from a prompt.</p>
           <a class="text-xl text-textBrand underline underline-offset-2 block ">Learn more</a>
         </div>
         <div class="flex items-end">
