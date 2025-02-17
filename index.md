@@ -300,7 +300,7 @@ platforms:
         </div>
 
         <div class="flex-1">
-            <img src="/assets/img/screenshots/analytics2.png" class="timeline-fade-in w-full shadow rounded-lg border border-strokeBrand-strong"/>
+            <img src="/assets/img/home/dashboard-012025.svg" class="timeline-fade-in w-full shadow rounded-lg border border-strokeBrand-strong"/>
         </div>
       </div>
       <!-- end {{platform.title}} -->
@@ -385,7 +385,7 @@ platforms:
             </div>
           </div>
           <div>
-            <img src="/assets/img/screenshots/analytics2.png" class="timeline-fade-in w-full shadow rounded-lg border border-strokeBrand-strong"/>
+            <img src="/assets/img/home/explore-012025.svg" class="timeline-fade-in w-full shadow rounded-lg border border-strokeBrand-strong"/>
           </div>
         </div>
       </div>
@@ -471,7 +471,7 @@ platforms:
           [&_img]:w-full 
           [&>div>*]:inline-block [&>div>*]:w-24 [&>div>*]:p-3 [&>div>*]:rounded-xl 
           [&>div>*]:border [&>div>*]:border-strokeWeak">
-          {% assign icons = "splunk-icon.svg,alibabacloud-icon.svg,apache_cassandra-icon.svg,logicmonitor-icon.svg,sematext-icon.svg,sentryio-icon.svg,tencent-logo.png,pulsar-logo.png,clickhouse-logo.png,coralognix.png" | split: "," %}
+          {% assign icons = "splunk-icon.svg,alibabacloud-icon.svg,apache_cassandra-icon.svg,logicmonitor-icon.svg,sematext-icon.svg,sentryio-icon.svg,tencent-logo.png,pulsar-logo.png,clickhouse-logo.png,coralognix.png,statsd-receiver.png,solacereceiver.jpg,zipkin-logo.png" | split: "," %}
           <div class="animate-[scroll-x_60s_linear_infinite] whitespace-nowrap flex w-[max-content] shrink-0 gap-5">
             {% for ic in icons %}<div><img src="/assets/img/opentelemetry-contrib-logos/{{ic}}"/></div>{% endfor %}
           </div>
