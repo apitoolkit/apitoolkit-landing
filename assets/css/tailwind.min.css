@@ -7775,6 +7775,12 @@ html:has(.drawer-toggle:checked) {
   margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
 }
 
+.space-y-20 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(5rem * var(--tw-space-y-reverse));
+}
+
 .space-y-28 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(7rem * calc(1 - var(--tw-space-y-reverse)));
@@ -7809,12 +7815,6 @@ html:has(.drawer-toggle:checked) {
   --tw-space-y-reverse: 0;
   margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(2rem * var(--tw-space-y-reverse));
-}
-
-.space-y-20 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(5rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(5rem * var(--tw-space-y-reverse));
 }
 
 .space-y-reverse > :not([hidden]) ~ :not([hidden]) {
@@ -11080,8 +11080,8 @@ html:has(.drawer-toggle:checked) {
     width: 40%;
   }
 
-  .md\:w-\[50\%\] {
-    width: 50%;
+  .md\:w-\[45\%\] {
+    width: 45%;
   }
 
   .md\:w-\[min\(100\%\2c 1200px\)\] {
@@ -11099,10 +11099,6 @@ html:has(.drawer-toggle:checked) {
   .md\:w-max {
     width: -moz-max-content;
     width: max-content;
-  }
-
-  .md\:w-\[45\%\] {
-    width: 45%;
   }
 
   .md\:max-w-\[500px\] {

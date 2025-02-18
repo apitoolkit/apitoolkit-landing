@@ -57,42 +57,37 @@ features:
               learnmore: /
             - icon: activity
               id: errors
-              title: Errors and Performance tracking
+              title: Errors and Performance
               details: Monitor API errors and performance in real time. Detect issues instantly, analyze trends, and optimize response times with detailed insights. Improve reliability with automated tracking, alerting, and in-depth analytics to ensure a seamless user experience. 
-              learnmore: /
-            - icon: compass 
-              id: monitors
-              title: Monitors and healthchecks
-              details: Ensure API reliability with automated monitors and health checks. Continuously track uptime, detect failures early, and receive instant alerts. Keep your services running smoothly with real-time insights and proactive issue resolution.
               learnmore: /
             - icon: bar-chart
               id: metrics
-              title: Custom metrics
+              title: Metrics and dashboards
               details: Define and track custom metrics tailored to your API needs. Gain actionable insights, monitor key performance indicators, and optimize efficiency with real-time data visualization and alerts. Make data-driven decisions to enhance your API’s performance and reliability.
               learnmore: /
     - title: API management
       links: 
             - icon: layout 
               id: apis
-              title: API Catalog and Documentation 
+              title: API Catalog and Docs
               details: Organize, manage, and document your APIs effortlessly with a dynamic API catalog. Provide clear, up-to-date documentation, improve discoverability, and streamline onboarding for developers with interactive guides, code samples, and real-time updates.
               learnmore: /
             - icon: copy
               id: change
-              title: Change detection and anomalies
+              title: Anomalies and Changes 
               details: Detect API changes and anomalies in real time. Stay ahead of unexpected behavior with automated monitoring, instant alerts, and detailed insights. Ensure stability, prevent disruptions, and maintain seamless performance with proactive change detection.
               learnmore: /
-    - title: Alerts and reports
+    - title: Alerts and Monitors 
       links: 
+            - icon: compass 
+              id: monitors
+              title: Monitors and healthchecks
+              details: Ensure API reliability with automated monitors and health checks. Continuously track uptime, detect failures early, and receive instant alerts. Keep your services running smoothly with real-time insights and proactive issue resolution.
+              learnmore: /
             - icon: radio 
               id: alerts 
-              title: Real time alert channels
+              title: Alerts and notifications
               details: Stay informed with real-time alerts and comprehensive reports. Customize alert channels and receive detailed analytics to monitor your API's performance and reliability effectively.
-              learnmore: /
-            - icon: grid 
-              id: dashboards 
-              title: Custom dashboards
-              details: Tailor your monitoring experience with customizable dashboards. Aggregate and visualize key metrics that matter most to your operations, providing a comprehensive and intuitive overview of your system's performance.
               learnmore: /
             - icon: calendar 
               id: reports
@@ -193,8 +188,9 @@ platforms:
           </div>
         </div>
         <div class="md:w-[45%]">
+            <img class="w-full" src="/assets/img/home/hero-dashscreen.svg"/>
             <!-- <img class="w-full" src="/assets/img/home/hero-img1.svg"/> -->
-            <canvas id="rive-hero-canvas" xwidth="200" class="w-full aspect-square xobject-contain"></canvas>
+            <!-- <canvas id="rive-hero-canvas" xwidth="200" class="w-full aspect-square xobject-contain"></canvas>-->
         </div>
         <script>
             const canvas = document.getElementById("rive-hero-canvas");
@@ -281,7 +277,7 @@ platforms:
 
       {% for platform in this.frontmatter.platforms %}
       <!-- {{platform.title}} -->
-      <div class="hidden group-has-[.uc-{{platform.id}}:checked]/uc:flex gap-16 flex-col md:flex-row">
+      <div class="hidden group-has-[.uc-{{platform.id}}:checked]/uc:flex gap-5 flex-col md:flex-row">
         <div class="sm:w-1/3 divide-y divide-y-strokeDisabled [&_p]:leading-normal">
          {% for c in platform.children %}
           <label class="flex px-2 py-6 gap-3 group cursor-pointer hover:bg-fillBrand-weak rounded-lg">
@@ -345,7 +341,7 @@ platforms:
     <div class="max-w-7xl px-3 w-full text-textWeak space-y-5 group/ft">
       <h2 class="text-[2rem] leading-tight font-semibold text-textStrong">Built with features that matter to engineers like us</h2>
       <p class="text-xl leading-normal">Collect, store, and analyze every single log or event <br/>without limits on a platform that gives you complete control.</p>
-      <div class="flex gap-16 pt-5">
+      <div class="flex gap-8 pt-5">
         <div class="hidden sm:block text-textStrong space-y-8 [&_input]:hidden [&_label]:inline-flex [&_label]:px-2  [&_label]:items-center [&_label]:gap-2   
             [&_label]:border-l-2 [&_label]:border-transparent [&_svg]:h-4 [&_svg]:w-4 
             ">
