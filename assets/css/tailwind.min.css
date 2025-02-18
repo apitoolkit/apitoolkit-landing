@@ -7082,6 +7082,10 @@ html:has(.drawer-toggle:checked) {
   margin-top: 2rem;
 }
 
+.mt-\[-3\.7rem\] {
+  margin-top: -3.7rem;
+}
+
 .mt-\[20px\] {
   margin-top: 20px;
 }
@@ -7773,6 +7777,12 @@ html:has(.drawer-toggle:checked) {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
+
+.space-y-20 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(5rem * var(--tw-space-y-reverse));
 }
 
 .space-y-28 > :not([hidden]) ~ :not([hidden]) {
@@ -11074,8 +11084,8 @@ html:has(.drawer-toggle:checked) {
     width: 40%;
   }
 
-  .md\:w-\[42\%\] {
-    width: 42%;
+  .md\:w-\[45\%\] {
+    width: 45%;
   }
 
   .md\:w-\[min\(100\%\2c 1200px\)\] {
