@@ -157,6 +157,8 @@ platforms:
           new Typewriter('#heading-typewriter', {
             strings: ['customers notice', 'your inbox explodes', 'they cause downtime'],
             autoStart: true,
+            pauseFor: 10000,
+            cursor: "",
             loop: true,
           });
           </script>
@@ -188,9 +190,9 @@ platforms:
           </div>
         </div>
         <div class="md:w-[45%]">
-            <img class="w-full" src="/assets/img/home/hero-dashscreen.svg"/>
+            <!-- <img class="w-full" src="/assets/img/home/hero-dashscreen.svg"/> -->
             <!-- <img class="w-full" src="/assets/img/home/hero-img1.svg"/> -->
-            <!-- <canvas id="rive-hero-canvas" xwidth="200" class="w-full aspect-square xobject-contain"></canvas>-->
+            <canvas id="rive-hero-canvas" xwidth="200" class="w-full aspect-square xobject-contain"></canvas>
         </div>
         <script>
             const canvas = document.getElementById("rive-hero-canvas");
