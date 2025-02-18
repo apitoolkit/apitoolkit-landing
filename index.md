@@ -157,7 +157,7 @@ platforms:
           new Typewriter('#heading-typewriter', {
             strings: ['customers notice', 'your inbox explodes', 'they cause downtime'],
             autoStart: true,
-            pauseFor: 10000,
+            pauseFor: 14000,
             cursor: "",
             loop: true,
           });
