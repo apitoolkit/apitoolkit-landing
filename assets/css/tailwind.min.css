@@ -7082,6 +7082,10 @@ html:has(.drawer-toggle:checked) {
   margin-top: 2rem;
 }
 
+.mt-\[-3\.7rem\] {
+  margin-top: -3.7rem;
+}
+
 .mt-\[20px\] {
   margin-top: 20px;
 }

@@ -189,7 +189,7 @@ platforms:
             <span>Built for security & compliance</span>
           </div>
         </div>
-        <div class="md:w-[45%]">
+        <div class="md:w-[45%] mt-[-3.7rem]">
             <!-- <img class="w-full" src="/assets/img/home/hero-dashscreen.svg"/> -->
             <!-- <img class="w-full" src="/assets/img/home/hero-img1.svg"/> -->
             <canvas id="rive-hero-canvas" xwidth="200" class="w-full aspect-square xobject-contain"></canvas>
@@ -209,8 +209,8 @@ platforms:
                 artboard: "Artboard", // Optional. If not supplied the default is selected
                 // stateMachines: "bumpy",
                 onLoad: () => {
-                  r.resizeToCanvas(); 
-                  // r.resizeDrawingSurfaceToCanvas();
+                  // r.resizeToCanvas(); 
+                  r.resizeDrawingSurfaceToCanvas();
                 },
             });
         </script>
