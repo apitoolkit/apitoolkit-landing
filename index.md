@@ -151,8 +151,8 @@ platforms:
 ```=html
 <script src="https://unpkg.com/@rive-app/canvas"></script>
 <section class="flex flex-col space-y-48 items-center">
-  <section class="space-y-28 mt-8 sm:mt-32">
-      <div class="flex flex-col md:flex-row max-w-7xl w-full gap-10 px-3">
+  <section class="space-y-20 mt-8 sm:mt-32">
+      <div class="flex flex-col md:flex-row max-w-7xl w-full gap-5 px-3">
         <div class="space-y-8 flex-1">
           <h1 class="text-[2.5rem]  font-semibold leading-tight sm:leading-10 sm:space-y-3">
             <span class="block">Find and fix production issues<span class="text-textDisabled">,</span></span>
@@ -192,7 +192,7 @@ platforms:
             <span>Built for security & compliance</span>
           </div>
         </div>
-        <div class="md:w-[42%]">
+        <div class="md:w-[45%]">
             <!-- <img class="w-full" src="/assets/img/home/hero-img1.svg"/> -->
             <canvas id="rive-hero-canvas" xwidth="200" class="w-full aspect-square xobject-contain"></canvas>
         </div>
