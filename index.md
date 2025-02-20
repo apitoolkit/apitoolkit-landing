@@ -53,7 +53,7 @@ features:
             - icon: align-left 
               id: logs
               title: Logs and traces analysis
-              details: Gain deep insights into your API performance with real-time logs and trace analysis. Quickly identify bottlenecks, debug issues efficiently, and enhance reliability with structured logging, detailed traces, and actionable analytics all in one powerful toolkit.
+              details: Query all your logs and correlate them with trace breakdowns or the requests which triggered the logs. 
               learnmore: /
             - icon: activity
               id: errors
@@ -258,8 +258,8 @@ platforms:
     </section>
 
     <div class="max-w-7xl px-3 w-full text-textWeak space-y-5 group/uc">
-      <h2 class="text-[2rem] leading-tight font-semibold text-textStrong">Monitoring and Observability<span class="text-textWeak">, built to understand all your systems</span></h2>
-      <p class="text-xl leading-normal">Just because you don't see an error, doesn't mean it's not happening. That's why we built both active <br/>and passive monitoring--<span class="text-textBrand">to keep you informed of the different systems you maintain.<span></p>
+      <h2 class="text-3xl leading-tight font-semibold text-textStrong">Monitoring and Observability<span class="text-textWeak">, built to understand all your systems</span></h2>
+      <p class="text-2xl leading-normal">Just because you don't see an error, doesn't mean it's not happening. That's why we built both active <br/>and passive monitoring--<span class="text-textBrand">to keep you informed of the different systems you maintain.<span></p>
 
       <div class="flex justify-between py-8">
         <div class="inline-flex justify-center bg-fillWeak border border-strokeWeak rounded-lg 
@@ -290,8 +290,8 @@ platforms:
             </svg>
             <div class="flex-1 space-y-2">
                 <h5 class="text-xl font-semibold text-textStrong">{{c.title}}</h5>
-                <p class="hidden group-has-[:checked]:block">{{c.details}}</p>
-                <a class="hidden group-has-[:checked]:block text-textBrand underline block" href="{{c.learnmore}}">Learn more</a>
+                <p class="text-lg hidden group-has-[:checked]:block">{{c.details}}</p>
+                <a class="text-lg hidden group-has-[:checked]:block text-textBrand underline block" href="{{c.learnmore}}">Learn more</a>
             </div>
           </label>
           {% endfor %}
@@ -309,8 +309,8 @@ platforms:
     <div class="max-w-7xl px-3 w-full text-textWeak space-y-5">
       <div class="flex justify-between">
         <div class="flex-1 space-y-5">
-          <h2 class="text-[2rem] leading-tight font-semibold text-textStrong">Put AI to work. <span class="text-textWeak">seriously</span></h2>
-          <p class="text-xl leading-normal">Generate queries, create visualizations, fix bugs, monitor logs, payloads, and kickstart whole analyses - all from a prompt.</p>
+          <h2 class="text-3xl leading-tight font-semibold text-textStrong">Put AI to work. <span class="text-textWeak">seriously</span></h2>
+          <p class="max-w-prose text-2xl leading-normal">Generate queries, create visualizations, fix bugs, monitor logs, payloads, and kickstart whole analyses - all from a prompt.</p>
           <a class="text-xl text-textBrand underline underline-offset-2 block ">Learn more</a>
         </div>
         <div class="flex items-end">
@@ -341,16 +341,17 @@ platforms:
 
     <!-- FEATURES -->
     <div class="max-w-7xl px-3 w-full text-textWeak space-y-5 group/ft">
-      <h2 class="text-[2rem] leading-tight font-semibold text-textStrong">Built with features that matter to engineers like us</h2>
-      <p class="text-xl leading-normal">Collect, store, and analyze every single log or event <br/>without limits on a platform that gives you complete control.</p>
-      <div class="flex gap-8 pt-5">
+      <h2 class="text-3xl leading-tight font-semibold text-textStrong">Built with features that matter to engineers like us</h2>
+      <!--<p class="text-2xl max-w-prose leading-normal">Collect, store, and analyze every single log or event without limits on a platform that gives you complete control.</p> -->
+      <a class="block underline underline-offset-2 text-textBrand text-xl" href="/docs/features/">Learn more</a>
+      <div class="flex gap-10 pt-5">
         <div class="hidden sm:block text-textStrong space-y-8 [&_input]:hidden [&_label]:inline-flex [&_label]:px-2  [&_label]:items-center [&_label]:gap-2   
             [&_label]:border-l-2 [&_label]:border-transparent [&_svg]:h-4 [&_svg]:w-4 
             ">
           {% for feature in this.frontmatter.features %}
           {% assign ischecked = forloop.first %}
-          <div class="flex flex-col *:flex *:gap-2 [&>label]:text-lg [&>label]:p-1">
-            <h4 class="text-sm font-semibold pb-3 pl-2.5">{{feature.title}}</h4>
+          <div class="flex flex-col *:flex *:gap-2 [&>label]:text-xl [&>label]:p-1">
+            <h4 class="text-md font-semibold pb-3 pl-2.5">{{feature.title}}</h4>
             {% for f in feature.links %}
             <label class="cursor-pointer has-[:checked]:!border-fillBrand-strong has-[:checked]:bg-fillBrand-weak"><svg><use xlink:href="/assets/deps/sprite.svg#{{f.icon}}"></use></svg>{{f.title}}<input {% if ischecked and forloop.first %}checked{% endif %}  type="radio" class="hidden ft ft-{{f.id}}" name="features"/></label>
             {% endfor %}
@@ -370,9 +371,9 @@ platforms:
             {% for f in feature.links %}
             <!-- {{feature.title}} -->
             <div class="hidden group-has-[.ft-{{f.id}}:checked]/ft:block space-y-3 flex-1">
-              <h5 class="text-xl font-semibold text-textStrong">{{f.title}}</h5>
-              <p class="max-w-xl leading-normal">{{f.details}}</p>
-              <a href="{{f.learnmore}}" class="block underline underline-offset-2 text-textBrand">Learn more</a>
+              <h5 class="text-2xl font-semibold text-textStrong">{{f.title}}</h5>
+              <p class="text-xl max-w-xl leading-normal">{{f.details}}</p>
+              <a href="{{f.learnmore}}" class="block underline underline-offset-2 text-textBrand text-xl">Learn more</a>
             </div>
             <!-- end {{feature.title}} -->
             {% endfor %}
@@ -391,13 +392,13 @@ platforms:
 
     <!-- FLEXIBLE DEPLOYMENTS-->
     <div class="max-w-7xl px-3 w-full text-textWeak space-y-5">
-      <h2 class="text-[2rem] leading-tight font-semibold text-textStrong">Flexible deployment options for every company </h2>
-      <p class="text-xl leading-normal">Regardless of your company's size or compliance requirements, APItoolkit operates <br/>within your business and regulatory constraints.</p>
+      <h2 class="text-3xl leading-tight font-semibold text-textStrong">Flexible deployment options for every company </h2>
+      <p class="text-2xl leading-normal">Regardless of your company's size or compliance requirements, APItoolkit operates <br/>within your business and regulatory constraints.</p>
       <div>
         <a href="https://calendar.app.google/1a4HG5GZYv1sjjZG6" target="_blank" class="btn py-3 px-6 rounded-xl bg-fillBrand-strong text-textInverse-strong shadow ">Book a demo</a>
         <a href="https://app.apitoolkit.io" class="btn py-3 px-6 rounded-xl bg-transparent border border-fillBrand-strong text-fillBrand-strong shadow " >Start 30 day free trial</a>
       </div>
-      <div class="flex flex-col md:flex-row gap-10 pt-5 *:shadow *:flex-1 *:p-6 *:space-y-5 *:rounded-xl *:border [&_svg]:w-5 [&_svg]:h-5 [&_svg]:!text-iconBrand">
+      <div class="text-xl flex flex-col md:flex-row gap-10 pt-5 *:shadow *:flex-1 *:p-6 *:space-y-5 *:rounded-xl *:border [&_svg]:w-5 [&_svg]:h-5 [&_svg]:!text-iconBrand">
         <div class="border-strokeBrand-weak ">
           <div class="inline-block p-3 bg-fillBrand-weak rounded-full"><svg><use xlink:href="/assets/deps/sprite.svg#cloud"></use></svg></div>
           <div class="flex flex-col">
@@ -437,7 +438,7 @@ platforms:
     <!-- INTEGRATIONS-->
     <div class="text-textWeak space-y-5 w-full flex flex-col items-center justify-center">
       <div class="max-w-7xl px-3 w-full space-y-5">
-        <h2 class="text-[2rem] leading-tight font-semibold text-textStrong">780+ Integrations with your favorite tech stacks, powered by OpenTelemetry</h2>
+        <h2 class="text-3xl leading-tight font-semibold text-textStrong">780+ Integrations with your favorite tech stacks, powered by OpenTelemetry</h2>
         <a class="block text-textBrand underline underline-offset-2">View all integrations.</a>
       </div>
       <div class="space-y-5 pt-5 mask-edges">
@@ -483,7 +484,7 @@ platforms:
 
     <!-- REAL RESULTS FROM CUSTOMERS -->
     <div class="max-w-7xl px-3 w-full text-textStrong space-y-5">
-      <h2 class="text-[2rem] leading-tight font-semibold text-textStrong">Real results for real customers</h2>
+      <h2 class="text-3xl leading-tight font-semibold text-textStrong">Real results for real customers</h2>
       <a class="block text-textBrand underline underline-offset-2">View all case studies.</a>
       <div class="relative hidden sm:flex items-end justify-end !-mt-5b">
         <svg class="absolute -mb-3" width="253" height="55" viewBox="0 0 253 55" fill="none" xmlns="http://www.w3.org/2000/svg">

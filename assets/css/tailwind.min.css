@@ -11409,6 +11409,11 @@ html:has(.drawer-toggle:checked) {
   line-height: 1.75rem;
 }
 
+.\[\&\>label\]\:text-xl>label {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
 .\[\&_\.col-span-3\]\:gap-8 .col-span-3 {
   gap: 2rem;
 }
