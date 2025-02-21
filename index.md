@@ -54,29 +54,29 @@ features:
               id: logs
               title: Logs and traces analysis
               details: Query all your logs and correlate them with trace breakdowns or the requests which triggered the logs. 
-              learnmore: /
+              learnmore: /features/api-logs-and-metrics
             - icon: activity
               id: errors
               title: Errors and Performance
               details: Monitor API errors and performance in real time. Detect issues instantly, analyze trends, and optimize response times with detailed insights. Improve reliability with automated tracking, alerting, and in-depth analytics to ensure a seamless user experience. 
-              learnmore: /
+              learnmore: /features/error-tracking
             - icon: bar-chart
               id: metrics
               title: Metrics and dashboards
               details: Define and track custom metrics tailored to your API needs. Gain actionable insights, monitor key performance indicators, and optimize efficiency with real-time data visualization and alerts. Make data-driven decisions to enhance your API’s performance and reliability.
-              learnmore: /
+              learnmore: /features/api-management
     - title: API management
       links: 
             - icon: layout 
               id: apis
               title: API Catalog and Docs
               details: Organize, manage, and document your APIs effortlessly with a dynamic API catalog. Provide clear, up-to-date documentation, improve discoverability, and streamline onboarding for developers with interactive guides, code samples, and real-time updates.
-              learnmore: /
+              learnmore: /features/api-management
             - icon: copy
               id: change
               title: Anomalies and Changes 
               details: Detect API changes and anomalies in real time. Stay ahead of unexpected behavior with automated monitoring, instant alerts, and detailed insights. Ensure stability, prevent disruptions, and maintain seamless performance with proactive change detection.
-              learnmore: /
+              learnmore: /features/api-observability
     - title: Alerts and Monitors 
       links: 
             - icon: compass 
@@ -311,7 +311,7 @@ platforms:
         <div class="flex-1 space-y-5">
           <h2 class="text-3xl leading-tight font-semibold text-textStrong">Put AI to work. <span class="text-textWeak">seriously</span></h2>
           <p class="max-w-prose text-2xl leading-normal">Generate queries, create visualizations, fix bugs, monitor logs, payloads, and kickstart whole analyses - all from a prompt.</p>
-          <a class="text-xl text-textBrand underline underline-offset-2 block ">Learn more</a>
+          <a href="/docs/features/" class="text-xl text-textBrand underline underline-offset-2 block ">Learn more</a>
         </div>
         <div class="flex items-end">
           <div class="inline-flex gap-4  *:p-4  *:inline-flex *:items-center">
