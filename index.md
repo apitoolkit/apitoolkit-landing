@@ -54,7 +54,7 @@ features:
               id: logs
               title: Logs and traces analysis
               details: Query all your logs and correlate them with trace breakdowns or the requests which triggered the logs. 
-              learnmore: /features/api-logs-and-metrics/
+              learnmore: /features/api-logs-and-metrics
             - icon: activity
               id: errors
               title: Errors and Performance
@@ -76,7 +76,7 @@ features:
               id: change
               title: Anomalies and Changes 
               details: Detect API changes and anomalies in real time. Stay ahead of unexpected behavior with automated monitoring, instant alerts, and detailed insights. Ensure stability, prevent disruptions, and maintain seamless performance with proactive change detection.
-              learnmore: /features/api-observability/
+              learnmore: /features/api-observability
     - title: Alerts and Monitors 
       links: 
             - icon: compass 
