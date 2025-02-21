@@ -69,14 +69,16 @@
     <script defer src="/assets/js/main.js"></script>
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <script>
-      function cycleRadioButtons(name, direction) {
-        // direction: +1 for next, -1 for previous
-        const radios = document.querySelectorAll(`input[name="${name}"]`);
-        let currentIndex = Array.from(radios).findIndex(radio => radio.checked);
-        if (currentIndex === -1) currentIndex = 0;
-        const newIndex = (currentIndex + direction + radios.length) % radios.length;
-        radios[newIndex].checked = true;
-      }
+    function cycleRadioButtons(name, direction) {
+      const radios = document.getElementsByName(name);
+      let currentIndex = Array.from(radios).findIndex(radio => radio.checked);
+      if (currentIndex === -1) currentIndex = 0; // Default to first if none checked
+      let newIndex = (currentIndex + direction + radios.length) % radios.length;
+      radios[newIndex].checked = true;
+      
+      // Debugging: Log the selected feature
+      console.log(`Selected feature: ${radios[newIndex].dataset.id}`);
+    }
     </script>
 
     <style>
