@@ -340,12 +340,11 @@ platforms:
     </div>
 
     <!-- FEATURES -->
- <div class="max-w-7xl px-3 w-full text-textWeak space-y-5 group/ft">
+<div class="max-w-7xl px-3 w-full text-textWeak space-y-5">
   <h2 class="text-3xl leading-tight font-semibold text-textStrong">Built with features that matter to engineers like us</h2>
   <a class="block underline underline-offset-2 text-textBrand text-xl" href="/docs/features/">Learn more</a>
   <div class="flex gap-10 pt-5">
-    <!-- Sidebar -->
-    <div class="hidden sm:block text-textStrong space-y-8 [&_input]:hidden [&_label]:inline-flex [&_label]:px-2 [&_label]:items-center [&_label]:gap-2   
+    <div class="hidden sm:block text-textStrong space-y-8 [&_input]:hidden [&_label]:inline-flex [&_label]:px-2  [&_label]:items-center [&_label]:gap-2   
         [&_label]:border-l-2 [&_label]:border-transparent [&_svg]:h-4 [&_svg]:w-4">
       {% for feature in this.frontmatter.features %}
       {% assign ischecked = forloop.first %}
@@ -354,7 +353,7 @@ platforms:
         {% for f in feature.links %}
         <label class="cursor-pointer has-[:checked]:!border-fillBrand-strong has-[:checked]:bg-fillBrand-weak">
           <svg><use xlink:href="/assets/deps/sprite.svg#{{f.icon}}"></use></svg>{{f.title}}
-          <input {% if ischecked and forloop.first %}checked{% endif %} type="radio" class="hidden ft ft-{{f.id}}" name="features" data-id="{{f.id}}"/>
+          <input {% if ischecked and forloop.first %}checked{% endif %} type="radio" class="hidden" name="features" data-id="{{f.id}}" onchange="showFeature(this)">
         </label>
         {% endfor %}
       </div>
@@ -365,12 +364,11 @@ platforms:
         <a href="https://app.apitoolkit.io">Start free 30 day trial</a>
       </div>
     </div>
-    <!-- Content Area -->
     <div class="flex-1 space-y-8">
       <div class="flex-col-reverse flex sm:flex-row sm:items-end gap-5">
         {% for feature in this.frontmatter.features %}
         {% for f in feature.links %}
-        <div class="hidden group-has-[.ft-{{f.id}}:checked]/ft:block space-y-3 flex-1" data-feature-id="{{f.id}}">
+        <div id="feature-{{f.id}}" class="hidden space-y-3 flex-1">
           <h5 class="text-2xl font-semibold text-textStrong">{{f.title}}</h5>
           <p class="text-xl max-w-xl leading-normal">{{f.details}}</p>
           <a href="{{f.learnmore}}" class="block underline underline-offset-2 text-textBrand text-xl">Learn more</a>
@@ -378,8 +376,8 @@ platforms:
         {% endfor %}
         {% endfor %}
         <div class="inline-flex gap-4 *:inline-flex *:items-center *:shadow *:border *:border-strokeStrong *:p-4 *:rounded-lg *:cursor-pointer select-none">
-          <a class="group-has-[.ft-logs:checked]/ft:!border-strokeDisabled group-has-[.ft-logs:checked]/ft:shadow-none" onclick="cycleRadioButtons('features', -1)"><svg class="h-3 w-3"><use xlink:href="/assets/deps/sprite.svg#chevron-left"></use></svg></a>
-          <a class="group-has-[.ft-reports:checked]/ft:!border-strokeDisabled group-has-[.ft-reports:checked]/ft:shadow-none" onclick="cycleRadioButtons('features', +1)"><svg class="h-3 w-3"><use xlink:href="/assets/deps/sprite.svg#chevron-right"></use></svg></a>
+          <a onclick="cycleRadioButtons('features', -1)"><svg class="h-3 w-3"><use xlink:href="/assets/deps/sprite.svg#chevron-left"></use></svg></a>
+          <a onclick="cycleRadioButtons('features', +1)"><svg class="h-3 w-3"><use xlink:href="/assets/deps/sprite.svg#chevron-right"></use></svg></a>
         </div>
       </div>
       <div>
