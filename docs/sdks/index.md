@@ -32,7 +32,9 @@ pages:
 
 # SDK Guides
 
-In these guides, you will learn how to integrate APItoolkit into your application using any of our 17+ platform SDKs in different programming languages and frameworks. Even if your application doesn't use a web framework, **these SDKs are also compatible with different HTTP client libraries (e.g., <i class="fa-brands fa-js"></i> fetch, <i class="fa-brands fa-js"></i> axios, <i class="fa-brands fa-js"></i> xhr, <i class="fa-brands fa-php"></i> guzzle, <i class="fa-brands fa-golang"></i> tls, etc.)**. Kindly select your preferred programming language below to get started.
+In these guides, you will learn how to integrate APItoolkit into your application using any of our 17+ platform SDKs in different programming languages and frameworks. Even if your application doesn't use a web framework,  
+**these SDKs are also compatible with different HTTP client libraries (e.g., <i class="fa-brands fa-js"></i> fetch, <i class="fa-brands fa-js"></i> axios, <i class="fa-brands fa-js"></i> xhr, <i class="fa-brands fa-php"></i> guzzle, <i class="fa-brands fa-golang"></i> tls, etc.)**.  
+Kindly select your preferred programming language below to get started.
 
 ```=html
 <hr />

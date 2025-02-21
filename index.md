@@ -102,13 +102,13 @@ platforms:
       children:
             - title: Catch breaking changes 
               details: Spot unexpected changes in API responses or data structures-your services or third-party calls-before they slip into production. 
-              learnmore: /
+              learnmore: /features/error-tracking
             - title: Monitor request payloads 
               details: Create real-time alerts for critical API payloads-like third-party errors or large bank transactions-and get notified instantly. 
-              learnmore: /
+              learnmore: /features/api-observability
             - title: Create multistep healthchecks 
               details: Run multistep checks for critical workflows—create an account, check balance, transfer funds, delete account-on a regular schedule.
-              learnmore: /
+              learnmore: /features/api-management
     - title: Backends
       id: backend
       icon: hard-drive 
