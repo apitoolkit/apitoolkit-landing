@@ -311,7 +311,7 @@ platforms:
         <div class="flex-1 space-y-5">
           <h2 class="text-3xl leading-tight font-semibold text-textStrong">Put AI to work. <span class="text-textWeak">seriously</span></h2>
           <p class="max-w-prose text-2xl leading-normal">Generate queries, create visualizations, fix bugs, monitor logs, payloads, and kickstart whole analyses - all from a prompt.</p>
-          <a class="text-xl text-textBrand underline underline-offset-2 block ">Learn more</a>
+          <a href="/docs/features/" class="text-xl text-textBrand underline underline-offset-2 block ">Learn more</a>
         </div>
         <div class="flex items-end">
           <div class="inline-flex gap-4  *:p-4  *:inline-flex *:items-center">
