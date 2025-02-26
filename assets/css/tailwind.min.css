@@ -7544,6 +7544,10 @@ html:has(.drawer-toggle:checked) {
   resize: both;
 }
 
+.list-inside {
+  list-style-position: inside;
+}
+
 .list-disc {
   list-style-type: disc;
 }
@@ -8845,10 +8849,6 @@ html:has(.drawer-toggle:checked) {
 
 .leading-tight {
   line-height: 1.25;
-}
-
-.leading-loose {
-  line-height: 2;
 }
 
 .tracking-tight {

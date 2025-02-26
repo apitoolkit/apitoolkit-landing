@@ -431,8 +431,14 @@ platforms:
             <strong class="block font-normal">APITOOLKIT CLOUD</strong>
             <h5 class="font-semibold text-2xl text-textStrong">Bring nothing</h5>
           </div>
-          <p>Fully managed cloud service with <strong>usage-based pricing</strong> and automatic optimization.</p>
-          <p>Start for free, then scale seamlessly with <strong>predictable costs</strong> as your needs grow.</p>
+          <ul class="list-disc space-y-2 list-inside">
+            <li>Fully managed cloud service</li>
+            <li><strong>Predictable Usage-based</strong> pricing</li>
+            <li>Intelligent incident alerts</li>
+            <li>Query your data in english</li>
+          </ul>
+          <!-- <p>Fully managed cloud service with <strong>usage-based pricing</strong> and automatic optimization.</p> -->
+          <!-- <p>Start for free, then scale seamlessly with <strong>predictable costs</strong> as your needs grow.</p> -->
           <a href="https://app.apitoolkit.io" class="block underline underline-offset-2 text-textBrand">Start 30 day free trial</a>
         </div>
 
@@ -442,8 +448,15 @@ platforms:
             <strong class="block font-normal">APITOOLKIT CLOUD</strong>
             <h5 class="font-semibold text-2xl text-textStrong">Bring your own s3 storage</h5>
           </div>
-          <p>Fully managed cloud service but <strong>all your data</strong> is stored in your own s3 compatible storage. </p>
-          <p>Keep your data for as long as you want, and freely <strong>query and visualize data from months or years ago</strong>. At no extra cost.</p>
+          <ul class="list-disc space-y-2 list-inside text-lg">
+            <li>Own and control all your data</li>
+            <li>Save <strong>all your data</strong> to any S3-compatible bucket</li>
+            <li><strong>Unlimited data retention</strong> period</li>
+            <li>Query years of data via APItoolkit</li>
+            <li><strong>No extra cost</strong> for data retention</li>
+          </ul>
+          <!-- <p>Fully managed cloud service but <strong>all your data</strong> is stored in your own s3 compatible storage. </p> -->
+          <!-- <p>Keep your data for as long as you want, and freely <strong>query and visualize data from months or years ago</strong>. At no extra cost.</p> -->
           <a href="https://calendar.app.google/1a4HG5GZYv1sjjZG6" target="_blank" class="block underline underline-offset-2 text-textBrand">Book a demo</a>
         </div>
 
@@ -453,8 +466,14 @@ platforms:
             <strong class="block font-normal">ON PREM</strong>
             <h5 class="font-semibold text-2xl text-textStrong">Bring your own servers</h5>
           </div>
-          <p>Deploy in your own servers while APItoolkit handles operations.</p>
-          <p>Perfect for organizations seeking <strong>complete data control</strong> with <strong>predictable annual pricing</strong>.</p>
+          <ul class="list-disc space-y-2 list-inside">
+            <li>Deploy to your own servers</li>
+            <li>Managed by the APItoolkit team</li>
+            <li>Ideal for <strong>regulatory compliance</strong></li>
+            <li>Predictable custom annual pricing</li>
+          </ul>
+          <!-- <p>Deploy in your own servers while APItoolkit handles operations.</p> -->
+          <!-- <p>Perfect for organizations seeking <strong>complete data control</strong> with <strong>predictable annual pricing</strong>.</p> -->
           <a href="https://calendar.app.google/1a4HG5GZYv1sjjZG6" target="_blank" class="block underline underline-offset-2 text-textBrand">Book a demo</a>
         </div>
 
