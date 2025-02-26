@@ -256,7 +256,7 @@ platforms:
       </div>
     </section>
 
-    <div class="max-w-7xl py-24 w-full text-3xl leading-relaxed flex flex-col items-start justify-begin text-textWeak">
+    <div class="max-w-7xl px-3  py-24 w-full text-3xl leading-relaxed flex flex-col items-start justify-begin text-textWeak">
         <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
         <script src="https://unpkg.com/split-type"></script>
