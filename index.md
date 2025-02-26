@@ -287,8 +287,8 @@ platforms:
     </div>
 
     <div class="max-w-7xl px-3 w-full text-textWeak space-y-5 group/uc">
-      <h2 class="text-3xl leading-tight font-semibold text-textStrong">Monitoring and Observability<span class="text-textWeak">, built to understand all your systems</span></h2>
-      <p class="text-2xl leading-normal">Just because you don't see an error, doesn't mean it's not happening. That's why we built both active <br/>and passive monitoring--<span class="text-textBrand">to keep you informed of the different systems you maintain.<span></p>
+      <h2 class="text-4xl leading-tight font-semibold text-textStrong">Monitoring and Observability<span class="text-textDisabled">, <br/>built to understand all your systems</span></h2>
+      <p class="hidden text-2xl leading-normal">Just because you don't see an error, doesn't mean it's not happening. That's why we built both active <br/>and passive monitoring--<span class="text-textBrand">to keep you informed of the different systems you maintain.<span></p>
 
       <div class="flex justify-between py-8">
         <div class="inline-flex justify-center bg-fillWeak border border-strokeWeak rounded-lg
@@ -338,9 +338,9 @@ platforms:
     <div class="max-w-7xl px-3 w-full text-textWeak space-y-5">
       <div class="flex justify-between">
         <div class="flex-1 space-y-5">
-          <h2 class="text-3xl leading-tight font-semibold text-textStrong">Put AI to work. <span class="text-textWeak">seriously</span></h2>
-          <p class="max-w-prose text-2xl leading-normal">Generate queries, create visualizations, fix bugs, monitor logs, payloads, and kickstart whole analyses - all from a prompt.</p>
-          <a href="/docs/features/" class="text-xl text-textBrand underline underline-offset-2 block ">Learn more</a>
+          <h2 class="text-4xl leading-tight font-semibold text-textStrong">Put AI to work. <span class="text-textDisabled">seriously</span></h2>
+          <p class="hidden max-w-prose text-2xl leading-normal">Generate queries, create visualizations, fix bugs, monitor logs, payloads, and kickstart whole analyses - all from a prompt.</p>
+          <a href="/docs/features/" class="text-lg text-textBrand underline underline-offset-2 block ">Learn more</a>
         </div>
         <div class="flex items-end">
           <div class="inline-flex gap-4  *:p-4  *:inline-flex *:items-center">
@@ -370,8 +370,8 @@ platforms:
 
     <!-- FEATURES -->
 <div class="max-w-7xl px-3 w-full text-textWeak space-y-5">
-  <h2 class="text-3xl leading-tight font-semibold text-textStrong">Built with features that matter to engineers like us</h2>
-  <a class="block underline underline-offset-2 text-textBrand text-xl" href="/docs/features/">Learn more</a>
+  <h2 class="text-4xl leading-tight font-semibold text-textStrong">Built with features that matter <br/><span class="text-textDisabled">to engineers like us</span></h2>
+  <a class="block underline underline-offset-2 text-textBrand text-lg" href="/docs/features/">Learn more</a>
   <div class="flex gap-10 pt-5">
     <div class="hidden sm:block text-textStrong space-y-8 [&_input]:hidden [&_label]:inline-flex [&_label]:px-2  [&_label]:items-center [&_label]:gap-2
         [&_label]:border-l-2 [&_label]:border-transparent [&_svg]:h-4 [&_svg]:w-4">
@@ -400,7 +400,7 @@ platforms:
         <div id="feature-{{f.id}}" class="hidden space-y-3 flex-1">
           <h5 class="text-2xl font-semibold text-textStrong">{{f.title}}</h5>
           <p class="text-xl max-w-xl leading-normal">{{f.details}}</p>
-          <a href="{{f.learnmore}}" class="block underline underline-offset-2 text-textBrand text-xl">Learn more</a>
+          <a href="{{f.learnmore}}" class="block underline underline-offset-2 text-textBrand text-lg">Learn more</a>
         </div>
         {% endfor %}
         {% endfor %}
@@ -418,7 +418,7 @@ platforms:
 
     <!-- FLEXIBLE DEPLOYMENTS-->
     <div class="max-w-7xl px-3 w-full text-textWeak space-y-5">
-      <h2 class="text-3xl leading-tight font-semibold text-textStrong">Flexible deployment options for every company </h2>
+      <h2 class="text-4xl leading-tight font-semibold text-textStrong">Flexible deployment options <span class="text-textDisabled">for every company</span></h2>
       <p class="text-2xl leading-normal">Regardless of your company's size or compliance requirements, APItoolkit operates <br/>within your business and regulatory constraints.</p>
       <div>
         <a href="https://calendar.app.google/1a4HG5GZYv1sjjZG6" target="_blank" class="btn py-3 px-6 rounded-xl bg-fillBrand-strong text-textInverse-strong shadow ">Book a demo</a>
@@ -464,7 +464,7 @@ platforms:
     <!-- INTEGRATIONS-->
     <div class="text-textWeak space-y-5 w-full flex flex-col items-center justify-center">
       <div class="max-w-7xl px-3 w-full space-y-5">
-        <h2 class="text-3xl leading-tight font-semibold text-textStrong">780+ Integrations with your favorite tech stacks, powered by OpenTelemetry</h2>
+        <h2 class="text-4xl leading-tight font-semibold text-textStrong">780+ Integrations with your favorite tech stacks, <br/><span class="text-textDisabled">powered by OpenTelemetry</span></h2>
         <a class="block text-textBrand underline underline-offset-2">View all integrations.</a>
       </div>
       <div class="space-y-5 pt-5 mask-edges">
@@ -510,7 +510,7 @@ platforms:
 
     <!-- REAL RESULTS FROM CUSTOMERS -->
     <div class="max-w-7xl px-3 w-full text-textStrong space-y-5">
-      <h2 class="text-3xl leading-tight font-semibold text-textStrong">Real results for real customers</h2>
+      <h2 class="text-4xl leading-tight font-semibold text-textStrong">Real results for <span class="text-textDisabled">real customers<span></h2>
       <a class="block text-textBrand underline underline-offset-2">View all case studies.</a>
       <div class="relative hidden sm:flex items-end justify-end !-mt-5b">
         <svg class="absolute -mb-3" width="253" height="55" viewBox="0 0 253 55" fill="none" xmlns="http://www.w3.org/2000/svg">
