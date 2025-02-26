@@ -8847,6 +8847,10 @@ html:has(.drawer-toggle:checked) {
   line-height: 1.25;
 }
 
+.leading-loose {
+  line-height: 2;
+}
+
 .tracking-tight {
   letter-spacing: -0.025em;
 }

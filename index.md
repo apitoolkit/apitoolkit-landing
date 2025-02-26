@@ -257,6 +257,36 @@ platforms:
       </div>
     </section>
 
+    <div class="max-w-7xl py-24 w-full text-3xl leading-relaxed flex flex-col items-start justify-begin text-textWeak">
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+        <script src="https://unpkg.com/split-type"></script>
+
+        <div class="max-w-4xl space-y-12 scroll-highlight">
+            <p>APItoolkit offers the best features of Datadog, Sentry, Newrelic, etc., <span class="font-medium text-textStrong">at 1/20 the cost</span>. We train <span class="font-medium text-textStrong">private models</span> on your real-time logs, events, and API request payloads to <span class="font-medium text-textStrong">catch errors</span> and breaking or incremental changes that are impossible to detect on any other platform. Thanks to our unique crytography based algorithms. </p>
+            <p>You can <span class="font-medium text-textStrong">store all your data in your own S3-compatible storage</span>, giving you complete ownership and letting you query or ask questions of your data forever at no extra storage cost.</p>
+        </div>
+        <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        const splitTypes = document.querySelectorAll('.scroll-highlight');
+        splitTypes.forEach((char, i) => {
+            const text = new SplitType(char, {types: ['chars', 'words']});
+            gsap.from(text.chars, {
+                scrollTrigger: {
+                    trigger: char,
+                    start: 'top 80%',
+                    end: 'bottom 20%',
+                    scrub: 1,
+                    markers: true, 
+                },
+                opacity: 0.2,
+                stagger: 0.1,
+            })
+        })
+        </script>
+    </div>
+
     <div class="max-w-7xl px-3 w-full text-textWeak space-y-5 group/uc">
       <h2 class="text-3xl leading-tight font-semibold text-textStrong">Monitoring and Observability<span class="text-textWeak">, built to understand all your systems</span></h2>
       <p class="text-2xl leading-normal">Just because you don't see an error, doesn't mean it's not happening. That's why we built both active <br/>and passive monitoring--<span class="text-textBrand">to keep you informed of the different systems you maintain.<span></p>

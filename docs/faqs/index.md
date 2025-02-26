@@ -23,10 +23,10 @@ faqs:
 ---
 
 ```=html
-<section class="width-control mx-auto flex flex-col md:flex-row gap-8">
+<section class="max-w-7xl px-3 w-full text-textWeak flex flex-col md:flex-row gap-8">
 
     <div class="flex-grow mt-4">
-        <p class="text-4xl md:text-6xl font-bold mb-3">Frequently Asked <br/> Questions</p>
+        <p class="text-4xl font-bold mb-3">Frequently Asked <br/> Questions</p>
     </div>
 
     <div class="flex w-full md:w-[40%] flex-col gap-4 text-gray-700 dark:text-base-content">
