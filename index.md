@@ -1,146 +1,145 @@
 ---
 testimonials:
-    - stat: 20x 
-      desc: faster <span class="underline underline-offset-4 decoration-dotted tooltip tooltip-right" data-tip="mean time to resolution">MTTR</span>
-      logo: blockradar-full.svg
-      theme: Warning
-      color: ffebe0
-    - stat: 70% 
-      desc: reduction in manual troubleshooting
-      logo: sameday.svg
-      theme: Brand
-      color: d3e5f0
-    - quote: "We had a major upgrade planned for our iOS/Android app... After adding APItoolkit to our laravel app, we could see every new route and request. It gave me and the dev team complete confidence that our users weren't being affected by our changes. <br/><br/>... became the smoothest and LEAST STRESSFUL rollouts we have ever done. Really an amazing tool and now a permanent part of our workflow. Thank you!!"
-      photo: larrison_morrison.jpeg
-      name: Lazarus Morrison
-      title: Founder of Community Fluency
-      logo_raw: <div class="inline-flex items-center text-lg gap-1"><img src="/assets/img/customers/community_fluency.png" alt="Community Fluency" class="logo1 logo2"/> <span class="hidden sm:inline-block">Community<strong class="!text-lg">Fluency</strong></span></div>
-    - quote: "The best observability tool we use today at Woodcore, APItoolkit notifies us about any slight change that happens on the system. <br/><br/>Most especially, for the features we utilise today on APItoolkit, would cost us a lot more elsewhere."
-      photo: samuel_joseph.jpeg
-      name: Samuel Joseph
-      title: CEO of Woodcore
-      logo: woodcore-logo-full.svg
-    - stat: 3x 
-      desc: faster system recovery
-      logo: partna.svg
-      theme: Error
-      color: e9daff
-    - stat: 5x
-      desc: faster incident debug times
-      logo: coronams-logo.svg
-      theme: Warning
-      color: ffebe0
-    - stat: 9x 
-      desc: less customer support calls 
-      logo: platnova.png
-      theme: Warning
-      color: d3e5f0
-    - stat: 500ms 
-      desc: shaved off improved endpoints
-      logo: payfonte.svg
-      theme: Brand
-      color: e6fae3
-    - quote: "I fell for ApitoolKit because it integrated effortlessly with my application and provided valuable API insights. Whenever I needed help, the team was always ready to listen and resolve any issues. That's why we pay for their service."
-      photo: david_odohi.jpeg
-      name: Odohi David
-      title: CTO of Grovepay
-      logo: grovepay.svg
-      
+  - stat: 20x
+    desc: faster <span class="underline underline-offset-4 decoration-dotted tooltip tooltip-right" data-tip="mean time to resolution">MTTR</span>
+    logo: blockradar-full.svg
+    theme: Warning
+    color: ffebe0
+  - stat: 70%
+    desc: reduction in manual troubleshooting
+    logo: sameday.svg
+    theme: Brand
+    color: d3e5f0
+  - quote: "We had a major upgrade planned for our iOS/Android app... After adding APItoolkit to our laravel app, we could see every new route and request. It gave me and the dev team complete confidence that our users weren't being affected by our changes. <br/><br/>... became the smoothest and LEAST STRESSFUL rollouts we have ever done. Really an amazing tool and now a permanent part of our workflow. Thank you!!"
+    photo: larrison_morrison.jpeg
+    name: Lazarus Morrison
+    title: Founder of Community Fluency
+    logo_raw: <div class="inline-flex items-center text-lg gap-1"><img src="/assets/img/customers/community_fluency.png" alt="Community Fluency" class="logo1 logo2"/> <span class="hidden sm:inline-block">Community<strong class="!text-lg">Fluency</strong></span></div>
+  - quote: "The best observability tool we use today at Woodcore, APItoolkit notifies us about any slight change that happens on the system. <br/><br/>Most especially, for the features we utilise today on APItoolkit, would cost us a lot more elsewhere."
+    photo: samuel_joseph.jpeg
+    name: Samuel Joseph
+    title: CEO of Woodcore
+    logo: woodcore-logo-full.svg
+  - stat: 3x
+    desc: faster system recovery
+    logo: partna.svg
+    theme: Error
+    color: e9daff
+  - stat: 5x
+    desc: faster incident debug times
+    logo: coronams-logo.svg
+    theme: Warning
+    color: ffebe0
+  - stat: 9x
+    desc: less customer support calls
+    logo: platnova.png
+    theme: Warning
+    color: d3e5f0
+  - stat: 500ms
+    desc: shaved off improved endpoints
+    logo: payfonte.svg
+    theme: Brand
+    color: e6fae3
+  - quote: "I fell for ApitoolKit because it integrated effortlessly with my application and provided valuable API insights. Whenever I needed help, the team was always ready to listen and resolve any issues. That's why we pay for their service."
+    photo: david_odohi.jpeg
+    name: Odohi David
+    title: CTO of Grovepay
+    logo: grovepay.svg
 
 features:
-    - title: Observability & monitoring 
-      links:
-            - icon: align-left 
-              id: logs
-              title: Logs and traces analysis
-              details: Query all your logs and correlate them with trace breakdowns or the requests which triggered the logs. 
-              learnmore: /features/api-logs-and-metrics
-            - icon: activity
-              id: errors
-              title: Errors and Performance
-              details: Monitor API errors and performance in real time. Detect issues instantly, analyze trends, and optimize response times with detailed insights. Improve reliability with automated tracking, alerting, and in-depth analytics to ensure a seamless user experience. 
-              learnmore: /features/error-tracking
-            - icon: bar-chart
-              id: metrics
-              title: Metrics and dashboards
-              details: Define and track custom metrics tailored to your API needs. Gain actionable insights, monitor key performance indicators, and optimize efficiency with real-time data visualization and alerts. Make data-driven decisions to enhance your API’s performance and reliability.
-              learnmore: /features/api-management
-    - title: API management
-      links: 
-            - icon: layout 
-              id: apis
-              title: API Catalog and Docs
-              details: Organize, manage, and document your APIs effortlessly with a dynamic API catalog. Provide clear, up-to-date documentation, improve discoverability, and streamline onboarding for developers with interactive guides, code samples, and real-time updates.
-              learnmore: /features/api-management
-            - icon: copy
-              id: change
-              title: Anomalies and Changes 
-              details: Detect API changes and anomalies in real time. Stay ahead of unexpected behavior with automated monitoring, instant alerts, and detailed insights. Ensure stability, prevent disruptions, and maintain seamless performance with proactive change detection.
-              learnmore: /features/api-observability
-    - title: Alerts and Monitors 
-      links: 
-            - icon: compass 
-              id: monitors
-              title: Monitors and healthchecks
-              details: Ensure API reliability with automated monitors and health checks. Continuously track uptime, detect failures early, and receive instant alerts. Keep your services running smoothly with real-time insights and proactive issue resolution.
-              learnmore: /docs/monitors
-            - icon: radio 
-              id: alerts 
-              title: Alerts and notifications
-              details: Stay informed with real-time alerts and comprehensive reports. Customize alert channels and receive detailed analytics to monitor your API's performance and reliability effectively.
-              learnmore: /docs/alerts
-            - icon: calendar 
-              id: reports
-              title: Daily or weekly reports
-              details: Receive comprehensive daily or weekly reports summarizing API performance, errors, and key metrics. Get actionable insights delivered to your inbox to stay ahead of potential issues.
-              learnmore: /docs/reports
-    
+  - title: Observability & monitoring
+    links:
+      - icon: align-left
+        id: logs
+        title: Logs and traces analysis
+        details: Query all your logs and correlate them with trace breakdowns or the requests which triggered the logs.
+        learnmore: /features/api-logs-and-metrics
+      - icon: activity
+        id: errors
+        title: Errors and Performance
+        details: Monitor API errors and performance in real time. Detect issues instantly, analyze trends, and optimize response times with detailed insights. Improve reliability with automated tracking, alerting, and in-depth analytics to ensure a seamless user experience.
+        learnmore: /features/error-tracking
+      - icon: bar-chart
+        id: metrics
+        title: Metrics and dashboards
+        details: Define and track custom metrics tailored to your API needs. Gain actionable insights, monitor key performance indicators, and optimize efficiency with real-time data visualization and alerts. Make data-driven decisions to enhance your API’s performance and reliability.
+        learnmore: /features/api-management
+  - title: API management
+    links:
+      - icon: layout
+        id: apis
+        title: API Catalog and Docs
+        details: Organize, manage, and document your APIs effortlessly with a dynamic API catalog. Provide clear, up-to-date documentation, improve discoverability, and streamline onboarding for developers with interactive guides, code samples, and real-time updates.
+        learnmore: /features/api-management
+      - icon: copy
+        id: change
+        title: Anomalies and Changes
+        details: Detect API changes and anomalies in real time. Stay ahead of unexpected behavior with automated monitoring, instant alerts, and detailed insights. Ensure stability, prevent disruptions, and maintain seamless performance with proactive change detection.
+        learnmore: /features/api-observability
+  - title: Alerts and Monitors
+    links:
+      - icon: compass
+        id: monitors
+        title: Monitors and healthchecks
+        details: Ensure API reliability with automated monitors and health checks. Continuously track uptime, detect failures early, and receive instant alerts. Keep your services running smoothly with real-time insights and proactive issue resolution.
+        learnmore: /docs/monitors
+      - icon: radio
+        id: alerts
+        title: Alerts and notifications
+        details: Stay informed with real-time alerts and comprehensive reports. Customize alert channels and receive detailed analytics to monitor your API's performance and reliability effectively.
+        learnmore: /docs/alerts
+      - icon: calendar
+        id: reports
+        title: Daily or weekly reports
+        details: Receive comprehensive daily or weekly reports summarizing API performance, errors, and key metrics. Get actionable insights delivered to your inbox to stay ahead of potential issues.
+        learnmore: /docs/reports
+
 platforms:
-    - title: APIs 
-      id: apis 
-      icon: rss 
-      children:
-            - title: Catch breaking changes 
-              details: Spot unexpected changes in API responses or data structures-your services or third-party calls-before they slip into production. 
-              learnmore: /features/error-tracking
-            - title: Monitor request payloads 
-              details: Create real-time alerts for critical API payloads-like third-party errors or large bank transactions-and get notified instantly. 
-              learnmore: /features/api-observability
-            - title: Create multistep healthchecks 
-              details: Run multistep checks for critical workflows—create an account, check balance, transfer funds, delete account-on a regular schedule.
-              learnmore: /features/api-management
-    - title: Backends
-      id: backend
-      icon: hard-drive 
-      children: 
-            - title: Endpoint Performance and Throughput 
-              details: Spot unexpected changes in API responses or data structures-your services or third-party calls-before they slip into production. 
-              learnmore: /
-            - title: Track Errors and Exceptions 
-              details: Track all errors and exceptions generated by your application. Prioritize errors based on their frequency. 
-              learnmore: /
-            - title: Background and cron jobs 
-              details: See and track job runs and get alerted if an important job stops running. 
-              learnmore: /
-            - title: Debug with logs and traces 
-              details: When theres an issue, debug with all the related logs and traces automatically surfaced for you. 
-              learnmore: /
-    - title: Databases 
-      id: database 
-      icon: database
-      children:
-            - title: Identify Slow Database Queries 
-              details: Spot unexpected changes in API responses or data structures-your services or third-party calls-before they slip into production. 
-              learnmore: /
-            - title: Query Analytics and Dashboards 
-              details: Dashboard templates that visualize all the important metrics and datapoints for your database of choice. 
-              learnmore: /
-            - title: Database Error tracking and anomaly detection
-              details: Don't let database emergencies sneak up on you. Automatically analyze query results and database logs for errors and anomalies.
-              learnmore: /
-    # - title: Infra 
-    # - title: Frontends 
-    # - title: Mobile
+  - title: APIs
+    id: apis
+    icon: rss
+    children:
+      - title: Catch breaking changes
+        details: Spot unexpected changes in API responses or data structures-your services or third-party calls-before they slip into production.
+        learnmore: /features/error-tracking
+      - title: Monitor request payloads
+        details: Create real-time alerts for critical API payloads-like third-party errors or large bank transactions-and get notified instantly.
+        learnmore: /features/api-observability
+      - title: Create multistep healthchecks
+        details: Run multistep checks for critical workflows—create an account, check balance, transfer funds, delete account-on a regular schedule.
+        learnmore: /features/api-management
+  - title: Backends
+    id: backend
+    icon: hard-drive
+    children:
+      - title: Endpoint Performance and Throughput
+        details: Spot unexpected changes in API responses or data structures-your services or third-party calls-before they slip into production.
+        learnmore: /
+      - title: Track Errors and Exceptions
+        details: Track all errors and exceptions generated by your application. Prioritize errors based on their frequency.
+        learnmore: /
+      - title: Background and cron jobs
+        details: See and track job runs and get alerted if an important job stops running.
+        learnmore: /
+      - title: Debug with logs and traces
+        details: When theres an issue, debug with all the related logs and traces automatically surfaced for you.
+        learnmore: /
+  - title: Databases
+    id: database
+    icon: database
+    children:
+      - title: Identify Slow Database Queries
+        details: Spot unexpected changes in API responses or data structures-your services or third-party calls-before they slip into production.
+        learnmore: /
+      - title: Query Analytics and Dashboards
+        details: Dashboard templates that visualize all the important metrics and datapoints for your database of choice.
+        learnmore: /
+      - title: Database Error tracking and anomaly detection
+        details: Don't let database emergencies sneak up on you. Automatically analyze query results and database logs for errors and anomalies.
+        learnmore: /
+  # - title: Infra
+  # - title: Frontends
+  # - title: Mobile
 ---
 
 ```=html
@@ -209,7 +208,7 @@ platforms:
                 artboard: "Artboard", // Optional. If not supplied the default is selected
                 // stateMachines: "bumpy",
                 onLoad: () => {
-                  // r.resizeToCanvas(); 
+                  // r.resizeToCanvas();
                   r.resizeDrawingSurfaceToCanvas();
                 },
             });
@@ -278,7 +277,7 @@ platforms:
                     start: 'top 80%',
                     end: 'bottom 20%',
                     scrub: 1,
-                    markers: true, 
+                    markers: false,
                 },
                 opacity: 0.2,
                 stagger: 0.1,
@@ -292,7 +291,7 @@ platforms:
       <p class="text-2xl leading-normal">Just because you don't see an error, doesn't mean it's not happening. That's why we built both active <br/>and passive monitoring--<span class="text-textBrand">to keep you informed of the different systems you maintain.<span></p>
 
       <div class="flex justify-between py-8">
-        <div class="inline-flex justify-center bg-fillWeak border border-strokeWeak rounded-lg 
+        <div class="inline-flex justify-center bg-fillWeak border border-strokeWeak rounded-lg
           *:px-4 *:py-3 *:inline-flex *:items-center *:gap-2
           [&_svg]:h-5 [&_svg]:w-5 [&>label]:rounded-lg [&>label]:border-strokeStrong
           ">
@@ -374,7 +373,7 @@ platforms:
   <h2 class="text-3xl leading-tight font-semibold text-textStrong">Built with features that matter to engineers like us</h2>
   <a class="block underline underline-offset-2 text-textBrand text-xl" href="/docs/features/">Learn more</a>
   <div class="flex gap-10 pt-5">
-    <div class="hidden sm:block text-textStrong space-y-8 [&_input]:hidden [&_label]:inline-flex [&_label]:px-2  [&_label]:items-center [&_label]:gap-2   
+    <div class="hidden sm:block text-textStrong space-y-8 [&_input]:hidden [&_label]:inline-flex [&_label]:px-2  [&_label]:items-center [&_label]:gap-2
         [&_label]:border-l-2 [&_label]:border-transparent [&_svg]:h-4 [&_svg]:w-4">
       {% for feature in this.frontmatter.features %}
       {% assign ischecked = forloop.first %}
@@ -470,8 +469,8 @@ platforms:
       </div>
       <div class="space-y-5 pt-5 mask-edges">
         <div class="flex w-full overflow-x-hidden gap-5  max-w-[100vw]
-          [&_img]:w-full 
-          [&>div>*]:inline-block [&>div>*]:w-24 [&>div>*]:p-3 [&>div>*]:rounded-xl 
+          [&_img]:w-full
+          [&>div>*]:inline-block [&>div>*]:w-24 [&>div>*]:p-3 [&>div>*]:rounded-xl
           [&>div>*]:border [&>div>*]:border-strokeWeak">
           {% assign icons = "postgresql.png,cloudflare.png,mongodb.png,azure-1.png,mysql.png,nginx.png,redis.png,elasticsearch.png,google-cloud.png,apache-kafka.png,kubernetes.png,prometheus-app.png,haproxy-icon.svg,docker.png" | split: "," %}
           <div class="animate-[scroll-x_60s_linear_infinite] whitespace-nowrap flex w-[max-content] shrink-0 gap-5">
@@ -482,8 +481,8 @@ platforms:
           </div>
         </div>
         <div class="flex w-full overflow-x-hidden gap-5  max-w-[100vw]
-          [&_img]:w-full 
-          [&>div>*]:inline-block [&>div>*]:w-24 [&>div>*]:p-3 [&>div>*]:rounded-xl 
+          [&_img]:w-full
+          [&>div>*]:inline-block [&>div>*]:w-24 [&>div>*]:p-3 [&>div>*]:rounded-xl
           [&>div>*]:border [&>div>*]:border-strokeWeak">
           {% assign icons = "statsd-receiver.png,solacereceiver.jpg,zipkin-logo.png,snowflake.png,skywalking.jpg,riak-logo.png,huawei-icon.svg,apache_zookeeper-icon.svg,rabbitmq-icon.svg,podmanio-icon.svg,apache_couchdb-icon.svg,influxdata-icon.svg,jaegertracingio-icon.svg,oracle-icon.svg,memcached-icon.svg,signalfx-icon.svg" | split: "," %}
           <div class="animate-[scroll-x_60s_linear_infinite] animation-reverse  whitespace-nowrap flex w-[max-content] shrink-0 gap-5">
@@ -494,8 +493,8 @@ platforms:
           </div>
         </div>
         <div class=" flex w-full overflow-x-hidden gap-5  max-w-[100vw]
-          [&_img]:w-full 
-          [&>div>*]:inline-block [&>div>*]:w-24 [&>div>*]:p-3 [&>div>*]:rounded-xl 
+          [&_img]:w-full
+          [&>div>*]:inline-block [&>div>*]:w-24 [&>div>*]:p-3 [&>div>*]:rounded-xl
           [&>div>*]:border [&>div>*]:border-strokeWeak">
           {% assign icons = "splunk-icon.svg,alibabacloud-icon.svg,apache_cassandra-icon.svg,logicmonitor-icon.svg,sematext-icon.svg,sentryio-icon.svg,tencent-logo.png,pulsar-logo.png,clickhouse-logo.png,coralognix.png,statsd-receiver.png,solacereceiver.jpg,zipkin-logo.png" | split: "," %}
           <div class="animate-[scroll-x_60s_linear_infinite] whitespace-nowrap flex w-[max-content] shrink-0 gap-5">
@@ -519,7 +518,7 @@ platforms:
           <path d="M8.85166 51.4448C8.69432 52.2581 9.22611 53.045 10.0395 53.2024C10.8528 53.3597 11.6397 52.8279 11.7971 52.0146L8.85166 51.4448ZM50.2152 12.7874C51.0361 12.6764 51.6117 11.921 51.5007 11.1C51.3897 10.279 50.6343 9.70348 49.8133 9.81446L50.2152 12.7874ZM4.41835 41.327C3.99148 40.617 3.06988 40.3875 2.3599 40.8144C1.64992 41.2413 1.42042 42.1629 1.84729 42.8729L4.41835 41.327ZM8.60781 51.206L7.32227 51.979L7.323 51.9802L8.60781 51.206ZM12.2243 52.2568L11.6114 50.8878L11.6101 50.8883L12.2243 52.2568ZM23.1434 49.0118C23.8995 48.6732 24.238 47.7859 23.8995 47.0298C23.561 46.2737 22.6736 45.9351 21.9175 46.2737L23.1434 49.0118ZM10.3244 51.7297C11.7971 52.0146 11.797 52.0149 11.7969 52.0152C11.7969 52.0152 11.7969 52.0154 11.7969 52.0154C11.7969 52.0154 11.797 52.0151 11.7971 52.0146C11.7973 52.0135 11.7977 52.0114 11.7983 52.0083C11.7995 52.002 11.8016 51.9915 11.8046 51.977C11.8105 51.9479 11.8198 51.9026 11.8327 51.8418C11.8585 51.7202 11.8987 51.5366 11.9544 51.297C12.066 50.8179 12.2399 50.1155 12.4863 49.2383C12.9792 47.4825 13.7602 45.0333 14.9084 42.2744C17.2144 36.7337 20.9547 30.0577 26.7149 25.1964L24.78 22.9038C18.5074 28.1975 14.5361 35.3613 12.1387 41.1217C10.9353 44.0133 10.1167 46.5799 9.59795 48.4273C9.33841 49.3517 9.15345 50.0978 9.03262 50.6166C8.9722 50.8761 8.92778 51.0789 8.89806 51.2189C8.8832 51.289 8.87201 51.3433 8.86433 51.3812C8.86049 51.4001 8.85753 51.415 8.85543 51.4256C8.85438 51.4309 8.85354 51.4352 8.85291 51.4384C8.8526 51.44 8.85234 51.4413 8.85213 51.4424C8.85203 51.4429 8.85191 51.4435 8.85186 51.4438C8.85175 51.4443 8.85166 51.4448 10.3244 51.7297ZM26.7149 25.1964C38.5275 15.2273 47.9159 13.0982 50.2152 12.7874L49.8133 9.81446C46.9548 10.2009 37.0331 12.5628 24.78 22.9038L26.7149 25.1964ZM1.84729 42.8729L7.32227 51.979L9.89334 50.4331L4.41835 41.327L1.84729 42.8729ZM7.323 51.9802C8.46525 53.876 10.8515 54.5171 12.8385 53.6253L11.6101 50.8883C10.909 51.203 10.1972 50.9375 9.89262 50.4319L7.323 51.9802ZM12.8372 53.6259L23.1434 49.0118L21.9175 46.2737L11.6114 50.8878L12.8372 53.6259Z" fill="#0068FF"/>
         </svg>
       </div>
-      <div class="grid grid-cols-6 sm:grid-cols-10 gap-2 sm:gap-6 [&>div]:border [&>div]:rounded-lg  [&>div]:flex [&>div]:flex-col 
+      <div class="grid grid-cols-6 sm:grid-cols-10 gap-2 sm:gap-6 [&>div]:border [&>div]:rounded-lg  [&>div]:flex [&>div]:flex-col
             [&>div]:justify-between  [&>div]:items-start [&_.logo1]:my-2  [&_.logo1]:brightness-0 [&_.logo1]:dark:invert [&_.logo1]:opacity-50 [&_.logo1]:h-6
             [&_strong]:text-5xl [&_small]:text-xl  [&_.logo2]:!my-0 [&_.quote]:text-2xl
             [&_.col-span-6]:gap-8 [&_.quote]:leading-normal
