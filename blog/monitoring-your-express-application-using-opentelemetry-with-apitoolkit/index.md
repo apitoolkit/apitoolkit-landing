@@ -155,7 +155,7 @@ APIToolkit Express Middleware is a tool for monitoring HTTP requests in Express.
   });
 ```
 
-Refresh your brower a couple of times (you can hit some other routes too) so we can gather telemetry data and visualize it on our APIToolkit Dashboard:
+Refresh your browser a couple of times (you can hit some other routes too) so we can gather telemetry data and visualize it on our APIToolkit Dashboard:
 
 ![Dashboard-explorer](./apitoolkit-dashboard.png)
 
