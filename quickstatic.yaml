@@ -39,6 +39,9 @@ authors:
   elliot:
     name: "Elliot Brenya Sarfo"
     picture: "https://avatars.githubusercontent.com/u/66503402?v=4"
+  patrick:
+    name: "Patrick Odey"
+    picture: "https://avatars.githubusercontent.com/u/44481680?s=96&v=4"
 
 apitoolkit_supported_frameworks:
   - id: express_btn
