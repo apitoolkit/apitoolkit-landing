@@ -1,6 +1,6 @@
 ---
 title: "Monitoring your Express.js application using OpenTelemetry with APIToolkit"
-featured_image: 1-api-toolkit_png.png
+featured_image: monitoring-your-express-app-with-opentelemetry-and-apitoolkit.png
 date: 2025-02-27T04:08:58+02:00
 author: patrick
 description: With APITookit, you can efficiently identify and diagnose failing endpoints, minimizing downtime and ensuring a seamless user experience.
@@ -10,7 +10,7 @@ categories:
 
 # Monitoring your Express.js application using OpenTelemetry with APIToolkit
 
-![APIToolkit](./1-api-toolkit_png.png)
+![APIToolkit](./monitoring-your-express-app-with-opentelemetry-and-apitoolkit.png)
 
 The complexity of modern microservices requires a thorough understanding of your application's production behaviour. [OpenTelemetry](https://opentelemetry.io/) provides a universal framework that enables code instrumentation to gather telemetry data through collection, processing, and exporting metrics, logs, and traces. In this article, we'll explore how to implement [OpenTelemetry](https://opentelemetry.io/) in an Express.js application to gain valuable insights into its performance and behaviour.
 
@@ -155,9 +155,17 @@ APIToolkit Express Middleware is a tool for monitoring HTTP requests in Express.
   });
 ```
 
-Refresh your brower a couple of times (you can hit some other routes too) so we can gather telemetry data and visualize it on our APIToolkit Dashboard:
+Refresh your browser a couple of times (you can hit some other routes too) so we can gather telemetry data and visualize it on our APIToolkit Dashboard:
 
 ![Dashboard-explorer](./apitoolkit-dashboard.png)
+
+- **Logs**: We can access the logs using the logs tabs
+
+![logs](./logs.jpeg)
+
+- **Traces**: We can as well visualize traces using the traces tab
+
+![traces](./traces.jpeg)
 
 As you can see, we are monitoring our express application in real-time. There’s a lot of data to visualize and work with. Refer to this documention for indepth guide for using [APIToolkit Express SDK](https://apitoolkit.io/docs/sdks/nodejs/expressjs/). 
 
