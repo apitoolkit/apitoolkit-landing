@@ -167,7 +167,7 @@ Refresh your browser a couple of times (you can hit some other routes too) so we
 
 ![traces](./traces.jpeg)
 
-As you can see, we are monitoring our express application in real-time. There’s a lot of data to visualize and work with. Refer to this documention for indepth guide for using [APIToolkit Express SDK](https://apitoolkit.io/docs/sdks/nodejs/expressjs/). 
+As you can see, we are monitoring our express application in real-time. There’s a lot of data to visualize and work with. Refer to this documention for indepth guide on using [APIToolkit Express SDK](https://apitoolkit.io/docs/sdks/nodejs/expressjs/). 
 
 In conclusion, using APIToolkit with OpenTelemetry for your Express.js application lets you easily monitor performance, detect issues, and track errors with detailed backend insights. This approach simplifies debugging and helps maintain a stable, efficient web service.
 
