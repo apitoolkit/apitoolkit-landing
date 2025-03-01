@@ -51,7 +51,7 @@ features:
     links:
       - icon: align-left
         id: logs
-        title: Logs and traces analysis
+        title: Logs and Traces
         details: Query all your logs and correlate them with trace breakdowns or the requests which triggered the logs.
         learnmore: /features/api-logs-and-metrics
       - icon: activity
@@ -73,7 +73,7 @@ features:
         learnmore: /features/api-management
       - icon: copy
         id: change
-        title: Anomalies and Changes
+        title: Anomalies
         details: Detect API changes and anomalies in real time. Stay ahead of unexpected behavior with automated monitoring, instant alerts, and detailed insights. Ensure stability, prevent disruptions, and maintain seamless performance with proactive change detection.
         learnmore: /features/api-observability
   - title: Alerts and Monitors
@@ -287,7 +287,7 @@ platforms:
     </div>
 
     <div class="max-w-7xl px-3 w-full text-textWeak space-y-5 group/uc">
-      <h2 class="text-4xl leading-tight font-semibold text-textStrong">Monitoring and Observability<span class="text-textDisabled">, <br/>built to understand all your systems</span></h2>
+      <h2 class="text-4xl leading-tight font-semibold text-textStrong">Monitoring and Observability<span class="text-textDisabled">, <br/>built to understand your entire stack</span></h2>
       <p class="hidden text-2xl leading-normal">Just because you don't see an error, doesn't mean it's not happening. That's why we built both active <br/>and passive monitoring--<span class="text-textBrand">to keep you informed of the different systems you maintain.<span></p>
 
       <div class="flex justify-between py-8">
@@ -388,7 +388,7 @@ platforms:
       </div>
       {% endfor %}
       <div class="flex flex-col *:underline *:underline-offset-2 space-y-1 text-textBrand pl-2.5">
-        <a href="https://app.apitoolkit.io">Launch playground</a>
+        <a href="https://app.apitoolkit.io/p/00000000-0000-0000-0000-000000000000/">Launch playground</a>
         <a href="https://calendar.app.google/1a4HG5GZYv1sjjZG6" target="_blank">Book a demo</a>
         <a href="https://app.apitoolkit.io">Start free 30 day trial</a>
       </div>
