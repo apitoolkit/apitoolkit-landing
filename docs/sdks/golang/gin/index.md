@@ -35,28 +35,28 @@ package main
 
 import (
 	"log"
+	"net/http"
 
 	apitoolkit "github.com/apitoolkit/apitoolkit-go/gin"
 	"github.com/gin-gonic/gin"
-  _ "github.com/joho/godotenv/autoload" // autoload .env file for otel configuration
-
+	_ "github.com/joho/godotenv/autoload" // autoload .env file for otel configuration
 )
 
 func main() {
-  // Configure openTelemetry
-  shutdown, err := apitoolkit.ConfigureOpenTelemetry()
-  if err != nil {
+	// Configure openTelemetry
+	shutdown, err := apitoolkit.ConfigureOpenTelemetry()
+	if err != nil {
 		log.Printf("error configuring openTelemetry: %v", err)
-  }
-  defer shutdown()
+	}
+	defer shutdown()
 
-  router := gin.Default()
+	router := gin.Default()
 	// Add the apitoolkit gin middleware to monitor http requests
 	// And report errors to apitoolkit
 	router.Use(apitoolkit.Middleware(apitoolkit.Config{
-		RedactHeaders:       []string{"Authorization", "X-Api-Key"},
-		RedactRequestBody:   []string{"password", "credit_card"},
-		RedactResponseBody:  []string{"password", "credit_card"},
+		RedactHeaders:      []string{"Authorization", "X-Api-Key"},
+		RedactRequestBody:  []string{"password", "credit_card"},
+		RedactResponseBody: []string{"password", "credit_card"},
 	}))
 
 	router.GET("/greet/:name", func(c *gin.Context) {
@@ -77,42 +77,43 @@ To manually report specific errors at different parts of your application, use t
 package main
 
 import (
-  "log"
+	"log"
+	"net/http"
+	"os"
 
-  "github.com/gin-gonic/gin"
-  apitoolkit "github.com/apitoolkit/apitoolkit-go/gin"
-  _ "github.com/joho/godotenv/autoload" // autoload .env file for otel configuration
-
+	apitoolkit "github.com/apitoolkit/apitoolkit-go/gin"
+	"github.com/gin-gonic/gin"
+	_ "github.com/joho/godotenv/autoload" // autoload .env file for otel configuration
 )
 
 func main() {
-  // Configure openTelemetry
-  shutdown, err := apitoolkit.ConfigureOpenTelemetry()
-  if err != nil {
+	// Configure openTelemetry
+	shutdown, err := apitoolkit.ConfigureOpenTelemetry()
+	if err != nil {
 		log.Printf("error configuring openTelemetry: %v", err)
-  }
-  defer shutdown()
+	}
+	defer shutdown()
 
-  router := gin.New()
+	router := gin.New()
 	router.Use(apitoolkit.Middleware(apitoolkit.Config{}))
 
-  router.GET("/", func(c *gin.Context) {
-     file, err := os.Open("non-existing-file.txt")
-     if err != nil {
-       // Report the error to APItoolkit
-       apitoolkit.ReportError(c.Request.Context(), err)
-       c.JSON(http.StatusInternalServerError, gin.H{"message": "Something went wrong"})
-       return
-     }
-     c.JSON(http.StatusOK, gin.H{"message": file.Name()})
+	router.GET("/", func(c *gin.Context) {
+		file, err := os.Open("non-existing-file.txt")
+		if err != nil {
+			// Report the error to APItoolkit
+			apitoolkit.ReportError(c.Request.Context(), err)
+			c.JSON(http.StatusInternalServerError, gin.H{"message": "Something went wrong"})
+			return
+		}
+		c.JSON(http.StatusOK, gin.H{"message": file.Name()})
 	})
-  router.Run(":8000")
+	router.Run(":8000")
 }
 ```
 
 ## Monitoring Outgoing Requests
 
-Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="\_blank"} page. However, you can separate outgoing requests from others and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="\_blank"} page, alongside the incoming request that triggered them.
+Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the page.
 
 <section class="tab-group" data-tab-group="group1">
   <button class="tab-button" data-tab="tab1">Using APItoolkit</button>
@@ -126,39 +127,39 @@ Here's an example of the configuration with a custom RoundTripper:
 package main
 
 import (
-  "context"
-  "net/http"
+	"log"
+	"net/http"
 
-  "github.com/gin-gonic/gin"
-  apitoolkit "github.com/apitoolkit/apitoolkit-go/gin"
-  _ "github.com/joho/godotenv/autoload" // autoload .env file for otel configuration
+	apitoolkit "github.com/apitoolkit/apitoolkit-go/gin"
+	"github.com/gin-gonic/gin"
+	_ "github.com/joho/godotenv/autoload" // autoload .env file for otel configuration
 )
 
 func main() {
-  // Configure openTelemetry
-  shutdown, err := apitoolkit.ConfigureOpenTelemetry()
-  if err != nil {
+	// Configure openTelemetry
+	shutdown, err := apitoolkit.ConfigureOpenTelemetry()
+	if err != nil {
 		log.Printf("error configuring openTelemetry: %v", err)
-  }
-  defer shutdown()
+	}
+	defer shutdown()
 
-  router := gin.New()
+	router := gin.New()
 	router.Use(apitoolkit.Middleware(apitoolkit.Config{}))
 
-  router.GET("/", func(c *gin.Context) {
-   // Create a new HTTP client
-   HTTPClient := apitoolkit.HTTPClient(
-     c.Request.Context(),
-     apitoolkit.WithRedactHeaders("content-type", "Authorization", "HOST"),
-     apitoolkit.WithRedactRequestBody("$.user.email", "$.user.addresses"),
-     apitoolkit.WithRedactResponseBody("$.users[*].email", "$.users[*].credit_card"),
-   )
+	router.GET("/", func(c *gin.Context) {
+		// Create a new HTTP client
+		HTTPClient := apitoolkit.HTTPClient(
+			c.Request.Context(),
+			apitoolkit.WithRedactHeaders("content-type", "Authorization", "HOST"),
+			apitoolkit.WithRedactRequestBody("$.user.email", "$.user.addresses"),
+			apitoolkit.WithRedactResponseBody("$.users[*].email", "$.users[*].credit_card"),
+		)
 
-   // Make an outgoing HTTP request using the modified HTTPClient
-   _, _ = HTTPClient.Get("https://jsonplaceholder.typicode.com/posts/1")
-     c.String(http.StatusOK, "Ok, success!")
+		// Make an outgoing HTTP request using the modified HTTPClient
+		_, _ = HTTPClient.Get("https://jsonplaceholder.typicode.com/posts/1")
+		c.String(http.StatusOK, "Ok, success!")
 	})
-  router.Run(":8000")
+	router.Run(":8000")
 }
 ```
 
@@ -184,33 +185,32 @@ package main
 import (
 	"io"
 	"log"
-  "context"
-  "net/http"
+	"net/http"
 
-  "github.com/gin-gonic/gin"
-  apitoolkit "github.com/apitoolkit/apitoolkit-go/gin"
-  "go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
-  _ "github.com/joho/godotenv/autoload" // autoload .env file for otel configuration
+	apitoolkit "github.com/apitoolkit/apitoolkit-go/gin"
+	"github.com/gin-gonic/gin"
+	_ "github.com/joho/godotenv/autoload" // autoload .env file for otel configuration
+	"go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
 )
 
 var clientWithOtel = http.Client{
 	Transport: otelhttp.NewTransport(http.DefaultTransport),
 }
 
-
 func main() {
-  // Configure openTelemetry
-  shutdown, err := apitoolkit.ConfigureOpenTelemetry()
-  if err != nil {
+	// Configure openTelemetry
+	shutdown, err := apitoolkit.ConfigureOpenTelemetry()
+	if err != nil {
 		log.Printf("error configuring openTelemetry: %v", err)
-  }
-  defer shutdown()
+	}
+	defer shutdown()
 
-  router := gin.New()
+	router := gin.New()
 	router.Use(apitoolkit.Middleware(apitoolkit.Config{}))
 
-  router.GET("/", func(c *gin.Context) {
-	  // Create a new request
+	router.GET("/", func(c *gin.Context) {
+		// Create a new request
+		ctx := c.Request.Context()
 		req, err := http.NewRequestWithContext(ctx, "GET", "https://jsonplaceholder.typicode.com/users", nil)
 		if err != nil {
 			log.Fatalf("failed to create request: %v", err)
@@ -229,10 +229,10 @@ func main() {
 			log.Fatalf("failed to read response: %v", err)
 		}
 
-    c.String(http.StatusOK, string(body))
+		c.String(http.StatusOK, string(body))
 
 	})
-  router.Run(":8000")
+	router.Run(":8000")
 }
 ```
 
@@ -255,9 +255,8 @@ Here's an example of the configuration with Redis instrumentation:
 package main
 
 import (
-	"context"
-	"io"
 	"log"
+	"net/http"
 
 	apitoolkit "github.com/apitoolkit/apitoolkit-go/gin"
 	"github.com/gin-gonic/gin"
@@ -267,8 +266,8 @@ import (
 )
 
 func main() {
-  	// Configure openTelemetry
-	shutdown, err := apitoolkit.ConfigureOpenTelemetry(apitoolkit.WithLogLevel("debug"))
+	// Configure openTelemetry
+	shutdown, err := apitoolkit.ConfigureOpenTelemetry()
 	if err != nil {
 		log.Printf("error configuring openTelemetry: %v", err)
 	}
@@ -279,7 +278,7 @@ func main() {
 		Addr: "localhost:6379",
 	})
 
-  // Add Redis instrumentation
+	// Add Redis instrumentation
 	rdb.AddHook(redisotel.NewTracingHook())
 
 	router := gin.Default()
@@ -289,7 +288,7 @@ func main() {
 		// Get the current context from Gin
 		ctx := c.Request.Context()
 		// Perform Redis operations
-    // IMPORTANT: You must use the context from Gin to perform Redis operations
+		// IMPORTANT: You must use the context from Gin to perform Redis operations
 		err := rdb.Set(ctx, "example_key", "example_value", 0).Err()
 		if err != nil {
 			c.JSON(http.StatusInternalServerError, gin.H{"error": "Redis set failed: " + err.Error()})
@@ -300,9 +299,9 @@ func main() {
 			c.JSON(http.StatusInternalServerError, gin.H{"error": "Redis get failed: " + err.Error()})
 			return
 		}
-    c.JSON(http.StatusOK, gin.H{"message": "Hello, " + val + "!"})
-  })
-  router.Run(":8000")
+		c.JSON(http.StatusOK, gin.H{"message": "Hello, " + val + "!"})
+	})
+	router.Run(":8000")
 
 }
 ```
