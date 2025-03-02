@@ -8,14 +8,6 @@ menuWeight: 4
 
 # Go Gin OpenTelemetry Integration
 
-## Table of Contents
-
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Usage](#usage)
-- [All Configuration Options](#all-environment-variables)
-- [All Middleware Configuration Options](#all-middleware-configuration-fields)
-
 ## Installation
 
 Install the APIToolkit gin SDK using the following command `go get` command:
@@ -317,7 +309,7 @@ func main() {
 
 All redis operations will be monitored by the OpenTelemetry SDK and can be viewed in you APIToolkit log explorer.
 
-### All Environment Variables
+## All Environment Variables
 
 Set the following environment variables in your application to enable the SDK:
 
@@ -336,7 +328,7 @@ Set the following environment variables in your application to enable the SDK:
 | `OTEL_PROPAGATORS` | The propagators to use for tracing. | No | `tracecontext,baggage` |
 :::
 
-### All Middleware Configuration Fields
+## All Middleware Configuration Fields
 
 The middleware configuration specifies how the APItoolkit SDK should handle requests and responses. Below are the available fields:
 
