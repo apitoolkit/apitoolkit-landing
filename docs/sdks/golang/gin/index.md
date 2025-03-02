@@ -290,10 +290,10 @@ func main() {
   // Add Redis instrumentation
 	rdb.AddHook(redisotel.NewTracingHook())
 
-	r := gin.Default()
-	r.Use(apitoolkit.Middleware(apitoolkit.Config{}))
+	router := gin.Default()
+	router.Use(apitoolkit.Middleware(apitoolkit.Config{}))
 
-	r.GET("/greet/:name", func(c *gin.Context) {
+	router.GET("/greet/:name", func(c *gin.Context) {
 		// Get the current context from Gin
 		ctx := c.Request.Context()
 		// Perform Redis operations
@@ -310,6 +310,8 @@ func main() {
 		}
     c.JSON(http.StatusOK, gin.H{"message": "Hello, " + val + "!"})
   })
+  router.Run(":8000")
+
 }
 ```
 
