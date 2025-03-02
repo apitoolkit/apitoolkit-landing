@@ -52,30 +52,268 @@ import (
 
 func main() {
   // Configure openTelemetry
-	shutdown, err := apitoolkit.ConfigureOpenTelemetry()
-	if err != nil {
+  shutdown, err := apitoolkit.ConfigureOpenTelemetry()
+  if err != nil {
 		log.Printf("error configuring openTelemetry: %v", err)
-	}
-	defer shutdown()
+  }
+  defer shutdown()
 
-  r := gin.Default()
+  router := gin.Default()
 	// Add the apitoolkit gin middleware to monitor http requests
 	// And report errors to apitoolkit
-	r.Use(apitoolkit.Middleware(apitoolkit.Config{
+	router.Use(apitoolkit.Middleware(apitoolkit.Config{
 		RedactHeaders:       []string{"Authorization", "X-Api-Key"},
 		RedactRequestBody:   []string{"password", "credit_card"},
 		RedactResponseBody:  []string{"password", "credit_card"},
 	}))
 
-	r.GET("/greet/:name", func(c *gin.Context) {
+	router.GET("/greet/:name", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{"message": "Hello " + c.Param("name")})
 	})
 
-	r.Run(":8000")
+	router.Run(":8000")
 }
 ```
 
+## Error Reporting
+
+APItoolkit automatically detects different unhandled errors, API issues, and anomalies but you can report and track specific errors at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
+
+To manually report specific errors at different parts of your application, use the `ReportError()` method, passing in the `context` and `error` arguments, like so:
+
+```go
+package main
+
+import (
+  "log"
+
+  "github.com/gin-gonic/gin"
+  apitoolkit "github.com/apitoolkit/apitoolkit-go/gin"
+  _ "github.com/joho/godotenv/autoload" // autoload .env file for otel configuration
+
+)
+
+func main() {
+  // Configure openTelemetry
+  shutdown, err := apitoolkit.ConfigureOpenTelemetry()
+  if err != nil {
+		log.Printf("error configuring openTelemetry: %v", err)
+  }
+  defer shutdown()
+
+  router := gin.New()
+	router.Use(apitoolkit.Middleware(apitoolkit.Config{}))
+
+  router.GET("/", func(c *gin.Context) {
+     file, err := os.Open("non-existing-file.txt")
+     if err != nil {
+       // Report the error to APItoolkit
+       apitoolkit.ReportError(c.Request.Context(), err)
+       c.JSON(http.StatusInternalServerError, gin.H{"message": "Something went wrong"})
+       return
+     }
+     c.JSON(http.StatusOK, gin.H{"message": file.Name()})
+	})
+  router.Run(":8000")
+}
+```
+
+## Monitoring Outgoing Requests
+
+Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the [API Log Explorer](/docs/dashboard/dashboard-pages/api-log-explorer/){target="\_blank"} page. However, you can separate outgoing requests from others and explore them in the [Outgoing Integrations](/docs/dashboard/dashboard-pages/outgoing-integrations/){target="\_blank"} page, alongside the incoming request that triggered them.
+
+<section class="tab-group" data-tab-group="group1">
+  <button class="tab-button" data-tab="tab1">Using APItoolkit</button>
+  <button class="tab-button" data-tab="tab2">Using Otel instrumentation</button>
+  <div id="tab1" class="tab-content">
+  To monitor outgoing HTTP requests from your application, replace the default HTTP client transport with a custom RoundTripper. This allows you to capture and send copies of all incoming and outgoing requests to APItoolkit.
+
+Here's an example of the configuration with a custom RoundTripper:
+
+```go
+package main
+
+import (
+  "context"
+  "net/http"
+
+  "github.com/gin-gonic/gin"
+  apitoolkit "github.com/apitoolkit/apitoolkit-go/gin"
+  _ "github.com/joho/godotenv/autoload" // autoload .env file for otel configuration
+)
+
+func main() {
+  // Configure openTelemetry
+  shutdown, err := apitoolkit.ConfigureOpenTelemetry()
+  if err != nil {
+		log.Printf("error configuring openTelemetry: %v", err)
+  }
+  defer shutdown()
+
+  router := gin.New()
+	router.Use(apitoolkit.Middleware(apitoolkit.Config{}))
+
+  router.GET("/", func(c *gin.Context) {
+   // Create a new HTTP client
+   HTTPClient := apitoolkit.HTTPClient(
+     c.Request.Context(),
+     apitoolkit.WithRedactHeaders("content-type", "Authorization", "HOST"),
+     apitoolkit.WithRedactRequestBody("$.user.email", "$.user.addresses"),
+     apitoolkit.WithRedactResponseBody("$.users[*].email", "$.users[*].credit_card"),
+   )
+
+   // Make an outgoing HTTP request using the modified HTTPClient
+   _, _ = HTTPClient.Get("https://jsonplaceholder.typicode.com/posts/1")
+     c.String(http.StatusOK, "Ok, success!")
+	})
+  router.Run(":8000")
+}
+```
+
+<div class="callout">
+  <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
+  <p class="mt-6">You can also redact data with the custom RoundTripper for outgoing requests.</p>
+</div>
+
+  </div>
+
+   <div id="tab2" class="tab-content">
+  You can also use an otel instrumentation library to monitor outgoing requests from your server, but using this instead of the APItoolkit HTTP client will not log request and response bodies. To use otel outgoing request monitoring, you must first install it using the command below:
+
+```sh
+go get go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp
+```
+
+Here's an example of the configuration with otel instrumentation:
+
+```go
+package main
+
+import (
+	"io"
+	"log"
+  "context"
+  "net/http"
+
+  "github.com/gin-gonic/gin"
+  apitoolkit "github.com/apitoolkit/apitoolkit-go/gin"
+  "go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
+  _ "github.com/joho/godotenv/autoload" // autoload .env file for otel configuration
+)
+
+var clientWithOtel = http.Client{
+	Transport: otelhttp.NewTransport(http.DefaultTransport),
+}
+
+
+func main() {
+  // Configure openTelemetry
+  shutdown, err := apitoolkit.ConfigureOpenTelemetry()
+  if err != nil {
+		log.Printf("error configuring openTelemetry: %v", err)
+  }
+  defer shutdown()
+
+  router := gin.New()
+	router.Use(apitoolkit.Middleware(apitoolkit.Config{}))
+
+  router.GET("/", func(c *gin.Context) {
+	  // Create a new request
+		req, err := http.NewRequestWithContext(ctx, "GET", "https://jsonplaceholder.typicode.com/users", nil)
+		if err != nil {
+			log.Fatalf("failed to create request: %v", err)
+		}
+
+		// Perform the request, this requests will be monitored by
+		resp, err := clientWithOtel.Do(req)
+		if err != nil {
+			log.Fatalf("failed to make request: %v", err)
+		}
+		defer resp.Body.Close()
+
+		// Read response body
+		body, err := io.ReadAll(resp.Body)
+		if err != nil {
+			log.Fatalf("failed to read response: %v", err)
+		}
+
+    c.String(http.StatusOK, string(body))
+
+	})
+  router.Run(":8000")
+}
+```
+
+  </div>
+</section>
+
 ---
+
+## OpenTelemetry Redis Instrumentation
+
+APItoolkit provides an OpenTelemetry Redis instrumentation library that you can use to monitor Redis requests. To use the Redis instrumentation, you must first install it using the command below:
+
+```sh
+go get github.com/go-redis/redis/extra/redisotel/v8
+```
+
+Here's an example of the configuration with Redis instrumentation:
+
+```go
+package main
+
+import (
+	"context"
+	"io"
+	"log"
+
+	apitoolkit "github.com/apitoolkit/apitoolkit-go/gin"
+	"github.com/gin-gonic/gin"
+	"github.com/go-redis/redis/extra/redisotel/v8"
+	"github.com/go-redis/redis/v8"
+	_ "github.com/joho/godotenv/autoload"
+)
+
+func main() {
+  	// Configure openTelemetry
+	shutdown, err := apitoolkit.ConfigureOpenTelemetry(apitoolkit.WithLogLevel("debug"))
+	if err != nil {
+		log.Printf("error configuring openTelemetry: %v", err)
+	}
+	defer shutdown()
+
+	// Create Redis client
+	rdb := redis.NewClient(&redis.Options{
+		Addr: "localhost:6379",
+	})
+
+  // Add Redis instrumentation
+	rdb.AddHook(redisotel.NewTracingHook())
+
+	r := gin.Default()
+	r.Use(apitoolkit.Middleware(apitoolkit.Config{}))
+
+	r.GET("/greet/:name", func(c *gin.Context) {
+		// Get the current context from Gin
+		ctx := c.Request.Context()
+		// Perform Redis operations
+    // IMPORTANT: You must use the context from Gin to perform Redis operations
+		err := rdb.Set(ctx, "example_key", "example_value", 0).Err()
+		if err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{"error": "Redis set failed: " + err.Error()})
+			return
+		}
+		val, err := rdb.Get(ctx, "example_key").Result()
+		if err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{"error": "Redis get failed: " + err.Error()})
+			return
+		}
+    c.JSON(http.StatusOK, gin.H{"message": "Hello, " + val + "!"})
+  })
+}
+```
+
+All redis operations will be monitored by the OpenTelemetry SDK and can be viewed in you APIToolkit log explorer.
 
 ### All Environment Variables
 
