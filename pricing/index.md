@@ -18,23 +18,23 @@ faqs:
 ```=html
 <div class="w-full">
     <header class="w-full mt-32">
-        <div class="width-control mx-auto px-2">
+        <div class="max-w-7xl  mx-auto px-2">
             <div class="w-full flex flex-col items-center text-center gap-4">
                 <h1 class="font-bold text-4xl text-[50px] dark:text-white">Pay Only for What You Use</h1>
                 <p class="max-w-[300px] md:max-w-[500px] text-base-content font-medium text-base md:text-lg">Trust your APIs and only pay for the requests we analyze.</p>
             </div>
         </div>
     </header>
-    <div class="width-control mx-auto px-2">
+    <div class="max-w-7xl  mx-auto px-2">
         <section class="w-full grid md:grid-cols-2 gap-8 py-24">
            <!-- GRADUATED PLAN -->
             <div
                 class="group rounded-2xl border p-6 flex duration-300 flex-col text-gray-700 justify-start gap-6 text-lef shadow-md">
                 <div class="flex flex-col gap-3 pb-1">
                 <div class="flex justify-between items-center">
-                 <h3 class="font-medium text-[25px]">Pay as You Use</h3>
+                 <h3 class="font-medium text-[25px]">Pro Plan</h3>
                 <div role="tablist" class="tabs tabs-boxed tabs-xs">
-                   <input onchange="handlePlanToggle()" value="month" type="radio" name="plans" role="tab" class="tab" aria-label="Monthly" checked>
+                   <inputronchange="handlePlanToggle()" value="month" type="radio" name="plans" role="tab" class="tab" aria-label="Monthly" checked>
                    <input onchange="handlePlanToggle()" value="annual" type="radio" name="plans" role="tab" class="tab" aria-label="Annual">
                 </div>
                 </div>
@@ -116,7 +116,7 @@ faqs:
                         <div class="flex flex-col items-start gap-8px">
                             <span class="text-sm font-bold text-gray-400" id="starts_at">Starts at ...</span>
                             <div class="">
-                               <span class="font-bold text-6xl" id="price">$500</span>
+                               <span class="font-bold text-6xl" id="price">$499</span>
                                <span class="" id="num_requests"> per month</span>
                                <br>
                                <small class="text-sm">continuous support for your engineering teams</small>

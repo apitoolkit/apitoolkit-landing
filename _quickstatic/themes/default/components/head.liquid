@@ -69,15 +69,43 @@
     <script defer src="/assets/js/main.js"></script>
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <script>
-      function cycleRadioButtons(name, direction) {
-        // direction: +1 for next, -1 for previous
-        const radios = document.querySelectorAll(`input[name="${name}"]`);
-        let currentIndex = Array.from(radios).findIndex(radio => radio.checked);
-        if (currentIndex === -1) currentIndex = 0;
-        const newIndex = (currentIndex + direction + radios.length) % radios.length;
-        radios[newIndex].checked = true;
-      }
-    </script>
+function cycleRadioButtons(name, direction) {
+  const radios = document.getElementsByName(name);
+  let currentIndex = Array.from(radios).findIndex(radio => radio.checked);
+  if (currentIndex === -1) currentIndex = 0; // Default to first if none checked
+  let newIndex = (currentIndex + direction + radios.length) % radios.length;
+  radios[newIndex].checked = true;
+  showFeature(radios[newIndex]);
+  console.log(`Cycled to feature: ${radios[newIndex].dataset.id}`);
+}
+
+function showFeature(radio) {
+  document.querySelectorAll('[id^="feature-"]').forEach(div => {
+    div.classList.add('hidden');
+  });
+  const featureId = radio.getAttribute('data-id');
+  const selectedFeature = document.getElementById(`feature-${featureId}`);
+  if (selectedFeature) {
+    selectedFeature.classList.remove('hidden');
+    console.log(`Showing feature: ${featureId}`);
+  } else {
+    console.error(`Feature div not found for ID: ${featureId}`);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const checkedRadio = document.querySelector('input[name="features"]:checked');
+  if (checkedRadio) {
+    showFeature(checkedRadio);
+  } else {
+    const firstRadio = document.querySelector('input[name="features"]');
+    if (firstRadio) {
+      firstRadio.checked = true;
+      showFeature(firstRadio);
+    }
+  }
+});
+</script>
 
     <style>
       body {

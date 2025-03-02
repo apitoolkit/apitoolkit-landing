@@ -51,53 +51,48 @@ features:
     links:
       - icon: align-left
         id: logs
-        title: Logs and traces analysis
-        details: Gain deep insights into your API performance with real-time logs and trace analysis. Quickly identify bottlenecks, debug issues efficiently, and enhance reliability with structured logging, detailed traces, and actionable analytics all in one powerful toolkit.
-        learnmore: /
+        title: Logs and Traces
+        details: Query all your logs and correlate them with trace breakdowns or the requests which triggered the logs.
+        learnmore: /features/api-logs-and-metrics
       - icon: activity
         id: errors
-        title: Errors and Performance tracking
+        title: Errors and Performance
         details: Monitor API errors and performance in real time. Detect issues instantly, analyze trends, and optimize response times with detailed insights. Improve reliability with automated tracking, alerting, and in-depth analytics to ensure a seamless user experience.
-        learnmore: /
-      - icon: compass
-        id: monitors
-        title: Monitors and healthchecks
-        details: Ensure API reliability with automated monitors and health checks. Continuously track uptime, detect failures early, and receive instant alerts. Keep your services running smoothly with real-time insights and proactive issue resolution.
-        learnmore: /
+        learnmore: /features/error-tracking
       - icon: bar-chart
         id: metrics
-        title: Custom metrics
+        title: Metrics and dashboards
         details: Define and track custom metrics tailored to your API needs. Gain actionable insights, monitor key performance indicators, and optimize efficiency with real-time data visualization and alerts. Make data-driven decisions to enhance your API’s performance and reliability.
-        learnmore: /
+        learnmore: /features/api-management
   - title: API management
     links:
       - icon: layout
         id: apis
-        title: API Catalog and Documentation
+        title: API Catalog and Docs
         details: Organize, manage, and document your APIs effortlessly with a dynamic API catalog. Provide clear, up-to-date documentation, improve discoverability, and streamline onboarding for developers with interactive guides, code samples, and real-time updates.
-        learnmore: /
+        learnmore: /features/api-management
       - icon: copy
         id: change
-        title: Change detection and anomalies
+        title: Anomalies
         details: Detect API changes and anomalies in real time. Stay ahead of unexpected behavior with automated monitoring, instant alerts, and detailed insights. Ensure stability, prevent disruptions, and maintain seamless performance with proactive change detection.
-        learnmore: /
-  - title: Alerts and reports
+        learnmore: /features/api-observability
+  - title: Alerts and Monitors
     links:
+      - icon: compass
+        id: monitors
+        title: Monitors and healthchecks
+        details: Ensure API reliability with automated monitors and health checks. Continuously track uptime, detect failures early, and receive instant alerts. Keep your services running smoothly with real-time insights and proactive issue resolution.
+        learnmore: /docs/monitors
       - icon: radio
         id: alerts
-        title: Real time alert channels
+        title: Alerts and notifications
         details: Stay informed with real-time alerts and comprehensive reports. Customize alert channels and receive detailed analytics to monitor your API's performance and reliability effectively.
-        learnmore: /
-      - icon: grid
-        id: dashboards
-        title: Custom dashboards
-        details: Tailor your monitoring experience with customizable dashboards. Aggregate and visualize key metrics that matter most to your operations, providing a comprehensive and intuitive overview of your system's performance.
-        learnmore: /
+        learnmore: /docs/alerts
       - icon: calendar
         id: reports
         title: Daily or weekly reports
-        details: Reports on everything
-        learnmore: /
+        details: Receive comprehensive daily or weekly reports summarizing API performance, errors, and key metrics. Get actionable insights delivered to your inbox to stay ahead of potential issues.
+        learnmore: /docs/reports
 
 platforms:
   - title: APIs
@@ -106,13 +101,13 @@ platforms:
     children:
       - title: Catch breaking changes
         details: Spot unexpected changes in API responses or data structures-your services or third-party calls-before they slip into production.
-        learnmore: /
+        learnmore: /features/error-tracking
       - title: Monitor request payloads
         details: Create real-time alerts for critical API payloads-like third-party errors or large bank transactions-and get notified instantly.
-        learnmore: /
+        learnmore: /features/api-observability
       - title: Create multistep healthchecks
         details: Run multistep checks for critical workflows—create an account, check balance, transfer funds, delete account-on a regular schedule.
-        learnmore: /
+        learnmore: /features/api-management
   - title: Backends
     id: backend
     icon: hard-drive
@@ -161,6 +156,8 @@ platforms:
           new Typewriter('#heading-typewriter', {
             strings: ['customers notice', 'your inbox explodes', 'they cause downtime'],
             autoStart: true,
+            pauseFor: 14000,
+            cursor: "",
             loop: true,
           });
           </script>
@@ -191,7 +188,8 @@ platforms:
             <span>Built for security & compliance</span>
           </div>
         </div>
-        <div class="md:w-[45%]">
+        <div class="md:w-[45%] mt-[-3.7rem]">
+            <!-- <img class="w-full" src="/assets/img/home/hero-dashscreen.svg"/> -->
             <!-- <img class="w-full" src="/assets/img/home/hero-img1.svg"/> -->
             <canvas id="rive-hero-canvas" xwidth="200" class="w-full aspect-square xobject-contain"></canvas>
         </div>
@@ -258,9 +256,39 @@ platforms:
       </div>
     </section>
 
+    <div class="max-w-7xl px-3  py-24 w-full text-3xl leading-relaxed flex flex-col items-start justify-begin text-textWeak">
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+        <script src="https://unpkg.com/split-type"></script>
+
+        <div class="max-w-4xl space-y-12 scroll-highlight">
+            <p>APItoolkit offers the best features of Datadog, Sentry, Newrelic, etc., <span class="font-medium text-textStrong">at 1/20 the cost</span>. We train <span class="font-medium text-textStrong">private models</span> on your real-time logs, events, and API request payloads to <span class="font-medium text-textStrong">catch errors</span> and breaking or incremental changes that are impossible to detect on any other platform. Thanks to our unique crytography based algorithms. </p>
+            <p>You can <span class="font-medium text-textStrong">store all your data in your own S3-compatible storage</span>, giving you complete ownership and letting you query or ask questions of your data forever at no extra storage cost.</p>
+        </div>
+        <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        const splitTypes = document.querySelectorAll('.scroll-highlight');
+        splitTypes.forEach((char, i) => {
+            const text = new SplitType(char, {types: ['chars', 'words']});
+            gsap.from(text.chars, {
+                scrollTrigger: {
+                    trigger: char,
+                    start: 'top 80%',
+                    end: 'bottom 20%',
+                    scrub: 1,
+                    markers: false,
+                },
+                opacity: 0.2,
+                stagger: 0.1,
+            })
+        })
+        </script>
+    </div>
+
     <div class="max-w-7xl px-3 w-full text-textWeak space-y-5 group/uc">
-      <h2 class="text-[2rem] leading-tight font-semibold text-textStrong">Monitoring and Observability<span class="text-textWeak">, built to understand all your systems</span></h2>
-      <p class="text-xl leading-normal">Just because you don't see an error, doesn't mean it's not happening. That's why we built both active <br/>and passive monitoring--<span class="text-textBrand">to keep you informed of the different systems you maintain.<span></p>
+      <h2 class="text-4xl leading-tight font-semibold text-textStrong">Monitoring and Observability<span class="text-textDisabled">, <br/>built to understand your entire stack</span></h2>
+      <p class="hidden text-2xl leading-normal">Just because you don't see an error, doesn't mean it's not happening. That's why we built both active <br/>and passive monitoring--<span class="text-textBrand">to keep you informed of the different systems you maintain.<span></p>
 
       <div class="flex justify-between py-8">
         <div class="inline-flex justify-center bg-fillWeak border border-strokeWeak rounded-lg
@@ -280,7 +308,7 @@ platforms:
 
       {% for platform in this.frontmatter.platforms %}
       <!-- {{platform.title}} -->
-      <div class="hidden group-has-[.uc-{{platform.id}}:checked]/uc:flex gap-16 flex-col md:flex-row">
+      <div class="hidden group-has-[.uc-{{platform.id}}:checked]/uc:flex gap-5 flex-col md:flex-row">
         <div class="sm:w-1/3 divide-y divide-y-strokeDisabled [&_p]:leading-normal">
          {% for c in platform.children %}
           <label class="flex px-2 py-6 gap-3 group cursor-pointer hover:bg-fillBrand-weak rounded-lg">
@@ -291,8 +319,8 @@ platforms:
             </svg>
             <div class="flex-1 space-y-2">
                 <h5 class="text-xl font-semibold text-textStrong">{{c.title}}</h5>
-                <p class="hidden group-has-[:checked]:block">{{c.details}}</p>
-                <a class="hidden group-has-[:checked]:block text-textBrand underline block" href="{{c.learnmore}}">Learn more</a>
+                <p class="text-lg hidden group-has-[:checked]:block">{{c.details}}</p>
+                <a class="text-lg hidden group-has-[:checked]:block text-textBrand underline block" href="{{c.learnmore}}">Learn more</a>
             </div>
           </label>
           {% endfor %}
@@ -310,9 +338,9 @@ platforms:
     <div class="max-w-7xl px-3 w-full text-textWeak space-y-5">
       <div class="flex justify-between">
         <div class="flex-1 space-y-5">
-          <h2 class="text-[2rem] leading-tight font-semibold text-textStrong">Put AI to work. <span class="text-textWeak">seriously</span></h2>
-          <p class="text-xl leading-normal">Generate queries, create visualizations, fix bugs, monitor logs, payloads, and kickstart whole analyses - all from a prompt.</p>
-          <a class="text-xl text-textBrand underline underline-offset-2 block ">Learn more</a>
+          <h2 class="text-4xl leading-tight font-semibold text-textStrong">Put AI to work. <span class="text-textDisabled">seriously</span></h2>
+          <p class="hidden max-w-prose text-2xl leading-normal">Generate queries, create visualizations, fix bugs, monitor logs, payloads, and kickstart whole analyses - all from a prompt.</p>
+          <a href="/docs/features/" class="text-lg text-textBrand underline underline-offset-2 block ">Learn more</a>
         </div>
         <div class="flex items-end">
           <div class="inline-flex gap-4  *:p-4  *:inline-flex *:items-center">
@@ -353,7 +381,7 @@ platforms:
           <div class="flex flex-col *:flex *:gap-2 [&>label]:text-lg [&>label]:p-1">
             <h4 class="text-sm font-semibold pb-3 pl-2.5">{{feature.title}}</h4>
             {% for f in feature.links %}
-            <label class="cursor-pointer has-[:checked]:!border-fillBrand-strong has-[:checked]:bg-fillBrand-weak"><svg><use xlink:href="/assets/deps/sprite.svg#{{f.icon}}"></use></svg>{{f.title}}<input {% if ischecked and forloop.first %}checked{% endif %}  type="radio" class="opacity-0 w-0 h-0 ft ft-{{f.id}}" name="features"/></label>
+            <label class="cursor-pointer has-[:checked]:!border-fillBrand-strong has-[:checked]:bg-fillBrand-weak"><svg><use xlink:href="/assets/deps/sprite.svg#{{f.icon}}"></use></svg>{{f.title}}<input {% if ischecked and forloop.first %}checked{% endif %}  type="radio" class="hidden ft ft-{{f.id}}" name="features"/></label>
             {% endfor %}
           </div>
           {% endfor %}
@@ -392,21 +420,27 @@ platforms:
 
     <!-- FLEXIBLE DEPLOYMENTS-->
     <div class="max-w-7xl px-3 w-full text-textWeak space-y-5">
-      <h2 class="text-[2rem] leading-tight font-semibold text-textStrong">Flexible deployment options for every company </h2>
-      <p class="text-xl leading-normal">Regardless of your company's size or compliance requirements, APItoolkit operates <br/>within your business and regulatory constraints.</p>
+      <h2 class="text-4xl leading-tight font-semibold text-textStrong">Flexible deployment options <span class="text-textDisabled">for every company</span></h2>
+      <p class="text-2xl leading-normal">Regardless of your company's size or compliance requirements, APItoolkit operates <br/>within your business and regulatory constraints.</p>
       <div>
         <a href="https://calendar.app.google/1a4HG5GZYv1sjjZG6" target="_blank" class="btn py-3 px-6 rounded-xl bg-fillBrand-strong text-textInverse-strong shadow ">Book a demo</a>
         <a href="https://app.apitoolkit.io" class="btn py-3 px-6 rounded-xl bg-transparent border border-fillBrand-strong text-fillBrand-strong shadow " >Start 30 day free trial</a>
       </div>
-      <div class="flex flex-col md:flex-row gap-10 pt-5 *:shadow *:flex-1 *:p-6 *:space-y-5 *:rounded-xl *:border [&_svg]:w-5 [&_svg]:h-5 [&_svg]:!text-iconBrand">
+      <div class="text-xl flex flex-col md:flex-row gap-10 pt-5 *:shadow *:flex-1 *:p-6 *:space-y-5 *:rounded-xl *:border [&_svg]:w-5 [&_svg]:h-5 [&_svg]:!text-iconBrand">
         <div class="border-strokeBrand-weak ">
           <div class="inline-block p-3 bg-fillBrand-weak rounded-full"><svg><use xlink:href="/assets/deps/sprite.svg#cloud"></use></svg></div>
           <div class="flex flex-col">
             <strong class="block font-normal">APITOOLKIT CLOUD</strong>
             <h5 class="font-semibold text-2xl text-textStrong">Bring nothing</h5>
           </div>
-          <p>Fully managed cloud service with <strong>usage-based pricing</strong> and automatic optimization.</p>
-          <p>Start for free, then scale seamlessly with <strong>predictable costs</strong> as your needs grow.</p>
+          <ul class="list-disc space-y-2 list-inside">
+            <li>Fully managed cloud service</li>
+            <li><strong>Predictable Usage-based</strong> pricing</li>
+            <li>Intelligent incident alerts</li>
+            <li>Query your data in english</li>
+          </ul>
+          <!-- <p>Fully managed cloud service with <strong>usage-based pricing</strong> and automatic optimization.</p> -->
+          <!-- <p>Start for free, then scale seamlessly with <strong>predictable costs</strong> as your needs grow.</p> -->
           <a href="https://app.apitoolkit.io" class="block underline underline-offset-2 text-textBrand">Start 30 day free trial</a>
         </div>
 
@@ -416,8 +450,15 @@ platforms:
             <strong class="block font-normal">APITOOLKIT CLOUD</strong>
             <h5 class="font-semibold text-2xl text-textStrong">Bring your own s3 storage</h5>
           </div>
-          <p>Fully managed cloud service but <strong>all your data</strong> is stored in your own s3 compatible storage. </p>
-          <p>Keep your data for as long as you want, and freely <strong>query and visualize data from months or years ago</strong>. At no extra cost.</p>
+          <ul class="list-disc space-y-2 list-inside text-lg">
+            <li>Own and control all your data</li>
+            <li>Save <strong>all your data</strong> to any S3-compatible bucket</li>
+            <li><strong>Unlimited data retention</strong> period</li>
+            <li>Query years of data via APItoolkit</li>
+            <li><strong>No extra cost</strong> for data retention</li>
+          </ul>
+          <!-- <p>Fully managed cloud service but <strong>all your data</strong> is stored in your own s3 compatible storage. </p> -->
+          <!-- <p>Keep your data for as long as you want, and freely <strong>query and visualize data from months or years ago</strong>. At no extra cost.</p> -->
           <a href="https://calendar.app.google/1a4HG5GZYv1sjjZG6" target="_blank" class="block underline underline-offset-2 text-textBrand">Book a demo</a>
         </div>
 
@@ -427,8 +468,14 @@ platforms:
             <strong class="block font-normal">ON PREM</strong>
             <h5 class="font-semibold text-2xl text-textStrong">Bring your own servers</h5>
           </div>
-          <p>Deploy in your own servers while APItoolkit handles operations.</p>
-          <p>Perfect for organizations seeking <strong>complete data control</strong> with <strong>predictable annual pricing</strong>.</p>
+          <ul class="list-disc space-y-2 list-inside">
+            <li>Deploy to your own servers</li>
+            <li>Managed by the APItoolkit team</li>
+            <li>Ideal for <strong>regulatory compliance</strong></li>
+            <li>Predictable custom annual pricing</li>
+          </ul>
+          <!-- <p>Deploy in your own servers while APItoolkit handles operations.</p> -->
+          <!-- <p>Perfect for organizations seeking <strong>complete data control</strong> with <strong>predictable annual pricing</strong>.</p> -->
           <a href="https://calendar.app.google/1a4HG5GZYv1sjjZG6" target="_blank" class="block underline underline-offset-2 text-textBrand">Book a demo</a>
         </div>
 
@@ -438,7 +485,7 @@ platforms:
     <!-- INTEGRATIONS-->
     <div class="text-textWeak space-y-5 w-full flex flex-col items-center justify-center">
       <div class="max-w-7xl px-3 w-full space-y-5">
-        <h2 class="text-[2rem] leading-tight font-semibold text-textStrong">780+ Integrations with your favorite tech stacks, powered by OpenTelemetry</h2>
+        <h2 class="text-4xl leading-tight font-semibold text-textStrong">780+ Integrations with your favorite tech stacks, <br/><span class="text-textDisabled">powered by OpenTelemetry</span></h2>
         <a class="block text-textBrand underline underline-offset-2">View all integrations.</a>
       </div>
       <div class="space-y-5 pt-5 mask-edges">
@@ -484,7 +531,7 @@ platforms:
 
     <!-- REAL RESULTS FROM CUSTOMERS -->
     <div class="max-w-7xl px-3 w-full text-textStrong space-y-5">
-      <h2 class="text-[2rem] leading-tight font-semibold text-textStrong">Real results for real customers</h2>
+      <h2 class="text-4xl leading-tight font-semibold text-textStrong">Real results for <span class="text-textDisabled">real customers<span></h2>
       <a class="block text-textBrand underline underline-offset-2">View all case studies.</a>
       <div class="relative hidden sm:flex items-end justify-end !-mt-5b">
         <svg class="absolute -mb-3" width="253" height="55" viewBox="0 0 253 55" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -7078,6 +7078,10 @@ html:has(.drawer-toggle:checked) {
   margin-top: 2rem;
 }
 
+.mt-\[-3\.7rem\] {
+  margin-top: -3.7rem;
+}
+
 .mt-\[20px\] {
   margin-top: 20px;
 }
@@ -7538,6 +7542,10 @@ html:has(.drawer-toggle:checked) {
 
 .resize {
   resize: both;
+}
+
+.list-inside {
+  list-style-position: inside;
 }
 
 .list-disc {
@@ -11400,6 +11408,11 @@ html:has(.drawer-toggle:checked) {
 
 .\[\&\>label\]\:text-lg>label {
   font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.\[\&\>label\]\:text-xl>label {
+  font-size: 1.25rem;
   line-height: 1.75rem;
 }
 
