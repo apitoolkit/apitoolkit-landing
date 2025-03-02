@@ -2,7 +2,7 @@
 title: Go Gin
 ogTitle: Go Gin OpenTelemetry Integration
 date: 2022-03-23
-updatedDate: 2024-10-22
+updatedDate: 2025-03-02
 menuWeight: 4
 ---
 
