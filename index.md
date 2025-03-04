@@ -147,8 +147,8 @@ platforms:
 <section class="flex flex-col space-y-48 items-center">
   <section class="space-y-20 mt-8 sm:mt-32">
       <div class="flex flex-col md:flex-row max-w-7xl w-full gap-5 px-3">
-        <div class="space-y-8 flex-1">
-          <h1 class="text-[2.5rem]  font-semibold leading-tight sm:leading-10 sm:space-y-3">
+        <div class="space-y-10 flex-1">
+          <h1 class="text-[2.8rem]  font-semibold leading-tight sm:leading-none sm:space-y-3">
             <span class="block">Find and fix production issues<span class="text-textDisabled">,</span></span>
             <span class="text-textDisabled block">before <span id="heading-typewriter">customers notice</span></span>
           </h1>
