@@ -430,7 +430,7 @@ platforms:
         <div class="border-strokeBrand-weak ">
           <div class="inline-block p-3 bg-fillBrand-weak rounded-full"><svg><use xlink:href="/assets/deps/sprite.svg#cloud"></use></svg></div>
           <div class="flex flex-col">
-            <strong class="block font-normal">APITOOLKIT CLOUD</strong>
+            <strong class="block font-normal text-sm">APITOOLKIT CLOUD</strong>
             <h5 class="font-semibold text-2xl text-textStrong">Bring nothing</h5>
           </div>
           <ul class="list-disc space-y-2 list-inside">
@@ -447,7 +447,7 @@ platforms:
         <div class="bg-fillBrand-weak border-strokeBrand-weak shadow-fillBrand-weak">
           <div class="inline-block p-3 bg-fillBrand-weak rounded-full"><svg><use xlink:href="/assets/deps/sprite.svg#database"></use></svg></div>
           <div class="flex flex-col">
-            <strong class="block font-normal">APITOOLKIT CLOUD</strong>
+            <strong class="block font-normal text-sm">APITOOLKIT CLOUD</strong>
             <h5 class="font-semibold text-2xl text-textStrong">Bring your own s3 storage</h5>
           </div>
           <ul class="list-disc space-y-2 list-inside text-lg">
@@ -465,7 +465,7 @@ platforms:
         <div class="bg-fillWarning-weak border-strokeWarning-weak shadow-fillWarning-weak">
           <div class="inline-block p-3 bg-fillBrand-weak rounded-full"><svg><use xlink:href="/assets/deps/sprite.svg#server"></use></svg></div>
           <div class="flex flex-col">
-            <strong class="block font-normal">ON PREM</strong>
+            <strong class="block font-normal text-sm">ON PREM</strong>
             <h5 class="font-semibold text-2xl text-textStrong">Bring your own servers</h5>
           </div>
           <ul class="list-disc space-y-2 list-inside">
