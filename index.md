@@ -387,7 +387,7 @@ platforms:
           {% endfor %}
 
           <div class="flex flex-col *:underline *:underline-offset-2 space-y-1 text-textBrand pl-2.5">
-            <a href="https://app.apitoolkit.io">Launch playground</a>
+            <a href="https://app.apitoolkit.io/p/00000000-0000-0000-0000-000000000000/">Launch playground</a>
             <a href="https://calendar.app.google/1a4HG5GZYv1sjjZG6" target="_blank">Book a demo</a>
             <a href="https://app.apitoolkit.io">Start free 30 day trial</a>
           </div>
