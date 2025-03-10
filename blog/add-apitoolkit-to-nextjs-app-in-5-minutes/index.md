@@ -1,6 +1,6 @@
 ---
 title: "Add APIToolkit To Your Next.js Application In 5 Minutes"
-featured_image: add-apitoolkit.png
+featured_image: apitoolkit-in-5-minutes.png
 date: 2025-03-06T04:03:05+02:00
 author: patrick
 description: Quickly enhance your Next.js API with APIToolkit in just 5 minutes using OpenTelemetry to capture performance data, monitor errors, and gain easy insights for smoother operations.
@@ -10,7 +10,7 @@ categories:
 
 # Add APIToolkit To Your Next.js Application In 5 Minutes
 
-![Add APIToolkit To Your Next.js Application In 5 Minutes](./add-apitoolkit.png)
+![Add APIToolkit To Your Next.js Application In 5 Minutes](./apitoolkit-in-5-minutes.png)
 
 In this article, we will learn to integrate [APIToolkit](https://apitoolkit.io/) into our [Next.js](https://nextjs.org/) application in just a few simple steps. For this to work, we need OpenTelemetry. [OpenTelemetry](https://opentelemetry.io/) will help us gather traces about our application and send this information to APIToolkit. APIToolkit provides you with a variety of features out-of-the-box, including, but not limited to, API Observability and Monitoring, API Testing, Error Tracking, API Analytics, API Log Explorer, and a lot more.
 
