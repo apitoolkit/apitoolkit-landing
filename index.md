@@ -531,7 +531,7 @@ platforms:
 
     <!-- REAL RESULTS FROM CUSTOMERS -->
     <div class="max-w-7xl px-3 w-full text-textStrong space-y-5">
-      <h2 class="text-4xl leading-tight font-normal text-textStrong">Real results for <span class="text-textDisabled">real customers<span></h2>
+      <h2 class="text-4xl leading-tight font-normal text-textStrong">Real results for <span class="text-textDisabled">real companies<span></h2>
       <a class="block text-textBrand underline underline-offset-2">View all case studies.</a>
       <div class="relative hidden sm:flex items-end justify-end !-mt-5b">
         <svg class="absolute -mb-3" width="253" height="55" viewBox="0 0 253 55" fill="none" xmlns="http://www.w3.org/2000/svg">
