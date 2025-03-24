@@ -22,7 +22,7 @@ Extended delays in API responses may lead to a decrease in user satisfaction and
 
 - To improve database query performance, it is recommended to implement indexing strategies and design optimized query structures. Utilizing these techniques can significantly enhance the efficiency of database operations
 
-- Use caching methods such, as Redis or API Gateway caching to lessen the load on the server.
+- Use caching methods such, as [Redis](https://redis.io/) or API Gateway caching to lessen the load on the server.
 
 - Implement a load balancer to evenly distribute network traffic, enhancing the system's ability to scale effectively. This approach optimizes resource allocation and improves overall performance.
 
@@ -34,7 +34,7 @@ APIs face significant security vulnerabilities due to insufficient authenticatio
 
 - To enhance security protocols, it is advisable to systematically refresh and deactivate API keys at regular intervals. This practice of periodic key rotation and invalidation serves to fortify the overall security framework.
 
-- Utilize widely accepted frameworks such as OAuth 2.0 or OpenID Connect for secure user authentication.
+- Utilize widely accepted frameworks such as [OAuth 2.0](https://auth0.com/) or [OpenID](https://openid.net/) Connect for secure user authentication.
 
 - Establish request limitations to protect against sustained attacks by imposing restrictions on the frequency of incoming requests.
 
@@ -44,7 +44,7 @@ Ambiguous or inconsistent error notifications can hinder developers' progress an
 
 #### Fix:
 
-- Employ applications such as OpenTelemetry and APIToolkit to monitor and display errors in real-time. APIToolkit offers functionality beyond error tracking; it allows for the creation of customized monitors and provides notifications for any issues before users become aware of them.
+- Employ applications such as [OpenTelemetry](https://opentelemetry.io/) and [APItoolkit](https://apitoolkit.io/) to monitor and display errors in real-time. APItoolkit offers functionality beyond error tracking; it allows for the creation of customized monitors and provides notifications for any issues before users become aware of them.
 
 - Craft informative error notifications that include specific error codes, detailed explanations, and potential resolutions. Ensure these messages are clear and helpful, guiding users towards understanding and addressing the issue effectively.
 
