@@ -1,6 +1,6 @@
 ---
 title: "Monitoring your Express.js application using OpenTelemetry with APIToolkit"
-featured_image: monitoring-your-express-app-with-opentelemetry-and-apitoolkit.png
+featured_image: monitoring-your-express-app-with-opentelemetry-and-apitoolkit.jpeg
 date: 2025-02-27T04:08:58+02:00
 author: patrick
 description: With APITookit, you can efficiently identify and diagnose failing endpoints, minimizing downtime and ensuring a seamless user experience.
@@ -10,7 +10,7 @@ categories:
 
 # Monitoring your Express.js application using OpenTelemetry with APIToolkit
 
-![APIToolkit](./monitoring-your-express-app-with-opentelemetry-and-apitoolkit.png)
+![APIToolkit](./monitoring-your-express-app-with-opentelemetry-and-apitoolkit.jpeg)
 
 The complexity of modern microservices requires a thorough understanding of your application's production behaviour. [OpenTelemetry](https://opentelemetry.io/) provides a universal framework that enables code instrumentation to gather telemetry data through collection, processing, and exporting metrics, logs, and traces. In this article, we'll explore how to implement [OpenTelemetry](https://opentelemetry.io/) in an Express.js application to gain valuable insights into its performance and behaviour.
 
