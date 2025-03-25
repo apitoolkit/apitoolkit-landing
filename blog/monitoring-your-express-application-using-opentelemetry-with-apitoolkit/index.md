@@ -29,7 +29,7 @@ Before we dive into the implementation, let’s first understand our monitoring 
 
 ## Getting Started
 
-### Creating an APIToolKit Account
+### Creating an APIToolkit Account
 
 - Sign up for free [here](http://app.apitoolkit.io/).
 
