@@ -147,8 +147,8 @@ platforms:
 <section class="flex flex-col space-y-48 items-center">
   <section class="space-y-20 mt-8 sm:mt-32">
       <div class="flex flex-col md:flex-row max-w-7xl w-full gap-5 px-3">
-        <div class="space-y-8 flex-1">
-          <h1 class="text-[2.5rem]  font-semibold leading-tight sm:leading-10 sm:space-y-3">
+        <div class="space-y-10 flex-1">
+          <h1 class="text-[2.8rem]  font-normal leading-tight sm:leading-none sm:space-y-3">
             <span class="block">Find and fix production issues<span class="text-textDisabled">,</span></span>
             <span class="text-textDisabled block">before <span id="heading-typewriter">customers notice</span></span>
           </h1>
@@ -287,7 +287,7 @@ platforms:
     </div>
 
     <div class="max-w-7xl px-3 w-full text-textWeak space-y-5 group/uc">
-      <h2 class="text-4xl leading-tight font-semibold text-textStrong">Monitoring and Observability<span class="text-textDisabled">, <br/>built to understand your entire stack</span></h2>
+      <h2 class="text-4xl leading-tight font-normal text-textStrong">Monitoring and Observability<span class="text-textDisabled">, <br/>built to understand your entire stack</span></h2>
       <p class="hidden text-2xl leading-normal">Just because you don't see an error, doesn't mean it's not happening. That's why we built both active <br/>and passive monitoring--<span class="text-textBrand">to keep you informed of the different systems you maintain.<span></p>
 
       <div class="flex justify-between py-8">
@@ -338,7 +338,7 @@ platforms:
     <div class="max-w-7xl px-3 w-full text-textWeak space-y-5">
       <div class="flex justify-between">
         <div class="flex-1 space-y-5">
-          <h2 class="text-4xl leading-tight font-semibold text-textStrong">Put AI to work. <span class="text-textDisabled">seriously</span></h2>
+          <h2 class="text-4xl leading-tight font-normal text-textStrong">Put AI to work. <span class="text-textDisabled">seriously</span></h2>
           <p class="hidden max-w-prose text-2xl leading-normal">Generate queries, create visualizations, fix bugs, monitor logs, payloads, and kickstart whole analyses - all from a prompt.</p>
           <a href="/docs/features/" class="text-lg text-textBrand underline underline-offset-2 block ">Learn more</a>
         </div>
@@ -352,7 +352,7 @@ platforms:
       <div class="flex flex-col md:flex-row gap-12 pt-5 [&>div]:space-y-5 [&_h5]:text-textStrong [&_img]:border [&_img]:h-48 [&_img]:w-auto [&_img]:rounded-lg  [&_img]:border-strokeBrand-strong">
         <div class="">
           <img src="/assets/img/home/error-analytics.svg" class="bg-fillBrand-weak"/>
-          <h5 class="text-xl font-semibold">Weekly reports that contain exactly what needs attention</h5>
+          <h5 class="text-xl font-normal">Weekly reports that contain exactly what needs attention</h5>
           <p>We tell you want errors popped up, which services or endpoints got slower, which weird log appeared, etc.</p>
         </div>
         <div class="">
@@ -370,7 +370,7 @@ platforms:
 
     <!-- FEATURES -->
     <div class="max-w-7xl px-3 w-full text-textWeak space-y-5 group/ft">
-      <h2 class="text-[2rem] leading-tight font-semibold text-textStrong">Built with features that matter to engineers like us</h2>
+      <h2 class="text-[2rem] leading-tight font-normal text-textStrong">Built with features that matter to engineers like us</h2>
       <p class="text-xl leading-normal">Collect, store, and analyze every single log or event <br/>without limits on a platform that gives you complete control.</p>
       <div class="flex gap-16 pt-5">
         <div class="hidden sm:block text-textStrong space-y-8 [&_input]:hidden [&_label]:inline-flex [&_label]:px-2  [&_label]:items-center [&_label]:gap-2
@@ -387,7 +387,7 @@ platforms:
           {% endfor %}
 
           <div class="flex flex-col *:underline *:underline-offset-2 space-y-1 text-textBrand pl-2.5">
-            <a href="https://app.apitoolkit.io">Launch playground</a>
+            <a href="https://app.apitoolkit.io/p/00000000-0000-0000-0000-000000000000/">Launch playground</a>
             <a href="https://calendar.app.google/1a4HG5GZYv1sjjZG6" target="_blank">Book a demo</a>
             <a href="https://app.apitoolkit.io">Start free 30 day trial</a>
           </div>
@@ -420,7 +420,7 @@ platforms:
 
     <!-- FLEXIBLE DEPLOYMENTS-->
     <div class="max-w-7xl px-3 w-full text-textWeak space-y-5">
-      <h2 class="text-4xl leading-tight font-semibold text-textStrong">Flexible deployment options <span class="text-textDisabled">for every company</span></h2>
+      <h2 class="text-4xl leading-tight font-normal text-textStrong">Flexible deployment options <span class="text-textDisabled">for every company</span></h2>
       <p class="text-2xl leading-normal">Regardless of your company's size or compliance requirements, APItoolkit operates <br/>within your business and regulatory constraints.</p>
       <div>
         <a href="https://calendar.app.google/1a4HG5GZYv1sjjZG6" target="_blank" class="btn py-3 px-6 rounded-xl bg-fillBrand-strong text-textInverse-strong shadow ">Book a demo</a>
@@ -430,7 +430,7 @@ platforms:
         <div class="border-strokeBrand-weak ">
           <div class="inline-block p-3 bg-fillBrand-weak rounded-full"><svg><use xlink:href="/assets/deps/sprite.svg#cloud"></use></svg></div>
           <div class="flex flex-col">
-            <strong class="block font-normal">APITOOLKIT CLOUD</strong>
+            <strong class="block font-normal text-sm">APITOOLKIT CLOUD</strong>
             <h5 class="font-semibold text-2xl text-textStrong">Bring nothing</h5>
           </div>
           <ul class="list-disc space-y-2 list-inside">
@@ -447,7 +447,7 @@ platforms:
         <div class="bg-fillBrand-weak border-strokeBrand-weak shadow-fillBrand-weak">
           <div class="inline-block p-3 bg-fillBrand-weak rounded-full"><svg><use xlink:href="/assets/deps/sprite.svg#database"></use></svg></div>
           <div class="flex flex-col">
-            <strong class="block font-normal">APITOOLKIT CLOUD</strong>
+            <strong class="block font-normal text-sm">APITOOLKIT CLOUD</strong>
             <h5 class="font-semibold text-2xl text-textStrong">Bring your own s3 storage</h5>
           </div>
           <ul class="list-disc space-y-2 list-inside text-lg">
@@ -465,7 +465,7 @@ platforms:
         <div class="bg-fillWarning-weak border-strokeWarning-weak shadow-fillWarning-weak">
           <div class="inline-block p-3 bg-fillBrand-weak rounded-full"><svg><use xlink:href="/assets/deps/sprite.svg#server"></use></svg></div>
           <div class="flex flex-col">
-            <strong class="block font-normal">ON PREM</strong>
+            <strong class="block font-normal text-sm">ON PREM</strong>
             <h5 class="font-semibold text-2xl text-textStrong">Bring your own servers</h5>
           </div>
           <ul class="list-disc space-y-2 list-inside">
@@ -485,7 +485,7 @@ platforms:
     <!-- INTEGRATIONS-->
     <div class="text-textWeak space-y-5 w-full flex flex-col items-center justify-center">
       <div class="max-w-7xl px-3 w-full space-y-5">
-        <h2 class="text-4xl leading-tight font-semibold text-textStrong">780+ Integrations with your favorite tech stacks, <br/><span class="text-textDisabled">powered by OpenTelemetry</span></h2>
+        <h2 class="text-4xl leading-tight font-normal text-textStrong">780+ Integrations with your favorite tech stacks, <br/><span class="text-textDisabled">powered by OpenTelemetry</span></h2>
         <a class="block text-textBrand underline underline-offset-2">View all integrations.</a>
       </div>
       <div class="space-y-5 pt-5 mask-edges">
@@ -531,7 +531,7 @@ platforms:
 
     <!-- REAL RESULTS FROM CUSTOMERS -->
     <div class="max-w-7xl px-3 w-full text-textStrong space-y-5">
-      <h2 class="text-4xl leading-tight font-semibold text-textStrong">Real results for <span class="text-textDisabled">real customers<span></h2>
+      <h2 class="text-4xl leading-tight font-normal text-textStrong">Real results for <span class="text-textDisabled">real companies<span></h2>
       <a class="block text-textBrand underline underline-offset-2">View all case studies.</a>
       <div class="relative hidden sm:flex items-end justify-end !-mt-5b">
         <svg class="absolute -mb-3" width="253" height="55" viewBox="0 0 253 55" fill="none" xmlns="http://www.w3.org/2000/svg">
