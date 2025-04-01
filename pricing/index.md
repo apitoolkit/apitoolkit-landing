@@ -26,23 +26,83 @@ faqs:
         </div>
     </header>
     <div class="max-w-7xl  mx-auto px-2">
-        <section class="w-full grid md:grid-cols-2 gap-8 py-24">
-           <!-- GRADUATED PLAN -->
+        <section class="w-full grid md:grid-cols-3 gap-8 py-24">
+
             <div
                 class="group rounded-2xl border p-6 flex duration-300 flex-col text-gray-700 justify-start gap-6 text-lef shadow-md">
                 <div class="flex flex-col gap-3 pb-1">
                 <div class="flex justify-between items-center">
-                 <h3 class="font-medium text-[25px]">Pro Plan</h3>
-                <div role="tablist" class="tabs tabs-boxed tabs-xs">
-                   <inputronchange="handlePlanToggle()" value="month" type="radio" name="plans" role="tab" class="tab" aria-label="Monthly" checked>
-                   <input onchange="handlePlanToggle()" value="annual" type="radio" name="plans" role="tab" class="tab" aria-label="Annual">
+                 <h3 class="font-medium text-[25px]">Free Plan</h3>
                 </div>
+                    <div>
+                        <div class="flex flex-col items-start gap-8px">
+                            <span class="text-sm font-bold text-gray-400">Starts at ...</span>
+                            <div class="">
+                               <span class="font-bold text-6xl" >$0</span>
+                               <span class="">/10k events per day</span>
+                               <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-gray-700 mt-auto">
+                    <p class="font-bold mb-3">For hobby projects</p>
+                    <ul class="flex flex-col gap-3 text-sm font-medium">
+                        <li class="flex flex-row gap-2">
+                            <div class="text-center font-bold bg-gray-200 text-green-500 rounded-md w-5 h-5">
+                                ✓
+                            </div>One team member
+                        </li>
+                        <li class="flex flex-row gap-2">
+                            <div class="text-center font-bold bg-gray-200 text-green-500 rounded-md w-5 h-5">
+                                ✓
+                            </div>10k events per day
+                        </li>
+                        <li class="flex flex-row gap-2">
+                            <div class="text-center font-bold bg-gray-200 text-green-500 rounded-md w-5 h-5">
+                                ✓
+                            </div>
+                            Opentelemetry Logs and Traces
+                        </li>
+                        <li class="flex flex-row gap-2">
+                            <div class="text-center font-bold bg-gray-200 text-green-500 rounded-md w-5 h-5">
+                                ✓
+                            </div>
+                            API swagger/OpenAPI hosting
+                        </li>
+                        <li class="flex flex-row gap-2">
+                            <div class="text-center font-bold bg-gray-200 text-green-500 rounded-md w-5 h-5">
+                                ✓
+                            </div>
+                            API metrics custom monitors
+                        </li>
+                        <li class="flex flex-row gap-2">
+                            <div class="text-center font-bold bg-gray-200 text-green-500 rounded-md w-5 h-5">
+                                ✓
+                            </div>
+                            Last 3 days data retention
+                        </li>
+                    </ul>
+                </div>
+                <a  href="https://app.apitoolkit.io/p/new"
+                    class="mt-auto rounded-xl text-gray-700 flex flex-row justify-center px-4 py-[7px] border">
+                    Get Started
+                </a>
+            </div>
+
+
+           <!-- GRADUATED PLAN -->
+            <div
+                class="group rounded-2xl border border-[#0068ff] p-6 flex duration-300 flex-col text-gray-700 justify-start gap-6 text-lef shadow-md">
+                <div class="flex flex-col gap-3 pb-1">
+                <div class="flex justify-between items-center">
+                 <h3 class="font-medium text-[25px]">Pay as you use</h3>
                 </div>
                     <div>
                         <div class="flex flex-col items-start gap-8px">
                             <span class="text-sm font-bold text-gray-400" id="starts_at">Starts at ...</span>
                             <div class="">
-                               <span class="font-bold text-6xl" id="price">$49</span>
+                               <span class="font-bold text-6xl" id="price">$34</span>
                                <span class="" id="num_requests">/20m events per month</span>
                                <br>
                                <small class="text-sm">then $1 per 500k events (logs, spans, metric samples, etc)</small>
@@ -52,7 +112,7 @@ faqs:
                     </div>
                 </div>
                 <div>
-                  <input type="range" min="0" max="6" step="1" value="0" class="range range-primary range-sm" id="price_range">
+                  <input type="range" min="20000000" max="495000000" step="10000000" value="20000000" class="range range-sm [--range-shdw:#0068ff]" style="--range-shdw:#0068ff" id="price_range">
                 </div>
                 <div class="text-gray-700">
                     <p class="font-bold mb-3">For Growing Companies</p>
@@ -66,7 +126,7 @@ faqs:
                             <div class="text-center font-bold bg-gray-200 text-green-500 rounded-md w-5 h-5">
                                 ✓
                             </div>
-                            Opentelemetry Logs and Traces 
+                            Opentelemetry Logs and Traces
                         </li>
                         <li class="flex flex-row gap-2">
                             <div class="text-center font-bold bg-gray-200 text-green-500 rounded-md w-5 h-5">
@@ -116,7 +176,7 @@ faqs:
                         <div class="flex flex-col items-start gap-8px">
                             <span class="text-sm font-bold text-gray-400" id="starts_at">Starts at ...</span>
                             <div class="">
-                               <span class="font-bold text-6xl" id="price">$499</span>
+                               <span class="font-bold text-6xl" id="price">$199</span>
                                <span class="" id="num_requests"> per month</span>
                                <br>
                                <small class="text-sm">continuous support for your engineering teams</small>
@@ -131,19 +191,19 @@ faqs:
                         <li class="flex flex-row gap-2">
                             <div class="text-center font-bold bg-gray-200 text-green-500 rounded-md w-5 h-5">
                                 ✓
-                            </div>Everything as in "Pay as you use plan"
+                            </div>Everything in "Pay as you use plan"
                         </li>
                         <li class="flex flex-row gap-2">
                             <div class="text-center font-bold bg-gray-200 text-green-500 rounded-md w-5 h-5">
                                 ✓
                             </div>We help you setup observability and realtime monitors
-                             
+
                         </li>
                         <li class="flex flex-row gap-2">
                             <div class="text-center font-bold bg-gray-200 text-green-500 rounded-md w-5 h-5">
                                 ✓
                             </div>
-                            We setup uptime checks and multistep api tests for you 
+                            We setup uptime checks and multistep api tests for you
                         </li>
                         <li class="flex flex-row gap-2">
                             <div class="text-center font-bold bg-gray-200 text-green-500 rounded-md w-5 h-5">
@@ -155,19 +215,19 @@ faqs:
                             <div class="text-center font-bold bg-gray-200 text-green-500 rounded-md w-5 h-5">
                                 ✓
                             </div>
-                            Our Senior Engineers will jump on calls with your team to help them resolve issues 
+                            Our Senior Engineers will jump on calls with your team to help them resolve issues
                         </li>
                         <li class="flex flex-row gap-2">
                             <div class="text-center font-bold bg-gray-200 text-green-500 rounded-md w-5 h-5">
                                 ✓
                             </div>
-                            Capped at 20 hours of support calls/sessions per month 
+                            Capped at 20 hours of support calls/sessions per month
                         </li>
                         <li class="flex flex-row gap-2">
                             <div class="text-center font-bold bg-gray-200 text-green-500 rounded-md w-5 h-5">
                                 ✓
                             </div>
-                            Weekly reports about everything that went wrong or might be broken. 
+                            Weekly reports about everything that went wrong or might be broken.
                         </li>
                     </ul>
                 </div>
@@ -179,7 +239,7 @@ faqs:
 
             <!-- ENTERPRISE PLAN -->
             <a href="mailto:hello@apitoolkit.io"
-                class="col-span-2 group rounded-2xl border p-6 flex duration-300 flex-col text-gray-50 justify-start gap-6 text-left bg-slate-900 shadow-md hover:-translate-y-3">
+                class="col-span-3 group rounded-2xl border p-6 flex duration-300 flex-col text-gray-50 justify-start gap-6 text-left bg-slate-900 shadow-md hover:-translate-y-3">
                 <div class="flex flex-col gap-3 pb-1">
                     <h3 class="font-medium text-3xl">Enterprise</h3>
                     <div>
@@ -228,7 +288,7 @@ faqs:
           <div class="flex flex-col gap-8 p-10">
              <h1 class="font-medium text-2xl" >Apply for the APItoolkit Startup Program</h1>
             <div class="space-y-3 text-lg">
-             <p> 
+             <p>
              Enjoy 50 to 100% discount on your first year of subscription through our exclusive Startup Program. Qualification criteria:
             </p>
             <ul class="list-disc">
