@@ -31,10 +31,10 @@ Setting up open telemetry allows you to send traces, metrics and logs to the API
 To setup open telemetry, you need to configure the following environment variables:
 
 ```sh
-OTEL_EXPORTER_OTLP_ENDPOINT="http://otelcol.apitoolkit.io:4317"
-OTEL_SERVICE_NAME="my-service" # Specifies the name of the service.
-OTEL_RESOURCE_ATTRIBUTES="at-project-key={ENTER_YOUR_API_KEY_HERE}" # Adds your API KEY to the resource.
-OTEL_EXPORTER_OTLP_PROTOCOL="grpc" #Specifies the protocol to use for the OpenTelemetry exporter.
+export OTEL_EXPORTER_OTLP_ENDPOINT="http://otelcol.apitoolkit.io:4317"
+export OTEL_SERVICE_NAME="my-service" # Specifies the name of the service.
+export OTEL_RESOURCE_ATTRIBUTES="at-project-key={ENTER_YOUR_API_KEY_HERE}" # Adds your API KEY to the resource.
+export OTEL_EXPORTER_OTLP_PROTOCOL="grpc" #Specifies the protocol to use for the OpenTelemetry exporter.
 ```
 
 Then run the command below to start your server with opentelemetry instrumented:
@@ -97,7 +97,7 @@ def home(request):
 
 if __name__ == '__main__':
   settings = {
-    "APITOOLKIT_SERVICE_NAME": "YOUR_SERVICE_NAME",
+    "APITOOLKIT_DEBUG": False,
   }
   with Configurator(settings=settings) as config:
     # Initialize APItoolkit
