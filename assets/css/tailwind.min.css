@@ -2872,12 +2872,6 @@ img {
     --tw-text-opacity: 1;
   }
 
-  .tabs-boxed .tab-active:not(.tab-disabled):not([disabled]):hover,
-  .tabs-boxed :is(input:checked):hover {
-    --tw-text-opacity: 1;
-    color: var(--fallback-pc,oklch(var(--pc)/var(--tw-text-opacity)));
-  }
-
   .table tr.hover:hover,
   .table tr.hover:nth-child(even):hover {
     --tw-bg-opacity: 1;
@@ -5366,10 +5360,6 @@ details.collapse summary::-webkit-details-marker {
       calc(var(--filler-size) * -1 - var(--filler-offset)) 0 0 var(--filler-size);
 }
 
-.range-primary {
-  --range-shdw: var(--fallback-p,oklch(var(--p)/1));
-}
-
 .rating input {
   -moz-appearance: none;
        appearance: none;
@@ -5768,23 +5758,8 @@ details.collapse summary::-webkit-details-marker {
   background-position: top right;
 }
 
-.tabs-boxed {
-  border-radius: var(--rounded-btn, 0.5rem);
-  --tw-bg-opacity: 1;
-  background-color: var(--fallback-b2,oklch(var(--b2)/var(--tw-bg-opacity)));
-  padding: 0.25rem;
-}
-
 .tabs-boxed .tab {
   border-radius: var(--rounded-btn, 0.5rem);
-}
-
-.tabs-boxed .tab-active:not(.tab-disabled):not([disabled]),
-  .tabs-boxed :is(input:checked) {
-  --tw-bg-opacity: 1;
-  background-color: var(--fallback-p,oklch(var(--p)/var(--tw-bg-opacity)));
-  --tw-text-opacity: 1;
-  color: var(--fallback-pc,oklch(var(--pc)/var(--tw-text-opacity)));
 }
 
 :is([dir="rtl"] .table) {
@@ -8127,6 +8102,11 @@ html:has(.drawer-toggle:checked) {
   border-color: transparent;
 }
 
+.border-\[\#0068ff\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 104 255 / var(--tw-border-opacity, 1));
+}
+
 .border-b-base-200 {
   --tw-border-opacity: 1;
   border-bottom-color: var(--fallback-b2,oklch(var(--b2)/var(--tw-border-opacity)));
@@ -9209,6 +9189,10 @@ html:has(.drawer-toggle:checked) {
 
 .ease-in-out {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.\[--range-shdw\:\#0068ff\] {
+  --range-shdw: #0068ff;
 }
 
 .ul-1 > :not([hidden]) ~ :not([hidden]) {
@@ -11418,11 +11402,6 @@ html:has(.drawer-toggle:checked) {
 
 .\[\&\>label\]\:text-lg>label {
   font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-
-.\[\&\>label\]\:text-xl>label {
-  font-size: 1.25rem;
   line-height: 1.75rem;
 }
 
