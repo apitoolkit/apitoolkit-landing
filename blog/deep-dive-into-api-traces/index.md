@@ -1,5 +1,5 @@
 ---
-title: "API Traces: How APItoolkit Captures and Displays Them."
+title: "Deep Dive into API Traces: How APItoolkit Captures and Displays Them."
 featured_image: deep-dive-into-traces.jpeg
 date: 2025-09-17T04:36:58+02:00
 author: patrick
@@ -8,7 +8,7 @@ categories:
   - API Management
 ---
 
-# API Traces: How APItoolkit Captures and Displays Them.
+# Deep Dive into API Traces: How APItoolkit Captures and Displays Them.
 
 ![How APItoolkit captures and displays traces](./deep-dive-into-traces.jpeg)
 
