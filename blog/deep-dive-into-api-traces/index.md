@@ -45,7 +45,7 @@ Traces play a key role in keeping systems running smoothly. They act as tools to
 
 To successfully implement tracing into our APIs, we need to first understand Opentelemetry and how it works with APItoolkit to enable us in visualizing traces.
 
-OpenTelemetry comprises a set of tools, SDKs, and APIs. It is designed to enable the instrumentation, creation, gathering, and exportation of telemetry data, including metrics, logs, and traces. This data is crucial for analyzing the performance and behavior of your software applications.
+[OpenTelemetry](https://opentelemetry.io/) comprises a set of tools, SDKs, and APIs. It is designed to enable the instrumentation, creation, gathering, and exportation of telemetry data, including metrics, logs, and traces. This data is crucial for analyzing the performance and behavior of your software applications.
 
 Unlike traditional OpenTelemetry setups, APItoolkit eliminates the need for manual management of collectors, exporters, and visualization. Once the middleware and API key are added, APItoolkit:
 
@@ -53,7 +53,7 @@ Unlike traditional OpenTelemetry setups, APItoolkit eliminates the need for manu
 - Securely transmits data to its hosted platform
 - Provides visualization, analysis, and alerts for trace data
 
-This approach streamlines the process of implementing OpenTelemetry, making it more accessible and efficient for users.
+This approach streamlines the process of implementing [OpenTelemetry](https://opentelemetry.io/), making it more accessible and efficient for users.
 
 ## Implementing Tracing in your APIs
 - Create an [APItookit](https://apitoolkit.io/) account.
