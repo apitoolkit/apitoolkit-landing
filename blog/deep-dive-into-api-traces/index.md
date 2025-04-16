@@ -86,7 +86,7 @@ You can even click on each request to see the traces' spans. This contains detai
 
 Implementing tracing doesn't need to be complex. APItoolkit simplifies the process, providing more than just data collection. It offers clear, practical insights into API behavior in real-world scenarios. This visibility into every request is extremely essential when resolving elusive bugs, enhancing performance, or maintaining system stability.
 
-Interested in testing it out? Visit [APItoolkit](apitoolkit.io) to create a free account and begin monitoring with assurance.
+Interested in testing it out? Visit [APItoolkit](https://apitoolkit.io/) to create a free account and begin monitoring with assurance.
 
 **Keep Reading**
 
