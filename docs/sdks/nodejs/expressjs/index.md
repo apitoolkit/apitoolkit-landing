@@ -28,7 +28,7 @@ Run the command below to install the APIToolkit express sdk and Open telemetery 
 npm install --save apitoolkit-express @opentelemetry/api @opentelemetry/auto-instrumentations-node
 ```
 
-## Open Telemetery Configuration
+## OpenTelemetery Configuration
 
 This module is highly configurable by setting environment variables. So many aspects of the auto instrumentation’s behavior such as Resource detectors, Exporters, Trace context propagation headers,
 and many more can be configured based on your needs.

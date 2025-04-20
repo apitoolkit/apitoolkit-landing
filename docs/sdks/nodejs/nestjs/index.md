@@ -35,50 +35,72 @@ yarn add @opentelemetry/api @opentelemetry/auto-instrumentations-node
 
 ```
 
-## Configuration
+## OpenTelemetery Configuration
 
 This module is highly configurable by setting environment variables. So many aspects of the auto instrumentation’s behavior such as Resource detectors, Exporters, Trace context propagation headers,
 and many more can be configured based on your needs.
 
-There are generally two ways to go about this from the command line:
-
-1. Using the `env` keyword
-2. Using the `export` keyword
-
-For demonstration, I will be using the [OpenSource NestJs project on GitHub](https://github.com/danielAsaboro/nestjs-boilerplate) as an example.
-
-### 1. Using the `env` keyword
-
 ```sh
-env OTEL_TRACES_EXPORTER=otlp \
-    OTEL_EXPORTER_OTLP_ENDPOINT=http://otelcol.apitoolkit.io:4317 \
-    OTEL_SERVICE_NAME=your-service-name \
-    OTEL_LOGS_EXPORTER=otlp \
-    OTEL_RESOURCE_ATTRIBUTES=at-project-key=z6BJfZVEOSozztMfhqZsGTpG9DiXT9Weurvk1bpe9mwF8orB \
-    OTEL_EXPORTER_OTLP_PROTOCOL=grpc \
-    OTEL_PROPAGATORS=baggage,tracecontext \
-node --require @opentelemetry/auto-instrumentations-node/register
-npm start
-```
-
-### 2. Using the `export` keyword
-
-```sh
-export OTEL_TRACES_EXPORTER="otlp"
+# Specifies the endpoint URL for the OpenTelemetry collector.
 export OTEL_EXPORTER_OTLP_ENDPOINT="http://otelcol.apitoolkit.io:4317"
-export OTEL_NODE_RESOURCE_DETECTORS="env,host,os"
-export OTEL_SERVICE_NAME="your-service-name"
-export OTEL_RESOURCE_ATTRIBUTES=at-project-key="z6BJfZVEOSozztMfhqZsGTpG9DiXT9Weurvk1bpe9mwF8orB"
+# Specifies the name of the service.
+export OTEL_SERVICE_NAME="{YOUR_SERVICE_NAME}"
+# Adds your API KEY to the resource.
+export OTEL_RESOURCE_ATTRIBUTES="at-project-key={YOUR_API_KEY}"
+# Specifies the protocol to use for the OpenTelemetry exporter.
 export OTEL_EXPORTER_OTLP_PROTOCOL="grpc"
-export OTEL_PROPAGATORS="baggage,tracecontext"
+
 export NODE_OPTIONS="--require @opentelemetry/auto-instrumentations-node/register"
 npm start
 ```
 
-If you are wondering what the difference is, it's this:
+## APIToolkit Middleware for NestJs + Express
 
-- The first method, `env` sets them only for the immediate command execution.
-- The second method, `exports`, sets the variables globally for the current terminal session.
+If your NestJs app uses the default Express adapter (which is the default unless changed), you can include the APIToolkit Express middleware to capture HTTP request and response details:
+
+### Installation
+
+```sh
+npm install --save apitoolkit-express
+```
+
+in your `main.ts` file
+
+```ts
+import { NestFactory } from "@nestjs/core";
+import { AppModule } from "./app.module";
+import { APIToolkit } from "apitoolkit-express";
+import axios from "axios";
+
+async function bootstrap() {
+  const app = await NestFactory.create(AppModule);
+
+  const apitoolkitClient = APIToolkit.NewClient({
+    monitorAxios: axios, // Optional: Use this to monitor axios requests
+  });
+
+  app.use(apitoolkit.middleware);
+
+  app.get("/", async (req, res) => {
+    // This axios request get's monitored and appears in the  APIToolkit explorer
+    const response = await axios.get(
+      "https://jsonplaceholder.typicode.com/todos/1"
+    );
+    res.json(response.data);
+  });
+
+  // automatically report unhandled errors along with the request data
+  app.use(apitoolkitClient.errorMiddleware);
+
+  await app.listen(3000);
+}
+bootstrap();
+```
+
+## APIToolkit Middleware with for NestJs + Fastify
+
+If your NestJS app uses the Fastify adapter, you should follow our
+Fastify integration [fastify guide](/docs/sdks/nodejs/fastifyjs/){target="\_blank"}. for detailed setup instructions.
 
 #### Quick overview of the configuration parameters
 
@@ -95,6 +117,26 @@ If you are wondering what the difference is, it's this:
 | `NODE_OPTIONS` | Sets Node.js options. In this case, it's requiring the OpenTelemetry auto-instrumentation module for Node.js. |
 :::
 
+#### Quick overview of the configuration parameters
+
+An object with the following optional fields can be passed to the middleware function to configure it:
+
+{class="docs-table"}
+:::
+| Option | Description |
+| ------ | ----------- |
+| `debug` | Set to `true` to enable debug mode. |
+| `tags` | A list of defined tags for your services (used for grouping and filtering data on the dashboard). |
+| `serviceName` | A defined string name of your application |
+| `serviceVersion` | A defined string version of your application (used for further debugging on the dashboard). |
+| `redactHeaders` | A list of HTTP header keys to redact. |
+| `redactResponseBody` | A list of JSONPaths from the response body to redact. |
+| `redactRequestBody` | A list of JSONPaths from the request body to redact. |
+| `captureRequestBody` | default `false`, set to true if you want to capture the request body. |
+| `captureResponseBody` | default `false`, set to true if you want to capture the response body. |
+| `monitorAxios` | Axios instance to monitor. |
+:::
+
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tips</b></p>
   <ol>
@@ -102,8 +144,8 @@ If you are wondering what the difference is, it's this:
   At the moment, only Traces are supported for environment variable configuration. See the open issues for [Metrics](https://github.com/open-telemetry/opentelemetry-js/issues/4551) and [Logs](https://github.com/open-telemetry/opentelemetry-js/issues/4552) to learn more.
   </li>
  <li>
-  By default, all SDK [resource detectors](https://opentelemetry.io/docs/languages/js/resources/) are enabled. However, you can customize this by setting the `OTEL_NODE_RESOURCE_DETECTORS` environment variable to activate specific detectors or disable them entirely. 
+  By default, all SDK [resource detectors](https://opentelemetry.io/docs/languages/js/resources/) are enabled. However, you can customize this by setting the `OTEL_NODE_RESOURCE_DETECTORS` environment variable to activate specific detectors or disable them entirely.
  </li>
   </ul>
-  
+
 </div>
