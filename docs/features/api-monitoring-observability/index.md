@@ -23,7 +23,7 @@ Some **key benefits** and popular **use cases** include the ability to:
 - Identify and fix different kinds of errors or performance issues as they happen or even before they happen, ensuring a seamless user experience, reduced downtimes, happy users, and in turn more revenue.
 - And a lot more!
 
-![Screenshot of APItoolkit dashboard](/docs/dashboard/dashboard-pages/dashboard/section-3.png)
+![Screenshot of APItoolkit dashboard](/docs/dashboard/dashboard-pages/dashboard/dashboard-page-new.png)
 
 ![Screenshot of APItoolkit dashboard](/docs/dashboard/dashboard-pages/endpoints/endpoints.png)
 
