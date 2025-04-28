@@ -33,7 +33,7 @@ Some **key benefits** and popular **use cases** include the ability to:
 
 ![Screenshot of APItoolkit dashboard](/docs/dashboard/dashboard-pages/api-log-explorer/screen-2.png)
 
-![Screenshot of APItoolkit dashboard](/docs/dashboard/dashboard-pages/api-log-explorer/screen-8.png)
+![Screenshot of APItoolkit dashboard](/docs/dashboard/dashboard-pages/api-log-explorer/shared-event.png)
 
 ```=html
 <hr />
