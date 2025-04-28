@@ -25,6 +25,8 @@ Some **key benefits** and popular **use cases** include the ability to:
 
 ![Screenshot of APItoolkit dashboard](/docs/dashboard/dashboard-pages/dashboard/dashboard-page-new.png)
 
+![Screenshot of APItoolkit dashboard](/docs/dashboard/dashboard-pages/endpoints/api-catalog.png)
+
 ![Screenshot of APItoolkit dashboard](/docs/dashboard/dashboard-pages/endpoints/endpoints.png)
 
 ![Screenshot of APItoolkit dashboard](/docs/dashboard/dashboard-pages/api-log-explorer/screen-1.png)
