@@ -39,19 +39,19 @@ yarn add @opentelemetry/api @opentelemetry/auto-instrumentations-node
 
 This module is highly configurable by setting environment variables. So many aspects of the auto instrumentation’s behavior such as Resource detectors, Exporters, Trace context propagation headers,
 and many more can be configured based on your needs.
+Add the following environment variables to your `.env` file:
 
 ```sh
 # Specifies the endpoint URL for the OpenTelemetry collector.
-export OTEL_EXPORTER_OTLP_ENDPOINT="http://otelcol.apitoolkit.io:4317"
+OTEL_EXPORTER_OTLP_ENDPOINT="http://otelcol.apitoolkit.io:4317"
 # Specifies the name of the service.
-export OTEL_SERVICE_NAME="{YOUR_SERVICE_NAME}"
+OTEL_SERVICE_NAME="{YOUR_SERVICE_NAME}"
 # Adds your API KEY to the resource.
-export OTEL_RESOURCE_ATTRIBUTES="at-project-key={YOUR_API_KEY}"
+OTEL_RESOURCE_ATTRIBUTES="at-project-key={YOUR_API_KEY}"
 # Specifies the protocol to use for the OpenTelemetry exporter.
-export OTEL_EXPORTER_OTLP_PROTOCOL="grpc"
-
-export NODE_OPTIONS="--require @opentelemetry/auto-instrumentations-node/register"
-npm start
+OTEL_EXPORTER_OTLP_PROTOCOL="grpc"
+# disable some auto instrumentation libraries
+OTEL_NODE_AUTO_DISABLE_INSTRUMENTATIONS=net,connect,dns,fs
 ```
 
 ## APIToolkit Middleware for NestJs + Express
@@ -67,6 +67,7 @@ npm install --save apitoolkit-express
 in your `main.ts` file
 
 ```ts
+import "@opentelemetry/auto-instrumentations-node/register"; // IMPORTANT: Do this as early as possible in your server
 import { NestFactory } from "@nestjs/core";
 import { AppModule } from "./app.module";
 import { APIToolkit } from "apitoolkit-express";
@@ -114,7 +115,6 @@ Fastify integration [fastify guide](/docs/sdks/nodejs/fastifyjs/){target="\_blan
 | `OTEL_RESOURCE_ATTRIBUTES` | Specifies additional resource attributes. In this case, it's setting an API Toolkit project key. |
 | `OTEL_EXPORTER_OTLP_PROTOCOL` | Defines the protocol used for exporting telemetry data. It's set to "grpc" (gRPC protocol). |
 | `OTEL_PROPAGATORS` | Specifies which context propagators to use. Here, it's set to use both "baggage" and "tracecontext". |
-| `NODE_OPTIONS` | Sets Node.js options. In this case, it's requiring the OpenTelemetry auto-instrumentation module for Node.js. |
 :::
 
 #### Quick overview of the configuration parameters

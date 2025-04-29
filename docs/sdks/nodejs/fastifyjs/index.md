@@ -32,19 +32,19 @@ npm install --save apitoolkit-fastify @opentelemetry/api @opentelemetry/auto-ins
 
 This module is highly configurable by setting environment variables. So many aspects of the auto instrumentation’s behavior such as Resource detectors, Exporters, Trace context propagation headers,
 and many more can be configured based on your needs.
+Add the following environment variables to your `.env` file:
 
 ```sh
 # Specifies the endpoint URL for the OpenTelemetry collector.
-export OTEL_EXPORTER_OTLP_ENDPOINT="http://otelcol.apitoolkit.io:4317"
+OTEL_EXPORTER_OTLP_ENDPOINT="http://otelcol.apitoolkit.io:4317"
 # Specifies the name of the service.
-export OTEL_SERVICE_NAME="{YOUR_SERVICE_NAME}"
+OTEL_SERVICE_NAME="{YOUR_SERVICE_NAME}"
 # Adds your API KEY to the resource.
-export OTEL_RESOURCE_ATTRIBUTES="at-project-key={YOUR_API_KEY}"
+OTEL_RESOURCE_ATTRIBUTES="at-project-key={YOUR_API_KEY}"
 # Specifies the protocol to use for the OpenTelemetry exporter.
-export OTEL_EXPORTER_OTLP_PROTOCOL="grpc"
-
-export NODE_OPTIONS="--require @opentelemetry/auto-instrumentations-node/register"
-node server.js
+OTEL_EXPORTER_OTLP_PROTOCOL="grpc"
+# disable some auto instrumentation libraries
+OTEL_NODE_AUTO_DISABLE_INSTRUMENTATIONS=net,connect,dns,fs
 ```
 
 ## Setup APIToolkit Fastify Middleware For HTTP Request Monitoring
@@ -52,6 +52,8 @@ node server.js
 APIToolkit Fastify Middleware is a middleware that can be used to monitor HTTP requests. It provides additional functionalities on top of the open telemetry instrumentation which creates a custom span for each request capturing details about the request including request and response bodies.
 
 ```js
+import "dotenv/config";
+import "@opentelemetry/auto-instrumentations-node/register"; // IMPORTANT: Do this as early as possible in your server
 import fastify from "fastify";
 import { APIToolkit } from "apitoolkit-fastify";
 import axios from "axios";
@@ -101,6 +103,8 @@ If you've used sentry, or rollback, or bugsnag, then you're likely aware of this
 The Fastify SDK automatically reports uncaught server errors to APIToolkit. But you can also manually report errors.
 
 ```typescript
+import "dotenv/config";
+import "@opentelemetry/auto-instrumentations-node/register"; // IMPORTANT: Do this as early as possible in your server
 import fastify from "fastify";
 import { APIToolkit, reportError } from "apitoolkit-fastify";
 import axios from "axios";
@@ -133,8 +137,12 @@ APIToolkit supports monitoring outgoing HTTP requests made using libraries like 
 To monitor all outgoing Axios requests globally, you can use the `monitorAxios` option when initializing the APIToolkit client.
 
 ```typescript
+import "dotenv/config";
+import "@opentelemetry/auto-instrumentations-node/register"; // IMPORTANT: Do this as early as possible in your server
+import fastify from "fastify";
 import { APIToolkit } from "apitoolkit-fastify";
 import axios from "axios";
+
 const fastifyServer = fastify({});
 const apitoolkitClient = APIToolkit.NewClient({
   fastify: fastifyServer,
@@ -149,6 +157,9 @@ By setting `monitorAxios` in the client configuration, all axios requests in you
 To monitor a specific Axios request, you can use the `observeAxios` function provided by the SDK.
 
 ```typescript
+import "dotenv/config";
+import "@opentelemetry/auto-instrumentations-node/register"; // IMPORTANT: Do this as early as possible in your server
+import fastify from "fastify";
 import { APIToolkit, observeAxios } from "apitoolkit-fastify";
 
 const fastifyServer = fastify({});
@@ -182,6 +193,9 @@ Below is the full list of options for the `observeAxios` function:
 #### Example
 
 ```typescript
+import "dotenv/config";
+import '@opentelemetry/auto-instrumentations-node/register'; // IMPORTANT: Do this as early as possible in your server
+import fastify from "fastify";
 import { APIToolkit, observeAxios } from "apitoolkit-fastify";
 
 const fastifyServer = fastify({});

@@ -33,18 +33,19 @@ npm install --save apitoolkit-adonis @opentelemetry/api  @opentelemetry/auto-ins
 This module is highly configurable by setting environment variables. So many aspects of the auto instrumentation’s behavior such as Resource detectors, Exporters, Trace context propagation headers,
 and many more can be configured based on your needs.
 
+Add the following environment variables to your `.env` file:
+
 ```sh
 # Specifies the endpoint URL for the OpenTelemetry collector.
-export OTEL_EXPORTER_OTLP_ENDPOINT="http://otelcol.apitoolkit.io:4317"
+OTEL_EXPORTER_OTLP_ENDPOINT="http://otelcol.apitoolkit.io:4317"
 # Specifies the name of the service.
-export OTEL_SERVICE_NAME="{YOUR_SERVICE_NAME}"
+OTEL_SERVICE_NAME="{YOUR_SERVICE_NAME}"
 # Adds your API KEY to the resource.
-export OTEL_RESOURCE_ATTRIBUTES="at-project-key={YOUR_API_KEY}"
+OTEL_RESOURCE_ATTRIBUTES="at-project-key={YOUR_API_KEY}"
 # Specifies the protocol to use for the OpenTelemetry exporter.
-export OTEL_EXPORTER_OTLP_PROTOCOL="grpc"
-
-export NODE_OPTIONS="--require @opentelemetry/auto-instrumentations-node/register"
-npm run dev
+OTEL_EXPORTER_OTLP_PROTOCOL="grpc"
+# disable some auto instrumentation libraries
+OTEL_NODE_AUTO_DISABLE_INSTRUMENTATIONS=net,connect,dns,fs
 ```
 
 ## Setup APIToolkit Adonis Middleware For HTTP Request Monitoring
@@ -73,6 +74,8 @@ export default defineConfig({
 Then, register the middleware by adding the `apitoolkit-adonis` client to your global middleware list in the `start/kernel.js|ts` file like so:
 
 ```js
+import "@opentelemetry/auto-instrumentations-node/register";
+
 import server from "@adonisjs/core/services/server";
 import APIToolkit from "apitoolkit-adonis";
 
