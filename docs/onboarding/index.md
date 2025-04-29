@@ -1,7 +1,7 @@
 ---
 title: Onboarding
-date: 2024-04-22
-updatedDate: 2024-05-04
+date: 2024-05-04
+updatedDate: 2025-04-23
 faLogo: circle-play
 menuWeight: 1
 hideFileTree: true
@@ -17,8 +17,8 @@ In this guide, we will walk you through the process of integrating APItoolkit in
 ```=html
 <iframe
   class="w-full h-48 md:h-96 lg:h-96 xl:h-96"
-  src="https://www.youtube.com/embed/_uqxNTpcEOI?si=-628ljUJTkVuPGwX?enablejsapi=1"
-  title="YouTube Video Player: APItoolkit Quickstart Onboarding"
+  src="https://www.youtube.com/embed/Q-tGuIkDmyk?si=xFhCZrvS-g-bjnqj"
+  title="YouTube Video Player: APItoolkit Walkthrough"
   frameborder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"
   allowfullscreen
@@ -43,7 +43,7 @@ There are five steps required to get started with APItoolkit and begin exploring
 
 Kindly visit [this page](https://app.apitoolkit.io?utm_source=docs_onboarding) to create a new account. When you are there, you can choose to sign up with either your **Google** or **GitHub** account or your **email address**. If you choose to sign up with Google or GitHub, you will be redirected to the respective authentication page to authorize APItoolkit. If you choose to sign up with your email address, you will need to provide your email address and a strong password in the input fields as seen in the screenshot below.
 
-![Screenshot of APItoolkit's signup page](/docs/onboarding/signup-page.png)
+![Screenshot of APItoolkit's signup page](/docs/onboarding/new-signup-page.png)
 
 ```=html
 <div class="callout">
@@ -56,24 +56,41 @@ Kindly visit [this page](https://app.apitoolkit.io?utm_source=docs_onboarding) t
 
 Once you are redirected to the dashboard, you have to create a new project to begin using APItoolkit. Kindly provide the values requested in the form as listed below. You can always update any of these values later.
 
-- **Title**: Enter the name of your project (required).
-- **Timezone**: Select your timezone (optional).
-- **Description**: Enter a brief description of your project (optional).
-- **Plan**: Select the plan you want to subscribe to (required).
-- **Add member**: Invite someone else to collaborate on the project (optional).
+- **About you**: A quick survey that helps us gives better service to users.
+![Screenshot of APItoolkit's create new project page](/docs/onboarding/new-create-project.png)
 
-![Screenshot of APItoolkit's create new project page](/docs/onboarding/create-project.png)
+- **Setup project**: Choose a server location and the features you'll be exploring.
+![Screenshot of APItoolkit's configure project](/docs/onboarding/configure-project.png)
+
+- **Create endpoint**: Create an endpoint you'd like to monitor and choose the request type(optional).
+![Screenshot of APItoolkit's create new project page](/docs/onboarding/create-first-endpoint.png)
+
+- **Set notifications**: Connect your project to Slack, Discord, Email or your phone number to get notified when something goes wrong(optional).
+![Screenshot of APItoolkit's create new project page](/docs/onboarding/set-notifications.png)
+
+- **Add member**: Invite someone else to collaborate on the project (optional).
+![Screenshot of APItoolkit's create new project page](/docs/onboarding/invite-member.png)
+
+- **Integration examples**: Select an SDK to see the integration guide for it (optional).
+![Screenshot of APItoolkit's create new project page](/docs/onboarding/integration.png)
+
+- **Plan**: Select the plan you want to subscribe to (required).
+![Screenshot of APItoolkit's create new project page](/docs/onboarding/plans.png)
+
+
 
 ```=html
 <div class="callout">
   <i class="fa-solid fa-forward"></i>
-  <p>Once you are done providing the required values and your payment details (if you chose the <b>Pay as you use</b> plan), click the <b>Proceed</b> button. Your new project will then be created and you will be redirected to a survey form; kindly fill out the form displayed to proceed further.</p>
+  <p>Once you are done providing the required values and your payment details (if you chose the <b>Pay as you use</b> plan), click the <b>Proceed</b> button. Your new project will then be created and you will be redirected to your APItoolkit dashboard.</p>
 </div>
 ```
 
 ## ③ Fetch API Key
 
-Once your project is created, an API key is automatically generated for you (which you can already see being used in the integration examples on the **Get Started** tab—onboarding checklist). To fetch your API key anytime or create a new one, kindly click on the project name at the top-left section of the dashboard and then click on the **API Keys** tab. You will then be redirected to another page where you can access the API key or create a new one.
+Once your project is created, an API key is automatically generated for you (which you can already see being used in the integration examples). To fetch your API key anytime or create a new one, kindly click on the API keys at the bottom-left section of the dashboard. You will then be redirected to another page where you can access the API key or create a new one.
+
+![Screenshot of APItoolkit's settings popup](/docs/onboarding/new-api-keys.png)
 
 ```=html
 <div class="callout">
@@ -82,9 +99,8 @@ Once your project is created, an API key is automatically generated for you (whi
 </div>
 ```
 
-![Screenshot of APItoolkit's settings popup](/docs/onboarding/api-keys-popup.png)
 
-![Screenshot of APItoolkit's API keys page](/docs/onboarding/api-keys-page.png)
+![Screenshot of APItoolkit's API keys page](/docs/onboarding/create-new-api-key.png)
 
 ## ④ Integrate SDK
 
@@ -96,9 +112,9 @@ To integrate with your preferred framework, kindly follow the quick guidelines b
 
 ## ⑤ Acknowledge Endpoints or Anomalies
 
-Once APItoolkit starts tracking data from your API, you will find the list of **detected endpoints** on the [Endpoints](/docs/dashboard/endpoints/) page and the list of **detected anomalies** on the [Changes & Errors](/docs/dashboard/changes-errors/) page or in the Ongoing Anomalies and Monitors section of the [Dashboard](/docs/dashboard/dashboard/) page. You need to **acknowledge** each endpoint or anomaly so APItoolkit understands the shape of the endpoints on your API and uses that information for future anomaly detections. As a side effect, we then use this information to trigger the [OpenAPI spec generation](/docs/dashboard/documentation) feature and send you scheduled reports. Hence, **you should continuously acknowledge all important endpoints and anomalies you want us to monitor**.
+Once APItoolkit starts tracking data from your API, you will find the list of **detected endpoints** on the [Explorer](/docs/dashboard/endpoints/) page and the list of **detected anomalies** on the [Changes & Errors](/docs/dashboard/changes-errors/) page or in the Ongoing Anomalies and Monitors section of the [Dashboard](/docs/dashboard/dashboard/) page. You need to **acknowledge** each endpoint or anomaly so APItoolkit understands the shape of the endpoints on your API and uses that information for future anomaly detections. As a side effect, we then use this information to trigger the [OpenAPI spec generation](/docs/dashboard/documentation) feature and send you scheduled reports. Hence, **you should continuously acknowledge all important endpoints and anomalies you want us to monitor**.
 
-![APItoolkit dashboard screenshot](/assets/img/dashboard.png)
+![APItoolkit dashboard screenshot](/docs/onboarding/anomalies.png)
 
 Once you successfully integrate APItoolkit into your application using any of our SDKs, we will start monitoring requests to your API and you can start acknowledging endpoints/anomalies, begin exploring the tracked data in the dashboard, and begin using all our powerful features.
 
@@ -139,10 +155,6 @@ Here is a quick overview of all the available dashboard tabs and the features in
 <tr>
 <td class="font-bold border">API Tests</td>
 <td>Explore and create manual or scheduled test assertions with multiple steps to validate HTTP responses in your API.</td>
-</tr>
-<tr>
-<td class="font-bold border">OpenAPI/Swagger</td>
-<td>Explore the automatically generated OpenAPI specifications (swagger docs) from your live API payloads.</td>
 </tr>
 <tr>
 <td class="font-bold border">Reports</td>
