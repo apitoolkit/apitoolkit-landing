@@ -22,7 +22,7 @@ Some **key benefits** and popular **use cases** include the ability to:
 - Set alerts to track certain requests when they cross certain thresholds and notify relevant members of your team via email or Slack when the alert is triggered.
 - And a lot more!
 
-![Screenshot of APItoolkit dashboard](/docs/dashboard/dashboard-pages/changes-errors/changes-errors.png)
+![Screenshot of APItoolkit dashboard](/docs/dashboard/dashboard-pages/changes-errors/changes-errors-new.png)
 
 ![Screenshot of APItoolkit dashboard](/docs/dashboard/dashboard-pages/api-log-explorer/screen-2.png)
 
