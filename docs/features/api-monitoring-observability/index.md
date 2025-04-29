@@ -25,13 +25,13 @@ Some **key benefits** and popular **use cases** include the ability to:
 
 ![Screenshot of APItoolkit dashboard](/docs/dashboard/dashboard-pages/dashboard/dashboard-page-new.png)
 
-![Screenshot of APItoolkit dashboard](/docs/dashboard/dashboard-pages/endpoints/api-catalog.png)
-
 ![Screenshot of APItoolkit dashboard](/docs/dashboard/dashboard-pages/api-log-explorer/explorer-new.png)
+
+![Screenshot of APItoolkit dashboard](/docs/dashboard/dashboard-pages/endpoints/api-catalog.png)
 
 ![Screenshot of APItoolkit dashboard](/docs/dashboard/dashboard-pages/api-log-explorer/screen-3.png)
 
-![Screenshot of APItoolkit dashboard](/docs/dashboard/dashboard-pages/api-log-explorer/screen-2.png)
+![Screenshot of APItoolkit dashboard](/docs/dashboard/dashboard-pages/api-log-explorer/log-explorer-span.png)
 
 ![Screenshot of APItoolkit dashboard](/docs/dashboard/dashboard-pages/api-log-explorer/shared-event.png)
 
