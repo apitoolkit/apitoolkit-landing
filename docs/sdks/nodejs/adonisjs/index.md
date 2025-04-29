@@ -45,7 +45,7 @@ OTEL_RESOURCE_ATTRIBUTES="at-project-key={YOUR_API_KEY}"
 # Specifies the protocol to use for the OpenTelemetry exporter.
 OTEL_EXPORTER_OTLP_PROTOCOL="grpc"
 # disable some auto instrumentation libraries
-OTEL_NODE_AUTO_DISABLE_INSTRUMENTATIONS=net,connect,dns,fs
+OTEL_NODE_DISABLED_INSTRUMENTATIONS=net,connect,dns,fs
 ```
 
 ## Setup APIToolkit Adonis Middleware For HTTP Request Monitoring
