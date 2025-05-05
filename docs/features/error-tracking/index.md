@@ -26,7 +26,7 @@ Some **key benefits** and popular **use cases** include the ability to:
 
 ![Screenshot of APItoolkit dashboard](/docs/dashboard/dashboard-pages/api-log-explorer/screen-2.png)
 
-![Screenshot of APItoolkit dashboard](/docs/dashboard/dashboard-pages/api-log-explorer/screen-6.png)
+![Screenshot of APItoolkit dashboard](/docs/dashboard/dashboard-pages/api-log-explorer/monitors-and-alerts.png)
 
 ```=html
 <hr />
