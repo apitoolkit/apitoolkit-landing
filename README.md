@@ -38,19 +38,28 @@ Kindly follow the steps below to run this project locally:
 cargo install quickstatic
 ```
 
-2. Run the command below to install the styling dependencies:
+2. After installling QuickStatic, you might need to add the `quickstatic` binary to your system's PATH. This will enable the `npm run serve` command to work since it requires the `quickstatic` binary to be available in your system's PATH.
 
 ```sh
-npm run install
+# For Linux
+export PATH="$PATH:$HOME/.cargo/bin"
+# For Windows
+set PATH=%PATH%;%USERPROFILE%\.cargo\bin
 ```
 
-3. Run the command below to build the site:
+3. Run the command below to install the styling dependencies:
+
+```sh
+npm install
+```
+
+4. Run the command below to build the site:
 
 ```sh
 npm run serve
 ```
 
-4. Run the command below to build Tailwind CSS:
+5. Run the command below to build Tailwind CSS:
 
 ```sh
 npm run build

@@ -61,8 +61,10 @@ observability.
 
 APItoolkit is a product of Past 3 Technologies, a software consulting firm based out of Berlin, Germany.
 
-[hello@past3.tech](mailto:hello@past3.tech) <br>
-Past 3 Technologies UG, <br>
+[hello@past3.tech](mailto:hello@past3.tech)
+
+Past 3 Technologies UG,
+
 Gruntaler Str. 10553 Berlin, Germany.
 
 ```=html
