@@ -17,7 +17,7 @@ On this page, you will find a list of all the requests tracked from your API inc
 
 ![Screenshot of APItoolkit's API log explorer page](/docs/dashboard/dashboard-pages/api-log-explorer/log-explorer-new.png)
 
-![Screenshot of APItoolkit's API log explorer page](/docs/dashboard/dashboard-pages/api-log-explorer/screen-2.png)
+![Screenshot of APItoolkit's API log explorer page](/docs/dashboard/dashboard-pages/api-log-explorer/log-explorer-span.png)
 
 ```=html
 <div class="callout">
