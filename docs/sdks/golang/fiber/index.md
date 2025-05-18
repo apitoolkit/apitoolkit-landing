@@ -69,25 +69,6 @@ func main() {
 }
 ```
 
-### All Environment Variables
-
-Set the following environment variables in your application to enable the SDK:
-
-{class="docs-table"}
-:::
-| Variable Name | Description | Required | Example |
-| ----------------------------------- | ------------------------------------------------------------- | -------- | ---------------------------- |
-| `OTEL_RESOURCE_ATTRIBUTES` | APItoolkit project key (`at-project-key=<YOUR_API_KEY>`) | Yes | `at-project-key=my-api-key` |
-| `OTEL_SERVICE_NAME` | The name of the service being monitored | No | `example-chi-server` |
-| `OTEL_SERVICE_VERSION` | The version of your application or service | No | `0.0.1` |
-| `OTEL_EXPORTER_OTLP_ENDPOINT` | The grpc endpoint for the OpenTelemetry collector. | No | `otelcol.apitoolkit.io:4317` |
-| `OTEL_TRACES_ENABLED` | Enable or disable tracing | No | `true` |
-| `OTEL_METRICS_ENABLED` | Enable or disable metrics | No | `true` |
-| `OTEL_LOG_LEVEL` | The log level for the SDK (Set to debug to enable debug logs) | No | `info` |
-| `OTEL_EXPORTER_OTLP_METRICS_PERIOD` | The period at which metrics are exported. | No | `30s` |
-| `OTEL_PROPAGATORS` | The propagators to use for tracing. | No | `tracecontext,baggage` |
-:::
-
 ### All Middleware Configuration Fields
 
 The middleware configuration specifies how the APItoolkit SDK should handle requests and responses. Below are the available fields:

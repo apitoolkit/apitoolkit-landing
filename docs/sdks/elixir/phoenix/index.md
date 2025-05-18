@@ -176,11 +176,13 @@ end
 
 With APItoolkit, you can track and report different unhandled or uncaught errors, API issues, and anomalies at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
 
+```=html
 <section class="tab-group" data-tab-group="group1">
   <button class="tab-button" data-tab="tab1">Report All Errors</button>
   <button class="tab-button" data-tab="tab2">Report Specific Errors</button>
   <div id="tab1" class="tab-content">
 To report all uncaught errors and service exceptions, use the `report_error()` method, passing in the `connection` and `error` arguments in the `handle_errors` function, like so:
+```
 
 ```elixir
 @impl Plug.ErrorHandler
@@ -190,9 +192,11 @@ def handle_errors(conn, err) do
 end
 ```
 
+```=html
   </div>
   <div id="tab2" class="tab-content">
 To manually report specific errors at different parts of your application, call the `report_error()` method anywhere within a controller, also passing in the `connection`, `error`, and `__STACKTRACE__` arguments, like so:
+```
 
 ```elixir
 defmodule HelloWeb.PageController do
@@ -213,8 +217,10 @@ defmodule HelloWeb.PageController do
 end
 ```
 
+```=html
   </div>
 </section>
+```
 
 ```=html
 <hr />

@@ -70,14 +70,16 @@ export OTEL_PROPAGATORS=baggage,tracecontext
 
 Register the middleware in the app/Http/Kernel.php file under the correct middleware group (e.g., api) or at the root, like so. This creates a customs spans which captures and sends http request info such as headers, requests and repsonse bodies, matched route etc. for each request
 
+```=html
 <section class="tab-group" data-tab-group="group1">
   <button class="tab-button" data-tab="tab1">Middleware (Global)</button>
   <button class="tab-button" data-tab="tab2">Middleware (Specific Routes)</button>
   <div id="tab1" class="tab-content">
     Next, register the middleware in the `app/Http/Kernel.php` file under the correct middleware group (e.g., `api`) or at the root, like so:
+```
 
 ```php
-&lt;?php
+<?php
 
 namespace App\Http;
 
@@ -94,12 +96,14 @@ class Kernel extends HttpKernel
 }
 ```
 
+```=html
   </div>
   <div id="tab2" class="tab-content">
     Alternatively, if you want to monitor specific routes, you can register the middleware, like so:
+```
 
 ```php
-&lt;?php
+<?php
 
 namespace App\Http;
 
@@ -124,8 +128,10 @@ Route::get('/', function () {
 })->middleware('apitoolkit');
 ```
 
+```=html
   </div>
 </section>
+```
 
 ## Middleware configuration options:
 
@@ -231,14 +237,16 @@ APITOOLKIT_REDACT_RESPONSE_BODY="$.users[*].email, $.users[*].credit_card"
 
 With APItoolkit, you can track and report different unhandled or uncaught errors, API issues, and anomalies at different parts of your application. This will help you associate more detail and context from your backend with any failing customer request.
 
+```=html
 <section class="tab-group" data-tab-group="group2">
   <button class="tab-button" data-tab="tab1"> Report All Errors</button>
   <button class="tab-button" data-tab="tab2">Report Specific Errors</button>
   <div id="tab1" class="tab-content">
-To report all uncaught errors and service exceptions that happened during a web request, modify your Laravel Exceptions handler, passing in the `error` and the `request` as arguments, like so:
+To report all uncaught errors and service exceptions that happened during a web request, modify your Laravel Exceptions handler, passing in the <code>error</code> and the <code>request</code> as arguments, like so:
+```
 
 ```php
-&lt;?php
+<?php
 
 namespace App\Exceptions;
 
@@ -261,9 +269,11 @@ class Handler extends ExceptionHandler
 }
 ```
 
+```=html
   </div>
   <div id="tab2" class="tab-content">
-To manually report specific errors at different parts of your application, use the `reportError` method of the `APIToolkitLaravel` class, passing in the `error` and the `request` as arguments, like so:
+To manually report specific errors at different parts of your application, use the <code>reportError</code> method of the <code>APIToolkitLaravel</code> class, passing in the <code>error</code> and the <code>request</code> as arguments, like so:
+```
 
 ```php
 use Illuminate\Http\Request;
@@ -287,8 +297,10 @@ Route::get('/user', function (Request $request) {
 });
 ```
 
+```=html
   </div>
 </section>
+```
 
 ## Monitoring Outgoing Requests
 

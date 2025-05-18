@@ -115,6 +115,7 @@ func main() {
 
 Outgoing requests are external API calls you make from your API. By default, APItoolkit monitors all requests users make from your application and they will all appear in the page.
 
+```=html
 <section class="tab-group" data-tab-group="group1">
   <button class="tab-button" data-tab="tab1">Using APItoolkit</button>
   <button class="tab-button" data-tab="tab2">Using Otel instrumentation</button>
@@ -122,6 +123,7 @@ Outgoing requests are external API calls you make from your API. By default, API
   To monitor outgoing HTTP requests from your application, replace the default HTTP client transport with a custom RoundTripper. This allows you to capture and send copies of all incoming and outgoing requests to APItoolkit.
 
 Here's an example of the configuration with a custom RoundTripper:
+```
 
 ```go
 package main
@@ -163,6 +165,7 @@ func main() {
 }
 ```
 
+```=html
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
   <p class="mt-6">You can also redact data with the custom RoundTripper for outgoing requests.</p>
@@ -172,6 +175,7 @@ func main() {
 
    <div id="tab2" class="tab-content">
   You can also use an otel instrumentation library to monitor outgoing requests from your server, but using this instead of the APItoolkit HTTP client will not log request and response bodies. To use otel outgoing request monitoring, you must first install it using the command below:
+```
 
 ```sh
 go get go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp
@@ -236,8 +240,10 @@ func main() {
 }
 ```
 
+```=html
   </div>
 </section>
+```
 
 ---
 

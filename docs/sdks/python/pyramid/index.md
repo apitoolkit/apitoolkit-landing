@@ -56,10 +56,12 @@ After setting up open telemetry, you can now configure and start the apitoolkit 
 
 Next, add the configuration variables to your settings or `development.ini` or `production.ini` file, like so:
 
+```=html
 <section class="tab-group" data-tab-group="group1">
   <button class="tab-button" data-tab="tab1">settings</button>
   <button class="tab-button" data-tab="tab2">.ini file</button>
     <div id="tab1" class="tab-content">
+```
 
 ```python
 settings = {
@@ -71,8 +73,10 @@ settings = {
 }
 ```
 
+```=html
   </div>
   <div id="tab2" class="tab-content">
+```
 
 ```sh
 APITOOLKIT_DEBUG = False
@@ -82,8 +86,10 @@ APITOOLKIT_ROUTES_WHITELIST = /api/first, /api/second
 APITOOLKIT_IGNORE_HTTP_CODES = 404, 429
 ```
 
+```=html
   </div>
 </section>
+```
 
 Then, initialize APItoolkit in your application's entry point (e.g., `app.py`), like so:
 
@@ -199,10 +205,12 @@ Examples of valid JSONPath expressions would be:
 
 Here's an example of what the configuration would look like with redacted fields:
 
+```=html
 <section class="tab-group" data-tab-group="group1">
   <button class="tab-button" data-tab="tab1">settings</button>
   <button class="tab-button" data-tab="tab2">.ini file</button>
   <div id="tab1" class="tab-content">
+```
 
 ```python
 settings = {
@@ -212,8 +220,10 @@ settings = {
 }
 ```
 
+```=html
   </div>
   <div id="tab2" class="tab-content">
+```
 
 ```sh
 APITOOLKIT_REDACT_HEADERS: content-type, Authorization, HOST
@@ -221,8 +231,10 @@ APITOOLKIT_REDACT_REQ_BODY: $.user.email, $.user.addresses
 APITOOLKIT_REDACT_RES_BODY: $.users[*].email, $.users[*].credit_card
 ```
 
+```=html
   </div>
 </section>
+```
 
 ```=html
 <div class="callout">
