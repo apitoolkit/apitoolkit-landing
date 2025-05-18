@@ -137,6 +137,7 @@ An object with the following optional fields can be passed to the middleware fun
 | `monitorAxios` | Axios instance to monitor. |
 :::
 
+```=html
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tips</b></p>
   <ol>
@@ -149,3 +150,4 @@ An object with the following optional fields can be passed to the middleware fun
   </ul>
 
 </div>
+```

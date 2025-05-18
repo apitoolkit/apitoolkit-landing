@@ -253,6 +253,7 @@ app.get("/", async (req, res) => {
 })
 ```
 
+```=html
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tips</b></p>
   <ol>
@@ -265,3 +266,4 @@ app.get("/", async (req, res) => {
   </ul>
 
 </div>
+```

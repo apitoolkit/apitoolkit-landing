@@ -215,6 +215,7 @@ fastifyServer.get("/", async (request, reply) => {
 fastifyServer.listen({ port: 3000 });
 ```
 
+```=html
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tips</b></p>
   <ol>
@@ -226,3 +227,4 @@ fastifyServer.listen({ port: 3000 });
  </li>
   </ul>
 </div>
+```

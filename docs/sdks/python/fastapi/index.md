@@ -244,10 +244,14 @@ The `observe_request()` function accepts a **required `request` argument**, and 
 | `redact_request_body` | A list of JSONPaths from the response body to redact. |
 :::
 
+```=html
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <p>The `observe_request()` function wraps an [HTTPX](https://python-httpx.org?ref=apitoolkit){target="\_blank"} client and you can use it just like you would normally use HTTPX for any request.</p>
+  <p>The `observe_request()` function wraps an <a href="https://github.com/apitoolkit/apitoolkit-pyramid" target="_blank" rel="noopener noreferrer" class="">HTTPX</a>
+
+ client and you can use it just like you would normally use HTTPX for any request.</p>
 </div>
+```
 
 ```=html
 <hr />

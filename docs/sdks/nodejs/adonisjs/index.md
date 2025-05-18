@@ -231,6 +231,7 @@ router.get("/", async () => {
 });
 ```
 
+```=html
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tips</b></p>
   <ol>
@@ -242,3 +243,4 @@ router.get("/", async () => {
  </li>
   </ul>
 </div>
+```

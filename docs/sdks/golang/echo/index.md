@@ -113,6 +113,7 @@ The middleware configuration specifies how the APItoolkit SDK should handle requ
 | `RedactResponseBody` | `[]string` | JSONPath list of response body fields to redact | `[]` | `[]string{"$.password", "$.credit_card"}` |
 :::
 
+```=html
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tips</b></p>
   <ol>
@@ -120,5 +121,5 @@ The middleware configuration specifies how the APItoolkit SDK should handle requ
   Remember to keep your APIToolkit project key (`at-project-key`) secure and not expose it in public repositories or logs.
   </li>
   </ul>
-
 </div>
+```
