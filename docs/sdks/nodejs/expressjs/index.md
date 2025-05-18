@@ -54,7 +54,7 @@ APIToolkit Express Middleware is a middleware that can be used to monitor HTTP r
 ```js
 import "dotenv/config";
 import "@opentelemetry/auto-instrumentations-node/register"; // IMPORTANT: Do this as early as possible in your server
-import * as express from "express";
+import express from "express";
 import { APIToolkit } from "apitoolkit-express";
 import axios from "axios";
 

@@ -15,7 +15,7 @@ In this guide, you will learn how to effectively navigate through the **Endpoint
 
 On this page, you will find all the endpoints tracked from your API. You can **filter** the list based on the host (e.g., list all endpoints from your `localhost`, `staging`, or `production` environment), **search** for specific endpoints, and **sort** based on the first/last time the endpoint was seen or the number of events associated with the endpoint.
 
-![Screenshot of APItoolkit's endpoints page](/docs/dashboard/dashboard-pages/endpoints/endpoints.png)
+![Screenshot of APItoolkit's endpoints page](/docs/dashboard/dashboard-pages/endpoints/endpoints-new.png)
 
 All endpoints are organized based on the following categories:
 
@@ -40,7 +40,7 @@ On this tab, the page is split into two parts, namely: **Ongoing Anomalies and M
 
 This section displays a quick summary of all ongoing anomalies detected from this endpoint, including the endpoints they were detected on, and the new, updated, or deleted fields detected.
 
-![Screenshot of APItoolkit's dashboard page](/docs/dashboard/dashboard-pages/dashboard/section-1.png)
+![Screenshot of APItoolkit's dashboard page](/docs/dashboard/dashboard-pages/endpoints/anomalies.png)
 
 ```=html
 <div class="callout">

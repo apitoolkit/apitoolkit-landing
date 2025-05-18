@@ -13,11 +13,11 @@ In this guide, you will learn how to effectively navigate through the **API Log 
 <hr />
 ```
 
-On this page, you will find a list of all the requests tracked from your API including all the associated fields and parameters and a throughput graph. You can **filter** the data using the toggle at the top-left section of the page (the default is **Last 14 Days**), toggle any log request to view all the associated details, or further click the **Expand []** button to view even more request and response details.
+On this page, you will find a list of all the requests tracked from your API including all the associated fields and parameters and a throughput graph. You can **filter** the data using the toggle at the top-left section of the page (the default is **Last 24 Hours**), toggle any log request to view all the associated details, or further click on a **Trace** to view even more request and response details.
 
-![Screenshot of APItoolkit's API log explorer page](/docs/dashboard/dashboard-pages/api-log-explorer/screen-1.png)
+![Screenshot of APItoolkit's API log explorer page](/docs/dashboard/dashboard-pages/api-log-explorer/log-explorer-new.png)
 
-![Screenshot of APItoolkit's API log explorer page](/docs/dashboard/dashboard-pages/api-log-explorer/screen-2.png)
+![Screenshot of APItoolkit's API log explorer page](/docs/dashboard/dashboard-pages/api-log-explorer/log-explorer-span.png)
 
 ```=html
 <div class="callout">
