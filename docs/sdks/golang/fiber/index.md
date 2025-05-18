@@ -8,14 +8,6 @@ menuWeight: 3
 
 # Go Fiber OpenTelemetry Integration Guide
 
-## Table of Contents
-
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Usage](#usage)
-- [All Configuration Options](#all-environment-variables)
-- [All Middleware Configuration Options](#all-middleware-configuration-fields)
-
 ## Installation
 
 Install the APIToolkit fiber SDK using the following command `go get` command:
@@ -120,7 +112,7 @@ The middleware configuration specifies how the APItoolkit SDK should handle requ
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tips</b></p>
   <ol>
   <li>
-  Remember to keep your APIToolkit project key (`at-project-key`) secure and not expose it in public repositories or logs.
+  Remember to keep your APIToolkit project key (<code>at-project-key</code>) secure and not expose it in public repositories or logs.
   </li>
   </ul>
 </div>

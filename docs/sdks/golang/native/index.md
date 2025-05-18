@@ -8,14 +8,6 @@ menuWeight: 6
 
 # Go Native OpenTelemetry Integration
 
-## Table of Contents
-
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Usage](#usage)
-- [All Configuration Options](#all-environment-variables)
-- [All Middleware Configuration Options](#all-middleware-configuration-fields)
-
 ## Installation
 
 Install the APIToolkit native Go SDK using the following command `go get` command:

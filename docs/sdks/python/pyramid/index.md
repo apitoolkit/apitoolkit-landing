@@ -43,10 +43,12 @@ Then run the command below to start your server with opentelemetry instrumented:
 opentelemetry-instrument python3 myapp.py
 ```
 
+```=html
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <p>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</p>
+  <p>The <code>{ENTER_YOUR_API_KEY_HERE}</code> demo string should be replaced with the API key generated from the APItoolkit dashboard.</p>
 </div>
+```
 
 ## APItoolkit Pyramid Configuration
 
@@ -125,10 +127,12 @@ if __name__ == '__main__':
 | `APITOOLKIT_CAPTURE_RESPONSE_BODY` | Set to `true` to capture the response body. |
 :::
 
+```=html
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <p>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</p>
+  <p>The <code>{ENTER_YOUR_API_KEY_HERE}</code> demo string should be replaced with the API key generated from the APItoolkit dashboard.</p>
 </div>
+```
 
 ## Redacting Sensitive Data
 
@@ -140,7 +144,10 @@ To mark a field for redacting via this SDK, you need to add some additional fiel
 2. `APITOOLKIT_REDACT_REQUEST_BODY`: A list of JSONPaths from the request body.
 3. `APITOOLKIT_REDACT_RESPONSE_BODY`: A list of JSONPaths from the response body.
 
+```=html
 <hr />
+```
+
 JSONPath is a query language used to select and extract data from JSON files. For example, given the following sample user data JSON object:
 
 ```json
@@ -181,12 +188,14 @@ Examples of valid JSONPath expressions would be:
 | `$.user.credit_card` | In this case, APItoolkit will replace the entire `credit_card` object inside the `user` object with the string `[CLIENT_REDACTED]`. |
 :::
 
+```=html
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <p>To learn more about JSONPaths, please take a look at the [official docs](https://github.com/json-path/JsonPath/blob/master/README.md){target="_blank"} or use this [JSONPath Evaluator](https://jsonpath.com?ref=apitoolkit){target="_blank"} to validate your JSONPath expressions. </p>
-  <p>**You can also use our [JSON Redaction Tool](/tools/json-redacter/) <i class="fa-regular fa-screwdriver-wrench"></i> to preview what the final data sent from your API to APItoolkit will look like, after redacting any given JSON object**.</p>
+  <p>To learn more about JSONPaths, please take a look at the <a href="https://github.com/json-path/JsonPath/blob/master/README.md" target="_blank">official docs</a> or use this <a href="https://jsonpath.com?ref=apitoolkit" target="_blank">JSONPath Evaluator</a> to validate your JSONPath expressions. </p>
+  <p><b>You can also use our <a href="/tools/json-redacter/">JSON Redaction Tool</a> <i class="fa-regular fa-screwdriver-wrench"></i> to preview what the final data sent from your API to APItoolkit will look like, after redacting any given JSON object</b>.</p>
 </div>
 <hr />
+```
 
 Here's an example of what the configuration would look like with redacted fields:
 
@@ -215,14 +224,16 @@ APITOOLKIT_REDACT_RES_BODY: $.users[*].email, $.users[*].credit_card
   </div>
 </section>
 
+```=html
 <div class="callout">
   <p><i class="fa-regular fa-circle-info"></i> <b>Note</b></p>
   <ul>
-    <li>The `APITOOLKIT_REDACT_HEADERS` variable expects a list of <b>case-insensitive headers as strings</b>.</li>
-    <li>The `APITOOLKIT_REDACT_REQ_BODY` and `APITOOLKIT_REDACT_RES_BODY` variables expect a list of <b>JSONPaths as strings</b>.</li>
+    <li>The <code>APITOOLKIT_REDACT_HEADERS</code> variable expects a list of <b>case-insensitive headers as strings</b>.</li>
+    <li>The <code>APITOOLKIT_REDACT_REQ_BODY</code> and <code>APITOOLKIT_REDACT_RES_BODY</code> variables expect a list of <b>JSONPaths as strings</b>.</li>
     <li>The list of items to be redacted will be applied to all endpoint requests and responses on your server.</li>
   </ul>
 </div>
+```
 
 ## Error Reporting
 

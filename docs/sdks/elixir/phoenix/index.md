@@ -16,7 +16,7 @@ To integrate your Elixir Phoenix application with APItoolkit, you need to use th
 
 ## Prerequisites
 
-Ensure you have already completed the first three steps of the [onboarding guide](/docs/onboarding/){target="_blank"}.
+Ensure you have already completed the first three steps of the [onboarding guide](/docs/onboarding/){target="\_blank"}.
 
 ## Installation
 
@@ -66,22 +66,30 @@ In the configuration above, **only the `api_key` option is required**, but you c
 | `redact_request_body` | A list of JSONPaths from the response body to redact. |
 :::
 
+```=html
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <p>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</p>
+  <p>
+    The <code>{ENTER_YOUR_API_KEY_HERE}</code> demo string should be replaced
+    with the API key generated from the APItoolkit dashboard.
+  </p>
 </div>
+```
 
 ## Redacting Sensitive Data
 
-If you have fields that are sensitive and should not be sent to APItoolkit servers, you can mark those fields to be redacted  (the fields will never leave your servers).
+If you have fields that are sensitive and should not be sent to APItoolkit servers, you can mark those fields to be redacted (the fields will never leave your servers).
 
 To mark a field for redacting via this SDK, you need to provide additional arguments to the `config` key with paths to the fields that should be redacted. There are three arguments you can provide to configure what gets redacted, namely:
 
-1. `redact_headers`:  A list of HTTP header keys.
+1. `redact_headers`: A list of HTTP header keys.
 2. `redact_request_body`: A list of JSONPaths from the request body.
 3. `redact_response_body`: A list of JSONPaths from the response body.
 
+```=html
 <hr />
+```
+
 JSONPath is a query language used to select and extract data from JSON files. For example, given the following sample user data JSON object:
 
 ```json
@@ -122,12 +130,14 @@ Examples of valid JSONPath expressions would be:
 | `$.user.credit_card` | In this case, APItoolkit will replace the entire `credit_card` object inside the `user` object with the string `[CLIENT_REDACTED]`. |
 :::
 
+```=html
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <p>To learn more about JSONPaths, please take a look at the [official docs](https://github.com/json-path/JsonPath/blob/master/README.md){target="_blank"} or use this [JSONPath Evaluator](https://jsonpath.com?ref=apitoolkit){target="_blank"} to validate your JSONPath expressions. </p>
-  <p>**You can also use our [JSON Redaction Tool](/tools/json-redacter/) <i class="fa-regular fa-screwdriver-wrench"></i> to preview what the final data sent from your API to APItoolkit will look like, after redacting any given JSON object**.</p>
+  <p>To learn more about JSONPaths, please take a look at the <a href="https://github.com/json-path/JsonPath/blob/master/README.md" target="_blank">official docs</a> or use this <a href="https://jsonpath.com?ref=apitoolkit" target="_blank">JSONPath Evaluator</a> to validate your JSONPath expressions. </p>
+  <p><b>You can also use our <a href="/tools/json-redacter/">JSON Redaction Tool</a> <i class="fa-regular fa-screwdriver-wrench"></i> to preview what the final data sent from your API to APItoolkit will look like, after redacting any given JSON object</b>.</p>
 </div>
 <hr />
+```
 
 Here's an example of what the configuration would look like with redacted fields:
 
@@ -151,14 +161,16 @@ defmodule HelloWeb.Router do
 end
 ```
 
+```=html
 <div class="callout">
   <p><i class="fa-regular fa-circle-info"></i> <b>Note</b></p>
   <ul>
-    <li>The `redact_headers` config field expects a list of <b>case-insensitive headers as strings</b>.</li>
-    <li>The `redact_request_body` and `redact_response_body` config fields expect a list of <b>JSONPaths as strings</b>.</li>
+    <li>The <code>redact_headers</code> config field expects a list of <b>case-insensitive headers as strings</b>.</li>
+    <li>The <code>redact_request_body</code> and <code>redact_response_body</code> config fields expect a list of <b>JSONPaths as strings</b>.</li>
     <li>The list of items to be redacted will be applied to all endpoint requests and responses on your server.</li>
   </ul>
 </div>
+```
 
 ## Error Reporting
 

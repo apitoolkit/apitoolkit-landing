@@ -8,14 +8,6 @@ menuWeight: 5
 
 # Go Gorilla Mux OpenTelemetry Integration Guide
 
-## Table of Contents
-
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Usage](#usage)
-- [All Configuration Options](#all-environment-variables)
-- [All Middleware Configuration Options](#all-middleware-configuration-fields)
-
 ## Installation
 
 Install the APIToolkit gorilla mux SDK using the following command `go get` command:

@@ -21,14 +21,14 @@ Ensure you have already completed the first three steps of the [onboarding guide
 
 ## Installation
 
-To install the SDK, kindly add the following dependency to your `pom.xml` file within the `&lt;dependencies&gt;` section, like so:
+To install the SDK, kindly add the following dependency to your `pom.xml` file within the `<dependencies>` section, like so:
 
 ```xml
-&lt;dependency&gt;
-  &lt;groupId&gt;io.apitoolkit.springboot&lt;/groupId&gt;
-  &lt;artifactId&gt;apitoolkit-springboot&lt;/artifactId&gt;
-  &lt;version&gt;2.0.9&lt;/version&gt;
-&lt;/dependency&gt;
+<dependency>
+  <groupId>io.apitoolkit.springboot</groupId>
+  <artifactId>apitoolkit-springboot</artifactId>
+  <version>2.0.9</version>
+</dependency>
 ```
 
 ## Open Telemetry Setup
@@ -51,10 +51,15 @@ export OTEL_RESOURCE_ATTRIBUTES=at-project-key="{ENTER_YOUR_API_KEY_HERE}" # Add
 export OTEL_EXPORTER_OTLP_PROTOCOL="grpc" #Specifies the protocol to use for the OpenTelemetry exporter.
 ```
 
+```=html
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <p>The `{ENTER_YOUR_API_KEY_HERE}` demo string should be replaced with the API key generated from the APItoolkit dashboard.</p>
+  <p>
+    The <code>{ENTER_YOUR_API_KEY_HERE}</code> demo string should be replaced
+    with the API key generated from the APItoolkit dashboard.
+  </p>
 </div>
+```
 
 You can then run the application with opentelemetry instrumented using the following command:
 
@@ -125,7 +130,10 @@ To mark a field for redacting via this SDK, you need to provide additional confi
 2. `redactRequestBody`: A list of JSONPaths from the request body.
 3. `redactResponseBody`: A list of JSONPaths from the response body.
 
+```=html
 <hr />
+```
+
 JSONPath is a query language used to select and extract data from JSON files. For example, given the following sample user data JSON object:
 
 ```json
@@ -166,12 +174,14 @@ Examples of valid JSONPath expressions would be:
 | `$.user.credit_card` | In this case, APItoolkit will replace the entire `credit_card` object inside the `user` object with the string `[CLIENT_REDACTED]`. |
 :::
 
+```=html
 <div class="callout">
   <p><i class="fa-regular fa-lightbulb"></i> <b>Tip</b></p>
-  <p>To learn more about JSONPaths, please take a look at the [official docs](https://github.com/json-path/JsonPath/blob/master/README.md){target="_blank"} or use this [JSONPath Evaluator](https://jsonpath.com?ref=apitoolkit){target="_blank"} to validate your JSONPath expressions. </p>
-  <p>**You can also use our [JSON Redaction Tool](/tools/json-redacter/) <i class="fa-regular fa-screwdriver-wrench"></i> to preview what the final data sent from your API to APItoolkit will look like, after redacting any given JSON object**.</p>
+  <p>To learn more about JSONPaths, please take a look at the <a href="https://github.com/json-path/JsonPath/blob/master/README.md" target="_blank">official docs</a> or use this <a href="https://jsonpath.com?ref=apitoolkit" target="_blank">JSONPath Evaluator</a> to validate your JSONPath expressions. </p>
+  <p><b>You can also use our <a href="/tools/json-redacter/">JSON Redaction Tool</a> <i class="fa-regular fa-screwdriver-wrench"></i> to preview what the final data sent from your API to APItoolkit will look like, after redacting any given JSON object</b>.</p>
 </div>
 <hr />
+```
 
 Here's an example of what the configuration would look like with redacted fields:
 
@@ -181,14 +191,16 @@ apitoolkit.redactRequestBody=$.user.email,$.user.addresses
 apitoolkit.redactResponseBody=$.users[*].email,$.users[*].credit_card
 ```
 
+```=html
 <div class="callout">
   <p><i class="fa-regular fa-circle-info"></i> <b>Note</b></p>
   <ul>
-    <li>The `apitoolkit.redactHeaders` config field expects a list of <b>case-insensitive headers as strings</b>.</li>
-    <li>The `apitoolkit.redactRequestBody` and `apitoolkit.redactResponseBody` config fields expect a list of <b>JSONPaths as strings</b>.</li>
+    <li>The <code>apitoolkit.redactHeaders</code> config field expects a list of <b>case-insensitive headers as strings</b>.</li>
+    <li>The <code>apitoolkit.redactRequestBody</code> and `apitoolkit.redactResponseBody` config fields expect a list of <b>JSONPaths as strings</b>.</li>
     <li>The list of items to be redacted will be applied to all endpoint requests and responses on your server.</li>
   </ul>
 </div>
+```
 
 ## Error Reporting
 
