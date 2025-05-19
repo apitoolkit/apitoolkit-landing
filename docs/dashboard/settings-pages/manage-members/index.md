@@ -21,6 +21,19 @@ To get to this page, kindly click on **`Settings`** at the bottom-left section o
 
 ![Screenshot of APItoolkit's manage members page](/docs/dashboard/settings-pages/manage-members/manage-members-2.png)
 
+Video guide:
+
+```=html
+<iframe
+  class="w-full h-48 md:h-96 lg:h-96 xl:h-96"
+  src="https://www.youtube.com/embed/SCl-QipFQpk?si=MnHmWt5yO6rK-eFT"
+  title="How to Manage Team Members in APItoolkit | Add, Remove, and Set Permissions Easily"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen
+  ></iframe>
+```
+
 ```=html
 <hr />
 <a href="/docs/dashboard/settings-pages/api-keys/" class="w-full btn btn-outline ">
