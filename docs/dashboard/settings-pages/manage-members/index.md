@@ -15,11 +15,11 @@ In this guide, you will learn how to effectively navigate through the **Manage M
 
 On this page, you can add new members, remove existing members, or update the permissions of existing members in your project.
 
-To get to this page, kindly click on the project name at the top-left section of the dashboard and then click on the **Manage Members** tab. You will then be redirected to another page where you can make the changes.
+To get to this page, kindly click on **`Settings`** at the bottom-left section of the page and then click on **`Manage members`** tab. You will then be redirected to another page where you can make the changes.
 
-![Screenshot of APItoolkit's manage members page](/docs/dashboard/settings-pages/manage-members/screen-1.png)
+![Screenshot of APItoolkit's manage members page](/docs/dashboard/settings-pages/manage-members/manage-members-1.png)
 
-![Screenshot of APItoolkit's manage members page](/docs/dashboard/settings-pages/manage-members/screen-2.png)
+![Screenshot of APItoolkit's manage members page](/docs/dashboard/settings-pages/manage-members/manage-members-2.png)
 
 ```=html
 <hr />
