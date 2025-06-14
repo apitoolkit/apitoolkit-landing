@@ -1,6 +1,6 @@
 ---
 title: Integrating APItoolkit with Kafka
-ogTitle: How to Monitor Kafka Producers and Consumers with APItoolkit using OpenTelemetry
+ogTitle: How to Monitor Kafka Producers and Consumers with APItoolkit using OpenTelemetry Collector
 faLogo: message-lines
 date: 2024-06-14
 updatedDate: 2024-06-14
@@ -10,7 +10,7 @@ menuWeight: 40
 
 # Integrating APItoolkit with Kafka
 
-This guide demonstrates how to integrate APItoolkit with Kafka producers and consumers using OpenTelemetry for comprehensive API monitoring.
+This guide demonstrates how to integrate APItoolkit with Kafka using the OpenTelemetry Collector for infrastructure-level monitoring without requiring code changes to your Kafka producers and consumers.
 
 ```=html
 <hr>
@@ -19,229 +19,331 @@ This guide demonstrates how to integrate APItoolkit with Kafka producers and con
 ## Prerequisites
 
 - Apache Kafka cluster
-- Kafka client application (producer/consumer)
+- OpenTelemetry Collector
 - APItoolkit account with an API key
 
-## Setting Up OpenTelemetry for Kafka
+## Monitoring Kafka with OpenTelemetry Collector
 
-### 1. Configure Environment Variables
+### 1. Deploying the OpenTelemetry Collector for Kafka
 
-Set up OpenTelemetry environment variables in your Kafka client application environment:
+The OpenTelemetry Collector can be deployed alongside your Kafka cluster to collect metrics, logs, and traces without modifying your application code.
 
-```bash
-# Specifies the endpoint URL for the OpenTelemetry collector
-export OTEL_EXPORTER_OTLP_ENDPOINT="http://otelcol.apitoolkit.io:4317"
+#### Option 1: Using Docker
 
-# Specifies the name of the service
-export OTEL_SERVICE_NAME="kafka-client-service"
+```yaml
+version: '3'
+services:
+  # Kafka and Zookeeper services (your existing setup)
+  zookeeper:
+    image: confluentinc/cp-zookeeper:latest
+    # ... zookeeper configuration
+    
+  kafka:
+    image: confluentinc/cp-kafka:latest
+    # ... kafka configuration
+    depends_on:
+      - zookeeper
+      
+  # OpenTelemetry Collector
+  otel-collector:
+    image: otel/opentelemetry-collector-contrib:latest
+    command: ["--config=/etc/otel-collector-config.yaml"]
+    volumes:
+      - ./otel-collector-config.yaml:/etc/otel-collector-config.yaml
+    environment:
+      - APITOOLKIT_API_KEY=YOUR_API_KEY
+    ports:
+      - "4317:4317"   # OTLP gRPC receiver
+      - "4318:4318"   # OTLP HTTP receiver
+      - "8888:8888"   # Metrics endpoint
+    depends_on:
+      - kafka
+```
 
-# Adds your API KEY to the resource
-export OTEL_RESOURCE_ATTRIBUTES="at-project-key=YOUR_API_KEY"
+#### Option 2: Kubernetes Deployment
 
-# Specifies the protocol to use for the OpenTelemetry exporter
-export OTEL_EXPORTER_OTLP_PROTOCOL="grpc"
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: otel-collector
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: otel-collector
+  template:
+    metadata:
+      labels:
+        app: otel-collector
+    spec:
+      containers:
+      - name: otel-collector
+        image: otel/opentelemetry-collector-contrib:latest
+        args:
+        - "--config=/conf/otel-collector-config.yaml"
+        volumeMounts:
+        - name: otel-collector-config
+          mountPath: /conf
+        env:
+        - name: APITOOLKIT_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: apitoolkit-secrets
+              key: api-key
+      volumes:
+      - name: otel-collector-config
+        configMap:
+          name: otel-collector-config
+```
+
+### 2. Configuring the OpenTelemetry Collector for Kafka
+
+Create an `otel-collector-config.yaml` file with the following configuration:
+
+```yaml
+receivers:
+  # Kafka metrics receiver
+  kafkametrics:
+    brokers: kafka:9092
+    protocol_version: 2.0.0
+    collection_interval: 10s
+    scrape_topics: true
+    topic_match: ".*"
+    scrape_consumer_groups: true
+    client_id: otel-collector
+    group_match: ".*"
+  
+  # JMX metrics for Kafka brokers
+  jmx:
+    endpoint: kafka:1099
+    collection_interval: 10s
+    service_url: "service:jmx:rmi:///jndi/rmi://kafka:1099/jmxrmi"
+    target_system: jvm,kafka
+    groovy_script: |
+      # Various JMX metric collection rules
+      kafka_metrics = [
+        'kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec,topic=*:OneMinuteRate',
+        'kafka.server:type=BrokerTopicMetrics,name=BytesOutPerSec,topic=*:OneMinuteRate',
+        'kafka.server:type=BrokerTopicMetrics,name=BytesInPerSec,topic=*:OneMinuteRate',
+        'kafka.server:type=ReplicaManager,name=UnderReplicatedPartitions:Value',
+        'kafka.controller:type=KafkaController,name=ActiveControllerCount:Value',
+        'kafka.controller:type=KafkaController,name=OfflinePartitionsCount:Value',
+        'kafka.server:type=ReplicaManager,name=PartitionCount:Value'
+      ]
+      kafka_metrics.each { metric ->
+        def mbean = jmx.getMBean(metric.tokenize(':')[0])
+        def attr = metric.tokenize(':')[1]
+        def value = mbean ? mbean.getAttribute(attr) : null
+        if (value != null) {
+          record.gauge(metric, value)
+        }
+      }
+  
+  # File log receiver for Kafka server logs
+  filelog:
+    include:
+      - /var/log/kafka/server.log
+      - /var/log/kafka/kafka-request.log
+    start_at: beginning
+    include_file_path: true
+    operators:
+      - type: regex_parser
+        regex: '^(?P<time>\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2},\d{3}) (?P<level>\w+) (?P<message>.*)'
+        timestamp:
+          parse_from: time
+          layout: '%Y-%m-%d %H:%M:%S,%L'
+        severity:
+          parse_from: level
+  
+  # OTLP receiver for any instrumented clients
+  otlp:
+    protocols:
+      grpc:
+        endpoint: 0.0.0.0:4317
+      http:
+        endpoint: 0.0.0.0:4318
+
+processors:
+  batch:
+  memory_limiter:
+    check_interval: 1s
+    limit_mib: 4000
+    spike_limit_mib: 800
+  resourcedetection:
+    detectors: [env, system]
+    override: false
+  resource:
+    attributes:
+      - key: at-project-key
+        value: ${env:APITOOLKIT_API_KEY}
+        action: upsert
+      - key: service.name
+        value: kafka-broker
+        action: upsert
+
+exporters:
+  otlp:
+    endpoint: "otelcol.apitoolkit.io:4317"
+    tls:
+      insecure: true
+
+service:
+  pipelines:
+    traces:
+      receivers: [otlp]
+      processors: [memory_limiter, batch, resourcedetection, resource]
+      exporters: [otlp]
+    metrics:
+      receivers: [kafkametrics, jmx, otlp]
+      processors: [memory_limiter, batch, resourcedetection, resource]
+      exporters: [otlp]
+    logs:
+      receivers: [filelog, otlp]
+      processors: [memory_limiter, batch, resourcedetection, resource]
+      exporters: [otlp]
 ```
 
 Replace `YOUR_API_KEY` with your actual APItoolkit project key.
 
-### 2. Instrument Kafka Producers
+### 3. Configuring Kafka for JMX Monitoring
 
-#### Java Example
+To enable JMX monitoring in Kafka, update your Kafka broker configuration:
 
-```java
-import io.opentelemetry.api.GlobalOpenTelemetry;
-import io.opentelemetry.api.trace.Span;
-import io.opentelemetry.api.trace.Tracer;
-import org.apache.kafka.clients.producer.*;
-
-public class KafkaProducerExample {
-    private final Tracer tracer = GlobalOpenTelemetry.getTracer("kafka-producer-instrumentation");
-    private final Producer<String, String> producer;
-
-    public KafkaProducerExample() {
-        Properties props = new Properties();
-        props.put("bootstrap.servers", "localhost:9092");
-        props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
-        props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
-        
-        producer = new KafkaProducer<>(props);
-    }
-
-    public void sendMessage(String topic, String key, String value) {
-        Span span = tracer.spanBuilder("kafka.produce").startSpan();
-        try {
-            span.setAttribute("messaging.system", "kafka");
-            span.setAttribute("messaging.destination", topic);
-            span.setAttribute("messaging.destination_kind", "topic");
-            span.setAttribute("messaging.kafka.key", key);
-            
-            ProducerRecord<String, String> record = new ProducerRecord<>(topic, key, value);
-            
-            producer.send(record, (metadata, exception) -> {
-                if (exception != null) {
-                    span.recordException(exception);
-                } else {
-                    span.setAttribute("messaging.kafka.partition", metadata.partition());
-                    span.setAttribute("messaging.kafka.offset", metadata.offset());
-                }
-            });
-        } finally {
-            span.end();
-        }
-    }
-}
+```properties
+# Add to your kafka server.properties or as environment variables in Docker/Kubernetes
+KAFKA_JMX_PORT=1099
+KAFKA_JMX_HOSTNAME=kafka
+KAFKA_JMX_OPTS="-Djava.rmi.server.hostname=kafka -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.port=1099 -Dcom.sun.management.jmxremote.rmi.port=1099"
 ```
 
-### 3. Instrument Kafka Consumers
+## Monitoring Kafka Connect
 
-#### Java Example
+To monitor Kafka Connect infrastructure without code changes:
 
-```java
-import io.opentelemetry.api.GlobalOpenTelemetry;
-import io.opentelemetry.api.trace.Span;
-import io.opentelemetry.api.trace.Tracer;
-import org.apache.kafka.clients.consumer.*;
+1. Add a Kafka Connect metrics receiver to your collector configuration:
 
-public class KafkaConsumerExample {
-    private final Tracer tracer = GlobalOpenTelemetry.getTracer("kafka-consumer-instrumentation");
-    private final Consumer<String, String> consumer;
-
-    public KafkaConsumerExample() {
-        Properties props = new Properties();
-        props.put("bootstrap.servers", "localhost:9092");
-        props.put("group.id", "test-group");
-        props.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
-        props.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
-        
-        consumer = new KafkaConsumer<>(props);
-        consumer.subscribe(Arrays.asList("test-topic"));
-    }
-
-    public void consumeMessages() {
-        while (true) {
-            ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));
-            
-            for (ConsumerRecord<String, String> record : records) {
-                Span span = tracer.spanBuilder("kafka.consume").startSpan();
-                try {
-                    span.setAttribute("messaging.system", "kafka");
-                    span.setAttribute("messaging.destination", record.topic());
-                    span.setAttribute("messaging.destination_kind", "topic");
-                    span.setAttribute("messaging.kafka.key", record.key());
-                    span.setAttribute("messaging.kafka.partition", record.partition());
-                    span.setAttribute("messaging.kafka.offset", record.offset());
-                    
-                    // Process the record
-                    processRecord(record);
-                } catch (Exception e) {
-                    span.recordException(e);
-                    throw e;
-                } finally {
-                    span.end();
-                }
-            }
-        }
-    }
-
-    private void processRecord(ConsumerRecord<String, String> record) {
-        // Your message processing logic here
-    }
-}
+```yaml
+receivers:
+  # ... other receivers
+  
+  # Kafka Connect metrics
+  prometheus:
+    config:
+      scrape_configs:
+        - job_name: 'kafka-connect'
+          scrape_interval: 10s
+          static_configs:
+            - targets: ['kafka-connect:8083']
+          metrics_path: '/metrics'
 ```
 
-## Using Kafka Interceptors with OpenTelemetry
+2. Enable the Prometheus metrics in Kafka Connect by adding these properties to your Kafka Connect worker configuration:
 
-Kafka also supports interceptors that can be used to automatically add OpenTelemetry instrumentation:
-
-### Producer Interceptor
-
-```java
-import io.opentelemetry.api.GlobalOpenTelemetry;
-import io.opentelemetry.api.trace.Span;
-import io.opentelemetry.api.trace.Tracer;
-import org.apache.kafka.clients.producer.ProducerInterceptor;
-import org.apache.kafka.clients.producer.ProducerRecord;
-import org.apache.kafka.clients.producer.RecordMetadata;
-
-import java.util.Map;
-
-public class OpenTelemetryProducerInterceptor implements ProducerInterceptor<String, String> {
-    private Tracer tracer;
-
-    @Override
-    public void configure(Map<String, ?> configs) {
-        tracer = GlobalOpenTelemetry.getTracer("kafka-producer-interceptor");
-    }
-
-    @Override
-    public ProducerRecord<String, String> onSend(ProducerRecord<String, String> record) {
-        Span span = tracer.spanBuilder("kafka.produce").startSpan();
-        span.setAttribute("messaging.system", "kafka");
-        span.setAttribute("messaging.destination", record.topic());
-        span.setAttribute("messaging.kafka.key", record.key());
-        
-        // Store span context in record headers
-        // Implementation details omitted for brevity
-        
-        span.end();
-        return record;
-    }
-
-    @Override
-    public void onAcknowledgement(RecordMetadata metadata, Exception exception) {
-        // Handle acknowledgment with metrics
-    }
-
-    @Override
-    public void close() {
-        // Cleanup resources
-    }
-}
+```properties
+# Kafka Connect configuration
+metric.reporters=org.apache.kafka.common.metrics.JmxReporter
 ```
 
-Add the interceptor to your Kafka producer configuration:
+## Monitoring Kafka Streams Applications
 
-```java
-Properties props = new Properties();
-// ... other configuration
-props.put("interceptor.classes", "com.example.OpenTelemetryProducerInterceptor");
+For Kafka Streams applications, add the following to your collector configuration:
+
+```yaml
+receivers:
+  # ... other receivers
+  
+  # Kafka Streams application metrics
+  prometheus:
+    config:
+      scrape_configs:
+        - job_name: 'kafka-streams'
+          scrape_interval: 10s
+          static_configs:
+            - targets: ['kafka-streams-app:8080']
+          metrics_path: '/actuator/prometheus'  # For Spring Boot applications
 ```
 
-## Using the OpenTelemetry Kafka Instrumentation Library
+## Monitoring Schema Registry
 
-For automatic instrumentation, you can use the OpenTelemetry Kafka instrumentation library:
+For Confluent Schema Registry monitoring:
 
-### Maven Dependency
-
-```xml
-<dependency>
-    <groupId>io.opentelemetry.instrumentation</groupId>
-    <artifactId>opentelemetry-kafka-clients-2.6</artifactId>
-    <version>1.29.0-alpha</version>
-</dependency>
+```yaml
+receivers:
+  # ... other receivers
+  
+  # Schema Registry metrics
+  prometheus:
+    config:
+      scrape_configs:
+        - job_name: 'schema-registry'
+          scrape_interval: 10s
+          static_configs:
+            - targets: ['schema-registry:8081']
+          metrics_path: '/metrics'
 ```
 
-### Gradle Dependency
+## Monitoring Kafka Client Applications without Code Changes
 
-```groovy
-implementation 'io.opentelemetry.instrumentation:opentelemetry-kafka-clients-2.6:1.29.0-alpha'
+For monitoring Kafka producers and consumers without modifying application code, you can use the OpenTelemetry Collector with the appropriate interceptors:
+
+1. Enable JVM metrics in your application's JVM options:
+
+```bash
+-javaagent:/path/to/jmx_prometheus_javaagent.jar=8080:/path/to/kafka_client_config.yaml
+```
+
+2. Add a Prometheus scraper to your collector config:
+
+```yaml
+receivers:
+  # ... other receivers
+  
+  # Kafka client application metrics
+  prometheus:
+    config:
+      scrape_configs:
+        - job_name: 'kafka-clients'
+          scrape_interval: 10s
+          static_configs:
+            - targets: ['kafka-producer:8080', 'kafka-consumer:8080']
 ```
 
 ## Verifying the Setup
 
-After setting up OpenTelemetry with your Kafka applications:
+After setting up the OpenTelemetry Collector with your Kafka infrastructure:
 
-1. Send and receive a few test messages through your Kafka topics
+1. Check that the collector is running and able to connect to Kafka:
+   ```bash
+   docker logs otel-collector
+   # or
+   kubectl logs -l app=otel-collector
+   ```
 
-2. Check your APItoolkit dashboard to see the incoming telemetry data from your Kafka clients
+2. Verify that metrics are being collected by checking the metrics endpoint:
+   ```bash
+   curl http://localhost:8888/metrics
+   ```
 
-3. Look for metrics such as:
-   - Message production and consumption rates
-   - Message processing time
-   - Error rates
+3. View your APItoolkit dashboard to see Kafka metrics and logs, including:
+   - Broker metrics (message rates, bytes in/out, partition counts)
+   - Consumer lag metrics
+   - Replication status
+   - Error rates and types
+
+## Key Kafka Metrics to Monitor
+
+The OpenTelemetry Collector will capture these important Kafka metrics:
+
+- **Broker Metrics**: CPU usage, memory usage, request rate, network throughput
+- **Topic Metrics**: Messages in rate, bytes in/out rate, failed produce/fetch requests
+- **Consumer Metrics**: Consumer lag, offset commit rate, join/leave rate
+- **Producer Metrics**: Record send rate, error rate, batch size
+- **Zookeeper Metrics**: Outstanding requests, watch count, latency
 
 ## Next Steps
 
-- Set up alerting in APItoolkit for Kafka performance issues
-- Configure custom metrics for specific Kafka monitoring needs
-- Correlate Kafka telemetry with other services in your architecture
+- Configure alerts in APItoolkit based on Kafka performance thresholds
+- Create custom dashboards for monitoring your Kafka cluster health
+- Correlate Kafka performance issues with application API performance
+- Set up monitoring for additional Kafka ecosystem components

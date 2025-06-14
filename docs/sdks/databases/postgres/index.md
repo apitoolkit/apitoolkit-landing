@@ -1,6 +1,6 @@
 ---
 title: Integrating APItoolkit with PostgreSQL
-ogTitle: How to Monitor PostgreSQL Database Operations with APItoolkit using OpenTelemetry
+ogTitle: How to Monitor PostgreSQL Database Operations with APItoolkit using OpenTelemetry Collector
 faLogo: database
 date: 2024-06-14
 updatedDate: 2024-06-14
@@ -10,7 +10,7 @@ menuWeight: 10
 
 # Integrating APItoolkit with PostgreSQL
 
-This guide demonstrates how to integrate APItoolkit with PostgreSQL database operations using OpenTelemetry to monitor database performance and identify issues.
+This guide demonstrates how to integrate APItoolkit with PostgreSQL databases using the OpenTelemetry Collector for infrastructure-level monitoring without requiring code changes to your applications.
 
 ```=html
 <hr>
@@ -19,246 +19,341 @@ This guide demonstrates how to integrate APItoolkit with PostgreSQL database ope
 ## Prerequisites
 
 - PostgreSQL database server
-- Database client application
+- OpenTelemetry Collector
 - APItoolkit account with an API key
 
-## Setting Up OpenTelemetry for PostgreSQL
+## Monitoring PostgreSQL with OpenTelemetry Collector
 
-### 1. Configure Environment Variables
+### 1. Deploy the OpenTelemetry Collector
 
-Set up OpenTelemetry environment variables in your application environment:
+The OpenTelemetry Collector can be deployed as a sidecar container, a standalone service, or directly on the host machine running PostgreSQL.
 
-```bash
-# Specifies the endpoint URL for the OpenTelemetry collector
-export OTEL_EXPORTER_OTLP_ENDPOINT="http://otelcol.apitoolkit.io:4317"
+#### Using Docker
 
-# Specifies the name of the service
-export OTEL_SERVICE_NAME="postgres-service"
+```yaml
+version: '3'
+services:
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: mydatabase
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      
+  otel-collector:
+    image: otel/opentelemetry-collector-contrib:latest
+    command: ["--config=/etc/otel-collector-config.yaml"]
+    volumes:
+      - ./otel-collector-config.yaml:/etc/otel-collector-config.yaml
+    environment:
+      - APITOOLKIT_API_KEY=YOUR_API_KEY
+    depends_on:
+      - postgres
 
-# Adds your API KEY to the resource
-export OTEL_RESOURCE_ATTRIBUTES="at-project-key=YOUR_API_KEY"
-
-# Specifies the protocol to use for the OpenTelemetry exporter
-export OTEL_EXPORTER_OTLP_PROTOCOL="grpc"
+volumes:
+  postgres-data:
 ```
 
-Replace `YOUR_API_KEY` with your actual APItoolkit project key.
+### 2. Configure the OpenTelemetry Collector for PostgreSQL
 
-### 2. Instrument PostgreSQL Database Client
+Create an `otel-collector-config.yaml` file with the following configuration:
 
-Below are examples of PostgreSQL instrumentation using OpenTelemetry for different programming languages:
-
-#### Java Example (using JDBC)
-
-```java
-import io.opentelemetry.api.GlobalOpenTelemetry;
-import io.opentelemetry.api.trace.Span;
-import io.opentelemetry.api.trace.Tracer;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-
-public class PostgresExample {
-    private final Tracer tracer = GlobalOpenTelemetry.getTracer("postgres-instrumentation");
-    private final String connectionUrl = "jdbc:postgresql://localhost:5432/mydatabase";
-    private final String username = "user";
-    private final String password = "password";
-
-    public List<User> getUsers() {
-        Span span = tracer.spanBuilder("postgres.query").startSpan();
-        try {
-            span.setAttribute("db.system", "postgresql");
-            span.setAttribute("db.name", "mydatabase");
-            span.setAttribute("db.operation", "SELECT");
-            span.setAttribute("db.statement", "SELECT id, name, email FROM users");
-            
-            List<User> users = new ArrayList<>();
-            
-            try (Connection conn = DriverManager.getConnection(connectionUrl, username, password);
-                 PreparedStatement stmt = conn.prepareStatement("SELECT id, name, email FROM users");
-                 ResultSet rs = stmt.executeQuery()) {
-                
-                while (rs.next()) {
-                    User user = new User();
-                    user.setId(rs.getLong("id"));
-                    user.setName(rs.getString("name"));
-                    user.setEmail(rs.getString("email"));
-                    users.add(user);
-                }
-            }
-            
-            span.setAttribute("db.result_count", users.size());
-            return users;
-        } catch (Exception e) {
-            span.recordException(e);
-            throw new RuntimeException("Failed to query users", e);
-        } finally {
-            span.end();
-        }
-    }
-}
-```
-
-#### Node.js Example (using node-postgres)
-
-```javascript
-const { Pool } = require('pg');
-const opentelemetry = require('@opentelemetry/api');
-
-const tracer = opentelemetry.trace.getTracer('postgres-instrumentation');
-
-const pool = new Pool({
-  host: 'localhost',
-  database: 'mydatabase',
-  user: 'user',
-  password: 'password',
-  port: 5432,
-});
-
-async function getUsers() {
-  const span = tracer.startSpan('postgres.query');
-  
-  try {
-    span.setAttribute('db.system', 'postgresql');
-    span.setAttribute('db.name', 'mydatabase');
-    span.setAttribute('db.operation', 'SELECT');
-    span.setAttribute('db.statement', 'SELECT id, name, email FROM users');
+```yaml
+receivers:
+  # PostgreSQL metrics receiver
+  postgresql:
+    endpoint: postgres:5432
+    transport: tcp
+    username: postgres
+    password: postgres
+    databases: [mydatabase]
+    collection_interval: 10s
+    tls:
+      insecure: true
     
-    const result = await pool.query('SELECT id, name, email FROM users');
-    
-    span.setAttribute('db.result_count', result.rowCount);
-    return result.rows;
-  } catch (error) {
-    span.recordException(error);
-    throw error;
-  } finally {
-    span.end();
-  }
-}
+  # For logs if enabled in PostgreSQL
+  filelog:
+    include:
+      - /var/log/postgresql/*.log
+    operators:
+      - type: regex_parser
+        regex: '^(?P<time>\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}.\d{3} \w+) \[(?P<pid>\d+)\] (?P<user>\w+)@(?P<database>\w+) (?P<level>\w+): (?P<message>.*)$'
+        timestamp:
+          parse_from: time
+          layout: '%Y-%m-%d %H:%M:%S.%L %z'
+        severity:
+          parse_from: level
+          mapping:
+            error: ERROR
+            warning: WARN
+            info: INFO
+            debug: DEBUG
+
+  # OTLP receiver for any instrumented clients
+  otlp:
+    protocols:
+      grpc:
+        endpoint: 0.0.0.0:4317
+      http:
+        endpoint: 0.0.0.0:4318
+
+processors:
+  batch:
+  memory_limiter:
+    check_interval: 1s
+    limit_mib: 4000
+    spike_limit_mib: 800
+  resourcedetection:
+    detectors: [env, system]
+    override: false
+  resource:
+    attributes:
+      - key: at-project-key
+        value: ${env:APITOOLKIT_API_KEY}
+        action: upsert
+      - key: db.system
+        value: postgresql
+        action: upsert
+      - key: service.name
+        value: postgresql-database
+        action: upsert
+
+exporters:
+  otlp:
+    endpoint: "otelcol.apitoolkit.io:4317"
+    tls:
+      insecure: true
+
+service:
+  pipelines:
+    traces:
+      receivers: [otlp]
+      processors: [memory_limiter, batch, resourcedetection, resource]
+      exporters: [otlp]
+    metrics:
+      receivers: [postgresql, otlp]
+      processors: [memory_limiter, batch, resourcedetection, resource]
+      exporters: [otlp]
+    logs:
+      receivers: [filelog, otlp]
+      processors: [memory_limiter, batch, resourcedetection, resource]
+      exporters: [otlp]
 ```
 
-### 3. Using OpenTelemetry Auto-Instrumentation Libraries
+### 3. Enable PostgreSQL Monitoring Features
 
-For easier integration, you can use auto-instrumentation libraries that automatically capture database operations:
-
-#### Java Auto-Instrumentation (using Java Agent)
-
-1. Download the OpenTelemetry Java agent:
-
-```bash
-wget https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/latest/download/opentelemetry-javaagent.jar
-```
-
-2. Run your application with the agent:
-
-```bash
-java -javaagent:path/to/opentelemetry-javaagent.jar \
-     -Dotel.service.name=postgres-service \
-     -Dotel.exporter.otlp.endpoint=http://otelcol.apitoolkit.io:4317 \
-     -Dotel.resource.attributes=at-project-key=YOUR_API_KEY \
-     -jar your-application.jar
-```
-
-#### Node.js Auto-Instrumentation
-
-1. Install required packages:
-
-```bash
-npm install @opentelemetry/sdk-node @opentelemetry/auto-instrumentations-node @opentelemetry/exporter-trace-otlp-proto
-```
-
-2. Set up auto-instrumentation in your application:
-
-```javascript
-const { NodeSDK } = require('@opentelemetry/sdk-node');
-const { getNodeAutoInstrumentations } = require('@opentelemetry/auto-instrumentations-node');
-const { OTLPTraceExporter } = require('@opentelemetry/exporter-trace-otlp-proto');
-
-const sdk = new NodeSDK({
-  traceExporter: new OTLPTraceExporter({
-    url: 'http://otelcol.apitoolkit.io:4317/v1/traces',
-  }),
-  instrumentations: [getNodeAutoInstrumentations()],
-  resourceAttributes: {
-    'at-project-key': 'YOUR_API_KEY',
-    'service.name': 'postgres-service',
-  },
-});
-
-sdk.start();
-```
-
-## Advanced PostgreSQL Monitoring with pgstatstatements
-
-For more detailed PostgreSQL monitoring, enable the `pg_stat_statements` extension:
-
-1. Modify your `postgresql.conf` file:
+To get the most comprehensive monitoring data, configure your PostgreSQL server with these settings in `postgresql.conf`:
 
 ```
+# Enable statistics collection
+track_activities = on
+track_counts = on
+track_io_timing = on
+track_functions = all
+
+# Enable query statistics collection
 shared_preload_libraries = 'pg_stat_statements'
 pg_stat_statements.track = all
+pg_stat_statements.max = 10000
+
+# Log settings (adjust based on your needs)
+log_destination = 'stderr'
+logging_collector = on
+log_directory = 'log'
+log_filename = 'postgresql-%Y-%m-%d_%H%M%S.log'
+log_min_duration_statement = 5000  # Log queries taking > 5s
 ```
 
-2. Restart PostgreSQL and enable the extension:
+After changing these settings, restart PostgreSQL:
+
+```bash
+sudo systemctl restart postgresql
+```
+
+Then enable the pg_stat_statements extension:
 
 ```sql
-CREATE EXTENSION pg_stat_statements;
+CREATE EXTENSION IF NOT EXISTS pg_stat_statements;
 ```
 
-3. Create a function to periodically collect query statistics:
+## PostgreSQL Exporter (Alternative Approach)
 
-```javascript
-async function collectPgStats() {
-  const span = tracer.startSpan('postgres.stats.collect');
+If you prefer using Prometheus and its ecosystem, you can use the PostgreSQL Exporter with the OpenTelemetry Collector:
+
+```yaml
+version: '3'
+services:
+  postgres:
+    image: postgres:latest
+    # ... PostgreSQL configuration ...
+      
+  postgres-exporter:
+    image: prometheuscommunity/postgres-exporter:latest
+    environment:
+      DATA_SOURCE_NAME: "postgresql://postgres:postgres@postgres:5432/postgres?sslmode=disable"
+    ports:
+      - "9187:9187"
+    depends_on:
+      - postgres
   
-  try {
-    const result = await pool.query(`
-      SELECT query, calls, total_time, mean_time, rows
-      FROM pg_stat_statements
-      ORDER BY total_time DESC
-      LIMIT 10
-    `);
-    
-    // Process and report statistics
-    for (const row of result.rows) {
-      const querySpan = tracer.startSpan('postgres.query.stats');
-      querySpan.setAttribute('db.statement', row.query);
-      querySpan.setAttribute('db.calls', row.calls);
-      querySpan.setAttribute('db.total_time_ms', row.total_time);
-      querySpan.setAttribute('db.mean_time_ms', row.mean_time);
-      querySpan.setAttribute('db.rows_affected', row.rows);
-      querySpan.end();
-    }
-    
-    return result.rows;
-  } catch (error) {
-    span.recordException(error);
-  } finally {
-    span.end();
-  }
-}
+  otel-collector:
+    image: otel/opentelemetry-collector-contrib:latest
+    command: ["--config=/etc/otel-collector-config.yaml"]
+    volumes:
+      - ./otel-collector-config.yaml:/etc/otel-collector-config.yaml
+    depends_on:
+      - postgres-exporter
+```
 
-// Collect stats every 5 minutes
-setInterval(collectPgStats, 5 * 60 * 1000);
+Update the collector config to scrape the PostgreSQL exporter:
+
+```yaml
+receivers:
+  # ... other receivers ...
+  
+  prometheus:
+    config:
+      scrape_configs:
+        - job_name: 'postgres'
+          scrape_interval: 10s
+          static_configs:
+            - targets: ['postgres-exporter:9187']
+          metric_relabel_configs:
+            - source_labels: [__name__]
+              regex: 'pg_.*'
+              action: keep
+
+# ... rest of the collector config ...
+
+service:
+  pipelines:
+    metrics:
+      receivers: [prometheus, otlp]
+      processors: [memory_limiter, batch, resourcedetection, resource]
+      exporters: [otlp]
+    # ... other pipelines ...
+```
+
+## Monitoring PostgreSQL in Kubernetes
+
+If you're running PostgreSQL in Kubernetes, you can deploy the OpenTelemetry Collector as a sidecar or using the Operator:
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgres
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      containers:
+      - name: postgres
+        image: postgres:latest
+        ports:
+        - containerPort: 5432
+        env:
+        - name: POSTGRES_USER
+          value: "postgres"
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: postgres-secrets
+              key: password
+        volumeMounts:
+        - name: postgres-data
+          mountPath: /var/lib/postgresql/data
+      
+      - name: otel-collector
+        image: otel/opentelemetry-collector-contrib:latest
+        args:
+        - "--config=/etc/otel-collector-config.yaml"
+        volumeMounts:
+        - name: otel-collector-config
+          mountPath: /etc/otel-collector-config.yaml
+          subPath: otel-collector-config.yaml
+        env:
+        - name: APITOOLKIT_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: apitoolkit-secrets
+              key: api-key
+      
+      volumes:
+      - name: postgres-data
+        persistentVolumeClaim:
+          claimName: postgres-pvc
+      - name: otel-collector-config
+        configMap:
+          name: otel-collector-config
+```
+
+## Monitoring Specific SQL Queries
+
+For monitoring specific SQL queries without code changes, you can use the PostgreSQL audit extension:
+
+1. Install the `pgaudit` extension:
+
+```
+shared_preload_libraries = 'pg_stat_statements,pgaudit'
+pgaudit.log = 'all'
+```
+
+2. Update the collector's filelog receiver to parse audit logs:
+
+```yaml
+filelog:
+  include:
+    - /var/log/postgresql/*.log
+  operators:
+    - type: regex_parser
+      regex: '.*AUDIT: SESSION,.*statement: (?P<statement>.*)'
+      parse_to: attributes.statement
 ```
 
 ## Verifying the Setup
 
-After setting up OpenTelemetry with your PostgreSQL application:
+After setting up the OpenTelemetry Collector with PostgreSQL:
 
-1. Run your application and perform several database operations
+1. Run some test queries against your PostgreSQL database
 
-2. Check your APItoolkit dashboard to see the incoming telemetry data
+2. Check the collector logs to ensure it's receiving PostgreSQL metrics:
+   ```bash
+   docker logs otel-collector
+   ```
 
-3. Look for metrics such as:
+3. View your APItoolkit dashboard to see PostgreSQL metrics, including:
    - Query execution time
-   - Database operation counts
-   - Error rates
-   - Result set sizes
+   - Connection counts
+   - Transaction rates
+   - Lock statistics
+   - Buffer usage
+
+## Key PostgreSQL Metrics to Monitor
+
+The OpenTelemetry Collector will capture these important PostgreSQL metrics:
+
+- **Connection metrics**: Total connections, active connections, idle connections
+- **Transaction metrics**: Commits, rollbacks, deadlocks
+- **Query metrics**: Query execution time, rows returned/affected
+- **Database size**: Total size, index size, table size
+- **Cache efficiency**: Cache hit ratio, buffer usage
+- **Lock metrics**: Waiting transactions, lock types
+- **Background writer**: Pages written, clean scan stops
 
 ## Next Steps
 
-- Set up alerting in APItoolkit for slow queries
+- Configure alerting in APItoolkit for critical PostgreSQL metrics
 - Create custom dashboards for database performance monitoring
 - Correlate database operations with API endpoints to identify bottlenecks
+- Set up collection of additional PostgreSQL-specific metrics
