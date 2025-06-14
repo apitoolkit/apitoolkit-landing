@@ -1,5 +1,5 @@
 ---
-title: Infrastructure SDKs
+title: Infrastructure
 date: 2024-06-14
 updatedDate: 2024-06-14
 menuWeight: 20
@@ -32,3 +32,4 @@ pages:
 {% endfor %}
 </div>
 ```
+
