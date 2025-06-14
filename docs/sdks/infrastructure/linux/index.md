@@ -12,6 +12,10 @@ menuWeight: 30
 
 This guide covers how to integrate APItoolkit with applications running on Linux systems using OpenTelemetry.
 
+```=html
+<hr>
+```
+
 ## Prerequisites
 
 - Linux server (Ubuntu, Debian, CentOS, etc.)

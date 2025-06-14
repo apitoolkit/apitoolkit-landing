@@ -12,6 +12,10 @@ menuWeight: 20
 
 This guide explains how to integrate APItoolkit with Docker containers using OpenTelemetry for API monitoring and observability.
 
+```=html
+<hr>
+```
+
 ## Prerequisites
 
 - Docker installed on your system

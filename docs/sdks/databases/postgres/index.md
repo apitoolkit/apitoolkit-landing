@@ -12,6 +12,10 @@ menuWeight: 10
 
 This guide demonstrates how to integrate APItoolkit with PostgreSQL database operations using OpenTelemetry to monitor database performance and identify issues.
 
+```=html
+<hr>
+```
+
 ## Prerequisites
 
 - PostgreSQL database server

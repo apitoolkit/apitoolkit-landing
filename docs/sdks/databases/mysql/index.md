@@ -12,6 +12,10 @@ menuWeight: 30
 
 This guide demonstrates how to integrate APItoolkit with MySQL database operations using OpenTelemetry to monitor query performance and identify issues.
 
+```=html
+<hr>
+```
+
 ## Prerequisites
 
 - MySQL database server

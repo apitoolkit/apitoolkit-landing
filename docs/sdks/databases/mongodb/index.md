@@ -228,6 +228,10 @@ java -javaagent:path/to/opentelemetry-javaagent.jar \
      -jar your-application.jar
 ```
 
+```=html
+<hr>
+```
+
 ## Advanced MongoDB Monitoring
 
 ### Tracking Slow Queries

@@ -12,6 +12,10 @@ menuWeight: 40
 
 This guide demonstrates how to integrate APItoolkit with Kafka producers and consumers using OpenTelemetry for comprehensive API monitoring.
 
+```=html
+<hr>
+```
+
 ## Prerequisites
 
 - Apache Kafka cluster

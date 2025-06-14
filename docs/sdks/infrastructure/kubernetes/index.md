@@ -12,6 +12,10 @@ menuWeight: 10
 
 This guide demonstrates how to integrate APItoolkit with Kubernetes using OpenTelemetry for API monitoring and observability.
 
+```=html
+<hr>
+```
+
 ## Prerequisites
 
 - A Kubernetes cluster
