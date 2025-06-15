@@ -71,10 +71,10 @@ receivers:
     include_file_path: true
     operators:
       - type: regex_parser
-        regex: '^(?P<time>\d{4}/\d{2}/\d{2} \d{2}:\d{2}:\d{2}) \[(?P<level>\w+)\] (?P<message>.*)$'
+        regex: '^(?P<time>\\d{4}/\\d{2}/\\d{2} \\d{2}:\\d{2}:\\d{2}) \\[(?P<level>\\w+)\\] (?P<message>.*)$'
         timestamp:
           parse_from: time
-          layout: '%Y/%m/%d %H:%M:%S'
+          layout: {% raw %}'%Y/%m/%d %H:%M:%S'{% endraw %}
         severity:
           parse_from: level
   
@@ -244,7 +244,7 @@ filelog:
     - type: json_parser
     - type: timestamp
       parse_from: attributes.time
-      layout: '%Y-%m-%dT%H:%M:%S%z'
+      layout: {% raw %}'%Y-%m-%dT%H:%M:%S%z'{% endraw %}
     - type: add_attributes
       attributes:
         http.request.method: EXPR(attributes.request.split(' ')[0])
@@ -264,12 +264,21 @@ sudo systemctl restart otel-collector
 
 To monitor Apache without code changes:
 
-1. Configure Apache to output logs in JSON format by editing `/etc/apache2/apache2.conf`:
+1. Configure Apache to output logs in JSON format by editing `/etc/apache2/apache2.conf`. Add these lines:
 
 ```
-LogFormat "{ \"time\":\"%{%Y-%m-%dT%H:%M:%S%z}t\", \"client\":\"%a\", \"request\":\"%r\", \"status\":%>s, \"bytes\":%B, \"duration\":%D, \"referer\":\"%{Referer}i\", \"user_agent\":\"%{User-agent}i\" }" json_combined
-CustomLog ${APACHE_LOG_DIR}/access.log json_combined
+# Add this to your apache2.conf file
+# LogFormat "JSON_FORMAT_HERE" json_combined
+# CustomLog ${APACHE_LOG_DIR}/access.log json_combined
 ```
+
+Where JSON_FORMAT_HERE should be:
+
+``````
+{% raw %}
+{ "time":"%{%Y-%m-%dT%H:%M:%S%z}t", "client":"%a", "request":"%r", "status":%>s, "bytes":%B, "duration":%D, "referer":"%{Referer}i", "user_agent":"%{User-agent}i" }
+{% endraw %}
+``````
 
 2. Update the filelog receiver in your OpenTelemetry configuration similarly to the Nginx example.
 
@@ -344,7 +353,9 @@ sudo apt-get update && sudo apt-get install -y tcpdump
 sudo tcpdump -i any -A -nn -s0 'tcp port 80 or tcp port 443' 2>/dev/null | \
 while read line; do
   if [[ $line == *"HTTP"* ]]; then
-    echo "{\"timestamp\":\"$(date -u +"%Y-%m-%dT%H:%M:%S.%3NZ")\", \"http_data\":\"${line}\"}" | \
+    timestamp=$(date -u +"%Y-%m-%dT%H:%M:%S.%3NZ")
+    # Construct a JSON object with the timestamp and HTTP data
+    echo "{ \"timestamp\":\"$timestamp\", \"http_data\":\"$line\" }" | \
     nc -w1 localhost 54525
   fi
 done
